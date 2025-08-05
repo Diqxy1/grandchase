@@ -1,0 +1,273 @@
+#include "ActorManager.h"
+#include "NetError.h"
+#include <boost/bind.hpp>
+#include "Log4.h"
+
+KActorManager::KActorManager()
+	: m_bCreateActorEnable(false)
+	, m_nQueEventSize(0)
+{
+	m_vecAct.reserve(5000);
+}
+
+KActorManager::~KActorManager()
+{
+}
+
+bool KActorManager::Add(const KActorPtr& spSob_)
+{
+	if (!NiIsKindOf(KActorPtr::element_type, spSob_.get()))    // another type
+	{
+		START_LOG(cerr, L"another type")
+			<< BUILD_LOG(KActorPtr::element_type::m_RTTI.GetName())
+			<< BUILD_LOG(spSob_->GetRTTI()->GetName())
+			<< END_LOG;
+		SET_ERROR(ERR_INTERNAL_01);
+		return false;
+	}
+
+	KLocker lock(m_csAct);
+
+	if (GetByName(spSob_->GetName()))    // 키가 이미 등록됨.
+	{
+		SET_ERROR(ERR_INTERNAL_05);
+		PRINT_LASTERROR;
+		return false;
+	}
+
+	m_vecAct.push_back(spSob_);
+
+	m_mapActName.insert(std::make_pair(spSob_->GetName(), spSob_));
+
+	SET_ERROR(NET_OK);
+	return true;
+}
+
+void KActorManager::ReserveDelete(const std::wstring& strName_)
+{
+	KLocker lock(m_csDel);
+	m_setDelReserved.insert(strName_);
+}
+
+void KActorManager::Tick()
+{
+	static DWORD dwMaxTick = 50;
+
+	DWORD dwElapsedTime = ::GetTickCount();
+	// 1. Queue 에 있는 Event를 각 Actor에게 분배 한다.
+	DistributeEvent();
+	dwElapsedTime = ::GetTickCount() - dwElapsedTime;
+	if (dwElapsedTime > dwMaxTick) {
+		dwMaxTick = dwElapsedTime;
+
+		START_LOG(cerr, L"Max DistributeEvent Time : " << dwMaxTick) << END_LOG;
+	}
+
+	// 2. 각 Actor에 대한 event를 처리
+	ForEach(boost::bind(&KActor::Tick, _1));
+
+	// 3. 삭제 상태에서 대기중인 유저 객체를 파괴. ( 절차 2. 의 루프에서 delete, insert 할 수 없다. )
+	std::set<std::wstring> setDelReservedList;
+	if (SwapDelReservedList(setDelReservedList)) {
+		std::for_each(setDelReservedList.begin(), setDelReservedList.end(),
+			boost::bind(&KActorManager::Delete, boost::ref(*this), _1));
+	}
+}
+
+bool KActorManager::Delete(const std::wstring& strName_)
+{
+	KLocker lock(m_csAct);
+
+	std::map< std::wstring, KActorPtr >::iterator mit;
+	mit = m_mapActName.find(strName_);
+	if (mit == m_mapActName.end())
+	{
+		START_LOG(cerr, L"삭제하고자 하는 이름이 없음")
+			<< BUILD_LOG(strName_)
+			<< BUILD_LOG(m_mapActName.size())
+			<< END_LOG;
+		SET_ERROR(ERR_INTERNAL_04);
+		return false;
+	}
+
+	// UID가 등록되어있다면 삭제한다.
+	m_mapActUID.erase(mit->second->GetUID());
+
+	std::vector<KActorPtr>::iterator vit;
+	vit = std::find(m_vecAct.begin(), m_vecAct.end(), mit->second);
+
+	if (vit == m_vecAct.end()) // 삭제해야 할 실제 포인터를 찾지 못함.
+	{
+		START_LOG(cerr, L"삭제해야 할 실제 포인터가 vector에 없음")
+			<< BUILD_LOG(strName_)
+			<< BUILD_LOG(m_vecAct.size()) << END_LOG;
+	}
+	else
+	{
+		(*vit)->CheckExceedRefCount(2);  // 060321. florist. RefCount가 남아있어 삭제되지 않을 가능성이 있는 경우를 검사한다.
+
+		m_vecAct.erase(vit);  // 실제 포인터를 삭제함.
+	}
+
+	m_mapActName.erase(strName_); // 마지막으로 Name key를 삭제함.
+	SET_ERROR(NET_OK);
+	return true;
+}
+
+KActorPtr KActorManager::GetByName(const std::wstring& strName_)
+{
+	KLocker lock(m_csAct);
+
+	std::map<std::wstring, KActorPtr>::iterator mit;
+	mit = m_mapActName.find(strName_);
+
+	if (mit == m_mapActName.end())
+	{
+		START_LOG(clog, L"No Name. wanted:" << strName_) << END_LOG;
+		return KActorPtr();
+	}
+
+	return mit->second;
+}
+
+KActorPtr KActorManager::GetByIndex(size_t nIndex_)
+{
+	KLocker lock(m_csAct);
+
+	if (nIndex_ > m_vecAct.size())
+	{
+		START_LOG(cwarn, L"bad index. wanted:" << nIndex_)
+			<< BUILD_LOG(m_vecAct.size())
+			<< BUILD_LOG(m_mapActName.size()) << END_LOG;
+		return KActorPtr();
+	}
+
+	return m_vecAct.at(nIndex_);
+}
+
+KActorPtr KActorManager::GetByUID(const DWORD dwUID_)
+{
+	KLocker lock(m_csAct);
+
+	std::map<DWORD, KActorPtr>::iterator mit;
+
+	mit = m_mapActUID.find(dwUID_);
+
+	if (mit == m_mapActUID.end()) return KActorPtr();
+
+	return mit->second;
+}
+
+bool KActorManager::Rename(IN const std::wstring& strOldName_, const std::wstring& strNewName_)
+{
+	KLocker lock(m_csAct);
+	KActorPtr spActor = GetByName(strOldName_);
+	_JIF(spActor, return false);
+
+	// key를 인자로 받는 erase는 지워진 element 수를 반환한다.
+	LIF(m_mapActName.erase(spActor->GetName()) != 0);
+
+	spActor->SetName(strNewName_);
+
+	return m_mapActName.insert(std::map<std::wstring, KActorPtr>::value_type(strNewName_, spActor)).second;
+}
+
+void KActorManager::QueueingEventTo(const std::wstring& strName_, const KEventPtr& spEvent_, const int nFrom_)
+{
+	KIntEventPtr spEvent(new KIntEvent);
+	spEvent->m_nFrom = nFrom_;
+	spEvent->m_usEventID = spEvent_->m_usEventID;
+	spEvent->m_strSender = strName_;
+	spEvent->m_kbuff = spEvent_->m_kbuff;
+
+	KLocker lock(m_csEventQueue);
+	m_queEvent.push_back(spEvent);
+}
+
+bool KActorManager::RegByUID(IN KActor& kActor_)
+{
+	KActorPtr spActor = boost::static_pointer_cast<KActor>(kActor_.shared_from_this());
+
+	_JIF(spActor, return false);
+
+	KLocker lock(m_csAct);
+	m_mapActUID[spActor->GetUID()] = spActor;
+	return true;
+}
+
+void KActorManager::QueueingEventTo(const DWORD dwUID_, const KEventPtr& spEvent_, const int nFrom_)
+{
+	KIntEventPtr spEvent(new KIntEvent);
+	spEvent->m_nFrom = nFrom_;
+	spEvent->m_usEventID = spEvent_->m_usEventID;
+	spEvent->m_dwSenderUID = dwUID_;
+	spEvent->m_kbuff = spEvent_->m_kbuff;
+
+	KLocker lock(m_csEventQueue);
+	m_queEvent.push_back(spEvent);
+}
+
+void KActorManager::DistributeEvent()
+{
+	std::deque<KIntEventPtr> queEvents;
+	if (!SwapQueue(queEvents)) {
+		return;
+	}
+
+	std::deque<KIntEventPtr>::iterator qit;
+	for (qit = queEvents.begin(); qit != queEvents.end(); ++qit) {
+		KActorPtr spActor;
+		if ((*qit)->m_dwSenderUID == 0) {
+			spActor = GetByName((*qit)->m_strSender);
+		}
+		else {
+			spActor = GetByUID((*qit)->m_dwSenderUID);
+		}
+
+		if (!spActor)
+			continue;
+
+		spActor->QueueingIntEvent(*qit);
+	}
+}
+
+bool KActorManager::SwapQueue(OUT std::deque<KIntEventPtr>& queEvents_)
+{
+	queEvents_.clear();
+	KLocker lock(m_csEventQueue);
+	if (m_queEvent.empty())
+		return false;
+
+	// 이벤트 큐 사이즈를 저장하자.
+	int nQueueSize = static_cast<int>(m_queEvent.size());
+	SetEventQueueSize(nQueueSize);
+
+	queEvents_.swap(m_queEvent);
+	return true;
+}
+
+bool KActorManager::SwapDelReservedList(std::set<std::wstring>& setReservedList_)
+{
+	setReservedList_.clear();
+	KLocker lock(m_csDel);
+	if (m_setDelReserved.empty()) {
+		return false;
+	}
+	m_setDelReserved.swap(setReservedList_);
+	return true;
+}
+
+void KActorManager::SetEventQueueSize(IN const int nQueueSize_)
+{
+	m_nQueEventSize += nQueueSize_;
+}
+
+bool KActorManager::GetEventQueueSize(OUT int& nQueueSize_)
+{
+	nQueueSize_ = 0;
+
+	KLocker lock(m_csEventQueue);
+	nQueueSize_ = m_nQueEventSize;
+	m_nQueEventSize = 0;
+	return true;
+}

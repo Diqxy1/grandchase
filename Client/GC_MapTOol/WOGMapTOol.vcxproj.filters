@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Command">
+      <UniqueIdentifier>{29f7421d-52f2-41f6-8790-28a663171be5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{a2e4ff1c-ac53-412b-84ca-630e7be093bf}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{fa11946d-c335-4765-ad36-1ac0efe08548}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{08ea1afe-6b61-4bc8-b3ee-c3a4e574b2cf}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="GridGuideline">
+      <UniqueIdentifier>{b0adb54f-9161-4a83-8a3d-31e2a0de1585}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Command\AddLayerPartCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\AllLayerResizeCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\CommandRecv.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\CreateLayerPartCloneCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\CreateLayerPartCreateCaterogyCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\CreateLayerPartDeleteCategory.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\CreateLayerPartDelPartCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\CreateLayerPartModifyCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\CreateLayerPartModifyFH.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\CreateLayerPartStampObjCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\CreateLayerPartUnStampObj.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\DragPartCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\InverseLeftRightCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\InverseUpDownCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\LayerChangeCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\LayerDelCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\LayerPartDelCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\LayerPartKeyMoveCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\LayerPartMoveCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\LayerResizeCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\LayerZOrderCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\ModifyFHValueCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\ModifyLayerPartCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\PasteObejctCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\StampObjectCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\UnStampObjectCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Command\WorldResizeCmd.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeGridGuideTerm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeLayerDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dapp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="d3denumeration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dfont.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dsettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dutil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="diutil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dmutil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dxutil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectProp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FHVector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FootHold.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FootHoldValue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KCChooseCategoryDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KCNewCategory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KCreateLayerPartDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KGCLuaBinder_Map.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KGCMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LayerList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LayerManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LayerPart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LayerProp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LayerResizing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveObjectDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveProp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NewMapDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleListDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PartList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ResizingDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticRenderView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ToolObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserProp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WOGMapTOol.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GridGuideline\KGridGuide.cpp">
+      <Filter>GridGuideline</Filter>
+    </ClCompile>
+    <ClCompile Include="GridGuideline\KGridGuideMgr.cpp">
+      <Filter>GridGuideline</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Command\AddLayerPartCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\AllLayerResizeCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\CommandRecv.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\CreateLayerPartCloneCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\CreateLayerPartCreateCaterogyCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\CreateLayerPartDeleteCategory.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\CreateLayerPartDelPartCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\CreateLayerPartModifyCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\CreateLayerPartModifyFH.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\CreateLayerPartStampObjCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\CreateLayerPartUnStampObj.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\DragPartCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\ICommand.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\InverseLeftRightCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\InverseUpDownCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\LayerChangeCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\LayerDelCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\LayerPartDelCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\LayerPartKeyMoveCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\LayerPartMoveCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\LayerResizeCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\LayerZOrderCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\ModifyFHValueCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\ModifyLayerPartCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\PasteObejctCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\StampObjectCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\UnStampObjectCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Command\WorldResizeCmd.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeGridGuideTerm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeLayerDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CRenderEyeInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dapp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d3denumeration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dfont.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dres.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dsettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="diutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dmutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dxutil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectProp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FHVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FootHold.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FootHoldValue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KCChooseCategoryDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KCNewCategory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KCreateLayerPartDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KFHVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KFootHold.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KGCLuaBinder_Map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KGCMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KLayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KLayerManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KLayerPart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Layer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LayerList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LayerManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LayerPart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LayerProp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LayerResizing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveObjectDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveProp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NewMapDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleListDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PartList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ResizingDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticRenderView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ToolObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserProp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WOGMapTOol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GridGuideline\KGridGuide.h">
+      <Filter>GridGuideline</Filter>
+    </ClInclude>
+    <ClInclude Include="GridGuideline\KGridGuideMgr.h">
+      <Filter>GridGuideline</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WOGMapTOol.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="KFHVector.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="KFootHold.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="KLayer.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="KLayerManager.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="KLayerPart.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="KMap.inl">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="hmove.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="trckns.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="trckwe.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="DirectX.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="WogMapTOol.exe.manifest" />
+  </ItemGroup>
+</Project>

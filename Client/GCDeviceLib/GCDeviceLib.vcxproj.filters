@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Device">
+      <UniqueIdentifier>{2cab6320-72cc-4a87-b2f3-6b884445baf9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GCBaseMesh.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="GCDevice.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="GCDeviceBuildMesh.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="GCDeviceBuildTexture.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="GCDeviceFont.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="GCDeviceFontTH.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="GCDeviceIndexBuffer.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="GCDeviceManager.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="GCDeviceMeshP3M.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="GCDeviceMotionFRM.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="GCDeviceShader.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="GCDeviceSprite.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="GCDeviceTexture.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="GCDeviceVertexBuffer.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="GCDynamicTexture.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="GCDynamicVBManager.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="GCUITexture.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="MinMax.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="GCMatrix.cpp" />
+    <ClCompile Include="IGCBone.cpp" />
+    <ClCompile Include="IGCComputePaletteP3M.cpp" />
+    <ClCompile Include="KExceptionSafeUtil.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="TextureLoadManager.cpp" />
+    <ClCompile Include="TextureLoadThread.cpp" />
+    <ClCompile Include="united.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GCDeviceVertexBuffer.h">
+      <Filter>Device</Filter>
+    </ClInclude>
+    <ClInclude Include="IGCBone.h" />
+    <ClInclude Include="TextureLoadManager.h" />
+    <ClInclude Include="TextureLoadThread.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="GCBaseMesh.h">
+      <Filter>Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GCDevice.h">
+      <Filter>Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GCDeviceBuildMesh.h">
+      <Filter>Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GCDeviceBuildTexture.h">
+      <Filter>Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GCDeviceFont.h">
+      <Filter>Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GCDeviceFontTH.h">
+      <Filter>Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GCDeviceIndexBuffer.h">
+      <Filter>Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GCDeviceManager.h">
+      <Filter>Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GCDeviceMeshP3M.h">
+      <Filter>Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GCDeviceMotionFRM.h">
+      <Filter>Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GCDeviceShader.h">
+      <Filter>Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GCDeviceSprite.h">
+      <Filter>Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GCDeviceTexture.h">
+      <Filter>Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GCDynamicTexture.h">
+      <Filter>Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GCDynamicVBManager.h">
+      <Filter>Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GCUITexture.h">
+      <Filter>Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="KD3DDeviceState.h">
+      <Filter>Device</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GCMatrix.h" />
+    <CustomBuild Include="IGCComputePaletteP3M.h" />
+    <CustomBuild Include="KExceptionSafeUtil.h" />
+    <CustomBuild Include="MinMax.h" />
+    <CustomBuild Include="ReadMe.txt" />
+    <CustomBuild Include="shader.h" />
+    <CustomBuild Include="stdafx.h" />
+  </ItemGroup>
+</Project>

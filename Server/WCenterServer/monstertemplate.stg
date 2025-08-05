@@ -1,0 +1,5477 @@
+-- 카툰텍스쳐들 정의
+CARTOON_DEFAULT         = -1
+CARTOON_NORMAL          = 0
+CARTOON_FRONT_LIGHT     = 1
+CARTOON_BLACK           = 2
+CARTOON_PATUSEI         = 3  -- 파투세이의 카툰 텍스쳐 "PatuseiShell.dds"
+CARTOON_TRANS_KAZEAZE   = 4  -- 변신카제아제 불쏠때 사용하는것
+CARTOON_RACOON_ENT      = 5  -- 라쿤과 엔트의 카툰
+CARTOON_SLIM            = 6  -- 슬라임의 카툰
+CARTOON_ATHENS          = 7  -- 아테네 소워드 효과시의 카툰
+CARTOON_INSECTIVOROUS   = 8  -- 식충식물 카툰
+CARTOON_STONEGOLEM      = 9  -- 스톤골렘 카툰
+CARTOON_DAMAGE          = 10 -- 데미지 입었을 때 입히는 카툰
+CARTOON_PET_SLIM        = 11 -- 펫 - 슬라임 카툰
+CARTOON_DAMAGE_REVERSE  = 12 -- 데미지 입었을 때.. 반대방향
+CARTOON_PET_FAIRY       = 13 -- 펫 - 아이스픽시 , 블루페어리
+CARTOON_PETS            = 14 -- 다른 펫들
+CARTOON_RENASIEN        = 15
+CARTOON_OCTUS           = 16
+CARTOON_NIGHT_ORC       = 17 -- 나이트 오크의 카툰
+
+-- 몬스터 이름 사이즈 기본은 SMALL_SIZE입니다
+SMALL_SIZE              = 0
+NORMAL_SIZE             = 1
+BIG_SIZE                = 2
+
+NO_CULLING              = 10000
+
+--[[
+--MON_SAMPLE
+{
+    (int)       ID                      = 몬스터 고유 아이디
+    (string)    strAIFileName           = AI파일 이름
+    (string)    strInitFunc             = 초기화 함수이름
+
+    (int)       iBaseLevel              = 기준 레벨
+
+    (float)     fExp                    = 기본 Exp
+    (float)     fGP                     = 기본 GP
+    (float)     fAttackPoint            = 기본 공격력
+    (float)     fHPPoint                = 기본 체력
+
+    (float)     fIncExp                 = 레벨에 따라 증가하는 Exp
+    (float)     fIncGP                  = 레벨에 따라 증가하는 GP
+    (float)     fIncAttackPoint         = 레벨에 따라 증가하는 공격력
+    (float)     fIncHPPoint             = 레벨에 따라 증가하는 체력
+
+    (int)       iNameID                 = str.stg파일에서 몬스터의 이름 번호
+    (float)     fScale                  = 몬스터 크기
+    (float)     fWeight                 = 몬스터 몸무게
+    (float)     fWalkSpeed              = 걷는 속도
+    (float)     fRunSpeed               = 뛰는 속도
+
+    (float)     fWidth                  = 몬스터 가로사이즈 ( 픽셀 )
+    (float)     fHeight                 = 몬스터 세로사이즈 ( 픽셀 )
+    (float)     fAttackBoundBoxWidth    = 공격 바운딩박스 크기 ( 픽셀 )
+    (float)     fAttackBoundBoxHeight   = 공격 바운딩박스 크기 ( 픽셀 )
+
+    eNameSize                           = 게임상에 표시되는 이름 크기
+    
+    (float)     fVolume                 = 컬링하기 위해 사용하는 값 ( 픽셀 )
+                                          가로 길이와 세로 길이 중 긴 값을 넣으면 됩니다
+
+    Mesh =
+    {
+        { 모델파일이름, 텍스쳐파일이름, 카툰텍스쳐설정 },
+    },
+
+    Sound = -- 해당 몬스터가 사용하는 사운드 리스트
+    {
+        사운드1, 사운드2, 사운드3, 사운드4,
+    },
+
+    -- 챔피언 몬스터가 될 확률, 난이도가 세개이므로 세개의 난이도 모두 설정해 준다
+    -- 0 ~ 1 사이의 값 ( 0이면 0퍼센트 1이면 100퍼센트의 확률 )
+    EnchantRate = {
+        { 0.0, 0.0 }, -- {챔피언이 될 확률, 드랍에 영향을 미치는 배율}
+        { 0.5, 0.1 },
+        { 1.0, 0.3 },
+    },
+
+    EnchantList =
+    {
+        { SUPERARMOR, 0.3 }, -- {속성, 확률}
+    },
+}
+--]]
+
+MonsterList =
+{
+    --MON_SLIME
+    {
+        ID                      = 0,
+        strAIFileName           = "AI_Slime.lua",
+        strInitFunc             = "InitSlime",
+
+        iBaseLevel              = 1,
+
+        fExp                    = 4,
+        fGP                     = 0.5,
+        fAttackPoint            = 33.3,
+        fHPPoint                = 102,
+
+        fIncExp                 = 0,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 1.4,
+        fIncHPPoint             = 6.0,
+
+        iNameID                 = 2314,
+        fScale                  = 0.55,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 70,
+        fHeight                 = 90,
+        fAttackBoundBoxWidth    = 70,
+        fAttackBoundBoxHeight   = 90,
+
+        fVolume                 = 90,
+
+        Mesh = 
+        {
+            { "Model_Slime.p3m", "Tex_Slime.dds", CARTOON_NORMAL },
+        },
+        
+		Sound =
+		{
+			208,216,217,363,
+		},
+    },
+
+    --MON_MUSHROOMBOY
+    {
+        ID                      = 1,
+        strAIFileName           = "AI_MushroomBoy.lua",
+        strInitFunc             = "InitMushroomBoy",
+
+        iBaseLevel              = 1,
+
+        fExp                    = 4,
+        fGP                     = 0.5,
+        fAttackPoint            = 33.3,
+        fHPPoint                = 102,
+
+        fIncExp                 = 0,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 1.4,
+        fIncHPPoint             = 6.0,
+
+        iNameID                 = 2315,
+        fScale                  = 0.55,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.01,
+
+        fWidth                  = 60,
+        fHeight                 = 80,
+        fAttackBoundBoxWidth    = 70,
+        fAttackBoundBoxHeight   = 100,
+
+        fVolume                 = 100,
+
+        Mesh = 
+        {
+            { "Model_MushroomBoy.p3m", "Tex_MushroomBoy.dds", CARTOON_NORMAL },
+        },
+        
+		Sound =
+		{
+			96, 97,
+		},
+    },
+
+    --MON_RACOON
+    {
+        ID                      = 2,
+        strAIFileName           = "AI_Racoon.lua",
+        strInitFunc             = "InitRacoon",
+
+        iBaseLevel              = 3,
+
+        fExp                    = 4,
+        fGP                     = 1.3,
+        fAttackPoint            = 50.0,
+        fHPPoint                = 153,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 2.0,
+        fIncHPPoint             = 9.0,
+
+        iNameID                 = 2316,
+        fScale                  = 0.55,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.01,
+
+        fWidth                  = 70,
+        fHeight                 = 100,
+        fAttackBoundBoxWidth    = 80,
+        fAttackBoundBoxHeight   = 120,
+
+        fVolume                 = 120,
+
+        Mesh = 
+        {
+            { "Model_Racoon.p3m", "Tex_Racoon.dds", CARTOON_NORMAL },
+        },
+        
+		Sound =
+		{
+			213,214,215,
+		},
+    },
+
+    --MON_ENT
+    {
+        ID                      = 3,
+        strAIFileName           = "AI_Ent.lua",
+        strInitFunc             = "InitEnt",
+
+        iBaseLevel              = 4,
+
+        fExp                    = 4,
+        fGP                     = 1.4,
+        fAttackPoint            = 66.7,
+        fHPPoint                = 765,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 2.7,
+        fIncHPPoint             = 382.5,
+
+        iNameID                 = 2317,
+        fScale                  = 0.55,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.010,
+
+        fWidth                  = 140,
+        fHeight                 = 240,
+        fAttackBoundBoxWidth    = 150,
+        fAttackBoundBoxHeight   = 280,
+
+        fVolume                 = 280,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Ent.p3m", "Tex_Ent.dds", CARTOON_NORMAL },
+        },
+	Sound =
+	{
+	   209,210,211,212,
+	},
+    },
+
+    --MON_GOBLIN
+    {
+        ID                      = 4,
+        strAIFileName           = "AI_GoblinSap.lua",
+        strInitFunc             = "InitGoblinSap",
+
+        iBaseLevel              = 3,
+
+        fExp                    = 4,
+        fGP                     = 1.3,
+        fAttackPoint            = 54.1,
+        fHPPoint                = 171,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 6.6,
+        fIncHPPoint             = 16.5,
+
+        iNameID                 = 2318,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.008,
+
+        fWidth                  = 70,
+        fHeight                 = 100,
+        fAttackBoundBoxWidth    = 80,
+        fAttackBoundBoxHeight   = 120,
+
+        fVolume                 = 120,
+
+        Mesh = 
+        {
+            { "Model_GoblinSap.p3m", "Tex_GoblinSap.dds", CARTOON_NORMAL },
+        },
+	Sound =
+	{
+	   231, 232, 532,
+	},
+    },
+
+    --MON_GOBLIN_STONETHROW
+    {
+        ID                      = 5,
+        strAIFileName           = "AI_Goblin.lua",
+        strInitFunc             = "InitGoblin",
+
+        iBaseLevel              = 3,
+
+        fExp                    = 4,
+        fGP                     = 1.3,
+        fAttackPoint            = 46.9,
+        fHPPoint                = 171,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 5.7,
+        fIncHPPoint             = 16.5,
+
+        iNameID                 = 2319,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.008,
+
+        fWidth                  = 70,
+        fHeight                 = 100,
+        fAttackBoundBoxWidth    = 80,
+        fAttackBoundBoxHeight   = 120,
+
+        fVolume                 = 120,
+
+        Mesh = 
+        {
+            { "Model_Goblin.p3m", "Tex_Goblin.dds", CARTOON_NORMAL },
+        },
+	Sound =
+	{
+	   348, 231, 232,
+	},
+    },
+
+    --MON_ORC
+    {
+        ID                      = 6,
+        strAIFileName           = "AI_Orc.lua",
+        strInitFunc             = "InitOrc",
+
+        iBaseLevel              = 8,
+
+        fExp                    = 5,
+        fGP                     = 1.9,
+        fAttackPoint            = 89.2,
+        fHPPoint                = 294,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 9.1,
+        fIncHPPoint             = 22.0,
+
+        iNameID                 = 2320,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 70,
+        fHeight                 = 120,
+        fAttackBoundBoxWidth    = 90,
+        fAttackBoundBoxHeight   = 140,
+
+        fVolume                 = 140,
+
+        Mesh = 
+        {
+            { "Model_Orc.p3m", "Tex_Orc.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            233,234,359,
+        },
+    },
+
+    --MON_WENDY
+    {
+        ID                      = 7,
+        strAIFileName           = "AI_Wendy.lua",
+        strInitFunc             = "InitWendy",
+
+        iBaseLevel              = 8,
+
+        fExp                    = 5,
+        fGP                     = 1.9,
+        fAttackPoint            = 72.1,
+        fHPPoint                = 1140,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 8.8,
+        fIncHPPoint             = 570,
+
+        iNameID                 = 2321,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 120,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 130,
+        fAttackBoundBoxHeight   = 210,
+
+        fVolume                 = 210,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Wendy.p3m", "Tex_Wendy.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            47,236,237,
+        },
+    },
+
+    --MON_ANTMON
+    {
+        ID                      = 8,
+        strAIFileName           = "AI_Antmon.lua",
+        strInitFunc             = "InitAntmon",
+
+        iBaseLevel              = 14,
+
+        fExp                    = 10,
+        fGP                     = 3.9,
+        fAttackPoint            = 176.2,
+        fHPPoint                = 478.4,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 13.6,
+        fIncHPPoint             = 24.8,
+
+        iNameID                 = 2322,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 80,
+        fHeight                 = 110,
+        fAttackBoundBoxWidth    = 90,
+        fAttackBoundBoxHeight   = 130,
+
+        fVolume                 = 140,
+
+        Mesh = 
+        {
+            { "Model_Antmon.p3m", "Tex_Antmon.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            533,
+        },
+    },
+
+    --MON_ANTMONGUARD
+    {
+        ID                      = 9,
+        strAIFileName           = "AI_AntmonGuard.lua",
+        strInitFunc             = "InitAntmonGuard",
+
+        iBaseLevel              = 19,
+
+        fExp                    = 18,
+        fGP                     = 6.1,
+        fAttackPoint            = 258.4,
+        fHPPoint                = 722,
+
+        fIncExp                 = 3,
+        fIncGP                  = 0.3,
+        fIncAttackPoint         = 17.3,
+        fIncHPPoint             = 31.0,
+
+        iNameID                 = 2323,
+        fScale                  = 0.5,
+        fWeight                 = 2.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 90,
+        fHeight                 = 130,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 150,
+
+        fVolume                 = 160,
+
+        Mesh = 
+        {
+            { "Model_AntmonGuard.p3m", "Tex_AntmonGuard.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            47,
+        },
+    },
+
+    --MON_REDGORGOS
+    {
+        ID                      = 10,
+        strAIFileName           = "AI_RedGorgos.lua",
+        strInitFunc             = "InitRedGorgos",
+
+        iBaseLevel              = 17,
+
+        fExp                    = 14,
+        fGP                     = 3.9,
+        fAttackPoint            = 293.6,
+        fHPPoint                = 3588,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.4,
+        fIncAttackPoint         = 22.7,
+        fIncHPPoint             = 1794,
+
+        iNameID                 = 2324,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 140,
+        fHeight                 = 190,
+        fAttackBoundBoxWidth    = 160,
+        fAttackBoundBoxHeight   = 200,
+
+        fVolume                 = 200,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Gorgos.p3m", "Tex_RedGorgos.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            27, 47, 129, 151, 165,
+        },
+    },
+
+    --MON_DARKMAGE
+    {
+        ID                      = 11,
+        strAIFileName           = "AI_DarkMage.lua",
+        strInitFunc             = "InitDarkMage",
+
+        iBaseLevel              = 22,
+
+        fExp                    = 20,
+        fGP                     = 7.1,
+        fAttackPoint            = 293.0,
+        fHPPoint                = 627.2,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.7,
+        fIncAttackPoint         = 21.0,
+        fIncHPPoint             = 25.4,
+
+        iNameID                 = 2325,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.008,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 70,
+        fHeight                 = 140,
+        fAttackBoundBoxWidth    = 80,
+        fAttackBoundBoxHeight   = 170,
+
+        fVolume                 = 170,
+
+        Mesh = 
+        {
+            { "Model_DarkMage.p3m", "Tex_DarkMage.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            41,529,
+        },
+    },
+
+    --MON_MONGBAN
+    {
+        ID                      = 12,
+        strAIFileName           = "AI_Mongban.lua",
+        strInitFunc             = "InitMongban",
+
+        iBaseLevel              = 28,
+
+        fExp                    = 122,
+        fGP                     = 10.4,
+        fAttackPoint            = 426.8,
+        fHPPoint                = 1564,
+
+        fIncExp                 = 24,
+        fIncGP                  = 1.0,
+        fIncAttackPoint         = 25.0,
+        fIncHPPoint             = 52.0,
+
+        iNameID                 = 2326,
+        fScale                  = 0.55,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 130,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 150,
+        fAttackBoundBoxHeight   = 240,
+
+        eNameSize               = NORMAL_SIZE,
+
+        fVolume                 = 240,
+
+        Mesh = 
+        {
+            { "Model_Mongban.p3m", "Tex_Mongban.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            244, 48,
+        },
+    },
+
+    --MON_ARMORCRAB
+    {
+        ID                      = 13,
+        strAIFileName           = "AI_ArmorCrab.lua",
+        strInitFunc             = "InitArmorCrab",
+
+        iBaseLevel              = 30,
+
+        fExp                    = 193,
+        fGP                     = 13.8,
+        fAttackPoint            = 529.3,
+        fHPPoint                = 1107.5,
+
+        fIncExp                 = 78,
+        fIncGP                  = 0.2,
+        fIncAttackPoint         = 30.0,
+        fIncHPPoint             = 34.5,
+
+        iNameID                 = 2327,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.016,
+
+        fWidth                  = 80,
+        fHeight                 = 120,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 150,
+
+        fVolume                 = 150,
+
+        Mesh = 
+        {
+            { "Model_ArmorCrab.p3m", "Tex_ArmorCrab.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            295,533,
+        },
+    },
+
+
+    --MON_GHOSTFISH
+    {
+        ID                      = 14,
+        strAIFileName           = "AI_GhostFish.lua",
+        strInitFunc             = "InitGhostFish",
+
+        iBaseLevel              = 31,
+
+        fExp                    = 271,
+        fGP                     = 14.0,
+        fAttackPoint            = 529.0,
+        fHPPoint                = 886,
+
+        fIncExp                 = 39,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 30.0,
+        fIncHPPoint             = 27.6,
+
+        iNameID                 = 2328,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.008,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 80,
+        fHeight                 = 150,
+        fAttackBoundBoxWidth    = 80,
+        fAttackBoundBoxHeight   = 150,
+
+        fVolume                 = 150,
+
+        Mesh = 
+        {
+            { "Model_GhostFish.p3m", "Tex_GhostFish.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            529,458,
+        },
+    },
+
+    --MON_SKELETONKNIGHT
+    {
+        ID                      = 15,
+        strAIFileName           = "AI_SkeletonKnight.lua",
+        strInitFunc             = "InitSkeletonKnight",
+
+        iBaseLevel              = 40,
+
+        fExp                    = 1549,
+        fGP                     = 15.3,
+        fAttackPoint            = 861.3,
+        fHPPoint                = 1762.2,
+
+        fIncExp                 = 193,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 42.1,
+        fIncHPPoint             = 46.8,
+
+        iNameID                 = 2329,
+        fScale                  = 0.4,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.018,
+
+        fWidth                  = 70,
+        fHeight                 = 120,
+        fAttackBoundBoxWidth    = 80,
+        fAttackBoundBoxHeight   = 140,
+
+        fVolume                 = 140,
+
+        Mesh = 
+        {
+            { "Model_SkeletonKnight.p3m", "Tex_SkeletonKnight.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            372,
+        },
+    },
+
+    --MON_SKELETONARCHER
+    {
+        ID                      = 16,
+        strAIFileName           = "AI_SkeletonArcher.lua",
+        strInitFunc             = "InitSkeletonArcher",
+
+        iBaseLevel              = 40,
+
+        fExp                    = 1549,
+        fGP                     = 15.3,
+        fAttackPoint            = 646.0,
+        fHPPoint                = 1468.5,
+
+        fIncExp                 = 193,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 31.6,
+        fIncHPPoint             = 39,
+
+        iNameID                 = 2330,
+        fScale                  = 0.38,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 70,
+        fHeight                 = 120,
+        fAttackBoundBoxWidth    = 80,
+        fAttackBoundBoxHeight   = 140,
+
+        fVolume                 = 140,
+
+        Mesh = 
+        {
+            { "Model_SkeletonArcher01.p3m", "Tex_SkeletonArcher01.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            218,
+        },
+    },
+    
+    --MON_SKELETONKNIGHT02
+    {
+        ID                      = 17,
+        strAIFileName           = "AI_SkeletonKnight02.lua",
+        strInitFunc             = "InitSkeletonKnight02",
+
+        iBaseLevel              = 42,
+
+        fExp                    = 1931,
+        fGP                     = 15.4,
+        fAttackPoint            = 1087.4,
+        fHPPoint                = 2165.1,
+
+        fIncExp                 = 191,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 50.6,
+        fIncHPPoint             = 58.1,
+
+        iNameID                 = 2331,
+        fScale                  = 0.4,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.012,
+        fRunSpeed               = 0.016,
+
+        fWidth                  = 70,
+        fHeight                 = 120,
+        fAttackBoundBoxWidth    = 80,
+        fAttackBoundBoxHeight   = 140,
+
+        fVolume                 = 140,
+
+        Mesh = 
+        {
+            { "Model_SkeletonKnight02.p3m", "Tex_SkeletonKnight02.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            372,
+        },
+    },
+
+    --MON_SKELETONARCHER02
+    {
+        ID                      = 18,
+        strAIFileName           = "AI_SkeletonArcher02.lua",
+        strInitFunc             = "InitSkeletonArcher02",
+
+        iBaseLevel              = 42,
+
+        fExp                    = 1931,
+        fGP                     = 15.4,
+        fAttackPoint            = 851.2,
+        fHPPoint                = 1546.5,
+
+        fIncExp                 = 191,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 39.6,
+        fIncHPPoint             = 41.5,
+
+        iNameID                 = 2332,
+        fScale                  = 0.38,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.012,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 70,
+        fHeight                 = 120,
+        fAttackBoundBoxWidth    = 80,
+        fAttackBoundBoxHeight   = 140,
+
+        fVolume                 = 140,
+
+        Mesh = 
+        {
+            { "Model_SkeletonArcher02.p3m", "Tex_SkeletonArcher02.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            218,
+        },
+    },
+
+    --MON_ARMORCAT
+    {
+        ID                      = 19,
+        strAIFileName           = "AI_Armorcat.lua",
+        strInitFunc             = "InitArmorcat",
+
+        iBaseLevel              = 44,
+
+        fExp                    = 2710,
+        fGP                     = 15.9,
+        fAttackPoint            = 1188.7,
+        fHPPoint                = 2281.3,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 52.9,
+        fIncHPPoint             = 58.1,
+
+        iNameID                 = 2333,
+        fScale                  = 0.55,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.012,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 70,
+        fHeight                 = 100,
+        fAttackBoundBoxWidth    = 90,
+        fAttackBoundBoxHeight   = 120,
+
+        fVolume                 = 120,
+
+        Mesh = 
+        {
+            { "Model_Armorcat.p3m", "Tex_Armorcat.dds", CARTOON_NORMAL },
+        },
+    },
+
+    --MON_ELENA
+    {
+        ID                      = 20,
+        strAIFileName           = "AI_Elena.lua",
+        strInitFunc             = "InitElena",
+
+        iBaseLevel              = 35,
+
+        fExp                    = 774,
+        fGP                     = 14.6,
+        fAttackPoint            = 736.6,
+        fHPPoint                = 5882,
+
+        fIncExp                 = 145,
+        fIncGP                  = 1,
+        fIncAttackPoint         = 39.5,
+        fIncHPPoint             = 2941.3,
+
+        iNameID                 = 2334,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 70,
+        fHeight                 = 110,
+        fAttackBoundBoxWidth    = 80,
+        fAttackBoundBoxHeight   = 130,
+
+        fVolume                 = 130,
+
+        Mesh = 
+        {
+            { "Model_Elena.p3m", "Tex_Elena.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            41, 400, 486, 
+        },
+    },
+
+    --MON_KAMIKI
+    {
+        ID                      = 21,
+        strAIFileName           = "AI_Kamiki.lua",
+        strInitFunc             = "InitKamiki",
+
+        iBaseLevel              = 35,
+
+        fExp                    = 774,
+        fGP                     = 14.6,
+        fAttackPoint            = 884.0,
+        fHPPoint                = 7059,
+
+        fIncExp                 = 145,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 47.4,
+        fIncHPPoint             = 3529.5,
+
+        iNameID                 = 2335,
+        fScale                  = 0.56,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.020,
+
+        fWidth                  = 120,
+        fHeight                 = 170,
+        fAttackBoundBoxWidth    = 150,
+        fAttackBoundBoxHeight   = 190,
+
+        fVolume                 = 190,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Kamiki.p3m", "Tex_Kamiki.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            2, 3, 486,
+        },
+    },
+
+    --MON_GAIKOZ
+    {
+        ID                      = 22,
+        strAIFileName           = "AI_Gaikoz.lua",
+        strInitFunc             = "InitGaikoz",
+
+        iBaseLevel              = 29,
+
+        fExp                    = 146,
+        fGP                     = 12.1,
+        fAttackPoint            = 746.8,
+        fHPPoint                = 7820,
+
+        fIncExp                 = 24,
+        fIncGP                  = 0.9,
+        fIncAttackPoint         = 43.7,
+        fIncHPPoint             = 3910,
+
+        iNameID                 = 2336,
+        fScale                  = 0.45,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 100,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 120,
+        fAttackBoundBoxHeight   = 200,
+
+        fVolume                 = 200,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Gaikoz.p3m", "Tex_Gaikoz.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            171,244,247,472,537,539,
+        },
+    },    
+
+    --MON_KAZEAZE
+    {
+        ID                      = 23,
+        strAIFileName           = "AI_Kazeaze.lua",
+        strInitFunc             = "InitKazeaze",
+
+        iBaseLevel              = 41,
+
+        fExp                    = 1740,
+        fGP                     = 15.4,
+        fAttackPoint            = 985.6,
+        fHPPoint                = 8373,
+
+        fIncExp                 = 191,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 45.5,
+        fIncHPPoint             = 4186.5,
+
+        iNameID                 = 2337,
+        fScale                  = 0.35,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.02,
+
+        fWidth                  = 70,
+        fHeight                 = 110,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 120,
+
+        fVolume                 = 120,
+
+        Mesh = 
+        {
+            { "Model_Kazeaze_Head.p3m", "Tex_Kazeaze_Head.dds", CARTOON_NORMAL },
+            { "Model_Kazeaze_Body.p3m", "Tex_Kazeaze_Body.dds", CARTOON_NORMAL },
+            { "Model_Kazeaze_Leg.p3m",  "Tex_Kazeaze_Leg.dds",  CARTOON_NORMAL },
+            { "Model_Kazeaze_Hand.p3m", "Tex_Kazeaze_Hand.dds", CARTOON_NORMAL },
+            { "Model_Kazeaze_Foot.p3m", "Tex_Kazeaze_Foot.dds", CARTOON_NORMAL },
+            { "Model_Kazeaze_Back.p3m", "Tex_Kazeaze_Back.dds", CARTOON_NORMAL },
+            { "Model_Kazeaze_Weapon.p3m", "Tex_Kazeaze_Weapon.dds", CARTOON_NORMAL },
+        },        
+        Sound =
+        {
+            1,3,179, 181, 175, 46, 249, 
+        },
+    },
+    
+    --MON_KAZEAZE2
+    {
+        ID                      = 24,
+        strAIFileName           = "AI_Kazeaze2.lua",
+        strInitFunc             = "InitKazeaze2",
+
+        iBaseLevel              = 41,
+
+        fExp                    = 1740,
+        fGP                     = 15.4,
+        fAttackPoint            = 1182.8,
+        fHPPoint                = 13955,
+
+        fIncExp                 = 191,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 54.6,
+        fIncHPPoint             = 6977.5,
+
+        iNameID                 = 2338,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.018,
+
+        fWidth                  = 350,
+        fHeight                 = 250,
+        fAttackBoundBoxWidth    = 350,
+        fAttackBoundBoxHeight   = 250,
+
+        fVolume                 = 350,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Kazeaze2.p3m", "Tex_Kazeaze2.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            46,175,249,
+        },
+    },
+    
+    --MON_CYCLOPS
+    {
+        ID                      = 25,
+        strAIFileName           = "AI_Cyclops.lua",
+        strInitFunc             = "InitCyclops",
+
+        iBaseLevel              = 42,
+
+        fExp                    = 1930,
+        fGP                     = 15.5,
+        fAttackPoint            = 1507.3,
+        fHPPoint                = 17622,
+
+        fIncExp                 = 209,
+        fIncGP                  = 0.2,
+        fIncAttackPoint         = 73.7,
+        fIncHPPoint             = 8811.0,
+
+        iNameID                 = 2339,
+        fScale                  = 0.36,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.018,
+
+        fWidth                  = 200,
+        fHeight                 = 260,
+        fAttackBoundBoxWidth    = 200,
+        fAttackBoundBoxHeight   = 320,
+
+        fVolume                 = 320,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Cyclops.p3m", "Tex_Cyclops.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            47, 129, 244,
+        },
+    },
+
+    --MON_KNIGHTORCBOSS
+    {
+        ID                      = 26,
+        strAIFileName           = "AI_KnightOrcBoss.lua",
+        strInitFunc             = "InitKnightOrcBoss",
+
+        iBaseLevel              = 10,
+
+        fExp                    = 6,
+        fGP                     = 2.2,
+        fAttackPoint            = 148.6,
+        fHPPoint                = 2205.0,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.3,
+        fIncAttackPoint         = 15.2,
+        fIncHPPoint             = 1102.5,
+
+        iNameID                 = 2340,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 140,
+        fHeight                 = 200,
+        fAttackBoundBoxWidth    = 160,
+        fAttackBoundBoxHeight   = 220,
+
+        fVolume                 = 220,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_OrcLord.p3m", "Tex_KnightOrc.dds", CARTOON_NIGHT_ORC },
+            { "Model_KnightOrcWarrior_Head.p3m", "Tex_KnightOrcWarrior_Head.dds", CARTOON_NORMAL },
+            { "Model_KnightOrcWarrior_Parts.p3m", "Tex_KnightOrcWarrior_Parts.dds", CARTOON_NORMAL },
+            { "Model_KnightOrcWarrior_Weapon.p3m", "Tex_KnightOrcWarrior_Weapon.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            47,
+        },
+    },
+
+    --MON_TANK
+    {
+        ID                      = 27,
+        strAIFileName           = "AI_Tank.lua",
+        strInitFunc             = "InitTank",
+
+        iBaseLevel              = 10,
+
+        fExp                    = 10,
+        fGP                     = 0.10,
+        fAttackPoint            = 100,
+        fHPPoint                = 10000,
+
+        fIncExp                 = 0,
+        fIncGP                  = 1,
+        fIncAttackPoint         = 0,
+        fIncHPPoint             = 0,
+
+        iNameID                 = 2341,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.018,
+
+        fWidth                  = 100,
+        fHeight                 = 120,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 120,
+
+        fVolume                 = 120,
+
+        bNoDamageReaction       = 1,
+
+        Mesh = 
+        {
+            { "Model_Tank.p3m", "Model_Tank.dds", CARTOON_NORMAL },
+        },
+    },    
+    
+    --MON_HARPY
+    {
+        ID                      = 28,
+        strAIFileName           = "AI_Harpy.lua",
+        strInitFunc             = "InitHarpy",
+
+        iBaseLevel              = 11,
+
+        fExp                    = 7,
+        fGP                     = 2.5,
+        fAttackPoint            = 60,
+        fHPPoint                = 180,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.4,
+        fIncAttackPoint         = 5,
+        fIncHPPoint             = 11.0,
+
+        iNameID                 = 2342,
+        fScale                  = 0.4,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.010,
+        fRunSpeed               = 0.010,
+
+        fWidth                  = 80,
+        fHeight                 = 140,
+        fAttackBoundBoxWidth    = 80,
+        fAttackBoundBoxHeight   = 160,
+
+        fVolume                 = 160,
+
+        Mesh = 
+        {
+            { "Model_Harpy.p3m", "Tex_Harpy.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            52, 53, 54,
+        },
+    },
+    
+    --MON_HARPYQUEEN
+    {
+        ID                      = 29,
+        strAIFileName           = "AI_HarpyQueen.lua",
+        strInitFunc             = "InitHarpyQueen",
+
+        iBaseLevel              = 13,
+
+        fExp                    = 9,
+        fGP                     = 3.4,
+        fAttackPoint            = 80.8,
+        fHPPoint                = 1800,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.5,
+        fIncAttackPoint         = 10.0,
+        fIncHPPoint             = 850,
+
+        iNameID                 = 2343,
+        fScale                  = 0.6,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.010,
+        fRunSpeed               = 0.010,
+
+        fWidth                  = 90,
+        fHeight                 = 200,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 220,
+
+        fVolume                 = 220,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_HarpyQueen.p3m", "Tex_HarpyQueen.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            47, 53,
+        },
+    },
+    
+    --MON_KNIGHTORC
+    {
+        ID                      = 30,
+        strAIFileName           = "AI_KnightOrc.lua",
+        strInitFunc             = "InitKnightOrc",
+
+        iBaseLevel              = 13,
+
+        fExp                    = 9,
+        fGP                     = 3.4,
+        fAttackPoint            = 100.8,
+        fHPPoint                = 657.6,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.5,
+        fIncAttackPoint         = 10.7,
+        fIncHPPoint             = 29.6,
+
+        iNameID                 = 2344,
+        fScale                  = 0.45,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 120,
+        fHeight                 = 170,
+        fAttackBoundBoxWidth    = 140,
+        fAttackBoundBoxHeight   = 200,
+
+        fVolume                 = 200,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_OrcLord.p3m", "Tex_KnightOrc.dds", CARTOON_NIGHT_ORC },
+            { "Model_KnightOrcWarrior_Parts.p3m", "Tex_KnightOrcWarrior_Parts.dds", CARTOON_NORMAL },
+            { "Model_KnightOrcWarrior_Weapon.p3m", "Tex_KnightOrcWarrior_Weapon.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            47,
+        },
+    },
+    
+    --MON_THROWORC
+    {
+        ID                      = 31,
+        strAIFileName           = "AI_ThrowOrc.lua",
+        strInitFunc             = "InitThrowOrc",
+
+        iBaseLevel              = 13,
+
+        fExp                    = 9,
+        fGP                     = 3.4,
+        fAttackPoint            = 108.9,
+        fHPPoint                = 643.2,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.5,
+        fIncAttackPoint         = 9.1,
+        fIncHPPoint             = 37.2,
+
+        iNameID                 = 2345,
+        fScale                  = 0.45,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 120,
+        fHeight                 = 170,
+        fAttackBoundBoxWidth    = 140,
+        fAttackBoundBoxHeight   = 200,
+
+        fVolume                 = 200,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_OrcLord.p3m", "Tex_KnightOrc.dds", CARTOON_NIGHT_ORC },
+            { "Model_KnightOrcThrow_Parts.p3m", "Tex_KnightOrcThrow_Parts.dds", CARTOON_NORMAL },
+            { "Model_KnightOrcThrow_Weapon.p3m", "Tex_KnightOrcThrow_Weapon.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            47,
+        },
+    },
+    
+    --MON_ORCLORD_BOSS
+    {
+        ID                      = 32,
+        strAIFileName           = "AI_OrcLordBoss.lua",
+        strInitFunc             = "InitOrcLordBoss",
+
+        iBaseLevel              = 15,
+
+        fExp                    = 11,
+        fGP                     = 4.5,
+        fAttackPoint            = 201.4,
+        fHPPoint                = 2616,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.3,
+        fIncAttackPoint         = 15.1,
+        fIncHPPoint             = 1208,
+
+        iNameID                 = 2346,
+        fScale                  = 0.55,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.007,
+        fRunSpeed               = 0.014,
+
+        fWidth                  = 160,
+        fHeight                 = 200,
+        fAttackBoundBoxWidth    = 180,
+        fAttackBoundBoxHeight   = 240,
+
+        fVolume                 = 240,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_OrcLord.p3m", "Tex_OrcLord_body.dds", CARTOON_NIGHT_ORC },
+            { "Model_OrcLord_head.p3m", "Tex_OrcLord_head.dds", CARTOON_NORMAL },
+            { "Model_OrcLord_parts.p3m", "Tex_OrcLord_parts.dds", CARTOON_NORMAL },
+            { "Model_OrcLord_weapon.p3m", "Tex_OrcLord_weapon.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            47,
+        },
+    },
+    
+    --MON_GON
+    {
+        ID                      = 33,
+        strAIFileName           = "AI_Gon.lua",
+        strInitFunc             = "InitGon",
+
+        iBaseLevel              = 14,
+
+        fExp                    = 10,
+        fGP                     = 3.9,
+        fAttackPoint            = 146.8,
+        fHPPoint                = 239.2,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.3,
+        fIncAttackPoint         = 11.4,
+        fIncHPPoint             = 12.4,
+
+        iNameID                 = 2347,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.016,
+
+        fWidth                  = 50,
+        fHeight                 = 90,
+        fAttackBoundBoxWidth    = 60,
+        fAttackBoundBoxHeight   = 100,
+
+        fVolume                 = 100,
+
+        Mesh = 
+        {
+            { "Model_Gon.p3m", "Tex_Gon.dds", CARTOON_NORMAL },
+        },
+        
+		Sound =
+		{
+			346,347,348,
+		},
+    },
+    
+    --MON_GORGON
+    {
+        ID                      = 34,
+        strAIFileName           = "AI_Gorgon.lua",
+        strInitFunc             = "InitGorgon",
+
+        iBaseLevel              = 16,
+
+        fExp                    = 13,
+        fGP                     = 5.1,
+        fAttackPoint            = 176.2,
+        fHPPoint                = 598.0,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 13.6,
+        fIncHPPoint             = 31,
+
+        iNameID                 = 2348,
+        fScale                  = 0.9,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 80,
+        fHeight                 = 120,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 140,
+
+        fVolume                 = 140,
+
+        Mesh = 
+        {
+            { "Model_Gorgon.p3m", "Tex_Gorgon.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            351, 401,
+        },
+    },
+    
+    --MON_TROLL
+    {
+        ID                      = 35,
+        strAIFileName           = "AI_Troll.lua",
+        strInitFunc             = "InitTroll",
+
+        iBaseLevel              = 19,
+
+        fExp                    = 18,
+        fGP                     = 6.1,
+        fAttackPoint            = 339.0,
+        fHPPoint                = 3960,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.3,
+        fIncAttackPoint         = 24.3,
+        fIncHPPoint             = 1980,
+
+        iNameID                 = 2349,
+        fScale                  = 0.35,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.024,
+
+        fWidth                  = 160,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 180,
+        fAttackBoundBoxHeight   = 220,
+
+        fVolume                 = 220,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Troll.p3m", "Tex_Troll.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            27, 47, 129,
+        },
+    },
+    
+    --MON_DRILLMON
+    {
+        ID                      = 36,
+        strAIFileName           = "AI_Drillmon.lua",
+        strInitFunc             = "InitDrillmon",
+
+        iBaseLevel              = 18,
+
+        fExp                    = 15,
+        fGP                     = 5.6,
+        fAttackPoint            = 232.6,
+        fHPPoint                = 722,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.3,
+        fIncAttackPoint         = 15.5,
+        fIncHPPoint             = 31,
+
+        iNameID                 = 2350,
+        fScale                  = 0.4,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.01,
+
+        fWidth                  = 100,
+        fHeight                 = 150,
+        fAttackBoundBoxWidth    = 120,
+        fAttackBoundBoxHeight   = 170,
+
+        fVolume                 = 170,
+
+        Mesh = 
+        {
+            { "Model_Drillmon.p3m", "Tex_Drillmon.dds", CARTOON_NORMAL },
+        },
+    },
+    
+    --MON_GIANTDRILLMON
+    {
+        ID                      = 37,
+        strAIFileName           = "AI_GiantDrillmon.lua",
+        strInitFunc             = "InitGiantDrillmon",
+
+        iBaseLevel              = 21,
+
+        fExp                    = 20,
+        fGP                     = 6.8,
+        fAttackPoint            = 387.6,
+        fHPPoint                = 5054,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.3,
+        fIncAttackPoint         = 25.9,
+        fIncHPPoint             = 2527,
+
+        iNameID                 = 2351,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 110,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 140,
+        fAttackBoundBoxHeight   = 210,
+
+        fVolume                 = 210,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_GiantDrillmon.p3m", "Tex_GiantDrillmon.dds", CARTOON_NORMAL },
+        },
+        
+		Sound =
+		{
+			98, 99, 100,
+		},
+    },
+    
+    --MON_ELIZABETH
+    {
+        ID                      = 38,
+        strAIFileName           = "AI_Elizabeth.lua",
+        strInitFunc             = "InitElizabeth",
+
+        iBaseLevel              = 23,
+
+        fExp                    = 21,
+        fGP                     = 7.8,
+        fAttackPoint            = 439.5,
+        fHPPoint                = 5488,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.3,
+        fIncAttackPoint         = 31.5,
+        fIncHPPoint             = 2744,
+
+        iNameID                 = 2352,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.009,
+        fRunSpeed               = 0.016,
+
+        fWidth                  = 120,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 160,
+        fAttackBoundBoxHeight   = 240,
+
+        fVolume                 = 240,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Elizabeth.p3m", "Tex_Elizabeth.dds", CARTOON_NORMAL },
+            { "Model_Elizabeth_Weapon.p3m", "Tex_Elizabeth_Weapon.dds", CARTOON_NORMAL },
+        },
+	Sound =
+	{
+		47, 244,
+	},
+    },
+
+    --MON_PUMPKIN
+    {
+        ID                      = 39,
+        strAIFileName           = "AI_Pumpkin.lua",
+        strInitFunc             = "InitPumpkin",
+
+        iBaseLevel              = 22,
+
+        fExp                    = 0, -- 요놈은 exp를 주지 않는다
+        fGP                     = 7.1,
+        fAttackPoint            = 669.8,
+
+        fIncExp                 = 0,
+        fIncGP                  = 0.1,
+        fHPPoint                = 1,
+        fIncAttackPoint         = 44.6,
+        fIncHPPoint             = 0,
+
+        iNameID                 = 2353,
+        fScale                  = 0.25,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.003,
+        fRunSpeed               = 0.01,
+
+        fWidth                  = 140,
+        fHeight                 = 140,
+        fAttackBoundBoxWidth    = 160,
+        fAttackBoundBoxHeight   = 160,
+
+        fVolume                 = 160,
+
+        Mesh = 
+        {
+            { "Model_Pumpkin.p3m", "Tex_Pumpkin.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+			43,
+        },
+    },
+   
+    --MON_SKELETON
+    {
+        ID                      = 40,
+        strAIFileName           = "AI_Skeleton.lua",
+        strInitFunc             = "InitSkeleton",
+
+        iBaseLevel              = 22,
+
+        fExp                    = 20,
+        fGP                     = 7.1,
+        fAttackPoint            = 301.4,
+        fHPPoint                = 1017,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.5,
+        fIncAttackPoint         = 20.1,
+        fIncHPPoint             = 39,
+
+        iNameID                 = 2354,
+        fScale                  = 0.4,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.010,
+
+        fWidth                  = 60,
+        fHeight                 = 120,
+        fAttackBoundBoxWidth    = 80,
+        fAttackBoundBoxHeight   = 150,
+
+        fVolume                 = 150,
+
+        Mesh = 
+        {
+			{ "Model_Skeleton.p3m", "Tex_Skeleton.dds", CARTOON_NORMAL },
+        },
+    },
+  
+    --MON_LICH_BOSS
+    {
+        ID                      = 41,
+        strAIFileName           = "AI_LichBoss.lua",
+        strInitFunc             = "InitLichBoss",
+
+        iBaseLevel              = 25,
+
+        fExp                    = 24,
+        fGP                     = 8.6,
+        fAttackPoint            = 502.4,
+        fHPPoint                = 5932.5,
+
+        fIncExp                 = 15,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 33.5,
+        fIncHPPoint             = 2966.3,
+
+        iNameID                 = 2355,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 100,
+        fHeight                 = 200,
+        fAttackBoundBoxWidth    = 120,
+        fAttackBoundBoxHeight   = 240,
+
+        fVolume                 = 240,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+			{ "Model_Lich.p3m", "Tex_Lich.dds", CARTOON_NORMAL },
+            { "Model_Lich_Weapon.p3m", "Tex_Lich_Weapon.dds", CARTOON_NORMAL },
+        },
+
+        Sound =
+        {
+            41,343,351,
+        },
+    },
+
+    --MON_PARAMINIMI
+    {
+        ID                      = 42,
+        strAIFileName           = "AI_Paraminimi.lua",
+        strInitFunc             = "InitParaminimi",
+
+        iBaseLevel              = 24,
+
+        fExp                    = 24,
+        fGP                     = 8.3,
+        fAttackPoint            = 341.6,
+        fHPPoint                = 912.5,
+
+        fIncExp                 = 2,
+        fIncGP                  = 0.3,
+        fIncAttackPoint         = 21.3,
+        fIncHPPoint             = 32.5,
+
+        iNameID                 = 2356,
+
+        fScale                  = 0.3,
+
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.02,
+        fRunSpeed               = 0.02,
+
+        fWidth                  = 100,
+        fHeight                 = 80,
+        fAttackBoundBoxWidth    = 110,
+        fAttackBoundBoxHeight   = 110,
+
+        fVolume                 = 160,
+
+        Mesh = 
+        {
+            { "Model_Paradom.p3m", "Tex_Paradom.dds", CARTOON_NORMAL },
+        },
+        Sound =
+        {
+            102, 502,
+        },
+    },
+    
+    --MON_PARADOM_BOSS
+    {
+        ID                      = 43,
+        strAIFileName           = "AI_ParadomBoss.lua",
+        strInitFunc             = "InitParadomBoss",
+
+        iBaseLevel              = 27,
+
+        fExp                    = 58,
+        fGP                     = 94,
+        fAttackPoint            = 569.3,
+        fHPPoint                = 6387.5,
+
+        fIncExp                 = 35,
+        fIncGP                  = 1.0,
+        fIncAttackPoint         = 35.5,
+        fIncHPPoint             = 3193.8,
+
+        iNameID                 = 2357,
+
+        fScale                  = 0.7,
+
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.01,
+
+        fWidth                  = 240,
+        fHeight                 = 220,
+        fAttackBoundBoxWidth    = 220,
+        fAttackBoundBoxHeight   = 220,
+
+        fVolume                 = NO_CULLING,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Paradom.p3m", "Tex_Paradom.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            500,490,336,102,
+        },
+    },
+    
+    --MON_MINIGOLEM
+    {
+        ID                      = 44,
+        strAIFileName           = "AI_MiniGolem.lua",
+        strInitFunc             = "InitMiniGolem",
+
+        iBaseLevel              = 25,
+
+        fExp                    = 24,
+        fGP                     = 8.6,
+        fAttackPoint            = 379.5,
+        fHPPoint                = 1277.5,
+
+        fIncExp                 = 15,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 23.6,
+        fIncHPPoint             = 45.5,
+
+        iNameID                 = 2358,
+
+        fScale                  = 0.15,
+
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.008,
+        fRunSpeed               = 0.01,
+
+        fWidth                  = 80,
+        fHeight                 = 120,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 140,
+
+        fVolume                 = 140,
+
+        Mesh = 
+        {
+            { "Model_StoneGolem.p3m", "Tex_StoneGolem.dds", CARTOON_NORMAL },
+        },
+    },
+    
+    --MON_MINIICEGOLEM
+    {
+        ID                      = 45,
+        strAIFileName           = "AI_MiniIceGolem.lua",
+        strInitFunc             = "InitMiniIceGolem",
+
+        iBaseLevel              = 32,
+
+        fExp                    = 310,
+        fGP                     = 14.2,
+        fAttackPoint            = 529.3,
+        fHPPoint                = 1550.5,
+
+        fIncExp                 = 72,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 30.0,
+        fIncHPPoint             = 48.3,
+
+        iNameID                 = 2359,
+
+        fScale                  = 0.15,
+
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.008,
+        fRunSpeed               = 0.01,
+
+        fWidth                  = 80,
+        fHeight                 = 120,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 140,
+
+        fVolume                 = 140,
+
+        Mesh = 
+        {
+            { "Model_StoneGolem.p3m", "Tex_IceGolem.dds", CARTOON_NORMAL },
+        },
+		Sound =
+        {
+            244,
+        },
+    },
+    
+    --MON_MINIFIREGOLEM
+    {
+        ID                      = 46,
+        strAIFileName           = "AI_MiniFireGolem.lua",
+        strInitFunc             = "InitMiniFireGolem",
+
+        iBaseLevel              = 35,
+
+        fExp                    = 774,
+        fGP                     = 14.6,
+        fAttackPoint            = 750.4,
+        fHPPoint                = 1749.3,
+
+        fIncExp                 = 145,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 38.2,
+        fIncHPPoint             = 51.1,
+
+        iNameID                 = 2360,
+
+        fScale                  = 0.15,
+
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.008,
+        fRunSpeed               = 0.01,
+
+        fWidth                  = 80,
+        fHeight                 = 120,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 140,
+
+        fVolume                 = 140,
+
+        Mesh = 
+        {
+            { "Model_StoneGolem.p3m", "Tex_FireGolem.dds", CARTOON_NORMAL },
+        },
+    },
+    
+    --MON_REDANTMON
+    {
+        ID                      = 47,
+        strAIFileName           = "AI_RedAntmon.lua",
+        strInitFunc             = "InitRedAntmon",
+
+        iBaseLevel              = 27,
+
+        fExp                    = 39,
+        fGP                     = 8.7,
+        fAttackPoint            = 384.1,
+        fHPPoint                = 782.0,
+
+        fIncExp                 = 19,
+        fIncGP                  = 0.7,
+        fIncAttackPoint         = 22.5,
+        fIncHPPoint             = 32.5,
+
+        iNameID                 = 2361,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 80,
+        fHeight                 = 110,
+        fAttackBoundBoxWidth    = 90,
+        fAttackBoundBoxHeight   = 130,
+
+        fVolume                 = 140,
+
+        Mesh = 
+        {
+            { "Model_Antmon.p3m", "Tex_Antmon2.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            530, 533,
+        },
+    },
+    
+    --MON_BLACKANTMON
+    {
+        ID                      = 48,
+        strAIFileName           = "AI_BlackAntmon.lua",
+        strInitFunc             = "InitBlackAntmon",
+
+        iBaseLevel              = 32,
+
+        fExp                    = 310,
+        fGP                     = 14.2,
+        fAttackPoint            = 589.3,
+        fHPPoint                = 1411.8,
+
+        fIncExp                 = 77,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 31.6,
+        fIncHPPoint             = 43.8,
+
+        iNameID                 = 2362,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 80,
+        fHeight                 = 110,
+        fAttackBoundBoxWidth    = 90,
+        fAttackBoundBoxHeight   = 130,
+
+        fVolume                 = 140,
+
+        Mesh = 
+        {
+            { "Model_Antmon.p3m", "Tex_Antmon3.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            530, 533,
+        },
+    },
+    
+    --MON_BLUEANTMONGUARD
+    {
+        ID                      = 49,
+        strAIFileName           = "AI_BlueAntmonGuard.lua",
+        strInitFunc             = "InitBlueAntmonGuard",
+
+        iBaseLevel              = 27,
+
+        fExp                    = 58,
+        fGP                     = 9.4,
+        fAttackPoint            = 426.8,
+        fHPPoint                = 977.5,
+
+        fIncExp                 = 60,
+        fIncGP                  = 1.0,
+        fIncAttackPoint         = 25.0,
+        fIncHPPoint             = 32.5,
+
+        iNameID                 = 2363,
+        fScale                  = 0.5,
+        fWeight                 = 2.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 90,
+        fHeight                 = 130,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 150,
+
+        fVolume                 = 160,
+
+        Mesh = 
+        {
+            { "Model_AntmonGuard.p3m", "Tex_AntmonGuard2.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            47,493,
+        },
+    },
+    
+    --MON_BLACKANTMONGUARD
+    {
+        ID                      = 50,
+        strAIFileName           = "AI_BlackAntmonGuard.lua",
+        strInitFunc             = "InitBlackAntmonGuard",
+
+        iBaseLevel              = 33,
+
+        fExp                    = 387,
+        fGP                     = 14.3,
+        fAttackPoint            = 677.7,
+        fHPPoint                = 1411.8,
+
+        fIncExp                 = 280,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 36.3,
+        fIncHPPoint             = 43.8,
+
+        iNameID                 = 2364,
+        fScale                  = 0.5,
+        fWeight                 = 2.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 90,
+        fHeight                 = 130,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 150,
+
+        fVolume                 = 160,
+
+        Mesh = 
+        {
+            { "Model_AntmonGuard.p3m", "Tex_AntmonGuard3.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            47, 493,
+        },
+    },
+
+    --MON_BASILISK
+    {
+        ID                      = 51,
+        strAIFileName           = "AI_Basilisk.lua",
+        strInitFunc             = "InitBasilisk",
+
+        iBaseLevel              = 37,
+
+        fExp                    = 1065,
+        fGP                     = 14.8,
+        fAttackPoint            = 978.8,
+        fHPPoint                = 9996,
+
+        fIncExp                 = 145,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 49.8,
+        fIncHPPoint             = 4998,
+
+        iNameID                 = 2365,
+
+        fScale                  = 0.48,
+
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.00,
+        fRunSpeed               = 0.00,
+
+        fWidth                  = 0,
+        fHeight                 = 0,
+        fAttackBoundBoxWidth    = 200,
+        fAttackBoundBoxHeight   = 180,
+
+        fVolume                 = NO_CULLING,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Basilisk.p3m", "Tex_Basilisk.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+			153, 154, 155, 156,
+        },
+    },
+
+    --MON_GADOSEN
+    {
+        ID                      = 52,
+        strAIFileName           = "AI_Gadosen.lua",
+        strInitFunc             = "InitGadosen",
+
+        iBaseLevel              = 39,
+
+        fExp                    = 1356,
+        fGP                     = 15.1,
+        fAttackPoint            = 1078.4,
+        fHPPoint                = 10580,
+
+        fIncExp                 = 193,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 52.2,
+        fIncHPPoint             = 5290,
+
+        iNameID                 = 2366,
+
+        fScale                  = 0.20,
+
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.01,
+
+        fWidth                  = 90,
+        fHeight                 = 260,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 320,
+
+        fVolume                 = 320,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Gadosen.p3m", "Tex_Gadosen.dds", CARTOON_NORMAL },
+        },
+
+        Sound =
+        {
+            43, 147, 148, 149, 152,
+        },
+    },
+     
+    --MON_GIANTSTONEGOLEM
+    {
+        ID                      = 53,
+        strAIFileName           = "AI_GiantStoneGolem.lua",
+        strInitFunc             = "InitGiantStoneGolem",
+
+        iBaseLevel              = 43,
+
+        fExp                    = 2139,
+        fGP                     = 15.7,
+        fAttackPoint            = 1418.3,
+        fHPPoint                = 18558.0,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 66.1,
+        fIncHPPoint             = 9279.0,
+
+        iNameID                 = 2367,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.010,
+
+        fWidth                  = 200,
+        fHeight                 = 280,
+        fAttackBoundBoxWidth    = 200,
+        fAttackBoundBoxHeight   = 320,
+
+        fVolume                 = 320,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_StoneGolem.p3m", "Tex_StoneGolem.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            244,281,282,283,
+        },
+    },
+    
+    --MON_SWAMPSLIME
+    {
+        ID                      = 54,
+        strAIFileName           = "AI_SwampSlime.lua",
+        strInitFunc             = "InitSwampSlime",
+
+        iBaseLevel              = 20,
+
+        fExp                    = 20,
+        fGP                     = 6.5,
+        fAttackPoint            = 293.0,
+        fHPPoint                = 627.2,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.3,
+        fIncAttackPoint         = 21.0,
+        fIncHPPoint             = 25.4,
+
+        iNameID                 = 2368,
+        fScale                  = 0.7,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 80,
+        fHeight                 = 90,
+        fAttackBoundBoxWidth    = 80,
+        fAttackBoundBoxHeight   = 100,
+
+        fVolume                 = 100,
+
+        Mesh = 
+        {
+            { "Model_Slime.p3m", "Tex_SwampSlime.dds", CARTOON_NORMAL },
+        },
+    },
+    
+    --MON_ZOMBIEKNIGHTORC
+    {
+        ID                      = 55,
+        strAIFileName           = "AI_ZombieKnightOrc.lua",
+        strInitFunc             = "InitZombieKnightOrc",
+
+        iBaseLevel              = 24,
+
+        fExp                    = 22,
+        fGP                     = 8.3,
+        fAttackPoint            = 301.4,
+        fHPPoint                = 1525.5,
+
+        fIncExp                 = 2,
+        fIncGP                  = 0.3,
+        fIncAttackPoint         = 20.1,
+        fIncHPPoint             = 58.5,
+
+        iNameID                 = 2418,
+        fScale                  = 0.45,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 140,
+        fHeight                 = 200,
+        fAttackBoundBoxWidth    = 160,
+        fAttackBoundBoxHeight   = 220,
+
+        fVolume                 = 220,
+
+        Mesh = 
+        {
+            { "Model_OrcLord.p3m", "Tex_ZombieOrc.dds", CARTOON_NIGHT_ORC },
+            { "Model_KnightOrcWarrior_Parts.p3m", "Tex_KnightOrcWarrior_Parts.dds", CARTOON_NORMAL },
+            { "Model_KnightOrcWarrior_Weapon.p3m", "Tex_KnightOrcWarrior_Weapon.dds", CARTOON_NORMAL },
+        },
+    },
+    
+    --MON_STONETROLL
+    {
+        ID                      = 56,
+        strAIFileName           = "AI_StoneTroll.lua",
+        strInitFunc             = "InitStoneTroll",
+
+        iBaseLevel              = 26,
+
+        fExp                    = 39,
+        fGP                     = 8.7,
+        fAttackPoint            = 436.4,
+        fHPPoint                = 2737.5,
+
+        fIncExp                 = 19,
+        fIncGP                  = 0.7,
+        fIncAttackPoint         = 27.2,
+        fIncHPPoint             = 1368.8,
+
+        iNameID                 = 2419,
+        fScale                  = 0.35,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.024,
+
+        fWidth                  = 160,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 180,
+        fAttackBoundBoxHeight   = 220,
+
+        fVolume                 = 220,
+
+        Mesh = 
+        {
+            { "Model_Troll.p3m", "Tex_StoneTroll.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            27, 47, 129,
+        },
+    },
+    
+    --MON_BLACKDARKMAGE
+    {
+        ID                      = 57,
+        strAIFileName           = "AI_BlackDarkMage.lua",
+        strInitFunc             = "InitBlackDarkMage",
+
+        iBaseLevel              = 33,
+
+        fExp                    = 387,
+        fGP                     = 14.3,
+        fAttackPoint            = 677.7,
+        fHPPoint                = 941.2,
+
+        fIncExp                 = 220,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 36.3,
+        fIncHPPoint             = 29.2,
+
+        iNameID                 = 2420,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.008,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 70,
+        fHeight                 = 140,
+        fAttackBoundBoxWidth    = 80,
+        fAttackBoundBoxHeight   = 170,
+
+        fVolume                 = 170,
+
+        Mesh = 
+        {
+            { "Model_DarkMage.p3m", "Tex_BlackDarkMage.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            41,529,
+        },
+    },
+    
+    --MON_BLACKMONGBAN
+    {
+        ID                      = 58,
+        strAIFileName           = "AI_BlackMongban.lua",
+        strInitFunc             = "InitBlackMongban",
+
+        iBaseLevel              = 34,
+
+        fExp                    = 629,
+        fGP                     = 14.4,
+        fAttackPoint            = 677.7,
+        fHPPoint                = 1882.4,
+
+        fIncExp                 = 65,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 36.3,
+        fIncHPPoint             = 58.4,
+
+        iNameID                 = 2421,
+        fScale                  = 0.55,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 130,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 150,
+        fAttackBoundBoxHeight   = 240,
+
+        fVolume                 = 240,
+
+        Mesh = 
+        {
+            { "Model_Mongban.p3m", "Tex_BlackMongban.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            244, 48,
+        },
+    },
+    
+    --MON_MONGBANLEADER
+    {
+        ID                      = 59,
+        strAIFileName           = "AI_MongbanLeader.lua",
+        strInitFunc             = "InitMongbanLeader",
+
+        iBaseLevel              = 36,
+
+        fExp                    = 919,
+        fGP                     = 14.7,
+        fAttackPoint            = 750.4,
+        fHPPoint                = 2249.1,
+
+        fIncExp                 = 144,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 38.2,
+        fIncHPPoint             = 65.7,
+
+        iNameID                 = 2422,
+        fScale                  = 0.55,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 130,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 150,
+        fAttackBoundBoxHeight   = 240,
+
+        fVolume                 = 240,
+
+        Mesh = 
+        {
+            { "Model_Mongban.p3m", "Tex_MongbanLeader.dds", CARTOON_NORMAL },
+        },
+    },
+    
+    --MON_LICH
+    {
+        ID                      = 60,
+        strAIFileName           = "AI_Lich.lua",
+        strInitFunc             = "InitLich",
+
+        iBaseLevel              = 38,
+
+        fExp                    = 1210,
+        fGP                     = 15.0,
+        fAttackPoint            = 898.6,
+        fHPPoint                = 4761,
+
+        fIncExp                 = 145,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 43.5,
+        fIncHPPoint             = 2385,
+
+        iNameID                 = 2423,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 100,
+        fHeight                 = 200,
+        fAttackBoundBoxWidth    = 120,
+        fAttackBoundBoxHeight   = 240,
+
+        fVolume                 = 240,
+
+        Mesh = 
+        {
+			{ "Model_Lich.p3m", "Tex_Lich.dds", CARTOON_NORMAL },
+            { "Model_Lich_Weapon.p3m", "Tex_Lich_Weapon.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            41,343,351,
+        },
+    },
+    
+    --MON_FIREGOLEM
+    {
+        ID                      = 61,
+        strAIFileName           = "AI_FireGolem.lua",
+        strInitFunc             = "InitFireGolem",
+
+        iBaseLevel              = 41,
+
+        fExp                    = 1740,
+        fGP                     = 15.4,
+        fAttackPoint            = 1076.6,
+        fHPPoint                = 8811,
+
+        fIncExp                 = 191,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 52.7,
+        fIncHPPoint             = 4405.5,
+
+        iNameID                 = 2424,
+
+        fScale                  = 0.3,
+
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.01,
+
+        fWidth                  = 120,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 160,
+        fAttackBoundBoxHeight   = 220,
+
+        fVolume                 = 140,
+
+        Mesh = 
+        {
+            { "Model_StoneGolem.p3m", "Tex_FireGolem.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            244,281,282,283,
+        },
+    },
+    
+    --MON_PARADOM
+    {
+        ID                      = 62,
+        strAIFileName           = "AI_Paradom.lua",
+        strInitFunc             = "InitParadom",
+
+        iBaseLevel              = 43,
+
+        fExp                    = 2120,
+        fGP                     = 15.5,
+        fAttackPoint            = 1354.4,
+        fHPPoint                = 10535,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 64.6,
+        fIncHPPoint             = 5267.5,
+
+        iNameID                 = 2425,
+
+        fScale                  = 0.7,
+
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.01,
+
+        fWidth                  = 240,
+        fHeight                 = 220,
+        fAttackBoundBoxWidth    = 220,
+        fAttackBoundBoxHeight   = 220,
+
+        fVolume                 = NO_CULLING,
+
+        Mesh = 
+        {
+            { "Model_Paradom.p3m", "Tex_Paradom.dds", CARTOON_NORMAL },
+        },
+		Sound =
+        {
+            500,490,336,102,
+        },
+    },
+    
+    --MON_RAMPAGE_GOBLIN
+    {
+        ID                      = 63,
+        strAIFileName           = "AI_RampageGoblinSap.lua",
+        strInitFunc             = "InitRampageGoblinSap",
+
+        iBaseLevel              = 44,
+
+        fExp                    = 1280,
+        fGP                     = 15.5,
+        fAttackPoint            = 1033.6,
+        fHPPoint                = 1629.5,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 46.0,
+        fIncHPPoint             = 41.5,
+
+        iNameID                 = 2426,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.01,
+
+        fWidth                  = 70,
+        fHeight                 = 100,
+        fAttackBoundBoxWidth    = 80,
+        fAttackBoundBoxHeight   = 120,
+
+        fVolume                 = 120,
+
+        Mesh = 
+        {
+            { "Model_GoblinSap.p3m", "Tex_GoblinSap.dds", CARTOON_NORMAL },
+        },
+		Sound =
+		{
+		   231, 232, 532,
+		},
+    },
+    
+     --MON_RAMPAGE_GOBLIN_STONETHROW
+    {
+        ID                      = 64,
+        strAIFileName           = "AI_RampageGoblin.lua",
+        strInitFunc             = "InitRampageGoblin",
+
+        iBaseLevel              = 44,
+
+        fExp                    = 1280,
+        fGP                     = 15.5,
+        fAttackPoint            = 930.3,
+        fHPPoint                = 1303.6,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 41.4,
+        fIncHPPoint             = 33.2,
+
+        iNameID                 = 2427,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.01,
+
+        fWidth                  = 70,
+        fHeight                 = 100,
+        fAttackBoundBoxWidth    = 80,
+        fAttackBoundBoxHeight   = 120,
+
+        fVolume                 = 120,
+
+        Mesh = 
+        {
+            { "Model_Goblin.p3m", "Tex_Goblin.dds", CARTOON_NORMAL },
+        },
+		Sound =
+		{
+		   231, 232, 348,
+		},
+    },
+    
+    --MON_RAMPAGE_ORC
+    {
+        ID                      = 65,
+        strAIFileName           = "AI_RampageOrc.lua",
+        strInitFunc             = "InitRampageOrc",
+
+        iBaseLevel              = 44,
+
+        fExp                    = 1470,
+        fGP                     = 15.5,
+        fAttackPoint            = 1188.7,
+        fHPPoint                = 1955.4,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 52.9,
+        fIncHPPoint             = 49.8,
+
+        iNameID                 = 2428,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 70,
+        fHeight                 = 120,
+        fAttackBoundBoxWidth    = 90,
+        fAttackBoundBoxHeight   = 140,
+
+        fVolume                 = 140,
+
+        Mesh = 
+        {
+            { "Model_Orc.p3m", "Tex_Orc.dds", CARTOON_NIGHT_ORC },
+        },
+    },
+    
+    --MON_RAMPAGE_KNIGHTORC
+    {
+        ID                      = 66,
+        strAIFileName           = "AI_RampageKnightOrc.lua",
+        strInitFunc             = "InitRampageKnightOrc",
+
+        iBaseLevel              = 44,
+
+        fExp                    = 1590,
+        fGP                     = 15.5,
+        fAttackPoint            = 1292.0,
+        fHPPoint                = 2933.1,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 57.4,
+        fIncHPPoint             = 74.7,
+
+        iNameID                 = 2429,
+        fScale                  = 0.45,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 120,
+        fHeight                 = 170,
+        fAttackBoundBoxWidth    = 140,
+        fAttackBoundBoxHeight   = 200,
+
+        fVolume                 = 200,
+
+        Mesh = 
+        {
+            { "Model_OrcLord.p3m", "Tex_KnightOrc.dds", CARTOON_NIGHT_ORC },
+            { "Model_KnightOrcWarrior_Parts.p3m", "Tex_KnightOrcWarrior_Parts.dds", CARTOON_NORMAL },
+            { "Model_KnightOrcWarrior_Weapon.p3m", "Tex_KnightOrcWarrior_Weapon.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            47,
+        },
+    },
+    
+    --MON_RAMPAGE_HARPY
+    {
+        ID                      = 67,
+        strAIFileName           = "AI_RampageHarpy.lua",
+        strInitFunc             = "InitRampageHarpy",
+
+        iBaseLevel              = 44,
+
+        fExp                    = 1930,
+        fGP                     = 15.5,
+        fAttackPoint            = 1033.6,
+        fHPPoint                = 1629.5,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 46.0,
+        fIncHPPoint             = 41.5,
+
+        iNameID                 = 2430,
+        fScale                  = 0.4,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.010,
+        fRunSpeed               = 0.010,
+
+        fWidth                  = 80,
+        fHeight                 = 140,
+        fAttackBoundBoxWidth    = 80,
+        fAttackBoundBoxHeight   = 160,
+
+        fVolume                 = 160,
+
+        Mesh = 
+        {
+            { "Model_Harpy.p3m", "Tex_Harpy.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            52, 53,
+        },
+    },
+    
+    --MON_RAMPAGE_DRILLMON
+    {
+        ID                      = 68,
+        strAIFileName           = "AI_RampageDrillmon.lua",
+        strInitFunc             = "InitRampageDrillmon",
+
+        iBaseLevel              = 44,
+
+        fExp                    = 1740,
+        fGP                     = 15.4,
+        fAttackPoint            = 1188.7,
+        fHPPoint                = 2281.3,
+
+        fIncExp                 = 191,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 52.9,
+        fIncHPPoint             = 58.1,
+
+        iNameID                 = 2431,
+        fScale                  = 0.4,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.01,
+
+        fWidth                  = 100,
+        fHeight                 = 150,
+        fAttackBoundBoxWidth    = 120,
+        fAttackBoundBoxHeight   = 170,
+
+        fVolume                 = 170,
+
+        Mesh = 
+        {
+            { "Model_Drillmon.p3m", "Tex_Drillmon.dds", CARTOON_NORMAL },
+        },
+    },
+    
+    --MON_RAMPAGE_GON
+    {
+        ID                      = 69,
+        strAIFileName           = "AI_RampageGon.lua",
+        strInitFunc             = "InitRampageGon",
+
+        iBaseLevel              = 44,
+
+        fExp                    = 1672,
+        fGP                     = 15.5,
+        fAttackPoint            = 930.3,
+        fHPPoint                = 1629.5,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 41.4,
+        fIncHPPoint             = 41.5,
+
+        iNameID                 = 2432,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.016,
+
+        fWidth                  = 50,
+        fHeight                 = 90,
+        fAttackBoundBoxWidth    = 60,
+        fAttackBoundBoxHeight   = 100,
+
+        fVolume                 = 100,
+
+        Mesh = 
+        {
+            { "Model_Gon.p3m", "Tex_Gon.dds", CARTOON_NORMAL },
+        },
+		Sound =
+		{
+			346,347,348,
+		},
+    },
+    
+    --MON_RAMPAGE_GORGON
+    {
+        ID                      = 70,
+        strAIFileName           = "AI_RampageGorgon.lua",
+        strInitFunc             = "InitRampageGorgon",
+
+        iBaseLevel              = 44,
+
+        fExp                    = 1930,
+        fGP                     = 15.5,
+        fAttackPoint            = 930.0,
+        fHPPoint                = 2281.3,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 41.4,
+        fIncHPPoint             = 58.1,
+
+        iNameID                 = 2433,
+        fScale                  = 0.9,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.014,
+
+        fWidth                  = 80,
+        fHeight                 = 120,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 140,
+
+        fVolume                 = 140,
+
+        Mesh = 
+        {
+            { "Model_Gorgon.p3m", "Tex_Gorgon.dds", CARTOON_NORMAL },
+        },
+    },
+    
+    --MON_BLACKFAIRYQUEEN
+    {
+        ID                      = 71,
+        strAIFileName           = "AI_BlackFairy.lua",
+        strInitFunc             = "InitBlackFairy",
+
+        iBaseLevel              = 45,
+
+        fExp                    = 1930,
+        fGP                     = 15.5,
+        fAttackPoint            = 1033.6,
+        fHPPoint                = 6518.0,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 46.0,
+        fIncHPPoint             = 3259.0,
+
+        iNameID                 = 2434,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 80,
+        fHeight                 = 120,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 140,
+
+        fVolume                 = 140,
+
+        Mesh = 
+        {
+            { "Model_BlackFairy.p3m", "Tex_BlackFairy.dds", CARTOON_NORMAL },
+        },
+        Sound =
+        {
+            486,286,458,
+        },
+    },
+    
+    --MON_ORCLORD
+    {
+        ID                      = 72,
+        strAIFileName           = "AI_OrcLord.lua",
+        strInitFunc             = "InitOrcLord",
+
+        iBaseLevel              = 45,
+
+        fExp                    = 2130,
+        fGP                     = 20.9,
+        fAttackPoint            = 1292.0,
+        fHPPoint                = 9777.0,
+
+        fIncExp                 = 200,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 57.4,
+        fIncHPPoint             = 4888.5,
+
+        iNameID                 = 2435,
+        fScale                  = 0.55,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.007,
+        fRunSpeed               = 0.014,
+
+        fWidth                  = 160,
+        fHeight                 = 200,
+        fAttackBoundBoxWidth    = 180,
+        fAttackBoundBoxHeight   = 240,
+
+        fVolume                 = 240,
+
+        Mesh = 
+        {
+            { "Model_OrcLord.p3m", "Tex_OrcLord_body.dds", CARTOON_NIGHT_ORC },
+            { "Model_OrcLord_head.p3m", "Tex_OrcLord_head.dds", CARTOON_NORMAL },
+            { "Model_OrcLord_parts.p3m", "Tex_OrcLord_parts.dds", CARTOON_NORMAL },
+            { "Model_OrcLord_weapon.p3m", "Tex_OrcLord_weapon.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            28,29,
+        },
+    },
+    
+    --MON_DARKAMON
+    {
+        ID                      = 73,
+        strAIFileName           = "AI_DarkAmon.lua",
+        strInitFunc             = "InitDarkAmon",
+
+        iBaseLevel              = 46,
+
+        fExp                    = 2330,
+        fGP                     = 15.9,
+        fAttackPoint            = 1550.4,
+        fHPPoint                = 19554.0,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 68.9,
+        fIncHPPoint             = 9777.0,
+
+        iNameID                 = 2436,
+        fScale                  = 0.9,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.02,
+
+        fWidth                  = 160,
+        fHeight                 = 240,
+        fAttackBoundBoxWidth    = 180,
+        fAttackBoundBoxHeight   = 280,
+
+        fVolume                 = 280,
+
+        Mesh = 
+        {
+            { "Model_DarkAmon.p3m", "Tex_DarkAmon.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+			367,368,369,370,371,
+        },
+    },
+    
+    --MON_ABORIGINEMON
+    {
+        ID                      = 2330,
+        strAIFileName           = "AI_Aboriginemon.lua",
+        strInitFunc             = "InitAboriginemon",
+
+        iBaseLevel              = 46,
+
+        fExp                    = 2330,
+        fGP                     = 15.9,
+        fAttackPoint            = 1294.4,
+        fHPPoint                = 1712.5,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 55.1,
+        fIncHPPoint             = 41.5,
+
+        iNameID                 = 2437,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 70,
+        fHeight                 = 100,
+        fAttackBoundBoxWidth    = 90,
+        fAttackBoundBoxHeight   = 130,
+
+        fVolume                 = 130,
+
+        Mesh = 
+        {
+            { "Model_Aboriginemon.p3m", "Tex_Aboriginemon.dds", CARTOON_NORMAL },
+            { "Model_Aboriginemon_Lance.p3m", "Tex_Aboriginemon.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+		533,
+        },
+    },
+    
+    --MON_ABORIGINEMON_LORD
+    {
+        ID                      = 75,
+        strAIFileName           = "AI_AborigineLord.lua",
+        strInitFunc             = "InitAborigineLord",
+
+        iBaseLevel              = 46,
+
+        fExp                    = 2330,
+        fGP                     = 15.9,
+        fAttackPoint            = 1406.9,
+        fHPPoint                = 2055.0,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 59.9,
+        fIncHPPoint             = 49.8,
+
+        iNameID                 = 2438,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 70,
+        fHeight                 = 120,
+        fAttackBoundBoxWidth    = 90,
+        fAttackBoundBoxHeight   = 140,
+
+        fVolume                 = 140,
+
+        Mesh = 
+        {
+            { "Model_AborigineLord.p3m", "Tex_AborigineLord.dds", CARTOON_NORMAL },
+            { "Model_AborigineLord_Weapon.p3m", "Tex_AborigineLord_Weapon.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+		343,398,458,
+        },
+    },
+   
+    --MON_BEHOLDER
+    {
+        ID                      = 76,
+        strAIFileName           = "AI_Beholder.lua",
+        strInitFunc             = "InitBeholder",
+
+        iBaseLevel              = 46,
+
+        fExp                    = 2330,
+        fGP                     = 15.9,
+        fAttackPoint            = 1294.4,
+        fHPPoint                = 2740.0,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 55.1,
+        fIncHPPoint             = 66.4,
+
+        iNameID                 = 2439,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 100,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 120,
+        fAttackBoundBoxHeight   = 200,
+
+        fVolume                 = 200,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Beholder.p3m", "Tex_Beholder.dds", CARTOON_NORMAL },
+        },
+        
+		Sound =
+		{
+			447,500,
+		},
+    },    
+    
+    --MON_DETERIORATION_SKELETON
+    {
+        ID                      = 77,
+        strAIFileName           = "AI_Deterioration_Skeleton.lua",
+        strInitFunc             = "InitDeterioration_Skeleton",
+
+        iBaseLevel              = 47,
+
+        fExp                    = 2520,
+        fGP                     = 16.0,
+        fAttackPoint            = 1406.9,
+        fHPPoint                = 3425.0,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 59.9,
+        fIncHPPoint             = 1712.5,
+
+        iNameID                 = 2440,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 100,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 120,
+        fAttackBoundBoxHeight   = 200,
+
+        fVolume                 = 200,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Deterioration_Skeleton.p3m", "Tex_Deterioration_Skeleton.dds", CARTOON_NORMAL },
+        },
+	Sound =
+		{
+			350,430,431,432,434,
+		},
+    },    
+   
+    --MON_MOSSMON
+    {
+        ID                      = 78,
+        strAIFileName           = "AI_Mossmon.lua",
+        strInitFunc             = "InitMossmon",
+
+        iBaseLevel              = 47,
+
+        fExp                    = 2520,
+        fGP                     = 16.0,
+        fAttackPoint            = 1406.9,
+        fHPPoint                = 4110.0,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 59.9,
+        fIncHPPoint             = 2055.0,
+
+        iNameID                 = 2441,
+        fScale                  = 0.6,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.008,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 120,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 160,
+        fAttackBoundBoxHeight   = 200,
+
+        fVolume                 = 200,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Mossmon.p3m", "Tex_Mossmon.dds", CARTOON_NORMAL },
+        },
+        
+		Sound =
+		{
+			425,426,427,428,429,
+		},
+    },    
+    
+     --MON_LENASIEN
+    {
+        ID                      = 79,
+        strAIFileName           = "AI_Lenasien.lua",
+        strInitFunc             = "InitLenasien",
+
+        iBaseLevel              = 48,
+
+        fExp                    = 2790,
+        fGP                     = 16.1,
+        fAttackPoint            = 1688.3,
+        fHPPoint                = 17125,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 71.8,
+        fIncHPPoint             = 8562.5,
+
+        iNameID                 = 2442,
+        fScale                  = 0.8,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.007,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 120,
+        fHeight                 = 200,
+        fAttackBoundBoxWidth    = 160,
+        fAttackBoundBoxHeight   = 240,
+
+        fVolume                 = 200,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Lenasien.p3m", "Tex_Lenasien.dds", CARTOON_NORMAL },
+        },
+        
+	Sound =
+	{
+	   479,480,481,482,483,484,485,
+	},
+    },    
+    
+     --MON_OCTUS
+    {
+        ID                      = 80,
+        strAIFileName           = "AI_Octus.lua",
+        strInitFunc             = "InitOctus",
+
+        iBaseLevel              = 48,
+
+        fExp                    = 2790,
+        fGP                     = 16.1,
+        fAttackPoint            = 1969.7,
+        fHPPoint                = 20550.0,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 83.8,
+        fIncHPPoint             = 10275.0,
+
+        iNameID                 = 2443,
+        fScale                  = 0.8,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 180,
+        fHeight                 = 200,
+        fAttackBoundBoxWidth    = 220,
+        fAttackBoundBoxHeight   = 300,
+
+        fVolume                 = 300,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Octus.p3m", "Tex_Octus.dds", CARTOON_NORMAL },
+        },
+        
+		Sound =
+		{
+			474,475,476,477,478,
+		},
+    },    
+    
+    --MON_PATUSEI_HEAD
+    {
+        ID                      = 81,
+        strAIFileName           = "AI_Patusei_Head.lua",
+        strInitFunc             = "InitPatusei_Head",
+
+        iBaseLevel              = 33,
+
+        fExp                    = 387,
+        fGP                     = 7.7,
+        fAttackPoint            = 661.6,
+        fHPPoint                = 8860,
+
+        fIncExp                 = 77,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 37.5,
+        fIncHPPoint             = 4430,
+
+        iNameID                 = 2444,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.02,
+
+        fWidth                  = 100,
+        fHeight                 = 800,
+        fAttackBoundBoxWidth    = 220,
+        fAttackBoundBoxHeight   = 140,
+
+        fVolume                 = NO_CULLING,
+
+        Mesh = 
+        {
+            { "Model_Patusei_Head.p3m", "Tex_Patusei_Head.dds", CARTOON_NORMAL },
+        },
+	Mesh_Dead = 
+        {
+            { "Model_Patusei_Head_Dead.p3m", "Tex_Patusei_Head.dds", CARTOON_NORMAL },
+        },
+    },
+    
+    --MON_BLACKGORGOS
+    {
+        ID                      = 82,
+        strAIFileName           = "AI_BlackGorgos.lua",
+        strInitFunc             = "InitBlackGorgos",
+
+        iBaseLevel              = 40,
+
+        fExp                    = 1549,
+        fGP                     = 15.3,
+        fAttackPoint            = 985.6,
+        fHPPoint                = 4186.5,
+
+        fIncExp                 = 193,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 45.5,
+        fIncHPPoint             = 2093.3,
+
+        iNameID                 = 2445,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 140,
+        fHeight                 = 190,
+        fAttackBoundBoxWidth    = 160,
+        fAttackBoundBoxHeight   = 200,
+
+        fVolume                 = 200,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Gorgos.p3m", "Tex_BlackGorgos.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            27, 47, 129, 151, 165,
+        },
+    },
+    
+    --MON_BLACKTROLL
+    {
+        ID                      = 83,
+        strAIFileName           = "AI_BlackTroll.lua",
+        strInitFunc             = "InitBlackTroll",
+
+        iBaseLevel              = 40,
+
+        fExp                    = 1549,
+        fGP                     = 15.3,
+        fAttackPoint            = 985.6,
+        fHPPoint                = 4186.5,
+
+        fIncExp                 = 193,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 45.5,
+        fIncHPPoint             = 2093.3,
+
+        iNameID                 = 2446,
+        fScale                  = 0.35,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.024,
+
+        fWidth                  = 160,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 180,
+        fAttackBoundBoxHeight   = 220,
+
+        fVolume                 = 220,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Troll.p3m", "Tex_BlackTroll.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            27, 47, 129,
+        },
+    },
+
+    
+    --MON_PATUSEI_BODY
+    {
+        ID                      = 84,
+        strAIFileName           = "AI_Patusei_Body.lua",
+        strInitFunc             = "InitPatusei_Body",
+
+        iBaseLevel              = 33,
+
+        fExp                    = 387,
+        fGP                     = 14.3,
+        fAttackPoint            = 661.6,
+        fHPPoint                = 4430,
+
+        fIncExp                 = 77,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 37.5,
+        fIncHPPoint             = 2215,
+
+        iNameID                 = 2444,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.02,
+
+        fWidth                  = 110,
+        fHeight                 = 1000,
+        fAttackBoundBoxWidth    = 400,
+        fAttackBoundBoxHeight   = 150,
+
+        fVolume                 = NO_CULLING,
+
+        Mesh = 
+        {
+            { "Model_Patusei_Body.p3m", "Tex_Patusei_Body.dds", CARTOON_NORMAL },
+        },
+		Mesh_Dead = 
+        {
+            { "Model_Patusei_Body_Dead.p3m", "Tex_Patusei_Body.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+        },
+    },
+    
+    --MON_PATUSEI_LEG
+    {
+        ID                      = 85,
+        strAIFileName           = "AI_Patusei_Leg.lua",
+        strInitFunc             = "InitPatusei_Leg",
+
+        iBaseLevel              = 33,
+
+        fExp                    = 387,
+        fGP                     = 14.3,
+        fAttackPoint            = 661.6,
+        fHPPoint                = 4430,
+
+        fIncExp                 = 77,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 37.5,
+        fIncHPPoint             = 2215,
+
+        iNameID                 = 2444,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.02,
+
+        fWidth                  = 120,
+        fHeight                 = 1600,
+        fAttackBoundBoxWidth    = 450,
+        fAttackBoundBoxHeight   = 300,
+
+        fVolume                 = NO_CULLING,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Patusei_Leg.p3m", "Tex_Patusei_Leg.dds", CARTOON_NORMAL },
+        },
+
+		Mesh_Dead = 
+        {
+            { "Model_Patusei_Leg_Dead.p3m", "Tex_Patusei_Leg.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+        },
+    },
+    
+     --MON_PLANTSMALL
+    {
+        ID                      = 86,
+        strAIFileName           = "AI_Plantsmall.lua",
+        strInitFunc             = "InitPlantsmall",
+
+        iBaseLevel              = 46,
+
+        fExp                    = 2130,
+        fGP                     = 0.5,
+        fAttackPoint            = 1013.0,
+        fHPPoint                = 1370.0,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 43.1,
+        fIncHPPoint             = 33.2,
+
+        iNameID                 = 2447,
+        fScale                  = 0.55,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.01,
+
+        fWidth                  = 60,
+        fHeight                 = 80,
+        fAttackBoundBoxWidth    = 70,
+        fAttackBoundBoxHeight   = 100,
+
+        fVolume                 = 100,
+
+        Mesh = 
+        {
+            { "Model_Plantsmall.p3m", "Tex_Plantsmall.dds", CARTOON_NORMAL },
+        },
+    },
+    
+    --MON_PARAMINIMI02
+    {
+        ID                      = 87,
+        strAIFileName           = "AI_Paraminimi.lua",
+        strInitFunc             = "InitParaminimi",
+
+        iBaseLevel              = 42,
+
+        fExp                    = 1931,
+        fGP                     = 15.1,
+        fAttackPoint            = 812.6,
+        fHPPoint                = 1855.8,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.3,
+        fIncAttackPoint         = 38.8,
+        fIncHPPoint             = 49.8,
+
+        iNameID                 = 2356,
+
+        fScale                  = 0.3,
+
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.02,
+        fRunSpeed               = 0.02,
+
+        fWidth                  = 100,
+        fHeight                 = 140,
+        fAttackBoundBoxWidth    = 110,
+        fAttackBoundBoxHeight   = 160,
+
+        fVolume                 = 160,
+
+        Mesh = 
+        {
+            { "Model_Paradom.p3m", "Tex_Paradom.dds", CARTOON_NORMAL },
+        },
+        Sound =
+        {
+            102, 502,
+        },
+    },
+    
+---------------------- 몬스터 원정대 ------------------------------------------------    
+---------------------- 몬스터 원정대 ------------------------------------------------    
+---------------------- 몬스터 원정대 ------------------------------------------------    
+---------------------- 몬스터 원정대 ------------------------------------------------    
+
+    --MON_VS_ENT
+    {
+        ID                      = 88,
+        strAIFileName           = "AI_Ent.lua",
+        strInitFunc             = "InitEnt",
+
+        iBaseLevel              = 4,
+
+        fExp                    = 4,
+        fGP                     = 1.4,
+        fAttackPoint            = 20,
+        fHPPoint                = 23,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 4.1,
+        fIncHPPoint             = 81,
+
+        iNameID                 = 2317,
+        fScale                  = 0.55,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.010,
+
+        fWidth                  = 140,
+        fHeight                 = 240,
+        fAttackBoundBoxWidth    = 150,
+        fAttackBoundBoxHeight   = 280,
+
+        fVolume                 = 280,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Ent.p3m", "Tex_Ent.dds", CARTOON_NORMAL },
+        },
+	Sound =
+	{
+	   209,210,211,212,
+	},
+    },
+    --MON_VS_WENDY
+    {
+        ID                      = 89,
+        strAIFileName           = "AI_Wendy.lua",
+        strInitFunc             = "InitWendy",
+
+        iBaseLevel              = 8,
+
+        fExp                    = 5,
+        fGP                     = 1.9,
+        fAttackPoint            = 20,
+        fHPPoint                = 30,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 15,
+        fIncHPPoint             = 108,
+
+        iNameID                 = 2321,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 120,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 130,
+        fAttackBoundBoxHeight   = 210,
+
+        fVolume                 = 210,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Wendy.p3m", "Tex_Wendy.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            47,236,237,
+        },
+    },
+    
+    --MON_VS_KNIGHTORCBOSS
+    {
+        ID                      = 90,
+        strAIFileName           = "AI_KnightOrcBoss.lua",
+        strInitFunc             = "InitKnightOrcBoss",
+
+        iBaseLevel              = 10,
+
+        fExp                    = 6,
+        fGP                     = 2.2,
+        fAttackPoint            = 20,
+        fHPPoint                = 37,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.3,
+        fIncAttackPoint         = 15,
+        fIncHPPoint             = 135,
+
+        iNameID                 = 2340,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 140,
+        fHeight                 = 200,
+        fAttackBoundBoxWidth    = 160,
+        fAttackBoundBoxHeight   = 220,
+
+        fVolume                 = 220,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_OrcLord.p3m", "Tex_KnightOrc.dds", CARTOON_NIGHT_ORC },
+            { "Model_KnightOrcWarrior_Head.p3m", "Tex_KnightOrcWarrior_Head.dds", CARTOON_NORMAL },
+            { "Model_KnightOrcWarrior_Parts.p3m", "Tex_KnightOrcWarrior_Parts.dds", CARTOON_NORMAL },
+            { "Model_KnightOrcWarrior_Weapon.p3m", "Tex_KnightOrcWarrior_Weapon.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            47,
+        },
+    },
+    
+    --MON_VS_HARPYQUEEN
+    {
+        ID                      = 91,
+        strAIFileName           = "AI_HarpyQueen.lua",
+        strInitFunc             = "InitHarpyQueen",
+
+        iBaseLevel              = 13,
+
+        fExp                    = 9,
+        fGP                     = 3.4,
+        fAttackPoint            = 20,
+        fHPPoint                = 37,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.5,
+        fIncAttackPoint         = 14,
+        fIncHPPoint             = 135,
+
+        iNameID                 = 2343,
+        fScale                  = 0.6,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.010,
+        fRunSpeed               = 0.010,
+
+        fWidth                  = 90,
+        fHeight                 = 200,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 220,
+
+        fVolume                 = 220,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_HarpyQueen.p3m", "Tex_HarpyQueen.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            47, 53,
+        },
+    },
+    
+    --MON_VS_ORCLORD_BOSS
+    {
+        ID                      = 92,
+        strAIFileName           = "AI_OrcLordBoss.lua",
+        strInitFunc             = "InitOrcLordBoss",
+
+        iBaseLevel              = 15,
+
+        fExp                    = 11,
+        fGP                     = 4.5,
+        fAttackPoint            = 30,
+        fHPPoint                = 45,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.3,
+        fIncAttackPoint         = 24.2,
+        fIncHPPoint             = 162,
+
+        iNameID                 = 2346,
+        fScale                  = 0.55,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.007,
+        fRunSpeed               = 0.014,
+
+        fWidth                  = 160,
+        fHeight                 = 200,
+        fAttackBoundBoxWidth    = 180,
+        fAttackBoundBoxHeight   = 240,
+
+        fVolume                 = 240,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_OrcLord.p3m", "Tex_OrcLord_body.dds", CARTOON_NIGHT_ORC },
+            { "Model_OrcLord_head.p3m", "Tex_OrcLord_head.dds", CARTOON_NORMAL },
+            { "Model_OrcLord_parts.p3m", "Tex_OrcLord_parts.dds", CARTOON_NORMAL },
+            { "Model_OrcLord_weapon.p3m", "Tex_OrcLord_weapon.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            47,
+        },
+    },
+    
+    --MON_VS_REDGORGOS
+    {
+        ID                      = 93,
+        strAIFileName           = "AI_RedGorgos.lua",
+        strInitFunc             = "InitRedGorgos",
+
+        iBaseLevel              = 17,
+
+        fExp                    = 14,
+        fGP                     = 3.9,
+        fAttackPoint            = 30,
+        fHPPoint                = 45,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.4,
+        fIncAttackPoint         = 31.2,
+        fIncHPPoint             = 162,
+
+        iNameID                 = 2324,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 140,
+        fHeight                 = 190,
+        fAttackBoundBoxWidth    = 160,
+        fAttackBoundBoxHeight   = 200,
+
+        fVolume                 = 200,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Gorgos.p3m", "Tex_RedGorgos.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            27, 47, 129, 151, 165,
+        },
+    },
+    
+    --MON_VS_TROLL
+    {
+        ID                      = 94,
+        strAIFileName           = "AI_Troll.lua",
+        strInitFunc             = "InitTroll",
+
+        iBaseLevel              = 19,
+
+        fExp                    = 18,
+        fGP                     = 6.1,
+        fAttackPoint            = 30,
+        fHPPoint                = 45,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.3,
+        fIncAttackPoint         = 33.4,
+        fIncHPPoint             = 162,
+
+        iNameID                 = 2349,
+        fScale                  = 0.35,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.024,
+
+        fWidth                  = 160,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 180,
+        fAttackBoundBoxHeight   = 220,
+
+        fVolume                 = 220,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Troll.p3m", "Tex_Troll.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            27, 47, 129,
+        },
+    },
+    
+     --MON_VS_GIANTDRILLMON
+    {
+        ID                      = 95,
+        strAIFileName           = "AI_GiantDrillmon.lua",
+        strInitFunc             = "InitGiantDrillmon",
+
+        iBaseLevel              = 21,
+
+        fExp                    = 20,
+        fGP                     = 6.8,
+        fAttackPoint            = 30,
+        fHPPoint                = 52,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.3,
+        fIncAttackPoint         = 33.4,
+        fIncHPPoint             = 162,
+
+        iNameID                 = 2351,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 110,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 140,
+        fAttackBoundBoxHeight   = 210,
+
+        fVolume                 = 210,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_GiantDrillmon.p3m", "Tex_GiantDrillmon.dds", CARTOON_NORMAL },
+        },
+        
+		Sound =
+		{
+			98, 99, 100,
+		},
+    },
+    
+    --MON_VS_ELIZABETH
+    {
+        ID                      = 96,
+        strAIFileName           = "AI_Elizabeth.lua",
+        strInitFunc             = "InitElizabeth",
+
+        iBaseLevel              = 23,
+
+        fExp                    = 21,
+        fGP                     = 7.8,
+        fAttackPoint            = 30,
+        fHPPoint                = 52,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.3,
+        fIncAttackPoint         = 37.7,
+        fIncHPPoint             = 189,
+
+        iNameID                 = 2352,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.009,
+        fRunSpeed               = 0.016,
+
+        fWidth                  = 120,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 160,
+        fAttackBoundBoxHeight   = 240,
+
+        fVolume                 = 240,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Elizabeth.p3m", "Tex_Elizabeth.dds", CARTOON_NORMAL },
+            { "Model_Elizabeth_Weapon.p3m", "Tex_Elizabeth_Weapon.dds", CARTOON_NORMAL },
+        },
+	Sound =
+	{
+		47, 244,
+	},
+    },
+    
+    --MON_VS_LICH_BOSS
+    {
+        ID                      = 97,
+        strAIFileName           = "AI_LichBoss.lua",
+        strInitFunc             = "InitLichBoss",
+
+        iBaseLevel              = 25,
+
+        fExp                    = 24,
+        fGP                     = 8.6,
+        fAttackPoint            = 30,
+        fHPPoint                = 52,
+
+        fIncExp                 = 15,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 39.8,
+        fIncHPPoint             = 189,
+
+        iNameID                 = 2355,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 100,
+        fHeight                 = 200,
+        fAttackBoundBoxWidth    = 120,
+        fAttackBoundBoxHeight   = 240,
+
+        fVolume                 = 240,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+			{ "Model_Lich.p3m", "Tex_Lich.dds", CARTOON_NORMAL },
+            { "Model_Lich_Weapon.p3m", "Tex_Lich_Weapon.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            41,343,351,
+        },
+    },
+    
+    --MON_VS_PARADOM_BOSS
+    {
+        ID                      = 98,
+        strAIFileName           = "AI_ParadomBoss.lua",
+        strInitFunc             = "InitParadomBoss",
+
+        iBaseLevel              = 27,
+
+        fExp                    = 58,
+        fGP                     = 94,
+        fAttackPoint            = 30,
+        fHPPoint                = 52,
+
+        fIncExp                 = 35,
+        fIncGP                  = 1.0,
+        fIncAttackPoint         = 42,
+        fIncHPPoint             = 189,
+
+        iNameID                 = 2357,
+
+        fScale                  = 0.7,
+
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.01,
+
+        fWidth                  = 240,
+        fHeight                 = 220,
+        fAttackBoundBoxWidth    = 220,
+        fAttackBoundBoxHeight   = 220,
+
+        fVolume                 = NO_CULLING,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Paradom.p3m", "Tex_Paradom.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            500,490,336,102,
+        },
+    },
+    
+    --MON_VS_GAIKOZ
+    {
+        ID                      = 99,
+        strAIFileName           = "AI_Gaikoz.lua",
+        strInitFunc             = "InitGaikoz",
+
+        iBaseLevel              = 29,
+
+        fExp                    = 146,
+        fGP                     = 12.1,
+        fAttackPoint            = 30,
+        fHPPoint                = 60,
+
+        fIncExp                 = 24,
+        fIncGP                  = 0.9,
+        fIncAttackPoint         = 44.1,
+        fIncHPPoint             = 216,
+
+        iNameID                 = 2336,
+        fScale                  = 0.45,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 100,
+        fHeight                 = 180,
+        fAttackBoundBoxWidth    = 120,
+        fAttackBoundBoxHeight   = 200,
+
+        fVolume                 = 200,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Gaikoz.p3m", "Tex_Gaikoz.dds", CARTOON_NORMAL },
+        },
+	Sound =
+        {
+            171,244,247,472,537,539,
+        },
+    },    
+    
+    --MON_VS_PATUSEI_HEAD
+    {
+        ID                      = 100,
+        strAIFileName           = "AI_Patusei_Head.lua",
+        strInitFunc             = "InitPatusei_Head",
+
+        iBaseLevel              = 33,
+
+        fExp                    = 387,
+        fGP                     = 7.7,
+        fAttackPoint            = 30,
+        fHPPoint                = 60,
+
+        fIncExp                 = 77,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 32.3,
+        fIncHPPoint             = 216,
+
+        iNameID                 = 2444,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.02,
+
+        fWidth                  = 100,
+        fHeight                 = 800,
+        fAttackBoundBoxWidth    = 220,
+        fAttackBoundBoxHeight   = 140,
+
+        fVolume                 = NO_CULLING,
+
+        Mesh = 
+        {
+            { "Model_Patusei_Head.p3m", "Tex_Patusei_Head.dds", CARTOON_NORMAL },
+        },
+		Mesh_Dead = 
+        {
+            { "Model_Patusei_Head_Dead.p3m", "Tex_Patusei_Head.dds", CARTOON_NORMAL },
+        },
+    },
+    
+    --MON_VS_PATUSEI_BODY
+    {
+        ID                      = 101,
+        strAIFileName           = "AI_Patusei_Body.lua",
+        strInitFunc             = "InitPatusei_Body",
+
+        iBaseLevel              = 33,
+
+        fExp                    = 387,
+        fGP                     = 14.3,
+        fAttackPoint            = 30,
+        fHPPoint                = 30,
+
+        fIncExp                 = 77,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 32.3,
+        fIncHPPoint             = 108,
+
+        iNameID                 = 2444,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.02,
+
+        fWidth                  = 110,
+        fHeight                 = 1000,
+        fAttackBoundBoxWidth    = 400,
+        fAttackBoundBoxHeight   = 150,
+
+        fVolume                 = NO_CULLING,
+
+        Mesh = 
+        {
+            { "Model_Patusei_Body.p3m", "Tex_Patusei_Body.dds", CARTOON_NORMAL },
+        },
+        
+		Mesh_Dead = 
+        {
+            { "Model_Patusei_Body_Dead.p3m", "Tex_Patusei_Body.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+        },
+    },
+    
+    --MON_VS_PATUSEI_LEG
+    {
+        ID                      = 102,
+        strAIFileName           = "AI_Patusei_Leg.lua",
+        strInitFunc             = "InitPatusei_Leg",
+
+        iBaseLevel              = 33,
+
+        fExp                    = 387,
+        fGP                     = 14.3,
+        fAttackPoint            = 30,
+        fHPPoint                = 30,
+
+        fIncExp                 = 77,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 32.3,
+        fIncHPPoint             = 108,
+
+        iNameID                 = 2444,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.02,
+
+        fWidth                  = 120,
+        fHeight                 = 1600,
+        fAttackBoundBoxWidth    = 450,
+        fAttackBoundBoxHeight   = 300,
+
+        fVolume                 = NO_CULLING,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Patusei_Leg.p3m", "Tex_Patusei_Leg.dds", CARTOON_NORMAL },
+        },
+
+		Mesh_Dead = 
+        {
+            { "Model_Patusei_Leg_Dead.p3m", "Tex_Patusei_Leg.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+        },
+    },
+    
+    --MON_VS_KAMIKI
+    {
+        ID                      = 103,
+        strAIFileName           = "AI_Kamiki.lua",
+        strInitFunc             = "InitKamiki",
+
+        iBaseLevel              = 35,
+
+        fExp                    = 774,
+        fGP                     = 14.6,
+        fAttackPoint            = 30,
+        fHPPoint                = 45,
+
+        fIncExp                 = 145,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 50.6,
+        fIncHPPoint             = 162,
+
+        iNameID                 = 2335,
+        fScale                  = 0.56,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.020,
+
+        fWidth                  = 120,
+        fHeight                 = 170,
+        fAttackBoundBoxWidth    = 150,
+        fAttackBoundBoxHeight   = 190,
+
+        fVolume                 = 190,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Kamiki.p3m", "Tex_Kamiki.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            2, 3, 486,
+        },
+    },
+    
+    --MON_VS_BASILISK
+    {
+        ID                      = 104,
+        strAIFileName           = "AI_Basilisk.lua",
+        strInitFunc             = "InitBasilisk",
+
+        iBaseLevel              = 37,
+
+        fExp                    = 1065,
+        fGP                     = 14.8,
+        fAttackPoint            = 30,
+        fHPPoint                = 60,
+
+        fIncExp                 = 145,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 52.7,
+        fIncHPPoint             = 216,
+
+        iNameID                 = 2365,
+
+        fScale                  = 0.48,
+
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.00,
+        fRunSpeed               = 0.00,
+
+        fWidth                  = 0,
+        fHeight                 = 0,
+        fAttackBoundBoxWidth    = 200,
+        fAttackBoundBoxHeight   = 180,
+
+        fVolume                 = NO_CULLING,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Basilisk.p3m", "Tex_Basilisk.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+		153, 154, 155, 156,
+        },
+    },
+    
+    --MON_VS_GADOSEN
+    {
+        ID                      = 105,
+        strAIFileName           = "AI_Gadosen.lua",
+        strInitFunc             = "InitGadosen",
+
+        iBaseLevel              = 39,
+
+        fExp                    = 1356,
+        fGP                     = 15.1,
+        fAttackPoint            = 30,
+        fHPPoint                = 60,
+
+        fIncExp                 = 193,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 54.9,
+        fIncHPPoint             = 216,
+
+        iNameID                 = 2366,
+
+        fScale                  = 0.20,
+
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.01,
+
+        fWidth                  = 90,
+        fHeight                 = 260,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 320,
+
+        fVolume                 = 320,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Gadosen.p3m", "Tex_Gadosen.dds", CARTOON_NORMAL },
+        },
+
+        Sound =
+        {
+            43, 147, 148, 149, 152,
+        },
+    },
+    
+    --MON_VS_KAZEAZE2
+    {
+        ID                      = 106,
+        strAIFileName           = "AI_Kazeaze2.lua",
+        strInitFunc             = "InitKazeaze2",
+
+        iBaseLevel              = 41,
+
+        fExp                    = 1740,
+        fGP                     = 15.4,
+        fAttackPoint            = 30,
+        fHPPoint                = 75,
+
+        fIncExp                 = 191,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 57.1,
+        fIncHPPoint             = 270,
+
+        iNameID                 = 2338,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.018,
+
+        fWidth                  = 350,
+        fHeight                 = 250,
+        fAttackBoundBoxWidth    = 350,
+        fAttackBoundBoxHeight   = 250,
+
+        fVolume                 = 350,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Kazeaze2.p3m", "Tex_Kazeaze2.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            46,175,249,
+        },
+    },
+    
+    --MON_VS_CYCLOPS
+    {
+        ID                      = 107,
+        strAIFileName           = "AI_Cyclops.lua",
+        strInitFunc             = "InitCyclops",
+
+        iBaseLevel              = 42,
+
+        fExp                    = 1930,
+        fGP                     = 15.5,
+        fAttackPoint            = 30,
+        fHPPoint                = 75,
+
+        fIncExp                 = 209,
+        fIncGP                  = 0.2,
+        fIncAttackPoint         = 59.2,
+        fIncHPPoint             = 270,
+
+        iNameID                 = 2339,
+        fScale                  = 0.36,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.018,
+
+        fWidth                  = 200,
+        fHeight                 = 280,
+        fAttackBoundBoxWidth    = 200,
+        fAttackBoundBoxHeight   = 320,
+
+        fVolume                 = 320,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Cyclops.p3m", "Tex_Cyclops.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            47, 129, 244,
+        },
+    },
+    
+    --MON_VS_GIANTSTONEGOLEM
+    {
+        ID                      = 108,
+        strAIFileName           = "AI_GiantStoneGolem.lua",
+        strInitFunc             = "InitGiantStoneGolem",
+
+        iBaseLevel              = 43,
+
+        fExp                    = 2139,
+        fGP                     = 15.7,
+        fAttackPoint            = 30,
+        fHPPoint                = 75,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 60.3,
+        fIncHPPoint             = 270,
+
+        iNameID                 = 2367,
+        fScale                  = 0.5,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.010,
+
+        fWidth                  = 200,
+        fHeight                 = 280,
+        fAttackBoundBoxWidth    = 200,
+        fAttackBoundBoxHeight   = 320,
+
+        fVolume                 = 320,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_StoneGolem.p3m", "Tex_StoneGolem.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+            244,281,282,283,
+        },
+    },
+    
+    --MON_VS_DARKAMON
+    {
+        ID                      = 109,
+        strAIFileName           = "AI_DarkAmon.lua",
+        strInitFunc             = "InitDarkAmon",
+
+        iBaseLevel              = 44,
+
+        fExp                    = 2330,
+        fGP                     = 15.9,
+        fAttackPoint            = 30,
+        fHPPoint                = 75,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 61.4,
+        fIncHPPoint             = 270,
+
+        iNameID                 = 2436,
+        fScale                  = 0.9,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.02,
+
+        fWidth                  = 160,
+        fHeight                 = 240,
+        fAttackBoundBoxWidth    = 180,
+        fAttackBoundBoxHeight   = 280,
+
+        fVolume                 = 280,
+
+        Mesh = 
+        {
+            { "Model_DarkAmon.p3m", "Tex_DarkAmon.dds", CARTOON_NORMAL },
+        },
+        
+        Sound =
+        {
+		367,368,369,370,371,
+        },
+    },
+    
+    --MON_VS_LENASIEN
+    {
+        ID                      = 110,
+        strAIFileName           = "AI_Lenasien.lua",
+        strInitFunc             = "InitLenasien",
+
+        iBaseLevel              = 46,
+
+        fExp                    = 2790,
+        fGP                     = 16.1,
+        fAttackPoint            = 30,
+        fHPPoint                = 67,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 56.9,
+        fIncHPPoint             = 243,
+
+        iNameID                 = 2442,
+        fScale                  = 0.8,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.007,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 120,
+        fHeight                 = 200,
+        fAttackBoundBoxWidth    = 160,
+        fAttackBoundBoxHeight   = 240,
+
+        fVolume                 = 200,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Lenasien.p3m", "Tex_Lenasien.dds", CARTOON_NORMAL },
+        },
+	Sound =
+	{
+	   479,480,481,482,483,484,485,
+	},
+    },    
+    
+    --MON_VS_OCTUS
+    {
+        ID                      = 111,
+        strAIFileName           = "AI_Octus.lua",
+        strInitFunc             = "InitOctus",
+
+        iBaseLevel              = 46,
+
+        fExp                    = 2790,
+        fGP                     = 16.1,
+        fAttackPoint            = 30,
+        fHPPoint                = 75,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 68.2,
+        fIncHPPoint             = 270,
+
+        iNameID                 = 2443,
+        fScale                  = 0.8,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 180,
+        fHeight                 = 200,
+        fAttackBoundBoxWidth    = 220,
+        fAttackBoundBoxHeight   = 300,
+
+        fVolume                 = 300,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Octus.p3m", "Tex_Octus.dds", CARTOON_NORMAL },
+        },
+        
+		Sound =
+		{
+			474,475,476,477,478,
+		},
+    }, 
+    --Fanatic_BombMan
+    {   
+        ID                      = MON_FANATIC_BOMBMAN,
+        strAIFileName           = "AI_Fanatic_BombMan.lua",
+        strInitFunc             = "InitFanatic_BombMan",
+
+        iBaseLevel              = 48,
+
+        fExp                    = 3112,
+        fGP                     = 164,
+        fAttackPoint            = 1526.6,
+        fHPPoint                = 1795.5,
+
+        fIncExp                 = 189,
+        fIncGP                  = 2,
+        fIncAttackPoint         = 62.3,
+        fIncHPPoint             = 41.5,
+
+        iNameID                 = 2884,
+        fScale                  = 0.4,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 90,
+        fHeight                 = 100,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 110,
+
+        fVolume                 = 55,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Fanatic_BombMan.p3m", "Tex_Fanatic_BombMan.dds", CARTOON_NORMAL },
+	    { "Model_Bomb.p3m", "Tex_Fanatic_BombMan_weapon.dds", CARTOON_NORMAL },
+        },
+        
+	    Sound =
+	    {
+		    474,475,476,477,478,583,584,585
+	    },
+    }, 
+    --AI_Fanatic_ShieldMan
+    {   
+        ID                      = MON_FANATIC_SHIELDMAN,
+        strAIFileName           = "AI_Fanatic_ShieldMan.lua",
+        strInitFunc             = "InitFanatic_ShieldMan",
+
+        iBaseLevel              = 48,
+
+        fExp                    = 3112,
+        fGP                     = 164,
+        fAttackPoint            = 1404.5,
+        fHPPoint                = 3231.9,
+
+        fIncExp                 = 189,
+        fIncGP                  = 2,
+        fIncAttackPoint         = 57.3,
+        fIncHPPoint             = 74.7,
+
+        iNameID                 = 2885,
+        fScale                  = 0.60,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.0075,
+        fRunSpeed               = 0.0075,
+
+        fWidth                  = 95,
+        fHeight                 = 150,
+        fAttackBoundBoxWidth    = 110,
+        fAttackBoundBoxHeight   = 180,
+
+        fVolume                 = 85,
+
+        eNameSize               = NORMAL_SIZE,
+        bArrowDefence           = 1,
+
+        Mesh = 
+        {
+            { "Model_Fanatic_ShieldMan.p3m", "Tex_Fanatic_Shieldman.dds", CARTOON_NORMAL },
+            { "Model_Fanatic_ShieldMan_Weapon.p3m", "Tex_Fanatic_shield_weapon.dds", CARTOON_NORMAL },
+        },
+
+		Sound =
+		{
+			577,578,579,580,581,582		
+		},
+    },
+    --AI_Fanatic_priest
+    {   
+        ID                      = MON_FANATIC_PRIEST,
+        strAIFileName           = "AI_Fanatic_Priest.lua",
+        strInitFunc             = "InitFanatic_Priest",
+
+        iBaseLevel              = 48,
+
+        fExp                    = 3112,
+        fGP                     = 164,
+        fAttackPoint            = 1221.3,
+        fHPPoint                = 2872.8,
+
+        fIncExp                 = 189,
+        fIncGP                  = 2,
+        fIncAttackPoint         = 49.8,
+        fIncHPPoint             = 66.4,
+
+        fIncExp                 = 1,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 0.5,
+        fIncHPPoint             = 16.2,
+
+        iNameID                 = 2886,
+        fScale                  = 0.55,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 90,
+        fHeight                 = 170,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 190,
+
+        fVolume                 = 55,
+
+        eNameSize               = NORMAL_SIZE,        
+
+        Mesh = 
+        {
+            { "Model_Fanatic_Priest.p3m", "Tex_Fanatic_Priest.dds", CARTOON_NORMAL },
+        },
+
+		Sound =
+		{
+			586,587,588,
+		},
+    }, 
+    --AI_SpineMon
+    {   
+        ID                      = MON_SPINEMON,
+        strAIFileName           = "AI_Spinemon.lua",
+        strInitFunc             = "InitSpinemon",
+
+        iBaseLevel              = 48,
+
+        fExp                    = 3112,
+        fGP                     = 164,
+        fAttackPoint            = 1404.5,
+        fHPPoint                = 2513.7,
+
+        fIncExp                 = 189,
+        fIncGP                  = 2,
+        fIncAttackPoint         = 57.3,
+        fIncHPPoint             = 58.1,
+
+        iNameID                 = 2887,
+        fScale                  = 0.4,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.005,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 90,
+        fHeight                 = 100,
+        fAttackBoundBoxWidth    = 100,
+        fAttackBoundBoxHeight   = 110,
+
+        fVolume                 = 55,
+
+        eNameSize               = NORMAL_SIZE,
+        
+        Mesh = 
+        {
+            { "Model_SpineMon.p3m", "Tex_SpineMon.dds", CARTOON_NORMAL },
+        },
+
+		Sound =
+		{
+		    425,429,
+		},
+    }, 
+    --AI_Vanesa
+    {   
+        ID                      = 116,
+        strAIFileName           = "AI_Vanesa.lua",
+        strInitFunc             = "InitVanesa",
+
+        iBaseLevel              = 49,
+
+        fExp                    = 3301,
+        fGP                     = 166,
+        fAttackPoint            = 1588.3,
+        fHPPoint                = 16533.0,
+
+
+        fIncExp                 = 190,
+        fIncGP                  = 1,
+        fIncAttackPoint         = 63.4,
+        fIncHPPoint             = 8266.5,
+        iNameID                 = 2888,
+        fScale                  = 0.6,
+        
+	fWeight                 = 1.0,
+        fWalkSpeed              = 0.025,
+        fRunSpeed               = 0.025,
+
+        fWidth                  = 100,
+        fHeight                 = 160,
+        fAttackBoundBoxWidth    = 110,
+        fAttackBoundBoxHeight   = 210,
+
+        fVolume                 = 55,
+
+        eNameSize               = NORMAL_SIZE,
+        bArrowDefence           = 1,
+
+        Mesh = 
+        {
+            { "Model_Vanesa_Head.p3m", "Tex_Vanesa_Head.dds", CARTOON_NORMAL },
+            { "Model_Vanesa_Body_Up.p3m", "Tex_Vanesa_Body_up.dds", CARTOON_NORMAL },
+            { "Model_Vanesa_Body_Down.p3m", "Tex_Vanesa_Body_Down.dds", CARTOON_NORMAL },
+            { "Model_Vanesa_Hand.p3m", "Tex_Vanesa_Hand.dds", CARTOON_NORMAL },
+            { "Model_Vanesa_Foot.p3m", "Tex_Vanesa_Foot.dds", CARTOON_NORMAL },
+	    { "Model_Vanesa_Crescent.p3m", "Tex_Vanesa_Crescent.dds", CARTOON_NORMAL },
+        },
+
+		Sound =
+		{
+		     247, 424, 602, 603, 604, 605, 606, 607	
+		},
+    }, 
+    --AI_Vanesa_Wolf
+    {   
+        ID                      = 117,
+        strAIFileName           = "AI_Vanesa_Wolf.lua",
+        strInitFunc             = "InitVanesa_Wolf",
+
+        iBaseLevel              = 49,
+
+        fExp                    = 3301,
+        fGP                     = 166,
+        fAttackPoint            = 1588.3,
+        fHPPoint                = 16533.0,
+
+
+        fIncExp                 = 190,
+        fIncGP                  = 1,
+        fIncAttackPoint         = 63.4,
+        fIncHPPoint             = 8266.5,
+
+        iNameID                 = 2888,
+        fScale                  = 0.6,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.015,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 100,
+        fHeight                 = 160,
+        fAttackBoundBoxWidth    = 110,
+        fAttackBoundBoxHeight   = 210,
+
+        fVolume                 = 80,
+
+        eNameSize               = NORMAL_SIZE,
+        bArrowDefence           = 1,
+
+        Mesh = 
+        {
+            { "Model_Vanesa_Wolf.p3m", "Tex_Vanesa_Wolf.dds", CARTOON_NORMAL },
+	    { "Model_Wolf_Mask.p3m", "Tex_Wolf_Mask.dds", CARTOON_NORMAL },	
+        },
+
+		Sound =
+		{
+			262,247
+		},
+    }, 
+    --AI_GodOfCirculation.lua
+    {   
+        ID                      = 118,
+        strAIFileName           = "AI_GodOfCirculation.lua",
+        strInitFunc             = "InitGodOfCirculation",
+
+        iBaseLevel              = 49,
+
+        fExp                    = 3301,
+        fGP                     = 166,
+        fAttackPoint            = 2223.6,
+        fHPPoint                = 29392.0,
+
+        fIncExp                 = 190,
+        fIncGP                  = 1,
+        fIncAttackPoint         = 88.8,
+        fIncHPPoint             = 14696.0,
+
+        iNameID                 = 2889,
+        fScale                  = 0.58,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.006,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 300,
+        fHeight                 = 1200,
+        fAttackBoundBoxWidth    = 400,
+        fAttackBoundBoxHeight   = 1200,
+
+        fVolume                 = 1000,
+
+        eNameSize               = NORMAL_SIZE,
+        bArrowDefence           = 1,
+
+        Mesh = 
+        {
+            { "Model_GodOfCirculation_body.p3m", "Tex_GodOfCirculation_body.dds", CARTOON_NORMAL },
+            { "Model_GodOfCirculation_mask.p3m", "Tex_GodOfCirculation_mask.dds", CARTOON_NORMAL },
+            { "Model_GodOfCirculation_back.p3m", "Tex_GodOfCirculation_back.dds", CARTOON_NORMAL },
+            { "Model_GodOfCirculation_wing.p3m", "Tex_GodOfCirculation_wing.dds", CARTOON_NORMAL },
+        },
+
+		Sound =
+		{
+			589,590,591,592,593,594,595,596,597,598,599,600,601,
+		},
+    }, 
+     --MON_LENASIEN_BOSS
+    {
+        ID                      = 119,
+        strAIFileName           = "AI_LenasienBoss.lua",
+        strInitFunc             = "InitLenasienBoss",
+
+        iBaseLevel              = 48,
+
+        fExp                    = 2790,
+        fGP                     = 16.1,
+        fAttackPoint            = 1688.3,
+        fHPPoint                = 18837.5,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 71.8,
+        fIncHPPoint             = 9418.8,
+
+        iNameID                 = 2442,
+        fScale                  = 0.8,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.007,
+        fRunSpeed               = 0.012,
+
+        fWidth                  = 120,
+        fHeight                 = 200,
+        fAttackBoundBoxWidth    = 160,
+        fAttackBoundBoxHeight   = 240,
+
+        fVolume                 = 200,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Lenasien.p3m", "Tex_Lenasien.dds", CARTOON_NORMAL },
+        },
+        
+	Sound =
+	{
+	   479,480,481,482,483,484,485,
+	},
+    },    
+    
+     --MON_OCTUS_BOSS
+    {
+        ID                      = 120,
+        strAIFileName           = "AI_OctusBoss.lua",
+        strInitFunc             = "InitOctusBoss",
+
+        iBaseLevel              = 48,
+
+        fExp                    = 2790,
+        fGP                     = 16.1,
+        fAttackPoint            = 1969.7,
+        fHPPoint                = 22262.5,
+
+        fIncExp                 = 190,
+        fIncGP                  = 0.1,
+        fIncAttackPoint         = 83.8,
+        fIncHPPoint             = 11131.3,
+
+        iNameID                 = 2443,
+        fScale                  = 0.8,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.01,
+        fRunSpeed               = 0.015,
+
+        fWidth                  = 180,
+        fHeight                 = 200,
+        fAttackBoundBoxWidth    = 220,
+        fAttackBoundBoxHeight   = 300,
+
+        fVolume                 = 300,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "Model_Octus.p3m", "Tex_Octus.dds", CARTOON_NORMAL },
+        },
+        
+		Sound =
+		{
+			474,475,476,477,478,
+		},
+    },    
+    
+    --MON_AMY
+    {
+        ID                      = 121,
+        strAIFileName           = "AI_Amy.lua",
+        strInitFunc             = "InitAmy",
+
+        iBaseLevel              = 48,
+
+        fExp                    = 0,
+        fGP                     = 0,
+        fAttackPoint            = 1969.7,
+        fHPPoint                = 22262.5,
+
+        fIncExp                 = 0,
+        fIncGP                  = 0,
+        fIncAttackPoint         = 83.8,
+        fIncHPPoint             = 11131.3,
+
+        iNameID                 = 3087,
+        fScale                  = 0.38,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.015 * 1.4,
+        fRunSpeed               = 0.015 * 1.4,
+
+        fWidth                  = 18,
+        fHeight                 = 20,
+        fAttackBoundBoxWidth    = 0,
+        fAttackBoundBoxHeight   = 0,
+
+        fVolume                 = 30,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "abta8140.p3m", "abta8140.dds", CARTOON_NORMAL },
+            { "abta8141.p3m", "abta8141.dds", CARTOON_NORMAL },
+            { "abta8142.p3m", "abta8142.dds", CARTOON_NORMAL },
+            { "abta8143.p3m", "abta8143.dds", CARTOON_NORMAL },
+            { "abta8144.p3m", "abta8144.dds", CARTOON_NORMAL },
+            
+        },
+        
+		Sound =
+		{
+			682,683,690,691,717,720,722,
+		},
+    },    
+    --MON_RONAN
+    {
+        ID                      = 122,
+        strAIFileName           = "AI_Ronan.lua",
+        strInitFunc             = "InitRonan",
+
+        iBaseLevel              = 0,
+
+        fExp                    = 0,
+        fGP                     = 0,
+        fAttackPoint            = 1969.7,
+        fHPPoint                = 22262.5,
+
+        fIncExp                 = 0,
+        fIncGP                  = 0,
+        fIncAttackPoint         = 83.8,
+        fIncHPPoint             = 11131.3,
+
+        iNameID                 = 2294,
+        fScale                  = 0.38,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.015 * 1.4,
+        fRunSpeed               = 0.015 * 1.4,
+
+        fWidth                  = 18,
+        fHeight                 = 20,
+        fAttackBoundBoxWidth    = 0,
+        fAttackBoundBoxHeight   = 0,
+
+        fVolume                 = 30,
+
+        eNameSize               = NORMAL_SIZE,
+
+        Mesh = 
+        {
+            { "abta5476.p3m", "abta5476.dds", CARTOON_NORMAL },
+            { "abta5511.p3m", "abta5511.dds", CARTOON_NORMAL },
+            { "abta5512.p3m", "abta5512.dds", CARTOON_NORMAL }, 
+            { "abta5513.p3m", "abta5513.dds", CARTOON_NORMAL }, 
+            { "abta5514.p3m", "abta5514.dds", CARTOON_NORMAL }, 
+            { "abta5515.p3m", "abta5515.dds", CARTOON_NORMAL },
+            { "abta5516.p3m", "abta5516.dds", CARTOON_NORMAL },            
+        },
+        
+		Sound =
+		{
+            521, 499, 498,  
+			
+		},
+    },    
+    
+    --MON_RYAN
+    {
+        ID                      = 123,
+        strAIFileName           = "AI_Ryan.lua",
+        strInitFunc             = "InitRyan",
+
+        iBaseLevel              = 0,
+
+        fExp                    = 0,
+        fGP                     = 0,
+        fAttackPoint            = 1969.7,
+        fHPPoint                = 22262.5,
+
+        fIncExp                 = 0,
+        fIncGP                  = 0,
+        fIncAttackPoint         = 83.8,
+        fIncHPPoint             = 11131.3,
+
+        iNameID                 = 1643,
+        fScale                  = 0.38,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.015 * 1.4,
+        fRunSpeed               = 0.015 * 1.4,
+
+        fWidth                  = 18,
+        fHeight                 = 20,
+        fAttackBoundBoxWidth    = 0,
+        fAttackBoundBoxHeight   = 0,
+
+        fVolume                 = 30,
+
+        eNameSize               = NORMAL_SIZE,
+        
+        Mesh = 
+        {
+            { "abta3193.p3m", "abta3193.dds", CARTOON_NORMAL },
+            { "abta3235.p3m", "abta3235.dds", CARTOON_NORMAL },
+            { "abta3236.p3m", "abta3236.dds", CARTOON_NORMAL }, 
+            { "abta3237.p3m", "abta3237.dds", CARTOON_NORMAL }, 
+            { "abta3238.p3m", "abta3238.dds", CARTOON_NORMAL }, 
+            { "abta3196.p3m", "abta3196.dds", CARTOON_NORMAL },   
+        },
+        
+		Sound =
+		{
+			266,
+		},
+    },    
+
+    --MON_RYAN_WOLF
+    {
+        ID                      = 124,
+        strAIFileName           = "AI_RyanWolf.lua",
+        strInitFunc             = "InitRyanWolf",
+
+        iBaseLevel              = 0,
+
+        fExp                    = 0,
+        fGP                     = 0,
+        fAttackPoint            = 1969.7,
+        fHPPoint                = 22262.5,
+
+        fIncExp                 = 0,
+        fIncGP                  = 0,
+        fIncAttackPoint         = 83.8,
+        fIncHPPoint             = 11131.3,
+
+        iNameID                 = 1643,
+        fScale                  = 0.38,
+        fWeight                 = 1.0,
+        fWalkSpeed              = 0.015 * 1.4,
+        fRunSpeed               = 0.015 * 1.4,
+
+        fWidth                  = 18,
+        fHeight                 = 20,
+        fAttackBoundBoxWidth    = 0,
+        fAttackBoundBoxHeight   = 0,
+
+        fVolume                 = 30,
+
+        eNameSize               = NORMAL_SIZE,
+        
+        Mesh = 
+        {
+            { "WolfNormal.p3m", "WolfNormal.dds", CARTOON_NORMAL },
+        },
+        
+		Sound =
+		{
+			
+		},
+    },    
+    
+}

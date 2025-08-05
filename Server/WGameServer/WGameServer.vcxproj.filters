@@ -1,0 +1,2236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{4e995908-02ba-421d-82b1-dbf5d405003a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{fad5a52d-fcfc-42d2-904b-0b37774ccabc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer">
+      <UniqueIdentifier>{85decd85-f0a3-43f3-b846-eca1c9c68c37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Authentic">
+      <UniqueIdentifier>{fd8a0ebf-e439-4830-b229-fee3e6d7c7b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Authentic\Netmarble">
+      <UniqueIdentifier>{45f8bf1d-b67e-4cb0-8cb6-1e901c8dd37f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Authentic\Netmarble\Shutdown">
+      <UniqueIdentifier>{ca89d420-6ea5-447d-9355-9178effa71d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Authentic\Gamania">
+      <UniqueIdentifier>{c87c8b3a-2081-4be0-9441-d02e345ef97b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Billing">
+      <UniqueIdentifier>{4117ba52-57a0-40a6-8248-3e100d39e61b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Billing\Gash">
+      <UniqueIdentifier>{9cdbd658-b610-425a-aac6-767cdb75b24b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Billing\NCash">
+      <UniqueIdentifier>{cef11bdc-c45c-452a-b1a3-d27bb225da81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Billing\PayLetter">
+      <UniqueIdentifier>{061196de-141f-4522-8cc1-61f9278db15f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Billing\THPayLetter">
+      <UniqueIdentifier>{5cc205ad-8fee-47db-983a-723908e70210}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Billing\Netmable">
+      <UniqueIdentifier>{9c90335d-bf6f-45ed-817b-acb5f43e8d64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Billing\CYOU">
+      <UniqueIdentifier>{a106ccdb-78c7-4864-8f82-d09d32643c6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Common">
+      <UniqueIdentifier>{f06c318f-b269-4d70-a609-3c15b39c0181}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Common\CrashRpt">
+      <UniqueIdentifier>{6cdc9b74-5d1c-4812-bc1f-979f65f1deac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Common\FSM">
+      <UniqueIdentifier>{a048f35f-af7c-48cb-85a7-c0cfd939cc71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Common\Area">
+      <UniqueIdentifier>{eb575fc6-9af1-4f60-b83d-eb3f7940b65a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Common\Performer">
+      <UniqueIdentifier>{f0fce8a9-91f8-4539-8282-253bf984a698}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Common\Event">
+      <UniqueIdentifier>{5bab0f0e-b9a5-4862-9b35-eafb58da939f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Common\NetError">
+      <UniqueIdentifier>{10932938-de18-492d-9e78-d8b7c33e9030}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Common\Layer">
+      <UniqueIdentifier>{bbb95260-1532-43c2-a359-cd133eb401a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Common\CurseFilter">
+      <UniqueIdentifier>{f90e8b51-3511-42f4-9442-b7af562b6850}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Common\DB">
+      <UniqueIdentifier>{8fd9758e-f342-4be4-94f3-d78d9b08e779}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Common\Packet">
+      <UniqueIdentifier>{70a19c46-d2ef-443d-a2d5-d3ce14fa192d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Common\Socket">
+      <UniqueIdentifier>{e5be3477-9543-41ea-aae5-01561c9d615e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Common\SubThread">
+      <UniqueIdentifier>{689a31e7-d01c-4b51-9fe6-6a760e494ae5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Common\XML">
+      <UniqueIdentifier>{7886b0fe-1262-431c-a3f1-7546de900cdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Common\Lua">
+      <UniqueIdentifier>{ed06b40b-a5c9-44a5-a179-cc464f73b8ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Common\FTP">
+      <UniqueIdentifier>{a97c12f9-85dd-4aed-969c-e33aa82b2e66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\DBThread">
+      <UniqueIdentifier>{f9491e5a-0bcf-4683-806b-c42de1e9f469}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Enumerations">
+      <UniqueIdentifier>{c30ef26f-0b86-40f1-9a54-c0786c6a94db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Enumerations\script">
+      <UniqueIdentifier>{b65ddb07-3673-494a-bf4f-3c3126b6cb27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Enumerations\Statistics">
+      <UniqueIdentifier>{76c95435-a0ae-4ac5-8e5d-cb2592f39d8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\GCHelper">
+      <UniqueIdentifier>{dd3325df-dd7e-4680-98ce-c0ad12d8f7a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Layer">
+      <UniqueIdentifier>{bc96cb01-6aa8-4b90-962e-56acf220aa14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Mission">
+      <UniqueIdentifier>{8e947c0d-2ecc-4f8c-b6ee-332611567ca7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\Reward">
+      <UniqueIdentifier>{c4b6f0b9-acf3-4577-8707-fb4056bf49ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\SessionChild">
+      <UniqueIdentifier>{ae118554-dab2-4c71-ab0f-f750b8a936aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\SessionChild\User">
+      <UniqueIdentifier>{b1b2e2fe-8da9-4235-a652-ff68d00cd0c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\SessionChild\CenterProxy">
+      <UniqueIdentifier>{93ea3201-674e-4f9c-9e7d-bcc8c625fec2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\SessionChild\AgentProxy">
+      <UniqueIdentifier>{16ad8b6e-78bd-4310-959e-c006fee7157b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\SessionChild\MatchProxy">
+      <UniqueIdentifier>{250b5284-b375-49b3-bad3-2039f7f4274c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameServer\UnityBuild">
+      <UniqueIdentifier>{05601123-fcdd-4d82-b0c8-23fe6e06c985}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Common\UI\EditLog.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\HookStdio.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\ReadOnlyEdit.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\stdafx.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\SubclassWnd.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\AccumulateAttendance.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Adventure.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\AvoidOverlappingLottery.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\BuffDonation.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ChannelTypeEvent.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CharacterGraduation.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CharDefault.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CharismasPresent.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CharPromotionSystem.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CharSlotManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ClientPing.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CnConnector.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ConnectionGiftBox.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\DepotManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\DicePlay.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\DotaManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\DungeonManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\DungeonRankManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\EclipseCollect.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\EclipsePlot.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\EclipseTimeEvent.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ErrandManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Escort.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\EventDivideDispatcher.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\FTPFactory.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GachaLottery.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GameServer.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Gawibawibo.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\GCAttributeDecider.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\GCAttributeTable.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\GCGradeDecider.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\GCGradeTable.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GCItemConfig.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GCSocketConsumeItem.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\GCSocketDecider.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\GCSocketTable.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GetLimit.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GWCEvent.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\HeroItemUpgradeManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\InfinityDungeon.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ItemCompose.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ItemContainer.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ItemLevelDecider.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ItemLevelTable.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ItemTradeManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\JobMissionGuide.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\JumpingChar.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\JustInTime.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\LevelResetEvent.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\LookEquipment.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\LunaNewYear.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\MiniGameRankManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\MissionEvent.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\MissionGettableCondition.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\MonsterCardMix.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\NewDonationManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\OlympicManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PlantTree.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PresentBox.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PVPMatchManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Rainbow.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ResultReward.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\RitasChristmas.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\RKTornado.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SealedChar.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ServerBenefit.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SocialCommerce.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Songkran.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SP.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SpecialMonsterManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Sphinx.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StrengthManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SubjectManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Survey.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SystemResourceManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\TongDonation.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UpdatePlanManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserAchievement.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\VitalityManager.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Worker.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PlayAuthManager.cpp">
+      <Filter>GameServer\Authentic\Netmarble\Shutdown</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSGash.cpp">
+      <Filter>GameServer\Authentic\Gamania</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\BillDB.cpp">
+      <Filter>GameServer\Billing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\BillingError.cpp">
+      <Filter>GameServer\Billing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GashBilling.cpp">
+      <Filter>GameServer\Billing\Gash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\NCashBilling.cpp">
+      <Filter>GameServer\Billing\NCash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\NCashEvent.cpp">
+      <Filter>GameServer\Billing\NCash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PayLetterBilling.cpp">
+      <Filter>GameServer\Billing\PayLetter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PayLetterEvent.cpp">
+      <Filter>GameServer\Billing\PayLetter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\TH_PayLetterBilling.cpp">
+      <Filter>GameServer\Billing\THPayLetter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\TH_PayLetterEvent.cpp">
+      <Filter>GameServer\Billing\THPayLetter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\NMNetCafeManager.cpp">
+      <Filter>GameServer\Billing\Netmable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CYOUBilling\CYOUBilling.cpp">
+      <Filter>GameServer\Billing\CYOU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CYOUBilling\CYOUBillingEvent.cpp">
+      <Filter>GameServer\Billing\CYOU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ActionDecider.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ActorManager.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\BaseServer.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DropSystem.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DuplicateProcessChecker.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\GenericLogfile.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\KncBitStream.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\LoginOutStat.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\LogManager.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Lottery.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\LoudMessage.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\MultiLanguageString.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SHA1.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SimObject.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SlangFilter.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\StringTable.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Tea.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\TickManager.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserEventChecker.cpp">
+      <Filter>GameServer\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FSM\FSMclass.cpp">
+      <Filter>GameServer\Common\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FSM\FSMstate.cpp">
+      <Filter>GameServer\Common\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Channel.cpp">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ChannelManager.cpp">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Guild.cpp">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GuildManager.cpp">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Room.cpp">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\RoomFSM.cpp">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\RoomManager.cpp">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Square.cpp">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SquareManager.cpp">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Actor.cpp">
+      <Filter>GameServer\Common\Performer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ActorProxy.cpp">
+      <Filter>GameServer\Common\Performer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Performer.cpp">
+      <Filter>GameServer\Common\Performer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\AgentEvent.cpp">
+      <Filter>GameServer\Common\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CenterEvent.cpp">
+      <Filter>GameServer\Common\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Event.cpp">
+      <Filter>GameServer\Common\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\MatchEvent.cpp">
+      <Filter>GameServer\Common\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserEvent.cpp">
+      <Filter>GameServer\Common\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\NetError.cpp">
+      <Filter>GameServer\Common\NetError</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DBLayer.cpp">
+      <Filter>GameServer\Common\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\NetLayer.cpp">
+      <Filter>GameServer\Common\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SimLayer.cpp">
+      <Filter>GameServer\Common\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CommonSP.cpp">
+      <Filter>GameServer\Common\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ODBC\Odbc.cpp">
+      <Filter>GameServer\Common\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\AgentPacket.cpp">
+      <Filter>GameServer\Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CenterPacket.cpp">
+      <Filter>GameServer\Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CommonFiles\CommonPacket.cpp">
+      <Filter>GameServer\Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CYOUBilling\CYOUPacket.cpp">
+      <Filter>GameServer\Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\MatchPacket.cpp">
+      <Filter>GameServer\Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CommonFiles\UserPacket.cpp">
+      <Filter>GameServer\Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\AccepterInterface.cpp">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\CircularQueue.cpp">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\IOCP.cpp">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\IOThread.cpp">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\NetCommon.cpp">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\Session.cpp">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\SocketObject.cpp">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\UdpEcho.cpp">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ThreadManager.cpp">
+      <Filter>GameServer\Common\SubThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\XML\Markup.cpp">
+      <Filter>GameServer\Common\XML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Lua\KLuaManager.cpp">
+      <Filter>GameServer\Common\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FTP\BlockingSocket.cpp">
+      <Filter>GameServer\Common\FTP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FTP\FTPClient.cpp">
+      <Filter>GameServer\Common\FTP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FTP\FTPDataTypes.cpp">
+      <Filter>GameServer\Common\FTP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FTP\FTPFileState.cpp">
+      <Filter>GameServer\Common\FTP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FTP\FTPListParse.cpp">
+      <Filter>GameServer\Common\FTP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\EvtDBThread.cpp">
+      <Filter>GameServer\DBThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThread.cpp">
+      <Filter>GameServer\DBThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThread2.cpp">
+      <Filter>GameServer\DBThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThread3.cpp">
+      <Filter>GameServer\DBThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThread4.cpp">
+      <Filter>GameServer\DBThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThread5.cpp">
+      <Filter>GameServer\DBThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThread6.cpp">
+      <Filter>GameServer\DBThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThreadHelper.cpp">
+      <Filter>GameServer\DBThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThreadHelper2.cpp">
+      <Filter>GameServer\DBThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThreadHelper3.cpp">
+      <Filter>GameServer\DBThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThreadHelper4.cpp">
+      <Filter>GameServer\DBThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ClientErr.cpp">
+      <Filter>GameServer\Enumerations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\FailRate.cpp">
+      <Filter>GameServer\Enumerations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CheckInStat.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CPLStatistics.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\KStatPing.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\MapStatistics.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PlayTimeStat.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatAgent.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatCharacter.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatCharacterEquip.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatCoupleRoom.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatDeathMatch.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatDisconnect.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatDungeon.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatEmoticon.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatGameLoading.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatGameStartGap.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatGP.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Statistics.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatisticsManager.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatItemGet.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatLeaveGame.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatLoadingInfo.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatMiniGame.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatNetwork.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatP2PCritical.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatPvPPlayCharacter.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatRoomJoin.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatSpx.cpp">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\AgitHelper.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Calendar.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ChangeWeaponManager.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CharacterPollManager.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ChoiceDrop.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CooperationEvent.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CoupleSystem.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\DonationManager.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\DungeonEntrance.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\EnchantStrong.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\EquipLvDown.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\EventMonsterManager.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GachaManager.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GambleBuyManager.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GameCouponManager.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GCHelper.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GCPoint.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GPCapsuleManager.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GWCSupport.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\HeroDungeonManager.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\IndigoUtil.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\IPAdvantage.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ItemBreakUp.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ItemManager.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Kairo.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\MagicBox.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ManufactureS3.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Missionpack.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\NpcGift.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PeriodNotice.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PetHelper.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PostConfig.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PreHackingCheckManager.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\PrimeSearch.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\QuizBingo.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\RankManager.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\RecomHelper.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\RequierInfo.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Santa.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ShutdownUser.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SignBoard.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SkillManager.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SpecialReward.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SubscriptionManager.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\TimeDrop.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserLetterBox.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\VipEventManager.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\VirtualCash.cpp">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBLayer.cpp">
+      <Filter>GameServer\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSNetLayer.cpp">
+      <Filter>GameServer\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSSimLayer.cpp">
+      <Filter>GameServer\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CollectionManager.cpp">
+      <Filter>GameServer\Mission</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\MissionInfo.cpp">
+      <Filter>GameServer\Mission</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\MissionManager.cpp">
+      <Filter>GameServer\Mission</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ChannelDrop.cpp">
+      <Filter>GameServer\Reward</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\FatigueSystem.cpp">
+      <Filter>GameServer\Reward</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GameDrop.cpp">
+      <Filter>GameServer\Reward</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ResultManager.cpp">
+      <Filter>GameServer\Reward</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SHCheckPoint.cpp">
+      <Filter>GameServer\Reward</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\TimeEventManager.cpp">
+      <Filter>GameServer\Reward</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User.cpp">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User10.cpp">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User2.cpp">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User3.cpp">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User4.cpp">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User5.cpp">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User6.cpp">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User6_2.cpp">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User7.cpp">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User8.cpp">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User9.cpp">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserFSM.cpp">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserHelper.cpp">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserHelper2.cpp">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserHelper3.cpp">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CenterProxy.cpp">
+      <Filter>GameServer\SessionChild\CenterProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\AgentConnector.cpp">
+      <Filter>GameServer\SessionChild\AgentProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\AgentProxy.cpp">
+      <Filter>GameServer\SessionChild\AgentProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\MatchConnector.cpp">
+      <Filter>GameServer\SessionChild\MatchProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\MatchProxy.cpp">
+      <Filter>GameServer\SessionChild\MatchProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United10.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United11.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United12.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United13.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United14.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United15.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United17.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United18.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United19.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United2.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United3.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United4.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United5.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United6.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United7.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United8.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United9.cpp">
+      <Filter>GameServer\UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Socks.cpp" />
+    <ClCompile Include="..\GameServer\SystemGuide.cpp" />
+    <ClCompile Include="WGameServer.cpp" />
+    <ClCompile Include="WGameServerDlg.cpp" />
+    <ClCompile Include="..\GameServer\PetGlyphMng.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GachaPong.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserBillboard.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StageReward.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\BlockedAttackIP.cpp">
+      <Filter>GameServer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\UI\EditLog.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\EditStreamBuf.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\HookStdio.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\ReadOnlyEdit.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\stdafx.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\SubclassWnd.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\AccumulateAttendance.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\Adventure.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\AvoidOverlappingLottery.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\BuffDonation.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ChannelTypeEvent.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\CharacterGraduation.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\CharDefault.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\CharismasPresent.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\CharPromotionSystem.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\CharSlotManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ClientPing.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\CnConnector.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ConnectionGiftBox.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\DepotManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\DicePlay.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\DotaManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\DungeonManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\DungeonRankManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\EclipseCollect.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\EclipsePlot.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\EclipseTimeEvent.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ErrandManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\Escort.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\EventDivideDispatcher.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\FTPFactory.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GachaLottery.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GameServer.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\Gawibawibo.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GCAttributeDecider.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GCAttributeTable.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GCGradeDecider.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GCGradeTable.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GCItemConfig.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GCSocketConsumeItem.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GCSocketDecider.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GCSocketTable.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GetLimit.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GWCEvent.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\HeroItemUpgradeManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\InfinityDungeon.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ItemCompose.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ItemContainer.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ItemLevelDecider.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ItemLevelTable.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ItemTradeManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\JobMissionGuide.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\JumpingChar.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\JustInTime.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\LevelResetEvent.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\LookEquipment.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\LunaNewYear.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\MiniGameRankManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\MissionEvent.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\MissionGettableCondition.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\MonsterCardMix.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\NewDonationManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\OlympicManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PlantTree.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PresentBox.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PVPMatchManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\Rainbow.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ResultReward.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\RitasChristmas.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\RKTornado.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\SealedChar.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ServerBenefit.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\SocialCommerce.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\Songkran.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\SP.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\SpecialMonsterManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\Sphinx.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StrengthManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\SubjectManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\Survey.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\SystemResourceManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\TongDonation.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\UpdatePlanManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\UserAchievement.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\VitalityManager.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\Worker.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\CPSSOLib.h">
+      <Filter>GameServer\Authentic\Netmarble</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PlayAuth.Connector.h">
+      <Filter>GameServer\Authentic\Netmarble\Shutdown</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PlayAuth.ConnectorAPI.h">
+      <Filter>GameServer\Authentic\Netmarble\Shutdown</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PlayAuth.ConnectorBase.h">
+      <Filter>GameServer\Authentic\Netmarble\Shutdown</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PlayAuth.Environment.h">
+      <Filter>GameServer\Authentic\Netmarble\Shutdown</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PlayAuth.Error.h">
+      <Filter>GameServer\Authentic\Netmarble\Shutdown</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PlayAuth.Handles.h">
+      <Filter>GameServer\Authentic\Netmarble\Shutdown</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PlayAuth.Info.h">
+      <Filter>GameServer\Authentic\Netmarble\Shutdown</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PlayAuthManager.h">
+      <Filter>GameServer\Authentic\Netmarble\Shutdown</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GSGash.h">
+      <Filter>GameServer\Authentic\Gamania</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\BillDB.h">
+      <Filter>GameServer\Billing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\BillingError.h">
+      <Filter>GameServer\Billing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GashBilling.h">
+      <Filter>GameServer\Billing\Gash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\NCashBilling.h">
+      <Filter>GameServer\Billing\NCash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\NCashEvent.h">
+      <Filter>GameServer\Billing\NCash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\NCashEvent_def.h">
+      <Filter>GameServer\Billing\NCash</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PayLetterBilling.h">
+      <Filter>GameServer\Billing\PayLetter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PayLetterEvent.h">
+      <Filter>GameServer\Billing\PayLetter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PayLetterEvent_def.h">
+      <Filter>GameServer\Billing\PayLetter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\TH_PayLetterBilling.h">
+      <Filter>GameServer\Billing\THPayLetter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\TH_PayLetterEvent.h">
+      <Filter>GameServer\Billing\THPayLetter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\TH_PayLetterEvent_def.h">
+      <Filter>GameServer\Billing\THPayLetter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\NMNetCafeDLL.h">
+      <Filter>GameServer\Billing\Netmable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\NMNetCafeManager.h">
+      <Filter>GameServer\Billing\Netmable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CYOUBilling\CYOUBilling.h">
+      <Filter>GameServer\Billing\CYOU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CYOUBilling\CYOUBillingEvent.h">
+      <Filter>GameServer\Billing\CYOU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CYOUBilling\CYOUBillingEvent_def.h">
+      <Filter>GameServer\Billing\CYOU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CYOUBilling\PacketReq.h">
+      <Filter>GameServer\Billing\CYOU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CYOUBilling\PacketRes.h">
+      <Filter>GameServer\Billing\CYOU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CYOUBilling\public.h">
+      <Filter>GameServer\Billing\CYOU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ActionDecider.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ActorFactory.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ActorManager.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\BaseServer.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DropSystem.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DuplicateProcessChecker.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GCEnum.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GenericLogfile.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GenericLogfile_def.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KncBitStream.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KncException.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KncSmartPtr.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Log4.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\LoginOutStat.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\LogManager.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Lottery.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\LoudMessage.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\McUtil.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\MultiLanguageString.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\PrimitiveTypedef.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ServerType.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SHA1.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SimObject.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SlangFilter.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SlangNode.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SobManager.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AgentServer\stdafx.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\StringTable.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Tea.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\TickManager.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\UpdatePlanEventID.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\UpdatePlanScriptID.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\UserEventChecker.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\utf16_cvt.h">
+      <Filter>GameServer\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CrashRpt\KncCrashRpt.h">
+      <Filter>GameServer\Common\CrashRpt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FSM\FSMclass.h">
+      <Filter>GameServer\Common\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FSM\FSMstate.h">
+      <Filter>GameServer\Common\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FSM\support_FSM.h">
+      <Filter>GameServer\Common\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\Channel.h">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ChannelManager.h">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\ChannelType.h">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\Guild.h">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GuildManager.h">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\Room.h">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\RoomFSM.h">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\RoomFSMInput_def.h">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\RoomFSMState_def.h">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\RoomManager.h">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\Square.h">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\SquareManager.h">
+      <Filter>GameServer\Common\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Actor.h">
+      <Filter>GameServer\Common\Performer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ActorProxy.h">
+      <Filter>GameServer\Common\Performer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Performer.h">
+      <Filter>GameServer\Common\Performer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\AgentEvent.h">
+      <Filter>GameServer\Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\AgentEvent_def.h">
+      <Filter>GameServer\Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CenterEvent.h">
+      <Filter>GameServer\Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CenterEvent_def.h">
+      <Filter>GameServer\Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Event.h">
+      <Filter>GameServer\Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\IntEvent.h">
+      <Filter>GameServer\Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\MatchEvent.h">
+      <Filter>GameServer\Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\MatchEvent_def.h">
+      <Filter>GameServer\Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\UserEvent.h">
+      <Filter>GameServer\Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\UserEvent_def.h">
+      <Filter>GameServer\Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\NetError.h">
+      <Filter>GameServer\Common\NetError</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\NetError_def.h">
+      <Filter>GameServer\Common\NetError</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DBLayer.h">
+      <Filter>GameServer\Common\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\NetLayer.h">
+      <Filter>GameServer\Common\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SimLayer.h">
+      <Filter>GameServer\Common\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CommonSP.h">
+      <Filter>GameServer\Common\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ODBC\Odbc.h">
+      <Filter>GameServer\Common\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\AgentPacket.h">
+      <Filter>GameServer\Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CenterPacket.h">
+      <Filter>GameServer\Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\CommonPacket.h">
+      <Filter>GameServer\Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CYOUBilling\CYOUPacket.h">
+      <Filter>GameServer\Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\MatchPacket.h">
+      <Filter>GameServer\Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\UserPacket.h">
+      <Filter>GameServer\Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\Accepter.h">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\AccepterInterface.h">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\CircularQueue.h">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\DisconnectReason_def.h">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\IOCP.h">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\IOThread.h">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\NetCommon.h">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\Overlapped.h">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\Session.h">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\SocketObject.h">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\UdpEcho.h">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\UdpToServer.h">
+      <Filter>GameServer\Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SubThread.h">
+      <Filter>GameServer\Common\SubThread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ThreadManager.h">
+      <Filter>GameServer\Common\SubThread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\XML\Markup.h">
+      <Filter>GameServer\Common\XML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Lua\KLuaManager.h">
+      <Filter>GameServer\Common\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FTP\BlockingSocket.h">
+      <Filter>GameServer\Common\FTP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FTP\Definements.h">
+      <Filter>GameServer\Common\FTP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FTP\FTPClient.h">
+      <Filter>GameServer\Common\FTP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FTP\FTPDataTypes.h">
+      <Filter>GameServer\Common\FTP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FTP\FTPFileState.h">
+      <Filter>GameServer\Common\FTP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FTP\FTPListParse.h">
+      <Filter>GameServer\Common\FTP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FTP\rc_smart_ptr.h">
+      <Filter>GameServer\Common\FTP</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\EvtDBThread.h">
+      <Filter>GameServer\DBThread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GSDBThread.h">
+      <Filter>GameServer\DBThread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ClientErr.h">
+      <Filter>GameServer\Enumerations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ClientErr_def.h">
+      <Filter>GameServer\Enumerations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\FailRate.h">
+      <Filter>GameServer\Enumerations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\FailRate_def.h">
+      <Filter>GameServer\Enumerations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\CheckInStat.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\CPLStatistics.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\KStatPing.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\MapStatistics.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PlayTimeStat.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatAgent.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatCharacter.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatCharacterEquip.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatCoupleRoom.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatDeathMatch.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatDisconnect.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatDungeon.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatEmoticon.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatGameLoading.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatGameStartGap.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatGP.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Statistics.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatisticsID_def.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatisticsManager.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatItemGet.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatLeaveGame.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatLoadingInfo.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatMiniGame.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatNetwork.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatP2PCritical.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatPvPPlayCharacter.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatRoomJoin.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StatSpx.h">
+      <Filter>GameServer\Enumerations\Statistics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\AgitHelper.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\CacheData.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\Calendar.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ChangeWeaponManager.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\CharacterPollManager.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ChoiceDrop.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\CooperationEvent.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\CoupleSystem.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\DonationManager.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\DungeonEntrance.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\EnchantStrong.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\EquipLvDown.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\EventMonsterManager.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GachaManager.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GambleBuyManager.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GameCouponManager.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GCHelper.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GCPoint.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GPCapsuleManager.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GWCSupport.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\HeroDungeonManager.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\IndigoUtil.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\IPAdvantage.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ItemBreakUp.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ItemManager.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\Kairo.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\MagicBox.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ManufactureS3.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\MissionPack.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\NpcGift.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PeriodNotice.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PetHelper.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PostConfig.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\PreHackingCheckManager.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\PrimeSearch.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\QuizBingo.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\RankManager.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\RecomHelper.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\RequierInfo.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\Santa.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ShutdownUser.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\SignBoard.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\SkillManager.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\SpecialReward.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\SubscriptionManager.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\TimeDrop.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\UserLetterBox.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\VipEventManager.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\VirtualCash.h">
+      <Filter>GameServer\GCHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GSDBLayer.h">
+      <Filter>GameServer\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GSNetLayer.h">
+      <Filter>GameServer\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GSSimLayer.h">
+      <Filter>GameServer\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\CollectionManager.h">
+      <Filter>GameServer\Mission</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\MissionInfo.h">
+      <Filter>GameServer\Mission</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\MissionManager.h">
+      <Filter>GameServer\Mission</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ChannelDrop.h">
+      <Filter>GameServer\Reward</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\FatigueSystem.h">
+      <Filter>GameServer\Reward</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GameDrop.h">
+      <Filter>GameServer\Reward</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ResultManager.h">
+      <Filter>GameServer\Reward</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\SHCheckPoint.h">
+      <Filter>GameServer\Reward</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\TimeEventManager.h">
+      <Filter>GameServer\Reward</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\support_User.h">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\User.h">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\UserFSM.h">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\UserFSMInput_def.h">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\UserFSMState_def.h">
+      <Filter>GameServer\SessionChild\User</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\CenterProxy.h">
+      <Filter>GameServer\SessionChild\CenterProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\AgentConnector.h">
+      <Filter>GameServer\SessionChild\AgentProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\AgentProxy.h">
+      <Filter>GameServer\SessionChild\AgentProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\MatchConnector.h">
+      <Filter>GameServer\SessionChild\MatchProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\MatchProxy.h">
+      <Filter>GameServer\SessionChild\MatchProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\Socks.h" />
+    <ClInclude Include="..\GameServer\SystemGuide.h" />
+    <ClInclude Include="WGameServer.h" />
+    <ClInclude Include="WGameServerDlg.h" />
+    <ClInclude Include="..\GameServer\PetGlyphMng.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\GachaPong.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\UserBillboard.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\StageReward.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\BlockedAttackIP.h">
+      <Filter>GameServer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WGameServer.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Common\Curse.txt">
+      <Filter>GameServer\Common\CurseFilter</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\GameServer\config_server.ini">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\config_server.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\DefaultReward.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\Dungeon_ExpGp.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\DungeonState.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\Enum.stg">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="etc.stg">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="EventMonster.stg">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\ExpGpBoostInfo.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\GameDrop.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitAchievement.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitChampion.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitChannelDrop.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitChannels.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="InitChannelTypeEvent.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="InitCharismasPresent.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="InitCharPromotion.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitCoupleInfo.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitCTMission.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="InitDepotManager.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitDrop.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="InitEclipsePlot.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="InitEclipseTimeEvent.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitEnchant.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitGacha.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="InitGambleBuy.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="InitGawibawibo.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitGCHelper.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="InitGPDropInfo.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="InitHeroDungeon.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="InitHeroIteminfo.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="InitJustInTime.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitKairo.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitLookEquip.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="InitMagicBox.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitManufacture.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitManufactureS3.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitMission.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="InitMonsterCardMix.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitPetScript.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitReconcileInfo.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitSHCheck.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitSignBoardInfo.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitSkillInfo.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitSkillTree.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="InitSpecialReward.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitSquare.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="InitTimeDrop.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitTimeEvent.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\InitTriggerInfo.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="ItemAttributeTable.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\Message.mc">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="MonsterTemplate.stg">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="QuestSign.stg">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\RequierInfo.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="..\GameServer\SquareInfo.lua">
+      <Filter>GameServer\Enumerations\script</Filter>
+    </None>
+    <None Include="VTune\WGameServer.vpj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Grand.ico" />
+    <Image Include="res\WGameServer.ico" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,485 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{86c66671-28a5-4308-bfe9-370363c6a0e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{1b59a220-34df-4ec1-b078-17884af9f27d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\CrashRpt">
+      <UniqueIdentifier>{19144699-0c2e-49ec-96ad-d35e656efb82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\FSM">
+      <UniqueIdentifier>{6b564e85-5d90-469e-9710-89714db7dd95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\FSM\DefaultFSM">
+      <UniqueIdentifier>{658fcbed-3d28-4974-9b41-4489e686c9be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Performer">
+      <UniqueIdentifier>{1dc0743e-cefc-4d00-9e52-1f73b977ebc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Event">
+      <UniqueIdentifier>{4aeb192b-5abd-4b42-90ac-be53062e200e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\NetError">
+      <UniqueIdentifier>{ac07072e-774c-4bcc-8a3f-56fcb886887a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Layer">
+      <UniqueIdentifier>{1ad71b48-2f42-4d9f-8b5f-40cfdc3ec477}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\DB">
+      <UniqueIdentifier>{151dba64-549a-4f4c-91f8-99900ff82f4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Packet">
+      <UniqueIdentifier>{5f1a4b71-5213-4308-a37e-b7befbe413a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Socket">
+      <UniqueIdentifier>{18d4ec09-9d2c-4c37-addf-44c17a7369e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\SubThread">
+      <UniqueIdentifier>{5160e087-5c8d-4c6f-949f-e3e95d76769d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Lua">
+      <UniqueIdentifier>{04089b6c-40e3-408e-b235-19a62925f747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Layer">
+      <UniqueIdentifier>{40677388-0b06-430a-806a-5a14ab122394}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DBThread">
+      <UniqueIdentifier>{f205184b-fd02-4b81-b8fe-eac6de65b888}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SessionChild">
+      <UniqueIdentifier>{49018e28-163e-43f8-b0d0-da0954507d59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SessionChild\MatchUser">
+      <UniqueIdentifier>{8f1212bc-0792-4bd9-88ca-c7dab8ba2809}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SessionChild\MatchProxy">
+      <UniqueIdentifier>{448a094e-4c58-45b1-98a1-fbb686be5438}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="script">
+      <UniqueIdentifier>{aa729c35-0a7b-44ab-ac1f-91f16084bb7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UnityBuild">
+      <UniqueIdentifier>{0275d55a-b7a3-4379-bd88-e90366eba39f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MatchGroup.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchServer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="WMatchServer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="WMatchServerDlg.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\EditLog.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\HookStdio.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\ReadOnlyEdit.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\SubclassWnd.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ActorManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\BaseServer.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\GenericLogfile.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\LogManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SimObject.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SlangFilter.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\StringTable.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Tea.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\TickManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FSM\FSMclass.cpp">
+      <Filter>Common\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FSM\FSMstate.cpp">
+      <Filter>Common\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DefaultFSM.cpp">
+      <Filter>Common\FSM\DefaultFSM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Actor.cpp">
+      <Filter>Common\Performer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ActorProxy.cpp">
+      <Filter>Common\Performer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Performer.cpp">
+      <Filter>Common\Performer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Event.cpp">
+      <Filter>Common\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\MatchEvent.cpp">
+      <Filter>Common\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\NetError.cpp">
+      <Filter>Common\NetError</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DBLayer.cpp">
+      <Filter>Common\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\NetLayer.cpp">
+      <Filter>Common\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SimLayer.cpp">
+      <Filter>Common\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ODBC\Odbc.cpp">
+      <Filter>Common\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CommonFiles\CommonPacket.cpp">
+      <Filter>Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\KncBitStream.cpp">
+      <Filter>Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\MatchPacket.cpp">
+      <Filter>Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\AccepterInterface.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\CircularQueue.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\IOCP.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\IOThread.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\NetCommon.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\Session.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\SocketObject.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ThreadManager.cpp">
+      <Filter>Common\SubThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Lua\KLuaManager.cpp">
+      <Filter>Common\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchDBLayer.cpp">
+      <Filter>Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchNetLayer.cpp">
+      <Filter>Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchSimLayer.cpp">
+      <Filter>Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchDBThread.cpp">
+      <Filter>DBThread</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchDBThreadHelper.cpp">
+      <Filter>DBThread</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchUser.cpp">
+      <Filter>SessionChild\MatchUser</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchSvrConnector.cpp">
+      <Filter>SessionChild\MatchProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="MatchSvrProxy.cpp">
+      <Filter>SessionChild\MatchProxy</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MatchGroup.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchServer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="WMatchServer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="WMatchServerDlg.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\EditLog.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\EditStreamBuf.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\HookStdio.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\ReadOnlyEdit.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\SubclassWnd.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ActorFactory.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ActorManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\BaseServer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GenericLogfile.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GenericLogfile_def.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KncSmartPtr.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Log4.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\LogManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\PrimitiveTypedef.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SimObject.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SlangFilter.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SlangNode.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SobManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Tea.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CrashRpt\KncCrashRpt.h">
+      <Filter>Common\CrashRpt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FSM\FSMclass.h">
+      <Filter>Common\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FSM\FSMstate.h">
+      <Filter>Common\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FSM\support_FSM.h">
+      <Filter>Common\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DefaultFSM.h">
+      <Filter>Common\FSM\DefaultFSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DefaultFSMInput_def.h">
+      <Filter>Common\FSM\DefaultFSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DefaultFSMState_def.h">
+      <Filter>Common\FSM\DefaultFSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Actor.h">
+      <Filter>Common\Performer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ActorProxy.h">
+      <Filter>Common\Performer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Performer.h">
+      <Filter>Common\Performer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Event.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\IntEvent.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\MatchEvent.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\MatchEvent_def.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\NetError.h">
+      <Filter>Common\NetError</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\NetError_def.h">
+      <Filter>Common\NetError</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DBLayer.h">
+      <Filter>Common\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\NetLayer.h">
+      <Filter>Common\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SimLayer.h">
+      <Filter>Common\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ODBC\Odbc.h">
+      <Filter>Common\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\CommonPacket.h">
+      <Filter>Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KncBitStream.h">
+      <Filter>Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\MatchPacket.h">
+      <Filter>Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\Accepter.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\AccepterInterface.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\CircularQueue.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\IOCP.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\IOThread.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\NetCommon.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\Overlapped.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\Session.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\SocketObject.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SubThread.h">
+      <Filter>Common\SubThread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ThreadManager.h">
+      <Filter>Common\SubThread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Lua\KLuaManager.h">
+      <Filter>Common\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchDBLayer.h">
+      <Filter>Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchNetLayer.h">
+      <Filter>Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchSimLayer.h">
+      <Filter>Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchDBThread.h">
+      <Filter>DBThread</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchUser.h">
+      <Filter>SessionChild\MatchUser</Filter>
+    </ClInclude>
+    <ClInclude Include="support_MatchUser.h">
+      <Filter>SessionChild\MatchUser</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchSvrConnector.h">
+      <Filter>SessionChild\MatchProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="MatchSvrProxy.h">
+      <Filter>SessionChild\MatchProxy</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="AG.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\WAGServer.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WAGServer.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\WAGServer.rc2">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="config_match.ini">
+      <Filter>script</Filter>
+    </None>
+    <None Include="config_match.lua">
+      <Filter>script</Filter>
+    </None>
+    <None Include="odbc.dsn">
+      <Filter>script</Filter>
+    </None>
+    <None Include="odbc_stat.dsn">
+      <Filter>script</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\Common\TickManager.h">
+      <Filter>Common</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

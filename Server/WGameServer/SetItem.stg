@@ -1,0 +1,7452 @@
+--아이템 속성 enum
+ATTRTYPE_ATK_POINT = 0 -- 공격력 + @1
+ATTRTYPE_DEF_POINT = 1 -- 방어력 + @1
+ATTRTYPE_HP_POINT = 2 -- MAX HP + @1
+ATTRTYPE_SPECIAL_ATK_POINT = 3 -- 필살기 공격력 + @1
+ATTRTYPE_SPECIAL_DEF_POINT = 4 -- 필살기 방어력 + @1
+ATTRTYPE_HP_DRAIN_RATE = 5 -- 일반 공격 데미지의 @1 %를 HP로 흡수
+ATTRTYPE_MP_DRAIN_RATE = 6 -- 일반 공격 데미지의 @1 %를 MP로 흡수
+ATTRTYPE_HP_RECOVERY_RATE = 7 -- HP 회복량 + @1 %
+ATTRTYPE_MP_RECOVERY_RATE = 8 -- MP 회복량 + @1 %
+ATTRTYPE_EQUIP_LIMIT_LEVEL_DOWN = 9 -- 장착 레벨 -@1 %
+ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE = 10 -- GP 추가획득량
+ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE = 11 -- EXP 추가획득량
+ATTRTYPE_CRITICAL_ATTACK_RATE = 12 -- 일반/필살기 공격 치명타 확률 + @1 %
+ATTRTYPE_COUNTER_DEF = 13 -- 카운터 피격시 MP소모량 %감소
+ATTRTYPE_ROLLING = 14 -- 롤링 어택 가능
+ATTRTYPE_ATTACK_PERCENT = 15 -- 공격력 +@1% 상승
+ATTRTYPE_DEFENCE_PERCENT = 16 -- 방어력 +@1% 상승
+ATTRTYPE_HP_PERCENT = 17 -- 생명력 +@1% 상승
+ATTRTYPE_FAST_HP_RECOVERY_DURING_LIMIT_TIME = 18 -- 대전 시작 시 @1초 동안 HP를 빠르게 회복
+ATTRTYPE_IGNORE_HASTE = 19 -- 헤이스트 효과 무효화
+ATTRTYPE_AUTO_RECOVERY_HP_LIMIT_IN_DUNGEON = 20 -- 던전 내 HP 회복 한계치 +@
+ATTRTYPE_ABNORMAL_CONDITION_RESISTANCE = 21 -- 상태 이상 공격 저항력 +@1%
+ATTRTYPE_ARENA_ABSENCE_TIME = 22 -- 아레나 무적시간 +@1%
+ATTRTYPE_SKILL_POINT_EXP_BONUS = 23 -- 스킬포인트 보너스
+ATTRTYPE_ALL_STAT_POINT = 24 -- 공방생 + @1
+ATTRTYPE_ALL_STAT_PERCENT = 25 -- 공방생 + @1%
+
+TRUE = 1
+FALSE = 0
+--세트 아이템 리스트
+
+SET_ITEM = 
+{   
+	---------------------------------오딧세이----------------------------
+    {-- 오딧세이 엘리시스 세트
+        NAME = 20492,
+        PARTS = { 20486, 20487, 20488, 20489, 20490,  }
+    },    
+    {-- 오딧세이 리르 세트
+        NAME = 20499,
+        PARTS = { 20493, 20494, 20495, 20496, 20497,  }
+    },    
+    {-- 오딧세이 아르메 세트
+        NAME = 20506,
+        PARTS = { 20500, 20501, 20502, 20503, 20504,  }
+    },    
+    {-- 오딧세이 라스 세트
+        NAME = 20513,
+        PARTS = { 20507, 20508, 20509, 20510, 20511,  }
+    },    
+    {-- 오딧세이 라이언 세트
+        NAME = 20520,
+        PARTS = { 20514, 20515, 20516, 20517, 20518,  }
+    },    
+    {-- 오딧세이 로난 세트
+        NAME = 20527,
+        PARTS = { 20521, 20522, 20523, 20524, 20525,  }
+    },    
+    {-- 오딧세이 에이미 세트
+        NAME = 20534,
+        PARTS = { 20528, 20529, 20530, 20531, 20532,  }
+    },
+    {-- 오딧세이 진 세트
+        NAME = 20541,
+        PARTS = { 20535, 20536, 20537, 20538, 20539,  }
+    },
+    {-- 오딧세이 지그하트 세트
+        NAME = 20548,
+        PARTS = { 20542, 20543, 20544, 20545, 20546,  }
+    },
+    ---------------------------------크리스탈----------------------------
+    {-- 크리스탈 기사세트
+        NAME = 1366,
+        PARTS = { 1345, 1346, 1347, 1348, 1349, 1350, 1351, }
+    },    
+    {-- 크리스탈 궁수세트
+        NAME = 1366,               
+        PARTS = { 1352, 1353, 1354, 1355, 1356, 1357, 1358, }
+    },    
+    {-- 크리스탈 법사세트
+        NAME = 1366,               
+        PARTS = { 1359, 1360, 1361, 1362, 1363, 1364, 1365, }
+    },
+    {-- 크리스탈 라스세트
+        NAME = 1366,
+        PARTS = { 4899, 4900, 4901, 4902, 4903, 4904, 4906, }
+    }, 
+    {-- 크리스탈 라이언 세트
+        NAME = 1366,
+        PARTS = { 4908, 4909, 4910, 4911, 4912, 4913, 4915, }
+    },
+    {-- 크리스탈 로난 세트
+        NAME = 1366,
+        PARTS = { 6889, 6890, 6891, 6892, 6893, 6895, 6896, }
+    },
+    {-- 크리스탈 창병세트
+        NAME = 1366,
+	PARTS = { 1345, 1346, 1347, 1348, 1349, 1350, 1527, }
+    },    
+    {-- 크리스탈 석궁세트
+        NAME = 1366,
+        PARTS = { 1352, 1353, 1354, 1355, 1356, 1357, 1528, }
+    }, 
+    {-- 크리스탈 연금세트
+        NAME = 1366,
+        PARTS = { 1359, 1360, 1361, 1362, 1363, 1364, 1529, }
+    },   
+    {-- 크리스탈 자객세트
+        NAME = 1366,
+        PARTS = { 4899, 4900, 4901, 4902, 4903, 4904, 4907, }
+    },  
+    {-- 크리스탈 라이언 세트
+        NAME = 1366,
+        PARTS = { 4908, 4909, 4910, 4911, 4912, 4913, 4916, }
+    },
+    {-- 크리스탈 소드마스터세트
+        NAME = 1366,
+        PARTS = { 1345, 1346, 1347, 1348, 1349, 1350, 2594, }        
+    },
+    {-- 크리스탈 워락세트
+        NAME = 1366,
+        PARTS = { 1359, 1360, 1361, 1362, 1363, 1364, 3135, }
+    },
+    {-- 크리스탈 라스3세트
+        NAME = 1366,
+        PARTS = { 4899, 4900, 4901, 4902, 4903, 4904, 3206, }
+    },
+    {-- 크리스탈 세이버세트
+        NAME = 1366,
+        PARTS = { 1345, 1346, 1347, 1348, 1349, 1350, 4834, }
+    },  
+   
+    {-- 크리스탈 라이언 세트
+        NAME = 1366,
+        PARTS = { 4908, 4909, 4910, 4911, 4912, 4913, 4915, }
+    },
+
+    {-- 크리스탈 에이미 세트
+        NAME = 1366,
+        PARTS = { 8197,16562,16563,16564,16565,16566,16567, }
+    },
+    {-- 크리스탈 진 세트
+        NAME = 1366,
+        PARTS = { 12184,16569,16570,16571,16572,16573,16574, }
+    },
+    {-- 크리스탈 지크하트 세트
+        NAME = 1366,
+        PARTS = { 18284,16576,16577,16578,16579,16580,16581, }
+    },
+    {-- 크리스탈 마리 세트
+        NAME = 1366,
+        PARTS = { 21656,22080,22081,22082,22083,22084,22085,}
+    },
+    ---------------------------------넷마블----------------------------
+    {-- 넷마블PC 기사세트
+        NAME = 1723,
+        PARTS = { 1702, 1703, 1704, 1705, 1706, 1707, 1708, }
+    },    
+    {-- 넷마블PC 궁수세트
+        NAME = 1724,
+        PARTS = { 1709, 1710, 1711, 1712, 1713, 1714, 1715, }
+    },    
+    {-- 넷마블PC 법사세트
+        NAME = 1725,
+        PARTS = { 1716, 1717, 1718, 1719, 1720, 1721, 1722, }
+    },    
+    ---------------------------------카제아제----------------------------
+    {-- 카제아제 기사 세트(200회)
+        NAME = 1744,
+        PARTS = { 1726, 1727, 1728, 1729, 1730, 1731, }
+    },    
+    {-- 카제아제 궁수 세트(200회)
+        NAME = 1744,
+        PARTS = { 1732, 1733, 1734, 1735, 1736, 1737, }
+    },    
+    {-- 카제아제 법사 세트(200회)
+        NAME = 1744,
+        PARTS = { 1738, 1739, 1740, 1741, 1742, 1743, }
+    },    
+    {-- 카제아제 라스 세트(200회)
+        NAME = 1744,
+        PARTS = { 4867, 4868, 4869, 4870, 4871, 4872, }
+    },    
+    {-- 카제아제 드루이드 세트(200회)
+        NAME = 1744,
+        PARTS = { 4874, 4875, 4876, 4877, 4878, 4879, }
+    },
+    {-- 카제아제 마검사 세트(200회)
+        NAME = 1744,
+        PARTS = { 6867, 6868, 6869, 6870, 6871, 6873, }
+    },
+    {-- 카제아제 에이미 세트(200회)
+        NAME = 1744,
+        PARTS = { 8133, 8134, 8135, 8136, 8137, 8138, }
+    },
+    {-- 카제아제 진 세트(200회)
+        NAME = 1744,
+        PARTS = { 12072, 12073, 12074, 12075, 12076, 12077, }
+    },
+    {-- 카제아제 지크 세트(200회)
+        NAME = 1744,
+        PARTS = { 15661, 15662, 15663, 15664, 15665, 15666, }
+    },
+    {-- 카제아제 마리 세트(200회)
+        NAME = 1744,
+        PARTS = { 21620,21621 , 21622, 21623, 21624, 21625, }
+    },
+    ---------------------------------대회 액세서리 세트 효과(GC 근위대 액세서리)------------------------------------
+    {--GC 근위대 액세서리
+		NAME = 35767,
+		PARTS = { 35767, 35768, 35769, 35770, 35771, },
+		ATTRIBUTE_LIST =
+	    {
+			-- 2개 장착시
+		    {
+			    EQUIP_COUNT = 2,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_DEF_POINT,
+					    ABILITY = 165.0,		    
+				    },
+			    }
+		    },
+		    -- =====================================================
+		    
+		    -- 3개 장착시
+		    {
+			    EQUIP_COUNT = 3,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_HP_POINT,
+					    ABILITY = 165.0,
+				    },
+			    }
+		    },
+		    -- =====================================================
+		    
+		    -- 4개 장착시
+		    {
+			    EQUIP_COUNT = 4,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATK_POINT,
+					    ABILITY = 99.0,
+				    },					
+			    }
+		    },
+		    -- =====================================================
+
+  		   -- 5개 장착시
+		    {
+			    EQUIP_COUNT = 5,
+			    ATTRIBUTE =
+			    {
+				    {	
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 50.0,
+				    },					
+			    }
+		    },
+	    },
+    },		
+
+    ---------------------------------소울메이트------------------------------------
+    {--소울 메이트 액세서리
+		NAME = 35271,
+		PARTS = { 35271, 35272, 35273, 35274, },
+		ATTRIBUTE_LIST =
+	    {
+			-- 2개 장착시
+		    {
+			    EQUIP_COUNT = 2,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_SPECIAL_ATK_POINT,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+		    -- =====================================================
+		    
+		    -- 3개 장착시
+		    {
+			    EQUIP_COUNT = 3,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+					    ABILITY = 2.5,
+				    },
+			    }
+		    },
+		    -- =====================================================
+		    
+		    -- 4개 장착시
+		    {
+			    EQUIP_COUNT = 4,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 20.0,
+				    },					
+			    }
+		    },
+		    -- =====================================================
+	    },
+    },		
+
+    ---------------------------------왕립----------------------------
+    {--왕립 기사 복장 세트
+	NAME = 150,
+        PARTS = { 129, 130, 131, 132, 133, 307, },
+	    ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 50.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    
+    {--왕립 궁수 복장 세트
+		NAME = 151,
+        PARTS = { 136, 137, 138, 139, 140, 307, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 50.0,
+				    },
+			    }
+		    },
+	    },
+    },      
+    {--왕립 마법사 복장 세트
+		NAME = 152,
+        PARTS = { 143, 144, 145, 146, 147, 307, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 50.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--왕립 라스 복장 세트 11월1일 추가
+		NAME = 1969,
+        PARTS = { 1962, 1963, 1964, 1965, 1966, 307, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 50.0,
+				    },
+			    }
+		    },
+	    },
+    },      
+    ---------------------------------흑기사----------------------------
+    {--흑기사 복장 세트
+		NAME = 226,
+        PARTS = { 205, 206, 207, 208, 209, 308, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },    
+    {--흑궁수 복장 세트
+		NAME = 227,
+        PARTS = { 212, 213, 214, 215, 216, 308, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },    
+    {--흑마법사 복장 세트
+		NAME = 228,
+        PARTS = { 219, 220, 221, 222, 223, 308, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },    
+    {--흑도적 복장 세트
+		NAME = 1927,
+        PARTS = { 1920, 1921, 1922, 1923, 1924, 308, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--흑드루이드 복장 세트
+        NAME = 3948,
+        PARTS = { 3940, 3941, 3942, 3943, 3944, 308, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },            
+    {--흑로난 복장 세트
+        NAME = 6886,
+        PARTS = { 6881, 6882, 6883, 6884, 6885, 308, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--흑격투가 복장 세트
+        NAME = 29302,
+        PARTS = { 29296, 29297, 29298, 29299, 29300, 308, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },	
+    {--흑무희 복장 세트
+        NAME = 12469,
+        PARTS = { 12463, 12464, 12465, 12466, 12467, 308, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--흑검투사 복장 세트
+        NAME = 29310,
+        PARTS = { 29304, 29305, 29306, 29307, 29308, 308, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--흑마리 복장 세트
+        NAME = 1504,
+        PARTS = { 22119, 22120, 22121, 22122, 22123, 308, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },    
+    ---------------------------------절대강자----------------------------
+    {--절대강자기사 복장 세트 투구,상,하,장,신,반
+		NAME = 418,
+        PARTS = { 400, 401, 402, 403, 404, 453, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_IGNORE_HASTE,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },    
+    {--절대강자궁수 복장 세트
+		NAME = 419,
+        PARTS = { 406, 407, 408, 409, 410, 454, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_IGNORE_HASTE,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },    
+    {--절대강자마법사 복장 세트
+		NAME = 420,
+        PARTS = { 412, 413, 414, 415, 416, 455, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_IGNORE_HASTE,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--절대강자 라스 복장 세트
+		NAME = 4887,
+        PARTS = { 4881,4882,4883,4884,4885,29312, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_IGNORE_HASTE,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--절대강자 라이안 복장 세트
+		NAME = 4896,
+        PARTS = { 4890,4891,4892,4893,4894,29313 },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_IGNORE_HASTE,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--절대강자 로난 복장 세트
+		NAME = 6879,
+        PARTS = { 6874,6875,6876,6877,6878,29314, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_IGNORE_HASTE,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--절대강자 에이미 복장 세트
+		NAME = 16555,
+        PARTS = { 16550,16551,16552,16553,16554,29315, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_IGNORE_HASTE,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--절대강자 진 복장 세트
+		NAME = 16561,
+        PARTS = { 16556,16557,16558,16559,16560, 29316, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_IGNORE_HASTE,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--절대강자 지크하트 복장 세트
+		NAME = 15648,
+        PARTS = { 15643,15644,15645,15646,15647,29317, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_IGNORE_HASTE,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--절대강자마리 복장 세트
+		NAME = 22071,
+        PARTS = { 22065, 22066, 22067, 22068, 22069,29318, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_IGNORE_HASTE,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },
+  
+    ---------------------------------타이거----------------------------
+    {--타이거기사 복장 세트
+		NAME = 567,
+        PARTS = { 543, 544, 545, 546, 547, 582, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ROLLING,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },    
+    {--타이거궁수 복장 세트
+		NAME = 568,
+        PARTS = { 550, 551, 552, 553, 554, 583, },
+		ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ROLLING,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },    
+    {--타이거마법사 복장 세트
+		NAME = 569,
+        PARTS = { 557, 558, 559, 560, 561, 584, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ROLLING,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--타이거도적 복장 세트
+		NAME = 2438,
+        PARTS = { 2429, 2430, 2431, 2432, 2433, 2994, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ROLLING,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--타이거드루이드 복장 세트
+		NAME = 4105,
+        PARTS = { 4099, 4100, 4101, 4102, 4103, 4108, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ROLLING,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--타이거로난 복장 세트
+		NAME = 6902,
+        PARTS = { 6897, 6898, 6899, 6900, 6901, 6964, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ROLLING,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--타이거 에이미 복장 세트
+		NAME = 16589,
+        PARTS = {16583,16584,16585 ,16586,16587,29286, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ROLLING,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--타이거 격투가 복장 세트
+		NAME = 16596,
+        PARTS = { 16590,16591,16592,16593,16594, 29287,},
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ROLLING,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--타이거 지크하트 복장 세트
+		NAME = 16603,
+        PARTS = { 16597, 16598,16599,16600,16601, 15713,},
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ROLLING,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },
+
+    {--타이거마리 복장 세트
+		NAME = 29294,
+        PARTS = {29288,29289,29290,29291,29292,29295,},
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ROLLING,
+					    ABILITY = 1.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    ---------------------------------캐슬킹----------------------------
+    {--캐슬킹기사 복장 세트
+		NAME = 675,
+        PARTS = { 654, 655, 656, 657, 658, 699},
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },    
+    {--캐슬킹궁수 복장 세트
+		NAME = 676,
+        PARTS = { 661, 662, 663, 664, 665, 700},
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },    
+    {--캐슬킹마법사 복장 세트
+		NAME = 677,
+        PARTS = { 668, 669, 670, 671, 672, 701},
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },      
+    {--캐슬킹 도적 복장 세트
+		NAME = 1977,
+        PARTS = { 1970, 1971, 1972, 1973, 1974, 2038, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },    
+    {--캐슬킹 라이언 복장 세트
+		NAME = 4923,
+        PARTS = { 4917, 4918, 4919, 4920, 4921, 6922, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },    
+    {--캐슬킹 마검사 복장 세트
+		NAME = 6918,
+        PARTS = { 6913, 6914, 6915, 6916, 6917, 6921, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },    
+    {--캐슬킹 에이미 복장 세트
+		NAME = 16610,
+        PARTS = { 16604, 16605, 16606, 16607, 16608, 29277, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },     
+
+    {--캐슬킹 진 복장 세트
+		NAME = 12092,
+        PARTS = { 12086, 12087, 12088, 12089, 12090, 12497, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    }, 
+
+    {--캐슬킹 지크하트 복장 세트
+		NAME = 16617,
+        PARTS = { 16611, 16612, 16613, 16614, 16615, 15714, },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },         
+    
+    {--캐슬킹 마리 복장 세트
+		NAME = 29284,
+        PARTS = { 29278,29279,29280,29281,29282,29285 },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },      
+
+    {--캐슬킹 제로 복장 세트
+		NAME = 44956,
+        PARTS = { 44950,44951,44952,44953,44954,50859 },
+        ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 6,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 100.0,
+				    },
+			    }
+		    },
+	    },
+    },       
+
+    ---------------------------------카니발------------------------------------
+    {--카니발 기사 복장 세트
+		NAME = 7451,
+		PARTS = { 7406, 7407, 7408, 7409, 7410,  },
+		ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 5,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+					    ABILITY = 5.0,
+				    },
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_HP_PERCENT,
+					    ABILITY = 20.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--카니발 궁수 복장 세트
+		NAME = 7452,
+		PARTS = { 7415, 7416, 7417, 7418, 7419,  },
+		ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 5,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+					    ABILITY = 5.0,
+				    },
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_HP_PERCENT,
+					    ABILITY = 20.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--카니발 마법사 복장 세트
+		NAME = 7453,
+		PARTS = { 7424, 7425, 7426, 7427, 7428,  },
+		ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 5,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+					    ABILITY = 5.0,
+				    },
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_HP_PERCENT,
+					    ABILITY = 20.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--카니발 도적 복장 세트
+		NAME = 7454,
+		PARTS = { 7433, 7434, 7435, 7436, 7437,  },
+		ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 5,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+					    ABILITY = 5.0,
+				    },
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_HP_PERCENT,
+					    ABILITY = 20.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--카니발 드루이드 복장 세트
+		NAME = 7455,
+		PARTS = { 7442, 7443, 7444, 7445, 7446,  },
+		ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 5,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+					    ABILITY = 5.0,
+				    },
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_HP_PERCENT,
+					    ABILITY = 20.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    {--카니발 마검사 복장 세트
+		NAME = 7465,
+		PARTS = { 7456, 7457, 7458, 7459, 7460,  },
+		ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 5,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+					    ABILITY = 5.0,
+				    },
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_HP_PERCENT,
+					    ABILITY = 20.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    -----------------------------태양의 반지------------------------------------
+    {
+        NAME = 13232,
+        PARTS = { 13232, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ROLLING,
+					    ABILITY = 1.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+--------------------------------태극기 반지 액세서리--------------------------
+    {
+	NAME = 16511,
+	PARTS = { 16511, },
+	ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 50.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    ----------------------------- 영웅의 반지 10------------------------------
+    {
+		NAME = 18859,
+		PARTS = { 18859, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 10.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    {
+		NAME = 18864,
+		PARTS = { 18864, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 10.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    {
+		NAME = 18869,
+		PARTS = { 18869, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 10.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    {
+		NAME = 18874,
+		PARTS = { 18874, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 10.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    {
+		NAME = 18879,
+		PARTS = { 18879, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 10.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    {
+		NAME = 18884,
+		PARTS = { 18884, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 10.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    {
+		NAME = 18889,
+		PARTS = { 18889, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 10.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    {
+		NAME = 18894,
+		PARTS = { 18894, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 10.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    {
+		NAME = 18899,
+		PARTS = { 18899, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 10.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    ----------------------------- 영웅의 반지 15------------------------------
+    {
+		NAME = 18860,
+		PARTS = { 18860, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 15.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18865,
+		PARTS = { 18865, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 15.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18870,
+		PARTS = { 18870, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 15.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18875,
+		PARTS = { 18875, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 15.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18880,
+		PARTS = { 18880, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 15.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    {
+		NAME = 18885,
+		PARTS = { 18885, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 15.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    {
+		NAME = 18890,
+		PARTS = { 18890, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 15.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    {
+		NAME = 18895,
+		PARTS = { 18895, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 15.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18900,
+		PARTS = { 18900, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 15.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	 ----------------------------- 영웅의 반지 20------------------------------
+    {
+		NAME = 18861,
+		PARTS = { 18861, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 20.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    {
+		NAME = 18866,
+		PARTS = { 18866, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 20.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18871,
+		PARTS = { 18871, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 20.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18876,
+		PARTS = { 18876, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 20.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18881,
+		PARTS = { 18881, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 20.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18886,
+		PARTS = { 18886, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 20.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18891,
+		PARTS = { 18891, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 20.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18896,
+		PARTS = { 18896, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 20.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18901,
+		PARTS = { 18901, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 20.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	 ----------------------------- 영웅의 반지 30------------------------------
+    {
+		NAME = 18862,
+		PARTS = { 18862, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 30.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18867,
+		PARTS = { 18867, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 30.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18872,
+		PARTS = { 18872, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 30.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18877,
+		PARTS = { 18877, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 30.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18882,
+		PARTS = { 18882, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 30.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18887,
+		PARTS = { 18887, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 30.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18892,
+		PARTS = { 18892, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 30.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18897,
+		PARTS = { 18897, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 30.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 18902,
+		PARTS = { 18902, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_COUNTER_DEF,
+					    ABILITY = 30.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+
+
+	 ----------------------------- 파투세이 창------------------------------
+	{
+		NAME = 7917,
+		PARTS = { 7917, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_HP_PERCENT,
+					    ABILITY = 10.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 1414,
+		PARTS = { 1414, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_HP_PERCENT,
+					    ABILITY = 10.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+
+		 ----------------------------- 가이코즈 방패 1------------------------------
+	{
+		NAME = 1373,
+		PARTS = { 1373, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_DEFENCE_PERCENT,
+					    ABILITY = 10.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+		 ----------------------------- 가이코즈 방패 2------------------------------
+	{
+		NAME = 8064,
+		PARTS = { 8064, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_DEFENCE_PERCENT,
+					    ABILITY = 10.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+			 ----------------------------- 광전사 반지------------------------------
+	{
+		NAME = 736,
+		PARTS = { 736, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+					    ABILITY = 5.0,
+				    },
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_DEFENCE_PERCENT,
+					    ABILITY = -3.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 736,
+		PARTS = { 736, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+					    ABILITY = 5.0,
+				    },
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_DEFENCE_PERCENT,
+					    ABILITY = -3.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 738,
+		PARTS = { 738, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+					    ABILITY = 5.0,
+				    },
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_DEFENCE_PERCENT,
+					    ABILITY = -3.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	
+	{
+		NAME = 736,
+		PARTS = { 736, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+					    ABILITY = 5.0,
+				    },
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_DEFENCE_PERCENT,
+					    ABILITY = -3.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	
+	
+	----------------------------- 진광전사 반지------------------------------
+	{
+		NAME = 739,
+		PARTS = { 739, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+					    ABILITY = 10.0,
+				    },
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_DEFENCE_PERCENT,
+					    ABILITY = -5.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 7922,
+		PARTS = { 7922, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+					    ABILITY = 10.0,
+				    },
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_DEFENCE_PERCENT,
+					    ABILITY = -5.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 8960,
+		PARTS = { 8960, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+					    ABILITY = 10.0,
+				    },
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_DEFENCE_PERCENT,
+					    ABILITY = -5.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	
+	
+	----------------------------- 공작 깃털 날개------------------------------
+	{
+		NAME = 1669,
+		PARTS = { 1669, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_DEFENCE_PERCENT,
+					    ABILITY = 8.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+	{
+		NAME = 1701,
+		PARTS = { 1701, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_DEFENCE_PERCENT,
+					    ABILITY = 8.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    { 
+		NAME = 8979,
+		PARTS = { 8979, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+					    ABILITY = 10.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    { 
+		NAME = 2031,
+		PARTS = { 2031, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+					    ABILITY = 10.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    { 
+		NAME = 2202,
+		PARTS = { 2202, },
+		ATTRIBUTE_LIST =
+            {
+		{
+			    EQUIP_COUNT = 1,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+					    ABILITY = 10.0,
+				    },				    
+			    }
+		    },
+		},
+    },
+    {--4주년 대만 이벤트 복장 세트
+		NAME = -1,
+		PARTS = { 14113,14114,14115,14116, },
+		ATTRIBUTE_LIST =
+	    {
+		    {
+			    EQUIP_COUNT = 4,
+			    ATTRIBUTE =
+			    {
+				    {
+					    ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+					    ABILITY = 10.0,
+				    },
+			    }
+		    },
+	    },
+    },
+    --------------------------------------------------------------------------
+    ----세트 모션 적용 시작	20091023 이동석
+    --------------------------------  좀비  -----------------------------------
+    {--좀비 기사 복장 세트
+		NAME = 20344,
+		PARTS = { 20339, 20340, 20341, 20342, 20343,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_JOMBIE_WALK,
+			WAIT		=	MID_SETITEM_JOMBIE_WAIT,
+			JUMP_READY	=	MID_SETITEM_JOMBIE_JUMP_READY,
+			JUMP		=	MID_SETITEM_JOMBIE_JUMP,
+			DASH		=	MID_SETITEM_JOMBIE_DASH,
+		},
+    },
+    
+    {--좀비 궁수 복장 세트
+		NAME = 20350,
+		PARTS = { 20345, 20346, 20347, 20348, 20349,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_JOMBIE_WALK,
+			WAIT		=	MID_SETITEM_JOMBIE_WAIT,
+			JUMP_READY	=	MID_SETITEM_JOMBIE_JUMP_READY,
+			JUMP		=	MID_SETITEM_JOMBIE_JUMP,
+			DASH		=	MID_SETITEM_JOMBIE_DASH,
+		},
+    },
+    
+    {--좀비 마법사 복장 세트
+		NAME = 20356,
+		PARTS = { 20351, 20352, 20353, 20354, 20355,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_JOMBIE_WALK,
+			WAIT		=	MID_SETITEM_JOMBIE_WAIT,
+			JUMP_READY	=	MID_SETITEM_JOMBIE_JUMP_READY,
+			JUMP		=	MID_SETITEM_JOMBIE_JUMP,
+			DASH		=	MID_SETITEM_JOMBIE_DASH,
+		},
+    },
+    
+    {--좀비 도적 복장 세트
+		NAME = 20362,
+		PARTS = { 20357, 20358, 20359, 20360, 20361,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_JOMBIE_WALK,
+			WAIT		=	MID_SETITEM_JOMBIE_WAIT,
+			JUMP_READY	=	MID_SETITEM_JOMBIE_JUMP_READY,
+			JUMP		=	MID_SETITEM_JOMBIE_JUMP,
+			DASH		=	MID_SETITEM_JOMBIE_DASH,
+		},
+    },
+    
+    {--좀비 드루이드 복장 세트
+		NAME = 20368,
+		PARTS = { 20363, 20364, 20365, 20366, 20367,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_JOMBIE_WALK,
+			WAIT		=	MID_SETITEM_JOMBIE_WAIT,
+			JUMP_READY	=	MID_SETITEM_JOMBIE_JUMP_READY,
+			JUMP		=	MID_SETITEM_JOMBIE_JUMP,
+			DASH		=	MID_SETITEM_JOMBIE_DASH,
+		},
+    },
+    
+    
+    {--좀비 마검사 복장 세트
+		NAME = 20374,
+		PARTS = { 20369, 20370, 20371, 20372, 20373,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_JOMBIE_WALK,
+			WAIT		=	MID_SETITEM_JOMBIE_WAIT,
+			JUMP_READY	=	MID_SETITEM_JOMBIE_JUMP_READY,
+			JUMP		=	MID_SETITEM_JOMBIE_JUMP,
+			DASH		=	MID_SETITEM_JOMBIE_DASH,
+		},
+    },
+    {--좀비 댄서 복장 세트
+		NAME = 20380,
+		PARTS = { 20375, 20376, 20377, 20378, 20379,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_JOMBIE_WALK,
+			WAIT		=	MID_SETITEM_JOMBIE_WAIT,
+			JUMP_READY	=	MID_SETITEM_JOMBIE_JUMP_READY,
+			JUMP		=	MID_SETITEM_JOMBIE_JUMP,
+			DASH		=	MID_SETITEM_JOMBIE_DASH,
+		},
+    },
+    
+    
+    {--좀비 격투가 복장 세트
+		NAME = 20386,
+		PARTS = { 20381, 20382, 20383, 20384, 20385,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_JOMBIE_WALK,
+			WAIT		=	MID_SETITEM_JOMBIE_WAIT,
+			JUMP_READY	=	MID_SETITEM_JOMBIE_JUMP_READY,
+			JUMP		=	MID_SETITEM_JOMBIE_JUMP,
+			DASH		=	MID_SETITEM_JOMBIE_DASH,
+		},
+    },
+    
+     {--좀비 검투사 복장 세트
+		NAME = 20392,
+		PARTS = { 20387, 20388, 20389, 20390, 20391,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_JOMBIE_WALK,
+			WAIT		=	MID_SETITEM_JOMBIE_WAIT,
+			JUMP_READY	=	MID_SETITEM_JOMBIE_JUMP_READY,
+			JUMP		=	MID_SETITEM_JOMBIE_JUMP,
+			DASH		=	MID_SETITEM_JOMBIE_DASH,
+		},
+    },
+
+     {--마도 공학사 복장 세트
+		NAME = 37960,
+		PARTS = { 37956, 37959, 37958, 37955, 37957,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_JOMBIE_WALK,
+			WAIT		=	MID_SETITEM_JOMBIE_WAIT,
+			JUMP_READY	=	MID_SETITEM_JOMBIE_JUMP_READY,
+			JUMP		=	MID_SETITEM_JOMBIE_JUMP,
+			DASH		=	MID_SETITEM_JOMBIE_DASH,
+		},
+    },
+
+     {--클리퍼 공학사 복장 세트
+		NAME = 37966,
+		PARTS = { 37962, 37965, 37964, 37961, 37963,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_JOMBIE_WALK,
+			WAIT		=	MID_SETITEM_JOMBIE_WAIT,
+			JUMP_READY	=	MID_SETITEM_JOMBIE_JUMP_READY,
+			JUMP		=	MID_SETITEM_JOMBIE_JUMP,
+			DASH		=	MID_SETITEM_JOMBIE_DASH,
+		},
+    },
+
+    --------------------------------  강시  -----------------------------------
+    {--강시 기사 복장 세트
+		NAME = 19637,
+		PARTS = { 19634, 19635, 19636, 19697, 19698, },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_GANGSI_WALK,
+			WAIT		=	MID_SETITEM_GANGSI_WAIT,
+			JUMP_READY	=	MID_SETITEM_GANGSI_JUMP_READY,
+			JUMP		=	MID_SETITEM_GANGSI_JUMP,
+			DASH		=	MID_SETITEM_GANGSI_DASH,
+		},
+    },
+    
+    {--강시 궁수 복장 세트
+		NAME = 19641,
+		PARTS = { 19638, 19639, 19640, 19699, 19700, },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_GANGSI_WALK,
+			WAIT		=	MID_SETITEM_GANGSI_WAIT,
+			JUMP_READY	=	MID_SETITEM_GANGSI_JUMP_READY,
+			JUMP		=	MID_SETITEM_GANGSI_JUMP,
+			DASH		=	MID_SETITEM_GANGSI_DASH,
+		},
+    },
+    
+    {--강시 마법사 복장 세트
+		NAME = 19645,
+		PARTS = { 19642, 19643, 19644, 19701, 19702 },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_GANGSI_WALK,
+			WAIT		=	MID_SETITEM_GANGSI_WAIT,
+			JUMP_READY	=	MID_SETITEM_GANGSI_JUMP_READY,
+			JUMP		=	MID_SETITEM_GANGSI_JUMP,
+			DASH		=	MID_SETITEM_GANGSI_DASH,
+		},
+    },
+    
+    {--강시 도적 복장 세트
+		NAME = 19649,
+		PARTS = { 19646, 19647, 19648, 19703, 19704, },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_GANGSI_WALK,
+			WAIT		=	MID_SETITEM_GANGSI_WAIT,
+			JUMP_READY	=	MID_SETITEM_GANGSI_JUMP_READY,
+			JUMP		=	MID_SETITEM_GANGSI_JUMP,
+			DASH		=	MID_SETITEM_GANGSI_DASH,
+		},
+    },
+    
+    {--강시 드루이드 복장 세트
+		NAME = 19653,
+		PARTS = { 19650, 19651, 19652, 19705, 19706,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_GANGSI_WALK,
+			WAIT		=	MID_SETITEM_GANGSI_WAIT,
+			JUMP_READY	=	MID_SETITEM_GANGSI_JUMP_READY,
+			JUMP		=	MID_SETITEM_GANGSI_JUMP,
+			DASH		=	MID_SETITEM_GANGSI_DASH,
+		},
+    },
+    
+    
+    {--강시 마검사 복장 세트
+		NAME = 19657,
+		PARTS = { 19654, 19655, 19656, 19707, 19708,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_GANGSI_WALK,
+			WAIT		=	MID_SETITEM_GANGSI_WAIT,
+			JUMP_READY	=	MID_SETITEM_GANGSI_JUMP_READY,
+			JUMP		=	MID_SETITEM_GANGSI_JUMP,
+			DASH		=	MID_SETITEM_GANGSI_DASH,
+		},
+    },
+    {--강시 댄서 복장 세트
+		NAME = 19661,
+		PARTS = { 19658, 19659, 19660, 19709, 19710,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_GANGSI_WALK,
+			WAIT		=	MID_SETITEM_GANGSI_WAIT,
+			JUMP_READY	=	MID_SETITEM_GANGSI_JUMP_READY,
+			JUMP		=	MID_SETITEM_GANGSI_JUMP,
+			DASH		=	MID_SETITEM_GANGSI_DASH,
+		},
+    },
+    
+    {--강시 격투가 복장 세트
+		NAME = 19665,
+		PARTS = { 19662, 19663, 19664, 19711, 19712,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_GANGSI_WALK,
+			WAIT		=	MID_SETITEM_GANGSI_WAIT,
+			JUMP_READY	=	MID_SETITEM_GANGSI_JUMP_READY,
+			JUMP		=	MID_SETITEM_GANGSI_JUMP,
+			DASH		=	MID_SETITEM_GANGSI_DASH,
+		},
+    },
+    
+    {--강시 검투사 복장 세트
+		NAME = 19669,
+		PARTS = { 19666, 19667, 19668, 19713, 19714,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_GANGSI_WALK,
+			WAIT		=	MID_SETITEM_GANGSI_WAIT,
+			JUMP_READY	=	MID_SETITEM_GANGSI_JUMP_READY,
+			JUMP		=	MID_SETITEM_GANGSI_JUMP,
+			DASH		=	MID_SETITEM_GANGSI_DASH,
+		},
+    },
+
+    {--강시 마도공학사 복장 세트
+		NAME = 37948,
+		PARTS = { 37943, 37944, 37945, 37946, 37947,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_GANGSI_WALK,
+			WAIT		=	MID_SETITEM_GANGSI_WAIT,
+			JUMP_READY	=	MID_SETITEM_GANGSI_JUMP_READY,
+			JUMP		=	MID_SETITEM_GANGSI_JUMP,
+			DASH		=	MID_SETITEM_GANGSI_DASH,
+		},
+    },
+    
+    {--강시 클리퍼 복장 세트
+		NAME = 37954,
+		PARTS = { 37949,37950,37951,37952,37953,  },
+		SQUAREMOTION =
+		{
+			WALK		=	MID_SETITEM_GANGSI_WALK,
+			WAIT		=	MID_SETITEM_GANGSI_WAIT,
+			JUMP_READY	=	MID_SETITEM_GANGSI_JUMP_READY,
+			JUMP		=	MID_SETITEM_GANGSI_JUMP,
+			DASH		=	MID_SETITEM_GANGSI_DASH,
+		},
+    },    
+
+   {--가챠 복장 세트 6차 하급 기사 세트 
+		NAME = 19939,
+		PARTS = { 19933, 19934, 19935, 19936, 19937, 19938,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20005,20006,20007,20008, },
+		WEAPON = { 19996, 20113, 20230, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 하급 궁수 세트 
+		NAME = 19946,
+		PARTS = { 19940,19941,19942,19943,19944,19945,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20009,  20010,  20011,  20012,   },
+		WEAPON = { 19997, 20114, 20231, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 하급 마법사 세트 
+		NAME = 19953,
+		PARTS = { 19947,19948,19949,19950,19951,19952,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20013,  20014,  20015,  20016,  },
+		WEAPON = { 19998, 20115, 20232, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 하급 도적 세트 
+		NAME = 19960,
+		PARTS = {19954,19955,19956,19957,19958,19959,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20017,  20018,  20019,  20020,   },
+		WEAPON = { 19999, 20116, 20233, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 하급 드루이드 세트 
+		NAME = 19967,
+		PARTS = {19961,19962,19963,19964,19965,19966,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20021,  20022,  20023,  20024,   },
+		WEAPON = { 20000, 20117, 20234, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 하급 마검사 세트 
+		NAME = 19974,
+		PARTS = { 19968,19969,19970,19971,19972,19973,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20025,  20026,  20027,  20028,   },
+		WEAPON = { 20001, 20118, 20235, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 하급 무희 세트 
+		NAME = 19981,
+		PARTS = { 19975,19976,19977,19978,19979,19980,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = {20029,  20030,  20031,  20032,   },
+		WEAPON = { 20002, 20119, 20236, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 하급 격투가 세트 
+		NAME = 19988,
+		PARTS = { 19982,19983,19984,19985,19986,19987,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20033,  20034,  20035,  20036,   },
+		WEAPON = { 20003, 20120, 20237, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 하급 검투사 세트 
+		NAME = 19995,
+		PARTS = { 19989,19990,19991,19992,19993,19994,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20037,  20038,  20039,  20040, },
+		WEAPON = { 20004, 20121, 36729, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 하급 마리 세트 
+		NAME = 35607,
+		PARTS = { 35601,35602,35603,35604,35605,35606,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 35609,  35610,  35611,  35612, },
+		WEAPON = { 35608, 35621, 35634, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 하급 디오 세트 
+		NAME = 36677,
+		PARTS = { 36671,36672,36673,36674,36675,36676,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 36679,  36680,  36681,  36682, },
+		WEAPON = { 36678, 36691, 36704, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 중급 기사 세트 
+		NAME = 20056,
+		PARTS = { 20050, 20051, 20052, 20053, 20054, 20055, },
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20122,20123,20124,20125, },
+		WEAPON = { 19996, 20113, 20232, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 중급 궁수 세트 
+		NAME = 20063,
+		PARTS = { 20057, 20058, 20059, 20060, 20061, 20062,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20126,20127,20128,20129,   },
+		WEAPON = { 19997, 20114, 20231, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 중급 마법사 세트 
+		NAME = 20070,
+		PARTS = { 20064, 20065, 20066, 20067, 20068, 20069,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = {20130,20131,20132,20133,  },
+		WEAPON = { 19998, 20115, 20232, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 중급 도적 세트 
+		NAME = 20077,
+		PARTS = {20071, 20072, 20073, 20074, 20075, 20076,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20134,20135,20136,20137,  },
+		WEAPON = { 19999, 20116, 20233, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 중급 드루이드 세트 
+		NAME = 20084,
+		PARTS = {20078, 20079, 20080, 20081, 20082, 20083,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20138,20139,20140,20141,  },
+		WEAPON = { 20000, 20117, 20234, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 중급 마검사 세트 
+		NAME = 20091,
+		PARTS = { 20085, 20086, 20087, 20088, 20089, 20090,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = {20142,20143,20144,20145,   },
+		WEAPON = { 20001, 20118, 20235, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 중급 무희 세트 
+		NAME = 20098,
+		PARTS = { 20092, 20093, 20094, 20095, 20096, 20097,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = {20146,20147,20148,20149,  },
+		WEAPON = { 20002, 20119, 20236, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 중급 격투가 세트 
+		NAME = 20105,
+		PARTS = { 20099, 20100, 20101, 20102, 20103, 20104,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20150,20151,20152,20153,  },
+		WEAPON = { 20003, 20120, 20237, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 중급 검투사 세트 
+		NAME = 20112,
+		PARTS = { 20106, 20107, 20108, 20109, 20110, 20111,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20154,20155,20156,20157, },
+		WEAPON = { 20004, 20121, 36729, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+	{--가챠 복장 세트 6차 중급 마리 세트 
+		NAME = 35620,
+		PARTS = { 35614, 35615, 35616, 35617, 35618, 35619,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 35622,35623,35624,35625,  },
+		WEAPON = { 35608, 35621, 35634, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 중급 디오 세트 
+		NAME = 36690,
+		PARTS = { 36684, 36685, 36686, 36687, 36688, 36689,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 36692,36693,36694,36695, },
+		WEAPON = { 36678, 36691, 36704, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 상급 기사 세트 
+		NAME = 20173,
+		PARTS = { 20167, 20168, 20169, 20170, 20171, 20172, },
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20239, 20240, 20241, 20242,  },
+		WEAPON = { 19996, 20113, 20230, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 상급 궁수 세트 
+		NAME = 20180,
+		PARTS = { 20174, 20175, 20176, 20177, 20178, 20179, },
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20243, 20244, 20245, 20246,    },
+		WEAPON = { 19997, 20114, 20231, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 상급 마법사 세트 
+		NAME = 20187,
+		PARTS = { 20181, 20182, 20183, 20184, 20185, 20186,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = {20247, 20248, 20249, 20250,  },
+		WEAPON = { 19998, 20115, 20232, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 상급 도적 세트 
+		NAME = 20194,
+		PARTS = {20188, 20189, 20190, 20191, 20192, 20193,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20251, 20252, 20253, 20254,   },
+		WEAPON = { 19999, 20116, 20233, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 상급 드루이드 세트 
+		NAME = 20201,
+		PARTS = {20195, 20196, 20197, 20198, 20199, 20200,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20255, 20256, 20257, 20258,  },
+		WEAPON = { 20000, 20117, 20234, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 상급 마검사 세트 
+		NAME = 20208,
+		PARTS = { 20202, 20203, 20204, 20205, 20206, 20207,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = {20259, 20260, 20261, 20262,   },
+		WEAPON = { 20001, 20118, 20235, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 상급 무희 세트 
+		NAME = 20215,
+		PARTS = { 20209, 20210, 20211, 20212, 20213, 20214,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = {20263, 20264, 20265, 20266,  },
+		WEAPON = { 20002, 20119, 20236, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 상급 격투가 세트 
+		NAME = 20222,
+		PARTS = { 20216, 20217, 20218, 20219, 20220, 20221,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20267, 20268, 20269, 20270,  },
+		WEAPON = { 20003, 20120, 20237, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 상급 검투사 세트 
+		NAME = 20229,
+		PARTS = { 20223, 20224, 20225, 20226, 20227, 20228,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 20271, 20272, 20273, 20274, },
+		WEAPON = { 20004, 20121, 36729, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+	{--가챠 복장 세트 6차 상급 마리 세트 
+		NAME = 35633,
+		PARTS = { 35627, 35628, 35629, 35630, 35631, 35632,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 35635,35636,35637,35638,  },
+		WEAPON = { 35608, 35621, 35634, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+    {--가챠 복장 세트 6차 상급 디오 세트 
+		NAME = 36703,
+		PARTS = { 36697, 36698, 36699, 36700, 36701, 36702,},
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 36705,36706,36707,36708, },
+		WEAPON = { 36678, 36691, 36704, },
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+
+   
+    -------------------------------------------------------------------
+    ----------------------------------GWC 응원복장 세트----------------
+    -------------------------------------------------------------------
+    {--기사 응원 복장 세트--
+		NAME = 21348,
+		PARTS = { 21343, 21344, 21345, 21346, 21347, },
+		SQUAREMOTION =
+		{
+			WAIT		=	MID_SETITEM_GWC_WOMAN_WAIT,
+		},
+		CHEERUPMOTION = TRUE,
+    },
+    
+    {--궁수 응원 복장 세트--
+		NAME = 213540,
+		PARTS = { 21349, 21350, 21351, 21352, 21353, },
+		SQUAREMOTION =
+		{
+			WAIT		=	MID_SETITEM_GWC_WOMAN_WAIT,
+		},
+		CHEERUPMOTION = TRUE,
+    },
+    
+    {--법사 응원 복장 세트--
+		NAME = 21360,
+		PARTS = { 21355, 21356, 21357, 21358, 21359, },
+		SQUAREMOTION =
+		{
+			WAIT		=	MID_SETITEM_GWC_WOMAN_WAIT,
+		},
+		CHEERUPMOTION = TRUE,
+    },
+    
+    {--도적 응원 복장 세트--
+		NAME = 21366,
+		PARTS = { 21361, 21362, 21363, 21364, 21365, },
+		SQUAREMOTION =
+		{
+			WAIT		=	MID_SETITEM_GWC_MAN_WAIT,
+		},
+		CHEERUPMOTION = TRUE,
+    },
+    
+    {--드루이드 응원 복장 세트--
+		NAME = 21372,
+		PARTS = { 21367, 21368, 21369, 21370, 21371, },
+		SQUAREMOTION =
+		{
+			WAIT		=	MID_SETITEM_GWC_MAN_WAIT,
+		},
+		CHEERUPMOTION = TRUE,
+    },
+    
+    {--마검사 응원 복장 세트--
+		NAME = 21378,
+		PARTS = { 21373, 21374, 21375, 21376, 21377, },
+		SQUAREMOTION =
+		{
+			WAIT		=	MID_SETITEM_GWC_MAN_WAIT,
+		},
+		CHEERUPMOTION = TRUE,
+    },
+    
+    {--무희 응원 복장 세트
+		NAME = 21384,
+		PARTS = { 21379, 21380, 21381, 21382, 21383, },
+		SQUAREMOTION =
+		{
+			WAIT		=	MID_SETITEM_GWC_WOMAN_WAIT,
+		},
+		CHEERUPMOTION = TRUE,
+    },
+   {-- 진 응원복장세트
+ 		NAME = 21390,
+		PARTS = { 21385, 21386, 21387, 21388, 21389, },
+		SQUAREMOTION =
+		{
+			WAIT		=	MID_SETITEM_GWC_MAN_WAIT,
+		},
+		CHEERUPMOTION = TRUE,
+  },
+   {-- 지크하트 응원복장세트
+ 		NAME = 21396,
+		PARTS = { 21391, 21392, 21393, 21394, 21395, },
+		SQUAREMOTION =
+		{
+			WAIT		=	MID_SETITEM_GWC_MAN_WAIT,
+		},
+		CHEERUPMOTION = TRUE,
+    },
+   {-- 마리 응원복장세트
+ 		NAME = 37820,
+		PARTS = { 37815, 37816, 37817, 37818, 37819, },
+		SQUAREMOTION =
+		{
+			WAIT		=	MID_SETITEM_GWC_WOMAN_WAIT,
+		},
+		CHEERUPMOTION = TRUE,
+    },
+   {-- 디오 응원복장세트
+ 		NAME = 37826,
+		PARTS = { 37821, 37822, 37823, 37824, 37825, },
+		SQUAREMOTION =
+		{
+			WAIT		=	MID_SETITEM_GWC_MAN_WAIT,
+		},
+		CHEERUPMOTION = TRUE,
+    },    
+{--파이어가디언 엘리
+		NAME = 21890,
+		PARTS = { 21884, 21885, 21886, 21887, 21888, 21889, },
+		EFF_ENUM = { ITM_EFF_HALFCOUNT, ITM_EFF_ROLL, ITM_EFF_ACCUM_3RD },
+    },
+	{--파이어가디언 리르
+		NAME = 21898,
+		PARTS = { 21892, 21893, 21894, 21895, 21896, 21897, },
+		EFF_ENUM = { ITM_EFF_HALFCOUNT, ITM_EFF_ROLL, ITM_EFF_ACCUM_3RD },
+    },
+	{--파이어가디언 아르
+		NAME = 21906,
+		PARTS = { 21900, 21901, 21902, 21903, 21904, 21905, },
+		EFF_ENUM = { ITM_EFF_HALFCOUNT, ITM_EFF_ROLL, ITM_EFF_ACCUM_3RD },
+    },
+	{--파이어가디언 라스
+		NAME = 21914,
+		PARTS = { 21908, 21909, 21910, 21911, 21912, 21913, },
+		EFF_ENUM = { ITM_EFF_HALFCOUNT, ITM_EFF_ROLL, ITM_EFF_ACCUM_3RD },
+    },
+	{--파이어가디언 라이
+		NAME = 21922,
+		PARTS = { 21916, 21917, 21918, 21919, 21920, 21921, },
+		EFF_ENUM = { ITM_EFF_HALFCOUNT, ITM_EFF_ROLL, ITM_EFF_ACCUM_3RD },
+    },
+	{--파이어가디언 로난
+		NAME = 21930,
+		PARTS = { 21924, 21925, 21926, 21927, 21928, 21929, },
+		EFF_ENUM = { ITM_EFF_HALFCOUNT, ITM_EFF_ROLL, ITM_EFF_ACCUM_3RD },
+    },
+	{--파이어가디언 에이
+		NAME = 21938,
+		PARTS = { 21932, 21933, 21934, 21935, 21936, 21937, },
+		EFF_ENUM = { ITM_EFF_HALFCOUNT, ITM_EFF_ROLL, ITM_EFF_ACCUM_3RD },
+    },
+	{--파이어가디언 진?
+		NAME = 21946,
+		PARTS = { 21940, 21941, 21942, 21943, 21944, 21945, },
+		EFF_ENUM = { ITM_EFF_HALFCOUNT, ITM_EFF_ROLL, ITM_EFF_ACCUM_3RD },
+    },
+	{--파이어가디언 지크
+		NAME = 21954,
+		PARTS = { 21948, 21949, 21950, 21951, 21952, 21953, },
+		EFF_ENUM = { ITM_EFF_HALFCOUNT, ITM_EFF_ROLL, ITM_EFF_ACCUM_3RD },
+    },
+	{--세이머스 엘리
+		NAME = 30217,
+		PARTS = { 30211, 30212, 30213, 30214, 30215, 30216, },
+		EFF_ENUM = { ITM_EFF_HPUP, },
+    },
+	{--세이머스 리르
+		NAME = 30225,
+		PARTS = { 30219, 30220, 30221, 30222, 30223, 30224, },
+		EFF_ENUM = { ITM_EFF_HPUP, },
+    },
+	{--세이머스 아르
+		NAME = 30233,
+		PARTS = { 30227, 30228, 30229, 30230, 30240, 30250, },
+		EFF_ENUM = { ITM_EFF_HPUP, },
+    },
+	{-- 전설의 페트릭스 라스 세트
+       		NAME = 30241,
+        	PARTS = { 30235, 30236, 30237, 30238, 30239, 30240, },
+		EFF_ENUM = { ITM_EFF_HPUP, },
+    },    
+    	{-- 전설의 페트릭스 드루이드 세트
+        	NAME = 30249,
+        	PARTS = { 30243, 30244, 30245, 30246, 30247, 30248, },
+		EFF_ENUM = { ITM_EFF_HPUP, },
+    },
+    	{-- 전설의 페트릭스 마검사 세트
+        	NAME = 30257,
+        	PARTS = { 30251, 30252, 30253, 30254, 30255, 30256, },
+		EFF_ENUM = { ITM_EFF_HPUP, },
+    },
+    	{-- 전설의 페트릭스 에이미 세트
+        	NAME = 30265,
+        	PARTS = { 30259, 30260, 30261, 30262, 30263, 30264, },
+		EFF_ENUM = { ITM_EFF_HPUP, },
+    },
+    	{-- 전설의 페트릭스 진 세트
+        	NAME = 30273,
+        	PARTS = { 30267, 30268, 30269, 30270, 30271, 30272, },
+		EFF_ENUM = { ITM_EFF_HPUP, },
+    },
+    	{-- 전설의 페트릭스 지크 세트
+        	NAME = 30281,
+        	PARTS = { 30275, 30276, 30277, 30278, 30279, 30280, },
+		EFF_ENUM = { ITM_EFF_HPUP, },
+    },
+    	{-- 전설의 페트릭스 마리 세트
+        	NAME = 30563,
+        	PARTS = { 30557, 30558, 30559, 30560, 30561, 30562, },
+		EFF_ENUM = { ITM_EFF_HPUP, },
+    },
+    {--사쿠라 기사
+		NAME = 14999,
+		PARTS = { 14993, 14994, 14995, 14996, 14997, 14998, },
+		EFF_ENUM = { ITM_EFF_ACCUM_3RD, },
+    },    
+    {--사쿠라 궁수
+		NAME = 15007,
+		PARTS = { 15001, 15005, 15003, 15004, 15005, 15006, },
+		EFF_ENUM = { ITM_EFF_ACCUM_3RD, },
+    },
+    {--사쿠라 마법사
+		NAME = 15015,
+		PARTS = { 15009, 15010, 15011, 15012, 15013, 15014, },
+		EFF_ENUM = { ITM_EFF_ACCUM_3RD, },
+    },    
+    {--사쿠라 도적
+		NAME = 15023,
+		PARTS = { 15017, 15018, 15019, 15020, 15021, 15022, },
+		EFF_ENUM = { ITM_EFF_ACCUM_3RD, },
+    },
+    {--사쿠라 드루이드
+		NAME = 15031,
+		PARTS = { 15025, 15026, 15027, 15028, 15029, 15030, },
+		EFF_ENUM = { ITM_EFF_ACCUM_3RD, },
+    },
+    {--사쿠라 마검사
+		NAME = 15039,
+		PARTS = { 15033, 15034, 15035, 15036, 15037, 15038, },
+		EFF_ENUM = { ITM_EFF_ACCUM_3RD, },
+    },
+    {--사쿠라 무희
+		NAME = 15047,
+		PARTS = { 15041, 15042, 15043, 15044, 15045, 15046, },
+		EFF_ENUM = { ITM_EFF_ACCUM_3RD, },
+	},
+	--[[
+     {--가챠 복장 세트(예제)
+		NAME = 18707,
+		PARTS = { 18701,18702,18703,18704,18705,18706, },
+		GACHASETITEM = TRUE,
+		ACCESSORYS = { 18773,18774,18775,18776,   },
+		WEAPON = 18764,
+		BUFF = {EGC_EFFECT_GACHASET_HIGH_LEVEL1,EGC_EFFECT_GACHASET_HIGH_LEVEL2,EGC_EFFECT_GACHASET_HIGH_LEVEL3},
+    },
+	--]]
+    ---------------------------------레나스----------------------------
+    {
+                     NAME = 652,
+                     PARTS = { 652, },
+                     ATTRIBUTE_LIST =
+        	     {
+                         {
+                                    EQUIP_COUNT = 1,
+                                    ATTRIBUTE =
+                                    {
+                                              {
+                                                         ATTRIBUTE_TYPE =ATTRTYPE_FAST_HP_RECOVERY_DURING_LIMIT_TIME,
+                                                         ABILITY = 12.0,
+                                              },                                        
+                                    }
+                         },
+                     },
+    },
+    {
+                     NAME = 653,
+                     PARTS = { 653, },
+                     ATTRIBUTE_LIST =
+        	     {
+                         {
+                                    EQUIP_COUNT = 1,
+                                    ATTRIBUTE =
+                                    {
+                                              {
+                                                         ATTRIBUTE_TYPE =ATTRTYPE_FAST_HP_RECOVERY_DURING_LIMIT_TIME,
+                                                         ABILITY = 20.0,
+                                              },                                        
+                                    }
+                         },
+                     },
+    },
+
+
+--// 시즌4 대륙 아이템 ---- [Start]
+--// --------------------------------------------------------------------------------	
+	{	--// 성투사 [24] (엘리시스)				
+		NAME = 43059,				
+		PARTS = { 43060, 43061, 43062, 43063, 43064, 43065, 43660, 43661, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 8.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 18.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.46,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 성투사 [24] (리르)				
+		NAME = 43066,				
+		PARTS = { 43067, 43068, 43069, 43070, 43071, 43072, 43662, 43663, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 8.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 18.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.46,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 성투사 [24] (아르메)				
+		NAME = 43073,				
+		PARTS = { 43074, 43075, 43076, 43077, 43078, 43079, 43664, 43665, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 8.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 18.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.46,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 성투사 [24] (라스)				
+		NAME = 43080,				
+		PARTS = { 43081, 43082, 43083, 43084, 43085, 43086, 43666, 43667, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 8.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 18.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.46,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 성투사 [24] (라이언)				
+		NAME = 43087,				
+		PARTS = { 43088, 43089, 43090, 43091, 43092, 43093, 43668, 43669, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 8.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 18.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.46,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 성투사 [24] (로난)				
+		NAME = 43094,				
+		PARTS = { 43095, 43096, 43097, 43098, 43099, 43100, 43670, 43671, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 8.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 18.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.46,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 성투사 [24] (에이미)				
+		NAME = 43101,				
+		PARTS = { 43102, 43103, 43104, 43105, 43106, 43107, 43672, 43673, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 8.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 18.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.46,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 성투사 [24] (진)				
+		NAME = 43108,				
+		PARTS = { 43109, 43110, 43111, 43112, 43113, 43114, 43674, 43675, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 8.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 18.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.46,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 성투사 [24] (지크하트)				
+		NAME = 43115,				
+		PARTS = { 43116, 43117, 43118, 43119, 43120, 43121, 43676, 43677, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 8.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 18.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.46,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 성투사 [24] (마리)				
+		NAME = 43122,				
+		PARTS = { 43123, 43124, 43125, 43126, 43127, 43128, 43678, 43679, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 8.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 18.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.46,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 성투사 [24] (제로)				
+		NAME = 0,				
+		PARTS = { 45616, 45617, 45618, 45619, 45620, 45621, 45622, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 8.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 18.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.46,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 4.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+
+--// --------------------------------------------------------------------------------						
+	{	--// 빅터 [39] (엘리시스)				
+		NAME = 43129,				
+		PARTS = { 43130, 43131, 43132, 43133, 43134, 43135, 43680, 43681, 43682, 43683, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 11.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 21.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.76,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 빅터 [39] (리르)				
+		NAME = 43136,				
+		PARTS = { 43137, 43138, 43139, 43140, 43141, 43142, 43684, 43685, 43686, 43687, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 11.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 21.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.76,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 빅터 [39] (아르메)				
+		NAME = 43143,				
+		PARTS = { 43144, 43145, 43146, 43147, 43148, 43149, 43688, 43689, 43690, 43691, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 11.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 21.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.76,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 빅터 [39] (라스)				
+		NAME = 43150,				
+		PARTS = { 43151, 43152, 43153, 43154, 43155, 43156, 43692, 43693, 43694, 43695, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 11.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 21.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.76,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 빅터 [39] (라이언)				
+		NAME = 43157,				
+		PARTS = { 43158, 43159, 43160, 43161, 43162, 43163, 43696, 43697, 43698, 43699, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 11.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 21.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.76,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 빅터 [39] (로난)				
+		NAME = 43164,				
+		PARTS = { 43165, 43166, 43167, 43168, 43169, 43170, 43700, 43701, 43702, 43703, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 11.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 21.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.76,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 빅터 [39] (에이미)				
+		NAME = 43171,				
+		PARTS = { 43172, 43173, 43174, 43175, 43176, 43177, 43704, 43705, 43706, 43707, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 11.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 21.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.76,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 빅터 [39] (진)				
+		NAME = 43178,				
+		PARTS = { 43179, 43180, 43181, 43182, 43183, 43184, 43708, 43709, 43710, 43711, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 11.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 21.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.76,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 빅터 [39] (지크하트)				
+		NAME = 43185,				
+		PARTS = { 43186, 43187, 43188, 43189, 43190, 43191, 43712, 43713, 43714, 43715, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 11.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 21.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.76,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 빅터 [39] (마리)				
+		NAME = 43192,				
+		PARTS = { 43193, 43194, 43195, 43196, 43197, 43198, 43716, 43717, 43718, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 11.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 21.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.76,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 빅터 [39] (디오)				
+		NAME = 43199,				
+		PARTS = { 43200, 43201, 43202, 43203, 43204, 43205, 43719, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 11.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 21.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.76,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 빅터 [39] (제로)				
+		NAME = 45623,				
+		PARTS = { 45624, 45625, 45626, 45627, 45628, 45629, 45630, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 11.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 21.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 2.76,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 7,
+					},	
+				}		
+			},			
+		},				
+	},					
+
+--// --------------------------------------------------------------------------------						
+	{	--// 카제아제 [54] (엘리시스)				
+		NAME = 43206,				
+		PARTS = { 43207, 43208, 43209, 43210, 43211, 43212, 43720, 43721, 43722, 43723, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 14.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 24.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.06,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 카제아제 [54] (리르)				
+		NAME = 43213,				
+		PARTS = { 43214, 43215, 43216, 43217, 43218, 43219, 43724, 43725, 43726, 43727, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 14.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 24.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.06,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 카제아제 [54] (아르메)				
+		NAME = 43220,				
+		PARTS = { 43221, 43222, 43223, 43224, 43225, 43226, 43728, 43729, 43730, 43731, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 14.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 24.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.06,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 카제아제 [54] (라스)				
+		NAME = 43227,				
+		PARTS = { 43228, 43229, 43230, 43231, 43232, 43233, 43732, 43733, 43734, 43735, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 14.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 24.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.06,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 카제아제 [54] (라이언)				
+		NAME = 43234,				
+		PARTS = { 43235, 43236, 43237, 43238, 43239, 43240, 43736, 43737, 43738, 43739, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 14.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 24.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.06,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 카제아제 [54] (로난)				
+		NAME = 43241,				
+		PARTS = { 43242, 43243, 43244, 43245, 43246, 43247, 43740, 43741, 43742, 43743, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 14.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 24.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.06,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 카제아제 [54] (에이미)				
+		NAME = 43248,				
+		PARTS = { 43249, 43250, 43251, 43252, 43253, 43254, 43744, 43745, 43746, 43747, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 14.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 24.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.06,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 카제아제 [54] (진)				
+		NAME = 43255,				
+		PARTS = { 43256, 43257, 43258, 43259, 43260, 43261, 43748, 43749, 43750, 43751, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 14.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 24.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.06,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 카제아제 [54] (지크하트)				
+		NAME = 43262,				
+		PARTS = { 43263, 43264, 43265, 43266, 43267, 43268, 43752, 43753, 43754, 43755, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 14.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 24.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.06,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 카제아제 [54] (마리)				
+		NAME = 43269,				
+		PARTS = { 43270, 43271, 43272, 43273, 43274, 43275, 43756, 43757, 43758, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 14.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 24.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.06,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 카제아제 [54] (디오)				
+		NAME = 43276,				
+		PARTS = { 43277, 43278, 43279, 43280, 43281, 43282, 43759, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 14.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 24.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.06,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 카제아제 [54] (제로)				
+		NAME = 45631,				
+		PARTS = { 45632, 45633, 45634, 45635, 45636, 45637, 45638, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 14.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 24.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.06,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 9.5,
+					},	
+				}		
+			},			
+		},				
+	},					
+
+--// --------------------------------------------------------------------------------						
+	{	--// 샤크아론 [63] (엘리시스)				
+		NAME = 43283,				
+		PARTS = { 43284, 43285, 43286, 43287, 43288, 43289, 43760, 43761, 43762, 43763, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 16.6,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 26.6,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.24,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 샤크아론 [63] (리르)				
+		NAME = 43290,				
+		PARTS = { 43291, 43292, 43293, 43294, 43295, 43296, 43764, 43765, 43766, 43767, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 16.6,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 26.6,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.24,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 샤크아론 [63] (아르메)				
+		NAME = 43297,				
+		PARTS = { 43298, 43299, 43300, 43301, 43302, 43303, 43768, 43769, 43770, 43771, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 16.6,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 26.6,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.24,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 샤크아론 [63] (라스)				
+		NAME = 43304,				
+		PARTS = { 43305, 43306, 43307, 43308, 43309, 43310, 43772, 43773, 43774, 43775, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 16.6,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 26.6,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.24,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 샤크아론 [63] (라이언)				
+		NAME = 43311,				
+		PARTS = { 43312, 43313, 43314, 43315, 43316, 43317, 43776, 43777, 43778, 43779, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 16.6,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 26.6,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.24,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 샤크아론 [63] (로난)				
+		NAME = 43318,				
+		PARTS = { 43319, 43320, 43321, 43322, 43323, 43324, 43780, 43781, 43782, 43783, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 16.6,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 26.6,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.24,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 샤크아론 [63] (에이미)				
+		NAME = 43325,				
+		PARTS = { 43326, 43327, 43328, 43329, 43330, 43331, 43784, 43785, 43786, 43787, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 16.6,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 26.6,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.24,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 샤크아론 [63] (진)				
+		NAME = 43332,				
+		PARTS = { 43333, 43334, 43335, 43336, 43337, 43338, 43788, 43789, 43790, 43791, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 16.6,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 26.6,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.24,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 샤크아론 [63] (지크하트)				
+		NAME = 43339,				
+		PARTS = { 43340, 43341, 43342, 43343, 43344, 43345, 43792, 43793, 43794, 43795, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 16.6,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 26.6,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.24,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 샤크아론 [63] (마리)				
+		NAME = 43346,				
+		PARTS = { 43347, 43348, 43349, 43350, 43351, 43352, 43796, 43797, 43798, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 16.6,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 26.6,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.24,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 샤크아론 [63] (디오)				
+		NAME = 43353,				
+		PARTS = { 43354, 43355, 43356, 43357, 43358, 43359, 43799, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 16.6,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 26.6,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.24,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 샤크아론 [63] (제로)				
+		NAME = 45639,				
+		PARTS = { 45640, 45641, 45642, 45643, 45644, 45645, 45646, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 16.6,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 26.6,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.24,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 11,
+					},	
+				}		
+			},			
+		},				
+	},					
+
+--// --------------------------------------------------------------------------------						
+	{	--// 타나토스 [69] (엘리시스)				
+		NAME = 43360,				
+		PARTS = { 43361, 43362, 43363, 43364, 43365, 43366, 43800, 43801, 43802, 43803, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 17.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 27.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.36,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 타나토스 [69] (리르)				
+		NAME = 43367,				
+		PARTS = { 43368, 43369, 43370, 43371, 43372, 43373, 43804, 43805, 43806, 43807, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 17.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 27.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.36,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 타나토스 [69] (아르메)				
+		NAME = 43374,				
+		PARTS = { 43375, 43376, 43377, 43378, 43379, 43380, 43808, 43809, 43810, 43811, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 17.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 27.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.36,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 타나토스 [69] (라스)				
+		NAME = 43381,				
+		PARTS = { 43382, 43383, 43384, 43385, 43386, 43387, 43812, 43813, 43814, 43815, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 17.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 27.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.36,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 타나토스 [69] (라이언)				
+		NAME = 43388,				
+		PARTS = { 43389, 43390, 43391, 43392, 43393, 43394, 43816, 43817, 43818, 43819, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 17.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 27.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.36,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 타나토스 [69] (로난)				
+		NAME = 43395,				
+		PARTS = { 43396, 43397, 43398, 43399, 43400, 43401, 43820, 43821, 43822, 43823, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 17.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 27.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.36,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 타나토스 [69] (에이미)				
+		NAME = 43402,				
+		PARTS = { 43403, 43404, 43405, 43406, 43407, 43408, 43824, 43825, 43826, 43827, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 17.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 27.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.36,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 타나토스 [69] (진)				
+		NAME = 43409,				
+		PARTS = { 43410, 43411, 43412, 43413, 43414, 43415, 43828, 43829, 43830, 43831, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 17.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 27.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.36,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 타나토스 [69] (지크하트)				
+		NAME = 43416,				
+		PARTS = { 43417, 43418, 43419, 43420, 43421, 43422, 43832, 43833, 43834, 43835, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 17.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 27.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.36,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 타나토스 [69] (마리)				
+		NAME = 43423,				
+		PARTS = { 43424, 43425, 43426, 43427, 43428, 43429, 43836, 43837, 43838, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 17.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 27.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.36,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 타나토스 [69] (디오)				
+		NAME = 43430,				
+		PARTS = { 43431, 43432, 43433, 43434, 43435, 43436, 43839, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 17.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 27.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.36,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 타나토스 [69] (제로)				
+		NAME = 45647,				
+		PARTS = { 45648, 45649, 45650, 45651, 45652, 45653, 45654, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 17.8,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 27.8,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.36,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 12,
+					},	
+				}		
+			},			
+		},				
+	},					
+
+--// --------------------------------------------------------------------------------						
+	{	--// 썬더 해머 [75] (엘리시스)				
+		NAME = 43437,				
+		PARTS = { 43438, 43439, 43440, 43441, 43442, 43443, 43840, 43841, 43842, 43843, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 썬더 해머 [75] (리르)				
+		NAME = 43444,				
+		PARTS = { 43445, 43446, 43447, 43448, 43449, 43450, 43844, 43845, 43846, 43847, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 썬더 해머 [75] (아르메)				
+		NAME = 43451,				
+		PARTS = { 43452, 43453, 43454, 43455, 43456, 43457, 43848, 43849, 43850, 43851, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 썬더 해머 [75] (라스)				
+		NAME = 43458,				
+		PARTS = { 43459, 43460, 43461, 43462, 43463, 43464, 43852, 43853, 43854, 43855, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 썬더 해머 [75] (라이언)				
+		NAME = 43465,				
+		PARTS = { 43466, 43467, 43468, 43469, 43470, 43471, 43856, 43857, 43858, 43859, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 썬더 해머 [75] (로난)				
+		NAME = 43472,				
+		PARTS = { 43473, 43474, 43475, 43476, 43477, 43478, 43860, 43861, 43862, 43863, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 썬더 해머 [75] (에이미)				
+		NAME = 43479,				
+		PARTS = { 43480, 43481, 43482, 43483, 43484, 43485, 43864, 43865, 43866, 43867, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 썬더 해머 [75] (진)				
+		NAME = 43486,				
+		PARTS = { 43487, 43488, 43489, 43490, 43491, 43492, 43868, 43869, 43870, 43871, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 썬더 해머 [75] (지크하트)				
+		NAME = 43493,				
+		PARTS = { 43494, 43495, 43496, 43497, 43498, 43499, 43872, 43873, 43874, 43875, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 썬더 해머 [75] (마리)				
+		NAME = 43500,				
+		PARTS = { 43501, 43502, 43503, 43504, 43505, 43506, 43876, 43877, 43878, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 썬더 해머 [75] (디오)				
+		NAME = 43507,				
+		PARTS = { 43508, 43509, 43510, 43511, 43512, 43513, 43879, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 썬더 해머 [75] (제로)				
+		NAME = 45655,				
+		PARTS = { 45656, 45657, 45658, 45659, 45660, 45661, 45662, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+
+	{	--// 쿵지 쿵지 [75] (엘리시스)				
+		NAME = 43514,				
+		PARTS = { 43515, 43516, 43517, 43518, 43519, 43520, 43880, 43881, 43882, 43883, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 3 세트		
+				EQUIP_COUNT = 3,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_ATK_POINT,
+						ABILITY = 133,
+					},	
+				}		
+			},			
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 쿵지 쿵지 [75] (리르)				
+		NAME = 43521,				
+		PARTS = { 43522, 43523, 43524, 43525, 43526, 43527, 43884, 43885, 43886, 43887, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 3 세트		
+				EQUIP_COUNT = 3,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_ATK_POINT,
+						ABILITY = 133,
+					},	
+				}		
+			},			
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 쿵지 쿵지 [75] (아르메)				
+		NAME = 43528,				
+		PARTS = { 43529, 43530, 43531, 43532, 43533, 43534, 43888, 43889, 43890, 43891, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 3 세트		
+				EQUIP_COUNT = 3,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_ATK_POINT,
+						ABILITY = 133,
+					},	
+				}		
+			},			
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 쿵지 쿵지 [75] (라스)				
+		NAME = 43535,				
+		PARTS = { 43536, 43537, 43538, 43539, 43540, 43541, 43892, 43893, 43894, 43895, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 3 세트		
+				EQUIP_COUNT = 3,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_ATK_POINT,
+						ABILITY = 133,
+					},	
+				}		
+			},			
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 쿵지 쿵지 [75] (라이언)				
+		NAME = 43542,				
+		PARTS = { 43543, 43544, 43545, 43546, 43547, 43548, 43896, 43897, 43898, 43899, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 3 세트		
+				EQUIP_COUNT = 3,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_ATK_POINT,
+						ABILITY = 133,
+					},	
+				}		
+			},			
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 쿵지 쿵지 [75] (로난)				
+		NAME = 43549,				
+		PARTS = { 43550, 43551, 43552, 43553, 43554, 43555, 43900, 43901, 43902, 43903, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 3 세트		
+				EQUIP_COUNT = 3,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_ATK_POINT,
+						ABILITY = 133,
+					},	
+				}		
+			},			
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 쿵지 쿵지 [75] (에이미)				
+		NAME = 43556,				
+		PARTS = { 43557, 43558, 43559, 43560, 43561, 43562, 43904, 43905, 43906, 43907, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 3 세트		
+				EQUIP_COUNT = 3,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_ATK_POINT,
+						ABILITY = 133,
+					},	
+				}		
+			},			
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 쿵지 쿵지 [75] (진)				
+		NAME = 43563,				
+		PARTS = { 43564, 43565, 43566, 43567, 43568, 43569, 43908, 43909, 43910, 43911, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 3 세트		
+				EQUIP_COUNT = 3,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_ATK_POINT,
+						ABILITY = 133,
+					},	
+				}		
+			},			
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 쿵지 쿵지 [75] (지크하트)				
+		NAME = 43570,				
+		PARTS = { 43571, 43572, 43573, 43574, 43575, 43576, 43912, 43913, 43914, 43915, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 3 세트		
+				EQUIP_COUNT = 3,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_ATK_POINT,
+						ABILITY = 133,
+					},	
+				}		
+			},			
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 쿵지 쿵지 [75] (마리)				
+		NAME = 43577,				
+		PARTS = { 43578, 43579, 43580, 43581, 43582, 43583, 43916, 43917, 43918, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 3 세트		
+				EQUIP_COUNT = 3,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_ATK_POINT,
+						ABILITY = 133,
+					},	
+				}		
+			},			
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 쿵지 쿵지 [75] (디오)				
+		NAME = 43584,				
+		PARTS = { 43585, 43586, 43587, 43588, 43589, 43590, 43919, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 3 세트		
+				EQUIP_COUNT = 3,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_ATK_POINT,
+						ABILITY = 133,
+					},	
+				}		
+			},			
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 쿵지 쿵지 [75] (제로)				
+		NAME = 45663,				
+		PARTS = { 45664, 45665, 45666, 45667, 45668, 45669, 45670, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{	-- 3 세트		
+				EQUIP_COUNT = 3,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_ATK_POINT,
+						ABILITY = 133,
+					},	
+				}		
+			},			
+			{	-- 4 세트		
+				EQUIP_COUNT = 4,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 19,
+					},	
+				}		
+			},			
+			{	-- 5 세트		
+				EQUIP_COUNT = 5,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_GP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 29,
+					},	
+				}		
+			},			
+			{	-- 6 세트		
+				EQUIP_COUNT = 6,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_CRITICAL_ATTACK_RATE,
+						ABILITY = 3.48,
+					},	
+				}		
+			},			
+			{	-- 7 세트		
+				EQUIP_COUNT = 7,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_HP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_MP_RECOVERY_RATE,
+						ABILITY = 13,
+					},	
+				}		
+			},			
+		},				
+	},					
+--// 시즌4 대륙 아이템 ---- [End]
+
+
+--// 시즌4 특수 아이템 ---- [Start]
+	{	--// 쑥쑥 천사의 반지 [0] (공용)				
+		NAME = 506040,				
+		PARTS = { 506040, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{
+				EQUIP_COUNT = 1,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_EXP_ADDITIONAL_OBTAIN_RATE,
+						ABILITY = 50.0,
+					},	
+				}		
+			},			
+		},				
+	},					
+	{	--// 기어 세컨드 반지 [0] (공용)				
+		NAME = 506070,				
+		PARTS = { 506070, },				
+		ATTRIBUTE_LIST =				
+		{				
+			{
+				EQUIP_COUNT = 1,		
+				ATTRIBUTE =		
+				{		
+					{	
+						ATTRIBUTE_TYPE = ATTRTYPE_ATTACK_PERCENT,
+						ABILITY = 15.0,
+					},	
+				}		
+			},			
+		},				
+	},					
+--// 시즌4 특수 아이템 ---- [End]
+
+}
+

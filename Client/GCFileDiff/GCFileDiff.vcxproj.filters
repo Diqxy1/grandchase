@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{7ff49a47-d9c6-47e3-abe1-af765c7c63d0}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{0f4feb79-eec3-4886-b6de-b40d8369e488}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{a8c16a37-137a-496c-b8cd-c163df9020df}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="TinyXML">
+      <UniqueIdentifier>{64a450ff-cf41-4ec4-8d93-c63a94868852}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KOG">
+      <UniqueIdentifier>{ffa5e490-bf7e-4921-94db-1cccd7fa8771}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EnumFile">
+      <UniqueIdentifier>{55164f77-eb60-45a9-be97-38da80b88332}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CRC_32">
+      <UniqueIdentifier>{9bd316c6-0e43-4ff9-a34f-283033c237f4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DropEdit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GCFileDiff.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GCFileDiffDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GenerateMKom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LogManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml.cpp">
+      <Filter>TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlerror.cpp">
+      <Filter>TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxmlparser.cpp">
+      <Filter>TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="KMsgBox.cpp">
+      <Filter>KOG</Filter>
+    </ClCompile>
+    <ClCompile Include="EnumFile.cpp">
+      <Filter>EnumFile</Filter>
+    </ClCompile>
+    <ClCompile Include="CRC_32.cpp">
+      <Filter>CRC_32</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GCFileDiff.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DropEdit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GCFileDiff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GCFileDiffDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GenerateMKom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LogManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml.h">
+      <Filter>TinyXML</Filter>
+    </ClInclude>
+    <ClInclude Include="KAssert.h">
+      <Filter>KOG</Filter>
+    </ClInclude>
+    <ClInclude Include="KMsgBox.h">
+      <Filter>KOG</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumFile.h">
+      <Filter>EnumFile</Filter>
+    </ClInclude>
+    <ClInclude Include="CRC_32.h">
+      <Filter>CRC_32</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="cancel.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GCFileDiff.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="MBox.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ok.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\GCFileDiff.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

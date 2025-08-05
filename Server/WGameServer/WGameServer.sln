@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WGameServer", "WGameServer.vcxproj", "{08E2D661-656C-4988-9E2D-A01D309C6F02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug(UnityBuild)|Win32 = Debug(UnityBuild)|Win32
+		Debug(UnityBuild)|x86 = Debug(UnityBuild)|x86
+		Debug|Win32 = Debug|Win32
+		Debug|x86 = Debug|x86
+		Release(UnityBuild)|Win32 = Release(UnityBuild)|Win32
+		Release(UnityBuild)|x86 = Release(UnityBuild)|x86
+		Release|Win32 = Release|Win32
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08E2D661-656C-4988-9E2D-A01D309C6F02}.Debug(UnityBuild)|Win32.ActiveCfg = Debug(UnityBuild)|Win32
+		{08E2D661-656C-4988-9E2D-A01D309C6F02}.Debug(UnityBuild)|Win32.Build.0 = Debug(UnityBuild)|Win32
+		{08E2D661-656C-4988-9E2D-A01D309C6F02}.Debug(UnityBuild)|x86.ActiveCfg = Debug(UnityBuild)|Win32
+		{08E2D661-656C-4988-9E2D-A01D309C6F02}.Debug(UnityBuild)|x86.Build.0 = Debug(UnityBuild)|Win32
+		{08E2D661-656C-4988-9E2D-A01D309C6F02}.Debug|Win32.ActiveCfg = Debug|Win32
+		{08E2D661-656C-4988-9E2D-A01D309C6F02}.Debug|Win32.Build.0 = Debug|Win32
+		{08E2D661-656C-4988-9E2D-A01D309C6F02}.Debug|x86.ActiveCfg = Debug|Win32
+		{08E2D661-656C-4988-9E2D-A01D309C6F02}.Debug|x86.Build.0 = Debug|Win32
+		{08E2D661-656C-4988-9E2D-A01D309C6F02}.Release(UnityBuild)|Win32.ActiveCfg = Release(UnityBuild)|Win32
+		{08E2D661-656C-4988-9E2D-A01D309C6F02}.Release(UnityBuild)|Win32.Build.0 = Release(UnityBuild)|Win32
+		{08E2D661-656C-4988-9E2D-A01D309C6F02}.Release(UnityBuild)|x86.ActiveCfg = Release(UnityBuild)|Win32
+		{08E2D661-656C-4988-9E2D-A01D309C6F02}.Release(UnityBuild)|x86.Build.0 = Release(UnityBuild)|Win32
+		{08E2D661-656C-4988-9E2D-A01D309C6F02}.Release|Win32.ActiveCfg = Release|Win32
+		{08E2D661-656C-4988-9E2D-A01D309C6F02}.Release|Win32.Build.0 = Release|Win32
+		{08E2D661-656C-4988-9E2D-A01D309C6F02}.Release|x86.ActiveCfg = Release|Win32
+		{08E2D661-656C-4988-9E2D-A01D309C6F02}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {447569A4-83B7-4130-80A5-49B8A4109D3A}
+	EndGlobalSection
+EndGlobal

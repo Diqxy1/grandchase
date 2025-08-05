@@ -1,0 +1,905 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 한국어 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\GCServerManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_NEWID DIALOGEX 0, 0, 130, 59
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Input User ID"
+FONT 9, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT_USER_ID,37,7,87,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,7,38,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,73,38,50,14
+    CONTROL         "Login ID",IDC_LOGINID,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,15,24,44,10
+    CONTROL         "Nickname",IDC_NICKNAME,"Button",BS_AUTORADIOBUTTON,64,24,45,10
+    LTEXT           "User ID",IDC_STATIC,7,9,27,9
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_NEWID, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 123
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 52
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // 한국어 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 영어(미국) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 153, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GC Server Management Program Information"
+FONT 9, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,15,20,20
+    LTEXT           "GCServerManager Version 2.0",IDC_STATIC,34,8,97,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2005 KOG Studios",IDC_STATIC,34,20,100,8
+    DEFPUSHBUTTON   "OK",IDOK,96,34,50,14,WS_GROUP
+END
+
+IDD_SERVER_LIST DIALOGEX 0, 0, 260, 154
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "GRAND CHASE Server List"
+FONT 11, "MS Shell Dlg", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,203,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,203,27,50,14
+    PUSHBUTTON      "&Add",IDC_ADD_LIST,203,47,50,14
+    PUSHBUTTON      "&Edit",IDC_EDIT_LIST,203,67,50,14
+    PUSHBUTTON      "&Remove",IDC_REMOVE_LIST,203,87,50,14
+    LISTBOX         IDC_SERVER_LIST,7,7,191,140,LBS_MULTIPLESEL | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_ADD_SERVER_LIST DIALOGEX 0, 0, 128, 81
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Add Server List"
+FONT 11, "MS Shell Dlg", 400, 0, 0x80
+BEGIN
+    CONTROL         "IPAddress1",IDC_SERVER_IPADDRESS,"SysIPAddress32",WS_TABSTOP,40,7,81,12
+    EDITTEXT        IDC_SERVER_PORT,40,20,81,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SERVER_VERSION,40,33,81,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SERVER_Name,40,46,81,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,7,60,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,71,60,50,14
+    CTEXT           "IP",IDC_STATIC,17,9,8,8
+    CTEXT           "Port",IDC_STATIC,14,22,14,8
+    CTEXT           "Ver",IDC_STATIC,15,35,12,8
+    CTEXT           "Name",IDC_STATIC,12,48,21,8
+END
+
+IDD_CHANNEL_LOBBY DIALOGEX 0, 0, 192, 258
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS
+FONT 11, "MS Shell Dlg", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "&Enter",IDOK,81,237,50,14
+    PUSHBUTTON      "E&xit",IDCANCEL,135,237,50,14
+    LISTBOX         IDC_CHANNEL_LIST,7,7,178,226,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_CHANNEL DIALOGEX 0, 0, 411, 267
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS
+FONT 11, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    CONTROL         "Admin Chat",IDC_RADIO_ADMIN_CHAT,"Button",BS_AUTORADIOBUTTON | WS_GROUP,12,232,49,9
+    CONTROL         "SignBoard Notice",IDC_RADIO_SB_NOTICE,"Button",BS_AUTORADIOBUTTON,67,232,66,9
+    CONTROL         "SignBoard Server",IDC_RADIO_SB_SERVER,"Button",BS_AUTORADIOBUTTON,140,232,66,9
+    CONTROL         "NormalChat",IDC_RADIO_NORMAL_CHAT,"Button",BS_AUTORADIOBUTTON,215,232,49,9
+    EDITTEXT        IDC_EDIT_NORMAL_CHAT,47,244,223,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "EnterChat",IDC_DEF_BTN_ADMIN,274,244,41,12,NOT WS_TABSTOP
+    PUSHBUTTON      "Search User",IDOK,328,229,68,13
+    PUSHBUTTON      "E&xit",IDCANCEL,328,243,68,13
+    LISTBOX         IDC_LIST_ROOM,7,7,189,68,LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | WS_HSCROLL | WS_TABSTOP
+    LISTBOX         IDC_LIST_USER,200,7,116,68,LBS_NOINTEGRALHEIGHT | WS_HSCROLL | WS_TABSTOP
+    LTEXT           "Message :",IDC_STATIC,9,245,36,9
+    LISTBOX         IDC_LIST_CHAT,7,105,297,123,LBS_NOINTEGRALHEIGHT | LBS_DISABLENOSCROLL | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "User List UPDATE",IDC_BUTTON_USER_LIST_UPDATE,159,90,122,12
+    PUSHBUTTON      "Room UPDATE",IDC_BUTTON_ROOM_LIST_UPDATE,7,90,128,12
+    PUSHBUTTON      "Go",IDC_BUTTON_CHAT_STOP,138,90,18,12
+    COMBOBOX        IDC_COMBO_PAGE,145,77,28,58,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_GAMEMODE,52,77,91,72,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_USER_PAGE,263,77,29,53,CBS_DROPDOWNLIST | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    GROUPBOX        "",IDC_STATIC,8,226,263,17
+    LISTBOX         IDC_LIST_SQUARE,319,7,81,68,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Square UPDATE",IDC_BUTTON_SQUARE_UPDATE,321,90,75,12
+    LISTBOX         IDC_LIST_SQUARE_USER,319,116,80,65,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Square User Info",IDC_STATIC,331,106,57,8
+    COMBOBOX        IDC_COMBO_SQUARE_USER_PAGE,336,184,29,53,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Lobby User Info",IDC_STATIC,203,79,54,8
+    LTEXT           "Square List",IDC_STATIC,343,79,37,8
+    LTEXT           "Page",IDC_STATIC,295,79,17,8
+    LTEXT           "Page",IDC_STATIC,369,186,17,8
+    LTEXT           "Page",IDC_STATIC,175,79,17,8
+    COMBOBOX        IDC_COMBO_AREA,7,77,43,72,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DIALOG_NOTIFY DIALOGEX 0, 0, 237, 42
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Notify Message"
+FONT 11, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    CONTROL         "Admin Chat",IDC_RADIO_ADMIN_CHAT_S,"Button",BS_AUTORADIOBUTTON | WS_GROUP,11,10,49,9
+    CONTROL         "SignBoard Notice",IDC_RADIO_SB_NOTICE_S,"Button",BS_AUTORADIOBUTTON,76,10,66,9
+    CONTROL         "SignBoard Server",IDC_RADIO_SB_SERVER_S,"Button",BS_AUTORADIOBUTTON,153,10,66,9
+    EDITTEXT        IDC_EDIT_NOTIFY,43,22,133,12,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "Send",IDOK,177,22,26,12,NOT WS_VISIBLE
+    PUSHBUTTON      "&Close",IDCANCEL,204,22,26,12
+    LTEXT           "Message :",IDC_STATIC,7,23,35,8
+    GROUPBOX        "",IDC_STATIC,7,3,223,18
+END
+
+IDD_DIALOG_USER_INFO DIALOGEX 0, 0, 161, 61
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "User Information"
+FONT 11, "MS Shell Dlg", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,99,38,48,12
+    PUSHBUTTON      "Kick user",IDC_BUTTON_KICK,7,38,36,12,NOT WS_VISIBLE
+    PUSHBUTTON      "Search Data",IDC_BUTTON_CHANGE_DB_INFO,46,38,48,12
+    EDITTEXT        IDC_EDIT_USER_LOGIN_ID,41,9,107,12,ES_READONLY
+    EDITTEXT        IDC_EDIT_STATUS,41,23,107,12,ES_READONLY
+    LTEXT           "ID     :",IDC_STATIC,14,10,24,8
+    LTEXT           "Grade :",IDC_STATIC,13,24,26,8
+    GROUPBOX        "",IDC_STATIC,4,0,153,56
+END
+
+IDD_DIALOG_ROOM_INFO DIALOGEX 0, 0, 214, 108
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Room Information"
+FONT 11, "MS Shell Dlg", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,142,7,65,12
+    PUSHBUTTON      "Cancel",IDCANCEL,142,20,65,12
+    EDITTEXT        IDC_EDIT_ROOM_ID,60,7,79,12,ES_READONLY
+    EDITTEXT        IDC_EDIT_PUBLIC,60,39,79,12,ES_READONLY
+    EDITTEXT        IDC_EDIT_ROOM_NAME,60,23,79,12,ES_READONLY
+    EDITTEXT        IDC_EDIT_PASSWD,60,55,79,12,ES_READONLY
+    EDITTEXT        IDC_EDIT_USER_NUM,60,71,79,12,ES_READONLY
+    EDITTEXT        IDC_EDIT_ROOM_STATUS,60,87,79,12,ES_READONLY
+    LTEXT           "Room Number:",IDC_STATIC,9,9,50,8
+    LTEXT           "Room Name   :",IDC_STATIC,9,24,49,8
+    LTEXT           "Is Public         :",IDC_STATIC,9,40,49,8
+    LTEXT           "PassWord      :",IDC_STATIC,9,56,49,8
+    LTEXT           "User Number :",IDC_STATIC,9,72,48,8
+    LTEXT           "Room State    :",IDC_STATIC,9,88,49,8
+    LTEXT           "Room Members",IDC_STATIC,149,34,53,8
+    LISTBOX         IDC_LIST_ROOM_MEMBERS,142,42,63,58,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DIALOG_LOGIN DIALOGEX 0, 0, 123, 63
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "GCServerManager Login"
+FONT 10, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT_LOGIN_ID,27,7,89,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LOGIN_PW,27,24,89,12,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,7,42,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,66,42,50,14
+    LTEXT           "ID",IDC_STATIC,11,8,12,8
+    LTEXT           "PW",IDC_STATIC,11,25,12,8
+END
+
+IDD_DIALOG_CHANGE_DB_INFO DIALOGEX 0, 0, 319, 255
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "View Database Information"
+FONT 10, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_EDIT_DB_GP,55,30,75,12,ES_READONLY | ES_NUMBER
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,47,305,177
+    PUSHBUTTON      "Chat Disable",IDC_BUTTON_EXP_RESET,43,234,45,14
+    PUSHBUTTON      "Kick User",IDC_BUTTON_KICK_USER,136,234,39,14
+    PUSHBUTTON      "Chat Enable",IDC_BUTTON_DROP_USER,91,234,43,14
+    DEFPUSHBUTTON   "OK",IDOK,181,234,39,14
+    PUSHBUTTON      "Cancel",IDCANCEL,227,234,39,14
+    LTEXT           "Game Point :",IDC_STATIC,9,31,42,8
+    LTEXT           "Auth Level :",IDC_STATIC,154,32,39,8
+    CTEXT           "If you need Confirm User's value, Please Use 'd-bot' page.",IDC_STATIC,7,7,305,9
+    LTEXT           "User ID :",IDC_USERID,22,19,30,8
+    LTEXT           "NickName :",IDC_NICKNAME,156,19,38,8
+    LTEXT           "note : You can Read Only. 'Kick User' is Possible",IDC_STATIC,154,224,158,8
+    LTEXT           "",IDC_STATIC_Warning,264,31,13,8
+    EDITTEXT        IDC_EDIT_UserID,55,17,75,12,ES_READONLY
+    EDITTEXT        IDC_EDIT_NickName,198,17,79,12,ES_READONLY
+    COMBOBOX        IDC_COMBO_AUTH_LEVEL,198,30,79,70,CBS_DROPDOWN | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DIALOG_BLACK_LIST DIALOGEX 0, 0, 240, 240
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Black List"
+FONT 11, "MS Shell Dlg", 400, 0, 0x80
+BEGIN
+    PUSHBUTTON      "OK",IDOK,7,7,50,14,NOT WS_VISIBLE | WS_DISABLED
+    DEFPUSHBUTTON   "&Close",IDCANCEL,183,7,50,14
+    LISTBOX         IDC_LIST_BLACK_LIST,7,7,170,226,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Remove",IDC_BUTTON_REMOVE,183,27,50,14
+END
+
+IDD_DIALOG_REASON DIALOGEX 0, 0, 138, 76
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Reason."
+FONT 11, "MS Shell Dlg", 400, 0, 0x80
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,104,15,27,14
+    PUSHBUTTON      "Cancel",IDCANCEL,105,36,26,14
+    CONTROL         "abuse",IDC_RADIO_CURSE,"Button",BS_AUTORADIOBUTTON | WS_GROUP,14,17,36,10
+    CONTROL         "disturb chat \nto write word many",IDC_RADIO_PAPER,
+                    "Button",BS_AUTORADIOBUTTON | BS_MULTILINE,14,31,75,18
+    CONTROL         "arrogate",IDC_RADIO_IMPERSONATION,"Button",BS_AUTORADIOBUTTON,14,52,48,10
+    GROUPBOX        "Reason",IDC_STATIC,7,7,90,62
+END
+
+IDD_DIALOG_ADMIN_DB_ACCESS DIALOGEX 0, 0, 419, 237
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Item Infomation"
+FONT 10, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_USER_NAME,363,3,53,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "List Items",IDC_SELECT_NORMAL_ITEM,364,41,52,16
+    PUSHBUTTON      "List DelItems",IDC_SELECT_DEL_NORMAL_ITEM,364,61,52,16
+    PUSHBUTTON      "Save txt",IDC_NORMAL_ITEM_SAVE_TEXT,364,80,52,16
+    PUSHBUTTON      "List Items",IDC_SELECT_DURATION_ITEM,365,108,51,16
+    PUSHBUTTON      "List DelItems",IDC_DURATION_DEL_ITEM,365,128,51,16
+    PUSHBUTTON      "Save txt",IDC_DURATION_ITEM_SAVE_TEXT,365,148,51,16
+    PUSHBUTTON      "GP??item",IDC_INSERT_ITEM,5,199,44,14,NOT WS_VISIBLE
+    PUSHBUTTON      "GP??item",IDC_INSERT_GP_DURATION_ITEM,5,218,44,14,NOT WS_VISIBLE
+    PUSHBUTTON      "??? ??",IDC_DELETE_ITEM,128,218,47,14,NOT WS_VISIBLE
+    PUSHBUTTON      "User Data",IDC_SELECT_USER_DATA,191,199,49,14,NOT WS_VISIBLE
+    LTEXT           "Normal / Period ItemList",IDC_STATIC_NORMAL_LIST,5,5,80,8
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,5,16,353,80,WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    LTEXT           "Quantity ItemList",IDC_STATIC_DURATION_LIST,5,99,72,8
+    CONTROL         "List2",IDC_LIST2,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,5,109,353,86,WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    DEFPUSHBUTTON   "Close",IDC_CLOSE_BUTTON,368,181,48,14
+    LTEXT           "Login ID",IDC_STATIC_LOGIN,329,5,27,8
+    PUSHBUTTON      "??itemLog",IDC_CHANGE_STRONG_ITEM_LIST,191,218,49,14,NOT WS_VISIBLE
+    PUSHBUTTON      "??? ??",IDC_ADMIN_ITEMINFO_DATA_BUTTON,128,199,47,14,NOT WS_VISIBLE
+    PUSHBUTTON      "Cash??Item",IDC_INSERT_CASH_NORMAL_ITEM,61,199,52,14,NOT WS_VISIBLE
+    PUSHBUTTON      "Cash??Item",IDC_INSERT_CASH_DURATION_ITEM,61,218,52,14,NOT WS_VISIBLE
+END
+
+IDD_ADMIN_INSERT_GP_NORMAL_ITEM_ DIALOGEX 0, 0, 109, 57
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_ADMIN_INSERT_NORMAL_ITEM_USER_NAME,44,3,61,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ADMIN_INSERT_NORMAL_ITEM_GOODSID,44,21,61,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Normal GP Item Insert",IDC_ADMIN_INSERT_GP_NORMAL_ITEM,2,39,70,15
+    LTEXT           "LOGIN",IDC_STATIC_LOGIN,11,6,23,8
+    LTEXT           "GoodsID",IDC_STATIC_ITEM_ID,9,23,31,9
+    DEFPUSHBUTTON   "??",IDC_CLOSE,74,39,31,15
+END
+
+IDD_ADMIN_INSERT_GP_DURATION_ITEM_ DIALOGEX 0, 0, 115, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_ADMIN_INSERT_DURATION_ITEM_USER_NAME,46,3,65,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ADMIN_INSERT_DURATION_ITEM_GOODSID,46,19,65,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Count GP Item Insert",IDC_ADMIN_INSERT_GP_DURATION_ITEM,2,37,71,14
+    LTEXT           "LOGIN",IDC_STATIC_LOGIN,15,7,24,9
+    LTEXT           "GoodsID",IDC_STATIC_ITEM_ID,12,20,30,9
+    DEFPUSHBUTTON   "END",IDOK,78,37,33,14
+END
+
+IDD_ADMIN_DEL_ITEM_ DIALOGEX 0, 0, 115, 76
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_ADMIN_DEL_ITEM_USER_NAME,45,4,65,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ADMIN_DEL_ITEM_GOODSUID,45,21,65,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ADMIN_DEL_ITEM_GOODSID,45,39,65,14,ES_AUTOHSCROLL
+    LTEXT           "LOGIN",IDC_STATIC_LOGIN,9,6,25,9
+    LTEXT           "GoodsUID",IDC_STATIC_ITEM_ID2,5,23,34,9
+    LTEXT           "GoodsID",IDC_STATIC_ITEM_ID,7,41,28,8
+    PUSHBUTTON      "delete Item",IDC_ADMIN_DEL_ITEM,2,57,51,12
+    DEFPUSHBUTTON   "END",IDOK,61,57,50,12
+END
+
+IDD_ADMIN_ITEM_IFNO_DATA DIALOGEX 0, 0, 238, 137
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_ITEM_GOODSID,166,26,65,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ITEM_SUB_NAME,167,69,64,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Get ItemInfo",IDC_SELECT_ADMIN_ITEM_INFO_DATA,167,89,64,20
+    DEFPUSHBUTTON   "END",IDC_CLOSE,167,112,64,18
+    CONTROL         "List1",IDC_ITEMINFOLIST,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,7,7,155,123
+    LTEXT           "GoodsID",IDC_STATIC,167,14,31,9
+    LTEXT           "Item??",IDC_STATIC,168,55,31,9
+END
+
+IDD_ADMIN_INSERT_CASH_DURATION_ITEM_ DIALOGEX 0, 0, 112, 53
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_ADMIN_INSERT_DURATION_ITEM_USER_NAME,45,2,63,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ADMIN_INSERT_DURATION_ITEM_GOODSID,45,19,63,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Count CASH Item Insert",IDC_ADMIN_INSERT_CASH_DURATION_ITEM,2,36,76,14
+    LTEXT           "LOGIN",IDC_STATIC_LOGIN,13,4,22,9
+    LTEXT           "GoodsID",IDC_STATIC_ITEM_ID,10,20,29,9
+    DEFPUSHBUTTON   "END",IDC_CLOSE,83,36,25,14
+END
+
+IDD_ADMIN_INSERT_CASH_NORMAL_ITEM_ DIALOGEX 0, 0, 115, 56
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_ADMIN_INSERT_NORMAL_ITEM_USER_NAME,48,3,63,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ADMIN_INSERT_NORMAL_ITEM_GOODSID,48,19,63,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "NormalCASHItemInsert",IDC_ADMIN_INSERT_CASH_NORMAL_ITEM,3,37,76,15
+    LTEXT           "LOGIN",IDC_STATIC_LOGIN,15,5,23,8
+    LTEXT           "GoodsID",IDC_STATIC_ITEM_ID,12,20,29,9
+    DEFPUSHBUTTON   "END",IDC_CLOSE_BUTTON,83,37,28,15
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 146
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_SERVER_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_ADD_SERVER_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 121
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 74
+    END
+
+    IDD_CHANNEL_LOBBY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 185
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 251
+    END
+
+    IDD_CHANNEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 404
+        VERTGUIDE, 409
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 259
+    END
+
+    IDD_DIALOG_NOTIFY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 230
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 35
+    END
+
+    IDD_DIALOG_USER_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 154
+        VERTGUIDE, 9
+        VERTGUIDE, 48
+        VERTGUIDE, 155
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 54
+    END
+
+    IDD_DIALOG_ROOM_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 207
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 101
+    END
+
+    IDD_DIALOG_LOGIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 116
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 56
+    END
+
+    IDD_DIALOG_CHANGE_DB_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 312
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 248
+    END
+
+    IDD_DIALOG_BLACK_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 233
+    END
+
+    IDD_DIALOG_REASON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 131
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 69
+    END
+
+    IDD_DIALOG_ADMIN_DB_ACCESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 416
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 232
+    END
+
+    IDD_ADMIN_INSERT_GP_NORMAL_ITEM_, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 105
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 54
+    END
+
+    IDD_ADMIN_INSERT_GP_DURATION_ITEM_, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 111
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 51
+    END
+
+    IDD_ADMIN_DEL_ITEM_, DIALOG
+    BEGIN
+        RIGHTMARGIN, 110
+        BOTTOMMARGIN, 69
+    END
+
+    IDD_ADMIN_ITEM_IFNO_DATA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 231
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 130
+    END
+
+    IDD_ADMIN_INSERT_CASH_DURATION_ITEM_, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 108
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 50
+    END
+
+    IDD_ADMIN_INSERT_CASH_NORMAL_ITEM_, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 111
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 52
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\GCServerManager.ico"
+IDR_GCSERVTYPE          ICON                    "res\\GCServerManagerDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "Server(&S)"
+    BEGIN
+        MENUITEM "Register Server(&R)\tCtrl+R", ID_FILE_NEW
+        MENUITEM "Open Server List(&O)...\tCtrl+O", ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "Recent Server",               ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Exit(&X)",                    ID_APP_EXIT
+    END
+    POPUP "View(&V)"
+    BEGIN
+        MENUITEM "Status Bar(&S)",              ID_VIEW_STATUS_BAR
+    END
+    POPUP "Help(&H)"
+    BEGIN
+        MENUITEM "About GCServerManager(&A)...", ID_APP_ABOUT
+    END
+END
+
+IDR_GCSERVTYPE MENU 
+BEGIN
+    POPUP "Server(&S)"
+    BEGIN
+        MENUITEM "Register Server(&R)\tCtrl+R", ID_FILE_NEW
+        MENUITEM "Open Server List(&O)...\tCtrl+O", ID_FILE_OPEN
+        MENUITEM "Close Server(&C)",            ID_FILE_CLOSE
+        MENUITEM "Save Log(&S)\tCtrl+S",        ID_FILE_SAVE, GRAYED
+        MENUITEM "Save Log AS(&A)...",          ID_FILE_SAVE_AS, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Recent Server",               ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Exit(&X)",                    ID_APP_EXIT
+    END
+    POPUP "Edit(&E)"
+    BEGIN
+        MENUITEM "Undo(&U)\tCtrl+Z",            ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cut(&T)\tCtrl+X",             ID_EDIT_CUT
+        MENUITEM "Copy(&C)\tCtrl+C",            ID_EDIT_COPY
+        MENUITEM "Paste(&P)\tCtrl+V",           ID_EDIT_PASTE
+    END
+    POPUP "View(&V)"
+    BEGIN
+        MENUITEM "Status Bar(&S)",              ID_VIEW_STATUS_BAR
+    END
+    POPUP "Window(&W)"
+    BEGIN
+        MENUITEM "Next Window(&N)",             ID_WINDOW_NEW
+        MENUITEM "Cascade(&C)",                 ID_WINDOW_CASCADE
+        MENUITEM "Tile(&T)",                    ID_WINDOW_TILE_HORZ
+        MENUITEM "Arrange(&A)",                 ID_WINDOW_ARRANGE
+    END
+    POPUP "Help(&H)"
+    BEGIN
+        MENUITEM "About GCServerManager(&A)...", ID_APP_ABOUT
+    END
+    MENUITEM "Send Notify All Server(&N)",  ID_MENU_NOTIFY_MSG
+    MENUITEM "List Block Users(&B)",        ID_MENU_BLACK_LIST
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "R",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "FileDescription", "GCServerManager MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "GCServerManager"
+            VALUE "LegalCopyright", "Copyright (C) 2003"
+            VALUE "OriginalFilename", "GCServerManager.EXE"
+            VALUE "ProductName", "GCServerManager Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DIALOG_CHANGE_DB_INFO DLGINIT
+BEGIN
+    IDC_COMBO_AUTH_LEVEL, 0x403, 8, 0
+0x6157, 0x6e72, 0x6e69, 0x0067, 
+    IDC_COMBO_AUTH_LEVEL, 0x403, 13, 0
+0x6c42, 0x636f, 0x656b, 0x2064, 0x7355, 0x7265, "\000" 
+    IDC_COMBO_AUTH_LEVEL, 0x403, 9, 0
+0x6142, 0x2064, 0x7355, 0x7265, "\000" 
+    IDC_COMBO_AUTH_LEVEL, 0x403, 12, 0
+0x6f4e, 0x6d72, 0x6c61, 0x5520, 0x6573, 0x0072, 
+    IDC_COMBO_AUTH_LEVEL, 0x403, 11, 0
+0x6843, 0x6c61, 0x656c, 0x676e, 0x7265, "\000" 
+    IDC_COMBO_AUTH_LEVEL, 0x403, 13, 0
+0x7553, 0x6570, 0x6972, 0x726f, 0x4d28, 0x2943, "\000" 
+    IDC_COMBO_AUTH_LEVEL, 0x403, 14, 0
+0x6441, 0x696d, 0x696e, 0x7473, 0x6172, 0x6f74, 0x0072, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "GCServerManager"
+    IDR_GCSERVTYPE          "\nGCServ\nGCServ\n\n\nGCServerManager.Document\nGCServ Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "GCServerManager"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Register Server"
+    ID_FILE_OPEN            "Open Server List"
+    ID_FILE_CLOSE           "Close Server"
+    ID_FILE_SAVE            "Save Log"
+    ID_FILE_SAVE_AS         "Save Log AS"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "About GCServerManager"
+    ID_APP_EXIT             "Exit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open Recent Server"
+    ID_FILE_MRU_FILE2       "Open This Document"
+    ID_FILE_MRU_FILE3       "Open This Document"
+    ID_FILE_MRU_FILE4       "Open This Document"
+    ID_FILE_MRU_FILE5       "Open This Document"
+    ID_FILE_MRU_FILE6       "Open This Document"
+    ID_FILE_MRU_FILE7       "Open This Document"
+    ID_FILE_MRU_FILE8       "Open This Document"
+    ID_FILE_MRU_FILE9       "Open This Document"
+    ID_FILE_MRU_FILE10      "Open This Document"
+    ID_FILE_MRU_FILE11      "Open This Document"
+    ID_FILE_MRU_FILE12      "Open This Document"
+    ID_FILE_MRU_FILE13      "Open This Document"
+    ID_FILE_MRU_FILE14      "Open This Document"
+    ID_FILE_MRU_FILE15      "Open This Document"
+    ID_FILE_MRU_FILE16      "Open This Document"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Next Window"
+    ID_PREV_PANE            "Privious Window"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_NEW           "Next Window"
+    ID_WINDOW_ARRANGE       "Arrange Windows"
+    ID_WINDOW_CASCADE       "Cascade Windows"
+    ID_WINDOW_TILE_HORZ     "Tile Windows"
+    ID_WINDOW_TILE_VERT     "Tile Windows"
+    ID_WINDOW_SPLIT         "Split Windows"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Clear selected"
+    ID_EDIT_CLEAR_ALL       "Clear All"
+    ID_EDIT_COPY            "Copy"
+    ID_EDIT_CUT             "Cut"
+    ID_EDIT_FIND            "Find characters"
+    ID_EDIT_PASTE           "Paste"
+    ID_EDIT_REPEAT          "Repeat"
+    ID_EDIT_REPLACE         "Replace"
+    ID_EDIT_SELECT_ALL      "Select All"
+    ID_EDIT_UNDO            "Undo"
+    ID_EDIT_REDO            "Redo"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_STATUS_BAR      "Status Bar"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Resize Window"
+    AFX_IDS_SCMOVE          "Reposition Window"
+    AFX_IDS_SCMINIMIZE      "Iconize WIndow"
+    AFX_IDS_SCMAXIMIZE      "Maximize Window"
+    AFX_IDS_SCNEXTWINDOW    "Next Document Window"
+    AFX_IDS_SCPREVWINDOW    "Previous Document Window"
+    AFX_IDS_SCCLOSE         "Ask to Save This Document before Close Window"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore Window Size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate Window"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_MENU_NOTIFY_MSG      "Send Notify All Opened Server"
+    ID_MENU_BLACK_LIST      "List Block Users"
+END
+
+#endif    // 영어(미국) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\GCServerManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

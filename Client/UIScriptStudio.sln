@@ -1,0 +1,51 @@
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GCLuaManager", "GCLuaManager\GCLuaManager.vcproj", "{DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MassFileLib", "MassFileLib\MassFileLib.vcproj", "{88EE4A6C-D0DE-4AC6-BD75-7676F963B125}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B37F2135-0B9F-45F5-8E2C-8BDD84634B4F} = {B37F2135-0B9F-45F5-8E2C-8BDD84634B4F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GCUtil", "GCUtil\GCUtil.vcproj", "{B37F2135-0B9F-45F5-8E2C-8BDD84634B4F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI Script Studio", "UI Script Studio\UI Script Studio.vcproj", "{062D7D91-510B-4564-90D2-51BC430410F0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A} = {DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A}
+		{88EE4A6C-D0DE-4AC6-BD75-7676F963B125} = {88EE4A6C-D0DE-4AC6-BD75-7676F963B125}
+		{62363FDA-BA57-454A-AEC3-12D6AE12975D} = {62363FDA-BA57-454A-AEC3-12D6AE12975D}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GCDeviceLib", "GCDeviceLib\GCDeviceLib.vcproj", "{62363FDA-BA57-454A-AEC3-12D6AE12975D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A}.Debug|Win32.ActiveCfg = Debug_Tool|Win32
+		{DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A}.Debug|Win32.Build.0 = Debug_Tool|Win32
+		{DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A}.Release|Win32.ActiveCfg = Release_Tool|Win32
+		{DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A}.Release|Win32.Build.0 = Release_Tool|Win32
+		{88EE4A6C-D0DE-4AC6-BD75-7676F963B125}.Debug|Win32.ActiveCfg = Debug_Tool|Win32
+		{88EE4A6C-D0DE-4AC6-BD75-7676F963B125}.Debug|Win32.Build.0 = Debug_Tool|Win32
+		{88EE4A6C-D0DE-4AC6-BD75-7676F963B125}.Release|Win32.ActiveCfg = Release_Tool|Win32
+		{88EE4A6C-D0DE-4AC6-BD75-7676F963B125}.Release|Win32.Build.0 = Release_Tool|Win32
+		{B37F2135-0B9F-45F5-8E2C-8BDD84634B4F}.Debug|Win32.ActiveCfg = Debug_Tool|Win32
+		{B37F2135-0B9F-45F5-8E2C-8BDD84634B4F}.Debug|Win32.Build.0 = Debug_Tool|Win32
+		{B37F2135-0B9F-45F5-8E2C-8BDD84634B4F}.Release|Win32.ActiveCfg = Release_Tool|Win32
+		{B37F2135-0B9F-45F5-8E2C-8BDD84634B4F}.Release|Win32.Build.0 = Release_Tool|Win32
+		{062D7D91-510B-4564-90D2-51BC430410F0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{062D7D91-510B-4564-90D2-51BC430410F0}.Debug|Win32.Build.0 = Debug|Win32
+		{062D7D91-510B-4564-90D2-51BC430410F0}.Release|Win32.ActiveCfg = Release|Win32
+		{062D7D91-510B-4564-90D2-51BC430410F0}.Release|Win32.Build.0 = Release|Win32
+		{62363FDA-BA57-454A-AEC3-12D6AE12975D}.Debug|Win32.ActiveCfg = Debug_Tool|Win32
+		{62363FDA-BA57-454A-AEC3-12D6AE12975D}.Debug|Win32.Build.0 = Debug_Tool|Win32
+		{62363FDA-BA57-454A-AEC3-12D6AE12975D}.Release|Win32.ActiveCfg = Release_Tool|Win32
+		{62363FDA-BA57-454A-AEC3-12D6AE12975D}.Release|Win32.Build.0 = Release_Tool|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

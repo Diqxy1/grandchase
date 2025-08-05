@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MapTool_Debug|Win32">
+      <Configuration>MapTool_Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MapTool_Release|Win32">
+      <Configuration>MapTool_Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Origin BR Dev|Win32">
+      <Configuration>Origin BR Dev</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Patcher 한국 사내 (패쳐패치 제거)|Win32">
+      <Configuration>Patcher 한국 사내 (패쳐패치 제거)</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Patcher 한국 사내|Win32">
+      <Configuration>Patcher 한국 사내</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="미국 사내테스트|Win32">
+      <Configuration>미국 사내테스트</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="미국본섭|Win32">
+      <Configuration>미국본섭</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="필리핀 사내테스트|Win32">
+      <Configuration>필리핀 사내테스트</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="필리핀본섭|Win32">
+      <Configuration>필리핀본섭</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B4417B86-30DC-4A94-B7DF-9C1C00D4FC4D}</ProjectGuid>
+    <RootNamespace>WOGMapTOol</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='필리핀 사내테스트|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='필리핀본섭|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Patcher 한국 사내 (패쳐패치 제거)|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Patcher 한국 사내|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='미국본섭|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='미국 사내테스트|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='필리핀 사내테스트|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\Shared.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='필리핀본섭|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\Shared.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Patcher 한국 사내 (패쳐패치 제거)|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\Shared.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Patcher 한국 사내|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\Shared.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='미국본섭|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\Shared.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='미국 사내테스트|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\Shared.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\Shared.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\Shared.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\Shared.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\Shared.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\Shared.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>16.0.28803.298</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\Libs\ExternalLib\DXSDK\Include;$(SolutionDir)\Libs\InternalLib\KNCSDK_2015\Include;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apache-log4cxx-0.10.0-vs2015\src\main\include;$(SolutionDir)\Libs\ExternalLib\IntelTBB\tbb2019_20190410oss\include;$(SolutionDir)\Libs\ExternalLib\Boost\boost_1_67_0;$(SolutionDir)\Libs\InternalLib\GCDiscordLib\include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(SolutionDir)\Libs\ExternalLib\DXSDK\Lib\x86;$(SolutionDir)\Libs\ExternalLib\Boost\boost_1_67_0\libs;$(SolutionDir)\Libs\ExternalLib\Boost\boost_1_67_0\stage\lib;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apr-util\xml\expat\lib\LibR;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apr-util\LibR;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apr\LibR;$(SolutionDir)\Libs\ExternalLib\IntelTBB\tbb2019_20190410oss\lib\ia32\vc14;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apache-log4cxx-0.10.0-vs2015\projects\Release;$(SolutionDir)\Libs\InternalLib\KNCSDK_2015\lib;$(SolutionDir)\Libs\InternalLib\GCDiscordLib\lib</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'">
+    <OutDir>$(SolutionDir)</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+    <OutDir>$(SolutionDir)</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+    <OutDir>$(SolutionDir)</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='미국 사내테스트|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='미국본섭|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Patcher 한국 사내|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Patcher 한국 사내 (패쳐패치 제거)|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='필리핀본섭|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='필리핀 사내테스트|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/WOGMapTOol.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\GCDeviceLib\;..\GCUtil\;..\LuaLib\;..\MassFileLib\;..\P4Lib\;..\ParticleLib\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;TOOLUSE;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4800;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>dxerr.lib;d3dx9dt.lib;d3d9.lib;d3dxof.lib;dxguid.lib;winmm.lib;dinput8.lib;../Tool_Particle/zlibstat.lib;GCDeviceLib.lib;ParticleLib.lib;MassfileLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Debug/WOGMapTOol.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\GCDeviceLib\Debug;..\LuaLib\Debug;..\ParticleLib\Debug;..\MassFileLib\Debug;D:\perforceroot2\GrandChase\KNCSDK81\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc.lib; libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(SolutionDir)WOGMapTOol.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Release/WOGMapTOol.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm114 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\GCDeviceLib\;..\GCUtil\;..\LuaLib\;..\MassFileLib\;..\ParticleLib\;..\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;TOOLUSE;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
+      <ObjectFileName>.\Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>dxerr.lib;d3dx9dt.lib;d3d9.lib;d3dxof.lib;dxguid.lib;winmm.lib;dinput8.lib;../ziplib/zlibstat.lib;../GCDeviceLib/Release/GCDeviceLib.lib;../LuaLib/Release/LuaLib.lib;../ParticleLib/Release/ParticleLib.lib;../MassfileLib/Release/MassfileLib.lib;../nvstriplib/nvtristrip.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Release/WOGMapTOol.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>libc.lib; libcmt.lib; libci.lib; LIBCMT;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>$(SolutionDir)WOGMapTOol.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/WOGMapTOol.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./;D:\DepotRoot\source\GC_KR_SERVICE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;TOOLUSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader />
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+      <AssemblerListingLocation>.\MapTool_Debug/</AssemblerListingLocation>
+      <ObjectFileName>.\MapTool_Debug/</ObjectFileName>
+      <ProgramDataBaseFileName>.\MapTool_Debug/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4800; 4995; 4006; 4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>/nod:kernel32.lib;/nod:advapi32.lib;/nod:user32.lib;/nod:gdi32.lib;/nod:shell32.lib;/nod:comdlg32.lib;/nod:version.lib;/nod:mpr.lib;/nod:rasapi32.lib;/nod:winmm.lib;/nod:winspool.lib;/nod:vfw32.lib;/nod:secur32.lib;/nod:oleacc.lib;/nod:oledlg.lib;/nod:sensapi.lib;unicows.lib;kernel32.lib;advapi32.lib;user32.lib;gdi32.lib;shell32.lib;comdlg32.lib;version.lib;mpr.lib;rasapi32.lib;winmm.lib;winspool.lib;vfw32.lib;secur32.lib;oleacc.lib;oledlg.lib;sensapi.lib;imm32.lib;comctl32.lib;Ws2_32.lib;Wininet.lib;KncDebug71MTd.lib;cximageMTd.lib;JpegMTd.lib;urlmon.lib;dxerr.lib;d3dx9d.lib;d3d9.lib;d3dxof.lib;dxguid.lib;dinput8.lib;../zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName)D.exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\GCDeviceLib\MapTool_Debug;..\GCLuaManager\MapTool_Debug;..\MassFileLib\MapTool_Debug;D:\perforceroot2\GrandChase\KNCSDK81\lib;../JPEG/lib/Cximage;../JPEG/lib/Jpeg;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(ProjectName)D.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>-Zm116 %(AdditionalOptions) /utf-8</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>E:\FirstChase Source Limpa\Libs\ExternalLib\Boost\boost_1_67_0\stage\lib;E:\FirstChase Source Limpa\Libs\ExternalLib\Boost\boost_1_67_0\stage;E:\FirstChase Source Limpa\Libs\ExternalLib\Boost\boost_1_67_0;./;..\..\common\include;../KTLib;../;../Knc;../ExternalLib;../GCLuaManager;../GCDeviceLib;../Particle;../GCUtil;../JPEG/header;../BackgroundDownloadSystem;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_WIN32_DCOM;STRSAFE_NO_DEPRECATE;SERVICE;NO_GAMEGUARD;NO_HACKSHIELD;NATION_KOREA;_USE_32BIT_TIME_T;USE_XTRAP__;MAPTOOL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader />
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+      <AssemblerListingLocation>.\MapTool_Release/</AssemblerListingLocation>
+      <ObjectFileName>.\MapTool_Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\MapTool_Release/</ProgramDataBaseFileName>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4800; 4995; 4006; 4819;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>/nod:user32.lib;/nod:gdi32.lib;/nod:shell32.lib;/nod:comdlg32.lib;/nod:version.lib;/nod:mpr.lib;/nod:rasapi32.lib;/nod:winmm.lib;/nod:winspool.lib;/nod:vfw32.lib;/nod:secur32.lib;/nod:oleacc.lib;/nod:oledlg.lib;/nod:sensapi.lib;unicows.lib;kernel32.lib;advapi32.lib;user32.lib;gdi32.lib;shell32.lib;comdlg32.lib;version.lib;mpr.lib;rasapi32.lib;winmm.lib;winspool.lib;vfw32.lib;secur32.lib;oleacc.lib;oledlg.lib;sensapi.lib;imm32.lib;comctl32.lib;Ws2_32.lib;Wininet.lib;KncDebug71MT.lib;cximageMT.lib;JpegMT.lib;pngMT.lib;TiffMT.lib;urlmon.lib;dxerr.lib;d3dx9.lib;d3d9.lib;d3dxof.lib;dxguid.lib;dinput8.lib;../zlib.lib;../libxmlMT.lib;../NMWebCookieCtrlLib_MT.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>E:\FirstChase Source Limpa\Libs\ExternalLib\Boost\boost_1_67_0\stage\lib;E:\FirstChase Source Limpa\Libs\ExternalLib\Boost\boost_1_67_0\stage;E:\FirstChase Source Limpa\Libs\ExternalLib\Boost\boost_1_67_0;..\GCDeviceLib\Release;..\GCLuaManager\Release;../JPEG/lib/Jpeg;../JPEG/lib/CXImage;../JPEG/lib/Tif;../JPEG/lib/Png;../Kom/Release_IncludeKom;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD; uafxcw;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(SolutionDir)WOGMapTOol.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+    <ClCompile>
+      <AdditionalOptions>-Zm116 %(AdditionalOptions) /utf-8</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./;..\..\common\include;../KTLib;../;../Knc;../ExternalLib;../GCLuaManager;../GCDeviceLib;../Particle;../GCUtil;../JPEG/header;../BackgroundDownloadSystem;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_WIN32_DCOM;STRSAFE_NO_DEPRECATE;SERVICE;NO_GAMEGUARD;NO_HACKSHIELD;NATION_KOREA;_USE_32BIT_TIME_T;USE_XTRAP__;MAPTOOL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\MapTool_Release/</AssemblerListingLocation>
+      <ObjectFileName>.\MapTool_Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\MapTool_Release/</ProgramDataBaseFileName>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4800; 4995; 4006; 4819;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>/nod:user32.lib;/nod:gdi32.lib;/nod:shell32.lib;/nod:comdlg32.lib;/nod:version.lib;/nod:mpr.lib;/nod:rasapi32.lib;/nod:winmm.lib;/nod:winspool.lib;/nod:vfw32.lib;/nod:secur32.lib;/nod:oleacc.lib;/nod:oledlg.lib;/nod:sensapi.lib;unicows.lib;kernel32.lib;advapi32.lib;user32.lib;gdi32.lib;shell32.lib;comdlg32.lib;version.lib;mpr.lib;rasapi32.lib;winmm.lib;winspool.lib;vfw32.lib;secur32.lib;oleacc.lib;oledlg.lib;sensapi.lib;imm32.lib;comctl32.lib;Ws2_32.lib;Wininet.lib;KncDebug71MT.lib;cximageMT.lib;JpegMT.lib;pngMT.lib;TiffMT.lib;urlmon.lib;dxerr.lib;d3dx9.lib;d3d9.lib;d3dxof.lib;dxguid.lib;dinput8.lib;../zlib.lib;../libxmlMT.lib;../NMWebCookieCtrlLib_MT.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>D:\DepotRoot\LIB\080715_KncSDK\lib;..\GCDeviceLib\Release;..\GCLuaManager\Release;../JPEG/lib/Jpeg;../JPEG/lib/CXImage;../JPEG/lib/Tif;../JPEG/lib/Png;../Kom/Release_IncludeKom;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD; uafxcw;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(SolutionDir)WOGMapTOol.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='미국 사내테스트|Win32'">
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <AdditionalIncludeDirectories>..\GCDeviceLib\;..\GCUtil\;..\LuaLib\;..\MassFileLib\;..\P4Lib\;..\GrandChase2\;..\ParticleLib\;../JPEG/header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;TOOLUSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\MapTool_Release/</AssemblerListingLocation>
+      <ObjectFileName>.\MapTool_Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\MapTool_Release/</ProgramDataBaseFileName>
+      <DisableSpecificWarnings>4800; 4995;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>dxerr.lib;d3dx9.lib;d3d9.lib;d3dxof.lib;dxguid.lib;winmm.lib;dinput8.lib;../zdll.lib;GCDeviceLib.lib;GCLuaManager.lib;MassfileLib.lib;cximageMD.lib;JpegMD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\GCDeviceLib\MapTool_Release;..\GCLuaManager\MapTool_Release;..\MassFileLib\MapTool_Release;D:\perforceroot\KNCSDK\lib;../JPEG/lib/Jpeg;../JPEG/lib/CXImage;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBC;LIBCD;LIBCP;LIBCPD;LIBCMT;LIBCMTD;LIBCPMT;LIBCPMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>$(SolutionDir)WOGMapTOol.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='미국본섭|Win32'">
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <AdditionalIncludeDirectories>..\GCDeviceLib\;..\GCUtil\;..\LuaLib\;..\MassFileLib\;..\P4Lib\;..\GrandChase2\;..\ParticleLib\;../JPEG/header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;TOOLUSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\MapTool_Release/</AssemblerListingLocation>
+      <ObjectFileName>.\MapTool_Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\MapTool_Release/</ProgramDataBaseFileName>
+      <DisableSpecificWarnings>4800; 4995;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>dxerr.lib;d3dx9.lib;d3d9.lib;d3dxof.lib;dxguid.lib;winmm.lib;dinput8.lib;../zdll.lib;GCDeviceLib.lib;GCLuaManager.lib;MassfileLib.lib;cximageMD.lib;JpegMD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\GCDeviceLib\MapTool_Release;..\GCLuaManager\MapTool_Release;..\MassFileLib\MapTool_Release;D:\perforceroot\KNCSDK\lib;../JPEG/lib/Jpeg;../JPEG/lib/CXImage;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBC;LIBCD;LIBCP;LIBCPD;LIBCMT;LIBCMTD;LIBCPMT;LIBCPMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>$(SolutionDir)WOGMapTOol.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Patcher 한국 사내|Win32'">
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <AdditionalIncludeDirectories>..\GCDeviceLib\;..\GCUtil\;..\LuaLib\;..\MassFileLib\;..\P4Lib\;..\GrandChase2\;..\ParticleLib\;../JPEG/header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;TOOLUSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\MapTool_Release/</AssemblerListingLocation>
+      <ObjectFileName>.\MapTool_Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\MapTool_Release/</ProgramDataBaseFileName>
+      <DisableSpecificWarnings>4800; 4995;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>dxerr.lib;d3dx9.lib;d3d9.lib;d3dxof.lib;dxguid.lib;winmm.lib;dinput8.lib;../zdll.lib;GCDeviceLib.lib;GCLuaManager.lib;MassfileLib.lib;cximageMD.lib;JpegMD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\GCDeviceLib\MapTool_Release;..\GCLuaManager\MapTool_Release;..\MassFileLib\MapTool_Release;D:\perforceroot\KNCSDK\lib;../JPEG/lib/Jpeg;../JPEG/lib/CXImage;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBC;LIBCD;LIBCP;LIBCPD;LIBCMT;LIBCMTD;LIBCPMT;LIBCPMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>$(SolutionDir)WOGMapTOol.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Patcher 한국 사내 (패쳐패치 제거)|Win32'">
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <AdditionalIncludeDirectories>..\GCDeviceLib\;..\GCUtil\;..\LuaLib\;..\MassFileLib\;..\P4Lib\;..\GrandChase2\;..\ParticleLib\;../JPEG/header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;TOOLUSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\MapTool_Release/</AssemblerListingLocation>
+      <ObjectFileName>.\MapTool_Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\MapTool_Release/</ProgramDataBaseFileName>
+      <DisableSpecificWarnings>4800; 4995;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>dxerr.lib;d3dx9.lib;d3d9.lib;d3dxof.lib;dxguid.lib;winmm.lib;dinput8.lib;../zdll.lib;GCDeviceLib.lib;GCLuaManager.lib;MassfileLib.lib;cximageMD.lib;JpegMD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\GCDeviceLib\MapTool_Release;..\GCLuaManager\MapTool_Release;..\MassFileLib\MapTool_Release;D:\perforceroot\KNCSDK\lib;../JPEG/lib/Jpeg;../JPEG/lib/CXImage;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBC;LIBCD;LIBCP;LIBCPD;LIBCMT;LIBCMTD;LIBCPMT;LIBCPMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>$(SolutionDir)WOGMapTOol.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='필리핀본섭|Win32'">
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <AdditionalIncludeDirectories>..\GCDeviceLib\;..\GCUtil\;..\LuaLib\;..\MassFileLib\;..\P4Lib\;..\GrandChase2\;..\ParticleLib\;../JPEG/header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;TOOLUSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\MapTool_Release/</AssemblerListingLocation>
+      <ObjectFileName>.\MapTool_Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\MapTool_Release/</ProgramDataBaseFileName>
+      <DisableSpecificWarnings>4800; 4995;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>dxerr.lib;d3dx9.lib;d3d9.lib;d3dxof.lib;dxguid.lib;winmm.lib;dinput8.lib;../zdll.lib;GCDeviceLib.lib;GCLuaManager.lib;MassfileLib.lib;cximageMD.lib;JpegMD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\GCDeviceLib\MapTool_Release;..\GCLuaManager\MapTool_Release;..\MassFileLib\MapTool_Release;D:\perforceroot\KNCSDK\lib;../JPEG/lib/Jpeg;../JPEG/lib/CXImage;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBC;LIBCD;LIBCP;LIBCPD;LIBCMT;LIBCMTD;LIBCPMT;LIBCPMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>$(SolutionDir)WOGMapTOol.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='필리핀 사내테스트|Win32'">
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <AdditionalIncludeDirectories>..\GCDeviceLib\;..\GCUtil\;..\LuaLib\;..\MassFileLib\;..\P4Lib\;..\GrandChase2\;..\ParticleLib\;../JPEG/header;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;TOOLUSE;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\MapTool_Release/</AssemblerListingLocation>
+      <ObjectFileName>.\MapTool_Release/</ObjectFileName>
+      <ProgramDataBaseFileName>.\MapTool_Release/</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>dxerr.lib;d3dx9.lib;d3d9.lib;d3dxof.lib;dxguid.lib;winmm.lib;dinput8.lib;../zdll.lib;GCDeviceLib.lib;GCLuaManager.lib;MassfileLib.lib;cximageMD.lib;JpegMD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>..\GCDeviceLib\MapTool_Release;..\GCLuaManager\MapTool_Release;..\MassFileLib\MapTool_Release;D:\perforceroot\KNCSDK\lib;../JPEG/lib/Jpeg;../JPEG/lib/CXImage;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBC;LIBCD;LIBCP;LIBCPD;LIBCMT;LIBCMTD;LIBCPMT;LIBCPMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ProgramDatabaseFile>$(SolutionDir)WOGMapTOol.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ChangeGridGuideTerm.cpp" />
+    <ClCompile Include="ChangeLayerDlg.cpp" />
+    <ClCompile Include="Command\AddLayerPartCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\AllLayerResizeCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\CommandRecv.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\CreateLayerPartCloneCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\CreateLayerPartCreateCaterogyCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\CreateLayerPartDeleteCategory.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\CreateLayerPartDelPartCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\CreateLayerPartModifyCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\CreateLayerPartModifyFH.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\CreateLayerPartStampObjCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\CreateLayerPartUnStampObj.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\DragPartCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\InverseLeftRightCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\InverseUpDownCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\LayerChangeCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\LayerDelCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\LayerPartDelCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\LayerPartKeyMoveCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\LayerPartMoveCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\LayerResizeCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\LayerZOrderCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\ModifyFHValueCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\ModifyLayerPartCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\PasteObejctCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\StampObjectCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\UnStampObjectCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Command\WorldResizeCmd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="d3dapp.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="d3denumeration.cpp" />
+    <ClCompile Include="d3dfont.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="d3dsettings.cpp" />
+    <ClCompile Include="d3dutil.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="diutil.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="dmutil.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="dxutil.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'">Disabled</Optimization>
+      <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="EffectProp.cpp" />
+    <ClCompile Include="FHVector.cpp" />
+    <ClCompile Include="FootHold.cpp" />
+    <ClCompile Include="FootHoldValue.cpp" />
+    <ClCompile Include="GridGuideline\KGridGuide.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="GridGuideline\KGridGuideMgr.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="KCChooseCategoryDlg.cpp" />
+    <ClCompile Include="KCNewCategory.cpp" />
+    <ClCompile Include="KCreateLayerPartDlg.cpp" />
+    <ClCompile Include="KGCLuaBinder_Map.cpp" />
+    <ClCompile Include="KGCMap.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Layer.cpp" />
+    <ClCompile Include="LayerList.cpp" />
+    <ClCompile Include="LayerManager.cpp" />
+    <ClCompile Include="LayerPart.cpp" />
+    <ClCompile Include="LayerProp.cpp" />
+    <ClCompile Include="LayerResizing.cpp" />
+    <ClCompile Include="MoveObjectDlg.cpp" />
+    <ClCompile Include="MoveProp.cpp" />
+    <ClCompile Include="NewMapDlg.cpp" />
+    <ClCompile Include="ParticleListDlg.cpp" />
+    <ClCompile Include="PartList.cpp" />
+    <ClCompile Include="ResizingDlg.cpp" />
+    <ClCompile Include="StaticRenderView.cpp" />
+    <ClCompile Include="StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Patcher 한국 사내 (패쳐패치 제거)|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Patcher 한국 사내|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='미국 사내테스트|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='미국본섭|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='필리핀 사내테스트|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='필리핀본섭|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ToolObject.cpp" />
+    <ClCompile Include="UserProp.cpp" />
+    <ClCompile Include="WOGMapTOol.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ChangeGridGuideTerm.h" />
+    <ClInclude Include="ChangeLayerDlg.h" />
+    <ClInclude Include="Command\AddLayerPartCmd.h" />
+    <ClInclude Include="Command\AllLayerResizeCmd.h" />
+    <ClInclude Include="Command\CommandRecv.h" />
+    <ClInclude Include="Command\CreateLayerPartCloneCmd.h" />
+    <ClInclude Include="Command\CreateLayerPartCreateCaterogyCmd.h" />
+    <ClInclude Include="Command\CreateLayerPartDeleteCategory.h" />
+    <ClInclude Include="Command\CreateLayerPartDelPartCmd.h" />
+    <ClInclude Include="Command\CreateLayerPartModifyCmd.h" />
+    <ClInclude Include="Command\CreateLayerPartModifyFH.h" />
+    <ClInclude Include="Command\CreateLayerPartStampObjCmd.h" />
+    <ClInclude Include="Command\CreateLayerPartUnStampObj.h" />
+    <ClInclude Include="Command\DragPartCmd.h" />
+    <ClInclude Include="Command\ICommand.h" />
+    <ClInclude Include="Command\InverseLeftRightCmd.h" />
+    <ClInclude Include="Command\InverseUpDownCmd.h" />
+    <ClInclude Include="Command\LayerChangeCmd.h" />
+    <ClInclude Include="Command\LayerDelCmd.h" />
+    <ClInclude Include="Command\LayerPartDelCmd.h" />
+    <ClInclude Include="Command\LayerPartKeyMoveCmd.h" />
+    <ClInclude Include="Command\LayerPartMoveCmd.h" />
+    <ClInclude Include="Command\LayerResizeCmd.h" />
+    <ClInclude Include="Command\LayerZOrderCmd.h" />
+    <ClInclude Include="Command\ModifyFHValueCmd.h" />
+    <ClInclude Include="Command\ModifyLayerPartCmd.h" />
+    <ClInclude Include="Command\PasteObejctCmd.h" />
+    <ClInclude Include="Command\StampObjectCmd.h" />
+    <ClInclude Include="Command\UnStampObjectCmd.h" />
+    <ClInclude Include="Command\WorldResizeCmd.h" />
+    <ClInclude Include="CRenderEyeInfo.h" />
+    <ClInclude Include="d3dapp.h" />
+    <ClInclude Include="d3denumeration.h" />
+    <ClInclude Include="d3dfont.h" />
+    <ClInclude Include="d3dres.h" />
+    <ClInclude Include="d3dsettings.h" />
+    <ClInclude Include="d3dutil.h" />
+    <ClInclude Include="diutil.h" />
+    <ClInclude Include="dmutil.h" />
+    <ClInclude Include="dxutil.h" />
+    <ClInclude Include="EffectProp.h" />
+    <ClInclude Include="FHVector.h" />
+    <ClInclude Include="FootHold.h" />
+    <ClInclude Include="FootHoldValue.h" />
+    <ClInclude Include="GridGuideline\KGridGuide.h" />
+    <ClInclude Include="GridGuideline\KGridGuideMgr.h" />
+    <ClInclude Include="KCChooseCategoryDlg.h" />
+    <ClInclude Include="KCNewCategory.h" />
+    <ClInclude Include="KCreateLayerPartDlg.h" />
+    <ClInclude Include="KFHVector.h" />
+    <ClInclude Include="KFootHold.h" />
+    <ClInclude Include="KGCLuaBinder_Map.h" />
+    <ClInclude Include="KGCMap.h" />
+    <ClInclude Include="KLayer.h" />
+    <ClInclude Include="KLayerManager.h" />
+    <ClInclude Include="KLayerPart.h" />
+    <ClInclude Include="KMap.h" />
+    <ClInclude Include="Layer.h" />
+    <ClInclude Include="LayerList.h" />
+    <ClInclude Include="LayerManager.h" />
+    <ClInclude Include="LayerPart.h" />
+    <ClInclude Include="LayerProp.h" />
+    <ClInclude Include="LayerResizing.h" />
+    <ClInclude Include="MoveObjectDlg.h" />
+    <ClInclude Include="MoveProp.h" />
+    <ClInclude Include="NewMapDlg.h" />
+    <ClInclude Include="ParticleListDlg.h" />
+    <ClInclude Include="PartList.h" />
+    <ClInclude Include="ResizingDlg.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="StaticRenderView.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="ToolObject.h" />
+    <ClInclude Include="UserProp.h" />
+    <ClInclude Include="WOGMapTOol.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WOGMapTOol.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="hmove.cur" />
+    <None Include="KFHVector.inl" />
+    <None Include="KFootHold.inl" />
+    <None Include="KLayer.inl" />
+    <None Include="KLayerManager.inl" />
+    <None Include="KLayerPart.inl" />
+    <None Include="KMap.inl" />
+    <None Include="trckns.cur" />
+    <None Include="trckwe.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="DirectX.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="WogMapTOol.exe.manifest">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MapTool_Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MapTool_Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Patcher 한국 사내 (패쳐패치 제거)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Patcher 한국 사내|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='미국 사내테스트|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='미국본섭|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GCDeviceLib\GCDeviceLib.vcxproj">
+      <Project>{62363fda-ba57-454a-aec3-12d6ae12975d}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\GCLuaManager\GCLuaManager.vcxproj">
+      <Project>{dcb7fe55-5945-44d8-adf8-edf9ff2b530a}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\GCUtil\GCUtil.vcxproj">
+      <Project>{b37f2135-0b9f-45f5-8e2c-8bdd84634b4f}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\MassFileLib\MassFileLib.vcxproj">
+      <Project>{88ee4a6c-d0de-4ac6-bd75-7676f963b125}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="WOGMapTOol.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,359 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib
+END
+stdafx.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/stdafx.h
+END
+GCDeviceTexture.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceTexture.h
+END
+GCDeviceShader.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceShader.cpp
+END
+GCDeviceIndexBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceIndexBuffer.h
+END
+TextureLoadManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/TextureLoadManager.h
+END
+GCBaseMesh.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCBaseMesh.cpp
+END
+IGCComputePaletteP3M.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/IGCComputePaletteP3M.h
+END
+GCDeviceSprite.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceSprite.h
+END
+GCDeviceFont.h
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceFont.h
+END
+GCDeviceVertexBuffer.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceVertexBuffer.h
+END
+KExceptionSafeUtil.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/KExceptionSafeUtil.cpp
+END
+GCDeviceVirtualFont.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceVirtualFont.cpp
+END
+GCDeviceMotionFRM.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceMotionFRM.h
+END
+GCDeviceManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceManager.h
+END
+GCDevice.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDevice.cpp
+END
+GCDeviceMeshP3M.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceMeshP3M.h
+END
+GCDeviceBuildMesh.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceBuildMesh.h
+END
+IGCBone.h
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/IGCBone.h
+END
+KD3DDeviceState.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/KD3DDeviceState.h
+END
+GCUITexture.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCUITexture.h
+END
+GCMatrix.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCMatrix.cpp
+END
+GCDeviceBuildTexture.h
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceBuildTexture.h
+END
+GCDeviceLib.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceLib.vcproj
+END
+GCDeviceLib.vcproj.vspscc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceLib.vcproj.vspscc
+END
+GCDynamicVBManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDynamicVBManager.cpp
+END
+GCDynamicTexture.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDynamicTexture.h
+END
+TextureLoadThread.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/TextureLoadThread.cpp
+END
+united.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/united.cpp
+END
+stdafx.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/stdafx.cpp
+END
+GCDeviceTexture.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceTexture.cpp
+END
+GCDeviceIndexBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceIndexBuffer.cpp
+END
+TextureLoadManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/TextureLoadManager.cpp
+END
+IGCComputePaletteP3M.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/IGCComputePaletteP3M.cpp
+END
+MinMax.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/MinMax.h
+END
+GCDeviceSprite.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceSprite.cpp
+END
+GCDeviceFont.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceFont.cpp
+END
+GCDeviceVertexBuffer.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceVertexBuffer.cpp
+END
+GCDeviceFontTH.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceFontTH.h
+END
+GCDeviceMotionFRM.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceMotionFRM.cpp
+END
+GCDeviceManager.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceManager.cpp
+END
+GCDeviceShader.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceShader.h
+END
+GCDeviceMeshP3M.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceMeshP3M.cpp
+END
+GCBaseMesh.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCBaseMesh.h
+END
+GCDeviceBuildMesh.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceBuildMesh.cpp
+END
+IGCBone.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/IGCBone.cpp
+END
+KD3DDeviceState.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/KD3DDeviceState.cpp
+END
+GCUITexture.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCUITexture.cpp
+END
+GCDeviceBuildTexture.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceBuildTexture.cpp
+END
+KExceptionSafeUtil.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/KExceptionSafeUtil.h
+END
+shader.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/shader.h
+END
+GCDeviceVirtualFont.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceVirtualFont.h
+END
+GCDevice.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDevice.h
+END
+GCDynamicTexture.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDynamicTexture.cpp
+END
+GCMatrix.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCMatrix.h
+END
+GCDynamicVBManager.h
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDynamicVBManager.h
+END
+MinMax.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/MinMax.cpp
+END
+ReadMe.txt
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/ReadMe.txt
+END
+GCDeviceFontTH.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/GCDeviceFontTH.cpp
+END
+TextureLoadThread.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/GCDeviceLib/TextureLoadThread.h
+END

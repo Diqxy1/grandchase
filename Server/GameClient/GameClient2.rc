@@ -1,0 +1,144 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource2.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 한국어 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource2.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG1 DIALOGEX 0, 0, 1069, 530
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "BotTest"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "기본세팅",IDC_BUTTON1_SAVE,330,42,50,14
+    PUSHBUTTON      "실행",IDC_BUTTON2_RUN,529,15,66,22
+    COMBOBOX        IDC_COMBO1,22,29,87,86,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "채널목록",IDC_STATIC1,47,15,33,8
+    LTEXT           "",IDC_CHANNEL_OK_STR,23,61,85,8
+    LTEXT           "m_dwChannelUID",IDC_STATIC,118,15,58,8
+    LTEXT           "m_strChannelName",IDC_STATIC,118,25,63,8
+    LTEXT           "m_usMaxUsers",IDC_STATIC,118,36,49,8
+    LTEXT           "m_cType",IDC_STATIC,118,57,30,8
+    LTEXT           "",IDC_CHANNEL_NAME,192,25,51,8
+    LTEXT           "",IDC_CHANNEL_ID,191,15,60,8
+    LTEXT           "m_bHide",IDC_STATIC,118,68,28,8
+    LTEXT           "",IDC_CHANNEL_MAXUSER,191,36,63,8
+    LTEXT           "",IDC_CHANNEL_TYPE,192,57,68,8
+    LTEXT           "",IDC_CHANNEL_HIDE,192,68,68,8
+    LTEXT           "m_usUsers",IDC_STATIC,118,47,36,8
+    LTEXT           "",IDC_CHANNEL_USUSER,191,47,63,8
+    LTEXT           "No.MassiveRobot",IDC_STATIC,287,12,57,8
+    LTEXT           "No.ClientbyMassive",IDC_STATIC,372,12,64,8
+    EDITTEXT        IDC_EDIT_MASSIVE,281,23,67,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "MassiveGo",IDC_BUTTON_MASSIVE,331,92,50,14
+    CONTROL         "",IDC_LIST1_RESULT,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,710,4,352,519
+    EDITTEXT        IDC_EDIT_MASSIVECLIENT,356,23,96,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO2,291,73,48,353,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_SISNGLEMASSIVECLIENT,343,73,40,14,ES_AUTOHSCROLL
+    LTEXT           "SingleNo.ClientbyMassive",IDC_STATIC,296,62,82,8
+    PUSHBUTTON      "확인",IDC_BUTTON_OK,390,72,50,14
+    CONTROL         "",IDC_LIST1_NOOFMASSIVEANDCLIENT,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,14,115,83,408
+    CONTROL         "",IDC_LIST1_DETAILMASSIVE,"SysListView32",LVS_REPORT | LVS_EDITLABELS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,105,115,84,408
+    PUSHBUTTON      "전체적용",IDC_BUTTON2_TOTALSUBMITE,514,338,38,14
+    PUSHBUTTON      "선택Massive적용",IDC_BUTTON3_MASSIVESUBMITE,557,338,66,14
+    PUSHBUTTON      "Client적용",IDC_BUTTON4_CLIENTSUBMITE,628,338,50,14
+    PUSHBUTTON      "명령창초기화",IDC_BUTTON5_CLEAR,517,219,63,14
+    LTEXT           "Massive",IDC_STATIC,42,102,26,8
+    LTEXT           "Massive_Detail",IDC_STATIC,123,102,48,8
+    LTEXT           "테스트 전입니다.",IDC_STATIC_TEST_RESULT,530,46,138,8
+    CONTROL         "",IDC_LIST_CHOICE,"SysListView32",LVS_SMALLICON | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,204,116,499,94
+    CONTROL         "",IDC_LIST_COMLIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,204,241,271,282
+    PUSHBUTTON      "추가",IDC_BUTTON_ADD,360,219,50,14
+    PUSHBUTTON      "Option적용",IDC_BUTTON_COM,560,282,50,14
+    COMBOBOX        IDC_COMBO_COM,498,263,82,208,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "선택지우기",IDC_BUTTON_SELECTDELETE,440,219,50,14
+    EDITTEXT        IDC_EDIT_COM,586,263,101,14,ES_AUTOHSCROLL
+    LTEXT           "",IDC_STATIC_LUA_LOAD,23,47,85,8
+    COMBOBOX        IDC_COMBO_AUTOCREATE,571,411,48,181,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_STATIC_HELPSTATIC,479,246,225,8
+    LTEXT           "AutoCreate",IDC_STATIC,575,398,38,8
+    LTEXT           "조작부",IDC_STATIC,580,323,25,8
+    PUSHBUTTON      "지정명령전체초기화",IDC_BUTTON_CLEARPARAM,555,358,77,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 1062
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 523
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // 한국어 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

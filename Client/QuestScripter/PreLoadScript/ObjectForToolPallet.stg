@@ -1,0 +1,16 @@
+EGCObjectForToolPalette =
+{
+    {"OBJ_DOOR_0", "/Data/Texture/OBJ_DOOR_0.bmp"},
+    {"O2_Zone", "/Data/Texture/02.bmp"},	
+	{"JumpZone", "/Data/Texture/jumpzone.png"},	
+	{"순환의 정수", "/Data/Texture/jumpzone.png"},	
+	{"업화의 정수", "/Data/Texture/jumpzone.png"},	
+	{"조율의 정수", "/Data/Texture/jumpzone.png"},	
+	{"파괴의 정수", "/Data/Texture/jumpzone.png"},	
+	{"소생의 정수", "/Data/Texture/jumpzone.png"},	
+	{"몬스터 방어 버프", "/Data/Texture/jumpzone.png"},
+	{"데몬코어", "/Data/Texture/jumpzone.png"},
+	{"몬스터 소환문", "/Data/Texture/summondoor.png"},
+	{"몬스터 포탈", "/Data/Texture/jumpzone.png"},
+	{"점령전 상점", "/Data/Texture/dota_shop_serdin.dds"},
+}

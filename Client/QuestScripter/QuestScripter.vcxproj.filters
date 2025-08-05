@@ -1,0 +1,1063 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Map_Tool">
+      <UniqueIdentifier>{4ab9b45d-f01f-4908-9ff8-a9a18e77edc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="D3Dapp">
+      <UniqueIdentifier>{f48b0a57-209c-4305-86ae-aa2d17ad85b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TriggerSource">
+      <UniqueIdentifier>{4aa39ed3-e122-4d18-adca-d38049ff7d02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TriggerSource\TriggerFunction">
+      <UniqueIdentifier>{7c954f3f-691f-47db-b485-66994a3b99e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TriggerSource\TriggerFunction\Condition">
+      <UniqueIdentifier>{4c2a4503-310c-40ff-83ee-e44188f33de4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TriggerSource\TriggerFunction\Event_Action">
+      <UniqueIdentifier>{7d6a41f7-6a7a-4498-8e79-3b7d1071310a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TriggerSource\TriggerDialog">
+      <UniqueIdentifier>{2d6b233e-b704-4e00-8317-0537df272308}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TriggerSource\TriggerDialog\Condition">
+      <UniqueIdentifier>{302c808d-e7c0-4bfc-8599-0f2e9dd18547}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TriggerSource\TriggerDialog\Event_Action">
+      <UniqueIdentifier>{2cd71717-dc4e-4728-8b01-56aa66323e1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{662530e5-9ba6-4f05-a571-a01fdbd9fada}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map\Palette">
+      <UniqueIdentifier>{650c3f20-4d97-4061-9f9c-1932b62f27bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map\Palette\Content">
+      <UniqueIdentifier>{694222d1-fb1b-4580-aa53-b96812f06b8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map\MapDialog">
+      <UniqueIdentifier>{0528f830-a55a-4832-810a-91daf1828c60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map\MapDialog\ObjectManager">
+      <UniqueIdentifier>{df87613e-d085-4baa-beaf-91e3facc2080}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map\MapDialog\FunctionManager">
+      <UniqueIdentifier>{9b0f1a13-550d-44ae-9015-2f52f7a8f87a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialog">
+      <UniqueIdentifier>{8965bd93-e8e1-40e7-8641-721d55fa73ad}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ACEdit.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ACListWnd.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DataManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgDefaultDirection.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgDirectorySetting.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgFileList.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgHelp.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGChildGenner.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTileBG.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTileInfo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTileRowCol.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTileTypeSel.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTrigger.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTriggerContent.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MyTreeCtrl.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectDataManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="QuestScripter.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="QuestScripterDlg.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ReadOnlyEdit.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SplitterControl.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeType.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="xSkinButton.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MapSystem\KQSLayer.cpp">
+      <Filter>Map_Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="MapSystem\KQSLayerManager.cpp">
+      <Filter>Map_Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="MapSystem\KQSLayerPart.cpp">
+      <Filter>Map_Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="MapSystem\MapHeader.cpp">
+      <Filter>Map_Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="MapSystem\QSFantasticMap.cpp">
+      <Filter>Map_Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="MapSystem\QSFHVector.cpp">
+      <Filter>Map_Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="MapSystem\QSFootHold.cpp">
+      <Filter>Map_Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dapp.cpp">
+      <Filter>D3Dapp</Filter>
+    </ClCompile>
+    <ClCompile Include="d3denumeration.cpp">
+      <Filter>D3Dapp</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dfont.cpp">
+      <Filter>D3Dapp</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dsettings.cpp">
+      <Filter>D3Dapp</Filter>
+    </ClCompile>
+    <ClCompile Include="d3dutil.cpp">
+      <Filter>D3Dapp</Filter>
+    </ClCompile>
+    <ClCompile Include="dmutil.cpp">
+      <Filter>D3Dapp</Filter>
+    </ClCompile>
+    <ClCompile Include="dxutil.cpp">
+      <Filter>D3Dapp</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseTrigger.cpp">
+      <Filter>TriggerSource\TriggerFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="Category.cpp">
+      <Filter>TriggerSource\TriggerFunction</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckHP.cpp">
+      <Filter>TriggerSource\TriggerFunction\Condition</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckWall.cpp">
+      <Filter>TriggerSource\TriggerFunction\Condition</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogueState.cpp">
+      <Filter>TriggerSource\TriggerFunction\Condition</Filter>
+    </ClCompile>
+    <ClCompile Include="KillAllMonster.cpp">
+      <Filter>TriggerSource\TriggerFunction\Condition</Filter>
+    </ClCompile>
+    <ClCompile Include="KillMaster.cpp">
+      <Filter>TriggerSource\TriggerFunction\Condition</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjDestory.cpp">
+      <Filter>TriggerSource\TriggerFunction\Condition</Filter>
+    </ClCompile>
+    <ClCompile Include="Position.cpp">
+      <Filter>TriggerSource\TriggerFunction\Condition</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>TriggerSource\TriggerFunction\Condition</Filter>
+    </ClCompile>
+    <ClCompile Include="AddDamage.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeObjState.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="ClearOfStage.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DeleteMonster.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialogue.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="Embark.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="FadeInOut.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="GateObjectGenerater.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="HP.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="InfinityMonsterGen.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="Loading.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="Lose.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterGenerater.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="MP.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="NextStage.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectGenerater.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenDGate.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMotion.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMovingToArea.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerPosition.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="PositionParticle.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="Reward.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundOnOff.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="Subject.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="SuperPlayer.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleText.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="TriggerOnOff.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="TriggerReady.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitMovement.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitParticle.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="Water.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="Weather.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="Win.cpp">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGBase.cpp">
+      <Filter>TriggerSource\TriggerDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGCommon.cpp">
+      <Filter>TriggerSource\TriggerDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGCheckHP.cpp">
+      <Filter>TriggerSource\TriggerDialog\Condition</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGCheckWall.cpp">
+      <Filter>TriggerSource\TriggerDialog\Condition</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGDialogueState.cpp">
+      <Filter>TriggerSource\TriggerDialog\Condition</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGKillAllMonster.cpp">
+      <Filter>TriggerSource\TriggerDialog\Condition</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGKillMaster.cpp">
+      <Filter>TriggerSource\TriggerDialog\Condition</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGObjDestroy.cpp">
+      <Filter>TriggerSource\TriggerDialog\Condition</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGPosition.cpp">
+      <Filter>TriggerSource\TriggerDialog\Condition</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGTimer.cpp">
+      <Filter>TriggerSource\TriggerDialog\Condition</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGAddDamage.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGChangeObjState.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGClearOfStage.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGDeleteMonster.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGDialogue.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGEmbark.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGFadeInOut.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGGateObjectGenerater.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGHp.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGInfinityMonsterGen.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGLoading.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGLose.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGMonsterGenerater.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGMP.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGNextStage.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGObjectGenerater.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGOpenDGate.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGOptionWaterPole.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGPlayerMotion.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGPlayerMovingToArea.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGPlayerPosition.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGPositionParticle.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGReward.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGSoundOnOff.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGSubject.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGSuperPlayer.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGTitleText.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGUnitMovement.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGUnitParticle.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGWall.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGWater.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGWeather.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTGWin.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTriggerOnOff.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgTriggerReady.cpp">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClCompile>
+    <ClCompile Include="ToolPalette.cpp">
+      <Filter>Map\Palette</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgPaletteContent.cpp">
+      <Filter>Map\Palette\Content</Filter>
+    </ClCompile>
+    <ClCompile Include="AddDamage_Popup.cpp">
+      <Filter>Map\MapDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgGateObject_Popup.cpp">
+      <Filter>Map\MapDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgMapToObject.cpp">
+      <Filter>Map\MapDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgObjectGenerate_Popup.cpp">
+      <Filter>Map\MapDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgPlayerPosition_Popup.cpp">
+      <Filter>Map\MapDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgStageMonster_Popup.cpp">
+      <Filter>Map\MapDialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DamageObjectManager.cpp">
+      <Filter>Map\MapDialog\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="DecorObjectManager.cpp">
+      <Filter>Map\MapDialog\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GateObjectManager.cpp">
+      <Filter>Map\MapDialog\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterObjectManager.cpp">
+      <Filter>Map\MapDialog\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>Map\MapDialog\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerObjectManager.cpp">
+      <Filter>Map\MapDialog\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="AreaAssignFunctionManager.cpp">
+      <Filter>Map\MapDialog\FunctionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="FunctionManager.cpp">
+      <Filter>Map\MapDialog\FunctionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="MonSelFunctionManager.cpp">
+      <Filter>Map\MapDialog\FunctionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="PosAssignFunctionManager.cpp">
+      <Filter>Map\MapDialog\FunctionManager</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgChangeSequence.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgInfo.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgQuest.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgStage.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgStruct.cpp">
+      <Filter>Dialog</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ACEdit.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ACListWnd.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DataManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgDefaultDirection.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgDirectorySetting.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgFileList.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgHelp.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGChildGenner.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTileBG.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTileInfo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTileRowCol.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTileTypeSel.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTrigger.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTriggerContent.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionToScriptFile.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MyTreeCtrl.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectDataManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="PaletteStruct.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="QuestScripter.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="QuestScripterDlg.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ReadOnlyEdit.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SplitterControl.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="struct.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeType.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="xSkinButton.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSystem\KFootHold.h">
+      <Filter>Map_Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSystem\KLayer.h">
+      <Filter>Map_Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSystem\KQSLayer.h">
+      <Filter>Map_Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSystem\KQSLayerManager.h">
+      <Filter>Map_Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSystem\KQSLayerPart.h">
+      <Filter>Map_Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSystem\MapHeader.h">
+      <Filter>Map_Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSystem\QSFantasticMap.h">
+      <Filter>Map_Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSystem\QSFHVector.h">
+      <Filter>Map_Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSystem\QSFootHold.h">
+      <Filter>Map_Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dapp.h">
+      <Filter>D3Dapp</Filter>
+    </ClInclude>
+    <ClInclude Include="d3denumeration.h">
+      <Filter>D3Dapp</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dfont.h">
+      <Filter>D3Dapp</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dres.h">
+      <Filter>D3Dapp</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dsettings.h">
+      <Filter>D3Dapp</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dutil.h">
+      <Filter>D3Dapp</Filter>
+    </ClInclude>
+    <ClInclude Include="dmutil.h">
+      <Filter>D3Dapp</Filter>
+    </ClInclude>
+    <ClInclude Include="dxutil.h">
+      <Filter>D3Dapp</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseTrigger.h">
+      <Filter>TriggerSource\TriggerFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="Category.h">
+      <Filter>TriggerSource\TriggerFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumOfTrigger.h">
+      <Filter>TriggerSource\TriggerFunction</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckHP.h">
+      <Filter>TriggerSource\TriggerFunction\Condition</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckWall.h">
+      <Filter>TriggerSource\TriggerFunction\Condition</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogueState.h">
+      <Filter>TriggerSource\TriggerFunction\Condition</Filter>
+    </ClInclude>
+    <ClInclude Include="KillAllMonster.h">
+      <Filter>TriggerSource\TriggerFunction\Condition</Filter>
+    </ClInclude>
+    <ClInclude Include="KillMaster.h">
+      <Filter>TriggerSource\TriggerFunction\Condition</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjDestory.h">
+      <Filter>TriggerSource\TriggerFunction\Condition</Filter>
+    </ClInclude>
+    <ClInclude Include="Position.h">
+      <Filter>TriggerSource\TriggerFunction\Condition</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>TriggerSource\TriggerFunction\Condition</Filter>
+    </ClInclude>
+    <ClInclude Include="AddDamage.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeObjState.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="ClearOfStage.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DeleteMonster.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialogue.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Embark.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="FadeInOut.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="GateObjectGenerater.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="HP.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="InfinityMonsterGen.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Loading.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Lose.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterGenerater.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="MP.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="NextStage.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectGenerater.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenDGate.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMotion.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMovingToArea.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerPosition.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionParticle.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Reward.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundOnOff.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Subject.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="SuperPlayer.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleText.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="TriggerOnOff.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="TriggerReady.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitMovement.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitParticle.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Water.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Weather.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="Win.h">
+      <Filter>TriggerSource\TriggerFunction\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGBase.h">
+      <Filter>TriggerSource\TriggerDialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGCommon.h">
+      <Filter>TriggerSource\TriggerDialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGCheckHP.h">
+      <Filter>TriggerSource\TriggerDialog\Condition</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGCheckWall.h">
+      <Filter>TriggerSource\TriggerDialog\Condition</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGDialogueState.h">
+      <Filter>TriggerSource\TriggerDialog\Condition</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGKillAllMonster.h">
+      <Filter>TriggerSource\TriggerDialog\Condition</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGKillMaster.h">
+      <Filter>TriggerSource\TriggerDialog\Condition</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGObjDestroy.h">
+      <Filter>TriggerSource\TriggerDialog\Condition</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGPosition.h">
+      <Filter>TriggerSource\TriggerDialog\Condition</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGTimer.h">
+      <Filter>TriggerSource\TriggerDialog\Condition</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGAddDamage.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGChangeObjState.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGClearOfStage.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGDeleteMonster.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGDialogue.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGEmbark.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGFadeInOut.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGGateObjectGenerater.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGHp.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGInfinityMonsterGen.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGLoading.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGLose.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGMonsterGenerater.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGMP.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGNextStage.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGObjectGenerater.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGOpenDGate.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGOptionWaterPole.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGPlayerMotion.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGPlayerMovingToArea.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGPlayerPosition.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGPositionParticle.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGReward.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGSoundOnOff.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGSubject.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGSuperPlayer.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGTitleText.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGUnitMovement.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGUnitParticle.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGWall.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGWater.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGWeather.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTGWin.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTriggerOnOff.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgTriggerReady.h">
+      <Filter>TriggerSource\TriggerDialog\Event_Action</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSystem\KLayerManager.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSystem\KLayerPart.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSystem\KMap.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="ToolPalette.h">
+      <Filter>Map\Palette</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgPaletteContent.h">
+      <Filter>Map\Palette\Content</Filter>
+    </ClInclude>
+    <ClInclude Include="AddDamage_Popup.h">
+      <Filter>Map\MapDialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgGateObject_Popup.h">
+      <Filter>Map\MapDialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgMapToObject.h">
+      <Filter>Map\MapDialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgObjectGenerate_Popup.h">
+      <Filter>Map\MapDialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgPlayerPosition_Popup.h">
+      <Filter>Map\MapDialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgStageMonster_Popup.h">
+      <Filter>Map\MapDialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DamageObjectManager.h">
+      <Filter>Map\MapDialog\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DecorObjectManager.h">
+      <Filter>Map\MapDialog\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GateObjectManager.h">
+      <Filter>Map\MapDialog\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterObjectManager.h">
+      <Filter>Map\MapDialog\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>Map\MapDialog\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerObjectManager.h">
+      <Filter>Map\MapDialog\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="AreaAssignFunctionManager.h">
+      <Filter>Map\MapDialog\FunctionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionManager.h">
+      <Filter>Map\MapDialog\FunctionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="MonSelFunctionManager.h">
+      <Filter>Map\MapDialog\FunctionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="PosAssignFunctionManager.h">
+      <Filter>Map\MapDialog\FunctionManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgChangeSequence.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgInfo.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgQuest.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgStage.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgStruct.h">
+      <Filter>Dialog</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MapSystem\KLayerManager.inl">
+      <Filter>헤더 파일</Filter>
+    </None>
+    <None Include="MapSystem\KLayerPart.inl">
+      <Filter>헤더 파일</Filter>
+    </None>
+    <None Include="MapSystem\KMap.inl">
+      <Filter>헤더 파일</Filter>
+    </None>
+    <None Include="res\cur00001.cur">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="res\cur00002.cur">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="res\cur00003.cur">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="res\cur00004.cur">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="res\cur00005.cur">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="res\cursor1.cur">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="res\cursor2.cur">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="res\QuestScripter.rc2">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="MapSystem\KFootHold.inl">
+      <Filter>Map_Tool</Filter>
+    </None>
+    <None Include="MapSystem\KLayer.inl">
+      <Filter>Map_Tool</Filter>
+    </None>
+    <None Include="DlgOptionJumpZone.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bmp00001.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\List.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\QuestScripter.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\toolbar1.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="QuestScripter.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\QuestScripter.manifest" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{d4152546-82b2-4421-8561-d26f307f39ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{6a7bcf1d-8e64-4f91-89c9-d7e1a010356a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\CrashRpt">
+      <UniqueIdentifier>{dba2e02b-85e6-478d-870d-5747721e25dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\FSM">
+      <UniqueIdentifier>{dfd0352f-c050-4dfc-ac97-70f762dd8598}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\FSM\DefaultFSM">
+      <UniqueIdentifier>{7c3deb6c-bbea-47d7-a2df-ab96a6b07bba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Performer">
+      <UniqueIdentifier>{b84a2891-d41c-4511-9ef1-540fa6f63af6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Event">
+      <UniqueIdentifier>{3566047e-a574-4cdf-937c-407eaff1576c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\NetError">
+      <UniqueIdentifier>{1b207751-b58b-47bf-a4e4-3b18d9a2b4a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Layer">
+      <UniqueIdentifier>{24574d0a-fd5e-467f-a7d1-bff1c4224582}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\DB">
+      <UniqueIdentifier>{5b395b1d-3a48-43a2-8c44-f9e44f3f0694}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Packet">
+      <UniqueIdentifier>{7774d0f9-a930-47fe-91f5-f2e447ef8780}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Socket">
+      <UniqueIdentifier>{79c769f7-d675-4bc7-9618-b2fd392e20db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\SubThread">
+      <UniqueIdentifier>{3ceadc5f-5588-4621-8bf8-2db6d4ef19f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Layer">
+      <UniqueIdentifier>{e3d9d44b-820d-4b86-9e3b-3d7cc234beae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DBThread">
+      <UniqueIdentifier>{1e97bbad-d96f-4d9f-8529-29a596c95f83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SessionChild">
+      <UniqueIdentifier>{f3528663-3308-4b6b-817b-fc2525efd04a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SessionChild\MSUser">
+      <UniqueIdentifier>{e576a6da-f921-4566-b628-bd9bd902bb10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SessionChild\MRProxy">
+      <UniqueIdentifier>{d49c4aed-d744-40ab-9d27-3f437f28686e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="script">
+      <UniqueIdentifier>{74596ca8-823a-44a5-8f19-b3cb888fa3fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UnityBuild">
+      <UniqueIdentifier>{9df63832-6bb6-4fda-8285-044f91067e3e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\MsgServer\MsgServer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="WMsgServer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="WMsgServerDlg.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\EditLog.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\HookStdio.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\ReadOnlyEdit.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\SubclassWnd.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ActorManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\BaseServer.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\GenericLogfile.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\LogManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SimObject.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SlangFilter.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\StringTable.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Tea.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FSM\FSMclass.cpp">
+      <Filter>Common\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FSM\FSMstate.cpp">
+      <Filter>Common\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DefaultFSM.cpp">
+      <Filter>Common\FSM\DefaultFSM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Actor.cpp">
+      <Filter>Common\Performer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ActorProxy.cpp">
+      <Filter>Common\Performer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Performer.cpp">
+      <Filter>Common\Performer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Event.cpp">
+      <Filter>Common\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\NetError.cpp">
+      <Filter>Common\NetError</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DBLayer.cpp">
+      <Filter>Common\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\NetLayer.cpp">
+      <Filter>Common\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SimLayer.cpp">
+      <Filter>Common\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ODBC\Odbc.cpp">
+      <Filter>Common\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CommonFiles\CommonPacket.cpp">
+      <Filter>Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\KncBitStream.cpp">
+      <Filter>Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CommonFiles\MSPacket.cpp">
+      <Filter>Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\AccepterInterface.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\CircularQueue.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\IOCP.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\IOThread.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\NetCommon.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\Session.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\SocketObject.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ThreadManager.cpp">
+      <Filter>Common\SubThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgServer\MSDBLayer.cpp">
+      <Filter>Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgServer\MSNetLayer.cpp">
+      <Filter>Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgServer\MSSimLayer.cpp">
+      <Filter>Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgServer\MSDBThread.cpp">
+      <Filter>DBThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgServer\MSEvent.cpp">
+      <Filter>SessionChild\MSUser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgServer\MSUser.cpp">
+      <Filter>SessionChild\MSUser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgServer\MSUserHelper.cpp">
+      <Filter>SessionChild\MSUser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgServer\MRConnector.cpp">
+      <Filter>SessionChild\MRProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgRouter\MREvent.cpp">
+      <Filter>SessionChild\MRProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgRouter\MRPacket.cpp">
+      <Filter>SessionChild\MRProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgServer\MRProxy.cpp">
+      <Filter>SessionChild\MRProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgServer\MSUnity.cpp">
+      <Filter>UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgServer\MSUnity2.cpp">
+      <Filter>UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgServer\MSUnity3.cpp">
+      <Filter>UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgServer\MSUnity4.cpp">
+      <Filter>UnityBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgServer\MSUnity5.cpp">
+      <Filter>UnityBuild</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\MsgServer\MsgServer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="WMsgServer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="WMsgServerDlg.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\EditLog.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\EditStreamBuf.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\HookStdio.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\ReadOnlyEdit.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\SubclassWnd.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ActorFactory.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ActorManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\BaseServer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GenericLogfile.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GenericLogfile_def.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KncSmartPtr.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\LogManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\PrimitiveTypedef.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SimObject.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SlangFilter.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SlangNode.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SobManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Tea.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CrashRpt\KncCrashRpt.h">
+      <Filter>Common\CrashRpt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FSM\FSMclass.h">
+      <Filter>Common\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FSM\FSMstate.h">
+      <Filter>Common\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FSM\support_FSM.h">
+      <Filter>Common\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DefaultFSM.h">
+      <Filter>Common\FSM\DefaultFSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DefaultFSMInput_def.h">
+      <Filter>Common\FSM\DefaultFSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DefaultFSMState_def.h">
+      <Filter>Common\FSM\DefaultFSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Actor.h">
+      <Filter>Common\Performer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ActorProxy.h">
+      <Filter>Common\Performer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Performer.h">
+      <Filter>Common\Performer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Event.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\IntEvent.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\NetError.h">
+      <Filter>Common\NetError</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\NetError_def.h">
+      <Filter>Common\NetError</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DBLayer.h">
+      <Filter>Common\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\NetLayer.h">
+      <Filter>Common\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SimLayer.h">
+      <Filter>Common\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ODBC\Odbc.h">
+      <Filter>Common\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\CommonPacket.h">
+      <Filter>Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KncBitStream.h">
+      <Filter>Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\MSPacket.h">
+      <Filter>Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\Accepter.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\AccepterInterface.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\CircularQueue.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\IOCP.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\IOThread.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\NetCommon.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\Overlapped.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\Session.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\SocketObject.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SubThread.h">
+      <Filter>Common\SubThread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ThreadManager.h">
+      <Filter>Common\SubThread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MsgServer\MSDBLayer.h">
+      <Filter>Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MsgServer\MSNetLayer.h">
+      <Filter>Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MsgServer\MSSimLayer.h">
+      <Filter>Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MsgServer\MSDBThread.h">
+      <Filter>DBThread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MsgServer\MSEvent.h">
+      <Filter>SessionChild\MSUser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MsgServer\MSEvent_def.h">
+      <Filter>SessionChild\MSUser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MsgServer\MSUser.h">
+      <Filter>SessionChild\MSUser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MsgServer\MRConnector.h">
+      <Filter>SessionChild\MRProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MsgRouter\MREvent.h">
+      <Filter>SessionChild\MRProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MsgRouter\MREvent_def.h">
+      <Filter>SessionChild\MRProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MsgRouter\MRPacket.h">
+      <Filter>SessionChild\MRProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MsgServer\MRProxy.h">
+      <Filter>SessionChild\MRProxy</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="ms.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\WMsgServer.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WMsgServer.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\WMsgServer.rc2">
+      <Filter>리소스 파일</Filter>
+    </None>
+    <None Include="..\MsgServer\config_msg.ini">
+      <Filter>script</Filter>
+    </None>
+    <None Include="..\MsgServer\config_msg.lua">
+      <Filter>script</Filter>
+    </None>
+    <None Include="odbc.dsn">
+      <Filter>script</Filter>
+    </None>
+    <None Include="..\MsgServer\odbc_internal.dsn">
+      <Filter>script</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

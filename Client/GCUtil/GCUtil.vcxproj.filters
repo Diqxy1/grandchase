@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="CRC">
+      <UniqueIdentifier>{4a8ef1fe-4155-40fb-b658-1092cf2072c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MD5">
+      <UniqueIdentifier>{18ea2a9a-ca4a-44c8-aca2-eafcf63a6370}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Crc\CRC_32.cpp">
+      <Filter>CRC</Filter>
+    </ClCompile>
+    <ClCompile Include="Md5\MD5Checksum.cpp">
+      <Filter>MD5</Filter>
+    </ClCompile>
+    <ClCompile Include="AloFileMonitor.cpp" />
+    <ClCompile Include="GCElapsedTime.cpp" />
+    <ClCompile Include="GCFileMoniter.cpp" />
+    <ClCompile Include="GCInterpolate.cpp" />
+    <ClCompile Include="GCUtil.cpp" />
+    <ClCompile Include="GenericHTTPClient.cpp" />
+    <ClCompile Include="KGCRandomInList.cpp" />
+    <ClCompile Include="KOTPMD5.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="united.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Crc\CRC_32.h">
+      <Filter>CRC</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Md5\MD5Checksum.h">
+      <Filter>MD5</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Md5\MD5ChecksumDefines.h">
+      <Filter>MD5</Filter>
+    </CustomBuild>
+    <CustomBuild Include="AloFileMonitor.h" />
+    <CustomBuild Include="EnumString.h" />
+    <CustomBuild Include="GCElapsedTime.h" />
+    <CustomBuild Include="GCFileMoniter.h" />
+    <CustomBuild Include="GCInterpolate.h" />
+    <CustomBuild Include="GCRandomObj.h" />
+    <CustomBuild Include="GCUtil.h" />
+    <CustomBuild Include="GenericHTTPClient.h" />
+    <CustomBuild Include="KGCRandomInList.h" />
+    <CustomBuild Include="KJohnGen.h" />
+    <CustomBuild Include="KOTPMD5.h" />
+    <CustomBuild Include="ReadMe.txt" />
+    <CustomBuild Include="stdafx.h" />
+  </ItemGroup>
+</Project>

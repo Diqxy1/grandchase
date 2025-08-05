@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug(UnityBuild)|Win32">
+      <Configuration>Debug(UnityBuild)</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release(UnityBuild)|Win32">
+      <Configuration>Release(UnityBuild)</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BFB07898-8EFA-4D65-8096-92056B8D71FD}</ProjectGuid>
+    <RootNamespace>GameClient</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../Common; ../GameServer; ./; ../CenterServer; ../MsgServer; ../../CommonFiles;../../Client/KncP2PLib; $(SolutionDir)\Libs\InternalLib\KNCSDK_2015\include;../../CommonFiles;$(IncrediBuild)\tbb22_013oss\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE; _USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/fixed:no
+/LIBPATH:"$(SolutionDir)\Libs\InternalLib\KNCSDK_2015\lib" %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)GameClient.exe</OutputFile>
+      <AdditionalLibraryDirectories>../GameServer;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc; libcmt; libcp;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)GameClient.pdb</ProgramDatabaseFile>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)  /utf-8</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Libs\ExternalLib\Log4cxx\apache-log4cxx-0.10.0-vs2015\src\main\include;../Common;../GameServer;./;../CenterServer;../MsgServer;../../CommonFiles;../../Client/KncP2PLib;$(SolutionDir)\Libs\InternalLib\KNCSDK_2015\include;$(SolutionDir)\Libs\ExternalLib\IntelTBB\tbb2019_20190410oss\include;$(SolutionDir)\Libs\ExternalLib\Boost\boost_1_67_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LOG4CXX_STATIC;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;WIN32;NDEBUG;_CONSOLE;_SECURE_SCL=0;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/LIBPATH:"$(SolutionDir)\Libs\InternalLib\KNCSDK_2015\lib"
+/LIBPATH:"$(IncrediBuild)\tbb22_013oss\ia32\vc8\lib %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>aprutil-1.lib;apr-1.lib;log4cxx.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)GameClient.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Libs\ExternalLib\Log4cxx\apr-util\LibR;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apr\LibR;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apache-log4cxx-0.10.0-vs2015\projects\Release;$(SolutionDir)\Libs\ExternalLib\Boost\boost_1_67_0\lib-MD;../GameServer;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc; libcmt; libcp;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../Common; ../GameServer; ./; ../CenterServer; ../MsgServer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE; _USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>/fixed:no %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)GameClient.exe</OutputFile>
+      <AdditionalLibraryDirectories>../GameServer;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)GameClient.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../Common; ../GameServer; ./; ../CenterServer; ../MsgServer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_SECURE_SCL=0;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)GameClient.exe</OutputFile>
+      <AdditionalLibraryDirectories>../GameServer;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\CommonFiles\CommonPacket.cpp" />
+    <ClCompile Include="..\..\CommonFiles\MSPacket.cpp" />
+    <ClCompile Include="..\..\CommonFiles\NUserPacket.cpp" />
+    <ClCompile Include="..\..\CommonFiles\UserPacket.cpp" />
+    <ClCompile Include="..\CenterServer\NUserEvent.cpp" />
+    <ClCompile Include="..\Common\ActionDecider.cpp" />
+    <ClCompile Include="..\Common\Actor.cpp" />
+    <ClCompile Include="..\Common\ActorManager.cpp" />
+    <ClCompile Include="..\Common\ActorProxy.cpp" />
+    <ClCompile Include="..\Common\CenterEvent.cpp" />
+    <ClCompile Include="..\Common\CenterPacket.cpp" />
+    <ClCompile Include="..\Common\Event.cpp" />
+    <ClCompile Include="..\Common\Fsm\FSMclass.cpp" />
+    <ClCompile Include="..\Common\Fsm\FSMstate.cpp" />
+    <ClCompile Include="..\Common\GenericLogfile.cpp" />
+    <ClCompile Include="..\Common\KncBitStream.cpp" />
+    <ClCompile Include="..\Common\LogManager.cpp" />
+    <ClCompile Include="..\Common\NetError.cpp" />
+    <ClCompile Include="..\Common\Performer.cpp" />
+    <ClCompile Include="..\Common\SimObject.cpp" />
+    <ClCompile Include="..\Common\Socket\AccepterInterface.cpp" />
+    <ClCompile Include="..\Common\Socket\CircularQueue.cpp" />
+    <ClCompile Include="..\Common\Socket\IOCP.cpp" />
+    <ClCompile Include="..\Common\Socket\IOThread.cpp" />
+    <ClCompile Include="..\Common\Socket\NetCommon.cpp" />
+    <ClCompile Include="..\Common\Socket\Session.cpp" />
+    <ClCompile Include="..\Common\Socket\SocketObject.cpp" />
+    <ClCompile Include="..\Common\StringTable.cpp" />
+    <ClCompile Include="..\Common\ThreadManager.cpp" />
+    <ClCompile Include="..\GameServer\UserEvent.cpp" />
+    <ClCompile Include="..\GameServer\UserFSM.cpp" />
+    <ClCompile Include="..\MsgServer\MSEvent.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainDlg.cpp" />
+    <ClCompile Include="MassiveRobot.cpp" />
+    <ClCompile Include="MSProxy.cpp" />
+    <ClCompile Include="NUserProxy.cpp" />
+    <ClCompile Include="RobotManager.cpp" />
+    <ClCompile Include="SingleRobot.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="UserProxy.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\CommonFiles\CommonPacket.h" />
+    <ClInclude Include="..\..\CommonFiles\MSPacket.h" />
+    <ClInclude Include="..\..\CommonFiles\NUserEvent_def.h" />
+    <ClInclude Include="..\..\CommonFiles\NUserPacket.h" />
+    <ClInclude Include="..\..\CommonFiles\UserEvent_def.h" />
+    <ClInclude Include="..\..\CommonFiles\UserPacket.h" />
+    <ClInclude Include="..\CenterServer\NUserEvent.h" />
+    <ClInclude Include="..\Common\ActionDecider.h" />
+    <ClInclude Include="..\Common\Actor.h" />
+    <ClInclude Include="..\Common\ActorFactory.h" />
+    <ClInclude Include="..\Common\ActorManager.h" />
+    <ClInclude Include="..\Common\ActorProxy.h" />
+    <ClInclude Include="..\Common\CenterEvent.h" />
+    <ClInclude Include="..\Common\CenterEvent_def.h" />
+    <ClInclude Include="..\Common\CenterPacket.h" />
+    <ClInclude Include="..\Common\CrashRpt\KncCrashRpt.h" />
+    <ClInclude Include="..\Common\Event.h" />
+    <ClInclude Include="..\Common\Event_def.h" />
+    <ClInclude Include="..\Common\Fsm\FSMclass.h" />
+    <ClInclude Include="..\Common\Fsm\FSMstate.h" />
+    <ClInclude Include="..\Common\Fsm\support_FSM.h" />
+    <ClInclude Include="..\Common\GCEnum.h" />
+    <ClInclude Include="..\Common\GenericLogfile.h" />
+    <ClInclude Include="..\Common\GenericLogfile_def.h" />
+    <ClInclude Include="..\Common\IntEvent.h" />
+    <ClInclude Include="..\Common\KncBitStream.h" />
+    <ClInclude Include="..\Common\KncException.h" />
+    <ClInclude Include="..\Common\KncSmartPtr.h" />
+    <ClInclude Include="..\Common\LogManager.h" />
+    <ClInclude Include="..\Common\McUtil.h" />
+    <ClInclude Include="..\Common\NetError.h" />
+    <ClInclude Include="..\Common\NetError_def.h" />
+    <ClInclude Include="..\Common\Performer.h" />
+    <ClInclude Include="..\Common\ServerType.h" />
+    <ClInclude Include="..\Common\SimObject.h" />
+    <ClInclude Include="..\Common\SobManager.h" />
+    <ClInclude Include="..\Common\Socket\Accepter.h" />
+    <ClInclude Include="..\Common\Socket\AccepterInterface.h" />
+    <ClInclude Include="..\Common\Socket\CircularQueue.h" />
+    <ClInclude Include="..\Common\Socket\IOCP.h" />
+    <ClInclude Include="..\Common\Socket\IOThread.h" />
+    <ClInclude Include="..\Common\Socket\NetCommon.h" />
+    <ClInclude Include="..\Common\Socket\Overlapped.h" />
+    <ClInclude Include="..\Common\Socket\Session.h" />
+    <ClInclude Include="..\Common\Socket\SocketObject.h" />
+    <ClInclude Include="..\Common\Socket\UdpToServer.h" />
+    <ClInclude Include="..\Common\StringTable.h" />
+    <ClInclude Include="..\Common\SubThread.h" />
+    <ClInclude Include="..\Common\ThreadManager.h" />
+    <ClInclude Include="..\GameServer\UserEvent.h" />
+    <ClInclude Include="..\GameServer\UserFSM.h" />
+    <ClInclude Include="..\GameServer\UserFSMInput_def.h" />
+    <ClInclude Include="..\GameServer\UserFSMState_def.h" />
+    <ClInclude Include="..\MsgServer\MSEvent.h" />
+    <ClInclude Include="Main.h" />
+    <ClInclude Include="MainDlg.h" />
+    <ClInclude Include="MassiveRobot.h" />
+    <ClInclude Include="MSProxy.h" />
+    <ClInclude Include="NUserProxy.h" />
+    <ClInclude Include="resource2.h" />
+    <ClInclude Include="RobotAction_def.h" />
+    <ClInclude Include="RobotManager.h" />
+    <ClInclude Include="SingleRobot.h" />
+    <ClInclude Include="SingleRobotPacketDef.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="UserProxy.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config_robot.lua" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
+    <Image Include="icon2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GameClient2.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="GameClient1.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

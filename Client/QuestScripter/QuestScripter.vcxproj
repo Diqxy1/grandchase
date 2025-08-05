@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Origin BR Dev|Win32">
+      <Configuration>Origin BR Dev</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{26646110-A9BF-4B75-8B2D-0B61772690B6}</ProjectGuid>
+    <RootNamespace>QuestScripter</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <UseOfAtl>Dynamic</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\Shared.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\Shared.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\Shared.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>16.0.28803.298</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\Libs\ExternalLib\DXSDK\Include;$(SolutionDir)\Libs\InternalLib\KNCSDK_2015\Include;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apache-log4cxx-0.10.0-vs2015\src\main\include;$(SolutionDir)\Libs\ExternalLib\IntelTBB\tbb2019_20190410oss\include;$(SolutionDir)\Libs\ExternalLib\Boost\boost_1_67_0;$(SolutionDir)\Libs\InternalLib\GCDiscordLib\include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(SolutionDir)\Libs\ExternalLib\DXSDK\Lib\x86;$(SolutionDir)\Libs\ExternalLib\Boost\boost_1_67_0\libs;$(SolutionDir)\Libs\ExternalLib\Boost\boost_1_67_0\stage\lib;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apr-util\xml\expat\lib\LibR;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apr-util\LibR;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apr\LibR;$(SolutionDir)\Libs\ExternalLib\IntelTBB\tbb2019_20190410oss\lib\ia32\vc14;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apache-log4cxx-0.10.0-vs2015\projects\Release;$(SolutionDir)\Libs\InternalLib\KNCSDK_2015\lib;$(SolutionDir)\Libs\InternalLib\GCDiscordLib\lib</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(SolutionDir)\Libs\ExternalLib\DXSDK\Include;$(SolutionDir)\Libs\InternalLib\KNCSDK_2015\Include;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apache-log4cxx-0.10.0-vs2015\src\main\include;$(SolutionDir)\Libs\ExternalLib\IntelTBB\tbb2019_20190410oss\include;$(SolutionDir)\Libs\ExternalLib\Boost\boost_1_67_0;$(SolutionDir)\Libs\InternalLib\GCDiscordLib\include</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86;$(SolutionDir)\Libs\ExternalLib\DXSDK\Lib\x86;$(SolutionDir)\Libs\ExternalLib\Boost\boost_1_67_0\libs;$(SolutionDir)\Libs\ExternalLib\Boost\boost_1_67_0\stage\lib;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apr-util\xml\expat\lib\LibR;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apr-util\LibR;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apr\LibR;$(SolutionDir)\Libs\ExternalLib\IntelTBB\tbb2019_20190410oss\lib\ia32\vc14;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apache-log4cxx-0.10.0-vs2015\projects\Release;$(SolutionDir)\Libs\InternalLib\KNCSDK_2015\lib;$(SolutionDir)\Libs\InternalLib\GCDiscordLib\lib</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4800; 4995;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ShowIncludes>false</ShowIncludes>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>/nod:kernel32.lib;/nod:advapi32.lib;/nod:user32.lib;/nod:gdi32.lib;/nod:shell32.lib;/nod:comdlg32.lib;/nod:version.lib;/nod:mpr.lib;/nod:rasapi32.lib;/nod:winmm.lib;/nod:winspool.lib;/nod:vfw32.lib;/nod:secur32.lib;/nod:oleacc.lib;/nod:oledlg.lib;/nod:sensapi.lib;unicows.lib;kernel32.lib;advapi32.lib;user32.lib;gdi32.lib;shell32.lib;comdlg32.lib;version.lib;mpr.lib;rasapi32.lib;winmm.lib;winspool.lib;vfw32.lib;secur32.lib;oleacc.lib;oledlg.lib;sensapi.lib;imm32.lib;comctl32.lib;Ws2_32.lib;Wininet.lib;KncDebug71MTd.lib;urlmon.lib;dxerr9.lib;d3dx9d.lib;d3d9.lib;d3dxof.lib;dxguid.lib;dinput8.lib;../zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ShowProgress>NotSet</ShowProgress>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)\QuestScripter$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm220 %(AdditionalOptions) /utf-8</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>E:\FirstChase Source Limpa\Libs\ExternalLib\Boost\boost_1_67_0\stage\lib;E:\FirstChase Source Limpa\Libs\ExternalLib\Boost\boost_1_67_0\stage;E:\FirstChase Source Limpa\Libs\ExternalLib\Boost\boost_1_67_0;./;../;../knc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader />
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4995;4244;4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>dxerr9.lib;d3dx9.lib;d3d9.lib;d3dxof.lib;dxguid.lib;dsound.lib;winmm.lib;dinput8.lib;../zdll.lib;Wininet.lib;../libxmlMT.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Release\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>E:\FirstChase Source Limpa\Libs\ExternalLib\Boost\boost_1_67_0\stage\lib;E:\FirstChase Source Limpa\Libs\ExternalLib\Boost\boost_1_67_0\stage;E:\FirstChase Source Limpa\Libs\ExternalLib\Boost\boost_1_67_0;..\GCDeviceLib\Release;..\GCLuaManager\Release;..\GCUtil\Release;..\MassFileLib\Release;../JPEG/lib/Cximage;../JPEG/lib/Jpeg;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcp.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EntryPointSymbol>wWinMainCRTStartup</EntryPointSymbol>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>-Zm220 %(AdditionalOptions) /utf-8</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>./;../;../knc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4995;4244;4819;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0412</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>dxerr9.lib;d3dx9.lib;d3d9.lib;d3dxof.lib;dxguid.lib;dsound.lib;winmm.lib;dinput8.lib;../zdll.lib;Wininet.lib;../libxmlMT.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>.\Release\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>..\GCDeviceLib\Release;..\GCLuaManager\Release;..\GCUtil\Release;..\MassFileLib\Release;../JPEG/lib/Cximage;../JPEG/lib/Jpeg;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcp.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EntryPointSymbol>wWinMainCRTStartup</EntryPointSymbol>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ACEdit.cpp" />
+    <ClCompile Include="ACListWnd.cpp" />
+    <ClCompile Include="AddDamage.cpp" />
+    <ClCompile Include="AddDamage_Popup.cpp" />
+    <ClCompile Include="AreaAssignFunctionManager.cpp" />
+    <ClCompile Include="BaseTrigger.cpp" />
+    <ClCompile Include="Category.cpp" />
+    <ClCompile Include="ChangeObjState.cpp" />
+    <ClCompile Include="CheckHP.cpp" />
+    <ClCompile Include="CheckWall.cpp" />
+    <ClCompile Include="ClearOfStage.cpp" />
+    <ClCompile Include="d3dapp.cpp" />
+    <ClCompile Include="d3denumeration.cpp" />
+    <ClCompile Include="d3dfont.cpp" />
+    <ClCompile Include="d3dsettings.cpp" />
+    <ClCompile Include="d3dutil.cpp" />
+    <ClCompile Include="DamageObjectManager.cpp" />
+    <ClCompile Include="DataManager.cpp" />
+    <ClCompile Include="DecorObjectManager.cpp" />
+    <ClCompile Include="DeleteMonster.cpp" />
+    <ClCompile Include="Dialogue.cpp" />
+    <ClCompile Include="DialogueState.cpp" />
+    <ClCompile Include="DlgChangeSequence.cpp" />
+    <ClCompile Include="DlgDefaultDirection.cpp" />
+    <ClCompile Include="DlgDirectorySetting.cpp" />
+    <ClCompile Include="DlgFileList.cpp" />
+    <ClCompile Include="DlgGateObject_Popup.cpp" />
+    <ClCompile Include="DlgHelp.cpp" />
+    <ClCompile Include="DlgInfo.cpp" />
+    <ClCompile Include="DlgMapToObject.cpp" />
+    <ClCompile Include="DlgObjectGenerate_Popup.cpp" />
+    <ClCompile Include="DlgPaletteContent.cpp" />
+    <ClCompile Include="DlgPlayerPosition_Popup.cpp" />
+    <ClCompile Include="DlgQuest.cpp" />
+    <ClCompile Include="DlgStage.cpp" />
+    <ClCompile Include="DlgStageMonster_Popup.cpp" />
+    <ClCompile Include="DlgStruct.cpp" />
+    <ClCompile Include="DlgTGAddDamage.cpp" />
+    <ClCompile Include="DlgTGBase.cpp" />
+    <ClCompile Include="DlgTGChangeObjState.cpp" />
+    <ClCompile Include="DlgTGCheckHP.cpp" />
+    <ClCompile Include="DlgTGCheckWall.cpp" />
+    <ClCompile Include="DlgTGChildGenner.cpp" />
+    <ClCompile Include="DlgTGClearOfStage.cpp" />
+    <ClCompile Include="DlgTGCommon.cpp" />
+    <ClCompile Include="DlgTGDeleteMonster.cpp" />
+    <ClCompile Include="DlgTGDialogue.cpp" />
+    <ClCompile Include="DlgTGDialogueState.cpp" />
+    <ClCompile Include="DlgTGEmbark.cpp" />
+    <ClCompile Include="DlgTGFadeInOut.cpp" />
+    <ClCompile Include="DlgTGGateObjectGenerater.cpp" />
+    <ClCompile Include="DlgTGHp.cpp" />
+    <ClCompile Include="DlgTGInfinityMonsterGen.cpp" />
+    <ClCompile Include="DlgTGKillAllMonster.cpp" />
+    <ClCompile Include="DlgTGKillMaster.cpp" />
+    <ClCompile Include="DlgTGLoading.cpp" />
+    <ClCompile Include="DlgTGLose.cpp" />
+    <ClCompile Include="DlgTGMonsterGenerater.cpp" />
+    <ClCompile Include="DlgTGMP.cpp" />
+    <ClCompile Include="DlgTGNextStage.cpp" />
+    <ClCompile Include="DlgTGObjDestroy.cpp" />
+    <ClCompile Include="DlgTGObjectGenerater.cpp" />
+    <ClCompile Include="DlgTGOpenDGate.cpp" />
+    <ClCompile Include="DlgTGOptionWaterPole.cpp" />
+    <ClCompile Include="DlgTGPlayerMotion.cpp" />
+    <ClCompile Include="DlgTGPlayerMovingToArea.cpp" />
+    <ClCompile Include="DlgTGPlayerPosition.cpp" />
+    <ClCompile Include="DlgTGPosition.cpp" />
+    <ClCompile Include="DlgTGPositionParticle.cpp" />
+    <ClCompile Include="DlgTGReward.cpp" />
+    <ClCompile Include="DlgTGSoundOnOff.cpp" />
+    <ClCompile Include="DlgTGSubject.cpp" />
+    <ClCompile Include="DlgTGSuperPlayer.cpp" />
+    <ClCompile Include="DlgTGTimer.cpp" />
+    <ClCompile Include="DlgTGTitleText.cpp" />
+    <ClCompile Include="DlgTGUnitMovement.cpp" />
+    <ClCompile Include="DlgTGUnitParticle.cpp" />
+    <ClCompile Include="DlgTGWall.cpp" />
+    <ClCompile Include="DlgTGWater.cpp" />
+    <ClCompile Include="DlgTGWeather.cpp" />
+    <ClCompile Include="DlgTGWin.cpp" />
+    <ClCompile Include="DlgTileBG.cpp" />
+    <ClCompile Include="DlgTileInfo.cpp" />
+    <ClCompile Include="DlgTileRowCol.cpp" />
+    <ClCompile Include="DlgTileTypeSel.cpp" />
+    <ClCompile Include="DlgTrigger.cpp" />
+    <ClCompile Include="DlgTriggerContent.cpp" />
+    <ClCompile Include="DlgTriggerOnOff.cpp" />
+    <ClCompile Include="DlgTriggerReady.cpp" />
+    <ClCompile Include="dmutil.cpp" />
+    <ClCompile Include="dxutil.cpp" />
+    <ClCompile Include="Embark.cpp" />
+    <ClCompile Include="FadeInOut.cpp" />
+    <ClCompile Include="FunctionManager.cpp" />
+    <ClCompile Include="GateObjectGenerater.cpp" />
+    <ClCompile Include="GateObjectManager.cpp" />
+    <ClCompile Include="HP.cpp" />
+    <ClCompile Include="InfinityMonsterGen.cpp" />
+    <ClCompile Include="KillAllMonster.cpp" />
+    <ClCompile Include="KillMaster.cpp" />
+    <ClCompile Include="Loading.cpp" />
+    <ClCompile Include="Lose.cpp" />
+    <ClCompile Include="MapSystem\KQSLayer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MapSystem\KQSLayerManager.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MapSystem\KQSLayerPart.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MapSystem\MapHeader.cpp" />
+    <ClCompile Include="MapSystem\QSFantasticMap.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MapSystem\QSFHVector.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MapSystem\QSFootHold.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Use</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MonSelFunctionManager.cpp" />
+    <ClCompile Include="MonsterGenerater.cpp" />
+    <ClCompile Include="MonsterObjectManager.cpp" />
+    <ClCompile Include="MP.cpp" />
+    <ClCompile Include="MyTreeCtrl.cpp" />
+    <ClCompile Include="NextStage.cpp" />
+    <ClCompile Include="ObjDestory.cpp" />
+    <ClCompile Include="ObjectDataManager.cpp" />
+    <ClCompile Include="ObjectGenerater.cpp" />
+    <ClCompile Include="ObjectManager.cpp" />
+    <ClCompile Include="OpenDGate.cpp" />
+    <ClCompile Include="PlayerMotion.cpp" />
+    <ClCompile Include="PlayerMovingToArea.cpp" />
+    <ClCompile Include="PlayerObjectManager.cpp" />
+    <ClCompile Include="PlayerPosition.cpp" />
+    <ClCompile Include="PosAssignFunctionManager.cpp" />
+    <ClCompile Include="Position.cpp" />
+    <ClCompile Include="PositionParticle.cpp" />
+    <ClCompile Include="QuestScripter.cpp" />
+    <ClCompile Include="QuestScripterDlg.cpp" />
+    <ClCompile Include="ReadOnlyEdit.cpp" />
+    <ClCompile Include="Reward.cpp" />
+    <ClCompile Include="SoundOnOff.cpp" />
+    <ClCompile Include="SplitterControl.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Subject.cpp" />
+    <ClCompile Include="SuperPlayer.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="TitleText.cpp" />
+    <ClCompile Include="ToolPalette.cpp" />
+    <ClCompile Include="TreeType.cpp" />
+    <ClCompile Include="TriggerOnOff.cpp" />
+    <ClCompile Include="TriggerReady.cpp" />
+    <ClCompile Include="UnitMovement.cpp" />
+    <ClCompile Include="UnitParticle.cpp" />
+    <ClCompile Include="Wall.cpp" />
+    <ClCompile Include="Water.cpp" />
+    <ClCompile Include="Weather.cpp" />
+    <ClCompile Include="Win.cpp" />
+    <ClCompile Include="xSkinButton.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ACEdit.h" />
+    <ClInclude Include="ACListWnd.h" />
+    <ClInclude Include="AddDamage.h" />
+    <ClInclude Include="AddDamage_Popup.h" />
+    <ClInclude Include="AreaAssignFunctionManager.h" />
+    <ClInclude Include="BaseTrigger.h" />
+    <ClInclude Include="Category.h" />
+    <ClInclude Include="ChangeObjState.h" />
+    <ClInclude Include="CheckHP.h" />
+    <ClInclude Include="CheckWall.h" />
+    <ClInclude Include="ClearOfStage.h" />
+    <ClInclude Include="d3dapp.h" />
+    <ClInclude Include="d3denumeration.h" />
+    <ClInclude Include="d3dfont.h" />
+    <ClInclude Include="d3dres.h" />
+    <ClInclude Include="d3dsettings.h" />
+    <ClInclude Include="d3dutil.h" />
+    <ClInclude Include="DamageObjectManager.h" />
+    <ClInclude Include="DataManager.h" />
+    <ClInclude Include="DecorObjectManager.h" />
+    <ClInclude Include="DeleteMonster.h" />
+    <ClInclude Include="Dialogue.h" />
+    <ClInclude Include="DialogueState.h" />
+    <ClInclude Include="DlgChangeSequence.h" />
+    <ClInclude Include="DlgDefaultDirection.h" />
+    <ClInclude Include="DlgDirectorySetting.h" />
+    <ClInclude Include="DlgFileList.h" />
+    <ClInclude Include="DlgGateObject_Popup.h" />
+    <ClInclude Include="DlgHelp.h" />
+    <ClInclude Include="DlgInfo.h" />
+    <ClInclude Include="DlgMapToObject.h" />
+    <ClInclude Include="DlgObjectGenerate_Popup.h" />
+    <ClInclude Include="DlgPaletteContent.h" />
+    <ClInclude Include="DlgPlayerPosition_Popup.h" />
+    <ClInclude Include="DlgQuest.h" />
+    <ClInclude Include="DlgStage.h" />
+    <ClInclude Include="DlgStageMonster_Popup.h" />
+    <ClInclude Include="DlgStruct.h" />
+    <ClInclude Include="DlgTGAddDamage.h" />
+    <ClInclude Include="DlgTGBase.h" />
+    <ClInclude Include="DlgTGChangeObjState.h" />
+    <ClInclude Include="DlgTGCheckHP.h" />
+    <ClInclude Include="DlgTGCheckWall.h" />
+    <ClInclude Include="DlgTGChildGenner.h" />
+    <ClInclude Include="DlgTGClearOfStage.h" />
+    <ClInclude Include="DlgTGCommon.h" />
+    <ClInclude Include="DlgTGDeleteMonster.h" />
+    <ClInclude Include="DlgTGDialogue.h" />
+    <ClInclude Include="DlgTGDialogueState.h" />
+    <ClInclude Include="DlgTGEmbark.h" />
+    <ClInclude Include="DlgTGFadeInOut.h" />
+    <ClInclude Include="DlgTGGateObjectGenerater.h" />
+    <ClInclude Include="DlgTGHp.h" />
+    <ClInclude Include="DlgTGInfinityMonsterGen.h" />
+    <ClInclude Include="DlgTGKillAllMonster.h" />
+    <ClInclude Include="DlgTGKillMaster.h" />
+    <ClInclude Include="DlgTGLoading.h" />
+    <ClInclude Include="DlgTGLose.h" />
+    <ClInclude Include="DlgTGMonsterGenerater.h" />
+    <ClInclude Include="DlgTGMP.h" />
+    <ClInclude Include="DlgTGNextStage.h" />
+    <ClInclude Include="DlgTGObjDestroy.h" />
+    <ClInclude Include="DlgTGObjectGenerater.h" />
+    <ClInclude Include="DlgTGOpenDGate.h" />
+    <ClInclude Include="DlgTGOptionWaterPole.h" />
+    <ClInclude Include="DlgTGPlayerMotion.h" />
+    <ClInclude Include="DlgTGPlayerMovingToArea.h" />
+    <ClInclude Include="DlgTGPlayerPosition.h" />
+    <ClInclude Include="DlgTGPosition.h" />
+    <ClInclude Include="DlgTGPositionParticle.h" />
+    <ClInclude Include="DlgTGReward.h" />
+    <ClInclude Include="DlgTGSoundOnOff.h" />
+    <ClInclude Include="DlgTGSubject.h" />
+    <ClInclude Include="DlgTGSuperPlayer.h" />
+    <ClInclude Include="DlgTGTimer.h" />
+    <ClInclude Include="DlgTGTitleText.h" />
+    <ClInclude Include="DlgTGUnitMovement.h" />
+    <ClInclude Include="DlgTGUnitParticle.h" />
+    <ClInclude Include="DlgTGWall.h" />
+    <ClInclude Include="DlgTGWater.h" />
+    <ClInclude Include="DlgTGWeather.h" />
+    <ClInclude Include="DlgTGWin.h" />
+    <ClInclude Include="DlgTileBG.h" />
+    <ClInclude Include="DlgTileInfo.h" />
+    <ClInclude Include="DlgTileRowCol.h" />
+    <ClInclude Include="DlgTileTypeSel.h" />
+    <ClInclude Include="DlgTrigger.h" />
+    <ClInclude Include="DlgTriggerContent.h" />
+    <ClInclude Include="DlgTriggerOnOff.h" />
+    <ClInclude Include="DlgTriggerReady.h" />
+    <ClInclude Include="dmutil.h" />
+    <ClInclude Include="dxutil.h" />
+    <ClInclude Include="Embark.h" />
+    <ClInclude Include="EnumOfTrigger.h" />
+    <ClInclude Include="FadeInOut.h" />
+    <ClInclude Include="FunctionManager.h" />
+    <ClInclude Include="FunctionToScriptFile.h" />
+    <ClInclude Include="GateObjectGenerater.h" />
+    <ClInclude Include="GateObjectManager.h" />
+    <ClInclude Include="HP.h" />
+    <ClInclude Include="InfinityMonsterGen.h" />
+    <ClInclude Include="KillAllMonster.h" />
+    <ClInclude Include="KillMaster.h" />
+    <ClInclude Include="Loading.h" />
+    <ClInclude Include="Lose.h" />
+    <ClInclude Include="MapSystem\KFootHold.h" />
+    <ClInclude Include="MapSystem\KLayer.h" />
+    <ClInclude Include="MapSystem\KLayerManager.h" />
+    <ClInclude Include="MapSystem\KLayerPart.h" />
+    <ClInclude Include="MapSystem\KMap.h" />
+    <ClInclude Include="MapSystem\KQSLayer.h" />
+    <ClInclude Include="MapSystem\KQSLayerManager.h" />
+    <ClInclude Include="MapSystem\KQSLayerPart.h" />
+    <ClInclude Include="MapSystem\MapHeader.h" />
+    <ClInclude Include="MapSystem\QSFantasticMap.h" />
+    <ClInclude Include="MapSystem\QSFHVector.h" />
+    <ClInclude Include="MapSystem\QSFootHold.h" />
+    <ClInclude Include="MonSelFunctionManager.h" />
+    <ClInclude Include="MonsterGenerater.h" />
+    <ClInclude Include="MonsterObjectManager.h" />
+    <ClInclude Include="MP.h" />
+    <ClInclude Include="MyTreeCtrl.h" />
+    <ClInclude Include="NextStage.h" />
+    <ClInclude Include="ObjDestory.h" />
+    <ClInclude Include="ObjectDataManager.h" />
+    <ClInclude Include="ObjectGenerater.h" />
+    <ClInclude Include="ObjectManager.h" />
+    <ClInclude Include="OpenDGate.h" />
+    <ClInclude Include="PaletteStruct.h" />
+    <ClInclude Include="PlayerMotion.h" />
+    <ClInclude Include="PlayerMovingToArea.h" />
+    <ClInclude Include="PlayerObjectManager.h" />
+    <ClInclude Include="PlayerPosition.h" />
+    <ClInclude Include="PosAssignFunctionManager.h" />
+    <ClInclude Include="Position.h" />
+    <ClInclude Include="PositionParticle.h" />
+    <ClInclude Include="QuestScripter.h" />
+    <ClInclude Include="QuestScripterDlg.h" />
+    <ClInclude Include="ReadOnlyEdit.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Reward.h" />
+    <ClInclude Include="SoundOnOff.h" />
+    <ClInclude Include="SplitterControl.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="struct.h" />
+    <ClInclude Include="Subject.h" />
+    <ClInclude Include="SuperPlayer.h" />
+    <ClInclude Include="Timer.h" />
+    <ClInclude Include="TitleText.h" />
+    <ClInclude Include="ToolPalette.h" />
+    <ClInclude Include="TreeType.h" />
+    <ClInclude Include="TriggerOnOff.h" />
+    <ClInclude Include="TriggerReady.h" />
+    <ClInclude Include="UnitMovement.h" />
+    <ClInclude Include="UnitParticle.h" />
+    <ClInclude Include="Wall.h" />
+    <ClInclude Include="Water.h" />
+    <ClInclude Include="Weather.h" />
+    <ClInclude Include="Win.h" />
+    <ClInclude Include="xSkinButton.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DlgOptionJumpZone.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="MapSystem\KFootHold.inl" />
+    <None Include="MapSystem\KLayer.inl" />
+    <None Include="MapSystem\KLayerManager.inl" />
+    <None Include="MapSystem\KLayerPart.inl" />
+    <None Include="MapSystem\KMap.inl" />
+    <None Include="res\cur00001.cur" />
+    <None Include="res\cur00002.cur" />
+    <None Include="res\cur00003.cur" />
+    <None Include="res\cur00004.cur" />
+    <None Include="res\cur00005.cur" />
+    <None Include="res\cursor1.cur" />
+    <None Include="res\cursor2.cur" />
+    <None Include="res\QuestScripter.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bmp00001.bmp" />
+    <Image Include="res\List.bmp" />
+    <Image Include="res\QuestScripter.ico" />
+    <Image Include="res\toolbar1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="QuestScripter.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\QuestScripter.manifest">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Origin BR Dev|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GCDeviceLib\GCDeviceLib.vcxproj">
+      <Project>{62363fda-ba57-454a-aec3-12d6ae12975d}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\GCLuaManager\GCLuaManager.vcxproj">
+      <Project>{dcb7fe55-5945-44d8-adf8-edf9ff2b530a}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\MassFileLib\MassFileLib.vcxproj">
+      <Project>{88ee4a6c-d0de-4ac6-bd75-7676f963b125}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="QuestScripter.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

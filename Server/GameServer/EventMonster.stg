@@ -1,0 +1,102 @@
+
+-- 2010 11 22/ Event Monster Script
+-----------------------------------
+
+-- Platform Stage에서는 등장하지 않습니다.
+-- AutoLevel이 TRUE인 경우, 몬스터가 등장 던전의 최소 적정레벨로 설정됩니다.
+-- AutoLevel이 FALSE인 경우, MonsterTemplate의 기본 레벨(iBaseLevel)로 설정됩니다.
+
+--[[ 게임모드, ID, 던전 이름
+GC_GM_QUEST0   = 7,    // 시련의 숲
+GC_GM_QUEST1   = 8,    // 시련의 탑
+GC_GM_QUEST2   = 9,    // 세르딘성 외곽
+GC_GM_QUEST3   = 10,   // 캐리비치
+GC_GM_QUEST4   = 11,   // 오크사원
+GC_GM_QUEST5   = 12,   // 고르고스 던전
+GC_GM_QUEST6   = 13,   // 엘프의 숲
+GC_GM_QUEST7   = 14,   // 맹세의 계곡
+GC_GM_QUEST8   = 15,   // 망각의 늪
+GC_GM_QUEST9   = 16,   // 망자의 묘지
+GC_GM_QUEST10  = 17,   // 잊혀진 도시
+GC_GM_QUEST11  = 18,   // 가이코즈의 성
+GC_GM_QUEST12  = 19,   // 파투세이의 바다
+GC_GM_QUEST13  = 20,   // 엘리아 대륙
+GC_GM_QUEST14  = 21,   // 불의 사원
+GC_GM_QUEST15  = 22,   // 헬 브릿지
+GC_GM_QUEST16  = 23,   // 카제아제의 성
+GC_GM_QUEST17  = 24,   // 카스툴 유적지 하층
+GC_GM_QUEST18  = 25,   // 카스툴 유적지 상층
+GC_GM_QUEST19  = 26,   // 베르메시아의 최후
+GC_GM_QUEST20  = 27,   // 제니아 접경지
+GC_GM_QUEST21  = 30,   // 신신신 퀘스트 ㅋ
+GC_GM_QUEST22  = 36,   // 소실의 협곡.... (가제)
+GC_GM_QUEST23  = 39,   // 성난 엔트의 숲
+GC_GM_QUEST24  = 40,   // 실버나이츠
+GC_GM_QUEST25  = 41,    // 미명의 호수
+GC_GM_QUEST26  = 42,    // 이그니스의 산맥
+GC_GM_QUEST27  = 43,    // 요정 습지
+GC_GM_QUEST28  = 44,    // 실버랜드 원시의 섬
+GC_GM_QUEST29  = 45,    // 실버랜드 용암지대
+GC_GM_QUEST30  = 46,    // 실버랜드 빅터의 요새
+GC_GM_QUEST31  = 47,    // 제니아 빙하 조율의 제단
+GC_GM_QUEST32  = 48,    // 제니아 돌산
+GC_GM_QUEST33  = 49,    // 제니아 숲지역
+GC_GM_QUEST34  = 50,    // 제니아 지배의 성
+GC_GM_QUEST35  = 51,    // 베르메시아 보스 던전
+GC_GM_QUEST36  = 52,    // 실버랜드 보스 던전
+GC_GM_QUEST37  = 53,    // 엘리아 보스 던전
+GC_GM_QUEST38  = 54,    // 제니아 보스 던전
+GC_GM_QUEST39  = 55,    // GoblinLaborCamp
+GC_GM_QUEST40  = 56,    // UndergroundTunnel
+GC_GM_QUEST41  = 57,    // KungjiVillage
+GC_GM_QUEST42  = 58,    // DwarvenBase
+GC_GM_QUEST43  = 59,    // 신기루 사막
+GC_GM_QUEST44  = 60,    // 드워프 보급로
+GC_GM_QUEST45  = 61,    // 썬더 해머
+GC_GM_QUEST45  = 62,    // 영웅던전
+--]]
+
+TRUE = 1
+FALSE = 0
+
+-- IsSpecial 옵션
+NONE = 0
+LUPIN = 1 -- 던전당 최대 1번만 등장
+GATE = 2 -- 던전당 최대 1번만 등장
+
+EventMonster =
+{
+    ActiveEvent = TRUE,                    -- TRUE, FALSE/ 전체 이벤트 온오프 스위치
+
+    -- 복수개의 이벤트 설정 가능
+    {
+        EventMonsterID = 1,                -- MonID/ 몬스터 설정 (-1 설정 시 등장 안함)
+        AutoLevel = TRUE,                  -- TRUE, FALSE/ 자동 레벨 설정 (TRUE: 던전 레벨, FALSE: 몬스터 기본 레벨)
+        DropItem = { 30000, 1, -1, 1.0, }, -- GoodsID, 수량, 영구(-1)/기간, 드랍 확률 (1.0 = 100%)
+        AppearChance = {0, 0, 0.1, 0.2},   -- 0 ~ 1/ 등장 던전 확률  (왼쪽부터 난1, 난2, 난3, 챔피언)
+        BeginTime = { 2010, 07, 01, 09 },  -- 이벤트 시작(Y, M, D, H)
+        EndTime   = { 2010, 08, 01, 12 },  -- 이벤트 끝(Y, M, D, H)
+        IsBoss    = FALSE,                 -- 보스 몬스터 설정인지, 일반 몬스터 설정인지
+        IsSpecial = NONE,                  -- 추가 옵션 설정
+        GameMode  = { 7, 8, 9, 10, },      -- 등장하는 던전(게임모드)
+    },
+    
+}
+
+GateMonTable =
+{
+    -- DungeonID, Difficulty, MonsterID, MonsterLv, GoodsID
+    { 7, 0, 22, 10, 30000 }, -- 시련의 숲
+}
+
+GateMonPower =
+{
+    -- MonsterID, AttackPower, HPPower
+    { 22, 3.0, 5.0 }, -- 가이코즈
+}
+
+MonStatusTable =
+{
+    -- MonsterLv, Attack, HP
+    { 1, 100, 100 },
+}

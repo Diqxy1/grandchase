@@ -1,0 +1,1115 @@
+
+str_wind_necklace                   = "ITEM_ELEMENTAL_WIND"        --바람 목걸이
+str_lightning_necklace              = "ITEM_ELEMENTAL_LIGHTNING"   --번개 목걸이
+str_fire_necklace                   = "ITEM_ELEMENTAL_FIRE"        --불꽃 목걸이
+str_ice_necklace                    = "ITEM_ELEMENTAL_ICE"         --얼음 목걸이
+str_dark_necklace                   = "ITEM_ELEMENTAL_DARK"        --암흑 목걸이
+str_protection_footlace             = "ITEM_ELEMENTAL_CASH_SHIELD" --캐쉬 방어 발찌
+str_shining_necklace		    = "ITEM_ELEMENTAL_SHINING"	   --빛 목걸이
+str_love_necklace		    = "ITEM_ELEMENTAL_LOVE"	   --러브 목걸이
+str_rose_necklace		    = "ITEM_ELEMENTAL_ROSE"	   --로즈 목걸이
+NAME_ARME                           = 855
+NAME_ELESIS                         = 857
+NAME_LIR                            = 856
+NAME_LAS							= 369
+NAME_RYAN							= 1643
+FACE_BLACKFAIRYQUEEN				= 2008
+FACE_KNIGHT_ORC						= 2007
+FACE_DARK_AMON						= 2010
+FACE_WISP							= 2012
+FACE_RENASIEN_HUMAN						= 2227
+FACE_OCTUS_HUMAN						= 2230
+FACE_RENASIEN							= 2228
+FACE_OCTUS							= 2231
+FACE_DARK_VOICE							= 2234
+----------------------------------------------------------------------------------------------------
+
+str_quest2_final_stage              = "QUEST2_FINAL"
+str_quest4_stage4                   = "QUEST4_STAGE4"
+
+----------------------------------------------------------------------------------------------------
+
+str_quest1_name = 147
+str_quest1_desc = 772
+str_quest1_1_VVVIC_desc = 1103
+str_quest1_2_VVVIC_desc = 1104
+
+str_quest1_stage1_title = 773
+str_quest1_stage1_mon_start_title = 774
+str_quest1_stage1_mon_end_title = 775
+str_quest1_stage1_obj_start_title = 776
+str_quest1_stage1_obj_end_title = 777
+
+str_quest1_stage2_title = 778
+str_quest1_stage2_mon_start_title = 779
+str_quest1_stage2_mon_end_title = 775
+str_quest1_stage2_obj_start_title = 780
+str_quest1_stage2_obj_end_title = 777
+
+str_quest1_stage3_title = 781
+str_quest1_stage3_mon_start_title = 774
+str_quest1_stage3_mon_end_title = 775
+str_quest1_stage3_obj_start_title = 782
+str_quest1_stage3_obj_end_title = 777
+
+str_quest1_stage4_title = 783
+str_quest1_stage4_mon_start_title = 771
+str_quest1_stage4_mon_end_title = 771
+str_quest1_stage4_obj_start_title = 784
+str_quest1_stage4_obj_end_title = 777
+
+str_quest1_stage5_title = 785
+str_quest1_stage5_mon_start_title = 786
+str_quest1_stage5_mon_end_title = 787
+str_quest1_stage5_obj_start_title = 788
+str_quest1_stage5_obj_end_title = 789
+
+
+str_quest2_name = 151
+str_quest2_desc = 791
+str_quest2_1_VVVIC_desc = 1105
+str_quest2_2_VVVIC_desc = 1106
+
+str_quest2_stage1_title = 792
+str_quest2_stage1_mon_start_title = 793
+str_quest2_stage1_mon_end_title = 775
+str_quest2_stage1_obj_start_title = 776
+str_quest2_stage1_obj_end_title = 777
+
+str_quest2_stage2_title = 795
+str_quest2_stage2_mon_start_title = 796
+str_quest2_stage2_mon_end_title = 775
+str_quest2_stage2_obj_start_title = 776
+str_quest2_stage2_obj_end_title = 777
+
+str_quest2_stage3_title = 797
+str_quest2_stage3_mon_start_title = 798
+str_quest2_stage3_mon_end_title = 775
+str_quest2_stage3_obj_start_title = 799
+str_quest2_stage3_obj_end_title = 777
+
+str_quest2_stage4_title = 800
+str_quest2_stage4_mon_start_title = 801
+str_quest2_stage4_mon_end_title = 775
+str_quest2_stage4_obj_start_title = 776
+str_quest2_stage4_obj_end_title = 777
+
+str_quest2_stage5_title = 802
+str_quest2_stage5_mon_start_title = 803
+str_quest2_stage5_mon_end_title = 804
+str_quest2_stage5_obj_start_title = 805
+str_quest2_stage5_obj_end_title = 777
+
+str_quest2_stage6_title = 806
+str_quest2_stage6_mon_start_title = 807
+str_quest2_stage6_mon_end_title = 787
+str_quest2_stage6_obj_start_title = 788
+str_quest2_stage6_obj_end_title = 789
+
+
+str_quest3_name = 157
+str_quest3_desc = 808
+str_quest3_1_VVVIC_desc = 1107
+str_quest3_2_VVVIC_desc = 1108
+
+str_quest3_stage1_title = 790
+str_quest3_stage1_mon_start_title = 809
+str_quest3_stage1_mon_end_title = 775
+str_quest3_stage1_obj_start_title = 776
+str_quest3_stage1_obj_end_title = 777
+
+str_quest3_stage2_title = 794
+str_quest3_stage2_mon_start_title = 810
+str_quest3_stage2_mon_end_title = 775
+str_quest3_stage2_obj_start_title = 776
+str_quest3_stage2_obj_end_title = 777
+
+str_quest3_stage3_title = 811
+str_quest3_stage3_mon_start_title = 810
+str_quest3_stage3_mon_end_title = 775
+str_quest3_stage3_obj_start_title = 776
+str_quest3_stage3_obj_end_title = 777
+
+str_quest3_stage4_title = 812
+str_quest3_stage4_mon_start_title = 813
+str_quest3_stage4_mon_end_title = 771
+str_quest3_stage4_obj_start_title = 814
+str_quest3_stage4_obj_end_title = 777
+
+str_quest3_stage5_title = 815
+str_quest3_stage5_mon_start_title = 816
+str_quest3_stage5_mon_end_title = 771
+str_quest3_stage5_obj_start_title = 817
+str_quest3_stage5_obj_end_title = 789
+
+
+str_quest4_name = 818
+str_quest4_desc = 819
+str_quest4_1_VVVIC_desc = 1109
+str_quest4_2_VVVIC_desc = 1110
+
+str_quest4_stage1_title = 820
+str_quest4_stage1_mon_start_title = 821
+str_quest4_stage1_mon_end_title = 771
+str_quest4_stage1_obj_start_title = 822
+str_quest4_stage1_obj_end_title = 777
+
+str_quest4_stage2_title = 824
+str_quest4_stage2_mon_start_title = 823
+str_quest4_stage2_mon_end_title = 771
+str_quest4_stage2_obj_start_title = 822
+str_quest4_stage2_obj_end_title = 777
+
+str_quest4_stage3_title = 825
+str_quest4_stage3_mon_start_title = 810
+str_quest4_stage3_mon_end_title = 776
+str_quest4_stage3_obj_start_title = 826
+str_quest4_stage3_obj_end_title = 777
+
+str_quest4_stage4_title = 827
+str_quest4_stage4_mon_start_title = 828
+str_quest4_stage4_mon_end_title = 775
+str_quest4_stage4_obj_start_title = 776
+str_quest4_stage4_obj_end_title = 777
+
+str_quest4_stage5_title = 829
+str_quest4_stage5_mon_start_title = 830
+str_quest4_stage5_mon_end_title = 831
+str_quest4_stage5_obj_start_title = 776
+str_quest4_stage5_obj_end_title = 777
+
+str_quest4_stage6_title = 832
+str_quest4_stage6_mon_start_title = 1119
+str_quest4_stage6_mon_end_title = 1120
+str_quest4_stage6_obj_start_title = 817
+str_quest4_stage6_obj_end_title = 789
+
+str_quest5_name = 833
+str_quest5_desc = 834
+
+str_quest5_stage_title = 835
+
+str_quest5_mon_start_title = 828
+str_quest5_mon_end_title = 771
+str_quest5_obj_start_title = 836
+str_quest5_obj_end_title = 789
+
+str_quest5_stage24_mon_start_title = 837
+str_quest5_stage24_mon_end_title = 771
+str_quest5_stage24_obj_start_title = 788
+str_quest5_stage24_obj_end_title = 789
+
+
+str_quest_final_name = 838
+str_quest_final_desc = 839
+str_quest_final_1_VVVIC_desc = 1111
+str_quest_final_2_VVVIC_desc = 1112
+
+str_quest0_name = 1569
+str_quest0_desc = 1570
+
+str_quest_final_stage1_title = 840
+str_quest_final_stage1_mon_start_title = 771
+str_quest_final_stage1_mon_end_title   = 771
+str_quest_final_stage1_obj_start_title = 771
+str_quest_final_stage1_obj_end_title   = 841
+
+str_quest_final_stage2_title = 842
+str_quest_final_stage2_mon_start_title = 843
+str_quest_final_stage2_mon_end_title   = 775
+str_quest_final_stage2_obj_start_title = 776
+str_quest_final_stage2_obj_end_title   = 777
+
+str_quest_final_stage3_title = 844
+str_quest_final_stage3_mon_start_title = 845
+str_quest_final_stage3_mon_end_title   = 775
+str_quest_final_stage3_obj_start_title = 776
+str_quest_final_stage3_obj_end_title   = 777
+
+str_quest_final_stage4_title = 846
+str_quest_final_stage4_mon_start_title = 847
+str_quest_final_stage4_mon_end_title   = 848
+str_quest_final_stage4_obj_start_title = 771
+str_quest_final_stage4_obj_end_title   = 777
+
+str_quest_final_stage5_title = 849
+str_quest_final_stage5_mon_start_title = 850
+str_quest_final_stage5_mon_end_title   = 851
+str_quest_final_stage5_obj_start_title = 771
+str_quest_final_stage5_obj_end_title   = 777
+
+str_quest_final_stage6_title = 852
+str_quest_final_stage6_mon_start_title = 853
+str_quest_final_stage6_mon_end_title   = 851
+str_quest_final_stage6_obj_start_title = 771
+str_quest_final_stage6_obj_end_title   = 777
+
+str_quest_final_stage7_title = 854
+str_quest_final_stage7_mon_start_title = 771
+str_quest_final_stage7_mon_end_title   = 771
+str_quest_final_stage7_obj_start_title = 771
+str_quest_final_stage7_obj_end_title   = 789
+
+str_blank = 771
+
+str_quest_zero1_stage1_title = 1113
+str_quest_zero1_stage2_title = 1114
+str_zero1_stage2_mon_start_title = 1115
+
+str_quest_zero2_name = 1191
+str_quest_zero2_desc = 1192
+str_zero2_stage1_mon_start_title = 828
+str_zero2_stage2_mon_start_title = 1193
+str_zero2_stage2_mon_end_title = 1252
+str_zero2_stage2_obj_start_title = 1253
+
+str_quest_episode1_name = 1548
+str_quest_episode1_stage1_title = 1549
+str_quest_episode1_desc = 1550
+str_quest_episode1_stage1_mon_start_title = 1551
+str_quest_episode1_stage3_mon_start_title = 1552
+str_quest_episode1_stage4_mon_start_title = 1553
+str_quest_episode1_stage4_mon_end_title = 1587
+str_quest_episode1_stage2_title = 1554
+str_quest_episode1_stage3_title = 1555
+str_quest_episode1_stage4_title = 1556
+str_quest_episode1_stage5_title = 2260
+str_quest_episode1_stage6_title = 2261
+
+str_quest_episode2_name = 1618
+
+str_quest_god_island_name1 = 2227
+--카스툴 접견지 이름
+str_quest_god_island_name2 = 2228
+--보라빛 숲 이름
+str_quest_god_island_name3 = 2229
+--붉은 빛 숲 이름
+str_quest_god_island_stage01_start = 2118
+str_quest_god_island_stage02_start = 2131
+str_quest_god_island_stage03_start = 2136
+
+str_quest_god_island_stage04_start = 2144
+str_quest_god_island_stage06_start = 2157
+str_quest_god_island_stage09_start = 2167
+
+str_quest_god_island_stage11_start = 2190
+str_quest_god_island_stage13_start = 2199
+str_quest_god_island_stage16_start = 2208
+
+str_quest_god_island_stage_mon_end = 2226
+
+str_quest_god_island_name = 2227
+
+-- 퀘스트 설명 스트링 (questsign.stg)
+str_quest_name1 = 1118
+str_quest_name2 = 1191
+str_quest_name3 = 146
+str_quest_name4 = 162
+str_quest_name5 = 145
+str_quest_name6 = 147
+str_quest_name7 = 136
+str_quest_name8 = 139
+str_quest_name9 = 137
+str_quest_name10 = 1546
+str_quest_name11 = 140
+str_quest_name12 = 151
+str_quest_name13 = 138
+str_quest_name14 = 157
+str_quest_name15 = 818
+str_quest_name16 = 142
+str_quest_name17 = 144
+str_quest_name18 = 838
+str_quest_name19 = 1618
+str_quest_name20 = 1548
+str_quest_name21 = 2058
+str_quest_name22 = 2239
+str_quest_desc1 = 2267
+str_quest_desc2 = 2268
+str_quest_desc3 = 2269
+str_quest_desc4 = 2270
+str_quest_desc5 = 2271
+str_quest_desc6 = 2272
+str_quest_desc7 = 2273
+str_quest_desc8 = 2274
+
+LEFT    = 0
+RIGHT   = 1
+
+quest1_stage5_dialogue1 =
+{
+    { LEFT,  NAME_ARME, 862, },
+    { RIGHT, 181, 863, },
+    { LEFT,  NAME_LIR, 864, },
+    { RIGHT, 181, 865, },
+    { LEFT,  NAME_ELESIS, 866, },
+    { RIGHT, 181, 867, },
+}
+quest1_stage5_dialogue2 =
+{
+    { RIGHT, 181, 868, },
+    { LEFT,  NAME_ELESIS, 869, },
+    { RIGHT, 181, 870, },
+    { LEFT,  NAME_ELESIS, 871, },
+    { LEFT,  NAME_ARME, 872, },
+    { RIGHT, 181, 873, },
+    { LEFT,  858, 874, },
+}
+quest1_stage5_dialogue3 =
+{
+    { LEFT,  NAME_ELESIS, 875, },
+    { RIGHT, 181, 876, },
+    { LEFT,  NAME_ELESIS, 877, },
+    { LEFT,  NAME_LIR, 878, },
+    { LEFT,  NAME_ARME, 879, },
+    { RIGHT, 181, 880, },
+}
+quest1_stage5_dialogue4 =
+{
+    { LEFT,  NAME_ARME, 881, },
+    { LEFT,  NAME_LIR, 882, },
+    { RIGHT, 181, 883, },
+    { LEFT,  NAME_ELESIS, 884, },
+    { RIGHT, 181, 885, },
+    { RIGHT, 181, 886, },
+    { LEFT,  NAME_ELESIS, 887, },
+}
+quest1_stage5_dialogue5 =
+{
+    { LEFT,  NAME_ELESIS, 888, },
+    { RIGHT, 181, 889, },
+    { LEFT,  NAME_ARME, 890, },
+    { LEFT,  NAME_ELESIS, 891, },
+    { LEFT,  NAME_ARME, 892, },
+    { LEFT,  NAME_ELESIS, 893, },
+    { LEFT,  NAME_ARME, 894, },
+    { LEFT,  NAME_ELESIS, 889, },
+    { RIGHT, 181, 889, },
+    { LEFT,  NAME_LIR, 895, },
+    { LEFT,  NAME_ELESIS, 896, },
+}
+quest1_stage5_dialogue6 =
+{
+    { RIGHT, 181, 897, },
+    { LEFT,  NAME_ELESIS, 898, },
+    { RIGHT, 181, 899, },
+    { LEFT,  NAME_ELESIS, 900, },
+    { RIGHT, 181, 901, },
+    { LEFT,  NAME_ELESIS, 902, },
+    { RIGHT, 181, 903, },
+    { LEFT,  NAME_LIR, 904, },
+    { LEFT,  NAME_ARME, 905, },
+}
+quest1_stage5_dialogue7 =
+{
+    { LEFT,  NAME_ARME, 906, },
+    { RIGHT, 181, 907, },
+    { LEFT,  NAME_ARME, 908, },
+    { RIGHT, 181, 909, },
+    { LEFT,  NAME_ARME, 910, },
+    { LEFT,  NAME_ARME, 911, },
+    { LEFT,  NAME_ARME, 912, },
+    { RIGHT, 181, 913, },
+    { LEFT,  NAME_ARME, 914, },
+    { LEFT,  NAME_ARME, 915, },
+    { RIGHT, 181, 916, },
+    { LEFT,  NAME_ARME, 917, },
+    { LEFT,  NAME_LIR, 918, },
+    { LEFT,  NAME_ELESIS, 919, },
+    { LEFT,  NAME_LIR, 920, },
+}
+quest1_stage5_dialogue8 =
+{
+    { LEFT,  NAME_LIR, 921, },
+    { LEFT,  NAME_ELESIS, 922, },
+    { LEFT,  NAME_ARME, 923, },
+    { LEFT,  NAME_LIR, 889, },
+    { LEFT,  NAME_ELESIS, 924, },
+    { LEFT,  NAME_LIR, 925, },
+    { LEFT,  NAME_ARME, 926, },
+    { LEFT,  NAME_LIR, 927, },
+    { RIGHT, 181, 928, },
+    { LEFT,  NAME_LIR, 929, },
+    { RIGHT, 181, 930, },
+    { LEFT,  NAME_LIR, 931, },
+    { RIGHT, 181, 932, },
+    { LEFT,  NAME_LIR, 933, },
+}
+
+quest2_stage5_dialogue1 =
+{
+    { LEFT,  NAME_ELESIS, 934, },
+    { RIGHT, 186, 935, },
+    { LEFT,  NAME_ELESIS, 936, },
+    { RIGHT, 186, 937, },
+    { LEFT,  NAME_LIR, 938, },
+    { RIGHT, 186, 939, },
+    { LEFT,  NAME_ARME, 940, },
+    { RIGHT, 186, 941, },
+}
+
+quest2_stage6_dialogue1 =
+{
+    { LEFT,  NAME_ELESIS, 942, },
+    { LEFT,  NAME_ARME, 943, },
+    { RIGHT, 186, 944, },
+    { LEFT,  NAME_LIR, 945, },
+    { RIGHT, 193, 946, },
+    { RIGHT, 186, 947, },
+    { RIGHT, 193, 948, },
+    { RIGHT, 186, 949, },
+    { RIGHT, 193, 950, },
+    { LEFT,  NAME_ELESIS, 951, "Quest2Elena" },
+    { LEFT,  NAME_ARME, 952, },
+    { LEFT,  NAME_LIR, 953, },
+}
+
+quest3_state5_dialogue1 =
+{
+    { LEFT,  NAME_ELESIS, 954, },
+    { RIGHT, 359, 955, },
+    { LEFT,  NAME_ARME, 956, },
+    { LEFT,  NAME_LIR, 957, },
+    { RIGHT, 359, 958, },
+    { LEFT,  NAME_ELESIS, 959, },
+    { RIGHT, 359, 960, },
+}
+
+quest4_stage1_dialogue1 =
+{
+    { LEFT,  NAME_ELESIS, 961, },
+    { LEFT,  NAME_LIR, 962, },
+    { LEFT,  NAME_ELESIS, 963, },
+    { LEFT,  NAME_ARME, 964, },
+}
+
+quest4_stage4_dialogue1 =
+{
+    { LEFT,  NAME_ELESIS, 965, },
+    { LEFT,  NAME_LIR, 966, },
+    { LEFT,  NAME_ARME, 967, "Quest4_4Effect" },
+    { LEFT,  NAME_ARME, 968, },
+    { LEFT,  NAME_ARME, 969, },
+    { LEFT,  NAME_LIR, 970, },
+    { LEFT,  NAME_ARME, 971, },
+    { LEFT,  NAME_ELESIS, 972, },
+}
+
+quest4_stage5_dialogue1 =
+{
+    { LEFT ,  NAME_ELESIS, 973, },
+    { LEFT ,  NAME_LIR, 974, },
+    { RIGHT,  360, 975, },
+    { LEFT ,  NAME_ARME, 976, },
+    { RIGHT,  360, 977, },
+    { LEFT ,  NAME_ELESIS, 978, },
+    { RIGHT,  360, 979, },
+}
+
+quest4_stage6_dialogue1 =
+{
+    { LEFT ,  NAME_ELESIS, 980, "Q4S4Start" },
+    { RIGHT,  360, 981, },
+    { LEFT ,  NAME_LIR, 982, },
+    { RIGHT,  360, 983, "KamikiTransformStart" },
+    { LEFT ,  NAME_ELESIS, 984, },
+    { RIGHT,  361, 985, },
+    { LEFT ,  NAME_ARME, 986, },
+    { RIGHT,  361, 987, "KamikiTransformEnd" },
+}
+
+quest5_stage1_dialogue1 =
+{
+    { LEFT,   NAME_ELESIS, 988, },
+    { LEFT,   NAME_LIR, 989, },
+    { LEFT,   NAME_ARME, 990, },
+    { LEFT,   NAME_ELESIS, 991, },
+}
+
+quest5_boss_dialogue1 =
+{
+    { LEFT,   NAME_ARME, 992, },
+    { LEFT,   NAME_ELESIS, 993, },
+    { LEFT,   NAME_LIR, 994, },
+    { LEFT,   NAME_ELESIS, 995, },
+}
+
+quest5_dungeun_boss_dialogue1 =
+{
+    { LEFT,   NAME_ARME, 996, },
+    { RIGHT,  362, 997, },
+    { LEFT,   NAME_LIR, 998, },
+    { LEFT,   NAME_ARME, 999, },
+    { RIGHT,  362, 1000, },
+    { LEFT,   NAME_ELESIS, 1001, },
+    { RIGHT,  362, 1002, },
+    { LEFT,   NAME_ARME, 1003, },
+}
+
+quest5_sangsun_dialogue1 =
+{
+    { RIGHT,  363, 1004, },
+    { LEFT,   NAME_LIR, 1005, },
+    { RIGHT,  363, 1006, },
+    { LEFT,   NAME_ARME, 1007, },
+    { RIGHT,  363, 1008, },
+    { LEFT,   NAME_LIR, 1009, },
+    { LEFT,   NAME_ELESIS, 1010, },
+    { RIGHT,  363, 1011, },
+}
+
+quest_final_stage1_dialogue1 =
+{
+    { LEFT,  NAME_ELESIS, 1012, },
+    { LEFT,  NAME_LIR, 1013, },
+    { LEFT,  NAME_ELESIS, 1014, },
+    { LEFT,  NAME_ARME, 889, },
+    { LEFT,  NAME_LIR, 889, },
+    { LEFT,  NAME_ELESIS, 1015, },
+    { LEFT,  NAME_LIR, 1016, },
+    { LEFT,  NAME_ARME, 1017, },
+    { LEFT,  NAME_ARME, 1018, },
+    { LEFT,  NAME_ARME, 1019, },
+    { LEFT,  NAME_LIR, 1020, },
+    { LEFT,  NAME_ARME, 1021, },
+    { LEFT,  NAME_ARME, 1022, },
+    { LEFT,  NAME_ARME, 1023, "QuestDrama6_1" },
+}
+
+quest_final_stage2_dialogue1 =
+{
+    { LEFT,  NAME_LIR, 1024, "CameraMonster6"},
+    { LEFT,  NAME_ELESIS, 1025, "CameraMonster7"},
+    { LEFT,  NAME_ARME, 1026, "CameraMonster8"},
+    { LEFT,  NAME_LIR, 1027, "CameraMonster9"},
+    { LEFT,  NAME_ARME, 1028, },
+    { LEFT,  NAME_LIR, 1029, },
+    { LEFT,  NAME_ARME, 1030, },
+    { LEFT,  NAME_LIR, 1031, },
+}
+
+quest_final_stage4_dialogue1 =
+{
+    { LEFT,  NAME_LIR, 1032, },
+    { LEFT,  NAME_ARME, 1033, },
+    { LEFT,  NAME_ELESIS, 1034, },
+    { RIGHT, 364, 1035, },
+    { LEFT,  NAME_ELESIS, 1036, },
+    { LEFT,  NAME_LIR, 1037, },
+    { LEFT,  NAME_ARME, 1038, },
+    { LEFT,  NAME_ARME, 1039, },
+    { LEFT,  NAME_LIR, 1040, },
+    { LEFT,  NAME_LIR, 1041, },
+}
+
+quest_final_stage5_dialogue1 =
+{
+    { LEFT,  NAME_ELESIS, 1042, },
+    { RIGHT, 368, 1043, },
+    { LEFT,  NAME_LIR, 1044, },
+    { RIGHT, 368, 1045, },
+    { LEFT,  859, 1046, },
+    { RIGHT, 368, 1047, },
+    { LEFT,  NAME_ARME, 1048, },
+    { RIGHT, 368, 1049, "QuestDrama6_5"},
+    { LEFT,  NAME_ELESIS, 1050, },
+}
+
+quest_final_stage6_dialogue1 =
+{
+    { LEFT,  NAME_ELESIS, 1051, },
+    { RIGHT, 367, 1052, "QuestDrama6_6"},
+    { LEFT,  NAME_LIR, 1053, },
+    { LEFT,  NAME_ARME, 1054, },
+    { RIGHT, 367, 1055, },
+    { LEFT,  NAME_ELESIS, 1056, },
+}
+
+quest_final_stage7_dialogue1 =
+{
+    { RIGHT, 367, 1057, "CameraMonster0"},
+    { LEFT,  NAME_LIR, 1058, "CameraInit"},
+    { RIGHT, 367, 1059, "CameraMonster0"},
+    { LEFT,  NAME_ELESIS, 1060, "CameraInit" },
+    { RIGHT, 367, 1061, "CameraMonster0"},
+    { RIGHT, 367, 1062, },
+    { RIGHT, 367, 1063, "DieTransKazeaze"},
+    { LEFT,  NAME_LIR, 1064, "CameraInit"},
+    { LEFT,  NAME_ARME, 1065, "QuestDrama6_7" },
+    { LEFT,  NAME_LIR, 1066, },
+    { RIGHT, 366, 1067, },
+    { LEFT,  NAME_LIR, 1068, "CameraInit" },
+    { LEFT,  NAME_ARME, 1069, },
+    { LEFT,  NAME_ELESIS, 1070, },
+    { RIGHT, 366, 1071, "CameraMonster0"},
+    { LEFT,  NAME_ELESIS, 1072, "QuestComplete" },
+}
+
+-- 퀘스트 ZERO 대화 스크립트
+quest_zero_stage1_dialogue1 =
+{
+	{ LEFT, NAME_ELESIS, 1073, },
+	{ LEFT, NAME_ELESIS, 1074, },
+	{ LEFT, NAME_ELESIS, 1075, },
+}
+
+quest_zero_stage1_dialogue2 =
+{
+	{ LEFT, NAME_LIR, 1076, },
+	{ LEFT, NAME_LIR, 1077, },
+	{ LEFT, NAME_LIR, 1078, },
+}
+
+quest_zero_stage1_dialogue3 =
+{
+	{ LEFT, NAME_ARME, 1079, },
+	{ LEFT, NAME_ARME, 1080, },
+	{ LEFT, NAME_ARME, 1081, },
+}
+
+quest_zero_stage1_dialogue4 =
+{
+	{ LEFT, NAME_LAS, 1645, },
+	{ LEFT, NAME_LAS, 1646, },
+	{ LEFT, NAME_LAS, 1647, },
+}
+
+quest_zero_stage1_dialogue5 =
+{
+	{ LEFT, NAME_RYAN, 1648, },
+	{ LEFT, NAME_RYAN, 1649, },
+	{ LEFT, NAME_RYAN, 1650, },
+}
+
+quest_zero_stage3_dialogue1 =
+{
+	{ LEFT,	 NAME_ELESIS, 1082, },
+	{ RIGHT, 860, 1083, },
+	{ LEFT,	 NAME_ELESIS, 1084, },
+}
+
+quest_zero_stage3_dialogue2 =
+{
+	{ LEFT,	 NAME_LIR,	1085, },
+	{ LEFT,	 NAME_LIR,	1086, },
+	{ RIGHT, 860,	1087, },
+	{ LEFT,	 NAME_LIR,	1088, },
+	{ RIGHT, 860,	1089, },
+}
+
+quest_zero_stage3_dialogue3 =
+{
+	{ LEFT,	 NAME_ARME,	1090, },
+	{ RIGHT, 860,	1091, },
+	{ LEFT,  NAME_ARME,	1092, },
+	{ RIGHT, 860,	1093, },
+}
+
+quest_zero_stage3_dialogue4 =
+{
+	{ LEFT, NAME_LAS,	1651, },
+	{ RIGHT, 860,	1652, },
+	{ LEFT, NAME_LAS,	1653, },
+	{ RIGHT, 860,	1654, },
+}
+
+quest_zero_stage3_dialogue5 =
+{
+	{ LEFT,	 NAME_RYAN,	1655, },
+	{ LEFT,	 NAME_RYAN,	1656, },
+	{ RIGHT,  860,	1657, },
+	{ RIGHT, 860,	1658, },
+	{ LEFT,  NAME_RYAN,	1659, },
+}
+
+quest_zero_stage4_dialogue1 =
+{
+	{ LEFT,  NAME_ELESIS, 1094, },
+	{ RIGHT, 861, 1095, },
+	{ RIGHT, 861, 1096, },
+	{ RIGHT, 861, 1097, },
+	{ RIGHT, 861, 1098, "QuestZeroDrama1" },
+	{ RIGHT, 861, 1099, },
+	{ RIGHT, 861, 1100, },
+}
+
+quest_zero_stage4_dialogue2 =
+{
+	{ LEFT,  NAME_LIR, 1101, },
+	{ RIGHT, 861, 1095, },
+	{ RIGHT, 861, 1096, },
+	{ RIGHT, 861, 1097, },
+	{ RIGHT, 861, 1098, "QuestZeroDrama1" },
+	{ RIGHT, 861, 1099, },
+	{ RIGHT, 861, 1100, },
+}
+
+quest_zero_stage4_dialogue3 =
+{
+	{ LEFT,  NAME_ARME, 1102, },
+	{ RIGHT, 861, 1095, },
+	{ RIGHT, 861, 1096, },
+	{ RIGHT, 861, 1097, },
+	{ RIGHT, 861, 1098, "QuestZeroDrama1" },
+	{ RIGHT, 861, 1099, },
+	{ RIGHT, 861, 1100, },
+}
+quest_zero_stage4_dialogue4 =
+{
+	{ LEFT,  NAME_LAS, 1094, },
+	{ RIGHT, 861, 1095, },
+	{ RIGHT, 861, 1096, },
+	{ RIGHT, 861, 1097, },
+	{ RIGHT, 861, 1098, "QuestZeroDrama1" },
+	{ RIGHT, 861, 1099, },
+	{ RIGHT, 861, 1100, },
+}
+quest_zero_stage4_dialogue5 =
+{
+	{ LEFT,  NAME_RYAN, 1094, },
+	{ RIGHT, 861, 1095, },
+	{ RIGHT, 861, 1096, },
+	{ RIGHT, 861, 1097, },
+	{ RIGHT, 861, 1098, "QuestZeroDrama1" },
+	{ RIGHT, 861, 1099, },
+	{ RIGHT, 861, 1100, },
+}
+quest_zero2_stage0_dialogue0 =
+{
+	{ RIGHT, 861, 1194, },
+	{ RIGHT, 861, 1195, },
+	{ RIGHT, 861, 1196, },
+	{ RIGHT, 861, 1197, },
+	{ LEFT, NAME_ELESIS, 1198, },
+	{ LEFT, NAME_ELESIS, 1199, },
+	{ LEFT, NAME_ARME, 1200, },
+	{ LEFT, NAME_LIR, 1201, },
+	{ LEFT, NAME_ARME, 1202, },
+	{ LEFT, NAME_ELESIS, 1203, },
+}
+quest_zero2_stage1_dialogue0 =
+{
+	{ LEFT, NAME_LIR, 1204, },
+	{ LEFT, NAME_ELESIS, 1205, },
+	{ LEFT, NAME_ELESIS, 1206, },
+	{ LEFT, NAME_ARME, 1207, },
+	{ LEFT, NAME_LIR, 1208, },
+	{ LEFT, NAME_ELESIS, 1209, },
+	{ LEFT, NAME_ARME, 1210, },
+	{ LEFT, NAME_LIR, 1211, },
+}
+quest_zero2_stage2_dialogue0 =
+{
+	{ LEFT, NAME_ELESIS, 1212, },
+	{ LEFT, NAME_ARME, 1213, },
+	{ LEFT, NAME_LIR, 1214, },
+	{ RIGHT,1239, 1215, },
+	{ LEFT, NAME_ELESIS, 1216, },
+	{ LEFT, NAME_ELESIS, 1217, },
+	{ LEFT, NAME_ARME, 1218,},
+	{ LEFT, NAME_ELESIS, 1219, },
+	{ LEFT, NAME_LIR, 1240, },
+	{ LEFT, NAME_ELESIS, 1220, },
+	{ LEFT, NAME_ARME, 1221, },
+}
+
+quest_zero2_stage3_dialogue0 =
+{
+	{ LEFT, NAME_ELESIS, 1222, },
+	{ LEFT, NAME_LIR, 1223, },
+	{ LEFT, NAME_ARME, 1224, },
+	{ LEFT, NAME_LIR, 1225, },
+	{ LEFT, NAME_ELESIS, 1226, },
+	{ RIGHT,1239, 1227, },
+	{ LEFT, NAME_ELESIS, 1228, },
+	{ LEFT, NAME_LIR, 1229, },
+	{ LEFT, NAME_ARME, 1230,},
+	{ LEFT, NAME_ELESIS, 1231, },
+	{ LEFT, NAME_ARME, 1232, },
+	{ LEFT, NAME_ELESIS, 1233, },
+	{ LEFT, NAME_ARME, 1234, },
+	{ LEFT, NAME_LIR, 1235, },
+	{ LEFT, NAME_LIR, 1236, },
+	{ LEFT, NAME_ELESIS, 1237, },
+	{ LEFT, NAME_ARME, 1238, },
+}
+quest_zero2_stage4_dialogue0 =
+{
+	{ LEFT, NAME_ELESIS, 1241, },
+	{ LEFT, NAME_LIR, 1242, },
+	{ LEFT, NAME_ARME, 1243 },
+	{ RIGHT, 861, 1244, },
+	{ RIGHT, 1239, 1245, },
+	{ LEFT, NAME_ELESIS, 1246, },
+	{ RIGHT, 861, 1247, },
+	{ RIGHT, 861, 1248, },
+	{ RIGHT, 861, 1249, },
+	{ RIGHT, 861, 1250, },
+}
+quest_9_opening_dialog0 =
+{
+	{ LEFT, NAME_ARME, 	1601, },
+	{ LEFT, NAME_LIR, 	1602, },
+	{ LEFT, NAME_ELESIS, 	1603, },
+	{ LEFT, NAME_ARME, 	1604, },
+	{ LEFT, NAME_ELESIS, 	1605, },
+	-- 화면 전체 검정 -> Fade In
+	{ LEFT, NAME_LIR, 	1606, "QuestDrama8_1", },
+	-- 화면 전체 검정
+	{ LEFT, NAME_ARME, 	1607, "QuestDrama8_1", },
+	{ LEFT, NAME_ELESIS, 1608, "QuestDrama8_1", },
+}
+quest_9_stage1_dialog0 =
+{
+	{ LEFT, NAME_ARME, 1608 , "QuestDrama8_2", },
+	{ LEFT, NAME_ELESIS, 1609, },
+	{ LEFT, NAME_LIR, 1610, },
+	{ LEFT, NAME_ARME, 1611, },
+	{ LEFT, NAME_ELESIS, 1612, },
+	{ LEFT, NAME_ARME, 1613, },
+}
+quest_9_stage2_dialog0 =
+{
+	{ LEFT, NAME_ARME, 1614, },
+	{ LEFT, NAME_ELESIS, 1615, },
+	{ LEFT, NAME_LIR, 1616, },
+}
+quest_9_stage5_dialog0 =
+{
+	{ LEFT, NAME_ARME, 1617, },
+	{ LEFT, NAME_LIR, 1619, },
+	{ LEFT, NAME_ELESIS, 1620, },
+	{ LEFT, NAME_ARME, 1621, },
+	{ LEFT, NAME_ARME, 1633, },
+	{ LEFT, NAME_LIR, 1622, },
+}
+quest_8_stage1_dialog0 =
+{
+	{ LEFT, NAME_ELESIS, 1589, },
+	{ LEFT, NAME_ARME, 1590, },
+	{ LEFT, NAME_LIR, 1591, },
+	-- 크르르르 사운드
+	{ LEFT, NAME_ELESIS, 1592, "QuestDrama7_1", },
+}
+quest_8_stage2_dialog0 =
+{
+	{ LEFT, NAME_ELESIS, 1595, },
+	{ LEFT, NAME_ARME, 1596, },
+	{ LEFT, NAME_ARME, 1597, },
+	{ LEFT, NAME_ELESIS, 1598, },
+	{ LEFT, NAME_ARME, 1599, },
+	{ LEFT, NAME_ELESIS, 1600, },
+}
+
+-- 베르메시아 파이널 대화 스크립트
+quest_bermesia_final_stage1_dialog1 =
+{
+	{ LEFT, NAME_ELESIS, 2020, },
+	{ LEFT, NAME_LAS, 2021, },
+	{ LEFT, NAME_ARME, 2022, },
+	{ LEFT, NAME_LIR, 2023, },
+	{ RIGHT, FACE_WISP, 2024, },
+	{ LEFT, NAME_ELESIS, 2025, },
+	{ LEFT, NAME_RYAN, 2026, },
+	{ RIGHT, FACE_WISP, 2027, },
+}
+
+quest_bermesia_final_stage2_dialog1 =
+{
+	{ LEFT, NAME_ELESIS, 2028, },
+	{ LEFT, NAME_RYAN, 2029, },
+	{ LEFT, NAME_LIR, 2030, },
+}
+
+quest_bermesia_final_stage9_dialog1 =
+{
+	{ LEFT, NAME_ARME, 2031, },
+	{ LEFT, NAME_LIR, 2032, },
+	{ LEFT, NAME_ELESIS, 2033, },
+	{ LEFT, NAME_LAS, 2034, },
+}
+
+quest_bermesia_final_stage8_dialog1 =
+{
+	{ RIGHT, FACE_BLACKFAIRYQUEEN, 2035, },
+	{ LEFT, NAME_ELESIS, 2036, },
+	{ LEFT, NAME_ARME, 2037, },
+	{ LEFT, NAME_ELESIS, 2038, },
+	{ RIGHT, FACE_BLACKFAIRYQUEEN, 2039, },
+}
+
+quest_bermesia_final_stage15_dialog1 =
+{
+	{ LEFT, NAME_ELESIS, 2017, },
+	{ LEFT, NAME_RYAN, 2018, },
+	{ LEFT, NAME_LIR, 2040, },
+	{ RIGHT, FACE_KNIGHT_ORC, 2041, },
+	{ LEFT, NAME_ARME, 2042, },
+}
+
+quest_bermesia_final_stage16_dialog1 =
+{
+	{ RIGHT, FACE_DARK_AMON, 2043, },
+	{ LEFT, NAME_ELESIS, 2044, },
+	{ LEFT, NAME_RYAN, 2045, },
+	{ LEFT, NAME_LIR, 2046, },
+	{ LEFT, NAME_RYAN, 2047, },
+	{ RIGHT, FACE_DARK_AMON, 2048, },
+	{ LEFT, NAME_ELESIS, 2049, },
+}
+
+quest_bermesia_final_stage16_end_dialog1 =
+{
+	{ RIGHT, FACE_DARK_AMON, 2052, },
+	{ LEFT, NAME_ELESIS, 2053, },
+	{ LEFT, NAME_RYAN, 2054, },
+	{ RIGHT, FACE_DARK_AMON, 2055, },
+	{ LEFT, NAME_LIR, 2056, },
+	{ LEFT, NAME_ARME, 2057 },
+}
+---------------------------신대륙 퀘스트--------------------------------
+quest_god_island_stage1_stage_dialog1 =
+{
+	{ LEFT, NAME_ELESIS, 2115, },
+	{ LEFT, NAME_ARME, 2116, },
+	{ LEFT, NAME_LIR, 2117, },
+	{ LEFT, NAME_RYAN, 2118, },
+	{ LEFT, NAME_LAS, 2119, },
+}
+quest_god_island_stage2_stage_dialog1 =
+{
+	{ LEFT, NAME_ARME, 2121, },
+	{ LEFT, NAME_LIR, 2122, },
+	{ RIGHT, FACE_RENASIEN_HUMAN, 2123, },
+	{ RIGHT, FACE_RENASIEN_HUMAN, 2124, },
+	{ LEFT, NAME_RYAN, 2125, },
+	{ RIGHT, FACE_RENASIEN_HUMAN, 2126, },
+	{ RIGHT, FACE_RENASIEN_HUMAN, 2127, "MoveMonster2_0.731_0.387"},
+	{ LEFT, NAME_ARME, 2249, },
+}
+quest_god_island_stage2_stage_dialog2 =
+{
+	{ RIGHT, FACE_RENASIEN_HUMAN, 2128, "CameraMonster2"},
+	{ LEFT, NAME_LAS, 2250	,	},
+	{ LEFT, NAME_LIR, 2251	,	"MoveMonster2_0.907_0.449"},
+}
+quest_god_island_stage2_stage_dialog3 =
+{
+	{ RIGHT, FACE_RENASIEN_HUMAN, 2129, "CameraMonster2"},
+	{ RIGHT, FACE_RENASIEN_HUMAN, 2130, "RemoveMonster2"},
+}
+quest_god_island_stage3_stage_dialog1 =
+{
+	{ LEFT, NAME_ELESIS, 2132, },
+	{ LEFT, NAME_ARME, 2133, },
+	{ LEFT, NAME_RYAN, 2134, },
+	{ LEFT, NAME_ELESIS, 2135, },
+}
+quest_god_island_stage4_stage_dialog1 =
+{
+	{ LEFT, NAME_ELESIS, 2137, },
+	{ LEFT, NAME_ARME, 2138, },
+	{ LEFT, NAME_LIR, 2139, },
+	{ LEFT, NAME_ELESIS, 2140, },
+	{ LEFT, NAME_RYAN, 2141, },
+	{ LEFT, NAME_LAS, 2142, },
+	{ LEFT, NAME_ELESIS, 2143, },
+}
+quest_god_island_stage6_stage_dialog1 =
+{
+	{ LEFT, NAME_ELESIS, 2145, "ActMonster0_35"}, --다운으로 바꾸기
+	{ RIGHT, FACE_RENASIEN_HUMAN, 2146, },
+	{ LEFT, NAME_ARME, 2147, },
+	{ LEFT, NAME_LIR, 2148, },
+	{ RIGHT, FACE_RENASIEN_HUMAN, 2149, "ActMonster0_35"},
+	{ LEFT, NAME_ARME, 2150, },
+	{ LEFT, NAME_LAS, 2151, },
+	{ RIGHT, FACE_RENASIEN_HUMAN, 2152, "ActMonster0_36"},
+	{ LEFT, NAME_ARME, 2153, "TransformMonster85_84"},
+	{ RIGHT, FACE_RENASIEN, 2154, },
+	{ LEFT, NAME_LAS, 2155, },
+	{ LEFT, NAME_ELESIS, 2156, },
+}
+quest_god_island_stage9_stage_dialog1 =
+{
+	{ LEFT, NAME_ELESIS, 2158, "ActMonster3_35"},
+	{ RIGHT, FACE_RENASIEN_HUMAN, 2159, },
+	{ LEFT, NAME_RYAN, 2160, },
+	{ RIGHT, FACE_DARK_VOICE, 2161, "ActMonster3_35"},
+	{ RIGHT, FACE_RENASIEN_HUMAN, 2162, "ActMonster3_36"},
+	{ LEFT, NAME_LAS, 2163, "TransformMonster85_86"},
+	{ LEFT, NAME_LIR, 2164, },
+	{ LEFT, NAME_ELESIS, 2165, },
+	{ RIGHT, FACE_RENASIEN, 2166, },
+}
+quest_god_island_stage10_stage_dialog1 =
+{
+	{ LEFT, NAME_ELESIS, 2168, },
+	{ LEFT, NAME_ARME, 2169, },
+	{ LEFT, NAME_LIR, 2170, },
+	{ RIGHT, FACE_RENASIEN_HUMAN, 2171, },
+	{ LEFT, NAME_RYAN, 2172, },
+	{ RIGHT, FACE_RENASIEN_HUMAN, 2173, },
+	{ RIGHT, FACE_RENASIEN_HUMAN, 2174, },
+	{ LEFT, NAME_LIR, 2175, },
+	{ RIGHT, FACE_RENASIEN_HUMAN, 2176, },
+	{ LEFT, NAME_LAS, 2177, },
+	{ RIGHT, FACE_RENASIEN_HUMAN, 2178, },
+	{ LEFT, NAME_ELESIS, 2179, },
+	{ LEFT, NAME_ARME, 2180, },
+	{ LEFT, NAME_RYAN, 2181, "QuestComplete"},
+}
+quest_god_island_stage11_stage_dialog1 =
+{
+	{ LEFT, NAME_ELESIS, 2182, },
+	{ LEFT, NAME_ARME, 2183, },
+	{ LEFT, NAME_LIR, 2184, },
+	{ RIGHT, FACE_OCTUS_HUMAN, 2185, },
+	{ LEFT, NAME_RYAN, 2186, },
+	{ RIGHT, FACE_OCTUS_HUMAN, 2187, "ActMonster0_32"},
+	{ LEFT, NAME_ELESIS, 2188, },
+	{ LEFT, NAME_LIR, 2189, "RemoveMonster0"},
+}
+quest_god_island_stage13_stage_dialog1 =
+{
+	{ RIGHT, FACE_OCTUS_HUMAN, 2191, },
+	{ LEFT, NAME_ELESIS, 2192, },
+	{ LEFT, NAME_RYAN, 2193, },
+	{ RIGHT, FACE_OCTUS_HUMAN, 2194, "ActMonster0_34" },
+	{ LEFT, NAME_ARME, 2195, "TransformMonster82_81"},
+	{ RIGHT, FACE_OCTUS, 2196,  },
+	{ LEFT, NAME_ELESIS, 2197, },
+	{ RIGHT, FACE_OCTUS, 2198, },
+}
+quest_god_island_stage16_stage_dialog1 =
+{
+	{ LEFT, NAME_ELESIS, 2200, "ActMonster3_33"},
+	{ RIGHT, FACE_OCTUS_HUMAN, 2201, "CameraMonster3"},
+	{ RIGHT, FACE_DARK_VOICE, 2202, "ActMonster3_33"},
+	{ RIGHT, FACE_OCTUS_HUMAN, 2203, "ActMonster3_34"},
+	{ LEFT, NAME_ELESIS, 2204, "TransformMonster82_83"},
+	{ LEFT, NAME_LAS, 2205, },
+	{ LEFT, NAME_RYAN, 2206, },
+	{ RIGHT, FACE_OCTUS, 2207, },
+}
+quest_god_island_stage17_stage_dialog1 =
+{
+	{ LEFT, NAME_ELESIS, 2209, },
+	{ LEFT, NAME_RYAN, 2210, },
+	{ LEFT, NAME_LIR, 2211, },
+	{ RIGHT, FACE_OCTUS_HUMAN, 2212, },
+	{ LEFT, NAME_RYAN, 2213, },
+	{ RIGHT, FACE_OCTUS_HUMAN, 2214, },
+	{ LEFT, NAME_LIR, 2215, },
+	{ RIGHT, FACE_OCTUS_HUMAN, 2216, },
+	{ LEFT, NAME_LAS, 2217, },
+	{ RIGHT, FACE_OCTUS_HUMAN, 2218, },
+	{ LEFT, NAME_ELESIS, 2219, },
+	{ LEFT, NAME_ARME, 2220, },
+	{ LEFT, NAME_RYAN, 2221, "QuestComplete"},
+}
+
+
+
+
+
+

@@ -1,0 +1,456 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 한국어 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#include ""res\\GCMissionTool.rc2""  // Microsoft Visual C++에서 편집되지 않은 리소스\r\n"
+    "#include ""afxres.rc""         // 표준 구성 요소\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\GCMissionTool.ico"
+IDI_MISSION_ERROR       ICON                    "res\\icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "GCMissionTool 정보"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "GCMissionTool Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2007",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "확인",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_GCMISSIONTOOL_DIALOG DIALOGEX 0, 0, 387, 352
+STYLE DS_ABSALIGN | DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | 
+    WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "GCMissionTool"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,7,21,86,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_LIST2,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_NOLABELWRAP | LVS_ALIGNLEFT | 
+                    WS_BORDER | WS_TABSTOP,7,41,372,304
+    DEFPUSHBUTTON   "확인(&D)",IDOK,308,5,56,16
+    PUSHBUTTON      "취소(&C)",IDCANCEL,308,21,56,16
+    PUSHBUTTON      "&Load",IDC_BUTTON2,168,5,56,16
+    PUSHBUTTON      "&Save",IDC_BTN_SAVE,168,21,56,16
+    COMBOBOX        IDC_COMBO1,7,5,74,144,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,82,5,77,148,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Load &Excel",IDC_LOAD_EXCEL,236,5,59,16
+END
+
+IDD_MISSION DIALOGEX 0, 0, 703, 289
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "MissionEdit"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_INHERIT,48,5,60,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO2,167,25,59,71,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_EDIT_LEVEL,48,40,60,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PROMOTION,167,40,60,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_TIME,48,55,60,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_TARGET,167,56,59,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_OVERLAP,167,72,59,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_TITLE,48,88,200,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DESC,48,105,200,72,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN
+    PUSHBUTTON      "Add SubMission",IDC_BUTTON_ADDSUBMISSION,156,266,92,16
+    CONTROL         "",IDC_LIST_SUBMISSION,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,
+                    7,185,241,78
+    EDITTEXT        IDC_EDIT_GP,324,25,68,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_EXP,324,43,68,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "아이템 추가",IDC_BUTTON_ADDITEM,561,138,65,16
+    CONTROL         "",IDC_LIST_REWARD,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,
+                    284,77,342,60
+    PUSHBUTTON      "아이템 추가",IDC_BUTTON_ADDITEM2,563,242,63,16
+    CONTROL         "",IDC_LIST_SELECTREWARD,"SysListView32",LVS_REPORT | 
+                    LVS_EDITLABELS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,
+                    284,177,342,64
+    COMBOBOX        IDC_COMBO1,324,252,68,73,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_EDIT_REWARDPROMOTION,324,269,68,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "확인(&D)",IDOK,634,5,62,14
+    PUSHBUTTON      "취소(&C)",IDCANCEL,634,24,62,14
+    PUSHBUTTON      "다음 미션(&N)",IDC_BUTTON2,634,51,62,16
+    PUSHBUTTON      "이전 미션(&B)",IDC_BUTTON3,634,72,62,17
+    LISTBOX         IDC_LIST1,48,25,60,13,LBS_SORT | LBS_HASSTRINGS | 
+                    LBS_NOINTEGRALHEIGHT | LBS_NOSEL | WS_DISABLED | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "상속",IDC_BUTTON6,110,5,31,14
+    CTEXT           "상속받기",IDC_STATIC,7,5,41,13
+    CTEXT           "Title",IDC_STATIC,7,90,41,13
+    CTEXT           "Description",IDC_STATIC,7,105,41,12
+    CTEXT           "SubMission",IDC_STATIC,7,172,41,12
+    CTEXT           "전직레벨",IDC_STATIC,127,43,41,13
+    CTEXT           "수행시간",IDC_STATIC,7,58,41,14
+    CTEXT           "  레    벨",IDC_STATIC,8,42,40,10
+    CTEXT           "목표미션",IDC_STATIC,127,60,40,12
+    CTEXT           "중복금지",IDC_STATIC,127,74,40,12
+    CTEXT           "GP",IDC_STATIC,284,27,40,9
+    CTEXT           "Exp",IDC_STATIC,284,43,40,9
+    CTEXT           "미션 보상 ( 무조건 주는 것 )",IDC_STATIC,284,63,108,10
+    CTEXT           "미션 보상 ( 선택하여 받는 것 )",IDC_STATIC,284,165,108,
+                    11
+    CTEXT           "새 케릭터",IDC_STATIC,284,254,40,10
+    CTEXT           "전직",IDC_STATIC,284,272,40,10
+    CTEXT           "미션 ID",IDC_STATIC,7,27,41,10
+    LTEXT           "   라스 ( 3 ), 라이어 (4 ), 로난 ( 5 )",IDC_STATIC,394,
+                    254,165,11
+    CTEXT           "케릭터",IDC_STATIC,126,27,41,11
+    PUSHBUTTON      "찾기",IDC_BUTTON1,145,5,22,14
+    PUSHBUTTON      "찾기",IDC_BTN_CMISSION,226,56,22,14
+    PUSHBUTTON      "찾기",IDC_BTN_IMISSION,226,72,22,14
+END
+
+IDD_ITEM_LIST DIALOGEX 0, 0, 399, 338
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,7,317,53,14
+    PUSHBUTTON      "취소",IDCANCEL,74,317,50,14
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | 
+                    WS_BORDER | WS_TABSTOP,7,7,385,280
+    CTEXT           "선택된 아이템",IDC_STATIC,224,297,58,10
+    EDITTEXT        IDC_EDIT1,282,294,90,13,ES_AUTOHSCROLL
+    CTEXT           "검색",IDC_STATIC,7,296,58,8
+    EDITTEXT        IDC_EDIT_FIND,65,293,61,14,ES_AUTOHSCROLL
+END
+
+IDD_SUBMISSION DIALOGEX 0, 0, 278, 292
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "조건 추가",IDC_BUTTON1,183,76,88,15
+    EDITTEXT        IDC_EDIT_A_COUNT,73,104,49,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_A_ITEM,73,121,49,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "찾기",IDC_BTN_A_ITEM,116,121,29,13
+    CONTROL         "Check1",IDC_CHECK_MONDROP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,75,139,11,11
+    EDITTEXT        IDC_EDIT_C_STR,73,158,163,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_C_COUNT,73,174,29,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_C_ITEM,73,190,43,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "찾기",IDC_BTN_C_ITEM,109,190,29,13
+    DEFPUSHBUTTON   "확인",IDOK,73,271,50,14
+    PUSHBUTTON      "취소",IDCANCEL,145,271,50,14
+    CONTROL         "",IDC_LIST_CONDITION,"SysListView32",LVS_REPORT | 
+                    LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,21,264,53
+    CTEXT           "Conditions",IDC_STATIC,19,10,54,11
+    CTEXT           "Action",IDC_STATIC,7,91,66,10
+    CTEXT           "ItemID",IDC_STATIC,19,123,54,11
+    CTEXT           "Count",IDC_STATIC,19,106,54,14
+    CTEXT           "완료 조건",IDC_STATIC,7,160,66,12
+    LTEXT           "수행 횟수",IDC_STATIC,19,176,54,11
+    LTEXT           "MonsterDrop",IDC_STATIC,19,139,54,11
+    LTEXT           "모을 아이템",IDC_STATIC,19,192,54,11
+    LTEXT           "서브미션 설명",IDC_STATIC,19,209,54,11
+    EDITTEXT        IDC_EDIT_SUB_DESC,73,212,164,50,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN
+END
+
+IDD_CONDITION DIALOGEX 0, 0, 277, 205
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO1,101,13,96,153,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,101,29,96,142,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_EDIT12,102,45,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT11,102,60,59,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT10,102,75,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT9,102,90,60,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,102,105,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT7,102,120,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,102,136,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,102,150,40,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,113,
+                    167,13,11
+    EDITTEXT        IDC_EDIT4,102,180,40,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "확인",IDOK,220,7,50,14
+    PUSHBUTTON      "취소",IDCANCEL,220,24,50,14
+    RTEXT           "몬스터 죽이기",IDC_STATIC,7,15,89,10
+    RTEXT           "GameMode",IDC_STATIC,7,32,89,8
+    RTEXT           "Stage",IDC_STATIC,7,47,89,8
+    RTEXT           "난이도 영역",IDC_STATIC,7,62,89,8
+    RTEXT           "Map ID",IDC_STATIC,7,77,89,8
+    RTEXT           "ScoreRange",IDC_STATIC,7,92,89,8
+    RTEXT           "승리 하라 ( 퀘스트 성공)",IDC_STATIC,7,168,89,8
+    RTEXT           "클리어 시간",IDC_STATIC,7,107,89,8
+    RTEXT           "플레이어 죽인수",IDC_STATIC,7,122,89,8
+    RTEXT           "죽은수 ( 이하 )",IDC_STATIC,7,137,89,8
+    RTEXT           "남은 목숨",IDC_STATIC,7,152,89,9
+    RTEXT           "발동 확률",IDC_STATIC,7,183,89,11
+    LTEXT           "(1 = 100%)",IDC_STATIC,147,183,39,8
+END
+
+IDD_MISSIONREWARD DIALOGEX 0, 0, 551, 326
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_SINGLESEL | 
+                    LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | 
+                    WS_TABSTOP,93,7,451,312
+    EDITTEXT        IDC_EDIT2,7,156,78,15,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "확인",IDOK,7,7,50,14
+    PUSHBUTTON      "취소",IDCANCEL,7,24,50,14
+    EDITTEXT        IDC_EDIT1,7,60,78,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,7,120,78,15,ES_AUTOHSCROLL
+    LTEXT           "검색",IDC_STATIC,7,47,45,12
+    LTEXT           "수량(개) / 기간(일)",IDC_STATIC,7,144,67,11
+    LTEXT           "선택된 아이템 ID",IDC_STATIC,7,109,78,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041203b5"
+        BEGIN
+            VALUE "CompanyName", "TODO: <회사 이름>"
+            VALUE "FileDescription", "TODO: <파일 설명>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "GCMissionTool.exe"
+            VALUE "LegalCopyright", "TODO: (c) <회사 이름>.  All rights reserved."
+            VALUE "OriginalFilename", "GCMissionTool.exe"
+            VALUE "ProductName", "TODO: <제품 이름>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "변환", 0x412, 949
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_GCMISSIONTOOL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 379
+        VERTGUIDE, 159
+        VERTGUIDE, 168
+        VERTGUIDE, 224
+        VERTGUIDE, 236
+        VERTGUIDE, 295
+        VERTGUIDE, 308
+        VERTGUIDE, 364
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 345
+        HORZGUIDE, 41
+    END
+
+    IDD_MISSION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 696
+        VERTGUIDE, 48
+        VERTGUIDE, 108
+        VERTGUIDE, 127
+        VERTGUIDE, 167
+        VERTGUIDE, 226
+        VERTGUIDE, 248
+        VERTGUIDE, 284
+        VERTGUIDE, 324
+        VERTGUIDE, 392
+        VERTGUIDE, 626
+        VERTGUIDE, 634
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 282
+        HORZGUIDE, 25
+    END
+
+    IDD_ITEM_LIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 392
+        VERTGUIDE, 65
+        VERTGUIDE, 224
+        VERTGUIDE, 282
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 331
+        HORZGUIDE, 223
+        HORZGUIDE, 307
+    END
+
+    IDD_SUBMISSION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 271
+        VERTGUIDE, 19
+        VERTGUIDE, 73
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 285
+    END
+
+    IDD_CONDITION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 270
+        VERTGUIDE, 96
+        VERTGUIDE, 120
+        VERTGUIDE, 197
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 198
+    END
+
+    IDD_MISSIONREWARD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 544
+        VERTGUIDE, 85
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 319
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "GCMissionTool 정보(&A)..."
+END
+
+#endif    // 한국어 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE 18, 1
+#pragma code_page(949)
+#include "res\GCMissionTool.rc2"  // Microsoft Visual C++에서 편집되지 않은 리소스
+#include "afxres.rc"         // 표준 구성 요소
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

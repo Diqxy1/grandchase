@@ -1,0 +1,6 @@
+#include "..\GameServer\User.cpp"
+#include "..\GameServer\User2.cpp"
+#include "..\GameServer\User3.cpp"
+#include "..\GameServer\User4.cpp"
+#include "..\GameServer\User5.cpp"
+#include "..\GameServer\User6.cpp"

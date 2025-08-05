@@ -1,0 +1,24 @@
+
+==============================================할일들==============================================
+- 설정 파일을 만들어야함
+- TextureFile Drag & Drop
+
+==============================================한일들==============================================
+- Particle 새로 만들기
+- Particle 속성 편집
+- Particle Copy & Paste
+- Particle Delete
+- Particle 이름의 중복을 막아야함
+
+- TimeLine에서 Drag로 이동가능 하도록
+- TimeLine -> ParticleEvent
+- KeyFrame 삽입시 이전의 값을 셋팅해주도록
+- Particle Rendering
+- 배경 색상 바꾸기
+- KeyFrame 지우기
+- KeyFrame Copy & Paste
+
+- CheckBox에 Check된 항목 모두 Rendering
+- 배경 이미지 넣기
+- 저장!
+- Color, Velocity, Size, Rotate, 이외의 속성들도 TimeLine에 추가해야함

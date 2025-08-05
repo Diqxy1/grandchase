@@ -1,0 +1,10 @@
+EGCEmbarkForToolPalette =
+{
+    {"EMB_SAMPLE" },
+    {"EMB_DESERT_BUNKER" },
+    {"EMB_RACANYON_AIRPLANE" },
+    {"EMB_RACANYON_DRAMA_AIRPLANE" },
+    {"EMB_PYRAMID_OSIRISRELIC" },
+    {"EMB_COMBAT_AIRPLANE" },
+    {"EMB_COMBAT_AIRPLANE_2P" },
+}

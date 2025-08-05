@@ -1,0 +1,10 @@
+[ODBC]
+DRIVER=SQL Server
+UID=grand
+Address=61.78.51.81,1433
+Network=DBMSSOCN
+DATABASE=gc
+WSID=GCSVR001
+APP=Microsoft Open Database Connectivity
+SERVER=61.78.51.81
+PWD=sptakqmf_grand3258!

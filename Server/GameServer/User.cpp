@@ -1,0 +1,2483 @@
+// code:#USER_EVENT_CASES
+#include "User.h"
+#include <dbg/dbg.hpp>
+#include "UserFSM.h"
+#include "GSSimLayer.h"
+#include "CnConnector.h"
+#include "CenterPacket.h"
+#include "GuildManager.h"
+#include "GameServer.h"
+#include <sstream>
+#include <boost/format.hpp>
+#include "SHCheckPoint.h"
+#include "ResultManager.h"
+#include "Channel.h"
+#include "LoginOutStat.h"
+#include "StatisticsManager.h"
+#include "support_User.h"
+#include "PreHackingCheckManager.h"
+#include "VirtualCash.h"
+#include "MissionEvent.h"
+#include "DicePlay.h"
+#include "IPAdvantage.h"
+#include "GWCSupport.h"
+#include "NewDonationManager.h"
+#include "RecomHelper.h"
+#include "GCHelper.h"
+#include "TickManager.h"
+#include "ChannelTypeEvent.h"
+#include "CharPromotionSystem.h"
+#include "Gawibawibo.h"
+#include "ItemManager.h"
+#include "Socks.h"
+#include "Worker.h"
+#include "PlantTree.h"
+#include "SkillManager.h"
+#include "RKTornado.h"
+#include "GCPoint.h"
+#include "Sphinx.h"
+#include "StrengthManager.h"
+#include "ShutdownUser.h"
+#include "Survey.h"
+#include "MultiLanguageString.h"
+#include "PostConfig.h"
+#include "HeroDungeonManager.h"
+#include "EclipseTimeEvent.h"
+#include "Adventure.h"
+#include "LevelResetEvent.h"
+#include "PlayAuthManager.h"
+#include "ItemCompose.h"
+#include "GachaLottery.h"
+#include "CharacterGraduation.h"
+#include "DepotManager.h"
+#include "GachaPong.h"
+#include "PetGlyphMng.h"
+#include "BlockedAttackIP.h"
+
+KUserPtr KUser::Create()
+{
+    //SiKGSSimLayer()->CreateUserCount();
+    return SiKGSSimLayer()->m_kActorManager.CreateActor<KUser>();
+}
+
+void KUser::AddManager( KUserPtr spUser_ )
+{
+    JIF( spUser_ );
+    JIF( SiKGSSimLayer()->m_kActorManager.Add( spUser_ ) );
+}
+
+NiImplementRTTI( KUser, KActor );
+ImplementException( KUser );
+
+#define CLASS_TYPE  KUser
+
+KUser::KUser(void) 
+:m_pkChannel(NULL)
+,m_pkRoom(NULL) 
+,m_cAuthLevel(0) 
+,m_iSessionInfo(SI_INVALID_VALUE)
+,m_iP2PVersion(0)
+,m_bIsFinalQuest(false)     //060109. microcat.
+,m_bServerMigrationReserved(false)
+,m_bIndigoDataExist(false)
+,m_dwAuthType(0x00000000)
+,m_cRecommendUser(3)        // 추천인 시스템 없음을 초기화
+,m_nAccOfflineTime(0)       // 누적 오프 / 온라인 값
+,m_nAccOnlineTime(0)
+,m_cCurrentCharacter(-1)    // 캐릭터 분리가 되면서 없음으로 설정.
+,m_nHackReport(0)           //해킹이 클라잉언트로 부터 보고되었다.
+,m_bGMuser(false)           // GM 접속아님. 쥐엠이면 true로 변경.
+,m_nReportCount(0)          // 신고 횟수..
+,m_bGoToGuildZone(false)
+,m_cGrade(0)
+,m_bMale(false)
+,m_cPCBangType(0)
+,m_nRecommendKRType(0)  // 070306. kkurrung. 신학기 이벤트용 변수 초기화
+,m_nPointRecomCount(0)  // 070419. kkurrung. 포인트 시스템.
+,m_bInviteDeny(false)  // 초대 거절.
+,m_bIsObserver(false)
+,m_nVirtualCashPoint(0)
+,m_bExpAccount(false) //  080723  woosh. 체험 계정
+,m_nGachaKeyBuyCount(0)
+,m_nCoupleWindowState(0)
+,m_nAccDonationPoint(0)
+,m_bLunaNewYearEventDone(false)
+,m_nRecomBonus(0)
+,m_nHackingCount(0)
+,m_nGuildSearchTotalPageNum(0)
+,m_prRecomLevelUpCheck(-1,-1) // 반갑다 친구야 신규 유저 레벨 달성 아이템 지급 여부 체크.
+,m_bReturnUserCheck(false) // 반갑다 친구야 복귀 유저인지 체크.
+,m_dwChannellingType(1)
+,m_nIdleState(0)
+,m_kPingTimer(1000)
+,m_dwPlayTime(0)
+,m_bRecvStageLoadComplete(false)
+,m_kSocksTimer(1000)
+,m_cUserBenfitType(0)
+,m_dwEnterSquareTime(0)
+,m_dwLeaveSquareTime(0)
+,m_dwStayAgitUID(0)
+,m_nTodaySeedDropCount(0)
+,m_ucAgitInviteOption(KAgitInfo::IT_ACCEPT)
+,m_ucAgitOpenType(KAgitInfo::OT_CLOSE)
+,m_bAgitNewUser(true)
+,m_biUniqueKey(0)
+,m_bNMNetcafeActive(false)
+,m_nLanguageCode(-1)
+,m_bRecvLoadingComplete(false)
+,m_dwLastMiniGameDuration(0)
+,m_dwStartMiniGameDuration(0)
+,m_iAge(0)
+,m_nDecGpSum(0)
+,m_nIncGpSum(0)
+,m_nGPKeyBuyCount(0)
+,m_nUniqueKey(0)
+,m_dwCharLvStartGameTime(0)
+,m_kEclipsePlotTimer( 10 * 1000 )
+,m_bEclipseCollectComplete(false)
+,m_bAdult(false)
+,m_dwChangeCharTypeCnt(0)
+,m_nMatchSuccessLoopCount(0)
+,m_bDonationBuffEnable(false)
+,m_kErrandTimer( 10 * 1000 )
+,m_bDataReceive(false)
+,m_bTutorialEnable(false)
+,m_kTimerCYOUHeartbeat( 1000 * 60 * 60 ) 
+,m_dwPVPPlayTime(0)
+,m_dwPVEPlayTime(0)
+,m_bFirstGetCyouPoint( true )
+,m_dwUserRemainIndexCnt(0)
+,m_bCYOULogined(false)
+,m_bJumpCharEnable(false)
+,m_dwLastPlayTime(0)
+,m_iPvExp(0)
+{
+    for(int i = 0; i < GC_CHAR_NUM; ++i )
+    {
+        m_dwPlayCount[i] = 0;
+    }
+
+    for( int i = 0; i < TICK_COUNT_NUM; ++i ) {
+        SetTick(i);
+    }
+
+    //------------- 일부 리스트 Tick은 수정한다.. ----------a//
+    m_auiTickCount[SEND_CHANNEL_LIST]       -= 10000;
+    m_auiTickCount[SEND_ROOM_LIST]          -= 10000;
+    m_auiTickCount[SEND_USER_LIST]          -= 10000;
+    m_auiTickCount[SEND_GUILD_MEMBER_LIST]  -= 10000;
+    m_auiTickCount[SEND_SERVER_LIST]        -= 70000;
+    m_auiTickCount[USER_WHERE]              -= 30000;
+    m_auiTickCount[AGIT_STAY]               -= 30000;
+    m_auiTickCount[SERVER_TIME_NOT]         -= 30000;
+
+    //------------- 일부 리스트 Tick은 수정한다.. ----------//
+
+    m_strNickName.clear();
+    m_iIndigoWin.SetAllValue( 0 );
+    m_iIndigoLose.SetAllValue( 0 );
+    m_kGuildUserInfo.Init();
+    m_mapCharacterInfo.clear();
+    m_cConnectionTime = CTime::GetCurrentTime(); // 050224 접속 시간 초기화
+    m_mapDifficulty.clear();
+    m_mapOldDifficulty.clear();
+    m_vecMissionSlot.clear();
+    m_bitCheckPoint.clear();
+    m_vecFontVector.clear();
+    m_tmFirstLoginTime = CTime( 2000, 1, 1, 12, 0, 0 ); // 기본값.
+    m_tmLastLoginTime  = CTime( 2000, 1, 1, 12, 0, 0 ); // 기본값.
+    SetSendQueueSize( 1024 * 512 ); // 512Kb 추가 버퍼 사용.
+
+    // 보너스 포인트
+    m_mapBaseBonus.clear();
+    m_mapSpecialBonus.clear();
+
+    // quick Slot
+    m_mapQuickSlot.clear();
+
+    m_vecCollectionSlot.clear();
+    m_vecMiniGameInfo.clear();
+
+    ::memset( &m_kBadUserInfo, 0, sizeof( m_kBadUserInfo) );
+
+    m_vecPeriodNoticeUID.clear();
+    InitCoupleInfo(); // 커플 정보 초기화.
+
+    // 09.04.11. kkurrung. 추천(5th)
+    m_MyRecomInfo.Clear();
+    srand( ::GetTickCount() );
+
+    m_mapGachaReelPoint.clear();
+    m_mapGachaReelPointDiff.clear();
+
+    m_mapMySubscriptionGiftCount.clear();
+
+    // 09.10.15 tgkwon 주사위 이벤트
+    // 선언한 변수에 대해서 초기화.
+    m_kUserBoardInfo.Clear();
+
+    m_tmDiceLastTime = CTime( 2000, 1, 1, 12, 0, 0 ); // 기본값.
+    m_tmInitDiceTime = CTime( 2000, 1, 1, 12, 0, 0 ); // 기본값.
+
+    m_vecGuildSearchUIDList.clear();
+
+    SetGuildSearchTickGap( 1000 * 5 ); // 길드목록 검색주기.
+    SetGuildSearchTick();
+
+    ClearPressInfo();
+    m_mapInitExp.clear();
+    m_mapTotalInitExp.clear();
+
+    // 채널링타입별 채널코드
+    m_mapChannellingTypeCode[USER_CT_PUBLISHER_1] = CCODE_PUBLISHER_1; // 넷마블
+    m_mapChannellingTypeCode[USER_CT_PUBLISHER_2] = CCODE_PUBLISHER_2; // 투니버스
+    m_mapChannellingTypeCode[USER_CT_PUBLISHER_3] = CCODE_PUBLISHER_3; // 네이트
+
+    m_kLevelUpDropInfo.m_vecAutoMission.clear();
+    m_kLevelUpDropInfo.m_vecDropItems.clear();
+    m_kLevelUpDropInfo.m_vecDropPostItems.clear();
+    m_mapChangeWeapon.clear();
+    m_mapGachaSetObtained.clear();
+    m_mapGachaSetObtainedLevel.clear();
+    m_tmVirtualEnableDate = CTime( 2100, 1, 1, 12, 0, 0 ); // 기본값.
+
+    m_kParty.Init();
+
+    m_setAgitBanList.clear();
+    m_strAgitPassword.clear();
+    m_kSquarePos.Init();
+    m_mapUserCharLvPlayTime.clear();
+    m_setChangeEquipInfo.clear();
+    m_mapPvpCategoryHackCount.clear();
+    m_mapSlotOpenInfo.clear();
+    m_setCompleteMission.clear();
+
+    m_tmFinalLoginTime  = CTime( 2000, 1, 1, 12, 0, 0 ); // 기본값.
+    m_bFirstLoginToday  = false;	
+
+    m_setCharLevelEvent.clear();
+    m_vecMatchPartyInviteList.clear();
+    m_mapMatchParty.clear();
+
+    m_dwMatchStartTick = ::timeGetTime();
+    m_dwMatchEndTick = ::timeGetTime();
+
+    m_tmFinalLoginTime  = CTime( 2000, 1, 1, 12, 0, 0 ); // 기본값.
+    m_bFirstLoginToday  = false;
+    m_strBillingAccount.clear();
+    m_vecIndoorUserTemp.clear();
+
+    START_LOG( cwarn, "m_ucAgitInviteOption = " << static_cast<int>( m_ucAgitInviteOption ) ) << END_LOG;
+
+    m_setNonGraduateCharacters.clear();
+    m_mapAttributeMigrationItemInfo.clear();
+    m_mapTongDonationUserAmount.clear();
+    m_vecInvenDepotMoveLog.clear();
+    m_vecFinishedMission.clear();
+    m_mapDungeonPersonalRecord.clear();
+    m_mapDungeonPersonalRecordDiff.clear();
+    m_mapPreviousDungeonRankPersonal.clear();
+}
+
+KUser::~KUser(void)
+{
+    SiKStatisticsManager()->AddStatDisconn( GetDisconnReason() );
+}
+
+ImplToStringW( KUser )
+{
+    return START_TOSTRING_PARENTW( KActor )
+        << TOSTRINGW( m_pkChannel )
+        << TOSTRINGW( m_pkRoom )
+        << TOSTRINGW( GetElapsedTimeAfterAuth() );
+}
+
+void KUser::ProcessEvent( const KEventPtr& spEvent_ )
+{
+    KSerializer ks;
+    ks.BeginReading( const_cast<KSerBuffer*>( &spEvent_->m_kbuff ) );
+
+    FILETIME ftKernelTimeStart, ftKernelTimeEnd, ftUserTimeStart, ftUserTimeEnd;
+    FILETIME ftDummy;
+
+    ::GetThreadTimes( ::GetCurrentThread(), &ftDummy, &ftDummy, &ftKernelTimeStart, &ftUserTimeStart );
+    DWORD dwElapTime = ::GetTickCount();  // 040428. 패킷 처리 소요시간을 구한다.
+
+    switch( spEvent_->m_usEventID )
+    {
+    CASE( EVENT_VERIFY_ACCOUNT_REQ );
+   _CASE( EVENT_VERIFY_ACCOUNT_ACK, KEVENT_DB_VERIFY_ACCOUNT_ACK );
+   _CASE( EVENT_REGISTER_NICKNAME_REQ, std::wstring );
+   _CASE( EVENT_REGISTER_NICKNAME_ACK, KPacketNameOK );
+    CASE_NOPARAM( EVENT_AGREEMENT_PRIVATEINFO_NOT );
+    CASE( EVENT_USE_DURATION_ITEM_REQ );
+    CASE( EVENT_STRONG_LEVELUP_REQ );
+   _CASE( EVENT_STRONG_LEVELUP_ACK, KDB_EVENT_STRONG_LEVELUP_ACK );
+   _CASE( EVENT_CHAT_REQ, KChatData );
+   _CASE( EVENT_NOTIFY_REQ, std::wstring );
+   _CASE( EVENT_WHISPER_REQ, KPacketNameMsg );
+    CASE( EVENT_WHISPER_ACK );
+    CASE( EVENT_BUY_FOR_GP_REQ );
+    CASE( EVENT_BUY_FOR_GP_ACK );
+    CASE( EVENT_BUY_FOR_GEM_REQ );
+    CASE( EVENT_BUY_FOR_GEM_ACK );
+   _CASE( EVENT_BUY_FOR_CRYSTAL_REQ, KEVENT_BUY_FOR_GEM_REQ );
+    CASE( EVENT_BUY_FOR_CRYSTAL_ACK );
+
+
+    CASE_NOPARAM( EVENT_QUERY_INVENTORY_INFO_REQ );
+    CASE( EVENT_QUERY_INVENTORY_INFO_ACK );
+   _CASE( EVENT_EQUIP_ITEM_REQ, KEquipUser );
+   _CASE( EVENT_SELL_ITEM_REQ, KSimpleItem );
+    CASE( EVENT_SELL_ITEM_ACK );
+
+   _CASE( EVENT_START_GAME_REQ, KStartGameReq );
+   _CASE( EVENT_ENTER_CHANNEL_REQ, DWORD );
+    CASE_NOPARAM( EVENT_LEAVE_CHANNEL_NOT );
+    CASE( EVENT_CREATE_ROOM_REQ );
+    CASE( EVENT_LEAVE_ROOM_REQ );
+
+   _CASE( EVENT_JOIN_ROOM_REQ, KJoinRoomReqInfo );
+   _CASE( EVENT_LEAVE_GAME_REQ, KGameResultIn );   
+
+   _CASE( EVENT_END_GAME_REQ, KEndGameReq );
+   _CASE( EVENT_END_GAME_ACK, KEndGameAck );
+    CASE_NOPARAM( EVENT_CHANNEL_LIST_REQ );
+    CASE( EVENT_ROOM_LIST_REQ );
+   _CASE( EVENT_USER_LIST_REQ, int );
+   _CASE( EVENT_CHANGE_ROOM_INFO_REQ, KChangeRoomInfo );
+    CASE( EVENT_CHANGE_HOST_ADDRESS_NOT );
+   _CASE( EVENT_WHERE_REQ, std::wstring );
+   _CASE( EVENT_INVITE_REQ, std::vector<DWORD> );
+
+   _CASE( DB_EVENT_INSERT_DROP_ITEM_ACK, KEndGameAck );
+   _CASE( EVENT_QUERY_NORMAL_ITEM_LIST_REQ, KPacket2Name );
+   _CASE( EVENT_QUERY_NORMAL_ITEM_LIST_ACK, KItemInv );
+   _CASE( EVENT_QUERY_DURATION_ITEM_LIST_REQ, KPacket2Name );
+   _CASE( EVENT_QUERY_DURATION_ITEM_LIST_ACK, KDurationInv );
+   _CASE( EVENT_QUERY_SALED_NORMAL_ITEM_LIST_REQ, KPacket2Name );
+   _CASE( EVENT_QUERY_SALED_NORMAL_ITEM_LIST_ACK, KItemInv );
+   _CASE( EVENT_QUERY_SALED_DURATION_ITEM_LIST_REQ, KPacket2Name );
+   _CASE( EVENT_QUERY_SALED_DURATION_ITEM_LIST_ACK, KDurationInv );
+   _CASE( EVENT_ADD_NORMAL_ITEM_GP_REQ, KAddItemInfo );
+   _CASE( EVENT_ADD_NORMAL_ITEM_GP_ACK, KPacketAck );
+   _CASE( EVENT_ADD_DURATION_ITEM_GP_REQ, KAddItemInfo );
+   _CASE( EVENT_ADD_DURATION_ITEM_GP_ACK, KPacketAck );
+   _CASE( EVENT_ADD_NORMAL_ITEM_CASH_REQ, KAddItemInfo );
+   _CASE( EVENT_ADD_NORMAL_ITEM_CASH_ACK, KPacketAck );
+   _CASE( EVENT_ADD_DURATION_ITEM_CASH_REQ, KAddItemInfo );
+   _CASE( EVENT_ADD_DURATION_ITEM_CASH_ACK, KPacketAck );
+    CASE( EVENT_REMOVE_ITEM_REQ );
+   _CASE( EVENT_REMOVE_ITEM_ACK, KPacketAck );
+   _CASE( EVENT_QUERY_USER_INFO_REQ, KPacket2Name );
+    CASE( EVENT_QUERY_USER_INFO_ACK );
+   _CASE( EVENT_CHANGE_STRONG_ITEM_REQ, KPacket2Name );
+    CASE( EVENT_CHANGE_STRONG_ITEM_ACK );
+    CASE_NOPARAM( EVENT_QUERY_ITEM_INFO_REQ );
+    CASE( EVENT_QUERY_ITEM_INFO_ACK );
+   _CASE( EVENT_KICK_USER_BY_ADMIN_REQ, DWORD );
+
+
+   _CASE( EVENT_QUERY_USER_INFO2_REQ, KPacket2Name );
+    CASE( EVENT_QUERY_USER_INFO2_ACK );
+   _CASE( EVENT_REMOVE_USER_INFO_REQ, KPacket2Name );
+   _CASE( EVENT_REMOVE_USER_INFO_ACK, KPacketAck );
+   _CASE( EVENT_UDP_P2P_SOCKET_ERR_NOT, std::wstring );
+   _CASE( EVENT_BAN_USER_REQ, KPacketNameOK );
+    CASE_NOPARAM( EVENT_CLIENT_CRASHED_NOT );
+   _CASE( EVENT_ITEM_EXPIRED_NOT, std::vector<KItem> );
+   _CASE( EVENT_DETAIL_USER_INFO_REQ, std::wstring );
+   _CASE( EVENT_P2P_RELAY_REQ, KP2PData );
+   _CASE( EVENT_SERVER_MIGRATION_REQ, std::wstring );
+   _CASE( EVENT_SERVER_MIGRATION_ACK, int );
+   _CASE( EVENT_CLIENT_ERR_REPORT_NOT, KEventErr );
+   _CASE( EVENT_CLIENT_ERR_REPORT_COUNT_NOT, KEventErrCount );
+    CASE( EVENT_USE_CHANGE_NICKNAME_REQ );
+   _CASE( EVENT_USE_CHANGE_NICKNAME_ACK, KEVENT_USE_CHANGE_NICKNAME_REQ );
+    CASE( EVENT_USE_CHANGE_NICKCOLOR_REQ );
+   _CASE(EVENT_USE_CHANGE_NICKCOLOR_ACK, KEVENT_USE_CHANGE_NICKCOLOR_REQ);
+    CASE( EVENT_REGIST_MISSION_REQ );
+    CASE( EVENT_REGIST_MISSION_ACK );
+   _CASE( EVENT_REMOVE_MISSION_REQ, KEVENT_REMOVE_MISSION );
+   _CASE( EVENT_REMOVE_MISSION_ACK, KEVENT_REMOVE_MISSION );
+    CASE( EVENT_COMPLETE_MISSION_REQ );
+    CASE( EVENT_COMPLETE_MISSION_ACK );
+   _CASE( EVENT_DUNGEON_MISSION_REGIST_REQ, DWORD );
+    CASE( EVENT_DUNGEON_MISSION_REGIST_ACK );
+    CASE( EVENT_FINISHED_MISSION_LIST_NOT );
+    CASE( EVENT_GMTOOL_AUTHENTICATION_REQ );
+    CASE( EVENT_GMTOOL_AUTHENTICATION_ACK );
+    CASE( DB_EVENT_CREATE_INDIGO_ACK );
+   _CASE( DB_EVENT_UPDATE_INDIGO_ACK, KIndigoData );
+   _CASE( EVENT_SET_HBCHECK_FLAG, bool );
+    CASE_NOPARAM( EVENT_ENCHANT_GEMCOUNT_REQ );	    // 인챈트 관련 패킷
+    CASE( EVENT_BUY_FOR_CASH_REQ );
+    CASE( EVENT_BUY_FOR_CASH_ACK );
+    CASE_NOPARAM( EVENT_CURRENT_CASH_POINT_REQ );
+   _CASE( EVENT_CURRENT_CASH_POINT_ACK, KCashInfo );
+    CASE( EVENT_LOAD_COMPLETE_NOT );
+   _CASE( EVENT_CHANGE_ROOMUSER_INFO_REQ, KChangeRoomUserInfo );
+    CASE( EVENT_SHANGHAI_DROP_REQ );
+    CASE( EVENT_SHANGHAI_DROP_ACK );
+   _CASE( EVENT_SHANGHAI_CHECK_ACK, KncBitStream );
+   _CASE( EVENT_CHANGE_INDOOR_USERINFO_REQ, KInDoorUserInfo );
+   _CASE( EVENT_RECOMMENDER_REQ, KPacketNameOK );
+   _CASE( EVENT_RECOMMENDER_ACK, int );
+    CASE_NOPARAM( EVENT_END_RESULT_NOT );
+    CASE( EVENT_CHECK_ROOM_USERLIST_NOT );
+    CASE( EVENT_ACCUMULRATION_TIME_NOT );
+   _CASE( EVENT_SET_CURRENT_CHARACTER_REQ, char );
+   _CASE( EVENT_KAIRO_REQ, GCITEMUID );
+    CASE( EVENT_KAIRO_ONESHOT_REQ );
+    CASE( EVENT_KAIRO_ACK );
+    CASE( EVENT_KAIRO_ONESHOT_ACK );
+    CASE( EVENT_CREATE_PET_REQ );
+   _CASE( EVENT_CREATE_PET_ACK, KDB_EVENT_CREATE_PET );
+    CASE( EVENT_DELETE_PET_REQ );
+   _CASE( EVENT_DELETE_PET_ACK, KDB_EVENT_DELETE_PET );
+    CASE( EVENT_FEEDING_PET_REQ );
+    CASE( EVENT_CHANGE_PET_NAME_REQ );
+   _CASE( EVENT_CHANGE_PET_NAME_ACK, KEVENT_CHANGE_PET_NAME_REQ );
+   
+   _CASE( EVENT_LOUD_MSG, std::wstring ); // 전체 메세지
+   _CASE( EVENT_PRE_COMPLETE_REQ, int );
+   _CASE( EVENT_USE_INVENTORY_EXTEND_REQ, KExtendItem );
+   _CASE( EVENT_USE_INVENTORY_EXTEND_ACK, KExtendItem );
+   _CASE( EVENT_REPETITION_PROVIDE_NOT, KEVENT_QUERY_INVENTORY_INFO_ACK );
+    CASE( EVENT_STAT_USER_HISTORY_NOT ); // 유저 히스토리.
+   _CASE( EVENT_PROTECED_TABBLE_CHECKSUM_NOT, DWORD );
+   _CASE( EVENT_FORCE_CHANGE_ROOMUSER_INFO_REQ, KForceChangeRoomUserInfo );
+    CASE( EVENT_CHECK_TRANSFORMATION_PET_REQ ); //펫의 진화 퇴화 체크
+    CASE( EVENT_TRANSFORMATION_PET_REQ ); // 정말 진화 요청.
+    CASE( EVENT_TRANSFORMATION_PET_ACK );
+   _CASE( EVENT_FORCE_TRANSITION_STATE_REQ, int );
+   _CASE( EVENT_YAHOO_BENEFIT_NOT, KInven_GP );
+   _CASE( EVENT_LOAD_POINTSYSTEM_INFO_ACK, KPointSystemInfo );
+    CASE_NOPARAM( EVENT_GET_CURRENT_POINT_REQ );
+    CASE_NOPARAM( EVENT_GET_CALENDAR_REQ );
+   _CASE( EVENT_SEALLING_CALENDAR_REQ, KSimpleDate );
+    CASE( EVENT_SEALLING_CALENDAR_ACK );
+    CASE( EVENT_MONTHLY_ATTEND_NOT );
+    CASE( EVENT_WEEKLY_ATTEND_REQ );
+   _CASE( EVENT_GCPOINT_RECOMMEND_REQ, std::wstring );
+   _CASE( EVENT_GCPOINT_RECOMMEND_ACK, int );
+   _CASE( EVENT_LOAD_NEW_CALENDAR_NOT, std::vector<KDailyInfo> );
+    CASE( EVENT_MONTHLY_ATTEND_REWARD_REQ );
+    CASE( EVENT_MONTHLY_ATTEND_REWARD_ACK );
+   _CASE( EVENT_MONTHLY_ATTEND_REWARD_LIST_NOT, std::vector<KSimpleDate> );
+   _CASE( EVENT_HATCHING_EGG_REQ, GCITEMUID );
+    CASE( EVENT_HATCHING_EGG_ACK );
+   _CASE( EVENT_BUY_GCPOINT_ITEM_REQ, KBuySellItemReq );
+    CASE( EVENT_BUY_GCPOINT_ITEM_ACK );
+   _CASE( EVENT_SELL_GCPOINT_ITEM_REQ, KBuySellItemReq );
+    CASE( EVENT_SELL_GCPOINT_ITEM_ACK );
+   _CASE( EVENT_RESET_WIN_LOSE_REQ, KResetWinLoseData );
+   _CASE( EVENT_RESET_WIN_LOSE_ACK, KResetWinLoseData );
+    CASE( EVENT_LUCKYDAY_NOT );
+   _CASE( EVENT_CHANGE_ROOM_OPTION_REQ, KRoomOption );
+   _CASE( EVENT_STAT_LOADING_TIME_NOT, DWORD );
+   _CASE( EVENT_MSG_NOT, std::wstring );
+    CASE( EVENT_GET_NASTY_INFO_NOT );
+    CASE( EVENT_REPORT_USER_REQ );
+   _CASE( EVENT_REPORT_USER_ACK, KEVENT_DB_REPORT_USER_ACK );
+   _CASE( EVENT_CHATTING_EVENT_CORRECT_NOT, int );
+    CASE( EVENT_ENCHANT_REQ );
+    CASE( EVENT_ENCHANT_ACK );
+
+    CASE_NOPARAM( EVENT_SERVER_LIST_REQ );
+    CASE( DB_EVENT_BONUS_POINT_REFILL_ACK );
+    CASE( EVENT_CHANGE_BONUS_COIN_REQ );
+    CASE( EVENT_CHANGE_BONUS_COIN_ACK );
+    CASE_NOPARAM( EVENT_USE_BONUS_POINT_REQ );
+   _CASE( EVENT_SLOT_INFO_NOT, KQuickSlot );
+   _CASE( EVENT_CHANGE_SLOT_EQUIP_REQ, KQuickSlot );
+    CASE( EVENT_USE_QUICK_SLOT_REQ );
+   _CASE( EVENT_SQUARE_LIST_REQ, DWORD );
+   _CASE( EVENT_SQUARE_LIST_ACK, KNGuildUserInfo );
+    CASE( EVENT_ENTER_SQUARE_REQ );
+    CASE( EVENT_ENTER_SQUARE_ACK );
+    CASE_NOPARAM( EVENT_SQUARE_LOADING_COMPLETE_REQ );
+
+   _CASE( EVENT_NEW_SQUARE_USER_NOT, KSquareUserInfo );
+   _CASE( EVENT_LEAVE_SQUARE_USER_NOT, DWORD );
+    CASE_NOPARAM( EVENT_LEAVE_SQUARE_REQ );
+   _CASE( EVENT_UPDATE_MY_SQUARE_POS, KSquarePos );
+   _CASE( EVENT_SQUARE_CHAT_REQ, KChatData );
+    CASE_NOPARAM( EVENT_SQUARE_USER_SYNC_REQ );
+    CASE( EVENT_NEW_CHARACTER_REQ );
+    CASE( EVENT_NEW_CHARACTER_ACK );
+   _CASE( EVENT_TW_USER_AGREEMENT_REQ, int );
+   _CASE( EVENT_TW_USER_AGREEMENT_ACK, int );
+   _CASE( EVENT_USE_EMOTICON_REQ, KUserEmoticon );
+    CASE( EVENT_INVITED_ROOM_FROM_SQUARE_REQ );
+   _CASE( EVENT_SQUARE_USER_LIST_REQ, PAIR_DWORD_INT );
+   _CASE( EVENT_INVITE_DENY_NOT, bool );
+    CASE_NOPARAM( EVENT_SIGN_BOARD_NUM_REQ );
+   _CASE( EVENT_SIGN_BOARD_REG_REQ, KSignBoardData );
+    CASE( EVENT_SIGN_BOARD_NOTIFY );
+    CASE( EVENT_EMOTICON_MIX_REQ ); // 이모티콘
+    CASE( EVENT_EMOTICON_MIX_ACK );
+   _CASE( EVENT_CHANGE_OBSERVER_REQ, bool );
+   _CASE( EVENT_CONNECTION_MSG_ACK, std::vector<std::wstring> );
+
+    CASE( EVENT_RANK_PAGE_REQ );
+   _CASE( EVENT_MY_RANK_INFO_NOT, KMyRankInfo );
+    CASE( EVENT_RANK_SEARCH_REQ );
+    CASE( EVENT_RANK_SEARCH_ACK );
+
+   _CASE( EVENT_GET_HELL_ITEM_ACK, std::vector<KItem> );
+   _CASE( EVENT_SELL_INFO_REQ, GCITEMID );
+   _CASE( EVENT_SELL_COUNT_ITEM_REQ, KBuySellItemReq );
+   _CASE( EVENT_SELL_COUNT_ITEM_ACK, KDBSellCountItemData );
+
+   _CASE( EVENT_CURRENT_VIRTUAL_CASH_NOT, int );
+    CASE( EVENT_BUY_VIRTUAL_CASH_REQ );
+    CASE( EVENT_BUY_VIRTUAL_CASH_ACK );
+    CASE_NOPARAM( EVENT_JOIN_GAME_REQ );
+
+   _CASE( EVENT_COLLECTION_COMPLETE_REQ, int );
+    CASE( EVENT_COLLECTION_COMPLETE_ACK );
+
+    CASE( EVENT_P2P_STAT_INFO );
+   _CASE( EVENT_CHECK_OUT_RECORD_UPDATE, unsigned short );
+    CASE_NOPARAM( EVENT_P2P_UNIQUE_NUM_REQ );
+   _CASE( EVENT_UPDATE_DEATH_SCORE_NOT, KDeathMatchScore );
+   _CASE( EVENT_RELAY_DATA, std::vector<DWORD> );
+    CASE( EVENT_MINIGAME_INFO_NOT );
+   _CASE( EVENT_START_MINIGAME_REQ, char );
+   _CASE( EVENT_END_MINIGAME_REQ, KMiniGameRankInfo );
+    CASE_NOPARAM( EVENT_EXIT_MINIGAME_REQ );
+   _CASE( EVENT_MINIGAME_TOPRANK_REQ, char );
+   _CASE( EVENT_MINIGAME_RESTART_REQ, char );
+   _CASE( EVENT_END_MINIGAME_ACK, KMiniGameRankInfo );
+    CASE_NOPARAM( EVENT_MINIGAME_MY_RANK_INFO_REQ );
+    CASE_NOPARAM( EVENT_GET_FULL_SP_INFO_REQ );
+   _CASE( EVENT_SKILL_TRAINING_REQ, int );
+   _CASE( EVENT_SET_SKILL_REQ, KChangeSkillSet );
+    CASE( EVENT_REMOVE_SKILL_REQ );
+   _CASE( EVENT_UNLOCK_SKILL_REQ, int );
+    CASE( EVENT_UNLOCK_SKILL_ACK );
+   _CASE( EVENT_CHANGE_COUPON_REQ, KComplexItem );
+    CASE( EVENT_CHANGE_COUPON_ACK );
+    CASE( EVENT_GACHA_REWARD_LIST_REQ );
+    CASE( EVENT_GACHA_ACTION_REQ );
+    CASE( EVENT_GACHA_ACTION_ACK );
+    CASE_NOPARAM( EVENT_GACHA_OBTAINED_SET_REWARD_REQ );
+    CASE( EVENT_GACHA_SET_REWARD_REQ );
+    CASE( EVENT_GACHA_SET_REWARD_ACK );
+    CASE( EVENT_GACHA_SET_REWARD_LIST_REQ );
+   _CASE( EVENT_UPDATE_GACHA_KEY_BUY_COUNT_ACK, PAIR_INT );
+    CASE( EVENT_CLIENT_FAILED_GAME_START_NOT );   // client->server.클라이언트 게임시작실패시 원인 알림.
+   _CASE( EVENT_FULL_COUPLE_INFO_ACK, KCoupleInfo );
+    CASE( EVENT_MAKE_COUPLE_REQ );
+   _CASE( EVENT_MAKE_COUPLE_ANS, bool );
+   _CASE( EVENT_MAKE_COUPLE_ANS_FROM, bool );
+    CASE( EVENT_MAKE_COUPLE_ACK );
+
+   _CASE( EVENT_USE_COUPLE_ITEM_REQ, KCoupleItemData );
+   _CASE( EVENT_USE_COUPLE_ITEM_ACK, KCoupleItemData );
+   _CASE( EVENT_USE_COUPLE_ITEM_NOT, KCoupleItemData );
+
+   _CASE( EVENT_EQUIP_COUPLE_ITEM_REQ, std::vector<GCITEMID> );
+   _CASE( EVENT_EQUIP_COUPLE_ITEM_NOT, std::vector<GCITEMID> );
+
+   _CASE( EVENT_COUPLE_INFORMATION_REQ, DWORD );
+   _CASE( EVENT_SET_COUPLE_REQ_DENY, DWORD );
+
+    CASE( EVENT_CHANGE_COUPLE_RING_REQ );
+   _CASE( EVENT_CHANGE_COUPLE_RING_ANS, bool );
+   _CASE( EVENT_CHANGE_COUPLE_RING_ANS_FROM, bool );
+    CASE( EVENT_CHANGE_COUPLE_RING_ACK );
+   _CASE( EVENT_DIVORCE_COUPLE_REQ, std::wstring );
+   _CASE( EVENT_DIVORCE_COUPLE_NOT, std::wstring );
+   _CASE( EVENT_CHANGE_COUPLE_CHAR_REQ, char );
+   _CASE( EVENT_COUPLE_CHAT_REQ, KChatData );
+   _CASE( EVENT_COUPLE_WINDOW_STATE_REQ, int );
+    CASE_NOPARAM( EVENT_PET_COSTUM_LIST_REQ );
+    CASE( EVENT_WEEKLY_ATTEND_ACK );
+   _CASE( EVENT_GMTOOL_USER_LIST_REQ, int );
+   _CASE( EVENT_GMTOOL_SQUARE_USER_LIST_REQ, PAIR_DWORD_INT );
+    CASE_NOPARAM( EVENT_GET_USER_DONATION_INFO_REQ );
+    CASE( EVENT_GET_USER_DONATION_INFO_ACK );
+    CASE_NOPARAM( EVENT_DONATION_INFO_REQ );
+    CASE( EVENT_DONATION_POINT_REQ );
+    CASE( EVENT_DONATION_POINT_ACK );
+   _CASE( EVENT_ADD_EXP_REQ, KAddExpInfo );
+   _CASE( EVENT_CHECK_LUNA_NEWYEAR_ACK, bool );
+    CASE_NOPARAM( EVENT_LUNA_NEWYEAR_REQ );
+    CASE( EVENT_LUNA_NEWYEAR_ACK );
+    CASE_NOPARAM( EVENT_CHAR_POLL_TERM_REQ );
+    CASE( EVENT_CHAR_POLL_REQ );
+
+    CASE_NOPARAM( EVENT_GACHA_COIN_COUNT_REQ );
+   _CASE( EVENT_GACHA_COIN_COUNT_ACK, int );    // 가챠 코인수
+    CASE( EVENT_BUY_FOR_VIP_REQ );
+    CASE( EVENT_BUY_FOR_VIP_ACK );
+    CASE( EVENT_OPEN_CAPSULE_REQ );
+    CASE( EVENT_OPEN_CAPSULE_ACK );
+    CASE( EVENT_USE_GAME_COUPON_REQ );
+    CASE( EVENT_USE_GAME_COUPON_ACK );
+    CASE_NOPARAM( EVENT_GAME_COUPON_LIST_REQ );
+    CASE_NOPARAM( EVENT_GAME_COUPON_FAIL_NOT );
+
+    // 09.04.10. kkurrung. 
+    CASE_NOPARAM( EVENT_CHECK_RECOMMEND_ENABLE_REQ );
+    CASE( EVENT_CHECK_RECOMMEND_ENABLE_ACK );
+    CASE( EVENT_RECOMMEND_USER_REQ );
+    CASE( EVENT_RECOMMEND_USER_ACK );
+    CASE_NOPARAM( EVENT_RECOMMEND_FULL_INFO_REQ );
+    CASE( EVENT_RECOMMEND_FULL_INFO_ACK );
+   _CASE( EVENT_RECOMMENDER_ACCEPT_REQ, std::vector<DWORD> );
+   _CASE( EVENT_RECOMMENDER_ACCEPT_ACK, KRecommenderAcceptDBAck );
+   _CASE( EVENT_ATTENDANCE_BONUS_REQ, int );
+    CASE( EVENT_ATTENDANCE_BONUS_ACK );
+    CASE( EVENT_RECOM_DAILY_ATTENDANCE_ACK );
+   _CASE( EVENT_RECOMMENDER_DENY_REQ, std::vector<DWORD> );
+   _CASE( EVENT_RECOMMENDER_DENY_ACK, KRecommenderAcceptDBAck );
+   _CASE( EVENT_RECOM_CHANGE_STATE_NOT, KPacketNameOK );
+	CASE( EVENT_ONLINE_FRIENDS_NOT );
+   _CASE( EVENT_CHECK_GACHA_REEL_POINT_ACK, GAGHA_REEL_POINT );
+   _CASE( EVENT_SET_EXP_REQ, KAddExpInfo );
+   _CASE( EVENT_GET_GCCLUB_CONNECT_BONUS_ACK, std::vector<KItem> );
+   _CASE( EVENT_GET_GCCLUB_ATTEND_BONUS_ACK, std::vector<KItem> );
+    CASE( EVENT_CLOSE_CONNECTION_NOT );
+
+   _CASE( EVENT_CHANGE_VIRTUAL_CASH_COUPON_REQ, KComplexItem );
+    CASE( EVENT_CHANGE_VIRTUAL_CASH_COUPON_ACK );
+
+    // 090521. tgkwon. client -> server : 클라이언트간 Ping 처리에 대한 결과 전송
+   _CASE( EVENT_USER_PING_INFO_NOT, VECTOR_PING_INFO );
+
+   _CASE( EVENT_MISSION_PACK_REGIST_REQ, KSimpleItem );
+    CASE( EVENT_MISSION_PACK_REGIST_ACK );
+    CASE( EVENT_RAINBOW_JACKPOT_ITEM_ACK );
+    // 09.07.10. kkurrung. Rainbow Event
+    CASE_NOPARAM( EVENT_RAINBOW_JACKPOT_ITEM_REQ );
+    CASE( EVENT_EFFECT_TEX_REPORT );
+   _CASE( EVENT_CO_OP_ITEM_BUY_REQ, KCoopEventItem );
+    CASE( EVENT_CO_OP_ITEM_BUY_ACK );
+   _CASE( EVENT_GET_USER_HACKING_COUNT_ACK, int );
+    // 090810 tgkwon 아이템 교환 
+    CASE( EVENT_ITEM_TRADE_REQ );
+    CASE( EVENT_ITEM_TRADE_ACK);
+
+    // 09.09.10. tgkwon. Misson Event
+    CASE_NOPARAM( EVENT_MISSION_DATE_CHANGE_REQ );
+    CASE( EVENT_MISSION_DATE_CHANGE_ACK );
+
+   _CASE( EVENT_MY_SUBSCRIPTION_INFO_ACK, MAP_INT_DWORD );
+   _CASE( EVENT_SUBSCRIPTION_INFO_UPDATE_NOT, KECN_SUBSCRIPTION_INFO_UPDATE_NOT );
+    CASE_NOPARAM( EVENT_CURRENT_SUBSCRIPTION_GIFT_NUM_REQ );
+    CASE( EVENT_SUBSCRIPT_REQ );
+    CASE( EVENT_SUBSCRIPT_ACK );
+   _CASE( EVENT_NPC_GIFTS_REQ, int );
+    CASE( EVENT_NPC_GIFTS_ACK );
+   _CASE( EVENT_CHARACTER_STAT_INFO_REQ, PAIR_CHAR );
+   _CASE( EVENT_CLIENT_HACKING_USER_NOT, int );
+   
+    // 091007.tgkwon 주사위 게임.
+    CASE( EVENT_GET_USER_BOARD_GAME_INFO );
+    CASE_NOPARAM( EVENT_BOARD_GAME_INFO_REQ );
+    CASE_NOPARAM( EVENT_DICE_PLAY_REQ );
+    CASE( EVENT_DICE_PLAY_ACK );
+    CASE( EVENT_DICE_ITEM_TRADE_REQ );
+    CASE( EVENT_DICE_ITME_BUY_CHECK_REQ );
+    CASE( EVENT_DICE_ITME_BUY_CHECK_ACK );
+	
+    CASE( EVENT_DONATION_ITEM_GET_REQ );
+    CASE( EVENT_DONATION_ITEM_GET_ACK );
+    CASE( EVENT_DONATION_INFO_ACK );
+    CASE( EVENT_SEARCH_GUILD_LIST_REQ );
+    CASE( EVENT_SEARCH_GUILD_LIST_ACK );
+    CASE( EVENT_GUILD_LIST_REQ );
+   _CASE( EVENT_INVITE_GUILD_REQ, DWORD );
+    CASE( EVENT_JOIN_GUILD_REQ );
+    CASE( EVENT_JOIN_GUILD_ACK );
+   _CASE( EVENT_CANCEL_JOIN_GUILD_REQ, DWORD );
+    CASE( EVENT_CANCEL_JOIN_GUILD_ACK );
+    CASE( EVENT_CREATE_GUILD_REQ );
+    CASE( EVENT_CREATE_GUILD_ACK );
+   _CASE( EVENT_EDIT_GUILD_NOTICE_REQ, KNGuildNoticeList );
+   _CASE( EVENT_EDIT_GUILD_NOTICE_ACK, KNGuildNoticeList );
+    CASE( EVENT_EDIT_GUILD_NAME_REQ );
+    CASE( EVENT_EDIT_GUILD_NAME_ACK );
+   _CASE( EVENT_CHANGE_GUILD_JOIN_SETTING_REQ, KNGuildJoinPolicy );
+   _CASE( EVENT_CHANGE_GUILD_JOIN_SETTING_ACK, KNGuildJoinPolicy );
+   _CASE( EVENT_EDIT_GUILD_URL_REQ, KNGuildURL );
+   _CASE( EVENT_EDIT_GUILD_URL_ACK, KNGuildURL );
+    CASE( EVENT_BREAKUP_GUILD_REQ );
+    CASE( EVENT_BREAKUP_GUILD_ACK );
+    CASE( EVENT_CHANGE_GUILD_MEMBER_LEVEL_REQ );
+    CASE( EVENT_CHANGE_GUILD_MEMBER_LEVEL_ACK );
+    CASE_NOPARAM( EVENT_SELF_DRUMOUT_GUILD_REQ );
+    CASE( EVENT_SELF_DRUMOUT_GUILD_ACK );
+    CASE( EVENT_ACCEPT_GUILD_JOINER_REQ );
+    CASE( EVENT_ACCEPT_GUILD_JOINER_ACK );
+    CASE( EVENT_REJECT_GUILD_JOINER_REQ );
+    CASE( EVENT_REJECT_GUILD_JOINER_ACK );
+    CASE( EVENT_MARK_UPLOAD_REQ );
+    CASE( EVENT_MARK_UPLOAD_ACK );
+    CASE( EVENT_EDIT_GUILD_MY_COMMENT_REQ );
+    CASE( EVENT_EDIT_GUILD_MY_COMMENT_ACK );
+   _CASE( EVENT_GUILD_RANK_REQ, int );
+   _CASE( EVENT_UPDATE_GUILD_STATE_NOT, PAIR_UCHAR );
+    CASE_NOPARAM( EVENT_GUILD_NOTICE_LIST_REQ );
+    CASE( EVENT_UPGRADE_GUILD_GRADE_GIFT_NOT );
+    CASE( EVENT_CHANGE_GUILD_MEMBER_LEVEL_NOT );
+    CASE( EVENT_GUILD_DRUMOUT_USER_NOT );
+    CASE( EVENT_GUILD_MEMBER_LIST_REQ );
+    CASE( EVENT_GUILD_MEMBER_LIST_ACK );
+    CASE_NOPARAM( EVENT_INVITE_FRIEND_LIST_REQ );
+   _CASE( EVENT_JOIN_ROOM_OTHER_CHANNEL_REQ, KEVENT_INVITED_ROOM_FROM_SQUARE_REQ );
+
+    // 091118. kkurrung. 퀴즈 빙고.
+    CASE_NOPARAM( EVENT_USER_BINGO_DATA_REQ );
+    CASE( EVENT_USER_BINGO_DATA_ACK );
+    CASE_NOPARAM( EVENT_CHANGE_BINGO_COIN_REQ );
+    CASE( EVENT_CHANGE_BINGO_COIN_ACK );
+   _CASE( EVENT_BINGO_QUESTION_REQ, PAIR_INT );
+    CASE( EVENT_BINGO_QUESTION_ACK );
+    CASE( EVENT_BINGO_ANSWER_REQ );
+   _CASE( EVENT_BINGO_ANSWER_ACK, KBingoAnswerAckData );
+
+    // 대만 대회참가승리팀 예상 기부
+    CASE( EVENT_TOURNAMENT_DONATION_REQ );
+    CASE( EVENT_TOURNAMENT_DONATION_ACK );
+   _CASE( EVENT_ITEM_BUY_CHECK_REQ, GCITEMID );
+    CASE( EVENT_ITEM_BUY_CHECK_ACK );
+    // 090811 tgkwon 웹 가챠 아이템 교환권 교환 
+    CASE( EVENT_WEB_GACHA_COIN_TRADE_REQ );
+    CASE( EVENT_WEB_GACHA_COIN_TRADE_ACK);
+
+   _CASE( EVENT_ADVERTISING_EXPOSURE_COUNT_NOT, PAIR_INT );
+    CASE_NOPARAM( EVENT_MY_GUILD_INFO_REQ );
+
+    // 091210. kkurrung. GWC Event
+    CASE_NOPARAM( EVENT_GWC_EVENT_INFO_REQ );
+    CASE( EVENT_GWC_EVENT_INFO_ACK );
+   _CASE( EVENT_GWC_EVENT_DONATION_REQ, int );
+    CASE( EVENT_GWC_EVENT_DONATION_ACK );
+    CASE_NOPARAM( EVENT_GWC_EVENT_RESULT_REQ );
+    CASE_NOPARAM( EVENT_GUILD_TOTAL_POINT_REQ );
+
+    // 091230 tgkwon. 새해 소원 성취 이벤트
+   _CASE( EVENT_NEW_YEAR_DONATION_INFO_REQ, DWORD );
+    CASE( EVENT_NEW_YEAR_DONATION_REQ );
+    CASE( EVENT_NEW_YEAR_DONATION_ACK );
+    CASE( EVENT_SOCKET_OPEN_REQ );
+    CASE( EVENT_SOCKET_OPEN_ACK );
+
+    CASE( EVENT_MONSTER_CARD_INSERT_REQ );
+    CASE( EVENT_MONSTER_CARD_INSERT_ACK );
+    CASE( EVENT_MONSTER_CARD_REMOVE_REQ );
+    CASE( EVENT_MONSTER_CARD_REMOVE_ACK );
+
+    _CASE( EVENT_ATTRIBUTE_LIST_REQ, GCITEMUID );
+    CASE( EVENT_ATTRIBUTE_SELECT_REQ  );
+    CASE( EVENT_ATTRIBUTE_SELECT_ACK  );
+
+    CASE( EVENT_RECOMMEND_LEVELUP_NOT );
+
+   _CASE( EVENT_ITEM_BREAKUP_REQ, GCITEMUID );
+    CASE( EVENT_ITEM_BREAKUP_ACK );
+
+    CASE( DB_EVENT_TIME_DROP_ACK );
+    CASE( DB_EVENT_GET_TIME_DROP_INFO_ACK );
+    CASE( EVENT_GET_WEB_CASH_ITEM_REQ );
+    CASE( EVENT_GET_WEB_CASH_ITEM_ACK );
+    CASE( EVENT_STAT_RESOLUTION_NOT );
+
+    CASE_NOPARAM( EVENT_MANUFACTURES3_CATALOG_REQ );
+    CASE( EVENT_MANUFACTURES3_MATERIAL_REQ );
+    CASE( EVENT_MANUFACTURES3_REQ );
+    CASE( EVENT_MANUFACTURES3_ACK );
+
+    CASE_NOPARAM( EVENT_ITEM_BREAKUP_PRICE_RATIO_REQ );
+    // 100223. tgkwon. 선물상자 이벤트
+    CASE_NOPARAM( EVENT_PRESENTBOX_INFO_REQ );
+    CASE( EVENT_PRESENTBOX_TRADE_REQ );
+    CASE( EVENT_PRESENTBOX_TRADE_ACK );
+    CASE_NOPARAM( EVENT_PRESENTBOX_ACTION_REQ );
+    CASE( EVENT_PRESENTBOX_ACTION_ACK );
+   _CASE( EVENT_DUNGEON_STATE_REQ, std::set<int> );
+    CASE( EVENT_GUILD_LIST_NOT );
+
+   _CASE( EVENT_GUIDE_BOOL_CHECKPOINT_NOT, PAIR_SHORT );
+   _CASE( EVENT_UPDATE_RECOM_USER_INFO, PAIR_INT );
+    CASE_NOPARAM( EVENT_NORMAL_EXIT_NOT );
+   _CASE( EVENT_CLIENT_PING_REPORT_NOT, DWORD );
+   
+    CASE_NOPARAM( EVENT_GET_ROOMUSER_PRESS_STATE_REQ );
+   _CASE( EVENT_SET_PRESS_STATE_REQ, int );
+   _CASE( EVENT_PRESSURE_USER_REQ, DWORD );
+    CASE_NOPARAM( EVENT_GET_ROOMUSER_IDLE_STATE_REQ );
+   _CASE( EVENT_SET_IDLE_STATE_REQ, int );
+    CASE_NOPARAM( EVENT_ROOM_MEMBER_PING_INFO_REQ );
+
+   _CASE( EVENT_RELAY_LOADING_STATE, PAIR_DWORD_INT );
+
+    CASE( EVENT_BUY_FOR_GAMBLE_REQ );
+    CASE( EVENT_BUY_FOR_GAMBLE_ACK );
+    CASE_NOPARAM( EVENT_COST_RATE_FOR_GAMBLE_BUY_REQ );
+
+   //룩 변환
+   _CASE( EVENT_CHANGE_NORMAL_TO_LOOK_REQ, std::vector<GCITEMUID> );
+   _CASE( EVENT_CHANGE_NORMAL_TO_LOOK_ACK, KChangeLookItem );
+   _CASE( EVENT_CHANGE_LOOK_TO_NORMAL_REQ, std::vector<GCITEMUID> );
+   _CASE( EVENT_CHANGE_LOOK_TO_NORMAL_ACK, KChangeLookItem );
+   _CASE( EVENT_SAVE_COORDI_REQ, KSaveCoordiInfo );
+    CASE( EVENT_CHANGE_LOOK_EQUIP_REQ );
+   _CASE( EVENT_FULL_LOOK_INFO_NOT, KLookFullInfo );
+
+   // 아이템 묶어 팔기.
+    CASE( EVENT_BUNDLE_SELL_ITEM_REQ );
+    CASE( EVENT_BUNDLE_SELL_ITEM_ACK );
+
+    // C->S 던전 통계 전용
+    CASE( EVENT_STAT_END_GAME_INFO );
+    CASE_NOPARAM( EVENT_TR_SERVER_INFO_REQ );
+    // DB->S 채널링 이벤트 아이템 지급.
+   _CASE( EVENT_CHANNELING_REWARD_NOT, std::vector<KItem> );
+
+   // 캐릭터 전직 마법시 시스템.
+   CASE( EVENT_CHAR_PROMOTION_UPDATE_REQ );
+   CASE( EVENT_CHAR_PROMOTION_UPDATE_ACK );
+
+    CASE( EVENT_USER_HERO_DUNGEON_INFO_ACK );
+   _CASE( EVENT_UPDATEPLAN_HERO_DUNGEON_INFO_NOT, DWORD );
+    CASE_NOPARAM( EVENT_HERO_ITEM_CATALOG_REQ );
+    CASE( EVENT_HERO_ITEM_MATERIAL_REQ );
+   _CASE( EVENT_BUY_FOR_HERO_REQ, PAIR_USHORT_PAIR_DWORD_INT );
+    CASE( EVENT_BUY_FOR_HERO_ACK );
+
+   _CASE( EVENT_SPECIAL_REWARD_REQ, KRewardInfoList );
+    CASE( EVENT_SPECIAL_REWARD_ACK );
+
+    // 가위바위보
+   _CASE( EVENT_GAWIBAWIBO_INFO_REQ, int );
+   _CASE( DB_EVENT_GAWIBAWIBO_INFO_ACK, KUserGawibawiboInfo );
+    CASE_NOPARAM( EVENT_GAWIBAWIBO_REQ );
+    CASE( EVENT_GAWIBAWIBO_ACK );
+   _CASE( EVENT_GAWIBAWIBO_GIVE_UP_REQ, int );
+   _CASE( EVENT_GAWIBAWIBO_ITEM_TRADE_REQ, GCITEMID );
+    CASE_NOPARAM( EVENT_GAWIBAWIBO_TRYPOINT_INFO_REQ );
+   _CASE( EVENT_GAWIBAWIBO_INIT_INFO_REQ, DWORD );
+
+    CASE_NOPARAM( EVENT_STAGE_LOAD_COMPLETE_NOT );
+
+    CASE( EVENT_INIT_ITEM_ATTRIBUTE_REQ );
+    CASE( EVENT_INIT_ITEM_ATTRIBUTE_ACK );
+
+   _CASE( DB_EVENT_SOCKS_INFO_ACK, KUserSocksInfo );
+   _CASE( EVENT_SOCKS_HANGUP_REQ, std::vector< GCITEMID > );
+   _CASE( EVENT_SOCKS_HANGUP_ACK, KSocksResult );
+   _CASE( EVENT_SOCKS_COLLECT_REQ, std::vector< GCITEMID > );
+   _CASE( EVENT_SOCKS_COLLECT_ACK, KSocksResult );
+    CASE( EVENT_SOCKS_MATERIAL_EXCHANGE_NOT );
+   _CASE( EVENT_SOCKS_HANGUP_COMPLETE_NOT, KSocksResult );
+
+    CASE_NOPARAM( EVENT_SOCKS_MATERIAL_EXCHANGE_REQ );
+   _CASE( EVENT_SOCKS_MATERIAL_EXCHANGE_ACK, KSocksExchangeData );
+   _CASE( EVENT_END_GAME_BROAD, KEndGameAck );
+    // 실시간 보상
+   _CASE( EVENT_DUNGEON_REWARD_GP_NOT, std::set<DWORD> );
+    CASE( EVENT_DUNGEON_REWARD_ITEM_REQ );
+    CASE( EVENT_DUNGEON_REWARD_ITEM_ACK );
+   _CASE( EVENT_DUNGEON_REWARD_EXP_REQ, int );
+    CASE( EVENT_PVP_REWARD_EXP_GP_REQ );
+    CASE( EVENT_PVP_TAG_REWARD_EXP_GP_REQ );
+   _CASE( EVENT_UNLOCK_CHANGE_WEAPON_REQ, char );
+    CASE( EVENT_UNLOCK_CHANGE_WEAPON_ACK );
+    // 속성 랜덤 선택.
+    CASE( EVENT_ITEM_ATTRIBUTE_RANDOM_SELECT_REQ );
+    CASE( EVENT_ITEM_ATTRIBUTE_RANDOM_SELECT_ACK );
+
+   _CASE( EVENT_USER_SERVER_ROOM_REQ, PAIR_DWORD_WSTRING );
+    CASE( EVENT_USER_SERVER_ROOM_ACK );
+
+   _CASE( EVENT_TODAYS_POPUP_INFO_ACK, int );
+    CASE_NOPARAM( EVENT_DISABLE_TODAYS_POPUP_NOT );
+    CASE( EVENT_RESET_SKILL_REQ );
+    CASE_NOPARAM( EVENT_FASHION_CATALOG_REQ );
+    CASE( EVENT_FASHION_CATALOG_ACK );
+    CASE_NOPARAM( EVENT_USER_RECOM_TYPE_REQ );
+   _CASE( EVENT_USER_RECOM_TYPE_ACK, int );
+    // 110222. tgkwon. 나무나무 이벤트.
+    CASE_NOPARAM( EVENT_PLANT_TREE_INFO_REQ );
+    CASE( EVENT_PLANT_TREE_INFO_ACK );
+    CASE( EVENT_PLANT_TREE_ACTION_REQ );
+    CASE( EVENT_PLANT_TREE_ACTION_ACK );
+   _CASE( EVENT_PLANT_TREE_REWARD_REQ, DWORD );
+    CASE( EVENT_PLANT_TREE_REWARD_ACK );
+
+    CASE_NOPARAM( EVENT_GUILD_STORE_CATALOG_REQ );
+    CASE( EVENT_BUY_FOR_GUILD_REQ );
+    CASE( EVENT_BUY_FOR_GUILD_ACK );
+
+    CASE_NOPARAM( EVENT_CHOICE_BOX_LIST_REQ );
+   _CASE( EVENT_CHOICE_BOX_INFO_REQ, GCITEMID );
+    CASE( EVENT_CHOICE_BOX_OPEN_REQ );
+    CASE( EVENT_CHOICE_BOX_OPEN_ACK );
+    CASE( EVENT_USER_AUTH_CHECK_REQ );
+    CASE( EVENT_USER_AUTH_CHECK_ACK );
+    
+   _CASE( EVENT_ITEM_LEVEL_LIST_REQ, GCITEMUID );
+    CASE( EVENT_ITEM_LEVEL_SELECT_REQ );
+    CASE( EVENT_ITEM_LEVEL_SELECT_ACK );
+   _CASE( EVENT_ITEM_ATTRIBUTE_TABLE_ID_REQ, GCITEMUID );
+
+    CASE_NOPARAM( EVENT_VIPEVENT_LIST_REQ );
+   _CASE( EVENT_VIPEVENT_USER_INFO_REQ, USHORT );
+    CASE( EVENT_VIPEVENT_USER_INFO_ACK );
+    CASE( EVENT_VIPEVENT_USER_REWARD_UPDATE_NOT );
+
+    CASE_NOPARAM( EVENT_MAGIC_BOX_LIST_REQ );
+    CASE( EVENT_MAGIC_BOX_LIST_ACK );
+   _CASE( EVENT_SET_MAGIC_BOX_TARGET_REQ, GCITEMID );
+    CASE( EVENT_SET_MAGIC_BOX_TARGET_ACK );
+    CASE( EVENT_USE_MAGIC_BOX_REQ );
+    CASE( EVENT_USE_MAGIC_BOX_ACK );
+
+    CASE_NOPARAM( EVENT_PACKAGE_INFO_REQ );
+    CASE( EVENT_RKTORNADO_ACTION_REQ );
+    CASE( EVENT_RKTORNADO_ACTION_ACK );
+    CASE( EVENT_RKTORNADO_ITEM_LIST_NOT );
+
+    CASE_NOPARAM( EVENT_OPEN_CALENDAR_BONUS_POINT_REQ );
+    CASE( EVENT_OPEN_CALENDAR_BONUS_POINT_ACK );
+
+    CASE_NOPARAM( EVENT_USER_SPHINX_DATA_REQ );
+    CASE( EVENT_USER_SPHINX_DATA_ACK );
+    CASE( EVENT_SPHINX_QUESTION_REQ );
+    CASE( EVENT_SPHINX_QUESTION_ACK );
+    CASE( EVENT_SPHINX_ANSWER_REQ );
+    CASE( EVENT_SPHINX_ANSWER_ACK );
+
+    CASE( EVENT_CREATE_PARTY_REQ );
+   _CASE( EVENT_CREATE_PARTY_ANSWER, KPartyData );
+    CASE( EVENT_INVITE_PARTY_REQ );
+    CASE( EVENT_STRENGTH_EQUIP_REQ ); // 강화석 강화 시스템.
+    CASE( EVENT_STRENGTH_EQUIP_ACK );
+    CASE( EVENT_STRENGTH_ACTION_REQ );
+    CASE( EVENT_STRENGTH_ACTION_ACK );
+    CASE( EVENT_STRENGTH_BREAKUP_REQ );
+    CASE( EVENT_STRENGTH_BREAKUP_ACK );
+    CASE( EVENT_STRENGTH_COMPOSE_REQ );
+    CASE( EVENT_STRENGTH_COMPOSE_ACK );
+
+   _CASE( EVENT_INVITE_PARTY_ANSWER, KPartyData );
+   _CASE( EVENT_CHANGE_PARTY_HOST_REQ, DWORD );
+   _CASE( EVENT_LEAVE_PARTY_USER_REQ, DWORD );
+   _CASE( EVENT_LEAVE_PARTY_BROAD, KPartyData );
+   _CASE( EVENT_CREATE_PARTY_ASK, KPartyData );
+   _CASE( EVENT_CREATE_PARTY_ACK, KPartyData );
+
+    CASE_NOPARAM( EVENT_INVITE_PARTY_ROOM_REQ );
+   _CASE( EVENT_CHANGE_PARTY_HOST_BROAD, KPartyData );
+   _CASE( EVENT_BREAK_PARTY_NOT, KPartyData );
+   _CASE( EVENT_BAN_PARTY_USER_REQ, DWORD );
+   _CASE( EVENT_BAN_PARTY_USER_NOT, KPartyData );
+   _CASE( EVENT_INVITE_PARTY_ASK, KPartyData );
+   _CASE( EVENT_INVITE_PARTY_BROAD, KPartyData );
+
+   _CASE( EVENT_ENTER_AGIT_REQ, KEnterAgitReq );
+   _CASE( EVENT_ENTER_AGIT_NOT, KEnterAgitAck );
+   _CASE( EVENT_ENTER_AGIT_ACK, KEnterAgitAck );
+    CASE( EVENT_ENTER_AGIT_BROAD );
+    CASE_NOPARAM( EVENT_AGIT_LOADING_COMPLETE_REQ );
+    CASE_NOPARAM( EVENT_AGIT_LOADING_FAIL_NOT );
+   _CASE( EVENT_AGIT_LOADING_COMPLETE_ACK, KAgitLoadingCompleteAck );
+    CASE_NOPARAM( EVENT_LEAVE_AGIT_REQ );
+   _CASE( EVENT_LEAVE_AGIT_ACK, DWORD );
+    CASE( EVENT_LEAVE_AGIT_BROAD );
+    CASE( EVENT_AGIT_VISITER_COUNT_BROAD );
+
+    CASE_NOPARAM( EVENT_AGIT_MAP_CATALOGUE_REQ );
+   _CASE( EVENT_BUY_AGIT_MAP_REQ, DWORD );
+   _CASE( EVENT_BUY_AGIT_MAP_NOT, KBuyAgitMapAck );
+   _CASE( EVENT_BUY_AGIT_MAP_ACK, KBuyAgitMapAck );
+    CASE( EVENT_CHANGE_AGIT_MAP_BROAD );
+   _CASE( EVENT_SET_AGIT_OPTION_REQ, KAgitOption );
+
+    CASE_NOPARAM( EVENT_AGIT_STORE_CATALOG_REQ );
+    CASE( EVENT_AGIT_STORE_MATERIAL_REQ );
+   _CASE( EVENT_BUY_FOR_AGIT_REQ, PAIR_USHORT_DWORD );
+    CASE( EVENT_BUY_FOR_AGIT_ACK );
+   _CASE( EVENT_SELL_FOR_AGIT_REQ, std::vector<GCITEMUID> );
+    CASE( EVENT_SELL_FOR_AGIT_ACK );
+
+   _CASE( EVENT_SEED_FLOWER_POT_REQ, KSeedFlowerPotReq );
+   _CASE( EVENT_SEED_FLOWER_POT_ACK, KSeedFlowerPotAck );
+    CASE( EVENT_CHANGE_FLOWER_POT_STATE_BROAD );
+   _CASE( EVENT_HARVEST_FLOWER_POT_REQ, KHarvestFlowerPotReq );
+   _CASE( EVENT_HARVEST_FLOWER_POT_NOT, KHarvestFlowerPotAck );
+   _CASE( EVENT_HARVEST_FLOWER_POT_ACK, KHarvestFlowerPotAck );
+   _CASE( EVENT_AGIT_STAY_BONUS_DROP_ACK, KAgitBonusDrop );
+    CASE( EVENT_TODAYS_SEED_DROP_COUNT_ACK );
+
+   _CASE( EVENT_AGIT_CHAT_REQ, KChatData );
+   _CASE( EVENT_AGIT_CHAT_ACK, KAgitChatAck );
+   _CASE( EVENT_AGIT_CHAT_BROAD, KChatData );
+   _CASE( EVENT_AGIT_BAN_USER_REQ, KAgitBanUserReq );
+   _CASE( EVENT_AGIT_BAN_USER_ACK, KAgitBanUserAck );
+   _CASE( EVENT_AGIT_BAN_USER_NOT, DWORD );
+
+   _CASE( EVENT_SET_AGIT_OBJECT_POS_REQ, KSetAgitObjectPosReq );
+   _CASE( EVENT_SET_AGIT_OBJECT_POS_ACK, KSetAgitObjectPosAck );
+    CASE( EVENT_CHANGE_AGIT_OBJECT_POS_BROAD );
+
+   _CASE( EVENT_AGIT_FRIEND_LIST_REQ, KAgitFriendListReq );
+    CASE_NOPARAM( EVENT_AGIT_TOP_RANK_LIST_REQ );
+    CASE_NOPARAM( EVENT_AGIT_FAVORITE_LIST_REQ );
+   _CASE( EVENT_AGIT_ADD_FAVORITE_REQ, KAgitUserParam );
+   _CASE( EVENT_AGIT_REMOVE_FAVORITE_REQ, KAgitUserParam );
+
+   _CASE( EVENT_REGISTER_AGIT_PAGE_REQ, KRegisterAgitPageReq );
+    CASE_NOPARAM( EVENT_UNREGISTER_AGIT_PAGE_REQ );
+   _CASE( EVENT_AGIT_PAGE_LIST_REQ, KAgitPageList );
+
+    CASE_NOPARAM( EVENT_BROWNIE_STORE_CATALOG_REQ );
+    CASE( EVENT_BROWNIE_STORE_MATERIAL_REQ );
+   _CASE( EVENT_BUY_FOR_BROWNIE_REQ, PAIR_USHORT_DWORD );
+    CASE( EVENT_BUY_FOR_BROWNIE_ACK );
+   _CASE( EVENT_EQUIP_BROWNIE_REQ, KEquipBrownieReq );
+    CASE( EVENT_CHANGE_BROWNIE_BROAD );
+
+    CASE_NOPARAM( EVENT_WATERING_FAIRY_TREE_REQ );
+    CASE( EVENT_CHANGE_FAIRY_TREE_BROAD );
+   _CASE( EVENT_FAIRY_TREE_BUFF_NOT, KFairyTreeFruitBuff );
+    CASE_NOPARAM( EVENT_USE_FAIRY_TREE_FRUIT_REQ );
+   _CASE( EVENT_USE_FAIRY_TREE_FRUIT_ACK, KUseFairyTreeFruitAck );
+
+   _CASE( EVENT_AGIT_INIT_SEED_ACK, KAgitBonusDrop );
+   _CASE( EVENT_DROP_FLOWER_POT_ACK, KAddItemAck );
+    CASE_NOPARAM( EVENT_AGIT_TUTORIAL_DONE_REQ );
+   _CASE( EVENT_AGIT_TUTORIAL_DONE_ACK, bool );
+    CASE_NOPARAM( EVENT_AGIT_TUTORIAL_REQ );
+    CASE( EVENT_AGIT_TUTORIAL_ACK );
+   _CASE( EVENT_INVITE_AGIT_REQ, std::vector<DWORD> );
+   _CASE( EVENT_INVITE_AGIT_NOT, KInviteAgitNot );
+   _CASE( EVENT_ENTER_AGIT_SID_ACK, KEnterAgitSIDAck );
+   _CASE( EVENT_CHANGE_AGIT_OPTION_BROAD, KAgitOption );
+   _CASE( EVENT_AGIT_USER_OPTION_ACK, KAgitInfo );
+
+    CASE_NOPARAM( EVENT_GUESTBOOK_PAGE_REQ );
+   _CASE( EVENT_GUESTBOOK_WRITE_REQ, KGuestBookWriteReq );
+   _CASE( EVENT_GUESTBOOK_WRITE_BROAD, KGuestBookWriteBroad );
+   _CASE( EVENT_GUESTBOOK_DELETE_REQ, KGuestBookDeleteReq );
+   _CASE( EVENT_GUESTBOOK_DELETE_BROAD, KGuestBookDeleteBroad );
+
+   _CASE( EVENT_USE_TRAINING_OBJ_REQ, KUseTrainingObjReq );
+   _CASE( EVENT_USE_TRAINING_OBJ_ACK, KUseTrainingObjAck );
+   _CASE( EVENT_UPDATE_TRAINING_OBJ_BROAD, KUpdateTrainingObjBroad );
+
+   _CASE( EVENT_OPEN_AGIT_CHARACTER_REQ, int );
+   _CASE( EVENT_OPEN_AGIT_CHARACTER_ACK, KOpenAgitCharacterAck );
+   _CASE( EVENT_SET_AGIT_CHARACTER_POS_REQ, KSetAgitCharPosReq );
+   _CASE( EVENT_SET_AGIT_CHARACTER_MOTION_REQ, KSetAgitCharMotionReq );
+    CASE( EVENT_SET_AGIT_CHARACTER_COORDI_REQ );
+   _CASE( EVENT_SET_AGIT_CHARACTER_SPEECH_REQ, KSetAgitCharSpeechReq );
+   _CASE( EVENT_UPDATE_AGIT_CHARACTER_BROAD, KUpdateAgitCharBroad );
+   _CASE( EVENT_UPDATE_AGIT_CHARACTER_POS_BROAD, KSetAgitCharPosReq );
+    CASE_NOPARAM( EVENT_FAIRY_TREE_LV_TABLE_REQ );
+
+    CASE( EVENT_SHUTDOWN_ALARM_NOT );
+    CASE_NOPARAM( EVENT_INVEN_BUFF_ITEM_LIST_REQ );
+
+   _CASE( EVENT_NMNETCAFE_LOGIN_ACK, KNmNetcafeParamAck );
+   _CASE( EVENT_NMNETCAFE_EXPIRE_NOT, KNmNetcafeParamAck );
+    CASE( EVENT_NMNETCAFE_BONUS_ACK );
+   _CASE( EVENT_NMNETCAFE_LOGOUT_ACK, UINT );
+    CASE( EVENT_SURVEY_REWARD_REQ );
+    CASE( EVENT_SURVEY_REWARD_ACK );
+    CASE( EVENT_SURVEY_LIST_NOT );
+    CASE_NOPARAM( EVENT_SHA_ENABLE_REQ );
+    
+    CASE_NOPARAM( EVENT_GWC_RANKING_LIST_REQ );
+    CASE_NOPARAM( EVENT_GWC_RANKING_REWARD_REQ );
+    CASE( EVENT_GWC_RANKING_REWARD_ACK );
+
+    CASE( EVENT_JUST_IN_TIME_REWARD_REQ );
+    CASE( EVENT_JUST_IN_TIME_REWARD_ACK );
+    CASE( EVENT_JUST_IN_TIME_ON_TIME_NOT );
+
+    CASE_NOPARAM( EVENT_CHARISMAS_EVENT_INFO_REQ );
+    CASE( EVENT_CHARISMAS_EVENT_INFO_ACK );
+   _CASE( EVENT_CHARISMAS_EVENT_CONNECT_CHECK_REQ, std::wstring );
+    CASE( EVENT_CHARISMAS_EVENT_CONNECT_CHECK_ACK );
+    CASE( EVENT_CHARISMAS_EVENT_PRESENT_REQ );
+    CASE( EVENT_CHARISMAS_EVENT_PRESENT_ACK );
+    CASE( EVENT_CHARISMAS_EVENT_PRESENT_NOT );
+    CASE( EVENT_CHARISMAS_EVENT_DONATION_REQ );
+    CASE( EVENT_CHARISMAS_EVENT_DONATION_ACK );
+    CASE( EVENT_CHARISMAS_EVENT_GRADE_REWARD_REQ );
+    CASE( EVENT_CHARISMAS_EVENT_GRADE_REWARD_ACK );
+
+    CASE( EVENT_STAT_HOTKEY_USED_INFO_NOT );
+
+    CASE( DB_EVENT_INIT_POST_LETTER_LIST_ACK );
+    CASE( EVENT_GET_POST_LETTER_LIST_REQ );
+    CASE( EVENT_SEND_LETTER_REQ );
+    CASE( EVENT_SEND_LETTER_ACK );
+   _CASE( EVENT_FIND_USER_SEND_LETTER_NOT, DWORD );
+   _CASE( EVENT_RECEIVE_LETTER_NOT, DWORD );
+   _CASE( EVENT_READ_LETTER_REQ, POSTUID );
+   _CASE( EVENT_GET_ITEM_FROM_LETTER_REQ, POSTUID );
+    CASE( EVENT_GET_ITEM_FROM_LETTER_ACK );
+   _CASE( EVENT_DELETE_LETTER_REQ, std::vector<POSTUID> );
+    CASE( EVENT_DELETE_LETTER_ACK );
+    CASE_NOPARAM( EVENT_RENEWAL_LETTER_REQ );
+    CASE( EVENT_NEW_POST_LETTER_INFO_ACK );
+    CASE_NOPARAM( EVENT_SOCKS_INFO_REQ );
+    CASE( EVENT_DUNGEON_CLEAR_REWARD_REQ );
+    CASE( EVENT_DUNGEON_CLEAR_REWARD_ACK );
+    CASE( EVENT_EQUIP_LEVEL_DOWN_REQ );
+    CASE( EVENT_EQUIP_LEVEL_DOWN_ACK );
+
+   _CASE( EVENT_ECLIPSE_TIME_EVENT_INFO_NOT, DWORD );
+    CASE_NOPARAM( EVENT_ECLIPSE_PLOT_TIME_REWARD_REQ );
+    CASE( EVENT_ECLIPSE_PLOT_TIME_REWARD_ACK );
+    CASE_NOPARAM( EVENT_ECLIPSE_PLOT_INFO_REQ );
+   _CASE( EVENT_ECLIPSE_PLOT_INFO_ACK, KEclipsePlotData );
+    CASE( EVENT_ECLIPSE_PLOT_HUNT_REWARD_REQ );
+    CASE( EVENT_ECLIPSE_PLOT_HUNT_REWARD_ACK );
+    CASE_NOPARAM( EVENT_ECLIPSE_PLOT_FINAL_REWARD_REQ );
+    CASE( EVENT_ECLIPSE_PLOT_FINAL_REWARD_ACK );
+   _CASE( EVENT_SIGN_BOARD_ECLIPSE_ALARM_NOT, int );
+
+    CASE_NOPARAM( EVENT_ECLIPSE_COLLECT_INFO_REQ );
+    CASE_NOPARAM( EVENT_ECLIPSE_COLLECT_REWARD_REQ );
+    CASE( EVENT_ECLIPSE_COLLECT_REWARD_ACK );
+   _CASE( EVENT_ECLIPSE_COLLECT_REWARD_ANSWER_NOT, bool );
+
+    CASE( EVENT_MONSTER_CARD_MIX_REQ );
+    CASE( EVENT_MONSTER_CARD_MIX_ACK );
+
+    _CASE( EVENT_USE_EXP_POTION_REQ, KExpPotionReq );
+    CASE_NOPARAM( EVENT_EXP_POTION_LIST_REQ);
+   _CASE( EVENT_DEPOT_CHAR_TAB_INFO_REQ, KDepotInfo );
+    CASE( EVENT_DEPOT_CHAR_TAB_INFO_NOT );
+   _CASE( EVENT_DEPOT_INSERT_ITEM_REQ, KDepotItem );
+   _CASE( EVENT_DEPOT_DELETE_ITEM_REQ, KDepotItem );
+
+    CASE( EVENT_DEPOT_MOVE_ITEM_REQ );
+    CASE( EVENT_DEPOT_EXTEND_REQ );
+    CASE( EVENT_DEPOT_EXTEND_ACK );
+    CASE_NOPARAM( EVENT_DEPOT_INFO_REQ );
+    CASE( EVENT_DEPOT_INFO_ACK );
+    CASE( EVENT_DEPOT_CREATE_ACK );
+
+    CASE_NOPARAM( EVENT_UPDATE_DEPOT_DATA_REQ );
+   _CASE( EVENT_UPDATE_DEPOT_DATA_ACK, KDepotUpdateData );
+
+   _CASE( EVENT_GACHA_NOTICE_POPUP_INFO_NOT, bool );
+    CASE_NOPARAM( EVENT_UPDATE_GACHA_POPUP_INFO );
+
+   _CASE( EVENT_GACHA_LEVEL_ACTION_REQ, KEVENT_GACHA_ACTION_REQ );
+    CASE_NOPARAM( EVENT_GACHA_LEVEL_OBTAINED_SET_REWARD_REQ );
+   _CASE( EVENT_GACHA_LEVEL_SET_REWARD_REQ, KEVENT_GACHA_SET_REWARD_REQ );
+   _CASE( EVENT_GACHA_LEVEL_SET_REWARD_ACK, KEVENT_GACHA_SET_REWARD_ACK );
+
+    CASE( EVENT_ADD_SKILL_SLOT_OPEN_REQ );
+    CASE( EVENT_ADD_SKILL_SLOT_OPEN_ACK );
+
+    CASE_NOPARAM( EVENT_MONSTER_CARD_MIX_INFO_REQ );
+
+    CASE_NOPARAM( EVENT_SONGKRAN_SCRIPT_INFO_REQ );
+    CASE_NOPARAM( EVENT_SONGKRAN_USER_INFO_REQ );
+    CASE( DB_EVENT_SONGKRAN_USER_INFO_ACK );
+   _CASE( EVENT_SONGKRAN_WATERBOMB_USE_REQ, int );
+    CASE_NOPARAM( EVENT_SONGKRAN_GRADE_REWARD_REQ );
+    CASE( EVENT_SONGKRAN_GRADE_REWARD_ACK );
+    CASE_NOPARAM( EVENT_SONGKRAN_WATERBOMB_EXCHANGEITEM_USE_REQ );
+    CASE( EVENT_SONGKRAN_WATERBOMB_EXCHANGEITEM_USE_ACK );
+    CASE( EVENT_SONGKRAN_WATERBOMB_USE_ACK );
+   _CASE( DB_EVENT_SONGKRAN_USER_INFO_REQ, bool );
+
+    CASE( EVENT_ATTEND_GET_CHAR_ACK );
+
+    CASE( EVENT_TEST_ADD_ITEM_REQ );
+    CASE( EVENT_TEST_ADD_ITEM_ACK ); 
+
+    CASE( EVENT_LEVEL_RESET_EVENT_INFO_ACK );
+    CASE( EVENT_LEVEL_RESET_EVENT_ITEM_REQ );
+    CASE( EVENT_LEVEL_RESET_EVENT_ITEM_ACK );
+    CASE( EVENT_LEVEL_RESET_EVENT_REWARD_ACK );	
+
+    CASE( EVENT_NEW_CHAR_CHOICE_REQ );
+    CASE( EVENT_NEW_CHAR_CHOICE_ACK );
+
+    CASE_NOPARAM( EVENT_OLYMPIC_SCHEDULE_REQ );
+    CASE_NOPARAM( EVENT_OLYMPIC_INFO_REQ );
+    CASE( EVENT_OLYMPIC_INFO_ACK );
+    CASE_NOPARAM( EVENT_OLYMPIC_JOIN_GAME_REQ );
+    CASE( EVENT_OLYMPIC_JOIN_GAME_ACK );
+    CASE( EVENT_OLYMPIC_ALARM_NOT );
+
+    CASE( EVENT_OLYMPIC_WATERBOMB_RESULT_REQ );
+    CASE( EVENT_OLYMPIC_WATERBOMB_RESULT_ACK );
+    CASE( EVENT_OLYMPIC_GAWIBAWIBO_RESULT_REQ );
+    CASE( EVENT_OLYMPIC_GAWIBAWIBO_RESULT_ACK );
+    CASE( EVENT_OLYMPIC_DICEPLAY_RESULT_REQ );
+    CASE( EVENT_OLYMPIC_DICEPLAY_RESULT_ACK );
+    CASE( EVENT_OLYMPIC_TREEDROP_RESULT_REQ );
+    CASE( EVENT_OLYMPIC_TREEDROP_RESULT_ACK );
+    CASE( EVENT_OLYMPIC_BALLOON_RESULT_REQ );
+    CASE( EVENT_OLYMPIC_BALLOON_RESULT_ACK );
+    CASE( EVENT_OLYMPIC_REWARD_REQ );
+    CASE( EVENT_OLYMPIC_REWARD_ACK );
+    CASE( EVENT_OLYMPIC_BOSSGATE_RESULT_NOT );
+    CASE( EVENT_CHAR_LEVEL_REWARD_EVENT_NOT );
+
+    CASE_NOPARAM( EVENT_ADVENTURE_DATA_REQ );
+    CASE( EVENT_ADVENTURE_DATA_ACK );
+    CASE( EVENT_ADVENTURE_CONTINENT_REWARD_REQ );
+    CASE( EVENT_ADVENTURE_CONTINENT_REWARD_ACK );
+    CASE_NOPARAM( EVENT_ADVENTURE_FINAL_REWARD_REQ );
+    CASE( EVENT_ADVENTURE_FINAL_REWARD_ACK );
+
+    CASE( EVENT_GP_ATTRIBUTE_RANDOM_REQ );
+    CASE( EVENT_GP_ATTRIBUTE_RANDOM_ACK );
+    CASE( EVENT_INIT_ITEM_GP_ATTRIBUTE_REQ );
+    CASE( EVENT_INIT_ITEM_GP_ATTRIBUTE_ACK );
+
+   _CASE( EVENT_ITEM_COMPOSE_REQ, std::vector<GCITEMUID> );
+    CASE( EVENT_ITEM_COMPOSE_ACK );
+   _CASE( EVENT_SKILL_OPENKEY_USE_REQ, int );
+    CASE( EVENT_SKILL_OPENKEY_USE_ACK );
+   _CASE( EVENT_GACHA_LOTTERY_ACTION_REQ, char );
+    CASE( EVENT_GACHA_LOTTERY_ACTION_ACK );
+
+
+    CASE_NOPARAM( EVENT_SPECIFIC_ITEM_BREAKUP_INFO_REQ );
+    CASE_NOPARAM( EVENT_MATCH_INVITE_FRIEND_LIST_REQ );	
+
+    CASE( EVENT_PARTY_USER_READY_REQ );
+   _CASE( EVENT_PARTY_USER_READY_BROAD, KPartyData );
+    CASE( EVENT_ADD_MATCH_REQ );
+    CASE( EVENT_ADD_MATCH_ACK );
+    CASE( EVENT_ADD_MATCH_BROAD );
+    CASE_NOPARAM( EVENT_DEL_MATCH_REQ );
+   _CASE( EVENT_DEL_MATCH_BROAD, int );
+    CASE_NOPARAM( EVENT_CURRENT_MATCH_MODE_COUNT_REQ );
+    CASE( EVENT_CURRENT_MATCH_MODE_COUNT_BROAD );
+   _CASE( EVENT_DISCONNECT_MATCHSERVER_NOT, int );
+    CASE( EVENT_FIND_MATCH_NOT );
+    CASE( EVENT_ACCEPT_MATCH_REQ );
+    CASE( EVENT_ACCEPT_MATCH_BROAD );
+    CASE_NOPARAM( EVENT_START_GAME_POSSIBLE_REQ );
+   _CASE( EVENT_START_GAME_FAIL_NOT, DWORD );
+    CASE_NOPARAM( EVENT_MATCH_MODE_STATE_REQ );
+
+    CASE_NOPARAM( EVENT_HERO_ITEM_UPGRADE_INFO_REQ );
+    CASE( EVENT_HERO_ITEM_UPGRADE_REQ );
+    CASE( EVENT_HERO_ITEM_UPGRADE_ACK );
+
+    CASE_NOPARAM( EVENT_RITAS_CHRISTMAS_USER_INFO_REQ );
+    CASE( EVENT_RITAS_CHRISTMAS_USER_INFO_ACK );
+    CASE_NOPARAM( EVENT_RITAS_CHRISTMAS_PLAY_INFO_REQ );
+    CASE_NOPARAM( EVENT_RITAS_CHRISTMAS_RANK_INFO_REQ );
+    CASE( EVENT_RITAS_CHRISTMAS_RANK_INFO_ACK );
+    CASE( EVENT_RITAS_CHRISTMAS_STAGE_START_REQ );
+    CASE( EVENT_RITAS_CHRISTMAS_EMPTY_BASKET_REQ );
+    CASE( EVENT_RITAS_CHRISTMAS_STAGE_END_REQ );
+    CASE( EVENT_RITAS_CHRISTMAS_GET_REWARD_REQ );
+    CASE( EVENT_RITAS_CHRISTMAS_GET_REWARD_ACK );
+    CASE_NOPARAM( EVENT_RITAS_CHRISTMAS_EXCHANGE_CONTINUE_COIN_REQ );
+    CASE( EVENT_RITAS_CHRISTMAS_EXCHANGE_CONTINUE_COIN_ACK );
+   _CASE( EVENT_RITAS_CHRISTMAS_RANK_UPDATE_TIME_CHANGED_NOT, bool );
+    CASE_NOPARAM( EVENT_RITAS_CHRISTMAS_REWARD_VIEW_INFO_REQ );
+    CASE( EVENT_MATCH_RANK_PAGE_REQ );
+   _CASE( EVENT_MY_MATCH_RANK_INFO_NOT, KMyMatchRankInfo );
+    CASE( EVENT_MATCH_RANK_SEARCH_REQ );
+    CASE( EVENT_MATCH_RANK_SEARCH_ACK );
+    CASE_NOPARAM( EVENT_MY_MATCH_RANK_INFO_REQ );
+    CASE( EVENT_STAT_CLIENT_INFO ); // 클라이언트 사양 조사.
+
+   _CASE( EVENT_UPDATE_ITEM_COUNT_NOT, std::vector< KItem > );
+
+    // === 발렌타인데이에 사용 되는 이벤트 ===
+    // 버프 기부
+    CASE( EVENT_BUFF_DONATION_LOGIN_INFO_NOT );
+    CASE( EVENT_BUFF_DONATION_TOTAL_DATA_NOT );
+    CASE( EVENT_BUFF_DONATION_REQ );
+    CASE( EVENT_BUFF_DONATION_ACK );
+    // 누적 출석
+   _CASE( EVENT_ACCUMULATE_ATTENDANCE_REQ, DWORD );
+    CASE( EVENT_ACCUMULATE_ATTENDANCE_ACK );
+    CASE_NOPARAM( EVENT_ACCUMULATE_ATTENDANCE_INFO_REQ );
+   _CASE( EVENT_ACCUMULATE_ATTENDANCE_REWARD_REQ, int );
+    CASE( EVENT_ACCUMULATE_ATTENDANCE_REWARD_ACK );
+    // === 발렌타인 이벤트 끝 ===
+
+   _CASE( DB_EVENT_ERRAND_USER_INFO_REQ, DWORD );
+    CASE_NOPARAM( EVENT_CHAR_SELECT_JOIN_REQ );	
+
+    CASE_NOPARAM( EVENT_CASHBACK_EXTRA_RATIO_INFO_REQ );
+    CASE( EVENT_CASHBACK_EXTRA_RATIO_INFO_ACK );	
+
+   _CASE( EVENT_ERRAND_USER_INFO_ACK, KErrandUserInfoDataStruct );
+    CASE_NOPARAM( EVENT_ERRAND_INIT_INFO_REQ );
+   _CASE( EVENT_ERRAND_REWARD_REQ, int );
+    CASE( EVENT_ERRAND_REWARD_ACK );
+   _CASE( EVENT_ERRAND_GAME_END_REQ, int );
+    CASE_NOPARAM( EVENT_ERRAND_USER_INFO_REQ );
+    CASE( EVENT_LOOK_INVENTORY_EXTEND_REQ );
+    CASE( EVENT_LOOK_INVENTORY_EXTEND_ACK );
+
+   _CASE( EVENT_UPDATEPLAN_GET_GACHA_USER_DB_DATA_NOT, DWORD );
+    CASE_NOPARAM( EVENT_GACHA_DATA_CHANGE_NOT );
+    CASE( EVENT_DUNGEON_SUBJECT_REWARD_REQ );
+    CASE( EVENT_DUNGEON_SUBJECT_REWARD_ACK );
+
+    CASE( EVENT_GRADUATE_CHARACTER_USER_INFO_NOT );	
+
+    CASE( EVENT_SYSTEM_GUIDE_COMPLETE_INFO_NOT );
+    CASE( EVENT_SYSTEM_GUIDE_ITEM_REQ );
+    CASE( EVENT_SYSTEM_GUIDE_ITEM_ACK );
+   _CASE( EVENT_SYSTEM_GUIDE_COMPLETE_REQ, int );
+    CASE( EVENT_SYSTEM_GUIDE_COMPLETE_ACK );
+    CASE_NOPARAM( EVENT_NEW_USER_TUTORIAL_CLEAR_NOT );
+   _CASE( EVENT_ATTRIBUTE_MIGRATION_INFO_REQ, GCITEMUID );
+    CASE( EVENT_ATTRIBUTE_MIGRATION_SELECT_REQ );
+    CASE( EVENT_ATTRIBUTE_MIGRATION_SELECT_ACK );
+    CASE( EVENT_PACKAGE_INFO_DETAIL_REQ );
+
+    CASE( EVENT_CYOU_CASH_CHANGE_REQ );
+   _CASE( EVENT_CYOU_CASH_CHANGE_ACK, KCYOUCashPoint );
+
+    CASE_NOPARAM( EVENT_CYOU_GET_WEB_POINT_REQ );
+   _CASE( EVENT_CYOU_GET_WEB_POINT_ACK, KCYOUCashPoint );
+   _CASE( EVENT_CYOU_LOGIN_ACK, int );
+   _CASE( EVENT_CYOU_USER_HEART_BEAT_ACK, int );
+
+   _CASE( EVENT_ADD_SLOT_REQ, GCITEMID );
+    CASE( EVENT_ADD_SLOT_ACK );
+
+    _CASE( EVENT_VERIFY_INVENTORY_NOT, KEVENT_QUERY_INVENTORY_INFO_ACK );
+    
+    CASE( EVENT_CHANGE_CHARACTER_INFO_REQ );
+    CASE( EVENT_CHANGE_CHARACTER_INFO_ACK );
+
+    CASE( EVENT_VITALITY_INFO_NOT );
+   _CASE( EVENT_VITALITY_RECHARGE_REQ, int );
+   _CASE( DB_EVENT_VITALITY_INFO_REQ, bool );
+
+   _CASE( EVENT_CYOU_LOGIN_REQ, PAIR_CHAR_CHAR );
+    CASE( EVENT_USER_CHAT_CHANGE_BY_ADMIN_REQ );
+
+    CASE( EVENT_CONNECTION_GIFTBOX_FIRST_CHARACTER_GET_GIFT_NOT );
+    CASE_NOPARAM( EVENT_CONNECTION_GIFTBOX_NEWUSER_GET_GIFT_REQ );
+    CASE( EVENT_CONNECTION_GIFTBOX_NEWUSER_GET_GIFT_ACK );
+    CASE_NOPARAM( EVENT_CONNECTION_GIFTBOX_EVENTUSER_GET_GIFT_REQ );
+    CASE( EVENT_CONNECTION_GIFTBOX_EVENTUSER_GET_GIFT_ACK );
+   _CASE( EVENT_NICKNAME_VALIDITY_CHECK_REQ, std::wstring );
+    CASE( EVENT_NICKNAME_VALIDITY_CHECK_ACK );
+
+    CASE( EVENT_USER_ATTRIBUTE_MIGRATION_INFO_ACK );
+    CASE( EVENT_JOIN_ROOM_INFO_DIVIDE_REQ );
+   _CASE( EVENT_UPDATEPLAN_BOARD_GAME_USER_INFO_NOT, DWORD );
+
+    CASE( EVENT_JUMPING_CHAR_INFO_NOT );
+    CASE_NOPARAM( EVENT_JUMPING_CHAR_REWARD_REQ );
+    CASE( EVENT_JUMPING_CHAR_REWARD_ACK );
+   _CASE( EVENT_JUMPING_CHAR_REQ, char );
+    CASE( EVENT_JUMPING_CHAR_ACK );
+    CASE( EVENT_USER_RELAY_SEND_COUNT_REQ );
+    CASE( EVENT_COORDI_COMPOSE_REQ );
+    CASE( EVENT_COORDI_COMPOSE_ACK );
+
+    CASE( EVENT_VIRTUAL_DEPOT_ITEM_LIST_NOT );
+    CASE( EVENT_MOVE_ITEM_TO_INVENTORY_FROM_VIRTUAL_DEPOT_REQ );
+    CASE( EVENT_MOVE_ITEM_TO_INVENTORY_FROM_VIRTUAL_DEPOT_ACK );
+    CASE_NOPARAM( EVENT_RELAY_SERVER_STATUS_REQ );
+
+    CASE( EVENT_TONG_DONATION_AMOUNT_INFO_ACK );
+    CASE( EVENT_TONG_DONATION_INFO_REQ );
+    CASE( EVENT_TONG_DONATION_DONATE_REQ );
+    CASE( EVENT_TONG_DONATION_DONATE_ACK );
+
+    CASE_NOPARAM( EVENT_SOSCIAL_COMMERCE_INFO_REQ );
+    CASE( EVENT_SOSCIAL_COMMERCE_INFO_UPDATE_NOT );
+    CASE( EVENT_COORDI_GRADE_UPGRADE_REQ );
+    CASE( EVENT_COORDI_GRADE_UPGRADE_ACK );
+    CASE_NOPARAM( EVENT_COORDI_GRADE_UPGRADE_INFO_REQ );
+
+    CASE( EVENT_SKILL_SCROOL_TRAINING_REQ );
+
+    CASE( EVENT_INFINITY_DUNGEON_MONSTER_SUMMON_REQ );
+    CASE( EVENT_INFINITY_DUNGEON_REWARD_EXP_REQ );
+    CASE( EVENT_INFINITY_DUNGEON_REWARD_ITEM_REQ );
+    CASE( EVENT_INFINITY_DUNGEON_REWARD_ITEM_ACK );
+    CASE( EVENT_INFINITY_DUNGEON_REWARD_GP_NOT );
+
+    CASE( EVENT_DUNGEON_PERSONAL_RECORD_INFO_NOT );
+    CASE( EVENT_DUNGEON_RANK_CURRENT_SEASON_RANK_PAGE_REQ );
+    CASE( EVENT_DUNGEON_RANK_CURRENT_SEASON_USER_RANK_REQ );
+    CASE( EVENT_DUNGEON_RANK_PREVIOUS_SEASON_RANK_PAGE_REQ );
+    CASE( EVENT_DUNGEON_RANK_PREVIOUS_SEASON_USER_RANK_REQ );
+    CASE( DB_EVENT_DUNGEON_RANK_PREVIOUS_SEASON_USER_RANK_ACK );
+    CASE_NOPARAM( EVENT_DUNGEON_RANK_PREVIOUS_SEASON_USER_RANK_UPDATED_NOT );
+
+    CASE( EVENT_SINGLE_RANDOM_ATTRIBUTE_RANDOM_REQ );
+    CASE( EVENT_SINGLE_RANDOM_ATTRIBUTE_RANDOM_ACK );
+
+    _CASE(EVENT_GACHA_PONG_PLAY_INFO_REQ, DWORD);
+    CASE_NOPARAM(EVENT_GACHA_PONG_PLAY_INFO_UNSUBSCRIBE_REQ);
+    _CASE(EVENT_GACHA_PONG_ACTION_REQ, PAIR_DWORD);
+    CASE(EVENT_GACHA_PONG_PLAY_INFO_NOT);
+    CASE(EVENT_GACHA_PONG_ACTION_ACK);
+
+    CASE(EVENT_PVP_ROOM_LIST_SEARCH_REQ);
+    _CASE(EVENT_CHANGE_PVP_ROOM_EXTRA_OPTION_REQ, KRoomOptions);
+    CASE(EVENT_IN_ROOM_CHANGE_CHARACTER_INFO_REQ);
+    _CASE(EVENT_IN_ROOM_CHANGE_CHARACTER_INFO_ACK, KEVENT_CHANGE_CHARACTER_INFO_ACK);
+    _CASE(EVENT_IN_ROOM_CHANGE_INDOOR_USERINFO_REQ, KInDoorUserInfo);
+
+    CASE(EVENT_BILLBOARD_REGISTRATION_REQ);
+    CASE(EVENT_BILLBOARD_CHAT_MSG_NOT);
+
+    CASE(EVENT_PET_MAGIC_STONE_CHANGE_EQUIP_REQ);
+    CASE(EVENT_PET_MAGIC_STONE_CHANGE_EQUIP_ACK);
+
+    CASE(EVENT_COORDIVIEWER_GETSLOT_ACK);
+    CASE(EVENT_COORDIVIEWER_SETSLOT_ACK);
+    CASE(EVENT_COORDIVIEWER_GETSLOT_REQ);
+    CASE(EVENT_COORDIVIEWER_SETSLOT_REQ);
+
+    _CASE(EVENT_IN_ROOM_CHANGE_HOST_REQ, DWORD);
+
+    CASE(EVENT_USE_HERO_TICKET_REQ);
+    CASE(EVENT_USE_HERO_TICKET_ACK);
+
+    // #USER_EVENT_CASES
+
+    default:
+        START_LOG( cerr, L"이벤트 핸들러가 정의되지 않았음. " << spEvent_->GetEventIDString() ) << END_LOG;
+    }
+
+    ::GetThreadTimes( ::GetCurrentThread(), &ftDummy, &ftDummy, &ftKernelTimeEnd, &ftUserTimeEnd );
+
+    __int64 qwKernelTimeElapsed = (::Int64ShllMod32( ftKernelTimeEnd.dwHighDateTime, 32) | ftKernelTimeEnd.dwLowDateTime ) - (::Int64ShllMod32( ftKernelTimeStart.dwHighDateTime, 32) | ftKernelTimeStart.dwLowDateTime );
+    __int64 qwUserTimeElapsed = (::Int64ShllMod32( ftUserTimeEnd.dwHighDateTime, 32) | ftUserTimeEnd.dwLowDateTime ) - (::Int64ShllMod32( ftUserTimeStart.dwHighDateTime, 32) | ftUserTimeStart.dwLowDateTime );
+    __int64 qwTotalTimeElapsed = qwKernelTimeElapsed + qwUserTimeElapsed;
+
+    DWORD dwKernelTimeElapsed = static_cast<DWORD>(qwKernelTimeElapsed / 10000);
+    DWORD dwUserTimeElapsed = static_cast<DWORD>(qwUserTimeElapsed / 10000);
+    DWORD dwThreadElapsedTime = static_cast<DWORD>(qwTotalTimeElapsed / 10000);
+
+    dwElapTime = ::GetTickCount() - dwElapTime;
+    if( dwElapTime > SiKGSSimLayer()->GetLongProcessTime() )
+    {
+        std::wstringstream stm;
+        stm << KNC_TIME_STRING << L"|"<< GetName() << L"|" << spEvent_->GetEventIDString() << L"|" << dwElapTime << L" (" << dwKernelTimeElapsed << L"|" << dwUserTimeElapsed << L"|" << dwThreadElapsedTime << L")";
+
+        TQUEUEING_EVENT_TO_DB( KWorker, KUserEvent::EVENT_LONG_PROCESS_LOG, GetName(), GetUID(), 0, stm.str() );
+    }
+}
+
+void KUser::Tick()
+{
+    {
+        DWORD dwQueueCount = GetQueueSize();
+        DWORD dwElapsedTime = ::GetTickCount();
+
+        KActor::Tick();
+
+        dwElapsedTime = ::GetTickCount() - dwElapsedTime;
+        SiKTickManager()->UpdateActorEvent( dwQueueCount, GetName(), dwElapsedTime );
+    }
+
+    // 070320. kkurrung. 클라이언트 프로텍티드 테이블 체크섬 검사.
+    if( SiKGSSimLayer()->GetTableChecksum() != 0 && ::GetTickCount() - GetTick( KUser::PROTECTED_TABLE_TICK ) > 3 * 60 * 1000 )
+    {
+        //SiKFailRate()->IncreaseCErrCount( KFailRate::CE_HACK_TABLE_3_MIN );
+
+        KEVENT_CLOSE_CONNECTION_NOT kPacket;
+        kPacket.m_nCloseType = KEVENT_CLOSE_CONNECTION_NOT::CCT_PT_CHECKSUM;
+        kPacket.m_strMessage = SiKGameServer()->m_stringTable.GetValue(L"str_01");
+        SEND_DATA( EVENT_CLOSE_CONNECTION_NOT, kPacket );
+        int nType = KPreHackingCheckManager::HT_TABLE_CHECKSUM;
+        QUEUEING_EVENT_TO_DB( EVENT_INSERT_HACK_INFO_NOT, nType );
+        ReserveDestroy( DRW_PROTECTED_TABLE_TIMEOUT );
+
+        START_LOG( cwarn, m_strName << L" : 3분간 프로텍티드 테이블 체크섬  (tick: " << ::GetTickCount() - m_dwHBTick << L" ) " ) << END_LOG;
+    }
+
+    switch( m_pkCurrentState->GetID() )
+    {
+    case KUserFSM::STATE_INIT:
+        //
+        break;
+    case KUserFSM::STATE_CONNECTED:
+        break;
+    case KUserFSM::STATE_LOGINING:
+        if( ::GetTickCount() - m_dwHBTick > 30000 && !SiKGSSimLayer()->CheckTypeFlag( ST_INTERNAL_TESOP ) ) // 30s 단위로 heart-bit check, 사내에서는 끊지않게
+        {
+            START_LOG( cwarn, m_strName << L" : STATE_LOGINING (tick: " << ::GetTickCount() - m_dwHBTick << L" ) " ) << END_LOG;
+            StateTransition( KUserFSM::INPUT_VERIFICATION_FAIL );   // 상태를 변경하고
+            ReserveDestroy( DRW_LOGIN_TIME_OUT );                                       // 종료를 예약한다.
+        }
+        break;
+    case KUserFSM::STATE_CHANNELLOBBY:
+    case KUserFSM::STATE_CHANNEL:
+    case KUserFSM::STATE_ROOM:
+    case KUserFSM::STATE_SQUARE:
+    case KUserFSM::STATE_SQUARE_JOIN:
+    case KUserFSM::STATE_MINIGAME:
+        DBUpdateUserData();
+        UpdateAccTime();
+        UpdatePeriodNotice();
+        UpdateSocksTime();
+        UpdateServerTimeNotice();
+        CheckShutdownUser();
+        CheckNewPost();
+        UpdateEclipsePlotTime(); // 30 분(혹은 n 분 ) 마다 아이템 보상받는 것.
+        UpdateErrandTime();
+        UpdateCYOUHeartbeat();
+        break;
+    case KUserFSM::STATE_PLAYING:
+        CheckLoadingComplete();
+        UpdateAccTime();
+        CheckLowPing();
+        CheckStageLoadComplete();
+        UpdateSocksTime();
+        CheckShutdownUser();
+        UpdateEclipsePlotTime();
+        UpdateErrandTime();
+        UpdateServerTimeNotice();
+        break;
+    case KUserFSM::STATE_AGIT_JOIN:
+    case KUserFSM::STATE_AGIT:
+        UpdateAccTime();
+        CheckAgitBonus();
+        UpdateServerTimeNotice();
+        UpdateSocksTime();
+        CheckShutdownUser();
+        CheckNewPost();
+        UpdateEclipsePlotTime();
+        UpdateErrandTime();
+        break;
+    case KUserFSM::STATE_EXIT :
+        SiKGSSimLayer()->m_kActorManager.ReserveDelete( m_strName );  // 자기 자신을 스스로 삭제할 수 없음.
+
+        // 051005. florist. 만약 이번 tick에서 객체가 지워지지 않는다면, 다음 tick에는 
+        // STATE_EXIT 면서 종료대기가 된다. 이때 OnDestroy()에서 다시한번 종료처리가 진행된다.
+        m_bDestroyReserved = true;
+
+        break;
+    }
+
+}
+
+void KUser::OnDestroy()
+{
+    // 셧다운 시스템이 관리하는 유저 리스트에서 제거 해 준다
+    if ( true == SiKPlayAuthManager()->IsUsePlayAuthSystem() ) {
+        SiKPlayAuthManager()->RemoveFromOnlineUser( KncUtil::toNarrowString( m_strPasswd ) );
+    }
+
+    KSession::OnDestroy();
+
+    switch( GetStateID() ) {
+    case KUserFSM::STATE_EXIT:  // 발생하지 않아야 할 상황. 삭제되어야 할 시점이 지났는데도 아직 남아있음.
+        return;
+    case KUserFSM::STATE_LOGINING:  // ACK를 받으면 CONNECTED || LOGINED가 됨. m_bDestroyReserved가 켜져 있다면 상태가 변하자 마자 종료처리.
+        m_bDestroyReserved = true;  // ACK를 받기 전까지는 매번 OnDestory 불린다.
+        return;
+    case KUserFSM::STATE_INIT:
+    case KUserFSM::STATE_CONNECTED:
+        StateTransition( KUserFSM::INPUT_EXIT_GAME_ACK );               ///> DB 인증 이전 이므로 DBUPDATE 없이 바로 종료
+        return;
+    } // switch
+
+    if ( m_pkRoom ) {
+        m_bRecvLoadingComplete = true;
+        m_pkRoom->CheckLoadingCompleteUser( GetName(), GetUID() );
+    }
+
+    NofityMatchServer();
+    ExitParty(); // 파티 나가기 처리.
+    m_mapMatchParty.clear();
+    LeaveAgit();
+    AgentUserDisconnectNot();
+
+    //050511. jseop. 길드 처리.
+    SiKGuildManager()->Unregister( GetThisPtr() );
+    // 센터 서버에 알림
+    if ( GetUID() > 0 ) {
+        KECN_DEL_USER_REQ kCnPacket;
+        kCnPacket.m_dwUserUID = GetUID();
+        kCnPacket.m_nReason = KECN_DEL_USER_REQ::DR_NORMAL;
+
+        if ( SiKGSSimLayer()->CheckAuthTypeFlag( KSimLayer::AT_CYOU ) ) {
+            kCnPacket.m_strName = m_strBillingAccount;
+        }
+        else {
+            kCnPacket.m_strName = KncUtil::toNarrowString( GetName() );
+        }
+        LIF( SiKCnConnector()->SendPacket( KCenterEvent::ECN_DEL_USER_REQ, kCnPacket ) );
+        CYOULogout( GetCurrentCharType() );
+    }
+
+    CleanupCoupleData();
+
+    // 091210. kkurrung. GWC Event
+    SiKGWCSupport()->RemoveUserData( GetUID() );
+
+    // 100113. tgkwon. 채널링 추가.( 투니버스 유저수 감소. )
+    if ( GetUID() != 0 ) {
+        SiKGameServer()->DecreaseChannellingUserNum( (USHORT)GetUserChannelType() );
+    }
+    UpdateDepotDataReq();
+
+    LIF( ForceTranslateState( KUserFSM::STATE_CHANNELLOBBY, true ) );
+
+    if ( GetStateID() == KUserFSM::STATE_CHANNELLOBBY ) {
+        // leave channel lobby
+        LIF( KChannel::ms_spChannelLobby->Leave( *this ) );
+
+        StateTransition( KUserFSM::INPUT_EXIT_GAME_ACK );   // OnDestroy()가 불린 현재 KSession::Tick 처리 중이며,
+                                                            // KUser::Tick 처리 단계에서 종료 대기명단에 등록된다.
+
+        if ( !m_bGMuser ) {// 운영툴로 접속한 경우 아래 액션을 하지 않겠다...
+            // 마이그레이션인 경우 Sync Data에서 이미 결정된 상태이다.
+            if ( !m_bServerMigrationReserved || ( ::GetTickCount() - GetTick( MIGRATION_TICK) > 30000 ) ) { // 060404. kkurrung. 진정 로그아웃
+                KEVENT_SHANGHAI_DROP_REQ kShDrop;
+                kShDrop.m_cCharType = GetCurrentCharType();
+                CheckLevelUpDrop(kShDrop);
+                SendExpUpdateToDBNotice();
+
+                KDB_EVENT_EXIT_GAME_NOT kNot2;
+                GetDBUpdateData( kNot2 );
+                UpdateGachaReelPointToDB();
+                UpdateAdvertisingExposureCountToDB();
+                QUEUEING_EVENT_TO_DB( DB_EVENT_EXIT_GAME_NOT, kNot2 );
+
+                // 060117. florist. 대만 인증 - logout 처리
+                GashLogOut();
+                SendUserLogOutInfo();
+                SendNMCafeLogout(); // 넷마블pc방 종료
+            }
+            DBUpdateIndigo();
+            ExitStatistics();
+        }
+
+        SiKGSSimLayer()->RemoveNickToLogin( m_strNickName );
+
+        // 041231. DB로부터 ACK를 받지 못하는 경우 H.B 체크로 종료됨. (ACK 도착까지의 시간 유지를 위해, H.B 갱신해줌)
+        m_dwHBTick = ::GetTickCount();
+
+        // 091113 tgkwon. SequenceNum 체크 추가.( 중복 패킷 방지 )
+        if( GetDisconnReason() == DRW_TRAFFIC_ATTACK ) {
+            START_LOG( clog, L"트래픽 어택 유저 클라이언트 종료." ) << END_LOG;
+            SEND_ID( EVENT_TRAFFIC_USER_NOT );
+
+            std::wstringstream stm;
+            stm << L"|AttackUserID|" << m_strName                          // UserID.
+                << L"|UserUID|" << m_dwUID                                  // UserUID.
+                << L"|UserIP|" << KncUtil::toWideString( GetIPStr() )       // 공격유저 IP.
+                << L"|Time|" << KNC_TIME_STRING;
+
+            TQUEUEING_EVENT_TO_DB( KWorker, KUserEvent::EVENT_LT_TRAFFIC_ATTACK, GetName(), GetUID(), 0, stm.str() );
+
+            stm.clear();        // STL 권고사항으로 해당 버퍼의 clear()를 호출.
+            stm.str(L"");       // 사용한 wstringstream 변수의 버퍼를 비우자.
+        }
+
+        return; // EVENT_EXIT_GAME_ACK 를 받았을 때 종료된다.
+    }  // end if
+
+    //////////////////////////////////////////////////////////////////////////
+    // 종료처리 이상.
+    
+    START_LOG( cerr, L"유저 종료처리 - 말도 안되는 상태임" )
+        << BUILD_LOG( GetName() )
+        << BUILD_LOG( GetStateIDString() )
+        << END_LOG;
+
+    SiKGSSimLayer()->m_kActorManager.ReserveDelete( m_strName );
+
+}
+
+void KUser::OnAcceptConnection()
+{
+    unsigned int mGetIP = GetIP();
+    bool bIsBannedIP = SiKBlockedAttackIP()->IsIPBanned( mGetIP );
+    if ( bIsBannedIP )
+        return;
+    int iCountConnection = 0;
+    for ( const auto& pair : SiKGSSimLayer()->m_kActorManager.GetActMap() )
+    {
+        if ( pair.second->GetIP() == mGetIP )
+        {
+            iCountConnection++;
+            if ( iCountConnection > 2 && !bIsBannedIP )
+            {
+                SiKBlockedAttackIP()->InsertBanIP( mGetIP );
+                DisconnectAllFromAttack(mGetIP);
+                return;
+            }
+        }
+    }
+    KSession::OnAcceptConnection();
+}
+
+void KUser::DisconnectAllFromAttack(unsigned int ipaddr)
+{
+    auto& actMap = SiKGSSimLayer()->m_kActorManager.GetActMap();
+    for (auto it = actMap.begin(); it != actMap.end(); )
+    {
+        if (it->second->GetIP() == ipaddr)
+        {
+            it->second->GetSockObj()->CloseSocket();
+            it = actMap.erase(it);
+        }
+        else
+        {
+            ++it;
+        }
+    }
+}
+
+IMPL_ON_FUNC( EVENT_STAT_CLIENT_INFO )
+{
+    if( SiKGSSimLayer()->m_bWriteClientInfo ) 
+    {
+        KEVENT_STAT_CLIENT_INFO kInfo = kPacket_;
+        kInfo.m_strIP = KncUtil::toWideString( GetIPStr() );
+
+        QUEUEING_EVENT_TO_DB( EVENT_STAT_CLIENT_INFO, kInfo );
+    }
+}
+
+// #EVENT_VERIFY_ACCOUNT_REQ
+IMPL_ON_FUNC(EVENT_VERIFY_ACCOUNT_REQ)
+{
+    if (SiKGSSimLayer()->m_bWriteClientInfo &&
+        kPacket_.m_nConnectType == KEVENT_VERIFY_ACCOUNT_REQ::ECT_FIRST_CONNECTION)
+    {
+
+        KLoginOutStatPtr spStat = GET_STAT(KLoginOutStat, SI_LOGINOUT_STAT);
+        if (spStat)
+        {
+            spStat->AddStat(KLoginOutStat::LOGIN);
+        }
+
+    }
+    else if (kPacket_.m_nConnectType == KEVENT_VERIFY_ACCOUNT_REQ::ECT_SERVER_MIGRATION)
+    {
+        KLoginOutStatPtr spStat = GET_STAT(KLoginOutStat, SI_LOGINOUT_STAT);
+        if (spStat)
+        {
+            spStat->AddStat(KLoginOutStat::LOGIN_MIGRATION);
+        }
+    }
+    else if (kPacket_.m_nConnectType == KEVENT_VERIFY_ACCOUNT_REQ::ECT_SERVER_RECONNECT) {
+        KLoginOutStatPtr spStat = GET_STAT(KLoginOutStat, SI_LOGINOUT_STAT);
+        if (spStat)
+        {
+            spStat->AddStat(KLoginOutStat::LOGIN_RECONNECT);
+        }
+    }
+
+    VERIFY_STATE((1, KUserFSM::STATE_CONNECTED));
+
+    if (kPacket_.m_strGetIP.empty())
+    {
+        kPacket_.m_strGetIP = KncUtil::toWideString(GetIPStr());
+    }
+
+    m_iP2PVersion = kPacket_.m_iP2PVersion; // 051031. florist. P2PVersion�� ����صд�.
+    m_dwAuthType = kPacket_.m_dwAuthType; // 060627. kkurrung. �������� ���� Ÿ�� ������ �־�д�.
+
+    // ä�θ� ���� üũ�� ���ؼ� Ŭ���̾�Ʈ�� ���� ���� LoginID ����.
+    m_strLoginID = kPacket_.m_strLogin;
+
+    KDB_EVENT_VERIFY_ACCOUNT_REQ    kDBPacket;
+    kDBPacket.m_kPacket = kPacket_;         // Ŭ���̾�Ʈ���� ���� �����͸� �⺻������ �Ѵ�.
+    kDBPacket.m_nPubEvent = 0;                // 061204. kkurrung. �븸 ���� �̺�Ʈ
+
+    KEVENT_VERIFY_ACCOUNT_ACK       kPacket;        // ó�� �߰��߰� ���� ������ ���, �� ��Ŷ�� ������.
+
+    // Ŭ���̾�Ʈ ���� �ڵ忡 ���� �κ��� �����Ѵ�.
+    m_wstrCCode = kPacket_.m_wstrCCode; // file:../CenterServer/NUser.cpp#NATION_CODE
+    m_biUniqueKey = kPacket_.m_biUniqueKey; // ���������κ��� ���� ����Ű�� ����.
+    // �ݸ��� CN��
+    SetLanguageCode(kPacket_.m_nLanguageCode); // 2011-9-20 woosh ���� �ٱ���
+    m_nUniqueKey = kPacket_.m_nUniqueKey;
+    m_nAccOnlineTime = kPacket_.m_nAccOnlineTime; // [2012/11/28 woosh] �߱� ������,��ü������ �¶��� ���� �ð�
+
+
+    // �� �Ķ���Ͱ� ����� ���Դ��� Ȯ���ϱ� ���ؼ� �α׸� �����.
+    START_LOG(clog, L"KEVENT_VERIFY_ACCOUNT_REQ")
+        << BUILD_LOG(KncUtil::toWideString(kPacket_.m_strLogin))
+        << BUILD_LOG(KncUtil::toWideString(kPacket_.m_strPasswd))
+        << BUILD_LOG(kPacket_.m_bMale)
+        << BUILD_LOG(kPacket_.m_iVersion)
+        << BUILD_LOG(kPacket_.m_iP2PVersion)
+        << BUILD_LOG(kPacket_.m_dwChecksum)
+        << BUILD_LOG(kPacket_.m_nConnectType)
+        << BUILD_LOG(kPacket_.m_iAge)
+        << BUILD_LOG(kPacket_.m_dwAuthType)
+        << BUILD_LOG(kPacket_.m_bExpAccount)
+        << BUILD_LOG(kPacket_.m_strLogin.c_str())
+        << BUILD_LOG(kPacket_.m_dwChannellingType)
+        << BUILD_LOG(kPacket_.m_biUniqueKey)
+        << BUILD_LOG(KncUtil::toWideString(kPacket_.m_strPasswd))
+        << BUILD_LOG(kPacket_.m_nLanguageCode)
+        << BUILD_LOG(kPacket_.m_nAccOnlineTime)
+        << BUILD_LOG(m_nAccOnlineTime)
+        << END_LOG;
+
+    if (SiKGSSimLayer()->m_bBlockMaxUser && (SiKGSSimLayer()->m_kActorManager.GetCount() > SiKGameServer()->GetMaxUserNum())) {
+        kPacket.m_ucOK = 20;
+
+        START_LOG(cwarn, L"���� �ִ� ���� �ʰ�") << END_LOG;
+        SEND_DATA(EVENT_VERIFY_ACCOUNT_ACK, kPacket);
+        SetDisconnReason(DRW_SERVER_FULL);
+        return;
+    }
+
+    //����-Ŭ���̾�Ʈ�� ���� ��
+    if (kPacket_.m_iVersion != SiKGameServer()->m_nProtocolVer)
+    {
+        kPacket.m_ucOK = 4; //�������� ������ �ٸ�.
+
+        START_LOG(cwarn, L"�������� ���� �ٸ�. ip : " << GetIPStr()) // �̸��� ���� �����Ƿ� ������ ���.
+            << BUILD_LOGc(kPacket.m_ucOK)
+            << BUILD_LOG(SiKGameServer()->m_nProtocolVer)
+            << BUILD_LOG(kPacket_.m_iVersion)
+            << END_LOG;
+
+        SEND_DATA(EVENT_VERIFY_ACCOUNT_ACK, kPacket);
+        SetDisconnReason(DRW_PROTOCOL_VERION_DIFF);
+        return;
+    }
+
+    // �˴ٿ��� �˻�
+    if (false == SiKShutdownUser()->CheckAge(kPacket_.m_iAge, GetIP(), KShutdownUser::CT_GAME_LOGIN)) {
+        START_LOG(cerr, L"Shutdown Target User.. Login : " << KncUtil::toWideString(kPacket_.m_strLogin) << L", Age : " << kPacket_.m_iAge) << END_LOG;
+        kPacket.m_ucOK = 22;
+        SEND_DATA(EVENT_VERIFY_ACCOUNT_ACK, kPacket);
+        SetDisconnReason(DRW_SHUTDOWN_USER);
+    }
+
+    if (SiKGSSimLayer()->CheckAuthTypeFlag(kPacket_.m_dwAuthType))
+    {
+        m_strPasswd = KncUtil::toWideString(kPacket_.m_strPasswd);
+        m_dwChannellingType = KUser::USER_CT_PUBLISHER_1;
+
+        switch (kPacket_.m_dwAuthType)
+        {
+        case KGSSimLayer::AT_NETMARBLE:
+            m_bExpAccount = kPacket_.m_bExpAccount; //  080723  woosh.  ü�� ���� ����
+            // Ŭ���̾�Ʈ���� ���޹��� ä�θ� Ÿ�� �����ڸ� �ϴ� ��������.
+            // ������ üũ�ϴ� �ڵ�� �ʿ��ϰ���..,?
+            m_dwChannellingType = kPacket_.m_dwChannellingType;
+
+            if (kPacket_.m_strLogin.find("@tooni") != std::string::npos && m_dwChannellingType != USER_CT_PUBLISHER_2) {
+                START_LOG(cerr, L" ���Ϸ��� �����ε� Ŭ���̾�Ʈ���� �Ѿ�� ä�θ� Ÿ���� Ʋ����." << m_dwChannellingType) << END_LOG;
+                m_dwChannellingType = KUser::USER_CT_PUBLISHER_2;
+            }
+
+            if (kPacket_.m_strLogin.find("_nate") != std::string::npos && m_dwChannellingType != USER_CT_PUBLISHER_3) {
+                START_LOG(cerr, L" ����Ʈ �����ε� Ŭ���̾�Ʈ���� �Ѿ�� ä�θ� Ÿ���� Ʋ����." << m_dwChannellingType) << END_LOG;
+                m_dwChannellingType = KUser::USER_CT_PUBLISHER_3;
+            }
+
+            if (kPacket_.m_strLogin.find("@naver") != std::string::npos && m_dwChannellingType != USER_CT_PUBLISHER_4) {
+                START_LOG(cerr, L" ���̹� �����ε� Ŭ���̾�Ʈ���� �Ѿ�� ä�θ� Ÿ���� Ʋ����." << m_dwChannellingType) << END_LOG;
+                m_dwChannellingType = KUser::USER_CT_PUBLISHER_4;
+            }
+
+            break;
+
+        case KSimLayer::AT_FUNBOX_TH:
+            if (kPacket_.m_strLogin.find(".PP") != std::string::npos) {
+                m_dwChannellingType = KUser::USER_CT_PUBLISHER_2;
+            }
+            break;
+        case KSimLayer::AT_GASH:
+            // ���� ���������� üũ�� ���ؼ� CenterServer�� Ŭ���̾�Ʈ����
+            // �������� ���� �ŷ��Ѵ�.
+            m_dwChannellingType = kPacket_.m_dwChannellingType;
+            break;
+        case KSimLayer::AT_CYOU:
+        case KSimLayer::AT_LEVELUP:
+            break;
+        default:
+            START_LOG(cwarn, L"���ǵ��� ���� ���� Ÿ�� : " << kPacket_.m_dwAuthType) << END_LOG;
+            break;
+        }
+
+        SiKGameServer()->GetDBLayer()->QueueingEvent(KUserEvent::EVENT_VERIFY_ACCOUNT_REQ, m_strName.c_str(), 0, 0, kDBPacket);
+    }
+    else if (SiKGSSimLayer()->CheckTypeFlag(ST_DEBUG_AUTH))
+    {
+        START_LOG(cerr, L"* ST_DEBUG_AUTH - ����ó�� �н�. ��û Login : ")
+            << BUILD_LOG((kPacket_.m_strLogin).c_str()) << END_LOG;
+        START_LOG(cerr, L"Not Exist Auth Mode! : " << boost::wformat(L" 0x%08x") % kPacket_.m_dwAuthType) << END_LOG;
+        kDBPacket.m_kPacket.m_iAge = 13; //�ݸ��� ĳ�� ������ ���Ÿ� ���� ���� ����.
+        SiKGameServer()->GetDBLayer()->QueueingEvent(KUserEvent::EVENT_VERIFY_ACCOUNT_REQ, m_strName.c_str(), 0, 0, kDBPacket);
+    }
+    else
+    {
+        kPacket.m_ucOK = 7;
+        START_LOG(cerr, L"Not Exist Auth Mode! : " << boost::wformat(L" 0x%08x") % kPacket_.m_dwAuthType) << END_LOG;
+        START_LOG(cerr, L"���� ����. ip : " << kPacket_.m_strGetIP)
+            << BUILD_LOG(KncUtil::toWideString(kPacket_.m_strLogin))
+            << BUILD_LOG(KncUtil::toWideString(kPacket_.m_strPasswd))
+            << END_LOG;
+        SetDisconnReason(DRW_AUTHEN_FAIL);
+        SEND_PACKET(EVENT_VERIFY_ACCOUNT_ACK);
+        return;
+    }
+
+    {
+        // ����ġ ���� ���̺� Ŭ���̾�Ʈ ���� ( �����δ� ItemID���� )
+        KEVENT_EXP_TABLE_NOT kPacket;
+        SiKResultManager()->GetExpTable(kPacket);
+        SEND_PACKET(EVENT_EXP_TABLE_NOT);
+    }
+
+    START_LOG_WITH_NAME(clog)
+        << BUILD_LOG(KncUtil::toWideString(kPacket_.m_strLogin))
+        << BUILD_LOG(KncUtil::toWideString(kPacket_.m_strPasswd))
+        << BUILD_LOG(kPacket_.m_strGetIP)
+        << BUILD_LOG(kPacket_.m_dwChecksum)
+        << BUILD_LOG(m_dwChannellingType)
+        << BUILD_LOG(kPacket_.m_iAge) << END_LOG;
+
+    StateTransition(KUserFSM::INPUT_VERIFICATION_REQ);
+}
+
+_IMPL_ON_FUNC(EVENT_VERIFY_ACCOUNT_ACK, KEVENT_DB_VERIFY_ACCOUNT_ACK)
+{
+    KEVENT_VERIFY_ACCOUNT_ACK& kVerifyPacket = kPacket_.m_kVerifyPacket;
+    KEVENT_QUERY_INVENTORY_INFO_ACK& kInvenPacket = kPacket_.m_kInvenPacket;
+    KEVENT_GIFT_ITEM_NOT& kGiftItem = kPacket_.m_kGiftItem;
+    KEVENT_USER_CHANGE_WEAPON_NOT& kChangeWeapon = kPacket_.m_kChangeWeapon;
+
+    // �������� ó��
+    KUserPtr spUser(SiKGSSimLayer()->m_kActorManager.GetByUID<KUser>(kVerifyPacket.m_dwUserUID));
+    if (spUser != NULL)  // ���� ������ �Ȱ��� �̸��� ���� ������ �ִ�
+    {
+        kVerifyPacket.m_ucOK = 2;  // ���� ���� �õ�
+        spUser->ReserveDestroy(DRW_DUPLICATE_CONNECTION);   // ���� �����ڸ� �����ϴ� �κ�.
+    }
+
+    // Ŭ���̾�Ʈ ä�θ� Type �־��ֱ�.
+    if (SiKGSSimLayer()->CheckAuthTypeFlag(KGSSimLayer::AT_NETMARBLE)) {
+        kVerifyPacket.m_dwChannelType = GetUserChannelCode(); // �ѱ��� CCode���� Ŭ���̾�Ʈ���� ����.
+    }
+    else {
+        kVerifyPacket.m_dwChannelType = GetUserChannelType();
+    }
+
+    {
+        if (SiKSurvey()->IsRun()) { // �̺�Ʈ �Ⱓ�϶��� ����.
+            // ���� ���� ���� ����.
+            KEVENT_SURVEY_REWARD_LIST_INFO kPacket;
+            SiKSurvey()->GetRewardList(kPacket.m_mapSurveyReward);
+            SEND_PACKET(EVENT_SURVEY_REWARD_LIST_INFO);
+
+            m_kSurveyUserData.SetUserSurveyData(kPacket_.m_mapUserSurveyInfo);
+            DWORD dwChannelType = GetUserChannelType();
+            CheckGameConnectSurvey(dwChannelType, kVerifyPacket.m_tFirstLoginTime, kVerifyPacket.m_tLastLoginTime, kVerifyPacket.m_kSurveyList); // �������ӽ� ������ �����ִ��� Ȯ��.
+        }
+    }
+
+    if (kVerifyPacket.m_ucOK != 0)
+    {
+        SEND_RECEIVED_PACKET(EVENT_VERIFY_ACCOUNT_ACK);
+        CalcDisconnReasonOnLogin(kVerifyPacket.m_ucOK);
+        // �̱� ��ȸ���� ���� �ð����ѵ� ó�� �߰��Ѵ�.
+        if (kVerifyPacket.m_ucOK != 14 && kVerifyPacket.m_ucOK != 15 && kVerifyPacket.m_ucOK != 16) // ��ȸ ���� ���� ������ ���� �ٷ� ���� �ʰ� ������ ���� �̵� �ϱ� ��ٸ���.
+        {
+            ReserveDestroy();
+        }
+
+        StateTransition(KUserFSM::INPUT_VERIFICATION_FAIL);
+
+        START_LOG(cwarn, L"���� ����. Name : " << m_strName)
+            << BUILD_LOG(GetStateIDString())
+            << BUILD_LOG(kVerifyPacket.m_strLogin)
+            << BUILD_LOGc(kVerifyPacket.m_ucOK) << END_LOG;
+
+        return;
+    }
+
+    // florist. MsgServer ���� load-balancing.
+    SiKGameServer()->GetSuitableMsgServer(kVerifyPacket.m_kMsgServerInfo);
+
+    if (false == kPacket_.m_bReadOldModwLevel) {// ��Ÿ������.. ��а� �ʿ� �ϴ�.
+        std::map<int, KDungeonUserInfo>::iterator mit;
+        for (mit = kVerifyPacket.m_mapDifficulty.begin(); mit != kVerifyPacket.m_mapDifficulty.end(); ++mit) {
+            m_mapOldDifficulty[static_cast<char>(mit->first)] = mit->second.m_kModeDifficulty; // �ʱⰪ ����.
+        }
+    }
+
+    // db���� ���� �������� Ŭ���� ���� �� �� �ʿ��� ����� ������ ����ִٸ� ä���־��ش�.
+    for (int i = 0; i < NUM_GC_GAME_MODE; ++i) {
+        const int& nModeID = i;
+
+        if (false == KRoom::IsDifficultyMode(nModeID)) {
+            continue;
+        }
+
+        if (kVerifyPacket.m_mapDifficulty.find(nModeID) == kVerifyPacket.m_mapDifficulty.end()) {
+            KDungeonUserInfo kInfo;
+            kVerifyPacket.m_mapDifficulty.insert(std::make_pair(nModeID, kInfo));
+        }
+
+        // ���� �ִ� ���̵� Ŭ���� ���� (���� ����)
+        int nLastDifficulty = SiKResultManager()->GetLastDifficulty(nModeID);
+        if (nLastDifficulty > -1) {
+            if (kVerifyPacket.m_mapDifficulty[nModeID].m_kModeDifficulty.Get(nLastDifficulty)) {
+                kVerifyPacket.m_mapDifficulty[nModeID].m_kClearData.m_bClear = true;
+            }
+        }
+
+        KHeroDungeon kInfo;
+        bool bHeroDungeon = SiKHeroDungeonManager()->GetHeroDungeonInfo(nModeID, kInfo); // ���������̸� ���� ȹ��
+
+        // �Ϲݴ����̰ų� ���̵� ���������ʴ� ������ ���.
+        if (!bHeroDungeon || (bHeroDungeon && !kInfo.m_bResetDifficulty)) {
+            // �÷��̰����� ���̵� Ŭ���� ����
+            for (int i = GC_GMD_NORMAL_BEGIN; i < nLastDifficulty; ++i) {
+                if (false == kVerifyPacket.m_mapDifficulty[nModeID].m_kModeDifficulty.Get(i)) {
+                    break;
+                }
+
+                kVerifyPacket.m_mapDifficulty[nModeID].m_kClearData.m_shMaxDifficulty = i;
+            }
+        }
+    }
+
+    // 070314. kkurrung. �ű� ���� ������ Ư�� ��带 �÷��� �����ϵ��� �����ϴ� �۾�.
+    if (SiKGSSimLayer()->IsEnableForceNewUser()) // �ű� ������ ���� ������ �ִ°�?(ex, Ʃ�丮��, �ʺ� �̼�)
+    {
+        std::set<int> setForceModeID;
+        SiKGSSimLayer()->GetForceMode(setForceModeID);// ������带 �޾� �´�.
+
+        std::set<int>::iterator sit;
+        for (sit = setForceModeID.begin(); sit != setForceModeID.end(); ++sit) {
+            std::map<int, KDungeonUserInfo>::iterator mit;
+            mit = kVerifyPacket.m_mapDifficulty.find(*sit);
+            if (mit == kVerifyPacket.m_mapDifficulty.end()) {
+                KDungeonUserInfo kInfo;
+                if (SiKGSSimLayer()->IsOldUser(kVerifyPacket.m_tFirstLoginTime)) {
+                    kInfo.m_kModeDifficulty.Set(0);
+                }
+
+                kVerifyPacket.m_mapDifficulty.insert(std::make_pair(*sit, kInfo));
+            }
+            else {
+                if (SiKGSSimLayer()->IsOldUser(kVerifyPacket.m_tFirstLoginTime)) {
+                    mit->second.m_kModeDifficulty.Set(0);
+                }
+            }
+        }
+    }
+
+    SetUID(kVerifyPacket.m_dwUserUID);
+    if (kVerifyPacket.m_cLastPlayCharacter != -1) {
+        m_mapDifficulty[kVerifyPacket.m_cLastPlayCharacter] = kVerifyPacket.m_mapDifficulty;
+    }
+    // ������ ������ ĳ���� ������ ����.
+    std::map<char, KCharacterInfo>::iterator mit = kVerifyPacket.m_mapCharacterInfo.find(kVerifyPacket.m_cLastPlayCharacter);
+    if (mit != kVerifyPacket.m_mapCharacterInfo.end()) {
+        SetCharEquipPet(kVerifyPacket.m_mapPetInfo, mit->second.m_kEquipPetInfo);
+    }
+    m_mapCharacterInfo = kVerifyPacket.m_mapCharacterInfo;
+    m_iIndigoWin.SetAllValue(kVerifyPacket.m_iIndigoWin);
+    m_iIndigoLose.SetAllValue(kVerifyPacket.m_iIndigoLose);
+    m_iSessionInfo = kVerifyPacket.m_iSessionInfo;
+    m_vecMissionSlot = kVerifyPacket.m_vecMissionSlot;
+    m_vecFontVector = kVerifyPacket.m_vecFontVector;
+
+    //m_iPvExp = kVerifyPacket.m_iPvExp;
+
+    m_iRP.SetAllValue(kVerifyPacket.m_iRP);
+    m_mapPetInfo = kVerifyPacket.m_mapPetInfo; // 070104. kkurrung. ������ �� ����.
+    m_tmFirstLoginTime = CTime(kVerifyPacket.m_tFirstLoginTime);
+    m_tmLastLoginTime = CTime(kVerifyPacket.m_tLastLoginTime);
+    UpdateGrade();// ��� ������ ���� �Ѵ�.
+
+    kVerifyPacket.m_dwIP = GetIP();              // 050705. florist. ������ ���� �ذ�!
+    kVerifyPacket.m_usUdpPort = SiKGSNetLayer()->m_usUdpPort;
+    kVerifyPacket.m_dwServerType = SiKGSSimLayer()->GetTypeFlag();
+    SiKGameServer()->GetServerName(kVerifyPacket.m_strServerName); // DB���� �޾ƿ� ���� �̸�.
+
+    // 120623. nodefeat. DB���� �޾� �� ������ ���� �ð�
+    m_tmFinalLoginTime = CTime(kVerifyPacket.m_tFinalLoginTime);
+    CTime tmCurrent = CTime::GetCurrentTime();
+    // ���� �ð��� ������ ���ӿ��� ��¥�� ���� �Ǿ��ٸ� ù���� true
+    if (m_tmFinalLoginTime.GetYear() < tmCurrent.GetYear() ||
+        (m_tmFinalLoginTime.GetYear() <= tmCurrent.GetYear() && m_tmFinalLoginTime.GetMonth() < tmCurrent.GetMonth()) ||
+        (m_tmFinalLoginTime.GetYear() <= tmCurrent.GetYear() && m_tmFinalLoginTime.GetMonth() <= tmCurrent.GetMonth() && m_tmFinalLoginTime.GetDay() < tmCurrent.GetDay())) {
+        m_bFirstLoginToday = true;
+    }
+
+    // 051124. florist. ������ �̸��� ����־ �ȵȴ�.
+    if (kVerifyPacket.m_strLogin.empty())
+    {
+        START_LOG(cerr, L"DB���� ���� �������� Login�� �������. Name:" << m_strName) << END_LOG;
+        ReserveDestroy(DRW_EMPTY_LOGIN);
+        return;
+    }
+
+    // 050922. florist. ��Ŷ������ ��踦 ���� �̸��� ���� �ٲ� �� ��Ŷ�� ������.
+    LIF(SiKGSSimLayer()->m_kActorManager.Rename(GetName(), kVerifyPacket.m_strLogin));
+    LIF(SiKGSSimLayer()->m_kActorManager.RegByUID(*this));  // UID ���.
+
+    KECN_ADD_USER_REQ kAddUser;
+    kAddUser.m_dwUID = GetUID();
+    kAddUser.m_strName = KncUtil::toNarrowString(GetName());
+
+    kAddUser.m_strPassword = kVerifyPacket.m_strPassword;
+    kAddUser.m_strServerIP = SiKGameServer()->GetIP();
+    LIF(SiKCnConnector()->SendPacket(KCenterEvent::ECN_ADD_USER_REQ, kAddUser)); // ���� ������ ��� �Ѵ�.
+    //LIF( SiKCnConnector()->SendPacket( KCenterEvent::ECN_ADD_GUILD_REQ, m_dwUID ) );
+
+    ServerTimeNot(); // �ٿ��� ��û���� EVENT_ACCUMULRATION_TIME_NOT ���� Ŭ���̾�Ʈ�� ���� ������ �ϱ⿡ �ű�.
+    // ���� ���� �ý��� ( �߱� )
+    InitFatigue();
+
+    m_strNickName = kVerifyPacket.m_strNickName;
+    m_strNickColor = kVerifyPacket.m_strNickColor;
+
+    SiKGSSimLayer()->AddNickToLogin(kVerifyPacket.m_strLogin, m_strNickName);
+
+    //SetInitGP( GetGP() );
+    //kVerifyPacket.m_iGamePoint = GetGP();
+    //m_vecInv                = kInvenPacket.m_vecInv;
+    m_bMale = kVerifyPacket.m_bMale;
+    SetUserAge(kVerifyPacket.m_iAge);
+
+    //{{ GuildUserInfo
+    m_kGuildUserInfo.m_dwGuildUID = kVerifyPacket.m_kGuildUserInfo.m_dwGuildUID;
+    m_kGuildUserInfo.m_cMemberLevel = kVerifyPacket.m_kGuildUserInfo.m_cMemberLevel;
+    m_kGuildUserInfo.m_cServerUID = kVerifyPacket.m_kGuildUserInfo.m_cServerUID;
+    m_kGuildUserInfo.m_dwContributePoint = kVerifyPacket.m_kGuildUserInfo.m_dwContributePoint;
+
+    KGuildPtr spGuild = SiKGuildManager()->GetGuild(m_kGuildUserInfo.m_dwGuildUID);
+    if (spGuild) {
+        KNGuildInfo kGuildInfo;
+        kGuildInfo = spGuild->GetNGuildInfo();
+        m_kGuildUserInfo.m_dwBattlePoint = kGuildInfo.m_GuildBattlePoint;
+
+        kVerifyPacket.m_kGuildUserInfo.m_ChannelGrade = SiKGuildManager()->DivideChannelGrade(m_kGuildUserInfo.m_dwBattlePoint); // �ش�Ǵ� ���ä�� ã��
+    }
+
+    //}}
+    m_cAuthLevel = kVerifyPacket.m_cAuthLevel;
+    //m_vecDurationItemInv    = kInvenPacket.m_vecDurationItemInv;
+    m_cPCBangType = kVerifyPacket.m_cPCBangType;
+    m_cUserBenfitType = kVerifyPacket.m_cUserBenfitType;
+    m_cRecommendUser = kVerifyPacket.m_cRecommendUser;
+    m_bIsObserver = IsAdmin() && SiKGSSimLayer()->CheckTypeFlag(ST_BROADCASTING);
+    m_kBadUserInfo = kPacket_.m_kBadUserInfo;
+    m_mapGachaSetObtained = kPacket_.m_mapGachaSetObtained;
+    m_mapGachaSetObtainedLevel = kPacket_.m_mapGachaSetObtainedLevel;
+    m_MyRecomInfo = kPacket_.m_kMyRecomInfo; // �ű� ���� ���� ������ state�� KRecomHelper::RBS_NONE.
+    m_kInventory.AdjustQueryInventory(KUser::GT_INGAME, kInvenPacket.m_vecInv);
+    m_mapChangeWeapon = kChangeWeapon;
+
+    SetCurrentChar(kVerifyPacket.m_cLastPlayCharacter);
+
+    // ���ʽ� ����Ʈ
+    std::map<char, KCharacterInfo>::const_iterator mitCharInfo;
+    for (mitCharInfo = m_mapCharacterInfo.begin(); mitCharInfo != m_mapCharacterInfo.end(); ++mitCharInfo) {
+        m_mapBaseBonus[mitCharInfo->first].SetAllValue(mitCharInfo->second.m_kBonusPoint.m_nBaseBonus);
+        m_mapSpecialBonus[mitCharInfo->first].SetAllValue(mitCharInfo->second.m_kBonusPoint.m_nSpecialBonus);
+    }
+
+    // �����̾� ���� ������ üũ
+    CheckInventoryPremiumItem(kVerifyPacket.m_kPremiumInfo);
+
+    // 080720. kkurrung. ��ų����Ʈ ����.
+    m_mapTrainedSkill = kPacket_.m_kFullSPInfo.m_mapTrainedSkill;
+    m_mapInitSkillSets = kPacket_.m_kFullSPInfo.m_mapSkillSets; // ���߿� ���� �Ҷ� ��ȭ���� ����.
+    m_mapSkillSets = kPacket_.m_kFullSPInfo.m_mapSkillSets;
+    m_mapUnLockGroupID = kPacket_.m_kFullSPInfo.m_mapUnLockGroupID;
+    m_mapSlotOpenInfo = kPacket_.m_kFullSPInfo.m_mapSlotOpenInfo; // ���� index ���� �߰�.
+    m_dwUserRemainIndexCnt = kVerifyPacket.m_dwUserRemainIndexCnt;
+
+    {
+        std::map< char, std::set<char> >::const_iterator mit;
+        std::map< char, KCharacterInfo >::iterator mitFind;
+        std::map< char, KCharacterInfo >::iterator mitUser;
+        for (mit = kPacket_.m_mapCharPromotion.begin(); mit != kPacket_.m_mapCharPromotion.end(); ++mit) {
+            mitFind = kVerifyPacket.m_mapCharacterInfo.find(mit->first);
+            if (mitFind != kVerifyPacket.m_mapCharacterInfo.end()) {
+                mitFind->second.m_setPromotion = mit->second;
+            }
+
+            mitUser = m_mapCharacterInfo.find(mit->first);
+            if (mitUser != m_mapCharacterInfo.end()) {
+                mitUser->second.m_setPromotion = mit->second;
+
+            }
+        }
+    }
+
+    if (IsPCBangUser()) {
+        std::wstring strMsg;
+
+        SiKMultiLanguageString()->GetPCCafeMsg(GetLanguageCode(), strMsg);
+
+        if (!strMsg.empty()) {
+            kVerifyPacket.m_vecMsg.push_back(strMsg);
+        }
+    }
+
+    if (SiKRecomHelper()->IsEventTerm() &&
+        ((m_iSessionInfo == SI_NEW_ACCOUNT) ||
+            (m_iSessionInfo == SI_TODAY_FIRST_LOGIN_NO_LAS) ||
+            (m_iSessionInfo == SI_TODAY_FIRST_LOGIN_LAS))) {
+        std::wstring strMsg = SiKRecomHelper()->GetMsg();
+        kVerifyPacket.m_vecMsg.push_back(strMsg);
+    }
+
+    if (GetGuildUID() != 0 && (m_iSessionInfo == SI_TODAY_FIRST_LOGIN_NO_LAS ||
+        m_iSessionInfo == SI_TODAY_FIRST_LOGIN_LAS)) {
+
+        SiKGuildManager()->AddGuildPoint(GetGuildUID(), GetUID(), KGuildConfig::CONNECT);
+        AddGuildContributePoint(SiKGuildManager()->GetGuildPointDiff(KGuildConfig::CONNECT));
+        KEVENT_GET_GUILD_POINT_NOTICE kPacket;
+        kPacket.m_nGetType = KEVENT_GET_GUILD_POINT_NOTICE::FIRST_CONNECT;
+        kPacket.m_nGuildPoint = SiKGuildManager()->GetGuildPointDiff(KGuildConfig::CONNECT);
+
+        if (kPacket.m_nGuildPoint > 0) {
+            SEND_PACKET(EVENT_GET_GUILD_POINT_NOTICE);
+        }
+    }
+
+
+    // �ε��׽þ� ��ȸ���� Ƽ�� Ȯ�� �ڵ�
+    if (SiKGSSimLayer()->CheckTypeFlag(ST_ENTER_LIMIT)) {
+        if (SiKGSSimLayer()->m_bUseCompetitionTicket && !CheckIfAllItemExist(SiKGCHelper()->GetTournamentTicketID(), -1)) {   // ������� ����
+            kVerifyPacket.m_ucOK = 21;
+        }
+    }
+
+    if (kVerifyPacket.m_ucOK != 0)
+    {
+        SEND_RECEIVED_PACKET(EVENT_VERIFY_ACCOUNT_ACK);
+        CalcDisconnReasonOnLogin(kVerifyPacket.m_ucOK);
+
+        StateTransition(KUserFSM::INPUT_VERIFICATION_FAIL);
+
+        START_LOG(cwarn, L"���� ����. Name : " << m_strName)
+            << BUILD_LOG(GetStateIDString())
+            << BUILD_LOG(kVerifyPacket.m_strLogin)
+            << BUILD_LOGc(kVerifyPacket.m_ucOK) << END_LOG;
+
+        return;
+    } // �ε��׽þ� ��ȸ���� Ƽ�� Ȯ�� ��.
+
+    // Ŭ���̾�Ʈ ������Ƽ�� ƽ �ð� ����.
+    SetTick(PROTECTED_TABLE_TICK);
+
+    {
+        KEVENT_NEW_CHAR_CARD_INFO_NOT kPacket;
+        SiKGCHelper()->GetCharacterCardInfo(kPacket);
+        SEND_PACKET(EVENT_NEW_CHAR_CARD_INFO_NOT);
+    }
+    QUEUEING_ID_TO_DB(EVENT_JUMPING_CHAR_INFO_NOT); // ���� ĳ���� ���� üũ.
+    // �κ��丮 ��Ŷ ����.
+    SendInventoryInfo(kInvenPacket.m_vecInv);
+    m_kConnectionGiftBoxUserData.SetData(static_cast<int>(kVerifyPacket.m_cLastPlayCharacter), kPacket_.m_kConnectionGiftBoxUpdateData);
+
+    // ���� �������� �������� ����
+    if (-1 != kVerifyPacket.m_cLastPlayCharacter) {
+        SendConnectionGiftBoxInfoNot(KConnectionGiftboxInfoNot::EST_ON_CONNECT);
+    }
+
+    GetGachaUseVersionsInfo(kVerifyPacket.m_vecGachaUseVersions); // �������� ���� ���� ���� ����
+
+
+    if (!kGiftItem.m_vecGiftItemList.empty()) //Gift Event�� ������ �����Ѵ�.
+        SEND_COMPRESS_PACKET(EVENT_GIFT_ITEM_NOT, kGiftItem);
+
+    if (!kPacket_.m_vecGiftInfo.empty())
+        SEND_COMPRESS_PACKET(EVENT_GIFT_ITEM_LIST_NOT, kPacket_.m_vecGiftInfo);
+
+    if (SiKGSSimLayer()->m_bTWUserAgreement) // 080214 tslayer. �븸 ����ȭ üũ ON�̸� �����Ѵ�.
+        SEND_DATA(EVENT_TW_USER_AGREEMENT_NOT, kPacket_.m_nUserAgreement);
+
+    if (SI_NEW_ACCOUNT == m_iSessionInfo) { // �ű� ������ ��� � �׼��� �Ѵ�.
+        NewUserSHDropCheck(); // �ű����� ������ ��� üũ.
+        if (kVerifyPacket.m_nPubEvent != 0 && kVerifyPacket.m_dwAuthType == KGSSimLayer::AT_GASH && SiKGameServer()->IsPubEvent()) // �븸 ���� �̺�Ʈ
+        {
+            QUEUEING_ID_TO_DB(EVENT_YAHOO_BENEFIT_NOT);
+        }
+
+    }
+
+    CheckAndRegistCollection(kPacket_.m_kCollectionMission.m_vecCollection);
+    m_vecCollectionSlot = kPacket_.m_kCollectionMission.m_vecCollection; // Īȣ �ݷ���
+
+    // ���� ������ ��� ���� ���� ����
+    START_LOG(clog, L"���̵���� ���� ���� ������, ������ ������.")
+        << BUILD_LOGtm(SiKGameServer()->GetPivotFirstLoginTimeToApplyGuideLine())
+        << BUILD_LOGtm(m_tmFirstLoginTime) << END_LOG;
+
+    if (m_tmFirstLoginTime >= SiKGameServer()->GetPivotFirstLoginTimeToApplyGuideLine()) {
+        START_LOG(clog, L"���̵���� ���� ��� ������.") << END_LOG;
+        LIF(SendPacket(SiKGameServer()->GetGameModeCategory(), L"KUserEvent::EVENT_SET_GAME_MODE"));
+    }
+
+    QUEUEING_ID_TO_DB(EVENT_SLOT_INFO_NOT);
+
+    SEND_COMPRESS_PACKET(EVENT_VERIFY_ACCOUNT_ACK, kVerifyPacket); // ������ ��� ���� ����
+    KChannel::ms_spChannelLobby->Enter(*this);
+
+    // ������� ����.
+    SetGuildInfo(kVerifyPacket.m_kGuildUserInfo);
+
+    CheckUpgradeGuildGradeGift(); // ��� �±޽� ��帶ũ ����� �������� Ȯ��
+
+    // 050224 ���� ���� �Ϸ� �ð� ����
+    m_cConnectionTime = CTime::GetCurrentTime();
+    // ���� �̱� ���� ����ĳ�� �������� ��¥ ����.
+    m_tmVirtualEnableDate = CTime(kVerifyPacket.m_tVirtualEnableDate);
+
+    SetNewRecomUser(kPacket_.m_prRecomLevelUpCheck);
+    if (kPacket_.m_bReturnUserCheck) { // ���� �������� üũ.
+        m_bReturnUserCheck = true;
+    }
+
+    // 100113. tgkwon. ä�θ� �߰�(���Ϲ��� ������ ����)
+    SiKGameServer()->IncreaseChannellingUserNum((USHORT)GetUserChannelType());
+
+    std::map<char, KCharacterInfo>::const_iterator cmitCharInfo;
+    for (cmitCharInfo = m_mapCharacterInfo.begin(); cmitCharInfo != m_mapCharacterInfo.end(); ++cmitCharInfo) {
+        LIF(AddStatInitExpInfo(cmitCharInfo->first, cmitCharInfo->second.m_biInitExp, cmitCharInfo->second.m_biInitTotalExp));
+    }
+
+    m_setCharLevelEvent = kPacket_.m_setCharLevelEvent;
+    // ĳ���� Ư�� ���� ���� ������ ���� �̺�Ʈ
+    if (SiKGCHelper()->IsCharLevelEvent()) {
+        CheckUserCharLevelUpEvent(kVerifyPacket.m_dwUserUID, m_setCharLevelEvent);
+    }
+
+    if (kVerifyPacket.m_cLastPlayCharacter != -1 && SiKGCPoint()->IsGCPointSwitch() == true) { // �㾾 ����Ʈ �ý��� ����Ѵٸ� 
+        m_kCalendar.SetOwnerLogin(m_strName);
+        std::vector<KItem> vecWeeklyReward;
+        std::vector<KItem> vecMonthlyReward;
+
+        SiKGSSimLayer()->GetWeeklySelectRewardList(vecWeeklyReward);//�ְ��ٺ��󸮽�Ʈ ����
+        SEND_COMPRESS_PACKET(EVENT_WEEKLY_REWARD_LIST_NOT, vecWeeklyReward);
+
+        SiKGSSimLayer()->GetMonthlySelectRewardList(vecMonthlyReward);//�����ٺ��󸮽�Ʈ ����
+        SEND_COMPRESS_PACKET(EVENT_MONTHLY_REWARD_LIST_NOT, vecMonthlyReward);
+
+        QUEUEING_ID_TO_DB(EVENT_LOAD_POINTSYSTEM_INFO_REQ); // �޷� ���� ���� ����.
+        QUEUEING_ID_TO_DB(EVENT_MONTHLY_ATTEND_REWARD_LIST_NOT); // �ް��ٽ� ����� �����ȸ.??
+    }
+
+    QUEUEING_EVENT_TO_DB(EVENT_SHANGHAI_CHECK_REQ, kVerifyPacket.m_dwUserUID); // ������ üũ ����Ʈ.
+    SendUserSystemInfo(m_iSessionInfo);
+    SendEventInfo(kVerifyPacket, kPacket_.m_mapUserSurveyInfo, kPacket_.m_nMissionEventCheck, kPacket_.m_setStringIDList); // �̺�Ʈ üũ�ؼ� �Ⱓ�� �̺�Ʈ ���� ����.
+
+    {
+        std::set<GCITEMID> kPacket;
+        SiKDepotManager()->GetRestrictItem(kPacket);
+        SEND_PACKET(EVENT_DEPOT_RESTRICT_ITEM_NOT);
+    }
+
+    // ĳ���� �κ��丮 �и� ���Ŀ� ���̱׷��̼ǿ� ����â�� ������ ���� ��������
+    QUEUEING_ID_TO_DB(DB_EVENT_VIRTUAL_DEPOT_ITEM_LIST_REQ);
+
+    LoadVitalityInfo();
+    SendVitalityCheckDungeonInfoNot();
+
+    if (-1 != kVerifyPacket.m_cLastPlayCharacter) {
+        QUEUEING_ID_TO_DB(EVENT_DUNGEON_PERSONAL_RECORD_INFO_NOT); // ���� ���� �ְ� ��� ��ȸ ��û
+    }
+
+    QUEUEING_ID_TO_DB(DB_EVENT_DUNGEON_RANK_PREVIOUS_SEASON_USER_RANK_REQ); // ���� ��ŷ �ý��� ���� ���� ���� ��ũ ��û
+
+    {
+        KEVENT_LOOK_INVENTORY_EXTEND_INFO_NOT kPacket;
+        kPacket.m_mapInventoryExtendInfo = SiKLookEquipment()->GetLookExtendInfo();
+        kPacket.m_nMaxSlot = SiKLookEquipment()->GetMaxInvenSize();
+        SEND_COMPRESS_PACKET(EVENT_LOOK_INVENTORY_EXTEND_INFO_NOT, kPacket);
+    }
+
+    {
+        KEVENT_GACHA_PONG_INFO_NOT kPacket;
+        SiKGachaPong()->PacketAssembler(kPacket);
+        SEND_COMPRESS_PACKET(EVENT_GACHA_PONG_INFO_NOT, kPacket);
+    }
+
+    {
+        KEVENT_PET_MAGIC_STONE_INFO_NOT kPacket;
+        SiKPetGlyphMng()->GetPetGlyphData(kPacket.m_mapPetGlyphData);
+        SEND_COMPRESS_PACKET(EVENT_PET_MAGIC_STONE_INFO_NOT, kPacket);
+    }
+
+    START_LOG_WITH_NAME(clog)
+        << BUILD_LOG(kVerifyPacket.m_strLogin)
+        << BUILD_LOG(kVerifyPacket.m_strNickName)
+        << BUILD_LOG(kVerifyPacket.m_strNickColor)
+        << BUILD_LOG(kVerifyPacket.m_vecFontVector.size())
+        << BUILD_LOGc(kVerifyPacket.m_ucOK)
+        << BUILD_LOG(kVerifyPacket.m_dwIP)
+        << BUILD_LOG(m_iPvExp)
+        << BUILD_LOG(GetIP())
+        << BUILD_LOG(GetIPStr())
+        << BUILD_LOG(m_iIndigoWin)
+        << BUILD_LOG(m_iIndigoLose)
+        << BUILD_LOG(GetGP())
+        << BUILD_LOG(m_iRP)
+        << BUILD_LOG(NetError::GetErrStr(kVerifyPacket.m_ucOK))
+        << BUILD_LOG(kVerifyPacket.m_bAgreePrivateInfo)
+        << BUILD_LOG(kVerifyPacket.m_usUdpPort)
+        << BUILD_LOG(kVerifyPacket.m_dwUserUID)
+        << BUILD_LOG(kVerifyPacket.m_iSessionInfo)
+        << BUILD_LOG(kVerifyPacket.m_nConnectType)
+        << BUILD_LOG(kVerifyPacket.m_mapDifficulty.size())
+        << BUILD_LOG(kVerifyPacket.m_vecMissionSlot.size())
+        << BUILD_LOG(kVerifyPacket.m_iRP)
+        << BUILD_LOGc(kVerifyPacket.m_cRecommendUser)
+        << BUILD_LOGc(kVerifyPacket.m_cPCBangType)
+        << BUILD_LOGc(kVerifyPacket.m_cUserBenfitType)
+        << BUILD_LOG(kPacket_.m_nUserAgreement)  // �븸 ����ȭ ��� ����
+        << BUILD_LOG(kPacket_.m_kCollectionMission.m_vecCollection.size())
+        << BUILD_LOG(kVerifyPacket.m_bIsRecommendEvent)
+        << BUILD_LOG(m_kGuildUserInfo.m_dwGuildUID)
+        << BUILD_LOGc(m_kGuildUserInfo.m_cServerUID)
+        << BUILD_LOG(kPacket_.m_prRecomLevelUpCheck.first)
+        << BUILD_LOG(kPacket_.m_prRecomLevelUpCheck.second)
+        << BUILD_LOG(kVerifyPacket.m_dwChannelType)
+        << BUILD_LOGc(kVerifyPacket.m_cUserBenfitType)
+        << BUILD_LOG(SiKGSSimLayer()->IsAgitEnable())
+        << BUILD_LOG(GetLanguageCode())
+        << BUILD_LOG(kVerifyPacket.m_vecGachaUseVersions.size())
+        << END_LOG;
+
+    StateTransition(KUserFSM::INPUT_VERIFICATION_OK);
+
+    //  OK �� ����
+    //-50   �˼����� ����
+    // 0    ����.
+    // 1    �����ϴ� ����ڳ� passwd�� �ٸ�.
+    // 2    ���� ���� �õ�.
+    // 4    �������� ������ �ٸ�.
+    // 5    ��������
+    // 7    �ű����� �������� DBó�� ����
+    // 8    �ű����� �������� DBó�� ����
+    // 10   Ŭ���̾�Ʈ üũ�� ����.
+    // 13   ���� TickCount�� DB�� Ʋ����. (�̻��)
+    // 14   �ش缭���� ������ �� ���� ������� (��ȸ����)
+    // 15   �̱� ��ȸ���� ���� �ð��� �ƴ�.
+    // 16   ��� �Ҽ� ������ �ƴ� (����� ����)
+    // 17   ���� ��尡 �ƴ�(����� ���� ����Ұ�)
+    // 20   �ִ� ���� �ʰ�
+    // 21   ��ȸ���� ������� ����
+    // 22   �˴ٿ��� �������
+}

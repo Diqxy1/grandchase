@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{8a01924a-8836-44dc-b524-045a76cc028b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\CrashRpt">
+      <UniqueIdentifier>{3402ee0a-9593-4fd9-b2f6-eec23515b993}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\FSM">
+      <UniqueIdentifier>{79281bd6-d71a-4b08-a31c-f3b52b21486a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Performer">
+      <UniqueIdentifier>{1834d978-36ab-47b8-8c13-d723c176f8eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Event">
+      <UniqueIdentifier>{f03a1cb7-2e4c-4de4-b38e-9d104785a44f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\NetError">
+      <UniqueIdentifier>{3f2d1897-1a32-4027-8232-1d55951579d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Packet">
+      <UniqueIdentifier>{a7171a64-c015-4951-91da-412a988026c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Socket">
+      <UniqueIdentifier>{d67a6727-bbfa-49a8-bc99-6f14b04a96cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\SubThread">
+      <UniqueIdentifier>{96536be2-a458-4fb5-bed1-eb0e4e5c7c45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MassiveRobot">
+      <UniqueIdentifier>{da0986a5-9864-4fad-a80e-bed2ae6ca135}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script">
+      <UniqueIdentifier>{97dbb80a-e01d-472e-94c1-5c9bba68e174}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NUserProxy">
+      <UniqueIdentifier>{57b59cd7-2924-4710-bccb-584e31247e06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SessionChild">
+      <UniqueIdentifier>{d598d2c0-8d4c-4118-9841-e874e3f7bc0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SessionChild\UserProxy">
+      <UniqueIdentifier>{689311c3-52fe-43d7-8dc0-19637628099c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SessionChild\MSProxy">
+      <UniqueIdentifier>{ee92c26c-8784-4920-820c-634401904bc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{92d67e97-c3be-4ff8-a1ad-713c2d531182}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{21e29b7a-a64b-4877-b330-8e9763d19327}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{a88bce60-46d1-4a2f-a55c-1a0ca0ddb108}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Common\ActionDecider.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ActorManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\GenericLogfile.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\KncBitStream.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\LogManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SimObject.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\StringTable.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Fsm\FSMclass.cpp">
+      <Filter>Common\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Fsm\FSMstate.cpp">
+      <Filter>Common\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Actor.cpp">
+      <Filter>Common\Performer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ActorProxy.cpp">
+      <Filter>Common\Performer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Performer.cpp">
+      <Filter>Common\Performer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CenterEvent.cpp">
+      <Filter>Common\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Event.cpp">
+      <Filter>Common\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserEvent.cpp">
+      <Filter>Common\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\NetError.cpp">
+      <Filter>Common\NetError</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CenterPacket.cpp">
+      <Filter>Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CommonFiles\CommonPacket.cpp">
+      <Filter>Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CommonFiles\MSPacket.cpp">
+      <Filter>Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CommonFiles\NUserPacket.cpp">
+      <Filter>Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CommonFiles\UserPacket.cpp">
+      <Filter>Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\AccepterInterface.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\CircularQueue.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\IOCP.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\IOThread.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\NetCommon.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\Session.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\SocketObject.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ThreadManager.cpp">
+      <Filter>Common\SubThread</Filter>
+    </ClCompile>
+    <ClCompile Include="MassiveRobot.cpp">
+      <Filter>MassiveRobot</Filter>
+    </ClCompile>
+    <ClCompile Include="RobotManager.cpp">
+      <Filter>MassiveRobot</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleRobot.cpp">
+      <Filter>MassiveRobot</Filter>
+    </ClCompile>
+    <ClCompile Include="NUserProxy.cpp">
+      <Filter>NUserProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="UserProxy.cpp">
+      <Filter>SessionChild\UserProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="MSProxy.cpp">
+      <Filter>SessionChild\MSProxy</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgServer\MSEvent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\NUserEvent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserFSM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\ActionDecider.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ActorFactory.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ActorManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GCEnum.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GenericLogfile.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GenericLogfile_def.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KncBitStream.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KncException.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KncSmartPtr.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\LogManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\McUtil.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ServerType.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SimObject.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SobManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\StringTable.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CrashRpt\KncCrashRpt.h">
+      <Filter>Common\CrashRpt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Fsm\FSMclass.h">
+      <Filter>Common\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Fsm\FSMstate.h">
+      <Filter>Common\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Fsm\support_FSM.h">
+      <Filter>Common\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Actor.h">
+      <Filter>Common\Performer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ActorProxy.h">
+      <Filter>Common\Performer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Performer.h">
+      <Filter>Common\Performer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CenterEvent.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CenterEvent_def.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Event.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Event_def.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\IntEvent.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\UserEvent.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\UserEvent_def.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\NetError.h">
+      <Filter>Common\NetError</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\NetError_def.h">
+      <Filter>Common\NetError</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CenterPacket.h">
+      <Filter>Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\CommonPacket.h">
+      <Filter>Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\MSPacket.h">
+      <Filter>Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\NUserPacket.h">
+      <Filter>Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\UserPacket.h">
+      <Filter>Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\Accepter.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\AccepterInterface.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\CircularQueue.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\IOCP.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\IOThread.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\NetCommon.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\Overlapped.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\Session.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\SocketObject.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\UdpToServer.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SubThread.h">
+      <Filter>Common\SubThread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ThreadManager.h">
+      <Filter>Common\SubThread</Filter>
+    </ClInclude>
+    <ClInclude Include="MassiveRobot.h">
+      <Filter>MassiveRobot</Filter>
+    </ClInclude>
+    <ClInclude Include="RobotAction_def.h">
+      <Filter>MassiveRobot</Filter>
+    </ClInclude>
+    <ClInclude Include="RobotManager.h">
+      <Filter>MassiveRobot</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleRobot.h">
+      <Filter>MassiveRobot</Filter>
+    </ClInclude>
+    <ClInclude Include="NUserProxy.h">
+      <Filter>NUserProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="UserProxy.h">
+      <Filter>SessionChild\UserProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="MSProxy.h">
+      <Filter>SessionChild\MSProxy</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MsgServer\MSEvent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\NUserEvent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\NUserEvent_def.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleRobotPacketDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\UserFSM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\UserFSMInput_def.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\UserFSMState_def.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource2.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config_robot.lua">
+      <Filter>Script</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="icon2.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GameClient2.rc" />
+  </ItemGroup>
+</Project>

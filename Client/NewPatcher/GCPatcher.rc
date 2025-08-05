@@ -1,0 +1,379 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 중립 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(949)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+#if defined( _CHINA ) || defined(_CHINA_TEST)
+IDD_GCPATCHER_DIALOG DIALOGEX 0, 0, 351, 307
+STYLE DS_SETFONT | DS_CONTROL | WS_POPUP
+#else
+IDD_GCPATCHER_DIALOG DIALOGEX 0, 0, 349, 306
+STYLE DS_SETFONT | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_BORDER
+EXSTYLE WS_EX_CONTEXTHELP | WS_EX_APPWINDOW
+CLASS "GrandChase"
+#endif
+FONT 9, "Arial", 400, 0, 0x0
+BEGIN
+    CTEXT           "",IDC_STATIC_MSG,45,268,145,8,NOT WS_VISIBLE | WS_BORDER,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_STATIC_FILE_BAR_POS,45,280,228,8,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+#if defined( _CHINA ) || defined(_CHINA_TEST)
+    LTEXT           "",IDC_STATIC_TOTAL_BAR_POS,45,301,228,13,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+#else    
+    LTEXT           "",IDC_STATIC_TOTAL_BAR_POS,45,288,228,13,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+#endif    
+    PUSHBUTTON      "Start",IDC_START,281,262,57,16,NOT WS_TABSTOP
+    RTEXT           "ccc",IDC_STATIC_TOTAL,18,290,30,12,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    RTEXT           "",IDC_STATIC_FILE,18,279,30,12,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_STATIC_DOWNLOAD_TOTALRATE,108,289,95,8,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    PUSHBUTTON      "End",IDC_END,335,4,9,10,NOT WS_TABSTOP
+    LTEXT           "",IDC_STATIC_HTML,9,91,330,165,NOT WS_VISIBLE | WS_DISABLED
+    RTEXT           "",IDC_STATIC_FILE_NAME,45,279,218,12,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    PUSHBUTTON      "UPDATE_START",IDC_UPDATE_START,281,262,57,16,NOT WS_TABSTOP
+    PUSHBUTTON      "UPDATE_STOP",IDC_UPDATE_STOP,281,262,57,16,NOT WS_TABSTOP
+    LTEXT           "",IDC_STATIC_DATE,200,271,78,10,NOT WS_VISIBLE | WS_BORDER,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_STATIC_SPEED,200,263,78,10,NOT WS_VISIBLE | WS_BORDER,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_STATIC_DOWNLOAD_SUBRATE,108,279,95,8,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+END
+
+IDD_LOGINDLG DIALOGEX 0, 0, 133, 70
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Grand Chase Login"
+FONT 10, "굴림", 700, 0, 0x81
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,49,50,14
+    PUSHBUTTON      "CANCEL",IDCANCEL,76,49,50,14
+    LTEXT           "ID : ",IDC_STATIC,10,24,15,8
+    EDITTEXT        IDC_EDIT_LOGINID,28,22,98,12,ES_AUTOHSCROLL
+END
+
+IDD_DOWNLOAD_DLG DIALOGEX 0, 0, 128, 36
+STYLE DS_SETFONT | WS_POPUP | WS_BORDER | WS_SYSMENU
+FONT 12, "Microsoft Sans Serif", 400, 0, 0x0
+BEGIN
+    CTEXT           "",IDC_STATIC_STATE,7,14,114,8
+END
+
+IDD_GRID_GCPATCHER_DIALOG DIALOGEX 0, 0, 303, 261
+STYLE DS_SETFONT | DS_CENTER | WS_POPUP | WS_VISIBLE
+EXSTYLE WS_EX_CONTEXTHELP | WS_EX_APPWINDOW
+CLASS "GrandChase"
+FONT 9, "Arial", 400, 0, 0x0
+BEGIN
+    PUSHBUTTON      "UpDateStart",IDC_GRID_START,241,222,50,28,NOT WS_VISIBLE | NOT WS_TABSTOP
+    CONTROL         "",IDC_GRID_CHECK,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,14,228,8,8
+    LTEXT           "GridDownLoadAggriment",IDC_STATIC_GRID_AGGRIMENT,26,228,214,21,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    CTEXT           "PatchInfo",IDC_STATIC_GRID_DOWNLOAD_TOTALRATE,13,232,226,13,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    LTEXT           "TotalPrograssBar",IDC_STATIC_GRID_TOTAL_BAR_POS,13,230,226,13,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    CONTROL         115,IDC_BKIMAGE,"Static",SS_BITMAP | NOT WS_VISIBLE,0,0,303,257
+    LTEXT           "WebPage",IDC_STATIC_GRID_HTML,7,59,289,159,NOT WS_VISIBLE | WS_DISABLED
+END
+
+IDD_GCPATCHER_BACK DIALOGEX 0, 0, 186, 93
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_POPUP | WS_VISIBLE | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT | WS_EX_APPWINDOW
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_GCPATCHER_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 349
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 306
+    END
+
+    IDD_LOGINDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 126
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 63
+    END
+
+    IDD_DOWNLOAD_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 121
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 28
+    END
+
+    IDD_GRID_GCPATCHER_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 292
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 205
+    END
+
+    IDD_GCPATCHER_BACK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // 중립 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 한국어 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_SERVER DIALOGEX 0, 0, 186, 94
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_DIALOG_MAIN_MENU DIALOGEX 0, 0, 186, 94
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_DIALOG_SYSTEM_DLG DIALOGEX 0, 0, 186, 93
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_DIALOG_START_BTN DIALOGEX 0, 0, 186, 94
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_DIALOG_DOWNLOAD_DLG DIALOGEX 0, 0, 186, 93
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_SERVER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DIALOG_MAIN_MENU, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DIALOG_SYSTEM_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+
+    IDD_DIALOG_START_BTN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_DIALOG_DOWNLOAD_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\GCPatcher.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\GCPatcher.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,0,0,0
+ PRODUCTVERSION 0,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "FileDescription", "Grand Chase"
+            VALUE "InternalName", "Grand Chase"
+            VALUE "LegalCopyright", "Copyright (C) 2013"
+            VALUE "OriginalFilename", "GrandChase.EXE"
+            VALUE "ProductName", "Grand Chase"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP2             BITMAP                  "res\\bitmap2.bmp"
+IDB_BITMAP1             BITMAP                  "res\\gridpatcherbg.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+
+IDR_RT_MANIFEST1        RT_MANIFEST             "res\\rt_manif.bin"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RGN
+//
+
+IDR_RGN1                RGN                     "res\\patcher.rgn"
+#endif    // 한국어 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\GCPatcher.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

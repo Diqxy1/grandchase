@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{79039366-f4d3-41ff-8ae6-ecb325b9ee71}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="dbg">
+      <UniqueIdentifier>{d440fa84-cbd2-49d7-83ca-c20703a5f2e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PatchCore">
+      <UniqueIdentifier>{e41620e9-fdce-466d-9bf6-27938b0341c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MFCControl">
+      <UniqueIdentifier>{36649217-7bd2-49a7-876f-a807602159d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CrashRpt">
+      <UniqueIdentifier>{588de35b-5d65-4cab-b6de-3ea0ae817442}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ETC">
+      <UniqueIdentifier>{eb168072-8001-48e8-8878-2f52d4147469}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GridInclude">
+      <UniqueIdentifier>{4dd74c40-ed29-4ecb-bfc6-31a6884ac969}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PngWindow">
+      <UniqueIdentifier>{6339c8f4-dda2-48e4-9a50-57b77d12167d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\GCPatcher.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\gridpatcherbg.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\GCPatcher.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\rt_manif.bin">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="dbghelp.dll">
+      <Filter>CrashRpt</Filter>
+    </None>
+    <None Include="res\patcher.rgn" />
+    <None Include="PatchStr.stg" />
+    <None Include="PatchStr_ct.stg" />
+    <None Include="PatchStr_hk.stg" />
+    <None Include="PatchStr_p.stg" />
+    <None Include="unicows.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dbg\assert.hpp">
+      <Filter>dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="dbg\dbg.hpp">
+      <Filter>dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="dbg\logfile.hpp">
+      <Filter>dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="dbg\profiler.hpp">
+      <Filter>dbg</Filter>
+    </ClInclude>
+    <ClInclude Include="PatchCore\Registry.h">
+      <Filter>PatchCore</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorStatic.h">
+      <Filter>MFCControl</Filter>
+    </ClInclude>
+    <ClInclude Include="GCHtmlView.h">
+      <Filter>MFCControl</Filter>
+    </ClInclude>
+    <ClInclude Include="GCPatcherDlg.h">
+      <Filter>MFCControl</Filter>
+    </ClInclude>
+    <ClInclude Include="KLoginDlg.h">
+      <Filter>MFCControl</Filter>
+    </ClInclude>
+    <ClInclude Include="KProgressCtrl.h">
+      <Filter>MFCControl</Filter>
+    </ClInclude>
+    <ClInclude Include="NBitmapButton.h">
+      <Filter>MFCControl</Filter>
+    </ClInclude>
+    <ClInclude Include="PngWindow\PSPTypes.h">
+      <Filter>PngWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="PngWindow\setPngWnd.h">
+      <Filter>PngWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="bugtrapheader_fordll.h" />
+    <ClInclude Include="curlsession.h" />
+    <ClInclude Include="CYHJoin.h" />
+    <ClInclude Include="define.h" />
+    <ClInclude Include="DownLoadDlg.h" />
+    <ClInclude Include="Drawgdix.h" />
+    <ClInclude Include="GCDllLoader.h" />
+    <ClInclude Include="GCDownLoadDlg.h" />
+    <ClInclude Include="GCGlobalValue.h" />
+    <ClInclude Include="GCMainMenuDlg.h" />
+    <ClInclude Include="GCPatcher.h" />
+    <ClInclude Include="GCPatcherBackDlg.h" />
+    <ClInclude Include="GCPatcherStr.h" />
+    <ClInclude Include="GCRgnDlg.H" />
+    <ClInclude Include="GCServerDlg.h" />
+    <ClInclude Include="GCStartBtnDlg.h" />
+    <ClInclude Include="GCSystemBtnDlg.h" />
+    <ClInclude Include="globalfunction.h" />
+    <ClInclude Include="IniReader.h" />
+    <ClInclude Include="KAssert.h" />
+    <ClInclude Include="KGCStringLoader.h" />
+    <ClInclude Include="KPreBlock.h" />
+    <ClInclude Include="KStateInfo.h" />
+    <ClInclude Include="MailMIMEHeader.h" />
+    <ClInclude Include="MailSMTPHeader.h" />
+    <ClInclude Include="NetError.h" />
+    <ClInclude Include="NetError_def.h" />
+    <ClInclude Include="NetError_def_br.h" />
+    <ClInclude Include="NetError_def_cn.h" />
+    <ClInclude Include="NetError_def_en.h" />
+    <ClInclude Include="NetError_def_eu.h" />
+    <ClInclude Include="NetError_def_hk.h" />
+    <ClInclude Include="NetError_def_id.h" />
+    <ClInclude Include="NetError_def_sa.h" />
+    <ClInclude Include="NetError_def_th.h" />
+    <ClInclude Include="NetError_def_tw.h" />
+    <ClInclude Include="patch.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="threadpool.hpp" />
+    <ClInclude Include="XmlWraper.h" />
+    <ClInclude Include="..\XTrap4Launcher.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PatchCore\Registry.cpp">
+      <Filter>PatchCore</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorStatic.cpp">
+      <Filter>MFCControl</Filter>
+    </ClCompile>
+    <ClCompile Include="GCGridPatcherDlg.cpp">
+      <Filter>MFCControl</Filter>
+    </ClCompile>
+    <ClCompile Include="GCHtmlView.cpp">
+      <Filter>MFCControl</Filter>
+    </ClCompile>
+    <ClCompile Include="GCPatcherDlg.cpp">
+      <Filter>MFCControl</Filter>
+    </ClCompile>
+    <ClCompile Include="KLoginDlg.cpp">
+      <Filter>MFCControl</Filter>
+    </ClCompile>
+    <ClCompile Include="KProgressCtrl.cpp">
+      <Filter>MFCControl</Filter>
+    </ClCompile>
+    <ClCompile Include="NBitmapButton.cpp">
+      <Filter>MFCControl</Filter>
+    </ClCompile>
+    <ClCompile Include="PngWindow\setPngWnd.cpp">
+      <Filter>PngWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SystemAnalysis\cpu_info.cpp" />
+    <ClCompile Include="curlsession.cpp" />
+    <ClCompile Include="DownLoadDlg.cpp" />
+    <ClCompile Include="GCCommonFunc.cpp" />
+    <ClCompile Include="GCDllLoader.cpp" />
+    <ClCompile Include="GCDownLoadDlg.cpp" />
+    <ClCompile Include="GCGlobalValue.cpp" />
+    <ClCompile Include="GCMainMenuDlg.cpp" />
+    <ClCompile Include="GCPatcher.cpp" />
+    <ClCompile Include="GCPatcherBackDlg.cpp" />
+    <ClCompile Include="GCPatcherStr.cpp" />
+    <ClCompile Include="GCRgnDlg.CPP" />
+    <ClCompile Include="GCServerDlg.cpp" />
+    <ClCompile Include="GCStartBtnDlg.cpp" />
+    <ClCompile Include="GCSystemBtnDlg.cpp" />
+    <ClCompile Include="..\SystemAnalysis\getdxver.cpp" />
+    <ClCompile Include="globalfunction.cpp" />
+    <ClCompile Include="IniReader.cpp" />
+    <ClCompile Include="KGCStringLoader.cpp" />
+    <ClCompile Include="NetError.cpp" />
+    <ClCompile Include="patch.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GCPatcher.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="unicows.lib" />
+    <Library Include="..\XTrap4Launcher.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="GCGridPatcherDlg.h">
+      <Filter>MFCControl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GridInclude\GridLoad_Define.h">
+      <Filter>GridInclude</Filter>
+    </CustomBuild>
+    <CustomBuild Include="GrandChase.exe.manifest" />
+  </ItemGroup>
+</Project>

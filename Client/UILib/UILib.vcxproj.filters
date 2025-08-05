@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Widget">
+      <UniqueIdentifier>{f460ef40-ceeb-46c7-9de3-550cf9de1b1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Property">
+      <UniqueIdentifier>{bad6f8ba-5e7f-425f-bda6-210d1bf26b2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TinyXML">
+      <UniqueIdentifier>{acc6b7d6-30d9-47cb-a8ce-313ba07c5169}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="KUIEditBoxMgr.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="KUIEditor.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="KUIManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="KWidget\KUIBackDrop.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="KWidget\KUIButton.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="KWidget\KUICheckButton.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="KWidget\KUIComboBox.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="KWidget\KUIComboElement.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="KWidget\KUIEditBox.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="KWidget\KUIFontString.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="KWidget\KUIFrame.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="KWidget\KUIImage.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="KWidget\KUILayer.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="KWidget\KUIModel.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="KWidget\KUIScrollFrame.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="KWidget\KUIScrollingMessageFrame.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="KWidget\KUISlider.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="KWidget\KUITexture.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="KWidget\KUIWidget.cpp">
+      <Filter>Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="KProperty\KUIDimension2.cpp">
+      <Filter>Property</Filter>
+    </ClCompile>
+    <ClCompile Include="KProperty\KUIOffset.cpp">
+      <Filter>Property</Filter>
+    </ClCompile>
+    <ClCompile Include="KProperty\KUIScript.cpp">
+      <Filter>Property</Filter>
+    </ClCompile>
+    <ClCompile Include="KProperty\KUISize.cpp">
+      <Filter>Property</Filter>
+    </ClCompile>
+    <ClCompile Include="TinyXML\tinystr.cpp">
+      <Filter>TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="TinyXML\tinyxml.cpp">
+      <Filter>TinyXML</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="KUIEditBoxMgr.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KUIEditor.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KUIManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KWidget\KUIBackDrop.h">
+      <Filter>Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="KWidget\KUIButton.h">
+      <Filter>Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="KWidget\KUICheckButton.h">
+      <Filter>Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="KWidget\KUIComboBox.h">
+      <Filter>Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="KWidget\KUIComboElement.h">
+      <Filter>Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="KWidget\KUIEditBox.h">
+      <Filter>Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="KWidget\KUIFontString.h">
+      <Filter>Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="KWidget\KUIFrame.h">
+      <Filter>Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="KWidget\KUIImage.h">
+      <Filter>Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="KWidget\KUILayer.h">
+      <Filter>Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="KWidget\KUIModel.h">
+      <Filter>Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="KWidget\KUIScrollFrame.h">
+      <Filter>Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="KWidget\KUIScrollingMessageFrame.h">
+      <Filter>Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="KWidget\KUISlider.h">
+      <Filter>Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="KWidget\KUITexture.h">
+      <Filter>Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="KWidget\KUIWidget.h">
+      <Filter>Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="KProperty\KUIDimension2.h">
+      <Filter>Property</Filter>
+    </ClInclude>
+    <ClInclude Include="KProperty\KUIOffset.h">
+      <Filter>Property</Filter>
+    </ClInclude>
+    <ClInclude Include="KProperty\KUIScript.h">
+      <Filter>Property</Filter>
+    </ClInclude>
+    <ClInclude Include="KProperty\KUISize.h">
+      <Filter>Property</Filter>
+    </ClInclude>
+    <ClInclude Include="TinyXML\tinystr.h">
+      <Filter>TinyXML</Filter>
+    </ClInclude>
+    <ClInclude Include="TinyXML\tinyxml.h">
+      <Filter>TinyXML</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="KUIEditBoxMgr.inl">
+      <Filter>헤더 파일</Filter>
+    </None>
+    <None Include="KUIEditor.inl">
+      <Filter>헤더 파일</Filter>
+    </None>
+    <None Include="KWidget\KUIFrame.inl">
+      <Filter>Widget</Filter>
+    </None>
+    <None Include="KWidget\KUIWidget.inl">
+      <Filter>Widget</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

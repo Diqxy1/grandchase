@@ -1,0 +1,10 @@
+[ODBC]
+DRIVER=SQL Server
+UID=pcbang_event
+Address=220.90.199.134,1433
+Network=DBMSSOCN
+DATABASE=PCBANG_EVENT
+WSID=GCSVR001
+APP=Microsoft Open Database Connectivity
+SERVER=220.90.199.134
+PWD=sptakqmf*pc

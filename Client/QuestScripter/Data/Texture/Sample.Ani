@@ -1,0 +1,21 @@
+Anim = 
+{
+    Loop = 1,       -- 0 : No Loop
+                    -- 1 : Loop [ -> -> ]
+                    -- 2 : Loop [ -> <- -> <- ]
+                    
+    File= -- Texture File List
+    {
+        "5_0.dds",
+        "5_1.dds",
+        "5_2.dds",
+    },
+    
+    Frame=
+    {
+        -- FileNo, Time( Frame시간: 초당 55프레임 )
+        { 0, 10 },
+        { 1, 10 },
+        { 2, 10 },
+    }
+}

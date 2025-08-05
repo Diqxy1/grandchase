@@ -1,0 +1,721 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{0a91a4f0-f757-4f9a-aa9c-c14aae5b3d08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\FSM">
+      <UniqueIdentifier>{168d3084-1f2b-4724-8bb6-766d6cdb88a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Packet">
+      <UniqueIdentifier>{af162bc0-6f35-412f-ad2f-88930e1b250b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Event">
+      <UniqueIdentifier>{2ac66569-902f-4723-a162-1331641cd376}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Performer">
+      <UniqueIdentifier>{6ca29caa-6b73-49f9-b863-ca091a54cb2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\NetError">
+      <UniqueIdentifier>{d02a802b-b974-4ed2-8ed2-28231405bc09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Layer">
+      <UniqueIdentifier>{8b699f08-2371-41c6-8d42-2cd3a559a20f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Socket">
+      <UniqueIdentifier>{64b61d6f-521f-46d0-b988-182d220d7aa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\DB">
+      <UniqueIdentifier>{f08a18d9-bb0b-414b-9b4e-929b37224c48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\SubThread">
+      <UniqueIdentifier>{e4c95d4f-77bc-4bfb-b24a-187d7055e90e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Lua">
+      <UniqueIdentifier>{46db8506-d83c-4359-bbfd-1ef315695a0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common\Area">
+      <UniqueIdentifier>{6babdca5-0bf2-4bc6-94bb-c9dcdc3d36a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Interface">
+      <UniqueIdentifier>{71be4966-9a25-4326-a6f7-58bb17ff1b3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Center">
+      <UniqueIdentifier>{037c5192-d2c1-4fd8-a47f-a59750c89de0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Layer">
+      <UniqueIdentifier>{cf43f268-c782-428d-9dc2-bcfe3a5ebe2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script">
+      <UniqueIdentifier>{1e7de7d0-1424-4627-9cd9-aa3b026f0365}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DBThread">
+      <UniqueIdentifier>{744f2587-fee9-427c-b3c1-01312540637b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Authentic">
+      <UniqueIdentifier>{09e8709f-6a31-4616-b26a-a93dc1fb80ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Authentic\gamania">
+      <UniqueIdentifier>{c4a9168b-0eb0-478f-80c6-fdfe866c3425}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Authentic\ENtreevUS">
+      <UniqueIdentifier>{50c72d2c-cf63-4cf9-9d3c-15168a657dd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Authentic\FunBox">
+      <UniqueIdentifier>{193bf425-90b9-4138-a0fb-86aa3ada5a4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Authentic\LIN">
+      <UniqueIdentifier>{6031e056-28a9-4d32-b8d3-813d3d0ed8e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Authentic\CYOU">
+      <UniqueIdentifier>{306fdcd6-ea72-4ac3-870c-ae965650cea0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NUser">
+      <UniqueIdentifier>{7184357b-437a-4518-830a-99eb7f26df71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UnitedBuild">
+      <UniqueIdentifier>{be89be64-3dee-45f8-8d54-5b483973736a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Common\ActorFactory.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ActorManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\BaseServer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CenterLogfile_def.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CenterLogManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ChecksumManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DuplicateProcessChecker.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GenericLogfile.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GenericLogfile_def.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KncBitStream.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KncTimer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\LogManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Lottery.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\PrimitiveTypedef.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SHA1.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SimObject.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SobManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Statistics.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\StringTable.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Tea.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\UpdatePlanEventID.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\UpdatePlanScriptID.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FSM\FSMclass.h">
+      <Filter>Common\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\FSM\FSMstate.h">
+      <Filter>Common\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\RoomFSM.h">
+      <Filter>Common\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\RoomFSMInput_def.h">
+      <Filter>Common\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\RoomFSMState_def.h">
+      <Filter>Common\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CenterPacket.h">
+      <Filter>Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\CommonPacket.h">
+      <Filter>Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\NUserPacket.h">
+      <Filter>Common\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CenterEvent.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CenterEvent_def.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Event.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\IntEvent.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\NUserEvent.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\NUserEvent_def.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\OperatorEvent.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\OperatorEvent_def.h">
+      <Filter>Common\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Actor.h">
+      <Filter>Common\Performer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Performer.h">
+      <Filter>Common\Performer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\NetError.h">
+      <Filter>Common\NetError</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\NetError_def.h">
+      <Filter>Common\NetError</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DBLayer.h">
+      <Filter>Common\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\NetLayer.h">
+      <Filter>Common\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SimLayer.h">
+      <Filter>Common\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\Accepter.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\AccepterInterface.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\CircularQueue.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\IOCP.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\IOThread.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\NetCommon.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\Overlapped.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\Session.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\SocketObject.h">
+      <Filter>Common\Socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CommonSP.h">
+      <Filter>Common\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ODBC\Odbc.h">
+      <Filter>Common\DB</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SubThread.h">
+      <Filter>Common\SubThread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ThreadManager.h">
+      <Filter>Common\SubThread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Lua\KLuaManager.h">
+      <Filter>Common\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\CnSquare.h">
+      <Filter>Common\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\CnSquareManager.h">
+      <Filter>Common\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>리소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\EditLog.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WGameServer\EditStreamBuf.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\HookStdio.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\ReadOnlyEdit.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WGameServer\stdafx.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\UI\SubclassWnd.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="WCenterServer.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="WCenterServerDlg.h">
+      <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\Center.h">
+      <Filter>Center</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DefaultFSM.h">
+      <Filter>Center</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DefaultFSMInput_def.h">
+      <Filter>Center</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\DefaultFSMState_def.h">
+      <Filter>Center</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\CenterNetLayer.h">
+      <Filter>Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\CenterSimLayer.h">
+      <Filter>Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\CenterDBThread.h">
+      <Filter>DBThread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\BlockIP.h">
+      <Filter>Authentic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\CenterGash.h">
+      <Filter>Authentic\gamania</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\NUSAuth.h">
+      <Filter>Authentic\ENtreevUS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\CnFBAuth.h">
+      <Filter>Authentic\FunBox</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\CnSoapAuth.h">
+      <Filter>Authentic\LIN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\GCSoap.h">
+      <Filter>Authentic\LIN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\soapH.h">
+      <Filter>Authentic\LIN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\soapStub.h">
+      <Filter>Authentic\LIN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\stdsoap2.h">
+      <Filter>Authentic\LIN</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\CnCYOUAuth.h">
+      <Filter>Authentic\CYOU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CYOUBilling\CYOUBillingEvent.h">
+      <Filter>Authentic\CYOU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CYOUBilling\CYOUBillingEvent_def.h">
+      <Filter>Authentic\CYOU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CYOUBilling\CYOUPacket.h">
+      <Filter>Authentic\CYOU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CYOUBilling\PacketReq.h">
+      <Filter>Authentic\CYOU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CYOUBilling\PacketRes.h">
+      <Filter>Authentic\CYOU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\CYOUBilling\public.h">
+      <Filter>Authentic\CYOU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\NUser.h">
+      <Filter>NUser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\CenterServer.h" />
+    <ClInclude Include="..\CenterServer\CnAccumulateAttendance.h" />
+    <ClInclude Include="..\CenterServer\CnAdventure.h" />
+    <ClInclude Include="..\CenterServer\CnBuffDonation.h" />
+    <ClInclude Include="..\CenterServer\CnClientContentsInfo.h" />
+    <ClInclude Include="..\CenterServer\CnClientContentsManager.h" />
+    <ClInclude Include="..\CenterServer\CnClientScriptManager.h" />
+    <ClInclude Include="..\CenterServer\CnConnectionGiftBox.h" />
+    <ClInclude Include="..\CenterServer\CnCouponManager.h" />
+    <ClInclude Include="..\CenterServer\CnDicePlay.h" />
+    <ClInclude Include="..\CenterServer\CnDonationManager.h" />
+    <ClInclude Include="..\CenterServer\CnDungeonRankManager.h" />
+    <ClInclude Include="..\CenterServer\CnGuild.h" />
+    <ClInclude Include="..\CenterServer\CnGuildManager.h" />
+    <ClInclude Include="..\CenterServer\CnGWCEvent.h" />
+    <ClInclude Include="..\CenterServer\CnGWCSupport.h" />
+    <ClInclude Include="..\CenterServer\CnItemManager.h" />
+    <ClInclude Include="..\CenterServer\CnItemProvider.h" />
+    <ClInclude Include="..\CenterServer\CnKairo.h" />
+    <ClInclude Include="..\CenterServer\CnLoginOutStat.h" />
+    <ClInclude Include="..\CenterServer\CnMissionEvent.h" />
+    <ClInclude Include="..\CenterServer\CnNewDonationManager.h" />
+    <ClInclude Include="..\CenterServer\CnNpcGift.h" />
+    <ClInclude Include="..\CenterServer\CnOlympicManager.h" />
+    <ClInclude Include="..\CenterServer\CnParty.h" />
+    <ClInclude Include="..\CenterServer\CnPartyManager.h" />
+    <ClInclude Include="..\CenterServer\CnQuizBingo.h" />
+    <ClInclude Include="..\CenterServer\CnRainBow.h" />
+    <ClInclude Include="..\CenterServer\CnShutdownUser.h" />
+    <ClInclude Include="..\CenterServer\CnSocialCommerce.h" />
+    <ClInclude Include="..\CenterServer\CnSocketConsumeItem.h" />
+    <ClInclude Include="..\CenterServer\CnSphinx.h" />
+    <ClInclude Include="..\CenterServer\CnStatisticsID_def.h" />
+    <ClInclude Include="..\CenterServer\CnStatisticsManager.h" />
+    <ClInclude Include="..\CenterServer\CnSubscriptionManager.h" />
+    <ClInclude Include="..\CenterServer\CnSurvey.h" />
+    <ClInclude Include="..\CenterServer\CnTongDonation.h" />
+    <ClInclude Include="..\CenterServer\CnUpdatePlanManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Common\ActorManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\BaseServer.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CenterLogManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ChecksumManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DuplicateProcessChecker.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\GenericLogfile.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\KncBitStream.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\LogManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Lottery.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SHA1.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SimObject.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Statistics.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\StringTable.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Tea.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FSM\FSMclass.cpp">
+      <Filter>Common\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\FSM\FSMstate.cpp">
+      <Filter>Common\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\RoomFSM.cpp">
+      <Filter>Common\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CenterPacket.cpp">
+      <Filter>Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CommonFiles\CommonPacket.cpp">
+      <Filter>Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CommonFiles\NUserPacket.cpp">
+      <Filter>Common\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CenterEvent.cpp">
+      <Filter>Common\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Event.cpp">
+      <Filter>Common\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\NUserEvent.cpp">
+      <Filter>Common\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\OperatorEvent.cpp">
+      <Filter>Common\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Actor.cpp">
+      <Filter>Common\Performer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Performer.cpp">
+      <Filter>Common\Performer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\NetError.cpp">
+      <Filter>Common\NetError</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DBLayer.cpp">
+      <Filter>Common\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\NetLayer.cpp">
+      <Filter>Common\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SimLayer.cpp">
+      <Filter>Common\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\AccepterInterface.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\CircularQueue.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\IOCP.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\IOThread.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\NetCommon.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\Session.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\SocketObject.cpp">
+      <Filter>Common\Socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CommonSP.cpp">
+      <Filter>Common\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ODBC\Odbc.cpp">
+      <Filter>Common\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ThreadManager.cpp">
+      <Filter>Common\SubThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Lua\KLuaManager.cpp">
+      <Filter>Common\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CnSquare.cpp">
+      <Filter>Common\Area</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CnSquareManager.cpp">
+      <Filter>Common\Area</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\EditLog.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\HookStdio.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\ReadOnlyEdit.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WGameServer\stdafx.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\SubclassWnd.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="WCenterServer.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="WCenterServerDlg.cpp">
+      <Filter>Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\Center.cpp">
+      <Filter>Center</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\DefaultFSM.cpp">
+      <Filter>Center</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CenterNetLayer.cpp">
+      <Filter>Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CenterSimLayer.cpp">
+      <Filter>Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CenterDBThread.cpp">
+      <Filter>DBThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CenterDBThreadHelper.cpp">
+      <Filter>DBThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CenterDBThreadHelper2.cpp">
+      <Filter>DBThread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\BlockIP.cpp">
+      <Filter>Authentic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CenterGash.cpp">
+      <Filter>Authentic\gamania</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\NUSAuth.cpp">
+      <Filter>Authentic\ENtreevUS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CnFBAuth.cpp">
+      <Filter>Authentic\FunBox</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CnSoapAuth.cpp">
+      <Filter>Authentic\LIN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\soapC.c">
+      <Filter>Authentic\LIN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\soapClient.c">
+      <Filter>Authentic\LIN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\stdsoap2.c">
+      <Filter>Authentic\LIN</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CnCYOUAuth.cpp">
+      <Filter>Authentic\CYOU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CYOUBilling\CYOUBillingEvent.cpp">
+      <Filter>Authentic\CYOU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\CYOUBilling\CYOUPacket.cpp">
+      <Filter>Authentic\CYOU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\NUser.cpp">
+      <Filter>NUser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CnUnited.cpp">
+      <Filter>UnitedBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CnUnited2.cpp">
+      <Filter>UnitedBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CnUnited3.cpp">
+      <Filter>UnitedBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CnUnited4.cpp">
+      <Filter>UnitedBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CnUnited5.cpp">
+      <Filter>UnitedBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CnUnited6.cpp">
+      <Filter>UnitedBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CnUnited7.cpp">
+      <Filter>UnitedBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="CnUnited9.cpp">
+      <Filter>UnitedBuild</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\CenterServer.cpp" />
+    <ClCompile Include="..\CenterServer\CnAccumulateAttendance.cpp" />
+    <ClCompile Include="..\CenterServer\CnAdventure.cpp" />
+    <ClCompile Include="..\CenterServer\CnBuffDonation.cpp" />
+    <ClCompile Include="..\CenterServer\CnClientContentsInfo.cpp" />
+    <ClCompile Include="..\CenterServer\CnClientContentsManager.cpp" />
+    <ClCompile Include="..\CenterServer\CnClientScriptManager.cpp" />
+    <ClCompile Include="..\CenterServer\CnConnectionGiftBox.cpp" />
+    <ClCompile Include="..\CenterServer\CnCouponManager.cpp" />
+    <ClCompile Include="..\CenterServer\CnDicePlay.cpp" />
+    <ClCompile Include="..\CenterServer\CnDonationManager.cpp" />
+    <ClCompile Include="..\CenterServer\CnDungeonRankManager.cpp" />
+    <ClCompile Include="..\CenterServer\CnGuild.cpp" />
+    <ClCompile Include="..\CenterServer\CnGuildManager.cpp" />
+    <ClCompile Include="..\CenterServer\CnGWCEvent.cpp" />
+    <ClCompile Include="..\CenterServer\CnGWCSupport.cpp" />
+    <ClCompile Include="..\CenterServer\CnItemManager.cpp" />
+    <ClCompile Include="..\CenterServer\CnItemProvider.cpp" />
+    <ClCompile Include="..\CenterServer\CnKairo.cpp" />
+    <ClCompile Include="..\CenterServer\CnLoginOutStat.cpp" />
+    <ClCompile Include="..\CenterServer\CnMissionEvent.cpp" />
+    <ClCompile Include="..\CenterServer\CnNewDonationManager.cpp" />
+    <ClCompile Include="..\CenterServer\CnNpcGift.cpp" />
+    <ClCompile Include="..\CenterServer\CnOlympicManager.cpp" />
+    <ClCompile Include="..\CenterServer\CnParty.cpp" />
+    <ClCompile Include="..\CenterServer\CnPartyManager.cpp" />
+    <ClCompile Include="..\CenterServer\CnQuizBingo.cpp" />
+    <ClCompile Include="..\CenterServer\CnRainBow.cpp" />
+    <ClCompile Include="..\CenterServer\CnShutdownUser.cpp" />
+    <ClCompile Include="..\CenterServer\CnSocialCommerce.cpp" />
+    <ClCompile Include="..\CenterServer\CnSocketConsumeItem.cpp" />
+    <ClCompile Include="..\CenterServer\CnSphinx.cpp" />
+    <ClCompile Include="..\CenterServer\CnStatisticsManager.cpp" />
+    <ClCompile Include="..\CenterServer\CnSubscriptionManager.cpp" />
+    <ClCompile Include="..\CenterServer\CnSurvey.cpp" />
+    <ClCompile Include="..\CenterServer\CnTongDonation.cpp" />
+    <ClCompile Include="..\CenterServer\CnUpdatePlanManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Grand.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="res\PLAY.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WCenterServer.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\CenterServer\BlockIPList.lua">
+      <Filter>Script</Filter>
+    </None>
+    <None Include="..\CenterServer\config_Center.ini">
+      <Filter>Script</Filter>
+    </None>
+    <None Include="config_Center.lua">
+      <Filter>Script</Filter>
+    </None>
+    <None Include="..\CenterServer\config_Center.lua">
+      <Filter>Script</Filter>
+    </None>
+    <None Include="..\CenterServer\InitClientContents.lua">
+      <Filter>Script</Filter>
+    </None>
+    <None Include="InitGuildConfig.lua">
+      <Filter>Script</Filter>
+    </None>
+    <None Include="InitSquare.lua">
+      <Filter>Script</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

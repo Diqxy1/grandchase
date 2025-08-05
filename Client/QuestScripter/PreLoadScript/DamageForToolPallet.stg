@@ -1,0 +1,9 @@
+EGCPlayerForToolPalette =
+{
+    {"PLAYER_0", "/Data/Texture/PLAYER_0.bmp"},
+    {"PLAYER_1", "/Data/Texture/PLAYER_1.bmp"},
+    {"PLAYER_2", "/Data/Texture/PLAYER_2.bmp"},
+    {"PLAYER_3", "/Data/Texture/PLAYER_3.bmp"},
+    {"PLAYER_4", "/Data/Texture/PLAYER_4.bmp"},
+    {"PLAYER_5", "/Data/Texture/PLAYER_5.bmp"},
+}

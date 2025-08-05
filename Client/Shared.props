@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(GCEXTLIB)\DXSDK\Include;$(KNCSDKPATH)\Include;$(GCEXTLIB)\Log4cxx\apache-log4cxx-0.10.0-vs2015\src\main\include;$(GCEXTLIB)\IntelTBB\tbb2019_20190410oss\include;$(GCEXTLIB)\Boost\boost_1_67_0;$(GCEXTLIB)\Log4cxx\apache-log4cxx-0.10.0-vs2015\src\main\include</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>BOOST_SIGNALS_NO_DEPRECATION_WARNING;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;_VC80_UPGRADE=0x0710;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(GCEXTLIB)\DXSDK\Lib\x86;$(GCEXTLIB)\Boost\boost_1_67_0\stage\lib;$(GCEXTLIB)\Log4cxx\apr-util\xml\expat\lib\LibR;$(GCEXTLIB)\Log4cxx\apr-util\LibR;$(GCEXTLIB)\Log4cxx\apr\LibR;$(GCEXTLIB)\IntelTBB\tbb2019_20190410oss\lib\ia32\vc14;$(GCEXTLIB)\Log4cxx\apache-log4cxx-0.10.0-vs2015\projects\Release;$(KNCSDKPATH)\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Normaliz.lib;Crypt32.lib;Wldap32.lib;odbc32.lib;odbccp32.lib;aprutil-1.lib;apr-1.lib;log4cxx.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>

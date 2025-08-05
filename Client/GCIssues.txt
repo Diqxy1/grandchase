@@ -1,0 +1,218 @@
+▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤
+
+★ 컨텐츠         ☞ 마리 3차 전직( 라기아스 )
+★ 업데이트       ☞ 2011년 08월 25일( 한국 )
+★ 담당자         ☞ 이상호
+★ Phone          ☞ 010-3622-2209
+★ E-Mail         ☞ shmhlove@kog.co.kr
+
+▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤
+
+1. 개발브렌치
+    - 소스   : https://svn.kog.co.kr/gc/source/Branches/20110825_Characters
+    - 리소스 : https://svn.kog.co.kr/gc/resource/20110825_NewCharacter
+
+
+2. 개발이슈
+    - 데미지 속성 추가    : FireInfo.stg 참조
+    - 버프 속성 추가      : BuffInfo.stg 참조
+    - 키 입력 방식 추가   : 방향키 입력상태 유지
+    - 라이브 엑스트라 메시의 모션처리방식 추가
+
+
+3. 변경된 파일 정보
+    - 소스
+        /Client/Buff/KGCBuff.cpp
+        /Client/Buff/KGCBuff.h
+        /Client/Controls.cpp
+        /Client/Controls.h
+        /Client/Damage.cpp
+        /Client/Damage.h
+        /Client/DamageManager.cpp
+        /Client/GCDeviceManager2.cpp
+        /Client/GCDeviceManager2.h
+        /Client/GCGlobal.cpp
+        /Client/GCGraphicsHelper.cpp
+        /Client/GCGraphicsHelper.h
+        /Client/GCItemManager.cpp
+        /Client/GCItemManager.h
+        /Client/GCObject.h
+        /Client/GCObjectAndMotion.cpp
+        /Client/GCObjectAndMotion.h
+        /Client/GCUI/KGCTutorialChar.cpp
+        /Client/KGCModeTutorial.cpp
+        /Client/KGCModeTutorial.h
+        /Client/KGCObj.cpp
+        /Client/KGCObj.h
+        /Client/KGCStringID3.h
+        /Client/Player.cpp
+        /Client/Player.h
+        /Client/Player_Ex.cpp
+        /Client/Replay.cpp
+        /Client/Replay.h
+        /Client/Square/GCSquarePeople.cpp
+        /Client/UIFX/D3DEdit.cpp
+        /Client/UIFX/D3DEdit.h
+        /Client/UIFX/D3DView.cpp
+        
+    - 리소스
+        //ResSet/Char_Mari3.kom
+        //ResSet/Char_Mari3.kom/2740.frm
+        //ResSet/Char_Mari3.kom/2741.frm
+        //ResSet/Char_Mari3.kom/3215.frm
+        //ResSet/Char_Mari3.kom/3215_Wait.frm
+        //ResSet/Char_Mari3.kom/3215t.frm
+        //ResSet/Char_Mari3.kom/3216.frm
+        /ResSet/Char_Mari3.kom/3216_Walk.frm
+        /ResSet/Char_Mari3.kom/3217.frm
+        /ResSet/Char_Mari3.kom/3217_Dash.frm
+        /ResSet/Char_Mari3.kom/3218.frm
+        /ResSet/Char_Mari3.kom/3219.frm
+        /ResSet/Char_Mari3.kom/3220.frm
+        /ResSet/Char_Mari3.kom/3221.frm
+        /ResSet/Char_Mari3.kom/3221_Booster_Dash.frm
+        /ResSet/Char_Mari3.kom/3222.frm
+        /ResSet/Char_Mari3.kom/3222_Booster_Back_Dash.frm
+        /ResSet/Char_Mari3.kom/3223.frm
+        /ResSet/Char_Mari3.kom/3224.frm
+        /ResSet/Char_Mari3.kom/3224_Dash_atk.frm
+        /ResSet/Char_Mari3.kom/3224_SoulTaker.frm
+        /ResSet/Char_Mari3.kom/3225.frm
+        /ResSet/Char_Mari3.kom/3226.frm
+        /ResSet/Char_Mari3.kom/3227.frm
+        /ResSet/Char_Mari3.kom/3227_Jump_Atk.frm
+        /ResSet/Char_Mari3.kom/3227_SoulTaker.frm
+        /ResSet/Char_Mari3.kom/3228.frm
+        /ResSet/Char_Mari3.kom/3228_SoulSpear.frm
+        /ResSet/Char_Mari3.kom/3228_SoulTaker.frm
+        /ResSet/Char_Mari3.kom/3229.frm
+        /ResSet/Char_Mari3.kom/3229_SoulTaker.frm
+        /ResSet/Char_Mari3.kom/3230.frm
+        /ResSet/Char_Mari3.kom/3231.frm
+        /ResSet/Char_Mari3.kom/3232.frm
+        /ResSet/Char_Mari3.kom/3233.frm
+        /ResSet/Char_Mari3.kom/3234.frm
+        /ResSet/Char_Mari3.kom/3235.frm
+        /ResSet/Char_Mari3.kom/3236.frm
+        /ResSet/Char_Mari3.kom/3237.frm
+        /ResSet/Char_Mari3.kom/3238.frm
+        /ResSet/Char_Mari3.kom/3239.frm
+        /ResSet/Char_Mari3.kom/3240.frm
+        /ResSet/Char_Mari3.kom/3241.frm
+        /ResSet/Char_Mari3.kom/3242.frm
+        /ResSet/Char_Mari3.kom/3243.frm
+        /ResSet/Char_Mari3.kom/3244.frm
+        /ResSet/Char_Mari3.kom/3245.frm
+        /ResSet/Char_Mari3.kom/3246.frm
+        /ResSet/Char_Mari3.kom/3247.frm
+        /ResSet/Char_Mari3.kom/3248.frm
+        /ResSet/Char_Mari3.kom/3249.frm
+        /ResSet/Char_Mari3.kom/3250.frm
+        /ResSet/Char_Mari3.kom/3251.frm
+        /ResSet/Char_Mari3.kom/3252.frm
+        /ResSet/Char_Mari3.kom/3253.frm
+        /ResSet/Char_Mari3.kom/3254.frm
+        /ResSet/Char_Mari3.kom/Mari04_Halfcircle.dds
+        /ResSet/Char_Mari3.kom/Mari04_Ice_01.dds
+        /ResSet/Char_Mari3.kom/Mari04_Jump.dds
+        /ResSet/Char_Mari3.kom/Mari04_Magiccircle.dds
+        /ResSet/Char_Mari3.kom/Mari04_shield.dds
+        /ResSet/Char_Mari3.kom/Mari4_Voice_GameEnd.wav
+        /ResSet/Char_Mari3.kom/Mari4_Voice_GameStart.wav
+        /ResSet/Char_Mari3.kom/Mari4_Voice_Special1.wav
+        /ResSet/Char_Mari3.kom/Mari4_Voice_Special2.wav
+        /ResSet/Char_Mari3.kom/Mari4_Voice_Special3.wav
+        /ResSet/Char_Mari3.kom/Mari4_Voice_Taunt.wav
+        /ResSet/Char_Mari3.kom/mari_4_ac.dds
+        /ResSet/Char_Mari3.kom/mari_4_ac.p3m
+        /ResSet/Char_Mari3.kom/mari_4_ac_big.dds
+        /ResSet/Char_Mari3.kom/mari_4_ac_big.p3m
+        /ResSet/Char_Mari3.kom/Mari_BuffIcon_Barrier.dds
+        /ResSet/Char_Mari3.kom/Mari_BuffIcon_Canceler.dds
+        /ResSet/Char_Mari3.kom/Mari_BuffIcon_Drain.dds
+        /ResSet/Char_Mari3.kom/Mari_BuffIcon_Repair.dds
+        /ResSet/Char_Mari3.kom/mary02_Shield_Big_01.dds
+        /ResSet/Char_Mari3.kom/mary02_Shield_Big_02.dds
+        /ResSet/Char_Mari3.kom/mary02_Shield_Big_03.dds
+        /ResSet/Char_Mari3.kom/Mary04_Shield_01.dds
+        /ResSet/Char_Mari3.kom/Mary04_Shield_02.dds
+        /ResSet/Char_Mari3.kom/Mary04_Shield_03.dds
+        /ResSet/Char_Mari3.kom/skillimage3251.dds
+        /ResSet/Char_Mari3.kom/skillimage3252.dds
+        /ResSet/Char_Mari3.kom/skillimage3253.dds
+        /ResSet/Char_Mari3.kom/soul_taker.dds
+        /ResSet/Char_Mari3.kom/soul_taker.p3m
+        /ResSet/Char_Mari3.kom/SoulTaker_3215.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3216.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3217.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3218.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3219.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3220.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3221.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3223.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3224.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3225.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3226.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3227.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3228.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3229.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3230.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3231.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3232.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3233.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3234.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3235.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3236.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3237.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3239.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3240.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3241.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3242.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3243.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3244.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3245.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3246.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3247.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3248.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3249.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3250.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3251.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3252.frm
+        /ResSet/Char_Mari3.kom/SoulTaker_3253.frm
+        /ResSet/Loading_CharMotion.kom/9_3.frm
+        /Stage/Char_Script.kom/ActionFiles.stg
+        /Stage/Char_Script.kom/BuffEnum.stg
+        /Stage/Char_Script.kom/DamageEnum.stg
+        /Stage/Char_Script.kom/FireInfo.stg
+        /Stage/Char_Script.kom/Mari4Script.stg
+        /Stage/Char_Script.kom/Mari4StateFunc.stg
+        /Stage/Char_Script.kom/MotionEnum.stg
+        /Stage/Char_Script.kom/SamePlayerMotion.stg
+        /Stage/Char_Script.kom/SquarePeopleStateMotion.stg
+        /Stage/particle_script.kom/mari_particle.KTP
+        /Stage/particle_script.kom/particles.lua
+        /Stage/playertemplate.kom/playertemplate9_3.lua
+        /Stage/script.kom/BuffInfo.stg
+        /Stage/script.kom/DataFiles.lua
+        /Stage/script.kom/item_ability_calc_exception_list.lua
+        /Stage/script.kom/ItemTable.lua
+        /Stage/script.kom/ParticleEff.stg
+        /Stage/script.kom/Sort.stg
+        /Stage/script.kom/sound.stg
+        /Stage/script.kom/TutorialEquip.lua
+        /Stage/str.stg
+        /Stage/UI/ui.kom/ui_tutorial_select_box_new.stg
+        /Texture/SpecialFaceImage.kom/MariSp_4.dds
+        /Texture/ui3.kom/comeback.dds
+        /Texture/ui3.kom/ui_tutorial_JopName2.dds
+
+▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤▤
+
+
+2011.09.20 [보스 몬스터별 HP 비율 조정][이세진]
+리소스 - MonsterStat.lua
+
+
+2011.09.29 [아지트 놀거리 오브젝트]
+리소스 - AgitSpecialObjectInfo.stg
+문서 - http://kccs/GC/DocLib2/12_프로그래머/아지트%20놀거리%20오브젝트.docx

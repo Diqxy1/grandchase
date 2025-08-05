@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{0ab638b2-e97c-43c0-bd63-2bcd3a29eeeb}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Server">
+      <UniqueIdentifier>{8cab2c6a-68ef-4555-9dfd-b7c56a98474c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server\P2P">
+      <UniqueIdentifier>{13df5b9e-ce4a-4a17-a2c6-9372e9d88f4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server\socket">
+      <UniqueIdentifier>{26654185-0ea2-4b19-bcc8-1e8e8282a517}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mfc afx">
+      <UniqueIdentifier>{46a62686-1963-490b-bc57-918969bdd5ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dialog item">
+      <UniqueIdentifier>{0c37f5c6-d342-497c-9618-516ce390e998}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dialog other">
+      <UniqueIdentifier>{98dfa929-aa22-42d8-8530-d9bc47473d40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui%28editable list ctrl%29">
+      <UniqueIdentifier>{ce54119d-185a-4717-98b1-1542fd70efdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui%28codex:dynamic sizing%29">
+      <UniqueIdentifier>{6f56fab2-d212-4fcf-ad6b-164871f959c0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\GCServerManager.ico">
+      <Filter>Resource</Filter>
+    </Image>
+    <Image Include="res\GCServerManagerDoc.ico">
+      <Filter>Resource</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GCServerManager.rc">
+      <Filter>Resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\GCServerManager.rc2">
+      <Filter>Resource</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Actor.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ActorProxy.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ChannelType.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ClientErr.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\ClientErr_def.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\CommonPacket.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Event.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\FailRate_def.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GenericLogfile.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GenericLogfile_def.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\IntEvent.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KncBitStream.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KncException.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\KncSmartPtr.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\LogManager.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MsgServer\MSEvent.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MsgServer\MSEvent_def.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\MSPacket.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameClient\MSProxy.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\NetError.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\NetError_def.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\NUserEvent.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CenterServer\NUserEvent_def.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\NUserPacket.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameClient\NUserProxy.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Performer.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\PrimitiveTypedef.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\TCPRelay\RelayData.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ServerType.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\SimObject.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\ThreadManager.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameServer\UserEvent.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\UserEvent_def.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CommonFiles\UserPacket.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameClient\UserProxy.h">
+      <Filter>Server</Filter>
+    </ClInclude>
+    <ClInclude Include="GMProxy.h">
+      <Filter>Server\P2P</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\CircularQueue.h">
+      <Filter>Server\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\IOCP.h">
+      <Filter>Server\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\IOThread.h">
+      <Filter>Server\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\NetCommon.h">
+      <Filter>Server\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\Overlapped.h">
+      <Filter>Server\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\Session.h">
+      <Filter>Server\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\SocketObject.h">
+      <Filter>Server\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\Socket\UdpToServer.h">
+      <Filter>Server\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildFrm.h">
+      <Filter>mfc afx</Filter>
+    </ClInclude>
+    <ClInclude Include="GCServerManagerDoc.h">
+      <Filter>mfc afx</Filter>
+    </ClInclude>
+    <ClInclude Include="GCServerManagerView.h">
+      <Filter>mfc afx</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>mfc afx</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>mfc afx</Filter>
+    </ClInclude>
+    <ClInclude Include="KAdminDelItem.h">
+      <Filter>dialog item</Filter>
+    </ClInclude>
+    <ClInclude Include="KAdminInsertCashDurationITem.h">
+      <Filter>dialog item</Filter>
+    </ClInclude>
+    <ClInclude Include="KAdminInsertCashNormalItem.h">
+      <Filter>dialog item</Filter>
+    </ClInclude>
+    <ClInclude Include="KAdminInsertGPDurationItem.h">
+      <Filter>dialog item</Filter>
+    </ClInclude>
+    <ClInclude Include="KAdminInsertGPNormalItem.h">
+      <Filter>dialog item</Filter>
+    </ClInclude>
+    <ClInclude Include="KAddServerListDlg.h">
+      <Filter>dialog other</Filter>
+    </ClInclude>
+    <ClInclude Include="KAdminDBAccessDlg.h">
+      <Filter>dialog other</Filter>
+    </ClInclude>
+    <ClInclude Include="KBlackListDlg.h">
+      <Filter>dialog other</Filter>
+    </ClInclude>
+    <ClInclude Include="KChangeDBInfoDlg.h">
+      <Filter>dialog other</Filter>
+    </ClInclude>
+    <ClInclude Include="KChannel.h">
+      <Filter>dialog other</Filter>
+    </ClInclude>
+    <ClInclude Include="KChannelLobby.h">
+      <Filter>dialog other</Filter>
+    </ClInclude>
+    <ClInclude Include="KDialogIDDlg.h">
+      <Filter>dialog other</Filter>
+    </ClInclude>
+    <ClInclude Include="KLoginDlg.h">
+      <Filter>dialog other</Filter>
+    </ClInclude>
+    <ClInclude Include="KNotifyMsgDlg.h">
+      <Filter>dialog other</Filter>
+    </ClInclude>
+    <ClInclude Include="KReasonDlg.h">
+      <Filter>dialog other</Filter>
+    </ClInclude>
+    <ClInclude Include="KRoomInfoDlg.h">
+      <Filter>dialog other</Filter>
+    </ClInclude>
+    <ClInclude Include="KServerListDlg.h">
+      <Filter>dialog other</Filter>
+    </ClInclude>
+    <ClInclude Include="KUserInfoDlg.h">
+      <Filter>dialog other</Filter>
+    </ClInclude>
+    <ClInclude Include="ReportCtrl.h">
+      <Filter>ui%28editable list ctrl%29</Filter>
+    </ClInclude>
+    <ClInclude Include="codex\cdxCDynamicDialog.h">
+      <Filter>ui%28codex:dynamic sizing%29</Filter>
+    </ClInclude>
+    <ClInclude Include="codex\cdxCDynamicWnd.h">
+      <Filter>ui%28codex:dynamic sizing%29</Filter>
+    </ClInclude>
+    <ClInclude Include="codex\cdxCDynamicWndEx.h">
+      <Filter>ui%28codex:dynamic sizing%29</Filter>
+    </ClInclude>
+    <ClInclude Include="codex\cdxCSizeIconCtrl.h">
+      <Filter>ui%28codex:dynamic sizing%29</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Common\GCEnum.h" />
+    <ClInclude Include="GCItemManager.h" />
+    <ClInclude Include="GCServerManager.h" />
+    <ClInclude Include="ItemStructure.h" />
+    <ClInclude Include="KAdminItemInfoData.h" />
+    <ClInclude Include="MD5Checksum.h" />
+    <ClInclude Include="MD5ChecksumDefines.h" />
+    <ClInclude Include="SServerInfo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Common\Actor.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ActorProxy.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ClientErr.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CommonFiles\CommonPacket.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Event.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\GenericLogfile.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\KncBitStream.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\LogManager.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MsgServer\MSEvent.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CommonFiles\MSPacket.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameClient\MSProxy.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\NetError.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CenterServer\NUserEvent.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CommonFiles\NUserPacket.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameClient\NUserProxy.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Performer.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\SimObject.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\ThreadManager.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserEvent.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CommonFiles\UserPacket.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameClient\UserProxy.cpp">
+      <Filter>Server</Filter>
+    </ClCompile>
+    <ClCompile Include="GMProxy.cpp">
+      <Filter>Server\P2P</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\CircularQueue.cpp">
+      <Filter>Server\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\IOCP.cpp">
+      <Filter>Server\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\IOThread.cpp">
+      <Filter>Server\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\NetCommon.cpp">
+      <Filter>Server\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\Session.cpp">
+      <Filter>Server\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\SocketObject.cpp">
+      <Filter>Server\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildFrm.cpp">
+      <Filter>mfc afx</Filter>
+    </ClCompile>
+    <ClCompile Include="GCServerManagerDoc.cpp">
+      <Filter>mfc afx</Filter>
+    </ClCompile>
+    <ClCompile Include="GCServerManagerView.cpp">
+      <Filter>mfc afx</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>mfc afx</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>mfc afx</Filter>
+    </ClCompile>
+    <ClCompile Include="KAdminDelItem.cpp">
+      <Filter>dialog item</Filter>
+    </ClCompile>
+    <ClCompile Include="KAdminInsertCashDurationITem.cpp">
+      <Filter>dialog item</Filter>
+    </ClCompile>
+    <ClCompile Include="KAdminInsertCashNormalItem.cpp">
+      <Filter>dialog item</Filter>
+    </ClCompile>
+    <ClCompile Include="KAdminInsertGPDurationItem.cpp">
+      <Filter>dialog item</Filter>
+    </ClCompile>
+    <ClCompile Include="KAdminInsertGPNormalItem.cpp">
+      <Filter>dialog item</Filter>
+    </ClCompile>
+    <ClCompile Include="KAddServerListDlg.cpp">
+      <Filter>dialog other</Filter>
+    </ClCompile>
+    <ClCompile Include="KAdminDBAccessDlg.cpp">
+      <Filter>dialog other</Filter>
+    </ClCompile>
+    <ClCompile Include="KBlackListDlg.cpp">
+      <Filter>dialog other</Filter>
+    </ClCompile>
+    <ClCompile Include="KChangeDBInfoDlg.cpp">
+      <Filter>dialog other</Filter>
+    </ClCompile>
+    <ClCompile Include="KChannel.cpp">
+      <Filter>dialog other</Filter>
+    </ClCompile>
+    <ClCompile Include="KChannelLobby.cpp">
+      <Filter>dialog other</Filter>
+    </ClCompile>
+    <ClCompile Include="KDialogIDDlg.cpp">
+      <Filter>dialog other</Filter>
+    </ClCompile>
+    <ClCompile Include="KLoginDlg.cpp">
+      <Filter>dialog other</Filter>
+    </ClCompile>
+    <ClCompile Include="KNotifyMsgDlg.cpp">
+      <Filter>dialog other</Filter>
+    </ClCompile>
+    <ClCompile Include="KReasonDlg.cpp">
+      <Filter>dialog other</Filter>
+    </ClCompile>
+    <ClCompile Include="KRoomInfoDlg.cpp">
+      <Filter>dialog other</Filter>
+    </ClCompile>
+    <ClCompile Include="KServerListDlg.cpp">
+      <Filter>dialog other</Filter>
+    </ClCompile>
+    <ClCompile Include="KUserInfoDlg.cpp">
+      <Filter>dialog other</Filter>
+    </ClCompile>
+    <ClCompile Include="ReportCtrl.cpp">
+      <Filter>ui%28editable list ctrl%29</Filter>
+    </ClCompile>
+    <ClCompile Include="codex\cdxCDynamicDialog.cpp">
+      <Filter>ui%28codex:dynamic sizing%29</Filter>
+    </ClCompile>
+    <ClCompile Include="codex\cdxCDynamicWnd.cpp">
+      <Filter>ui%28codex:dynamic sizing%29</Filter>
+    </ClCompile>
+    <ClCompile Include="codex\cdxCDynamicWndEx.cpp">
+      <Filter>ui%28codex:dynamic sizing%29</Filter>
+    </ClCompile>
+    <ClCompile Include="codex\cdxCSizeIconCtrl.cpp">
+      <Filter>ui%28codex:dynamic sizing%29</Filter>
+    </ClCompile>
+    <ClCompile Include="GCItemManager.cpp" />
+    <ClCompile Include="GCServerManager.cpp" />
+    <ClCompile Include="GCServerManager_unity.cpp" />
+    <ClCompile Include="GCServerManager_unity2.cpp" />
+    <ClCompile Include="ItemStructure.cpp" />
+    <ClCompile Include="KAdminItemInfoData.cpp" />
+    <ClCompile Include="MD5Checksum.cpp" />
+  </ItemGroup>
+</Project>

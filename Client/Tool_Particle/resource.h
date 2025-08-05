@@ -1,0 +1,122 @@
+﻿//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ generated include file.
+// Used by Tool_Particle.rc
+//
+#define IDR_MAINFRAME                   101
+#define IDI_MAIN_ICON                   101
+#define IDD_FORMVIEW                    102
+#define IDR_MAIN_ACCEL                  113
+#define IDR_MENU                        141
+#define IDR_POPUP                       142
+#define IDD_SELECTDEVICE                144
+#define IDD_DIALOG1                     201
+#define IDD_VALUEDLG                    201
+#define IDD_DLG_SCRIPTEDIT              202
+#define IDD_DLG_FIND                    203
+#define IDC_DEVICE_COMBO                1000
+#define IDC_ADAPTER_COMBO               1002
+#define IDC_FULLSCREENMODES_COMBO       1003
+#define IDC_MULTISAMPLE_COMBO           1005
+#define IDC_WINDOW                      1016
+#define IDC_FULLSCREEN                  1018
+#define IDC_RENDERVIEW                  2002
+#define IDC_VIEWFULLSCREEN              2003
+#define IDC_CHANGEDEVICE                2004
+#define IDC_LIST2                       2006
+#define IDC_NAME                        2007
+#define IDC_COMBO_SRC_BLEND             2008
+#define IDC_COMBO_DEST_BLEND            2009
+#define IDC_PARTICLENUM                 2010
+#define IDC_LIFETIME                    2011
+#define IDC_LAYER                       2012
+#define IDC_OPENFILE                    2013
+#define IDC_EDIT_GRAVITY                2014
+#define IDC_CHECK1                      2015
+#define IDC_EMIT_RADIUS                 2015
+#define IDC_EDIT1                       2016
+#define IDC_OLD                         2016
+#define IDC_OLDVALUE                    2016
+#define IDC_Min1                        2016
+#define IDC_EMITTIME                    2017
+#define IDC_NEWVALUE                    2017
+#define IDC_Min2                        2017
+#define IDC_EMITRATE                    2017
+#define IDC_TEXTURE                     2018
+#define IDC_MIN3                        2018
+#define IDC_MIN4                        2019
+#define IDC_KILLTIME                    2019
+#define IDC_GRID_TIMELINE               2020
+#define IDC_MAX1                        2020
+#define IDC_MAX2                        2021
+#define IDC_KILLNUM                     2021
+#define IDC_APPLY                       2022
+#define IDC_MAX3                        2022
+#define IDC_MAX4                        2023
+#define IDC_STATIC1                     2024
+#define IDC_STATIC2                     2025
+#define IDC_STATIC3                     2026
+#define IDC_STATIC4                     2027
+#define IDC_MIN                         2028
+#define IDC_MAX                         2029
+#define IDC_BT_GRAVITY                  2029
+#define IDC_BT_EMITRADIUS               2030
+#define IDC_SCRIPTEDIT                  2031
+#define IDC_BT_EMITRATE                 2032
+#define IDD_MULTIPLAYER_CONNECT         10001
+#define IDD_MULTIPLAYER_GAMES           10002
+#define IDD_MULTIPLAYER_CREATE          10003
+#define IDD_LOBBY_WAIT_STATUS           10004
+#define IDC_PLAYER_NAME_EDIT            11002
+#define IDC_GAMES_LIST                  11003
+#define IDC_JOIN                        11004
+#define IDC_CREATE                      11005
+#define IDC_CONNECTION_LIST             11006
+#define IDC_BACK                        11007
+#define IDC_EDIT_SESSION_NAME           11009
+#define IDC_SEARCH_CHECK                11010
+#define IDC_WAIT_TEXT                   11012
+#define IDD_VOICE_SETUP                 12008
+#define IDC_SESSIONCOMPRESION_GROUP     12059
+#define IDC_COMPRESSION_COMBO           12060
+#define IDC_QUALITY_DEFAULT             12201
+#define IDC_QUALITY_SET                 12202
+#define IDC_QUALITY_SLIDER              12203
+#define IDC_AGGRESSIVENESS_DEFAULT      12301
+#define IDC_AGGRESSIVENESS_SET          12302
+#define IDC_AGGRESSIVENESS_SLIDER       12303
+#define IDC_RECORD_DEFAULT              12501
+#define IDC_RECORD_SET                  12502
+#define IDC_RECORD_AUTO                 12503
+#define IDC_RECORD_SLIDER               12504
+#define IDC_THRESHOLD_DEFAULT           12601
+#define IDC_THRESHOLD_SET               12602
+#define IDC_THRESHOLD_AUTO              12603
+#define IDC_THRESHOLD_SLIDER            12604
+#define IDC_PLAYBACK_DEFAULT            12701
+#define IDC_PLAYBACK_SET                12702
+#define IDC_PLAYBACK_SLIDER             12703
+#define IDM_CHANGEDEVICE                40002
+#define IDM_TOGGLEFULLSCREEN            40003
+#define IDM_EXIT                        40006
+#define IDM_PAUSE                       40008
+#define IDM_CONFIGINPUT                 40011
+#define IDM_CONFIGVOICE                 40012
+#define ID_EDIT_COPY40022               40022
+#define ID_EDIT_PASTE40023              40023
+#define ID_EDIT_FIND40024               40024
+#define ID_40026                        40026
+#define ID_PARTICLE_NEW                 40027
+#define ID_COLOR                        40028
+#define ID_PARTICLE_FIND                40029
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_3D_CONTROLS                     1
+#define _APS_NEXT_RESOURCE_VALUE        204
+#define _APS_NEXT_COMMAND_VALUE         40030
+#define _APS_NEXT_CONTROL_VALUE         2033
+#define _APS_NEXT_SYMED_VALUE           300
+#endif
+#endif

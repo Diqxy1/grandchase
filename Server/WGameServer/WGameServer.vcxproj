@@ -1,0 +1,1787 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug(UnityBuild)|Win32">
+      <Configuration>Debug(UnityBuild)</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release(LargeAddressAwareEnable)|Win32">
+      <Configuration>Release(LargeAddressAwareEnable)</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release(UnityBuild)|Win32">
+      <Configuration>Release(UnityBuild)</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{08E2D661-656C-4988-9E2D-A01D309C6F02}</ProjectGuid>
+    <RootNamespace>WGameServer</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\..\Macros.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\..\Macros.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\..\Macros.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\..\Macros.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+    <Import Project="..\..\Macros.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">
+    <OutDir>Release_LA\</OutDir>
+    <IntDir>Release_LA\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../Common;./;../CenterServer;../GameServer; $(SolutionDir)\Libs\InternalLib\KNCSDK_2015\include$(IncrediBuild)\tbb22_013oss\include; ../../CommonFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>..\GameServer\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions> /LIBPATH:"$(SolutionDir)\Libs\InternalLib\KNCSDK_2015\lib" %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>../GameServer/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc; libcmt; libcp;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(TargetDir)$(TargetName).map</MapFileName>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command />
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)  /utf-8</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../CommonFiles/;../Common;../GameServer;$(SolutionDir)\Libs\InternalLib\KNCSDK_2015\include;$(SolutionDir)\Libs\ExternalLib\Boost\boost_1_67_0;$(SolutionDir)\Libs\ExternalLib\Log4cxx\apache-log4cxx-0.10.0-vs2015\src\main\include;$(SolutionDir)\Libs\ExternalLib\IntelTBB\tbb2019_20190410oss\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USE_32BIT_TIME_T;_SECURE_SCL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>..\GameServer\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/LIBPATH:"$(SolutionDir)\Libs\InternalLib\KNCSDK_2015\lib"
+/LIBPATH:"$(IncrediBuild)\tbb22_013oss\ia32\vc8\lib %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>libcmt; libc; libcp;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)$(ProjectName).map</MapFileName>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EntryPointSymbol>wWinMainCRTStartup</EntryPointSymbol>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Libs\ExternalLib\Boost\boost_1_67_0\lib-md;$(SolutionDir)\Libs\ExternalLib\Boost\boost_1_67_0\stage\lib;$(SolutionDir)\Libs\InternalLib\KNCSDK_2015\lib;$(ExternalLibPath)\Boost\boost_1_65_1\lib32-msvc-10.0;$(ExternalLibPath)\Log4cxx\Lib;$(ExternalLibPath)\IntelTBB\tbb2017_20170807oss\lib\ia32\vc11;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../Common;./;../CenterServer;../GameServer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USE_32BIT_TIME_T; ;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>..\GameServer\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>../GameServer/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libc; libcmt; ;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(TargetDir)$(TargetName).map</MapFileName>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command />
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions> /bigobj /MP
+ %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>../Common;./;../CenterServer;../GameServer; ;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USE_32BIT_TIME_T;_SECURE_SCL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>..\GameServer\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>libcmt; libc;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)$(ProjectName).map</MapFileName>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EntryPointSymbol>wWinMainCRTStartup</EntryPointSymbol>
+      <TargetMachine>MachineX86</TargetMachine>
+      <FixedBaseAddress>false</FixedBaseAddress>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../Common;./;../CenterServer;../GameServer;$(SolutionDir)\Libs\InternalLib\KNCSDK_2015\include;$(IncrediBuild)\tbb22_013oss\include;../../CommonFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USE_32BIT_TIME_T;_SECURE_SCL=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>..\GameServer\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/LIBPATH:"$(SolutionDir)\Libs\InternalLib\KNCSDK_2015\lib"
+/LIBPATH:"$(IncrediBuild)\tbb22_013oss\ia32\vc8\lib %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName)_LA.exe</OutputFile>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>libcmt; libc; libcp;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(OutDir)$(ProjectName)_LA.map</MapFileName>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <EntryPointSymbol>wWinMainCRTStartup</EntryPointSymbol>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\CommonFiles\CommonPacket.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\CommonFiles\UserPacket.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\ActionDecider.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\Actor.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\ActorManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\ActorProxy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\AgentEvent.cpp" />
+    <ClCompile Include="..\Common\AgentPacket.cpp" />
+    <ClCompile Include="..\Common\BaseServer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\CenterEvent.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\CenterPacket.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\CommonSP.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\CYOUBilling\CYOUBilling.cpp" />
+    <ClCompile Include="..\Common\CYOUBilling\CYOUBillingEvent.cpp" />
+    <ClCompile Include="..\Common\CYOUBilling\CYOUPacket.cpp" />
+    <ClCompile Include="..\Common\DBLayer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\DropSystem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\DuplicateProcessChecker.cpp" />
+    <ClCompile Include="..\Common\Event.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\FSM\FSMclass.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\FSM\FSMstate.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\FTP\BlockingSocket.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\FTP\FTPClient.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\FTP\FTPDataTypes.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\FTP\FTPFileState.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\FTP\FTPListParse.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\GCAttributeDecider.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\GCAttributeTable.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\GCGradeDecider.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\GCGradeTable.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\GCSocketDecider.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\GCSocketTable.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\GenericLogfile.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\KncBitStream.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\LogManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\Lottery.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\Lua\KLuaManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\MatchEvent.cpp" />
+    <ClCompile Include="..\Common\MatchPacket.cpp" />
+    <ClCompile Include="..\Common\MultiLanguageString.cpp" />
+    <ClCompile Include="..\Common\NetError.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\NetLayer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\ODBC\Odbc.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\Performer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\PrimeSearch.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\SHA1.cpp" />
+    <ClCompile Include="..\Common\SimLayer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\SimObject.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\SlangFilter.cpp" />
+    <ClCompile Include="..\Common\Socket\AccepterInterface.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\CircularQueue.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\IOCP.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\IOThread.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\NetCommon.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\Session.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\SocketObject.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\Socket\UdpEcho.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\Statistics.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\StringTable.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\Tea.cpp" />
+    <ClCompile Include="..\Common\ThreadManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\TickManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\EditLog.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\HookStdio.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\ReadOnlyEdit.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\stdafx.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\Common\UI\SubclassWnd.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\Common\XML\Markup.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\AccumulateAttendance.cpp" />
+    <ClCompile Include="..\GameServer\Adventure.cpp" />
+    <ClCompile Include="..\GameServer\AgentConnector.cpp" />
+    <ClCompile Include="..\GameServer\AgentProxy.cpp" />
+    <ClCompile Include="..\GameServer\AgitHelper.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\AvoidOverlappingLottery.cpp" />
+    <ClCompile Include="..\GameServer\BillDB.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\BillingError.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\BlockedAttackIP.cpp" />
+    <ClCompile Include="..\GameServer\BuffDonation.cpp" />
+    <ClCompile Include="..\GameServer\Calendar.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CenterProxy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ChangeWeaponManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Channel.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ChannelDrop.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ChannelManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ChannelTypeEvent.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CharacterGraduation.cpp" />
+    <ClCompile Include="..\GameServer\CharacterPollManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CharDefault.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CharismasPresent.cpp" />
+    <ClCompile Include="..\GameServer\CharPromotionSystem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CharSlotManager.cpp" />
+    <ClCompile Include="..\GameServer\CheckInStat.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ChoiceDrop.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ClientErr.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ClientPing.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CnConnector.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CollectionManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ConnectionGiftBox.cpp" />
+    <ClCompile Include="..\GameServer\CooperationEvent.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CoupleSystem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\CPLStatistics.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\DepotManager.cpp" />
+    <ClCompile Include="..\GameServer\DicePlay.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\DonationManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\DotaManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\DungeonEntrance.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\DungeonManager.cpp" />
+    <ClCompile Include="..\GameServer\DungeonRankManager.cpp" />
+    <ClCompile Include="..\GameServer\EclipseCollect.cpp" />
+    <ClCompile Include="..\GameServer\EclipsePlot.cpp" />
+    <ClCompile Include="..\GameServer\EclipseTimeEvent.cpp" />
+    <ClCompile Include="..\GameServer\EnchantStrong.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\EquipLvDown.cpp" />
+    <ClCompile Include="..\GameServer\ErrandManager.cpp" />
+    <ClCompile Include="..\GameServer\Escort.cpp" />
+    <ClCompile Include="..\GameServer\EventDivideDispatcher.cpp" />
+    <ClCompile Include="..\GameServer\EventMonsterManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\EvtDBThread.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\FailRate.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\FatigueSystem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\FTPFactory.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GachaLottery.cpp" />
+    <ClCompile Include="..\GameServer\GachaManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GachaPong.cpp" />
+    <ClCompile Include="..\GameServer\GambleBuyManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GameCouponManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GameDrop.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GameServer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GashBilling.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Gawibawibo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GCHelper.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GCItemConfig.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GCPoint.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GCSocketConsumeItem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GetLimit.cpp" />
+    <ClCompile Include="..\GameServer\GPCapsuleManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBLayer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThread.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThread2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThread3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThread4.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThread5.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThread6.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThreadHelper.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThreadHelper2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThreadHelper3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSDBThreadHelper4.cpp" />
+    <ClCompile Include="..\GameServer\GSGash.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSNetLayer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GSSimLayer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Guild.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GuildManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\GWCEvent.cpp" />
+    <ClCompile Include="..\GameServer\GWCSupport.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\HeroDungeonManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\HeroItemUpgradeManager.cpp" />
+    <ClCompile Include="..\GameServer\IndigoUtil.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\InfinityDungeon.cpp" />
+    <ClCompile Include="..\GameServer\IPAdvantage.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ItemBreakUp.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ItemCompose.cpp" />
+    <ClCompile Include="..\GameServer\ItemContainer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ItemLevelDecider.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ItemLevelTable.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ItemManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ItemTradeManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\JobMissionGuide.cpp" />
+    <ClCompile Include="..\GameServer\JumpingChar.cpp" />
+    <ClCompile Include="..\GameServer\JustInTime.cpp" />
+    <ClCompile Include="..\GameServer\Kairo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\KStatPing.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\LevelResetEvent.cpp" />
+    <ClCompile Include="..\GameServer\LoginOutStat.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\LookEquipment.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\LoudMessage.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\LunaNewYear.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\MagicBox.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ManufactureS3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\MapStatistics.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\MatchConnector.cpp" />
+    <ClCompile Include="..\GameServer\MatchProxy.cpp" />
+    <ClCompile Include="..\GameServer\MiniGameRankManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\MissionEvent.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\MissionGettableCondition.cpp" />
+    <ClCompile Include="..\GameServer\MissionInfo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\MissionManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Missionpack.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\MonsterCardMix.cpp" />
+    <ClCompile Include="..\GameServer\NCashBilling.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\NCashEvent.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\NewDonationManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\NMNetCafeManager.cpp" />
+    <ClCompile Include="..\GameServer\NpcGift.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\OlympicManager.cpp" />
+    <ClCompile Include="..\GameServer\PayLetterBilling.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PayLetterEvent.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PeriodNotice.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PetGlyphMng.cpp" />
+    <ClCompile Include="..\GameServer\PetHelper.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PlantTree.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PlayAuthManager.cpp" />
+    <ClCompile Include="..\GameServer\PlayTimeStat.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PostConfig.cpp" />
+    <ClCompile Include="..\GameServer\PreHackingCheckManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PresentBox.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\PVPMatchManager.cpp" />
+    <ClCompile Include="..\GameServer\QuizBingo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Rainbow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\RankManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\RecomHelper.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\RequierInfo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ResultManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ResultReward.cpp" />
+    <ClCompile Include="..\GameServer\RitasChristmas.cpp" />
+    <ClCompile Include="..\GameServer\RKTornado.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Room.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\RoomFSM.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\RoomManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Santa.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SealedChar.cpp" />
+    <ClCompile Include="..\GameServer\ServerBenefit.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SHCheckPoint.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\ShutdownUser.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SignBoard.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SkillManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SocialCommerce.cpp" />
+    <ClCompile Include="..\GameServer\Socks.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Songkran.cpp" />
+    <ClCompile Include="..\GameServer\SP.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SpecialMonsterManager.cpp" />
+    <ClCompile Include="..\GameServer\SpecialReward.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Sphinx.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Square.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SquareManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StageReward.cpp" />
+    <ClCompile Include="..\GameServer\StatAgent.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatCharacter.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatCharacterEquip.cpp" />
+    <ClCompile Include="..\GameServer\StatCoupleRoom.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatDeathMatch.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatDisconnect.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatDungeon.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatEmoticon.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatGameLoading.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatGameStartGap.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatGP.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatisticsManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatItemGet.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatLeaveGame.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatLoadingInfo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatMiniGame.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatNetwork.cpp" />
+    <ClCompile Include="..\GameServer\StatP2PCritical.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatPvPPlayCharacter.cpp" />
+    <ClCompile Include="..\GameServer\StatRoomJoin.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StatSpx.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\StrengthManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\SubjectManager.cpp" />
+    <ClCompile Include="..\GameServer\SubscriptionManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\Survey.cpp" />
+    <ClCompile Include="..\GameServer\SystemGuide.cpp" />
+    <ClCompile Include="..\GameServer\SystemResourceManager.cpp" />
+    <ClCompile Include="..\GameServer\TH_PayLetterBilling.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\TH_PayLetterEvent.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\TimeDrop.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\TimeEventManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\TongDonation.cpp" />
+    <ClCompile Include="..\GameServer\UnityBuild\United.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United10.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United11.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United12.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United13.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United14.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United15.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United17.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United18.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United19.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United4.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United5.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United6.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United7.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United8.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UnityBuild\United9.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(LargeAddressAwareEnable)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UpdatePlanManager.cpp" />
+    <ClCompile Include="..\GameServer\User.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User10.cpp" />
+    <ClCompile Include="..\GameServer\User2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User4.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User5.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User6.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User6_2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User7.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\User8.cpp" />
+    <ClCompile Include="..\GameServer\User9.cpp" />
+    <ClCompile Include="..\GameServer\UserAchievement.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserBillboard.cpp" />
+    <ClCompile Include="..\GameServer\UserEvent.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserEventChecker.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserFSM.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserHelper.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserHelper2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserHelper3.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\UserLetterBox.cpp" />
+    <ClCompile Include="..\GameServer\VipEventManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\VirtualCash.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\GameServer\VitalityManager.cpp" />
+    <ClCompile Include="..\GameServer\Worker.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="WGameServer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="WGameServerDlg.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug(UnityBuild)|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release(UnityBuild)|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\CommonFiles\ChannelType.h" />
+    <ClInclude Include="..\..\CommonFiles\CommonPacket.h" />
+    <ClInclude Include="..\..\CommonFiles\NetError_def.h" />
+    <ClInclude Include="..\..\CommonFiles\PrimitiveTypedef.h" />
+    <ClInclude Include="..\..\CommonFiles\UpdatePlanEventID.h" />
+    <ClInclude Include="..\..\CommonFiles\UpdatePlanScriptID.h" />
+    <ClInclude Include="..\..\CommonFiles\UserEvent_def.h" />
+    <ClInclude Include="..\..\CommonFiles\UserPacket.h" />
+    <ClInclude Include="..\AgentServer\stdafx.h" />
+    <ClInclude Include="..\Common\ActionDecider.h" />
+    <ClInclude Include="..\Common\Actor.h" />
+    <ClInclude Include="..\Common\ActorFactory.h" />
+    <ClInclude Include="..\Common\ActorManager.h" />
+    <ClInclude Include="..\Common\ActorProxy.h" />
+    <ClInclude Include="..\Common\AgentEvent.h" />
+    <ClInclude Include="..\Common\AgentEvent_def.h" />
+    <ClInclude Include="..\Common\AgentPacket.h" />
+    <ClInclude Include="..\Common\BaseServer.h" />
+    <ClInclude Include="..\Common\CenterEvent.h" />
+    <ClInclude Include="..\Common\CenterEvent_def.h" />
+    <ClInclude Include="..\Common\CenterPacket.h" />
+    <ClInclude Include="..\Common\CommonSP.h" />
+    <ClInclude Include="..\Common\CrashRpt\KncCrashRpt.h" />
+    <ClInclude Include="..\Common\CYOUBilling\CYOUBilling.h" />
+    <ClInclude Include="..\Common\CYOUBilling\CYOUBillingEvent.h" />
+    <ClInclude Include="..\Common\CYOUBilling\CYOUBillingEvent_def.h" />
+    <ClInclude Include="..\Common\CYOUBilling\CYOUPacket.h" />
+    <ClInclude Include="..\Common\CYOUBilling\PacketReq.h" />
+    <ClInclude Include="..\Common\CYOUBilling\PacketRes.h" />
+    <ClInclude Include="..\Common\CYOUBilling\public.h" />
+    <ClInclude Include="..\Common\DBLayer.h" />
+    <ClInclude Include="..\Common\DropSystem.h" />
+    <ClInclude Include="..\Common\DuplicateProcessChecker.h" />
+    <ClInclude Include="..\Common\Event.h" />
+    <ClInclude Include="..\Common\FSM\FSMclass.h" />
+    <ClInclude Include="..\Common\FSM\FSMstate.h" />
+    <ClInclude Include="..\Common\FSM\support_FSM.h" />
+    <ClInclude Include="..\Common\FTP\BlockingSocket.h" />
+    <ClInclude Include="..\Common\FTP\Definements.h" />
+    <ClInclude Include="..\Common\FTP\FTPClient.h" />
+    <ClInclude Include="..\Common\FTP\FTPDataTypes.h" />
+    <ClInclude Include="..\Common\FTP\FTPFileState.h" />
+    <ClInclude Include="..\Common\FTP\FTPListParse.h" />
+    <ClInclude Include="..\Common\FTP\rc_smart_ptr.h" />
+    <ClInclude Include="..\Common\GCAttributeDecider.h" />
+    <ClInclude Include="..\Common\GCAttributeTable.h" />
+    <ClInclude Include="..\Common\GCEnum.h" />
+    <ClInclude Include="..\Common\GCGradeDecider.h" />
+    <ClInclude Include="..\Common\GCGradeTable.h" />
+    <ClInclude Include="..\Common\GCSocketDecider.h" />
+    <ClInclude Include="..\Common\GCSocketTable.h" />
+    <ClInclude Include="..\Common\GenericLogfile.h" />
+    <ClInclude Include="..\Common\GenericLogfile_def.h" />
+    <ClInclude Include="..\Common\IntEvent.h" />
+    <ClInclude Include="..\Common\KncBitStream.h" />
+    <ClInclude Include="..\Common\KncException.h" />
+    <ClInclude Include="..\Common\KncSmartPtr.h" />
+    <ClInclude Include="..\Common\Log4.h" />
+    <ClInclude Include="..\Common\LogManager.h" />
+    <ClInclude Include="..\Common\Lottery.h" />
+    <ClInclude Include="..\Common\Lua\KLuaManager.h" />
+    <ClInclude Include="..\Common\MatchEvent.h" />
+    <ClInclude Include="..\Common\MatchEvent_def.h" />
+    <ClInclude Include="..\Common\MatchPacket.h" />
+    <ClInclude Include="..\Common\McUtil.h" />
+    <ClInclude Include="..\Common\MultiLanguageString.h" />
+    <ClInclude Include="..\Common\NetError.h" />
+    <ClInclude Include="..\Common\NetLayer.h" />
+    <ClInclude Include="..\Common\ODBC\Odbc.h" />
+    <ClInclude Include="..\Common\Performer.h" />
+    <ClInclude Include="..\Common\PrimeSearch.h" />
+    <ClInclude Include="..\Common\ServerType.h" />
+    <ClInclude Include="..\Common\SHA1.h" />
+    <ClInclude Include="..\Common\SimLayer.h" />
+    <ClInclude Include="..\Common\SimObject.h" />
+    <ClInclude Include="..\Common\SlangFilter.h" />
+    <ClInclude Include="..\Common\SlangNode.h" />
+    <ClInclude Include="..\Common\SobManager.h" />
+    <ClInclude Include="..\Common\Socket\Accepter.h" />
+    <ClInclude Include="..\Common\Socket\AccepterInterface.h" />
+    <ClInclude Include="..\Common\Socket\CircularQueue.h" />
+    <ClInclude Include="..\Common\Socket\DisconnectReason_def.h" />
+    <ClInclude Include="..\Common\Socket\IOCP.h" />
+    <ClInclude Include="..\Common\Socket\IOThread.h" />
+    <ClInclude Include="..\Common\Socket\NetCommon.h" />
+    <ClInclude Include="..\Common\Socket\Overlapped.h" />
+    <ClInclude Include="..\Common\Socket\Session.h" />
+    <ClInclude Include="..\Common\Socket\SocketObject.h" />
+    <ClInclude Include="..\Common\Socket\UdpEcho.h" />
+    <ClInclude Include="..\Common\Socket\UdpToServer.h" />
+    <ClInclude Include="..\Common\Statistics.h" />
+    <ClInclude Include="..\Common\StringTable.h" />
+    <ClInclude Include="..\Common\SubThread.h" />
+    <ClInclude Include="..\Common\Tea.h" />
+    <ClInclude Include="..\Common\ThreadManager.h" />
+    <ClInclude Include="..\Common\TickManager.h" />
+    <ClInclude Include="..\Common\UI\EditLog.h" />
+    <ClInclude Include="..\Common\UI\EditStreamBuf.h" />
+    <ClInclude Include="..\Common\UI\HookStdio.h" />
+    <ClInclude Include="..\Common\UI\ReadOnlyEdit.h" />
+    <ClInclude Include="..\Common\UI\stdafx.h" />
+    <ClInclude Include="..\Common\UI\SubclassWnd.h" />
+    <ClInclude Include="..\Common\utf16_cvt.h" />
+    <ClInclude Include="..\Common\XML\Markup.h" />
+    <ClInclude Include="..\GameServer\AccumulateAttendance.h" />
+    <ClInclude Include="..\GameServer\Adventure.h" />
+    <ClInclude Include="..\GameServer\AgentConnector.h" />
+    <ClInclude Include="..\GameServer\AgentProxy.h" />
+    <ClInclude Include="..\GameServer\AgitHelper.h" />
+    <ClInclude Include="..\GameServer\AvoidOverlappingLottery.h" />
+    <ClInclude Include="..\GameServer\BillDB.h" />
+    <ClInclude Include="..\GameServer\BillingError.h" />
+    <ClInclude Include="..\GameServer\BlockedAttackIP.h" />
+    <ClInclude Include="..\GameServer\BuffDonation.h" />
+    <ClInclude Include="..\GameServer\CacheData.h" />
+    <ClInclude Include="..\GameServer\Calendar.h" />
+    <ClInclude Include="..\GameServer\CenterProxy.h" />
+    <ClInclude Include="..\GameServer\ChangeWeaponManager.h" />
+    <ClInclude Include="..\GameServer\Channel.h" />
+    <ClInclude Include="..\GameServer\ChannelDrop.h" />
+    <ClInclude Include="..\GameServer\ChannelManager.h" />
+    <ClInclude Include="..\GameServer\ChannelTypeEvent.h" />
+    <ClInclude Include="..\GameServer\CharacterGraduation.h" />
+    <ClInclude Include="..\GameServer\CharacterPollManager.h" />
+    <ClInclude Include="..\GameServer\CharDefault.h" />
+    <ClInclude Include="..\GameServer\CharismasPresent.h" />
+    <ClInclude Include="..\GameServer\CharPromotionSystem.h" />
+    <ClInclude Include="..\GameServer\CharSlotManager.h" />
+    <ClInclude Include="..\GameServer\CheckInStat.h" />
+    <ClInclude Include="..\GameServer\ChoiceDrop.h" />
+    <ClInclude Include="..\GameServer\ClientErr.h" />
+    <ClInclude Include="..\GameServer\ClientErr_def.h" />
+    <ClInclude Include="..\GameServer\ClientPing.h" />
+    <ClInclude Include="..\GameServer\CnConnector.h" />
+    <ClInclude Include="..\GameServer\CollectionManager.h" />
+    <ClInclude Include="..\GameServer\ConnectionGiftBox.h" />
+    <ClInclude Include="..\GameServer\CooperationEvent.h" />
+    <ClInclude Include="..\GameServer\CoupleSystem.h" />
+    <ClInclude Include="..\GameServer\CPLStatistics.h" />
+    <ClInclude Include="..\GameServer\CPSSOLib.h" />
+    <ClInclude Include="..\GameServer\DepotManager.h" />
+    <ClInclude Include="..\GameServer\DicePlay.h" />
+    <ClInclude Include="..\GameServer\DonationManager.h" />
+    <ClInclude Include="..\GameServer\DotaManager.h" />
+    <ClInclude Include="..\GameServer\DungeonEntrance.h" />
+    <ClInclude Include="..\GameServer\DungeonManager.h" />
+    <ClInclude Include="..\GameServer\DungeonRankManager.h" />
+    <ClInclude Include="..\GameServer\EclipseCollect.h" />
+    <ClInclude Include="..\GameServer\EclipsePlot.h" />
+    <ClInclude Include="..\GameServer\EclipseTimeEvent.h" />
+    <ClInclude Include="..\GameServer\EnchantStrong.h" />
+    <ClInclude Include="..\GameServer\EquipLvDown.h" />
+    <ClInclude Include="..\GameServer\ErrandManager.h" />
+    <ClInclude Include="..\GameServer\Escort.h" />
+    <ClInclude Include="..\GameServer\EventDivideDispatcher.h" />
+    <ClInclude Include="..\GameServer\EventMonsterManager.h" />
+    <ClInclude Include="..\GameServer\EvtDBThread.h" />
+    <ClInclude Include="..\GameServer\FailRate.h" />
+    <ClInclude Include="..\GameServer\FailRate_def.h" />
+    <ClInclude Include="..\GameServer\FatigueSystem.h" />
+    <ClInclude Include="..\GameServer\FTPFactory.h" />
+    <ClInclude Include="..\GameServer\GachaLottery.h" />
+    <ClInclude Include="..\GameServer\GachaManager.h" />
+    <ClInclude Include="..\GameServer\GachaPong.h" />
+    <ClInclude Include="..\GameServer\GambleBuyManager.h" />
+    <ClInclude Include="..\GameServer\GameCouponManager.h" />
+    <ClInclude Include="..\GameServer\GameDrop.h" />
+    <ClInclude Include="..\GameServer\GameServer.h" />
+    <ClInclude Include="..\GameServer\GashBilling.h" />
+    <ClInclude Include="..\GameServer\Gawibawibo.h" />
+    <ClInclude Include="..\GameServer\GCHelper.h" />
+    <ClInclude Include="..\GameServer\GCItemConfig.h" />
+    <ClInclude Include="..\GameServer\GCPoint.h" />
+    <ClInclude Include="..\GameServer\GCSocketConsumeItem.h" />
+    <ClInclude Include="..\GameServer\GetLimit.h" />
+    <ClInclude Include="..\GameServer\GPCapsuleManager.h" />
+    <ClInclude Include="..\GameServer\GSDBLayer.h" />
+    <ClInclude Include="..\GameServer\GSDBThread.h" />
+    <ClInclude Include="..\GameServer\GSGash.h" />
+    <ClInclude Include="..\GameServer\GSNetLayer.h" />
+    <ClInclude Include="..\GameServer\GSSimLayer.h" />
+    <ClInclude Include="..\GameServer\Guild.h" />
+    <ClInclude Include="..\GameServer\GuildManager.h" />
+    <ClInclude Include="..\GameServer\GWCEvent.h" />
+    <ClInclude Include="..\GameServer\GWCSupport.h" />
+    <ClInclude Include="..\GameServer\HeroDungeonManager.h" />
+    <ClInclude Include="..\GameServer\HeroItemUpgradeManager.h" />
+    <ClInclude Include="..\GameServer\IndigoUtil.h" />
+    <ClInclude Include="..\GameServer\InfinityDungeon.h" />
+    <ClInclude Include="..\GameServer\IPAdvantage.h" />
+    <ClInclude Include="..\GameServer\ItemBreakUp.h" />
+    <ClInclude Include="..\GameServer\ItemCompose.h" />
+    <ClInclude Include="..\GameServer\ItemContainer.h" />
+    <ClInclude Include="..\GameServer\ItemLevelDecider.h" />
+    <ClInclude Include="..\GameServer\ItemLevelTable.h" />
+    <ClInclude Include="..\GameServer\ItemManager.h" />
+    <ClInclude Include="..\GameServer\ItemTradeManager.h" />
+    <ClInclude Include="..\GameServer\JobMissionGuide.h" />
+    <ClInclude Include="..\GameServer\JumpingChar.h" />
+    <ClInclude Include="..\GameServer\JustInTime.h" />
+    <ClInclude Include="..\GameServer\Kairo.h" />
+    <ClInclude Include="..\GameServer\KStatPing.h" />
+    <ClInclude Include="..\GameServer\LevelResetEvent.h" />
+    <ClInclude Include="..\GameServer\LoginOutStat.h" />
+    <ClInclude Include="..\GameServer\LookEquipment.h" />
+    <ClInclude Include="..\GameServer\LoudMessage.h" />
+    <ClInclude Include="..\GameServer\LunaNewYear.h" />
+    <ClInclude Include="..\GameServer\MagicBox.h" />
+    <ClInclude Include="..\GameServer\ManufactureS3.h" />
+    <ClInclude Include="..\GameServer\MapStatistics.h" />
+    <ClInclude Include="..\GameServer\MatchConnector.h" />
+    <ClInclude Include="..\GameServer\MatchProxy.h" />
+    <ClInclude Include="..\GameServer\MiniGameRankManager.h" />
+    <ClInclude Include="..\GameServer\MissionEvent.h" />
+    <ClInclude Include="..\GameServer\MissionGettableCondition.h" />
+    <ClInclude Include="..\GameServer\MissionInfo.h" />
+    <ClInclude Include="..\GameServer\MissionManager.h" />
+    <ClInclude Include="..\GameServer\MissionPack.h" />
+    <ClInclude Include="..\GameServer\MonsterCardMix.h" />
+    <ClInclude Include="..\GameServer\NCashBilling.h" />
+    <ClInclude Include="..\GameServer\NCashEvent.h" />
+    <ClInclude Include="..\GameServer\NCashEvent_def.h" />
+    <ClInclude Include="..\GameServer\NewDonationManager.h" />
+    <ClInclude Include="..\GameServer\NMNetCafeDLL.h" />
+    <ClInclude Include="..\GameServer\NMNetCafeManager.h" />
+    <ClInclude Include="..\GameServer\NpcGift.h" />
+    <ClInclude Include="..\GameServer\OlympicManager.h" />
+    <ClInclude Include="..\GameServer\PayLetterBilling.h" />
+    <ClInclude Include="..\GameServer\PayLetterEvent.h" />
+    <ClInclude Include="..\GameServer\PayLetterEvent_def.h" />
+    <ClInclude Include="..\GameServer\PeriodNotice.h" />
+    <ClInclude Include="..\GameServer\PetGlyphMng.h" />
+    <ClInclude Include="..\GameServer\PetHelper.h" />
+    <ClInclude Include="..\GameServer\PlantTree.h" />
+    <ClInclude Include="..\GameServer\PlayAuth.Connector.h" />
+    <ClInclude Include="..\GameServer\PlayAuth.ConnectorAPI.h" />
+    <ClInclude Include="..\GameServer\PlayAuth.ConnectorBase.h" />
+    <ClInclude Include="..\GameServer\PlayAuth.Environment.h" />
+    <ClInclude Include="..\GameServer\PlayAuth.Error.h" />
+    <ClInclude Include="..\GameServer\PlayAuth.Handles.h" />
+    <ClInclude Include="..\GameServer\PlayAuth.Info.h" />
+    <ClInclude Include="..\GameServer\PlayAuthManager.h" />
+    <ClInclude Include="..\GameServer\PlayTimeStat.h" />
+    <ClInclude Include="..\GameServer\PostConfig.h" />
+    <ClInclude Include="..\GameServer\PreHackingCheckManager.h" />
+    <ClInclude Include="..\GameServer\PresentBox.h" />
+    <ClInclude Include="..\GameServer\PVPMatchManager.h" />
+    <ClInclude Include="..\GameServer\QuizBingo.h" />
+    <ClInclude Include="..\GameServer\Rainbow.h" />
+    <ClInclude Include="..\GameServer\RankManager.h" />
+    <ClInclude Include="..\GameServer\RecomHelper.h" />
+    <ClInclude Include="..\GameServer\RequierInfo.h" />
+    <ClInclude Include="..\GameServer\ResultManager.h" />
+    <ClInclude Include="..\GameServer\ResultReward.h" />
+    <ClInclude Include="..\GameServer\RitasChristmas.h" />
+    <ClInclude Include="..\GameServer\RKTornado.h" />
+    <ClInclude Include="..\GameServer\Room.h" />
+    <ClInclude Include="..\GameServer\RoomFSM.h" />
+    <ClInclude Include="..\GameServer\RoomFSMInput_def.h" />
+    <ClInclude Include="..\GameServer\RoomFSMState_def.h" />
+    <ClInclude Include="..\GameServer\RoomManager.h" />
+    <ClInclude Include="..\GameServer\Santa.h" />
+    <ClInclude Include="..\GameServer\SealedChar.h" />
+    <ClInclude Include="..\GameServer\ServerBenefit.h" />
+    <ClInclude Include="..\GameServer\SHCheckPoint.h" />
+    <ClInclude Include="..\GameServer\ShutdownUser.h" />
+    <ClInclude Include="..\GameServer\SignBoard.h" />
+    <ClInclude Include="..\GameServer\SkillManager.h" />
+    <ClInclude Include="..\GameServer\SocialCommerce.h" />
+    <ClInclude Include="..\GameServer\Socks.h" />
+    <ClInclude Include="..\GameServer\Songkran.h" />
+    <ClInclude Include="..\GameServer\SP.h" />
+    <ClInclude Include="..\GameServer\SpecialMonsterManager.h" />
+    <ClInclude Include="..\GameServer\SpecialReward.h" />
+    <ClInclude Include="..\GameServer\Sphinx.h" />
+    <ClInclude Include="..\GameServer\Square.h" />
+    <ClInclude Include="..\GameServer\SquareManager.h" />
+    <ClInclude Include="..\GameServer\StageReward.h" />
+    <ClInclude Include="..\GameServer\StatAgent.h" />
+    <ClInclude Include="..\GameServer\StatCharacter.h" />
+    <ClInclude Include="..\GameServer\StatCharacterEquip.h" />
+    <ClInclude Include="..\GameServer\StatCoupleRoom.h" />
+    <ClInclude Include="..\GameServer\StatDeathMatch.h" />
+    <ClInclude Include="..\GameServer\StatDisconnect.h" />
+    <ClInclude Include="..\GameServer\StatDungeon.h" />
+    <ClInclude Include="..\GameServer\StatEmoticon.h" />
+    <ClInclude Include="..\GameServer\StatGameLoading.h" />
+    <ClInclude Include="..\GameServer\StatGameStartGap.h" />
+    <ClInclude Include="..\GameServer\StatGP.h" />
+    <ClInclude Include="..\GameServer\StatisticsID_def.h" />
+    <ClInclude Include="..\GameServer\StatisticsManager.h" />
+    <ClInclude Include="..\GameServer\StatItemGet.h" />
+    <ClInclude Include="..\GameServer\StatLeaveGame.h" />
+    <ClInclude Include="..\GameServer\StatLoadingInfo.h" />
+    <ClInclude Include="..\GameServer\StatMiniGame.h" />
+    <ClInclude Include="..\GameServer\StatNetwork.h" />
+    <ClInclude Include="..\GameServer\StatP2PCritical.h" />
+    <ClInclude Include="..\GameServer\StatPvPPlayCharacter.h" />
+    <ClInclude Include="..\GameServer\StatRoomJoin.h" />
+    <ClInclude Include="..\GameServer\StatSpx.h" />
+    <ClInclude Include="..\GameServer\StrengthManager.h" />
+    <ClInclude Include="..\GameServer\SubjectManager.h" />
+    <ClInclude Include="..\GameServer\SubscriptionManager.h" />
+    <ClInclude Include="..\GameServer\support_User.h" />
+    <ClInclude Include="..\GameServer\Survey.h" />
+    <ClInclude Include="..\GameServer\SystemGuide.h" />
+    <ClInclude Include="..\GameServer\SystemResourceManager.h" />
+    <ClInclude Include="..\GameServer\TH_PayLetterBilling.h" />
+    <ClInclude Include="..\GameServer\TH_PayLetterEvent.h" />
+    <ClInclude Include="..\GameServer\TH_PayLetterEvent_def.h" />
+    <ClInclude Include="..\GameServer\TimeDrop.h" />
+    <ClInclude Include="..\GameServer\TimeEventManager.h" />
+    <ClInclude Include="..\GameServer\TongDonation.h" />
+    <ClInclude Include="..\GameServer\UpdatePlanManager.h" />
+    <ClInclude Include="..\GameServer\User.h" />
+    <ClInclude Include="..\GameServer\UserAchievement.h" />
+    <ClInclude Include="..\GameServer\UserBillboard.h" />
+    <ClInclude Include="..\GameServer\UserEvent.h" />
+    <ClInclude Include="..\GameServer\UserEventChecker.h" />
+    <ClInclude Include="..\GameServer\UserFSM.h" />
+    <ClInclude Include="..\GameServer\UserFSMInput_def.h" />
+    <ClInclude Include="..\GameServer\UserFSMState_def.h" />
+    <ClInclude Include="..\GameServer\UserLetterBox.h" />
+    <ClInclude Include="..\GameServer\VipEventManager.h" />
+    <ClInclude Include="..\GameServer\VirtualCash.h" />
+    <ClInclude Include="..\GameServer\VitalityManager.h" />
+    <ClInclude Include="..\GameServer\Worker.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="WGameServer.h" />
+    <ClInclude Include="WGameServerDlg.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WGameServer.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Common\Curse.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\GameServer\config_server.ini" />
+    <None Include="..\GameServer\config_server.lua" />
+    <None Include="..\GameServer\DefaultReward.lua" />
+    <None Include="..\GameServer\DungeonState.lua" />
+    <None Include="..\GameServer\Dungeon_ExpGp.lua" />
+    <None Include="..\GameServer\Enum.stg" />
+    <None Include="..\GameServer\ExpGpBoostInfo.lua" />
+    <None Include="..\GameServer\GameDrop.lua" />
+    <None Include="..\GameServer\InitAchievement.lua" />
+    <None Include="..\GameServer\InitChampion.lua" />
+    <None Include="..\GameServer\InitChannelDrop.lua" />
+    <None Include="..\GameServer\InitChannels.lua" />
+    <None Include="..\GameServer\InitCoupleInfo.lua" />
+    <None Include="..\GameServer\InitCTMission.lua" />
+    <None Include="..\GameServer\InitDrop.lua" />
+    <None Include="..\GameServer\InitEnchant.lua" />
+    <None Include="..\GameServer\InitGacha.lua" />
+    <None Include="..\GameServer\InitGCHelper.lua" />
+    <None Include="..\GameServer\InitKairo.lua" />
+    <None Include="..\GameServer\InitLookEquip.lua" />
+    <None Include="..\GameServer\InitManufacture.lua" />
+    <None Include="..\GameServer\InitManufactureS3.lua" />
+    <None Include="..\GameServer\InitMission.lua" />
+    <None Include="..\GameServer\InitPetScript.lua" />
+    <None Include="..\GameServer\InitReconcileInfo.lua" />
+    <None Include="..\GameServer\InitSHCheck.lua" />
+    <None Include="..\GameServer\InitSignBoardInfo.lua" />
+    <None Include="..\GameServer\InitSkillInfo.lua" />
+    <None Include="..\GameServer\InitSkillTree.lua" />
+    <None Include="..\GameServer\InitSquare.lua" />
+    <None Include="..\GameServer\InitTimeEvent.lua" />
+    <None Include="..\GameServer\InitTriggerInfo.lua" />
+    <None Include="..\GameServer\Message.mc" />
+    <None Include="..\GameServer\RequierInfo.lua" />
+    <None Include="..\GameServer\SquareInfo.lua" />
+    <None Include="etc.stg" />
+    <None Include="EventMonster.stg" />
+    <None Include="InitChannelTypeEvent.lua" />
+    <None Include="InitCharismasPresent.lua" />
+    <None Include="InitCharPromotion.lua" />
+    <None Include="InitDepotManager.lua" />
+    <None Include="InitEclipsePlot.lua" />
+    <None Include="InitEclipseTimeEvent.lua" />
+    <None Include="InitGambleBuy.lua" />
+    <None Include="InitGawibawibo.lua" />
+    <None Include="InitGPDropInfo.lua" />
+    <None Include="InitHeroDungeon.lua" />
+    <None Include="InitHeroIteminfo.lua" />
+    <None Include="InitJustInTime.lua" />
+    <None Include="InitMagicBox.lua" />
+    <None Include="InitMonsterCardMix.lua" />
+    <None Include="InitSpecialReward.lua" />
+    <None Include="InitTimeDrop.lua" />
+    <None Include="ItemAttributeTable.lua" />
+    <None Include="MonsterTemplate.stg" />
+    <None Include="QuestSign.stg" />
+    <None Include="VTune\WGameServer.vpj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Grand.ico" />
+    <Image Include="res\WGameServer.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="WGameServer.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

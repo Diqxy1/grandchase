@@ -1,0 +1,1855 @@
+quest = 
+{
+	QuestSign0 =
+	{
+		ID = GC_GM_QUEST0,
+		Name = str_quest_name1,
+		Desc = str_quest_desc1,
+		LOW_LEVEL   = 1,
+		HIGH_LEVEL  = 4,
+		TGFileName = "Dungeon_TrialForest_1.stg",
+		
+		easy =
+		{
+			Name = str_quest_name1,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 1,
+			HIGH_LEVEL  = 4,
+			TGFileName = "Dungeon_TrialForest_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name1,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 2,
+			HIGH_LEVEL  = 5,
+			TGFileName = "Dungeon_TrialForest_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name1,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 3,
+			HIGH_LEVEL  = 6,
+			TGFileName = "Dungeon_TrialForest_3.stg",
+		},
+	},
+	QuestSign1 =
+	{
+		ID = GC_GM_QUEST1,
+		Name = str_quest_name2,
+		Desc = str_quest_desc1,
+		LOW_LEVEL   = 3,
+		HIGH_LEVEL  = 8,
+		TGFileName = "Dungeon_OrdealTower_1.stg",
+		easy =
+		{
+			Name = str_quest_name2,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 3,
+			HIGH_LEVEL  = 8,
+			TGFileName = "Dungeon_OrdealTower_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name2,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 4,
+			HIGH_LEVEL  = 9,
+			TGFileName = "Dungeon_OrdealTower_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name2,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 5,
+			HIGH_LEVEL  = 10,
+			TGFileName = "Dungeon_OrdealTower_3.stg",
+		},
+	},
+	QuestSign2 =
+	{
+		ID = GC_GM_QUEST2,
+		Name = str_quest_name3,
+		Desc = str_quest_desc2,
+		LOW_LEVEL   = 6,
+		HIGH_LEVEL  = 10,
+		TGFileName = "Dungeon_SerdinOutside_1.stg",
+		easy =
+		{
+			Name = str_quest_name3,
+			Desc = str_quest_desc2,
+			LOW_LEVEL   = 6,
+			HIGH_LEVEL  = 10,
+			TGFileName = "Dungeon_SerdinOutside_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name3,
+			Desc = str_quest_desc2,
+			LOW_LEVEL   = 7,
+			HIGH_LEVEL  = 11,
+			TGFileName = "Dungeon_SerdinOutside_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name3,
+			Desc = str_quest_desc2,
+			LOW_LEVEL   = 8,
+			HIGH_LEVEL  = 12,
+			TGFileName = "Dungeon_SerdinOutside_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name3,
+			Desc = str_quest_desc2,
+			LOW_LEVEL   = 11,
+			HIGH_LEVEL  = 15,
+			TGFileName = "Dungeon_SerdinOutside_Hell.stg",
+		},
+	},
+	QuestSign3 =
+	{
+		ID = GC_GM_QUEST3,
+		Name = str_quest_name4,
+		Desc = str_quest_desc3,
+		LOW_LEVEL   = 9,
+		HIGH_LEVEL  = 13,
+		TGFileName = "Dungeon_CarryBeach_1.stg",
+		easy =
+		{
+			Name = str_quest_name4,
+			Desc = str_quest_desc3,
+			LOW_LEVEL   = 9,
+			HIGH_LEVEL  = 13,
+			TGFileName = "Dungeon_CarryBeach_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name4,
+			Desc = str_quest_desc3,
+			LOW_LEVEL   = 10,
+			HIGH_LEVEL  = 14,
+			TGFileName = "Dungeon_CarryBeach_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name4,
+			Desc = str_quest_desc3,
+			LOW_LEVEL   = 11,
+			HIGH_LEVEL  = 15,
+			TGFileName = "Dungeon_CarryBeach_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name4,
+			Desc = str_quest_desc3,
+			LOW_LEVEL   = 14,
+			HIGH_LEVEL  = 18,
+			TGFileName = "Dungeon_CarryBeach_Hell.stg",
+		},
+	},
+	QuestSign4 =
+	{
+		ID = GC_GM_QUEST4,
+		Name = str_quest_name5,
+		Desc = str_quest_desc4,
+		LOW_LEVEL   = 12,
+		HIGH_LEVEL  = 15,
+		TGFileName = "Dungeon_Orc'sTemple_1.stg",
+		easy =
+		{
+			Name = str_quest_name5,
+			Desc = str_quest_desc4,
+			LOW_LEVEL   = 12,
+			HIGH_LEVEL  = 15,
+			TGFileName = "Dungeon_Orc'sTemple_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name5,
+			Desc = str_quest_desc4,
+			LOW_LEVEL   = 13,
+			HIGH_LEVEL  = 16,
+			TGFileName = "Dungeon_Orc'sTemple_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name5,
+			Desc = str_quest_desc4,
+			LOW_LEVEL   = 14,
+			HIGH_LEVEL  = 17,
+			TGFileName = "Dungeon_Orc'sTemple_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name5,
+			Desc = str_quest_desc4,
+			LOW_LEVEL   = 17,
+			HIGH_LEVEL  = 20,
+			TGFileName = "Dungeon_Orc'sTemple_Hell.stg",
+		},
+	},
+	QuestSign5 =
+	{
+		ID = GC_GM_QUEST5,
+		Name = str_quest_name6,
+		Desc = str_quest_desc5,
+		LOW_LEVEL   = 14,
+		HIGH_LEVEL  = 17,
+		TGFileName = "Dungeon_GorgosDungeon_1.stg",
+		easy =
+		{
+			Name = str_quest_name6,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 14,
+			HIGH_LEVEL  = 17,
+			TGFileName = "Dungeon_GorgosDungeon_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name6,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 15,
+			HIGH_LEVEL  = 18,
+			TGFileName = "Dungeon_GorgosDungeon_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name6,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 16,
+			HIGH_LEVEL  = 19,
+			TGFileName = "Dungeon_GorgosDungeon_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name6,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 19,
+			HIGH_LEVEL  = 22,
+			TGFileName = "Dungeon_GorgosDungeon_Hell.stg",
+		},
+	},
+	QuestSign6 =
+	{
+		ID = GC_GM_QUEST6,
+		Name = str_quest_name7,
+		Desc = str_quest_desc5,
+		LOW_LEVEL   = 16,
+		HIGH_LEVEL  = 19,
+		TGFileName = "Dungeon_ElvenForest_1.stg",
+		easy =
+		{
+			Name = str_quest_name7,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 16,
+			HIGH_LEVEL  = 19,
+			TGFileName = "Dungeon_ElvenForest_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name7,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 17,
+			HIGH_LEVEL  = 20,
+			TGFileName = "Dungeon_ElvenForest_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name7,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 18,
+			HIGH_LEVEL  = 21,
+			TGFileName = "Dungeon_ElvenForest_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name7,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 21,
+			HIGH_LEVEL  = 24,
+			TGFileName = "Dungeon_ElvenForest_Hell.stg",
+		},
+	},
+	QuestSign7 =
+	{
+		ID = GC_GM_QUEST7,
+		Name = str_quest_name8,
+		Desc = str_quest_desc5,
+		LOW_LEVEL   = 18,
+		HIGH_LEVEL  = 21,
+		TGFileName = "Dungeon_OathGorge_1.stg",
+		easy =
+		{
+			Name = str_quest_name8,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 18,
+			HIGH_LEVEL  = 21,
+			TGFileName = "Dungeon_OathGorge_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name8,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 19,
+			HIGH_LEVEL  = 22,
+			TGFileName = "Dungeon_OathGorge_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name8,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 20,
+			HIGH_LEVEL  = 23,
+			TGFileName = "Dungeon_OathGorge_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name8,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 23,
+			HIGH_LEVEL  = 26,
+			TGFileName = "Dungeon_OathGorge_Hell.stg",
+		},
+	},
+	QuestSign8 =
+	{
+		ID = GC_GM_QUEST8,
+		Name = str_quest_name9,
+		Desc = str_quest_desc5,
+		LOW_LEVEL   = 20,
+		HIGH_LEVEL  = 23,
+		TGFileName = "Dungeon_ObilivionSwamp_1.stg",
+		easy =
+		{
+			Name = str_quest_name9,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 20,
+			HIGH_LEVEL  = 23,
+			TGFileName = "Dungeon_ObilivionSwamp_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name9,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 21,
+			HIGH_LEVEL  = 24,
+			TGFileName = "Dungeon_ObilivionSwamp_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name9,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 22,
+			HIGH_LEVEL  = 25,
+			TGFileName = "Dungeon_ObilivionSwamp_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name9,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 25,
+			HIGH_LEVEL  = 28,
+			TGFileName = "Dungeon_ObilivionSwamp_Hell.stg",
+		},
+	},
+	QuestSign9 =
+	{
+		ID = GC_GM_QUEST9,
+		Name = str_quest_name10,
+		Desc = str_quest_desc5,
+		LOW_LEVEL   = 22,
+		HIGH_LEVEL  = 25,
+		TGFileName = "Dungeon_Dead'sTomb_1.stg",
+		easy =
+		{
+			Name = str_quest_name10,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 22,
+			HIGH_LEVEL  = 25,
+			TGFileName = "Dungeon_Dead'sTomb_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name10,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 23,
+			HIGH_LEVEL  = 26,
+			TGFileName = "Dungeon_Dead'sTomb_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name10,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 24,
+			HIGH_LEVEL  = 27,
+			TGFileName = "Dungeon_Dead'sTomb_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name10,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 27,
+			HIGH_LEVEL  = 30,
+			TGFileName = "Dungeon_Dead'sTomb_Hell.stg",
+		},
+	},
+	QuestSign10 =
+	{
+		ID = GC_GM_QUEST10,
+		Name = str_quest_name11,
+		Desc = str_quest_desc5,
+		LOW_LEVEL   = 24,
+		HIGH_LEVEL  = 27,
+		TGFileName = "Dungeon_ForgattenCity_1.stg",
+		easy =
+		{
+			Name = str_quest_name11,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 24,
+			HIGH_LEVEL  = 27,
+			TGFileName = "Dungeon_ForgattenCity_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name11,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 25,
+			HIGH_LEVEL  = 28,
+			TGFileName = "Dungeon_ForgattenCity_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name11,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 26,
+			HIGH_LEVEL  = 29,
+			TGFileName = "Dungeon_ForgattenCity_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name11,
+			Desc = str_quest_desc5,
+			LOW_LEVEL   = 29,
+			HIGH_LEVEL  = 32,
+			TGFileName = "Dungeon_ForgattenCity_Hell.stg",
+		},
+	},
+	QuestSign11 =
+	{
+		ID = GC_GM_QUEST11,
+		Name = str_quest_name12,
+		Desc = str_quest_desc6,
+		LOW_LEVEL   = 26,
+		HIGH_LEVEL  = 29,
+		TGFileName = "Dungeon_Gaikoz'sCastle_1.stg",
+		easy =
+		{
+			Name = str_quest_name12,
+			Desc = str_quest_desc6,
+			LOW_LEVEL   = 26,
+			HIGH_LEVEL  = 29,
+			TGFileName = "Dungeon_Gaikoz'sCastle_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name12,
+			Desc = str_quest_desc6,
+			LOW_LEVEL   = 27,
+			HIGH_LEVEL  = 30,
+			TGFileName = "Dungeon_Gaikoz'sCastle_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name12,
+			Desc = str_quest_desc6,
+			LOW_LEVEL   = 28,
+			HIGH_LEVEL  = 31,
+			TGFileName = "Dungeon_Gaikoz'sCastle_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name12,
+			Desc = str_quest_desc6,
+			LOW_LEVEL   = 31,
+			HIGH_LEVEL  = 34,
+			TGFileName = "Dungeon_Gaikoz'sCastle_Hell.stg",
+		},
+	},
+	QuestSign12 =
+	{
+		ID = 11,
+		Name = str_quest_name13,
+		Desc = str_quest_desc7,
+		LOW_LEVEL   = 0,
+		HIGH_LEVEL  = 0,
+		TGFileName = "Dungeon_Gaikoz'sCastle_1.stg",
+		easy =
+		{
+			TGFileName = "Dungeon_Gaikoz'sCastle.stg",
+		},
+		normal =
+		{
+			TGFileName = "Dungeon_Gaikoz'sCastle.stg",
+		},
+		hard =
+		{
+			TGFileName = "Dungeon_Gaikoz'sCastle.stg",
+		},
+		hell =
+		{
+			TGFileName = "Dungeon_Gaikoz'sCastle.stg",
+		},
+	},
+	QuestSign13 =
+	{
+		ID = GC_GM_QUEST12,
+		Name = str_quest_name14,
+		Desc = str_quest_desc8,
+		LOW_LEVEL   = 30,
+		HIGH_LEVEL  = 33,
+		TGFileName = "Dungeon_Patusei'sSea_1.stg",
+		easy =
+		{
+			Name = str_quest_name14,
+			Desc = str_quest_desc8,
+			LOW_LEVEL   = 30,
+			HIGH_LEVEL  = 33,
+			TGFileName = "Dungeon_Patusei'sSea_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name14,
+			Desc = str_quest_desc8,
+			LOW_LEVEL   = 31,
+			HIGH_LEVEL  = 34,
+			TGFileName = "Dungeon_Patusei'sSea_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name14,
+			Desc = str_quest_desc8,
+			LOW_LEVEL   = 32,
+			HIGH_LEVEL  = 35,
+			TGFileName = "Dungeon_Patusei'sSea_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name14,
+			Desc = str_quest_desc8,
+			LOW_LEVEL   = 35,
+			HIGH_LEVEL  = 38,
+			TGFileName = "Dungeon_Patusei'sSea_Hell.stg",
+		},
+	},
+	QuestSign14 =
+	{
+		ID = GC_GM_QUEST13,
+		Name = str_quest_name15,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 32,
+		HIGH_LEVEL  = 35,
+		TGFileName = "Dungeon_Elia_Continent_1.stg",
+		easy =
+		{
+			Name = str_quest_name15,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 32,
+			HIGH_LEVEL  = 35,
+			TGFileName = "Dungeon_Elia_Continent_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name15,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 33,
+			HIGH_LEVEL  = 36,
+			TGFileName = "Dungeon_Elia_Continent_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name15,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 34,
+			HIGH_LEVEL  = 37,
+			TGFileName = "Dungeon_Elia_Continent_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name15,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 37,
+			HIGH_LEVEL  = 40,
+			TGFileName = "Dungeon_Elia_Continent_Hell.stg",
+		},
+	},
+	QuestSign15 =
+	{
+		ID = GC_GM_QUEST14,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 34,
+		HIGH_LEVEL  = 37,
+		TGFileName = "Dungeon_TempleOfFire1_1.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 34,
+			HIGH_LEVEL  = 37,
+			TGFileName = "Dungeon_TempleOfFire_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 35,
+			HIGH_LEVEL  = 38,
+			TGFileName = "Dungeon_TempleOfFire_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 36,
+			HIGH_LEVEL  = 39,
+			TGFileName = "Dungeon_TempleOfFire_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 39,
+			HIGH_LEVEL  = 42,
+			TGFileName = "Dungeon_TempleOfFire_Hell.stg",
+		},
+	},
+	QuestSign16 =
+	{
+		ID = GC_GM_QUEST15,
+		Name = str_quest_name17,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 36,
+		HIGH_LEVEL  = 39,
+		TGFileName = "Dungeon_HellBridge_1.stg",
+		easy =
+		{
+			Name = str_quest_name17,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 36,
+			HIGH_LEVEL  = 39,
+			TGFileName = "Dungeon_HellBridge_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name17,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 37,
+			HIGH_LEVEL  = 40,
+			TGFileName = "Dungeon_HellBridge_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name17,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 38,
+			HIGH_LEVEL  = 41,
+			TGFileName = "Dungeon_HellBridge_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name17,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 41,
+			HIGH_LEVEL  = 44,
+			TGFileName = "Dungeon_HellBridge_Hell.stg",
+		},
+	},
+	QuestSign17 =
+	{
+		ID = GC_GM_QUEST16,
+		Name = str_quest_name18,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 38,
+		HIGH_LEVEL  = 41,
+		TGFileName = "Dungeon_Kazeaze'sCastle_1.stg",
+		easy =
+		{
+			Name = str_quest_name18,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 38,
+			HIGH_LEVEL  = 41,
+			TGFileName = "Dungeon_Kazeaze'sCastle_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name18,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 39,
+			HIGH_LEVEL  = 42,
+			TGFileName = "Dungeon_Kazeaze'sCastle_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name18,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 40,
+			HIGH_LEVEL  = 43,
+			TGFileName = "Dungeon_Kazeaze'sCastle_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name18,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 43,
+			HIGH_LEVEL  = 46,
+			TGFileName = "Dungeon_Kazeaze'sCastle_Hell.stg",
+		},
+	},
+	QuestSign18 =
+	{
+		ID = GC_GM_QUEST17,
+		Name = str_quest_name19,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 40,
+		HIGH_LEVEL  = 42,
+		TGFileName = "Dungeon_CastulUnderFloor_1.stg",
+		easy =
+		{
+			Name = str_quest_name19,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 40,
+			HIGH_LEVEL  = 42,
+			TGFileName = "Dungeon_CastulUnderFloor_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name19,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 41,
+			HIGH_LEVEL  = 43,
+			TGFileName = "Dungeon_CastulUnderFloor_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name19,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 42,
+			HIGH_LEVEL  = 44,
+			TGFileName = "Dungeon_CastulUnderFloor_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name19,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 45,
+			HIGH_LEVEL  = 47,
+			TGFileName = "Dungeon_CastulUnderFloor_Hell.stg",
+		},
+	},
+	QuestSign19 =
+	{
+		ID = GC_GM_QUEST18,
+		Name = str_quest_name20,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 42,
+		HIGH_LEVEL  = 44,
+		TGFileName = "Dungeon_CastulOverFloor_1.stg",
+		easy =
+		{
+			Name = str_quest_name20,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 42,
+			HIGH_LEVEL  = 44,
+			TGFileName = "Dungeon_CastulOverFloor_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name20,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 43,
+			HIGH_LEVEL  = 45,
+			TGFileName = "Dungeon_CastulOverFloor_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name20,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 44,
+			HIGH_LEVEL  = 46,
+			TGFileName = "Dungeon_CastulOverFloor_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name20,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 47,
+			HIGH_LEVEL  = 49,
+			TGFileName = "Dungeon_CastulOverFloor_Hell.stg",
+		},
+	},
+	QuestSign20 =
+	{
+		ID = GC_GM_QUEST19,
+		Name = str_quest_name21,
+		Desc = str_quest_name11,
+		LOW_LEVEL   = 44,
+		HIGH_LEVEL  = 46,
+		TGFileName = "Dungeon_Mesia's_Final_1.stg",
+		easy =
+		{
+			Name = str_quest_name21,
+			Desc = str_quest_name11,
+			LOW_LEVEL   = 44,
+			HIGH_LEVEL  = 46,
+			TGFileName = "Dungeon_Mesia's_Final_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name21,
+			Desc = str_quest_name11,
+			LOW_LEVEL   = 45,
+			HIGH_LEVEL  = 47,
+			TGFileName = "Dungeon_Mesia's_Final_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name21,
+			Desc = str_quest_name11,
+			LOW_LEVEL   = 46,
+			HIGH_LEVEL  = 48,
+			TGFileName = "Dungeon_Mesia's_Final_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name21,
+			Desc = str_quest_name11,
+			LOW_LEVEL   = 49,
+			HIGH_LEVEL  = 51,
+			TGFileName = "Dungeon_Mesia's_Final_Hell.stg",
+		},
+	},
+	QuestSign21 =
+	{
+		ID = GC_GM_QUEST20,
+		Name = str_quest_name22,
+		Desc = str_quest_name11,
+		LOW_LEVEL   = 46,
+		HIGH_LEVEL  = 48,
+		TGFileName = "Dungeon_New_World_1.stg",
+		easy =
+		{
+			Name = str_quest_name22,
+			Desc = str_quest_name11,
+			LOW_LEVEL   = 46,
+			HIGH_LEVEL  = 48,
+			TGFileName = "Dungeon_New_World_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name22,
+			Desc = str_quest_name11,
+			LOW_LEVEL   = 47,
+			HIGH_LEVEL  = 49,
+			TGFileName = "Dungeon_New_World_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name22,
+			Desc = str_quest_name11,
+			LOW_LEVEL   = 48,
+			HIGH_LEVEL  = 50,
+			TGFileName = "Dungeon_New_World_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name22,
+			Desc = str_quest_name11,
+			LOW_LEVEL   = 51,
+			HIGH_LEVEL  = 53,
+			TGFileName = "Dungeon_New_World_Hell.stg",
+		},
+	},
+
+	QuestSign22 =
+	{
+		ID = GC_GM_QUEST21,
+		Name = str_quest_name22,
+		Desc = str_quest_name11,
+		LOW_LEVEL   = 48,
+		HIGH_LEVEL  = 50,
+		TGFileName = "Temple_of_Circulation_1.stg",
+		easy =
+		{
+			Name = str_quest_name22,
+			Desc = str_quest_name11,
+			LOW_LEVEL   = 48,
+			HIGH_LEVEL  = 50,
+			TGFileName = "Temple_of_Circulation_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name22,
+			Desc = str_quest_name11,
+			LOW_LEVEL   = 49,
+			HIGH_LEVEL  = 51,
+			TGFileName = "Temple_of_Circulation_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name22,
+			Desc = str_quest_name11,
+			LOW_LEVEL   = 50,
+			HIGH_LEVEL  = 52,
+			TGFileName = "Temple_of_Circulation_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name22,
+			Desc = str_quest_name11,
+			LOW_LEVEL   = 53,
+			HIGH_LEVEL  = 55,
+			TGFileName = "Temple_of_Circulation_Hell.stg",
+		},
+	},
+	
+	--소실의협곡
+	QuestSign23 =
+	{
+		ID = GC_GM_QUEST22,
+		Name = str_quest_name1,
+		Desc = str_quest_desc1,
+		LOW_LEVEL   = 50,
+		HIGH_LEVEL  = 52,
+		TGFileName = "Dungeon_NightGorge_1.stg",
+		
+		easy =
+		{
+			Name = str_quest_name1,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 50,
+			HIGH_LEVEL  = 52,
+			TGFileName = "Dungeon_NightGorge_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name1,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 51,
+			HIGH_LEVEL  = 53,
+			TGFileName = "Dungeon_NightGorge_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name1,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 52,
+			HIGH_LEVEL  = 54,
+			TGFileName = "Dungeon_NightGorge_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name1,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 55,
+			HIGH_LEVEL  = 57,
+			TGFileName = "Dungeon_NightGorge_Hell.stg",
+		},
+	},
+	
+	--성난엔트의 숲
+	QuestSign24 =
+	{
+		ID = GC_GM_QUEST23,
+		Name = str_quest_name1,
+		Desc = str_quest_desc1,
+		LOW_LEVEL   = 29,
+		HIGH_LEVEL  = 31,
+		TGFileName = "Dungeon_AngryForest_1.stg",
+		
+		easy =
+		{
+			Name = str_quest_name1,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 29,
+			HIGH_LEVEL  = 31,
+			TGFileName = "Dungeon_AngryForest_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name1,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 30,
+			HIGH_LEVEL  = 32,
+			TGFileName = "Dungeon_AngryForest_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name1,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 31,
+			HIGH_LEVEL  = 33,
+			TGFileName = "Dungeon_AngryForest_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name1,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 34,
+			HIGH_LEVEL  = 37,
+			TGFileName = "Dungeon_AngryForest_4.stg",
+		},
+	},
+	
+	--실버나이츠의 폐허
+	QuestSign25 =
+	{
+		ID = GC_GM_QUEST24,
+		Name = str_quest_name1,
+		Desc = str_quest_desc1,
+		LOW_LEVEL   = 31,
+		HIGH_LEVEL  = 33,
+		TGFileName = "Dungeon_SilverKnights_1.stg",
+		
+		easy =
+		{
+			Name = str_quest_name1,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 31,
+			HIGH_LEVEL  = 33,
+			TGFileName = "Dungeon_SilverKnights_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name1,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 32,
+			HIGH_LEVEL  = 34,
+			TGFileName = "Dungeon_SilverKnights_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name1,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 33,
+			HIGH_LEVEL  = 35,
+			TGFileName = "Dungeon_SilverKnights_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name1,
+			Desc = str_quest_desc1,
+			LOW_LEVEL   = 36,
+			HIGH_LEVEL  = 39,
+			TGFileName = "Dungeon_SilverKnights_Hell.stg",
+		},
+	},
+
+	-- 미명의 호수
+	QuestSign26 =
+	{
+		ID = GC_GM_QUEST25,
+		Name = str_quest_name14,
+		Desc = str_quest_desc8,
+		LOW_LEVEL   = 33,
+		HIGH_LEVEL  = 35,
+		TGFileName = "dungeon_LakeDawn_1.stg",
+		easy =
+		{
+			Name = str_quest_name14,
+			Desc = str_quest_desc8,
+			LOW_LEVEL   = 33,
+			HIGH_LEVEL  = 35,
+			TGFileName = "dungeon_LakeDawn_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name14,
+			Desc = str_quest_desc8,
+			LOW_LEVEL   = 34,
+			HIGH_LEVEL  = 36,
+			TGFileName = "dungeon_LakeDawn_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name14,
+			Desc = str_quest_desc8,
+			LOW_LEVEL   = 35,
+			HIGH_LEVEL  = 37,
+			TGFileName = "dungeon_LakeDawn_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name14,
+			Desc = str_quest_desc8,
+			LOW_LEVEL   = 38,
+			HIGH_LEVEL  = 41,
+			TGFileName = "dungeon_LakeDawn_4.stg",
+		},
+	},
+	
+	--불의 사원 꺼 씀
+	QuestSign27 =
+	{
+		ID = GC_GM_QUEST26,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 52,
+		HIGH_LEVEL  = 54,
+		TGFileName = "Dungeon_Fire1_1.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 53,
+			HIGH_LEVEL  = 55,
+			TGFileName = "Dungeon_Fire_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 54,
+			HIGH_LEVEL  = 56,
+			TGFileName = "Dungeon_Fire_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 55,
+			HIGH_LEVEL  = 57,
+			TGFileName = "Dungeon_Fire_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 57,
+			HIGH_LEVEL  = 59,
+			TGFileName = "Dungeon_Fire_Hell.stg",
+		},
+	},
+
+	-- 수룡의 늪
+	QuestSign28 =
+	{
+		ID = GC_GM_QUEST27,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 35,
+		HIGH_LEVEL  = 37,
+		TGFileName = "dungeon_FairyDragon_1.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 35,
+			HIGH_LEVEL  = 37,
+			TGFileName = "dungeon_FairyDragon_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 36,
+			HIGH_LEVEL  = 38,
+			TGFileName = "dungeon_FairyDragon_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 37,
+			HIGH_LEVEL  = 39,
+			TGFileName = "dungeon_FairyDragon_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 40,
+			HIGH_LEVEL  = 43,
+			TGFileName = "dungeon_FairyDragon_4.stg",
+		},
+	},
+
+	-- 원시의 섬
+	QuestSign29 =
+	{
+		ID = GC_GM_QUEST28,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 37,
+		HIGH_LEVEL  = 39,
+		TGFileName = "dungeon_IslandOfNature_1.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 37,
+			HIGH_LEVEL  = 39,
+			TGFileName = "dungeon_IslandOfNature_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 38,
+			HIGH_LEVEL  = 40,
+			TGFileName = "dungeon_IslandOfNature_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 39,
+			HIGH_LEVEL  = 41,
+			TGFileName = "dungeon_IslandOfNature_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 42,
+			HIGH_LEVEL  = 45,
+			TGFileName = "dungeon_IslandOfNature_4.stg",
+		},
+	},
+
+	-- 드레이크 웜의 영지
+	QuestSign30 =
+	{
+		ID = GC_GM_QUEST29,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 39,
+		HIGH_LEVEL  = 41,
+		TGFileName = "dungeon_LavaContinent_1.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 39,
+			HIGH_LEVEL  = 41,
+			TGFileName = "dungeon_LavaContinent_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 40,
+			HIGH_LEVEL  = 42,
+			TGFileName = "dungeon_LavaContinent_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 41,
+			HIGH_LEVEL  = 43,
+			TGFileName = "dungeon_LavaContinent_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 44,
+			HIGH_LEVEL  = 47,
+			TGFileName = "dungeon_LavaContinent_4.stg",
+		},
+	},
+
+	-- 빅터의 요새
+	QuestSign31 =
+	{
+		ID = GC_GM_QUEST30,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 41,
+		HIGH_LEVEL  = 43,
+		TGFileName = "dungeon_VictorFortress_1.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 41,
+			HIGH_LEVEL  = 43,
+			TGFileName = "dungeon_VictorFortress_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 42,
+			HIGH_LEVEL  = 44,
+			TGFileName = "dungeon_VictorFortress_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 43,
+			HIGH_LEVEL  = 45,
+			TGFileName = "dungeon_VictorFortress_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 46,
+			HIGH_LEVEL  = 49,
+			TGFileName = "dungeon_VictorFortress_4.stg",
+		},
+	},
+
+	-- 조율의 제단
+	QuestSign32 =
+	{
+		ID = GC_GM_QUEST31,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 55,
+		HIGH_LEVEL  = 57,
+		TGFileName = "dungeon_AltarOfHarmony_1.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 55,
+			HIGH_LEVEL  = 57,
+			TGFileName = "dungeon_AltarOfHarmony_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 56,
+			HIGH_LEVEL  = 58,
+			TGFileName = "dungeon_AltarOfHarmony_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 57,
+			HIGH_LEVEL  = 59,
+			TGFileName = "dungeon_AltarOfHarmony_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 60,
+			HIGH_LEVEL  = 62,
+			TGFileName = "dungeon_AltarOfHarmony_4.stg",
+		},
+	},
+
+	-- 파괴의 신전
+	QuestSign33 =
+	{
+		ID = GC_GM_QUEST32,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 57,
+		HIGH_LEVEL  = 59,
+		TGFileName = "dungeon_GiantRock_1.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 57,
+			HIGH_LEVEL  = 59,
+			TGFileName = "dungeon_GiantRock_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 58,
+			HIGH_LEVEL  = 60,
+			TGFileName = "dungeon_GiantRock_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 59,
+			HIGH_LEVEL  = 61,
+			TGFileName = "dungeon_GiantRock_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 62,
+			HIGH_LEVEL  = 65,
+			TGFileName = "dungeon_GiantRock_4.stg",
+		},
+	},
+
+	-- 생명의 숲
+	QuestSign34 =
+	{
+		ID = GC_GM_QUEST33,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 59,
+		HIGH_LEVEL  = 61,
+		TGFileName = "dungeon_LifeWoodland_1.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 59,
+			HIGH_LEVEL  = 61,
+			TGFileName = "dungeon_LifeWoodland_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 60,
+			HIGH_LEVEL  = 62,
+			TGFileName = "dungeon_LifeWoodland_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 61,
+			HIGH_LEVEL  = 63,
+			TGFileName = "dungeon_LifeWoodland_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 64,
+			HIGH_LEVEL  = 67,
+			TGFileName = "dungeon_LifeWoodland_4.stg",
+		},
+	},
+
+	-- 지배의 성
+	QuestSign35 =
+	{
+		ID = GC_GM_QUEST34,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 61,
+		HIGH_LEVEL  = 63,
+		TGFileName = "dungeon_CastleOfRule_1.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 61,
+			HIGH_LEVEL  = 63,
+			TGFileName = "dungeon_CastleOfRule_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 62,
+			HIGH_LEVEL  = 64,
+			TGFileName = "dungeon_CastleOfRule_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 63,
+			HIGH_LEVEL  = 65,
+			TGFileName = "dungeon_CastleOfRule_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 66,
+			HIGH_LEVEL  = 69,
+			TGFileName = "dungeon_CastleOfRule_4.stg",
+		},
+	},
+
+	-- 추석 이벤트 (베르메)
+	QuestSign36 =
+	{
+		ID = GC_GM_QUEST35,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 0,
+		HIGH_LEVEL  = 75,
+		TGFileName = "dungeon_MoonEvent_V.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 0,
+			HIGH_LEVEL  = 75,
+			TGFileName = "dungeon_MoonEvent_V.stg",
+		},
+	},
+
+	-- 추석 이벤트 (실버랜)
+	QuestSign37 =
+	{
+		ID = GC_GM_QUEST36,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 0,
+		HIGH_LEVEL  = 75,
+		TGFileName = "dungeon_MoonEvent_S.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 0,
+			HIGH_LEVEL  = 75,
+			TGFileName = "dungeon_MoonEvent_S.stg",
+		},
+	},
+
+	-- 추석 이벤트 (엘리아)
+	QuestSign38 =
+	{
+		ID = GC_GM_QUEST37,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 0,
+		HIGH_LEVEL  = 75,
+		TGFileName = "dungeon_MoonEvent_E.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 0,
+			HIGH_LEVEL  = 75,
+			TGFileName = "dungeon_MoonEvent_E.stg",
+		},
+	},
+
+	-- 추석 이벤트 (제니아)
+	QuestSign39 =
+	{
+		ID = GC_GM_QUEST38,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 0,
+		HIGH_LEVEL  = 75,
+		TGFileName = "dungeon_MoonEvent_X.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 0,
+			HIGH_LEVEL  = 75,
+			TGFileName = "dungeon_MoonEvent_X.stg",
+		},
+	},
+
+	-- 고블린 노역소
+	QuestSign40 =
+	{
+		ID = GC_GM_QUEST39,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 43,
+		HIGH_LEVEL  = 45,
+		TGFileName = "dungeon_GoblinLaborCamp_1.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 43,
+			HIGH_LEVEL  = 45,
+			TGFileName = "dungeon_GoblinLaborCamp_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 44,
+			HIGH_LEVEL  = 46,
+			TGFileName = "dungeon_GoblinLaborCamp_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 45,
+			HIGH_LEVEL  = 47,
+			TGFileName = "dungeon_GoblinLaborCamp_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 48,
+			HIGH_LEVEL  = 51,
+			TGFileName = "dungeon_GoblinLaborCamp_4.stg",
+		},
+	},
+
+	-- 지하암흑 터널
+	QuestSign41 =
+	{
+		ID = GC_GM_QUEST40,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 45,
+		HIGH_LEVEL  = 47,
+		TGFileName = "dungeon_UndergroundTunnel_1.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 45,
+			HIGH_LEVEL  = 47,
+			TGFileName = "dungeon_UndergroundTunnel_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 46,
+			HIGH_LEVEL  = 48,
+			TGFileName = "dungeon_UndergroundTunnel_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 47,
+			HIGH_LEVEL  = 49,
+			TGFileName = "dungeon_UndergroundTunnel_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 50,
+			HIGH_LEVEL  = 53,
+			TGFileName = "dungeon_UndergroundTunnel_4.stg",
+		},
+	},
+
+	-- 쿵지 쿵지
+	QuestSign42 =
+	{
+		ID = GC_GM_QUEST41,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 47,
+		HIGH_LEVEL  = 49,
+		TGFileName = "dungeon_KungjiVillage_1.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 47,
+			HIGH_LEVEL  = 49,
+			TGFileName = "dungeon_KungjiVillage_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 48,
+			HIGH_LEVEL  = 50,
+			TGFileName = "dungeon_KungjiVillage_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 49,
+			HIGH_LEVEL  = 51,
+			TGFileName = "dungeon_KungjiVillage_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 52,
+			HIGH_LEVEL  = 55,
+			TGFileName = "dungeon_KungjiVillage_4.stg",
+		},
+	},
+
+	-- 드워프 전초기지
+	QuestSign43 =
+	{
+		ID = GC_GM_QUEST42,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 63,
+		HIGH_LEVEL  = 65,
+		TGFileName = "dungeon_DwarvenBase_1.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 63,
+			HIGH_LEVEL  = 65,
+			TGFileName = "dungeon_DwarvenBase_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 64,
+			HIGH_LEVEL  = 66,
+			TGFileName = "dungeon_DwarvenBase_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 65,
+			HIGH_LEVEL  = 67,
+			TGFileName = "dungeon_DwarvenBase_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 68,
+			HIGH_LEVEL  = 71,
+			TGFileName = "dungeon_DwarvenBase_4.stg",
+		},
+	},
+
+	-- 신기루 사막
+	QuestSign44 =
+	{
+		ID = GC_GM_QUEST43,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 49,
+		HIGH_LEVEL  = 51,
+		TGFileName = "dungeon_MirageDesert_1.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 49,
+			HIGH_LEVEL  = 51,
+			TGFileName = "dungeon_MirageDesert_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 50,
+			HIGH_LEVEL  = 52,
+			TGFileName = "dungeon_MirageDesert_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 51,
+			HIGH_LEVEL  = 53,
+			TGFileName = "dungeon_MirageDesert_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 54,
+			HIGH_LEVEL  = 57,
+			TGFileName = "dungeon_MirageDesert_4.stg",
+		},
+	},
+
+	-- 드워프 보급로
+	QuestSign45 =
+	{
+		ID = GC_GM_QUEST44,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 65,
+		HIGH_LEVEL  = 67,
+		TGFileName = "dungeon_DwarfSupplyRoute_1.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 65,
+			HIGH_LEVEL  = 67,
+			TGFileName = "dungeon_DwarfSupplyRoute_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 66,
+			HIGH_LEVEL  = 68,
+			TGFileName = "dungeon_DwarfSupplyRoute_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 67,
+			HIGH_LEVEL  = 69,
+			TGFileName = "dungeon_DwarfSupplyRoute_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 70,
+			HIGH_LEVEL  = 73,
+			TGFileName = "dungeon_DwarfSupplyRoute_4.stg",
+		},
+	},
+
+	-- 썬더 해머
+	QuestSign46 =
+	{
+		ID = GC_GM_QUEST45,
+		Name = str_quest_name16,
+		Desc = str_quest_name10,
+		LOW_LEVEL   = 67,
+		HIGH_LEVEL  = 69,
+		TGFileName = "dungeon_ThunderHammer_1.stg",
+		easy =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 67,
+			HIGH_LEVEL  = 69,
+			TGFileName = "dungeon_ThunderHammer_1.stg",
+		},
+		normal =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 68,
+			HIGH_LEVEL  = 70,
+			TGFileName = "dungeon_ThunderHammer_2.stg",
+		},
+		hard =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 69,
+			HIGH_LEVEL  = 71,
+			TGFileName = "dungeon_ThunderHammer_3.stg",
+		},
+		hell =
+		{
+			Name = str_quest_name16,
+			Desc = str_quest_name10,
+			LOW_LEVEL   = 72,
+			HIGH_LEVEL  = 75,
+			TGFileName = "dungeon_ThunderHammer_4.stg",
+		},
+	},
+}

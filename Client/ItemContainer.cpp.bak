@@ -1,0 +1,449 @@
+#include "ItemContainer.h"
+#include <dbg/dbg.hpp>
+//#include "IPAdvantage.h"
+#include <boost/bind.hpp>
+#include "GCItemManager.h"
+#include "MyD3D.h"
+#include "GCShortCutItem.h"			
+#include "GCShortCutSlot.h"
+
+KItemContainer::KItemContainer(void)
+{
+}
+
+KItemContainer::~KItemContainer(void)
+{
+}
+
+KItem* KItemContainer::FindItemByItemIdAndLevel( IN const GCITEMID ItemID_, int iLevel_ )
+{
+    if (m_mapItems.empty())
+        return NULL;
+    ItemList::iterator mit = m_mapItems.begin();
+    for( ; mit != m_mapItems.end(); ++mit)
+    {
+        if( ItemID_ == (mit->second).m_ItemID && (mit->second).m_sEquipLevel == iLevel_ )
+            return &mit->second;
+    }
+
+    return NULL;
+}
+
+KItem* KItemContainer::FindItemByItemID( IN const GCITEMID ItemID_ )
+{
+    ItemList::iterator mit = m_mapItems.begin();
+    for( ; mit != m_mapItems.end(); ++mit)
+    {
+        if( ItemID_ == (mit->second).m_ItemID )
+            return &mit->second;
+    }
+   
+    return NULL;
+}
+
+KItem* KItemContainer::FindItemByItemIDCoordi( IN const GCITEMID ItemID_ )
+{
+    ItemList::iterator mit = m_mapItems.begin();
+    for ( ; mit != m_mapItems.end(); ++mit )
+    {
+        if ( ItemID_ == (mit->second).m_ItemID || ItemID_ == (mit->second).m_DesignCoordiID )
+            return &mit->second;
+    }
+
+    return NULL;
+}
+
+bool KItemContainer::IsItemByItemID( IN const GCITEMID ItemID_ )
+{
+    if (m_mapItems.empty())
+        return false;
+    ItemList::iterator mit = m_mapItems.begin();
+    for( ; mit != m_mapItems.end(); ++mit)
+    {
+        if( ItemID_ == (mit->second).m_ItemID )
+            return true;
+    }
+
+    return false;
+}
+
+KItem* KItemContainer::FindItemByItemUID( IN const GCITEMUID ItemUID_ )
+{
+    if (m_mapItems.empty())
+        return NULL;
+    ItemList::iterator mit = m_mapItems.find( ItemUID_ );
+    
+    if( m_mapItems.end() == mit)
+        return NULL;
+    
+    return &mit->second;
+}
+
+bool KItemContainer::RemoveItem( IN const GCITEMUID ItemUID_ )
+{
+    if (m_mapItems.empty())
+        return false;
+    ItemList::iterator mit = m_mapItems.find( ItemUID_ );
+
+    if( m_mapItems.end() == mit)
+        return false;
+
+    m_mapItems.erase( mit );
+    return true;
+}
+
+bool KItemContainer::RemoveItem( IN const GCITEMID ItemID_, IN const GCITEMUID ItemUID_ )
+{
+    if (m_mapItems.empty())
+        return false;
+
+    ItemList::iterator mit = m_mapItems.find( ItemUID_ );
+
+    if( m_mapItems.end() == mit)
+        return false;
+
+    if( mit->second.m_ItemID != ItemID_ )
+        return false;
+
+    m_mapItems.erase( mit );
+    return true;
+}
+
+bool KItemContainer::AddItem( IN const KItem& kItem_, IN const bool bConvertToClientStyle_ /*= false*/ )
+{
+    KItem kItem = kItem_;
+    if( bConvertToClientStyle_ )
+    {
+        kItem.m_ItemID /= 10;
+        kItem.m_DesignCoordiID /= 10;
+    }
+
+    ItemList::iterator mit = m_mapItems.find( kItem_.m_ItemUID );
+    if ( mit == m_mapItems.end()) {
+        if(kItem.m_nCount != 0)
+			m_mapItems.insert( ItemList::value_type( kItem_.m_ItemUID, kItem ) ).second;
+
+    }
+    else {
+		int iIndex =-1;
+		if(kItem.m_nCount > 0)
+		{
+			iIndex = g_MyD3D->GetMyShortCutSlot()->FindItemIndex( kItem.m_ItemID );
+
+			if(iIndex != -1 ){
+				int dwcorrection =g_MyD3D->GetMyShortCutSlot()->FindItem(iIndex)->GetQuantity();
+				if( dwcorrection > 0 )
+				{
+					kItem.m_nCount = kItem.m_nCount-dwcorrection;
+					if(kItem.m_nCount < 0)
+						kItem.m_nCount = 0;
+				}
+			}
+
+		}      
+		mit->second = kItem;
+		if ( kItem_.m_nCount == 0) {
+			RemoveItem( mit->second.m_ItemID, mit->second.m_ItemUID );
+			if(iIndex != -1)
+			{
+				g_MyD3D->GetMyShortCutSlot()->SlotRefill();
+			}
+		}
+	}
+    return true;
+}
+
+bool KItemContainer::UpdateItem( IN OUT KItem& oldItem, IN const KItem& newItem )
+{
+    oldItem.m_nInitCount = newItem.m_nInitCount;
+    oldItem.m_nCount     = newItem.m_nCount;
+    oldItem.m_nPeriod       = newItem.m_nPeriod;
+    oldItem.m_tEndDate      = newItem.m_tEndDate;
+    return true;
+}
+
+int KItemContainer::AddItemList( IN OUT std::vector<KItem>& vecItemList_, IN const bool bConvertToClientStyle_ /*= false*/ )
+{
+    struct ClientStyleConverter{
+        void operator () ( KItem& arg ) {
+            arg.m_ItemID /= 10;
+            arg.m_DesignCoordiID /= 10;
+        }
+    };
+    std::for_each( vecItemList_.begin(), vecItemList_.end(), ClientStyleConverter() );
+
+    int nCount = 0;
+    std::vector<KItem>::iterator vit;
+    for ( vit = vecItemList_.begin() ; vit != vecItemList_.end(); ++vit )
+    {
+        if ( AddItem( *vit ) )
+            ++nCount;
+    }
+
+    return nCount;
+}
+
+const KItem* KItemContainer::FindItem( IN const GCITEMID ItemID_, IN const GCITEMUID ItemUID_ )
+{
+    if (m_mapItems.empty())
+        return NULL;
+	ItemList::const_iterator itrFind = m_mapItems.find( ItemUID_ );
+	bool bIsFind		= ( itrFind != m_mapItems.end() );
+	bool bIsEqualItemID	= ( itrFind->second.m_ItemID == ItemID_ );
+
+	if( bIsFind && bIsEqualItemID ){
+		return &itrFind->second;
+	}
+	else{
+		return NULL;
+	}
+}
+
+
+void KItemContainer::AdjustQueryInventory( IN OUT std::vector<KItem>& vecList_ )
+{
+    // TODO : 나중에 사라질지도 모르지만. 넷마블 캐시 아이템 구매후 호출 된다.
+
+
+    // 기본적으로 유저에게 전달을 해줘야 하기 때문에
+    // In Param 에 우선 적용하고 내 인벤에 적용 한다.
+    // TODO : 방법에 대해서는 한번 생각 해보자.
+    ItemList::iterator mit;
+    for ( mit = m_mapItems.begin() ; mit != m_mapItems.end() ; ++mit ) {
+
+//         // PC방 Fake Item에 대한 적용이 필요 하다.
+//         if ( mit->second.m_ItemUID < KIPAdvantage::MAXIMUM_PCBANG_UID ) {
+//             vecList_.push_back( mit->second );
+//             continue;
+//         }
+
+        // 수량 아이템 변화 상태에 대한 적용이 필요 하다.
+        int nDiff = mit->second.m_nCount - mit->second.m_nInitCount;
+        if ( nDiff < 0 ) {
+            std::vector<KItem>::iterator vit;
+            vit = std::find_if( vecList_.begin(), vecList_.end(),
+                boost::bind( &KItem::m_ItemUID, _1 ) == mit->first );
+            if ( vit == vecList_.end() ) {
+                // Log
+                continue;
+            }
+            vit->m_nCount += nDiff;
+        }
+    }
+
+    // 인벤토리에 적용 한다.
+    ClearItem();
+    AddItemList( vecList_ );
+}
+
+void KItemContainer::ClearItem()
+{
+    m_mapItems.clear();
+}
+
+void KItemContainer::GetExpiredItemList( OUT std::vector< KItem >& vecList )
+{
+    ItemList::iterator mit;
+    for ( mit = m_mapItems.begin() ; mit != m_mapItems.end() ; ++mit ) {
+        if( mit->second.IsExpired() == false )
+            continue;
+
+        vecList.push_back( mit->second );
+    }
+}
+
+bool KItemContainer::RemoveItemList( IN const std::vector< KItem >& vecItemList )
+{
+    std::vector< KItem >::const_iterator vit;
+    for( vit = vecItemList.begin() ; vit != vecItemList.end() ; ++vit )
+    {
+        if( RemoveItem( vit->m_ItemUID ) )
+            continue;
+
+        START_LOG( cerr, L"아이템을 제거하는데 실패 했습니다." )
+            << BUILD_LOG( vit->m_ItemID )
+            << BUILD_LOG( vit->m_ItemUID );
+    }
+
+    return true;
+}
+
+bool KItemContainer::RemoveItemList( IN const std::vector< GCITEMUID >& vecItemUIDList )
+{
+    std::vector< GCITEMUID >::const_iterator vit;
+    for( vit = vecItemUIDList.begin() ; vit != vecItemUIDList.end() ; ++vit )
+    {
+        if( RemoveItem( *vit ) )
+            continue;
+
+        START_LOG( cerr, L"아이템을 제거하는데 실패 했습니다." )
+            << BUILD_LOG( *vit );
+    }
+
+    return true;
+}
+
+int KItemContainer::GetSize( IN const std::set<GCITEMID>& setExceptionItemIDs /*= std::set<GCITEMID>() */ )
+{
+    int nCount = 0;
+    ItemList::iterator mit;
+    for( mit = m_mapItems.begin() ; mit != m_mapItems.end() ; ++mit )
+    {
+		if( (mit->first <= KGCItemManager::MAXIMUM_PCBANG_UID)								||
+			(setExceptionItemIDs.find( mit->second.m_ItemID ) != setExceptionItemIDs.end())	||
+			(mit->second.CheckItemType(KItem::TYPE_LOOK))                                   ||
+            (mit->second.CheckItemType(KItem::TYPE_AGIT_OBJ))
+			){
+				continue;
+		}
+        ++nCount;
+    }
+
+    return nCount;
+}
+
+int KItemContainer::GetInvenItemSize( IN const std::set<GCITEMID>& setExceptionItemIDs /*= std::set<GCITEMID>() */ )
+{
+    int nCount = 0;
+    ItemList::iterator mit;
+    for( mit = m_mapItems.begin() ; mit != m_mapItems.end() ; ++mit )
+    {
+        if ((mit->first <= KGCItemManager::MAXIMUM_PCBANG_UID) ||
+            (setExceptionItemIDs.find(mit->second.m_ItemID) != setExceptionItemIDs.end()) ||
+            (mit->second.CheckItemType(KItem::TYPE_LOOK)) ||
+            (mit->second.CheckItemType(KItem::TYPE_AGIT_OBJ))
+            ) {
+            continue;
+        }
+
+        GCItem* fInvenItem = g_pItemMgr->GetItemData(mit->second.m_ItemID);
+        if (fInvenItem != NULL && (!(fInvenItem->dwCharType & g_pItemMgr->ItemCharTypeToItemFlag(-1)) && !(fInvenItem->dwCharType & g_pItemMgr->ItemCharTypeToItemFlag(g_MyD3D->m_TempPlayer.GetCurrentChar().iCharType))))
+            continue;
+
+        ++nCount;
+    }
+
+    return nCount;
+}
+
+std::vector<KItem> KItemContainer::GetItemListInRange( IN const std::set<GCITEMID>& setRange )
+{
+    if( setRange.empty() )
+        return std::vector<KItem>();
+
+    ItemList::iterator mit;
+    std::vector<KItem> vecResult;
+    for( mit = m_mapItems.begin() ; mit != m_mapItems.end() ; ++mit )
+    {
+        if( mit->first <= KGCItemManager::MAXIMUM_PCBANG_UID )
+            continue;
+
+        if( setRange.find( mit->second.m_ItemID ) == setRange.end() )
+            continue;
+
+        vecResult.push_back( mit->second );
+    }
+    return vecResult;
+}
+
+void KItemContainer::GetZeroCountItemList( OUT std::vector< KItem >& vecList_ )
+{
+    ItemList::iterator mit;
+    for( mit = m_mapItems.begin() ; mit != m_mapItems.end() ; ++mit ) {
+        if( mit->second.m_nCount > 0 )
+            continue;
+
+        vecList_.push_back( mit->second );
+    }
+}
+
+void KItemContainer::AddNewItem( GCITEMUID itemUID_ )
+{
+    m_setNewItem.insert( itemUID_ );
+}
+
+void KItemContainer::ClearNewItem()
+{
+    m_setNewItem.clear();
+}
+
+bool KItemContainer::IsNewItem( GCITEMUID itemUID_ )
+{
+    return m_setNewItem.find( itemUID_ ) != m_setNewItem.end();
+}
+
+void KItemContainer::UpdatePremiumInfo()
+{
+    KItem *pGCClub = FindItemByItemID(KGCItemManager::ITEM_GC_CLUB*10);
+    KItem *pGCBlog = FindItemByItemID(KGCItemManager::ITEM_GC_BLOG*10);
+	KItem *pGCPremiumClub = FindItemByItemID(KGCItemManager::ITEM_GC_PREMIUM*10);
+
+    if ( pGCClub == NULL && pGCBlog == NULL && pGCPremiumClub == NULL)
+        g_kGlobalValue.m_kUserInfo.dwPremium = KPremiumInfo::TYPE_NORMAL;
+}
+
+bool KItemContainer::FindItemListByItemID( IN const GCITEMID itemID_, OUT std::vector< KItem* >& vecItemList_ )
+{
+    vecItemList_.clear();
+    ItemList::iterator mit = m_mapItems.begin();
+    for( ; mit != m_mapItems.end(); ++mit)
+    {
+        if( itemID_ == (mit->second).m_ItemID ) {
+            vecItemList_.push_back( &mit->second );
+        }
+    }
+
+    return !vecItemList_.empty();
+}
+
+void KItemContainer::LogInventory( IN const std::set<GCITEMID>& setExceptionItemIDs )
+{
+    std::ofstream file;
+
+    file.open( "inventoryList.txt" );
+
+    if( file.is_open() == false )
+    {
+        return;
+    }
+
+
+    file << "Dumping inventory items\n\n";
+    file << "UID" << "\t" << "GoodsID" << "\t" << "ItemName" << "\t" << "Count" << "\t" << "NoInvenSize" << "\n";
+
+
+    int nCount = 0;
+    ItemList::iterator mit;
+    for( mit = m_mapItems.begin() ; mit != m_mapItems.end() ; ++mit )
+    {
+        GCItem* pItem = g_pItemMgr->GetItemData( mit->second.m_ItemID );
+        if ( !pItem ) 
+            continue;
+
+        BOOL bNonSize = FALSE;
+
+        if( mit->first <= KGCItemManager::MAXIMUM_PCBANG_UID )
+            bNonSize = TRUE;
+
+        if( mit->second.CheckItemType(KItem::TYPE_LOOK) )
+            bNonSize = TRUE;
+
+        if( mit->second.CheckItemType(KItem::TYPE_AGIT_OBJ) )
+            bNonSize = TRUE;
+
+        if( setExceptionItemIDs.find( mit->second.m_ItemID ) != setExceptionItemIDs.end() )
+            bNonSize = TRUE;
+
+        if ( !bNonSize ) 
+            ++nCount;
+
+        file << mit->first << "\t";
+        file << mit->second.m_ItemID * 10 << "\t";
+        file << KncUtil::toNarrowString( pItem->strItemName ).c_str() << "\t";
+        file << mit->second.m_nCount << "\t";
+        file << bNonSize << "\n";
+    }
+
+    file << "Real Size: " << m_mapItems.size() << " NonOccupySize: " << nCount << "\n";
+    file.close();
+}

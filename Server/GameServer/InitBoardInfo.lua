@@ -1,0 +1,302 @@
+-- 바퀴수 아이템 세팅은 해당 바퀴별로 세팅가능하다.
+-- 목표바퀴가 있는데 목표 바퀴가 넘어가면 목표바퀴 그 다음 Goal의 아이템을 계속적으로 지급한다.
+-- BoardType Enum
+P_NORMAL            = 0            -- 일반칸
+P_ACCESSARIES       = 1            -- 악세사리 지급칸.
+P_POSITION          = 2            -- 포션 지급칸
+P_GEM               = 3            -- GEM 칸
+P_AGINGCORE         = 4            -- 비쥬 칸
+P_CHAMPION          = 5            -- 챔피언 입장권 칸
+P_CONTINENT1        = 6            -- 대륙별 상자칸1
+P_CONTINENT2        = 7            -- 대륙별 상자칸2
+P_CONTINENT3        = 8            -- 대륙별 상자칸3
+P_CONTINENT4        = 9            --대륙별 상자칸4
+P_SPECIALMISSION    = 10           -- 특수 미션칸
+
+BeginTime   = { 2009, 10, 06, 09 }   -- Y, M, D, H
+EndTime     = { 2009, 10, 28, 09 }   -- Y, M, D, H
+TICK_SYNC_GAP = 1000 * 60 * 5
+TOTAL_MAP_COUNT = 24			-- 전체 보드게임판의 칸 수( 마지막 칸의 Num으로 적어주자 28은 27로 표시 )
+MAX_GOAX = 30				-- 최대 목표 바퀴수
+DAILY_MAX = 8				-- 하루에 돌릴 수 있는 최대 주사위 던지기 횟수.
+DAILY_FREE = 5				-- 하루에 무료로 지급할 주사위 갯수.
+FREE_TICK_GAP = 60 * 60 		-- 1시간.
+UPDATE_HOUR = 6				-- 초기화를 진행할 시간.
+DICE_ITEMID = 203210			-- 주사위 ItemID
+BOARD_ITEMID = 203200       		-- 말판 아이템.
+BOARD_VERSION = 6			-- 주사위 이벤트 버전.( 이벤트 진행될때마다 버전을 1씩 올려야 한다 )
+
+SpecialMission = { 204160, 204170, 204180, }		-- 지급할 미션 ID( 1개 이상의 미션을 가능해야 한다. )
+
+InitPositionValue = 
+{
+	{
+		TYPE = P_NORMAL,
+		ItemList = { },
+	},
+	{
+		TYPE = P_ACCESSARIES,
+		ItemList = { 111080, 1, -1, },
+	},
+	{
+		TYPE = P_POSITION,
+		ItemList = { 177560, 2, -1, },
+	},	
+	{
+		TYPE = P_GEM,
+		ItemList = { 203220, 1, -1, },
+	},
+	{
+		TYPE = P_AGINGCORE,
+		ItemList = { 203230, 1, -1, },
+	},	
+	{
+		TYPE = P_CHAMPION,
+		ItemList = { 82050, 1, -1, },
+	},	
+	{
+		TYPE = P_CONTINENT1,
+		ItemList = { 77710, 1, -1, },
+	},	
+	{
+		TYPE = P_CONTINENT2,
+		ItemList = { },
+	},	
+	{
+		TYPE = P_CONTINENT3,
+		ItemList = { 77720, 1, -1, },
+	},	
+	{
+		TYPE = P_CONTINENT4,
+		ItemList = { 77730, 1, -1, },
+	},	
+}
+
+InitBoardGameInfo = 
+{
+	{
+		MapID = 0,
+		Properties = 0,
+	},
+	{
+		MapID = 1,
+		Properties = 1,
+	},
+	{
+		MapID = 2,
+		Properties = 4,
+	},
+	{
+		MapID = 3,
+		Properties = 2,
+	},	
+	{
+		MapID = 4,
+		Properties = 5,
+	},	
+	{
+		MapID = 5,
+		Properties = 2,
+	},	
+	{
+		MapID = 6,
+		Properties = 10,
+	},	
+	{
+		MapID = 7,
+		Properties = 1,
+	},	
+	{
+		MapID = 8,
+		Properties = 5,
+	},	
+	{
+		MapID = 9,
+		Properties = 6,
+	},	
+	{
+		MapID = 10,
+		Properties = 2,
+	},	
+	{
+		MapID = 11,
+		Properties = 4,
+	},	
+	{
+		MapID = 12,
+		Properties = 10,
+	},	
+	{
+		MapID = 13,
+		Properties = 5,
+	},	
+	{
+		MapID = 14,
+		Properties = 2,
+	},	
+	{
+		MapID = 15,
+		Properties = 7,
+	},	
+	{
+		MapID = 16,
+		Properties = 1,
+	},	
+	{
+		MapID = 17,
+		Properties = 4,
+	},	
+	{
+		MapID = 18,
+		Properties = 10,
+	},	
+	{
+		MapID = 19,
+		Properties = 4,
+	},	
+	{
+		MapID = 20,
+		Properties = 1,
+	},	
+	{
+		MapID = 21,
+		Properties = 8,
+	},	
+	{
+		MapID = 22,
+		Properties = 2,
+	},	
+	{
+		MapID = 23,
+		Properties = 5,
+	},
+}
+
+
+InitGoalReward = 
+{
+	{
+		GOAL = 1,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 2,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 3,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 4,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 5,
+		ItemList = { 102030, 1, -1, 42340, 3, -1, },
+	},
+	{
+		GOAL = 6,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 7,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 8,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 9,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 10,
+		ItemList = { 102030, 1, -1, 42340, 3, -1,},
+	},
+	{
+		GOAL = 11,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 12,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 13,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 14,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 15,
+		ItemList = { 102030, 1, -1, 42340, 3, -1,},
+	},
+	{
+		GOAL = 16,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 17,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 18,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 19,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 20,
+		ItemList = { 102030, 1, -1, 42340, 3, -1,},
+	},
+	{
+		GOAL = 21,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 22,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 23,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 24,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 25,
+		ItemList = { 102030, 1, -1, 42340, 3, -1,},
+	},
+	{
+		GOAL = 26,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 27,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 28,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 29,
+		ItemList = { 102030, 1, -1, },
+	},
+	{
+		GOAL = 30,
+		ItemList = { 100030, 10, -1, 102030, 1, -1, 42340, 3, -1, },
+	},
+	{
+		GOAL = 31,
+		ItemList = { 102030, 1, -1, },
+	},
+}

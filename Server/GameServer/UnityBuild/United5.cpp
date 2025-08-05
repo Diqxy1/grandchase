@@ -1,0 +1,18 @@
+#include "..\GameServer\EvtDBThread.cpp"
+
+#include "..\GameServer\MissionManager.cpp"
+#include "..\GameServer\SkillManager.cpp"
+
+#include "..\GameServer\ItemContainer.cpp"
+#include "..\GameServer\BillDB.cpp"
+#include "..\GameServer\SP.cpp"
+#include "..\GameServer\ItemBreakUp.cpp"
+#include "..\Common\GCAttributeDecider.cpp"
+#include "..\Common\GCSocketDecider.cpp"
+#include "..\Common\GCGradeDecider.cpp"
+#include "..\GameServer\ManufactureS3.cpp"
+#include "..\GameServer\ServerBenefit.cpp"
+#include "..\GameServer\GCSocketConsumeItem.cpp"
+#include "..\Common\GCAttributeTable.cpp"
+#include "..\Common\GCGradeTable.cpp"
+#include "..\Common\GCSocketTable.cpp"

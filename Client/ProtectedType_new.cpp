@@ -1,0 +1,1 @@
+std::list<CMemoryBlockBase*> CMemoryBlockBase::m_listMemory;

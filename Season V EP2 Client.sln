@@ -1,0 +1,201 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game", "Client\MyGame.vcxproj", "{1942D347-E041-4720-94A6-0E3FDB5FBEFC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GCLuaManager", "Client\GCLuaManager\GCLuaManager.vcxproj", "{DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KncP2PLib", "Client\KncP2PLib\KncP2P.vcxproj", "{C461ACB8-9349-4D95-9206-2B7784465821}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GCDeviceLib", "Client\GCDeviceLib\GCDeviceLib.vcxproj", "{62363FDA-BA57-454A-AEC3-12D6AE12975D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MassFileLib", "Client\MassFileLib\MassFileLib.vcxproj", "{88EE4A6C-D0DE-4AC6-BD75-7676F963B125}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UILib", "Client\UILib\UILib.vcxproj", "{0A2DF711-073E-4482-99F3-2251B0A1D377}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tool_Particle", "Client\Tool_Particle\Tool_Particle.vcxproj", "{EAD97E91-6E7D-4713-8C0F-3C07D908BE59}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ParticleLib", "Client\ParticleLib\ParticleLib.vcxproj", "{6C16DECD-A454-4958-BAE8-40924588C36D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GCUtil", "Client\GCUtil\GCUtil.vcxproj", "{B37F2135-0B9F-45F5-8E2C-8BDD84634B4F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WOGMapTOol", "Client\GC_MapTOol\WOGMapTOol.vcxproj", "{B4417B86-30DC-4A94-B7DF-9C1C00D4FC4D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QuestScripter", "Client\QuestScripter\QuestScripter.vcxproj", "{26646110-A9BF-4B75-8B2D-0B61772690B6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UI Script Studio", "Client\UI Script Studio\UI Script Studio.vcxproj", "{062D7D91-510B-4564-90D2-51BC430410F0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GCPatcher", "Client\NewPatcher\GCPatcher.vcxproj", "{5A53488F-0170-4553-A0BB-FCE5E6ABD020}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B37F2135-0B9F-45F5-8E2C-8BDD84634B4F} = {B37F2135-0B9F-45F5-8E2C-8BDD84634B4F}
+		{DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A} = {DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A}
+		{88EE4A6C-D0DE-4AC6-BD75-7676F963B125} = {88EE4A6C-D0DE-4AC6-BD75-7676F963B125}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFCMassFile", "Client\MFCMassFile\MFCMassFile.vcxproj", "{8F46B469-390B-4A04-B2DC-84630BDF71F0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GCFileDiff", "Client\GCFileDiff\GCFileDiff.vcxproj", "{024DC77B-63C5-4447-8876-F648D9AC4DE5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HwidLib", "Client\HwidLib\HwidLib\HwidLib.vcxproj", "{6E2F6848-D17E-40CC-99E3-4D25A5C8D99B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Season V EP2 Live|Any CPU = Season V EP2 Live|Any CPU
+		Season V EP2 Live|Win32 = Season V EP2 Live|Win32
+		Season V EP2 Live|Win64 = Season V EP2 Live|Win64
+		Season V EP2 Live|x64 = Season V EP2 Live|x64
+		Season V EP2 Live|x86 = Season V EP2 Live|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1942D347-E041-4720-94A6-0E3FDB5FBEFC}.Season V EP2 Live|Any CPU.ActiveCfg = CNTEST|Win32
+		{1942D347-E041-4720-94A6-0E3FDB5FBEFC}.Season V EP2 Live|Any CPU.Build.0 = CNTEST|Win32
+		{1942D347-E041-4720-94A6-0E3FDB5FBEFC}.Season V EP2 Live|Win32.ActiveCfg = Client_Out|Win32
+		{1942D347-E041-4720-94A6-0E3FDB5FBEFC}.Season V EP2 Live|Win32.Build.0 = Client_Out|Win32
+		{1942D347-E041-4720-94A6-0E3FDB5FBEFC}.Season V EP2 Live|Win64.ActiveCfg = 필리핀 사내테스트|x64
+		{1942D347-E041-4720-94A6-0E3FDB5FBEFC}.Season V EP2 Live|Win64.Build.0 = 필리핀 사내테스트|x64
+		{1942D347-E041-4720-94A6-0E3FDB5FBEFC}.Season V EP2 Live|x64.ActiveCfg = Client_Out|x64
+		{1942D347-E041-4720-94A6-0E3FDB5FBEFC}.Season V EP2 Live|x64.Build.0 = Client_Out|x64
+		{1942D347-E041-4720-94A6-0E3FDB5FBEFC}.Season V EP2 Live|x86.ActiveCfg = 홍콩본섭|Win32
+		{DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A}.Season V EP2 Live|Any CPU.ActiveCfg = Debug_NotUnitedBuild|Win32
+		{DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A}.Season V EP2 Live|Any CPU.Build.0 = Debug_NotUnitedBuild|Win32
+		{DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A}.Season V EP2 Live|Win32.ActiveCfg = Release|Win32
+		{DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A}.Season V EP2 Live|Win32.Build.0 = Release|Win32
+		{DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A}.Season V EP2 Live|Win64.ActiveCfg = Debug_NotUnitedBuild|x64
+		{DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A}.Season V EP2 Live|Win64.Build.0 = Debug_NotUnitedBuild|x64
+		{DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A}.Season V EP2 Live|x64.ActiveCfg = Release|x64
+		{DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A}.Season V EP2 Live|x64.Build.0 = Release|x64
+		{DCB7FE55-5945-44D8-ADF8-EDF9FF2B530A}.Season V EP2 Live|x86.ActiveCfg = 대만THIS사내테스트|Win32
+		{C461ACB8-9349-4D95-9206-2B7784465821}.Season V EP2 Live|Any CPU.ActiveCfg = Debug_NotUnitedBuild|Win32
+		{C461ACB8-9349-4D95-9206-2B7784465821}.Season V EP2 Live|Any CPU.Build.0 = Debug_NotUnitedBuild|Win32
+		{C461ACB8-9349-4D95-9206-2B7784465821}.Season V EP2 Live|Win32.ActiveCfg = Release|Win32
+		{C461ACB8-9349-4D95-9206-2B7784465821}.Season V EP2 Live|Win32.Build.0 = Release|Win32
+		{C461ACB8-9349-4D95-9206-2B7784465821}.Season V EP2 Live|Win64.ActiveCfg = Debug_NotUnitedBuild|x64
+		{C461ACB8-9349-4D95-9206-2B7784465821}.Season V EP2 Live|Win64.Build.0 = Debug_NotUnitedBuild|x64
+		{C461ACB8-9349-4D95-9206-2B7784465821}.Season V EP2 Live|x64.ActiveCfg = Release|x64
+		{C461ACB8-9349-4D95-9206-2B7784465821}.Season V EP2 Live|x64.Build.0 = Release|x64
+		{C461ACB8-9349-4D95-9206-2B7784465821}.Season V EP2 Live|x86.ActiveCfg = 대만THIS사내테스트|Win32
+		{62363FDA-BA57-454A-AEC3-12D6AE12975D}.Season V EP2 Live|Any CPU.ActiveCfg = Debug_NotUnitedBuild|Win32
+		{62363FDA-BA57-454A-AEC3-12D6AE12975D}.Season V EP2 Live|Any CPU.Build.0 = Debug_NotUnitedBuild|Win32
+		{62363FDA-BA57-454A-AEC3-12D6AE12975D}.Season V EP2 Live|Win32.ActiveCfg = Release|Win32
+		{62363FDA-BA57-454A-AEC3-12D6AE12975D}.Season V EP2 Live|Win32.Build.0 = Release|Win32
+		{62363FDA-BA57-454A-AEC3-12D6AE12975D}.Season V EP2 Live|Win64.ActiveCfg = Debug_NotUnitedBuild|x64
+		{62363FDA-BA57-454A-AEC3-12D6AE12975D}.Season V EP2 Live|Win64.Build.0 = Debug_NotUnitedBuild|x64
+		{62363FDA-BA57-454A-AEC3-12D6AE12975D}.Season V EP2 Live|x64.ActiveCfg = Release|x64
+		{62363FDA-BA57-454A-AEC3-12D6AE12975D}.Season V EP2 Live|x64.Build.0 = Release|x64
+		{62363FDA-BA57-454A-AEC3-12D6AE12975D}.Season V EP2 Live|x86.ActiveCfg = 대만THIS사내테스트|Win32
+		{88EE4A6C-D0DE-4AC6-BD75-7676F963B125}.Season V EP2 Live|Any CPU.ActiveCfg = Debug_Tool|Win32
+		{88EE4A6C-D0DE-4AC6-BD75-7676F963B125}.Season V EP2 Live|Any CPU.Build.0 = Debug_Tool|Win32
+		{88EE4A6C-D0DE-4AC6-BD75-7676F963B125}.Season V EP2 Live|Win32.ActiveCfg = Release|Win32
+		{88EE4A6C-D0DE-4AC6-BD75-7676F963B125}.Season V EP2 Live|Win32.Build.0 = Release|Win32
+		{88EE4A6C-D0DE-4AC6-BD75-7676F963B125}.Season V EP2 Live|Win64.ActiveCfg = Static_Lib_Release|x64
+		{88EE4A6C-D0DE-4AC6-BD75-7676F963B125}.Season V EP2 Live|Win64.Build.0 = Static_Lib_Release|x64
+		{88EE4A6C-D0DE-4AC6-BD75-7676F963B125}.Season V EP2 Live|x64.ActiveCfg = Release|x64
+		{88EE4A6C-D0DE-4AC6-BD75-7676F963B125}.Season V EP2 Live|x64.Build.0 = Release|x64
+		{88EE4A6C-D0DE-4AC6-BD75-7676F963B125}.Season V EP2 Live|x86.ActiveCfg = Static_Lib|Win32
+		{0A2DF711-073E-4482-99F3-2251B0A1D377}.Season V EP2 Live|Any CPU.ActiveCfg = 대만UNICODE_DEBUG|Win32
+		{0A2DF711-073E-4482-99F3-2251B0A1D377}.Season V EP2 Live|Any CPU.Build.0 = 대만UNICODE_DEBUG|Win32
+		{0A2DF711-073E-4482-99F3-2251B0A1D377}.Season V EP2 Live|Win32.ActiveCfg = 미국본섭|Win32
+		{0A2DF711-073E-4482-99F3-2251B0A1D377}.Season V EP2 Live|Win64.ActiveCfg = UNICODE_DEBUG|x64
+		{0A2DF711-073E-4482-99F3-2251B0A1D377}.Season V EP2 Live|Win64.Build.0 = UNICODE_DEBUG|x64
+		{0A2DF711-073E-4482-99F3-2251B0A1D377}.Season V EP2 Live|x64.ActiveCfg = 미국본섭|x64
+		{0A2DF711-073E-4482-99F3-2251B0A1D377}.Season V EP2 Live|x64.Build.0 = 미국본섭|x64
+		{0A2DF711-073E-4482-99F3-2251B0A1D377}.Season V EP2 Live|x86.ActiveCfg = 한국사내테스트|Win32
+		{EAD97E91-6E7D-4713-8C0F-3C07D908BE59}.Season V EP2 Live|Any CPU.ActiveCfg = 미국본섭|x64
+		{EAD97E91-6E7D-4713-8C0F-3C07D908BE59}.Season V EP2 Live|Any CPU.Build.0 = 미국본섭|x64
+		{EAD97E91-6E7D-4713-8C0F-3C07D908BE59}.Season V EP2 Live|Win32.ActiveCfg = 미국본섭|Win32
+		{EAD97E91-6E7D-4713-8C0F-3C07D908BE59}.Season V EP2 Live|Win32.Build.0 = 미국본섭|Win32
+		{EAD97E91-6E7D-4713-8C0F-3C07D908BE59}.Season V EP2 Live|Win64.ActiveCfg = 필리핀 사내테스트|x64
+		{EAD97E91-6E7D-4713-8C0F-3C07D908BE59}.Season V EP2 Live|Win64.Build.0 = 필리핀 사내테스트|x64
+		{EAD97E91-6E7D-4713-8C0F-3C07D908BE59}.Season V EP2 Live|x64.ActiveCfg = 미국본섭|x64
+		{EAD97E91-6E7D-4713-8C0F-3C07D908BE59}.Season V EP2 Live|x64.Build.0 = 미국본섭|x64
+		{EAD97E91-6E7D-4713-8C0F-3C07D908BE59}.Season V EP2 Live|x86.ActiveCfg = 필리핀본섭|Win32
+		{6C16DECD-A454-4958-BAE8-40924588C36D}.Season V EP2 Live|Any CPU.ActiveCfg = 미국본섭|x64
+		{6C16DECD-A454-4958-BAE8-40924588C36D}.Season V EP2 Live|Any CPU.Build.0 = 미국본섭|x64
+		{6C16DECD-A454-4958-BAE8-40924588C36D}.Season V EP2 Live|Win32.ActiveCfg = Release|Win32
+		{6C16DECD-A454-4958-BAE8-40924588C36D}.Season V EP2 Live|Win32.Build.0 = Release|Win32
+		{6C16DECD-A454-4958-BAE8-40924588C36D}.Season V EP2 Live|Win64.ActiveCfg = 필리핀 사내테스트|x64
+		{6C16DECD-A454-4958-BAE8-40924588C36D}.Season V EP2 Live|Win64.Build.0 = 필리핀 사내테스트|x64
+		{6C16DECD-A454-4958-BAE8-40924588C36D}.Season V EP2 Live|x64.ActiveCfg = Release|Win32
+		{6C16DECD-A454-4958-BAE8-40924588C36D}.Season V EP2 Live|x64.Build.0 = Release|Win32
+		{6C16DECD-A454-4958-BAE8-40924588C36D}.Season V EP2 Live|x86.ActiveCfg = 필리핀본섭|Win32
+		{B37F2135-0B9F-45F5-8E2C-8BDD84634B4F}.Season V EP2 Live|Any CPU.ActiveCfg = Debug_NotUnitedBuild|Win32
+		{B37F2135-0B9F-45F5-8E2C-8BDD84634B4F}.Season V EP2 Live|Any CPU.Build.0 = Debug_NotUnitedBuild|Win32
+		{B37F2135-0B9F-45F5-8E2C-8BDD84634B4F}.Season V EP2 Live|Win32.ActiveCfg = Release|Win32
+		{B37F2135-0B9F-45F5-8E2C-8BDD84634B4F}.Season V EP2 Live|Win32.Build.0 = Release|Win32
+		{B37F2135-0B9F-45F5-8E2C-8BDD84634B4F}.Season V EP2 Live|Win64.ActiveCfg = Debug_NotUnitedBuild|x64
+		{B37F2135-0B9F-45F5-8E2C-8BDD84634B4F}.Season V EP2 Live|Win64.Build.0 = Debug_NotUnitedBuild|x64
+		{B37F2135-0B9F-45F5-8E2C-8BDD84634B4F}.Season V EP2 Live|x64.ActiveCfg = Release|x64
+		{B37F2135-0B9F-45F5-8E2C-8BDD84634B4F}.Season V EP2 Live|x64.Build.0 = Release|x64
+		{B37F2135-0B9F-45F5-8E2C-8BDD84634B4F}.Season V EP2 Live|x86.ActiveCfg = 대만THIS사내테스트|Win32
+		{B4417B86-30DC-4A94-B7DF-9C1C00D4FC4D}.Season V EP2 Live|Any CPU.ActiveCfg = 미국본섭|Win32
+		{B4417B86-30DC-4A94-B7DF-9C1C00D4FC4D}.Season V EP2 Live|Any CPU.Build.0 = 미국본섭|Win32
+		{B4417B86-30DC-4A94-B7DF-9C1C00D4FC4D}.Season V EP2 Live|Win32.ActiveCfg = MapTool_Release|Win32
+		{B4417B86-30DC-4A94-B7DF-9C1C00D4FC4D}.Season V EP2 Live|Win32.Build.0 = MapTool_Release|Win32
+		{B4417B86-30DC-4A94-B7DF-9C1C00D4FC4D}.Season V EP2 Live|Win64.ActiveCfg = 필리핀 사내테스트|x64
+		{B4417B86-30DC-4A94-B7DF-9C1C00D4FC4D}.Season V EP2 Live|Win64.Build.0 = 필리핀 사내테스트|x64
+		{B4417B86-30DC-4A94-B7DF-9C1C00D4FC4D}.Season V EP2 Live|x64.ActiveCfg = Release|Win32
+		{B4417B86-30DC-4A94-B7DF-9C1C00D4FC4D}.Season V EP2 Live|x64.Build.0 = Release|Win32
+		{B4417B86-30DC-4A94-B7DF-9C1C00D4FC4D}.Season V EP2 Live|x86.ActiveCfg = 필리핀 사내테스트|Win32
+		{26646110-A9BF-4B75-8B2D-0B61772690B6}.Season V EP2 Live|Any CPU.ActiveCfg = Release|x64
+		{26646110-A9BF-4B75-8B2D-0B61772690B6}.Season V EP2 Live|Any CPU.Build.0 = Release|x64
+		{26646110-A9BF-4B75-8B2D-0B61772690B6}.Season V EP2 Live|Win32.ActiveCfg = Release|Win32
+		{26646110-A9BF-4B75-8B2D-0B61772690B6}.Season V EP2 Live|Win32.Build.0 = Release|Win32
+		{26646110-A9BF-4B75-8B2D-0B61772690B6}.Season V EP2 Live|Win64.ActiveCfg = Release|x64
+		{26646110-A9BF-4B75-8B2D-0B61772690B6}.Season V EP2 Live|Win64.Build.0 = Release|x64
+		{26646110-A9BF-4B75-8B2D-0B61772690B6}.Season V EP2 Live|x64.ActiveCfg = Release|Win32
+		{26646110-A9BF-4B75-8B2D-0B61772690B6}.Season V EP2 Live|x64.Build.0 = Release|Win32
+		{26646110-A9BF-4B75-8B2D-0B61772690B6}.Season V EP2 Live|x86.ActiveCfg = Release|Win32
+		{062D7D91-510B-4564-90D2-51BC430410F0}.Season V EP2 Live|Any CPU.ActiveCfg = Release|x64
+		{062D7D91-510B-4564-90D2-51BC430410F0}.Season V EP2 Live|Any CPU.Build.0 = Release|x64
+		{062D7D91-510B-4564-90D2-51BC430410F0}.Season V EP2 Live|Win32.ActiveCfg = Release|Win32
+		{062D7D91-510B-4564-90D2-51BC430410F0}.Season V EP2 Live|Win32.Build.0 = Release|Win32
+		{062D7D91-510B-4564-90D2-51BC430410F0}.Season V EP2 Live|Win64.ActiveCfg = Release|x64
+		{062D7D91-510B-4564-90D2-51BC430410F0}.Season V EP2 Live|Win64.Build.0 = Release|x64
+		{062D7D91-510B-4564-90D2-51BC430410F0}.Season V EP2 Live|x64.ActiveCfg = Release|x64
+		{062D7D91-510B-4564-90D2-51BC430410F0}.Season V EP2 Live|x64.Build.0 = Release|x64
+		{062D7D91-510B-4564-90D2-51BC430410F0}.Season V EP2 Live|x86.ActiveCfg = Release|Win32
+		{5A53488F-0170-4553-A0BB-FCE5E6ABD020}.Season V EP2 Live|Any CPU.ActiveCfg = CNTEST|Win32
+		{5A53488F-0170-4553-A0BB-FCE5E6ABD020}.Season V EP2 Live|Any CPU.Build.0 = CNTEST|Win32
+		{5A53488F-0170-4553-A0BB-FCE5E6ABD020}.Season V EP2 Live|Win32.ActiveCfg = 필리핀 사내테스트|Win32
+		{5A53488F-0170-4553-A0BB-FCE5E6ABD020}.Season V EP2 Live|Win64.ActiveCfg = 필리핀 사내테스트|x64
+		{5A53488F-0170-4553-A0BB-FCE5E6ABD020}.Season V EP2 Live|Win64.Build.0 = 필리핀 사내테스트|x64
+		{5A53488F-0170-4553-A0BB-FCE5E6ABD020}.Season V EP2 Live|x64.ActiveCfg = 필리핀 사내테스트|x64
+		{5A53488F-0170-4553-A0BB-FCE5E6ABD020}.Season V EP2 Live|x64.Build.0 = 필리핀 사내테스트|x64
+		{5A53488F-0170-4553-A0BB-FCE5E6ABD020}.Season V EP2 Live|x86.ActiveCfg = 한국오픈테스트|Win32
+		{8F46B469-390B-4A04-B2DC-84630BDF71F0}.Season V EP2 Live|Any CPU.ActiveCfg = Debug|x64
+		{8F46B469-390B-4A04-B2DC-84630BDF71F0}.Season V EP2 Live|Any CPU.Build.0 = Debug|x64
+		{8F46B469-390B-4A04-B2DC-84630BDF71F0}.Season V EP2 Live|Win32.ActiveCfg = Release|Win32
+		{8F46B469-390B-4A04-B2DC-84630BDF71F0}.Season V EP2 Live|Win64.ActiveCfg = Release|x64
+		{8F46B469-390B-4A04-B2DC-84630BDF71F0}.Season V EP2 Live|Win64.Build.0 = Release|x64
+		{8F46B469-390B-4A04-B2DC-84630BDF71F0}.Season V EP2 Live|x64.ActiveCfg = Release|x64
+		{8F46B469-390B-4A04-B2DC-84630BDF71F0}.Season V EP2 Live|x64.Build.0 = Release|x64
+		{8F46B469-390B-4A04-B2DC-84630BDF71F0}.Season V EP2 Live|x86.ActiveCfg = 인도네시아 사내테스트|Win32
+		{024DC77B-63C5-4447-8876-F648D9AC4DE5}.Season V EP2 Live|Any CPU.ActiveCfg = Release|x64
+		{024DC77B-63C5-4447-8876-F648D9AC4DE5}.Season V EP2 Live|Any CPU.Build.0 = Release|x64
+		{024DC77B-63C5-4447-8876-F648D9AC4DE5}.Season V EP2 Live|Win32.ActiveCfg = Release|Win32
+		{024DC77B-63C5-4447-8876-F648D9AC4DE5}.Season V EP2 Live|Win32.Build.0 = Release|Win32
+		{024DC77B-63C5-4447-8876-F648D9AC4DE5}.Season V EP2 Live|Win64.ActiveCfg = 필리핀 사내테스트|x64
+		{024DC77B-63C5-4447-8876-F648D9AC4DE5}.Season V EP2 Live|Win64.Build.0 = 필리핀 사내테스트|x64
+		{024DC77B-63C5-4447-8876-F648D9AC4DE5}.Season V EP2 Live|x64.ActiveCfg = Release|x64
+		{024DC77B-63C5-4447-8876-F648D9AC4DE5}.Season V EP2 Live|x64.Build.0 = Release|x64
+		{024DC77B-63C5-4447-8876-F648D9AC4DE5}.Season V EP2 Live|x86.ActiveCfg = 필리핀 사내테스트|Win32
+		{6E2F6848-D17E-40CC-99E3-4D25A5C8D99B}.Season V EP2 Live|Any CPU.ActiveCfg = Debug|x64
+		{6E2F6848-D17E-40CC-99E3-4D25A5C8D99B}.Season V EP2 Live|Any CPU.Build.0 = Debug|x64
+		{6E2F6848-D17E-40CC-99E3-4D25A5C8D99B}.Season V EP2 Live|Win32.ActiveCfg = Release|Win32
+		{6E2F6848-D17E-40CC-99E3-4D25A5C8D99B}.Season V EP2 Live|Win32.Build.0 = Release|Win32
+		{6E2F6848-D17E-40CC-99E3-4D25A5C8D99B}.Season V EP2 Live|Win64.ActiveCfg = Debug|x64
+		{6E2F6848-D17E-40CC-99E3-4D25A5C8D99B}.Season V EP2 Live|Win64.Build.0 = Debug|x64
+		{6E2F6848-D17E-40CC-99E3-4D25A5C8D99B}.Season V EP2 Live|x64.ActiveCfg = Release|x64
+		{6E2F6848-D17E-40CC-99E3-4D25A5C8D99B}.Season V EP2 Live|x64.Build.0 = Release|x64
+		{6E2F6848-D17E-40CC-99E3-4D25A5C8D99B}.Season V EP2 Live|x86.ActiveCfg = Debug|Win32
+		{6E2F6848-D17E-40CC-99E3-4D25A5C8D99B}.Season V EP2 Live|x86.Build.0 = Debug|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D0FEFFC-AC74-44B9-9C93-298D084A227D}
+	EndGlobalSection
+EndGlobal

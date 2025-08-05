@@ -1,0 +1,2060 @@
+#include "stdafx.h"
+//
+#include "Packet.h"
+
+
+//
+
+//
+#include "CommonPacket.h"
+
+KGCPacketPacker								    g_kPacketPacker;
+KGCTCPPacketPacker							    g_kTGPacketPacker;      // 트리거 패킷 패킹용
+KGCTCPPacketPacker                              g_kSquarePacketPacker;
+KPlayerLatency								    g_kLocalPlayerLatency[1];
+
+KGC_PID_ADMIN_COMMAND						    MyAdminCommand[1];
+KGC_PID_CHAT_PACKET							    MyCheat[1];
+KGC_PID_PLAYERLATENCY_FRAME_INFO			    g_kFrameInfoPacket[1];
+KGC_PID_MONSTER_LATENCY_FRAME_INFO              g_kMonsterFrameInfoPacket[1];
+//KGC_PID_MONSTER_LIVE_INFO                       g_kMonsterLiveInfoPacket[1];
+KGC_PID_SHOOTING_ARROW_TOURNAMEN                ShotPacket[1];
+KGC_PID_SHOOTING_ARROW_TOURNAMENT_RESULT        ShotScorePacket[1];
+KGC_PID_COMPRESSED_PACKET					    g_kCompressPacket;
+KGC_PID_PACKED_PACKET						    g_kPackedPacket[1];
+KGC_PID_TCP_PACKED_PACKET                       g_kTCPPackedPacket[1];
+KGC_PID_EFFECT_ITEM							    g_kEffectItem[1];
+KGC_PID_USEPETSKILL							    g_kUsePetSkill[1];
+KGC_PID_TRANSFORM							    g_kTransform[1];
+KGC_PID_TAG_CHARACTER                           g_kTagCharacter[1];
+KGC_PID_TRANSNPC							    g_kTransNPC[1];
+KGC_PID_POISON_BREATH						    g_kPoisonBreath[1];
+KGC_PID_SUMMON_MONSTER                          g_kSummonMonster[1];
+KGC_PID_DROPITEM                                g_kDropItem[1];
+KGC_PID_QUEST_REAULT_ITEM_DICE                  g_kQuestResultItemDice[1];
+KGC_PID_PLAYERGETITEM                           g_kPlayerGetItem[1];
+KGC_PID_QUEST_STAGE_RESULT_SCORE                g_kSendQuestStageResultScore[1];
+KGC_PID_QUEST_STAGE_POINT                       g_kQuestStageScore[1];
+KGC_PID_GATE_STATE                              g_kGateStage[1];
+KGC_PID_TG_DEFAULT                              g_kTGPacket[1];
+KGC_PID_SWAPWEAPON							    g_kSwapWeapon[1];
+KGC_PID_ANGELS_EGG_INFO						    g_kAngelsEggInfo[1];
+KGC_PID_ENTER_GAME							    g_kEnterGame[1];
+KGC_PID_COUPLE_EVENT_CREDIT					    g_KCoupleEventCredit[1];
+KGC_PID_MAGIC_MISSILE						    g_KMagicMissile[1];
+KGC_PID_SELECT_BONUSBOX                         g_kSelectBonusBox[1];
+KGC_PID_OPEN_BONUSBOX                           g_kOpenBonusBox[1];
+KGC_PID_START_BONUSBOX_SELECT                   g_kStartBonusBoxSelect[1];
+KGC_PID_READY_BONUSBOX_SELECT                   g_kReadyBonusBoxSelect[1];
+KGC_PID_CHANGE_MONSTER                          g_kChangeMonster[1];
+KGC_PID_SHIELD                                  g_kShield[1];
+KGC_PID_SUMMON_INFINITY_MONSTER                  g_kSummonInfinityMonster[1];
+
+#define                     PUT_PACKET_HEADER           PUT( Type ) && PUT( dwUID )
+#define                     GET_PACKET_HEADER           GET( Type ) && GET( dwUID )
+SERIALIZE_DEFINE_PUT( SRoomInfo, obj, ks )
+{
+	return NULL;
+}
+
+SERIALIZE_DEFINE_PUT( SUserInfo, obj, ks )
+{
+	return NULL;
+}
+
+SERIALIZE_DEFINE_PUT( KGC_PID_BROAD_PLAYER_DEATH_INFO, obj, ks )
+{
+	return PUT_PACKET_HEADER                                &&
+		PUT( dwKillMePlayerID )                          &&
+		PUT( bDeathFromFall )                            &&
+		PUT( bSelfKilling )                              &&
+		PUT( fGetExpGpRatio )							&&
+		PUT( bDeathFromMonster );
+}
+SERIALIZE_DEFINE_GET( KGC_PID_BROAD_PLAYER_DEATH_INFO, obj, ks )
+{
+	return GET_PACKET_HEADER                                &&
+		GET( dwKillMePlayerID )                          &&
+		GET( bDeathFromFall )                            &&
+		GET( bSelfKilling )                              &&
+		GET( fGetExpGpRatio )							&&
+		GET( bDeathFromMonster );
+}
+
+SERIALIZE_DEFINE_PUT( KGC_PID_BROAD_SANTA_EVENT, obj, ks )
+{
+	return PUT_PACKET_HEADER                                &&
+		PUT( fStartPosX )                                &&
+		PUT( fStartPosY )                                &&
+		PUT( fEndPosX )                                  &&
+		PUT( fEndPosY );
+}
+SERIALIZE_DEFINE_GET( KGC_PID_BROAD_SANTA_EVENT, obj, ks )
+{
+	return GET_PACKET_HEADER                                &&
+		GET( fStartPosX )                                &&
+		GET( fStartPosY )                                &&
+		GET( fEndPosX )                                  &&
+		GET( fEndPosY );
+}
+/////////////////////////////////////////////////////////////////////
+// Date :  06-12-07 
+// milennium9@kogstudios.com 권상구
+//*******************************************************************
+// 산타몬 싱크를 위한 패킷입니다.
+//
+/////////////////////////////////////////////////////////////////////
+SERIALIZE_DEFINE_PUT( KGC_PID_BROAD_SANTAMON_EVENT, obj, ks )
+{
+	return PUT_PACKET_HEADER                                &&
+		PUT( iSantaLv )									 &&
+		PUT( fStartPosX )                                &&
+		PUT( fStartPosY );
+}
+SERIALIZE_DEFINE_GET( KGC_PID_BROAD_SANTAMON_EVENT, obj, ks )
+{
+	return GET_PACKET_HEADER                              &&
+		GET( iSantaLv )									 &&
+		GET( fStartPosX )                                &&
+		GET( fStartPosY );
+}
+SERIALIZE_DEFINE_PUT( KGC_PID_GAME_BOARD_UPDATE, obj, ks )
+{
+	return PUT_PACKET_HEADER                                &&		   
+		PUT( iMonHuntPoint )                             &&
+		PUT( m_mapMonNum )								&&
+		PUT( m_mapMonKillNum )                          &&
+        PUTARRAY( aKillNum, MAX_PLAYER_NUM )            &&
+        PUTARRAY( aDeathNum, MAX_PLAYER_NUM )           &&
+        PUTARRAY( aTeamScore, TEAM_NUM );   
+}
+SERIALIZE_DEFINE_GET( KGC_PID_GAME_BOARD_UPDATE, obj, ks )
+{
+    DWORD dwSize;
+	return GET_PACKET_HEADER								&&		
+		GET( iMonHuntPoint )								&&
+		GET( m_mapMonNum )								&&
+		GET( m_mapMonKillNum )                          &&
+        GETARRAY( aKillNum, MAX_PLAYER_NUM )            &&
+        GETARRAY( aDeathNum, MAX_PLAYER_NUM )           &&
+        GETARRAY( aTeamScore, TEAM_NUM );      
+}
+SERIALIZE_DEFINE_PUT( KGC_PID_CHAT_PACKET, obj, ks )
+{
+	return PUT_PACKET_HEADER                                &&		   
+        PUT( strNickName ) &&
+        PUT( strNickColor ) &&
+        PUT( dwColor ) &&
+		PUT( strChat ) &&
+		PUT( ecmd );
+}
+SERIALIZE_DEFINE_GET( KGC_PID_CHAT_PACKET, obj, ks )
+{
+	return GET_PACKET_HEADER								&&		
+        GET( strNickName ) &&
+        GET( strNickColor ) &&
+        GET( dwColor ) &&
+		GET( strChat ) &&
+		GET( ecmd );
+}
+
+SERIALIZE_DEFINE_PUT( KGC_PID_DROPITEM, obj, ks )
+{
+    return PUT( Type ) &&
+        PUT( m_vecDropUID ) &&
+        PUT( m_fX )         &&
+        PUT( m_fY );
+}
+SERIALIZE_DEFINE_GET( KGC_PID_DROPITEM, obj, ks )
+{
+    return GET( Type )             &&
+        GET( m_vecDropUID )     &&
+        GET( m_fX )             &&
+        GET( m_fY );
+}
+
+SERIALIZE_DEFINE_PUT( KGC_PID_PLAYERGETITEM, obj, ks )
+{
+    return PUT( Type ) &&
+        PUT( m_cDropTpye ) &&
+        PUT( m_dwDropUID )         &&
+        PUT( m_dwPlayerUID );
+}
+SERIALIZE_DEFINE_GET( KGC_PID_PLAYERGETITEM, obj, ks )
+{
+    return GET( Type )             &&
+        GET( m_cDropTpye )     &&
+        GET( m_dwDropUID )             &&
+        GET( m_dwPlayerUID );
+}
+
+SERIALIZE_DEFINE_PUT( KGC_PID_OPEN_BONUSBOX, obj, ks )
+{
+    return PUT( Type ) &&
+        PUT( m_vecBonusBoxSelectInfo );
+}
+SERIALIZE_DEFINE_GET( KGC_PID_OPEN_BONUSBOX, obj, ks )
+{
+    return GET( Type )             &&
+        GET( m_vecBonusBoxSelectInfo );
+}
+SERIALIZE_DEFINE_PUT( KGC_PID_BROAD_CONTROL_MISSION_DATA, obj, ks )
+{
+    return PUT_PACKET_HEADER                                &&		   
+        PUT( m_iControlInfoComboCount )						&&
+        PUT( m_iControlInfoBackAttackCount )				&&
+        PUT( m_iControlInfoBeAttackedCount )                &&
+        PUT( m_mapControlInfoSkill )                        &&
+        PUT( m_mapControlInfoPotion );
+}
+SERIALIZE_DEFINE_GET( KGC_PID_BROAD_CONTROL_MISSION_DATA, obj, ks )
+{
+    return GET_PACKET_HEADER								&&		
+        GET( m_iControlInfoComboCount )						&&
+        GET( m_iControlInfoBackAttackCount )				&&
+        GET( m_iControlInfoBeAttackedCount )                &&
+        GET( m_mapControlInfoSkill )                        &&
+        GET( m_mapControlInfoPotion );      
+}
+
+//====================================================================================
+// 2006.07.10 : Asirion
+// Packet Packing클래스 구현.
+KGCPacketPacker::KGCPacketPacker()
+{
+	memset( &m_kPacket, 0, sizeof(KGC_PID_PACKED_PACKET) );
+	m_kPacket.Type = GC_PID_PACKED_PACKET;
+	m_dwPackedSize = 0;
+	m_ucPacketCount = 0;
+	m_dwPacketInfoSize = sizeof(GCPID) + sizeof(UCHAR);
+	::InitializeCriticalSection( &m_cs );
+
+}
+KGCPacketPacker::~KGCPacketPacker()
+{
+	::DeleteCriticalSection( &m_cs );	
+}
+int	KGCPacketPacker::GetPackCount()
+{
+	KLocker kLocker( m_cs );
+	return (int)m_ucPacketCount;
+}
+bool KGCPacketPacker::Pack( void* pkPacket_, PACKED_ELEMENT_SIZE kSize_ )
+{
+
+	KLocker kLocker( m_cs );
+	if ( m_ucPacketCount == 0 )
+	{
+		memset( &m_kPacket, 0, sizeof(KGC_PID_PACKED_PACKET) );
+		m_kPacket.Type = GC_PID_PACKED_PACKET;
+	}
+	if ( MAX_COMPRESS_BUFFER <= m_dwPackedSize + kSize_ )
+	{
+		ASSERT( false && "Packet Packing Size Overflow" );
+		return false;
+	}
+	if ( 0xFF <= m_ucPacketCount )
+	{
+		ASSERT( false && "Packet Packing Count Overflow" );
+		return false;
+	}
+	memcpy( m_kPacket.pPackedPacket + m_dwOffset, &kSize_, sizeof( PACKED_ELEMENT_SIZE ) );
+	m_dwOffset += sizeof( PACKED_ELEMENT_SIZE );
+	m_dwPackedSize += sizeof( PACKED_ELEMENT_SIZE );
+	memcpy( m_kPacket.pPackedPacket + m_dwOffset, pkPacket_, kSize_ );
+	m_dwOffset += kSize_;
+	m_dwPackedSize += kSize_;
+	m_ucPacketCount++;
+	return true;
+}
+KGC_PID_PACKED_PACKET* KGCPacketPacker::GetData( UINT& uiPacketSize_ )
+{
+	KLocker kLocker( m_cs );
+	uiPacketSize_ = (UINT)(m_dwPacketInfoSize + m_dwPackedSize);
+	m_kPacket.ucPacketCount = m_ucPacketCount;
+	m_dwOffset = 0;
+	m_dwPackedSize = 0;
+	m_ucPacketCount = 0;
+	return &m_kPacket;
+}
+
+//====================================================================================
+KGCTCPPacketPacker::KGCTCPPacketPacker()
+{
+    memset( &m_kPacket, 0, sizeof(KGC_PID_TCP_PACKED_PACKET) );
+    m_kPacket.Type = GC_PID_TCP_PACKED_PACKET;
+    m_dwPackedSize = 0;
+    m_ucPacketCount = 0;
+    m_dwPacketInfoSize = sizeof(LTP_BASIC) + sizeof(UCHAR);
+    ::InitializeCriticalSection( &m_cs );
+
+}
+KGCTCPPacketPacker::~KGCTCPPacketPacker()
+{
+    ::DeleteCriticalSection( &m_cs );	
+}
+int	KGCTCPPacketPacker::GetPackCount()
+{
+    KLocker kLocker( m_cs );
+    return (int)m_ucPacketCount;
+}
+bool KGCTCPPacketPacker::Pack( void* pkPacket_, PACKED_ELEMENT_SIZE kSize_ )
+{
+    KLocker kLocker( m_cs );
+    if ( m_ucPacketCount == 0 )
+    {
+        memset( &m_kPacket, 0, sizeof(KGC_PID_TCP_PACKED_PACKET) );
+        m_kPacket.Type = GC_PID_TCP_PACKED_PACKET;
+    }
+    if ( MAX_COMPRESS_BUFFER <= m_dwPackedSize + kSize_ )
+    {
+        ASSERT( false && "Packet Packing Size Overflow" );
+        return false;
+    }
+    if ( 0xFF <= m_ucPacketCount )
+    {
+        ASSERT( false && "Packet Packing Count Overflow" );
+        return false;
+    }
+#if !defined(__PATH__)
+	GCPID    cPacketID = *((GCPID*)(pkPacket_));
+
+	KGC_PID_TG_DEFAULT *Custom = (KGC_PID_TG_DEFAULT*)pkPacket_;
+	FILE *fo = NULL;
+	std::wstringstream strText;
+
+	if (cPacketID == GC_PID_TG_DEFAULT)
+	{
+		strText << "TG_ID = " << Custom->m_sTG_ID << " m_sMaxTG_ID = " << Custom->m_sMaxTG_ID 
+			    << " m_dwPackedSize = " << m_dwPackedSize 
+				<< " kSize_ = " << kSize_ 
+				<< "\n";
+	}
+	else
+	{
+		strText << "Packed ID = " << cPacketID << "\n";
+	}
+
+	fo = fopen("SendTrigerInfo.txt","a");
+	fwprintf(fo,L"%s",strText.str().c_str());
+	fclose(fo);
+#endif
+    memcpy( m_kPacket.pPackedPacket + m_dwOffset, &kSize_, sizeof( PACKED_ELEMENT_SIZE ) );
+    m_dwOffset += sizeof( PACKED_ELEMENT_SIZE );
+    m_dwPackedSize += sizeof( PACKED_ELEMENT_SIZE );
+    memcpy( m_kPacket.pPackedPacket + m_dwOffset, pkPacket_, kSize_ );
+    m_dwOffset += kSize_;
+    m_dwPackedSize += kSize_;
+    m_ucPacketCount++;
+    return true;
+}
+KGC_PID_TCP_PACKED_PACKET* KGCTCPPacketPacker::GetData( UINT& uiPacketSize_ )
+{
+    KLocker kLocker( m_cs );
+    uiPacketSize_ = (UINT)(m_dwPacketInfoSize + m_dwPackedSize);
+    m_kPacket.ucPacketCount = m_ucPacketCount;
+    m_dwOffset = 0;
+    m_dwPackedSize = 0;
+    m_ucPacketCount = 0;
+    m_kPacket.size = uiPacketSize_;
+    m_kPacket.latencyTime = 0;
+    m_kPacket.dwUID = g_kGlobalValue.m_kUserInfo.dwUID;
+    return &m_kPacket;
+}
+
+//====================================================================================
+// 2006.07.10 : Asirion
+// 아이템 구조체.
+SUserItem::SUserItem( void )
+{
+	dwItemUID       = 0;
+	iItemID         = -1;
+	cEnchantLevel   = -1;
+    cGradeID        = 0;
+    nEquipLevel     = 0;
+    cGradeID = -1;
+    m_cEnchantEquipGradeID  = -1;
+    m_DesignCoordiID = 0;
+
+}
+SUserItem::SUserItem( const SUserItem& kSrc_ )
+{
+	*this = kSrc_;
+}
+
+const SUserItem& SUserItem::operator = ( const SUserItem& kSrc_ )
+{
+    dwItemUID           = kSrc_.dwItemUID;
+    iItemID             = kSrc_.iItemID;
+    cEnchantLevel       = kSrc_.cEnchantLevel;
+
+    vecItemAttribute    = kSrc_.vecItemAttribute;
+    vecItemSocket       = kSrc_.vecItemSocket;
+    cGradeID            = kSrc_.cGradeID;
+    nEquipLevel         = kSrc_.nEquipLevel;
+
+    m_cEnchantEquipGradeID  = kSrc_.m_cEnchantEquipGradeID;
+    m_DesignCoordiID      = kSrc_.m_DesignCoordiID;
+
+	return *this;
+}
+
+bool SUserItem::operator == ( const SUserItem& kSrc_ ) const
+{
+	if ( dwItemUID != kSrc_.dwItemUID ) 		
+		return false;
+	
+	if ( iItemID != kSrc_.iItemID )
+		return false;
+
+	if ( cEnchantLevel != kSrc_.cEnchantLevel )
+		return false;
+
+	if ( cGradeID != kSrc_.cGradeID ) 
+		return false;
+
+	if ( nEquipLevel != kSrc_.nEquipLevel ) 
+		return false;
+
+	if ( m_cEnchantEquipGradeID != kSrc_.m_cEnchantEquipGradeID ) 
+		return false;
+
+	if ( vecItemAttribute != kSrc_.vecItemAttribute )
+		return false;
+
+	if ( vecItemSocket != kSrc_.vecItemSocket ) 
+		return false;
+
+    if ( m_DesignCoordiID != kSrc_.m_DesignCoordiID )
+        return false;
+
+	return true;
+}
+const SUserItem& SUserItem::operator = ( const KEquipItemInfo& kSrc_ )
+{
+    dwItemUID       =  kSrc_.m_dwUID ;
+	iItemID         = kSrc_.m_dwID / 10;
+	cEnchantLevel   = kSrc_.m_cEnchantLevel;
+    vecItemAttribute    = kSrc_.m_vecAttribute;
+    vecItemSocket       = kSrc_.m_vecSocket;
+    cGradeID          = kSrc_.m_cGradeID;
+    nEquipLevel     = kSrc_.m_nEquipLevel;
+    m_cEnchantEquipGradeID  = kSrc_.m_cEnchantEquipGradeID;
+    m_DesignCoordiID = kSrc_.m_DesignCoordiID / 10;
+	return *this;
+}
+
+const SUserItem& SUserItem::operator = ( const KCoupleEquip& kSrc_ )
+{
+	dwItemUID		= kSrc_.m_dwItemUID;
+	iItemID			= kSrc_.m_dwItemID;
+	cEnchantLevel	= -1;
+    //vecItemAttribute    = kSrc_.vecItemAttribute;
+    //vecItemSocket       = kSrc_.vecItemSocket;
+    //cGradeID            = kSrc_.cGradeID;
+	return *this;
+}
+
+const SUserItem& SUserItem::operator = ( const KItem& kSrc_ )
+{
+
+    dwItemUID               = kSrc_.m_ItemUID;  
+    iItemID                 = kSrc_.m_ItemID;
+    cEnchantLevel           = kSrc_.m_cEnchantLevel;
+    
+    vecItemAttribute        = kSrc_.m_vecAttribute;
+    vecItemSocket           = kSrc_.m_vecSocket;
+    cGradeID                = kSrc_.m_cGradeID;
+    nEquipLevel             = kSrc_.m_sEquipLevel;
+
+    m_cEnchantEquipGradeID  = kSrc_.m_cEnchantEquipGradeID;
+    m_DesignCoordiID          = kSrc_.m_DesignCoordiID;
+
+    return *this;
+}
+
+
+
+bool SUserItem::operator == ( const KEquipItemInfo& kSrc_ )
+{
+    return (dwItemUID       == kSrc_.m_dwUID        &&
+            iItemID         == kSrc_.m_dwID / 10   );
+}
+
+void SUserItem::Copy( KEquipItemInfo& kItemInfo )
+{
+    kItemInfo.m_dwID    = iItemID*10;
+    kItemInfo.m_dwUID   = dwItemUID;
+    kItemInfo.m_cEnchantLevel = cEnchantLevel;
+    kItemInfo.m_nEquipLevel = nEquipLevel;
+    kItemInfo.m_cGradeID = cGradeID;
+    kItemInfo.m_cEnchantEquipGradeID = m_cEnchantEquipGradeID;
+    kItemInfo.m_DesignCoordiID = m_DesignCoordiID * 10;
+    kItemInfo.m_vecAttribute = vecItemAttribute; 
+    kItemInfo.m_vecSocket = vecItemSocket;
+}
+
+void SUserItem::Copy( KItem& kItem )
+{
+    kItem.m_ItemUID = dwItemUID;
+    kItem.m_ItemID = iItemID;
+    kItem.m_cEnchantLevel = cEnchantLevel;
+    kItem.m_sEquipLevel = nEquipLevel;
+    kItem.m_vecAttribute = vecItemAttribute;
+    kItem.m_vecSocket = vecItemSocket;
+    kItem.m_cGradeID = cGradeID;
+    kItem.m_DesignCoordiID = m_DesignCoordiID;	
+}
+
+
+//====================================================================================
+// 2006.07.10 : Asirion
+// 케릭터 구조체 구현
+SCharInfo::SCharInfo( void )
+{
+	iCharType       = 0;
+    iPromotionLevel = 0;
+	biExp           = 0;
+	iLevel          = 0;
+	strCharName     = L"";
+    iWin            = 0;
+    iLose           = 0;
+    iGP             = 0;
+    dwSlotNum       = 0;
+	kPetInfo.m_dwUID = 0;
+    m_nInvenCapacity = DEFAULT_INVENTORY_NUM;
+    m_nCoordiCapacity = GC_COORDI_INVEN_SIZE;
+	vecItemInfo.clear();
+    setPromotion.clear();
+    vecPetGlyphInfo.clear();
+    dwPetGlyphSize = 0;
+}
+SCharInfo::SCharInfo( const SCharInfo& kSrc_ )
+{
+	*this = kSrc_;
+}
+const SCharInfo& SCharInfo::operator = ( const SCharInfo& kSrc_ )
+{
+	iCharType           = kSrc_.iCharType;
+    iPromotionLevel     = kSrc_.iPromotionLevel;
+	setPromotion        = kSrc_.setPromotion;
+	biExp               = kSrc_.biExp;
+	iLevel              = kSrc_.iLevel;
+	iWin				= kSrc_.iWin;
+	iLose				= kSrc_.iLose;
+    iGP                 = kSrc_.iGP;
+    dwSlotNum           = kSrc_.dwSlotNum;
+	strCharName         = kSrc_.strCharName;
+	vecItemInfo         = kSrc_.vecItemInfo;
+    vecLookInfo         = kSrc_.vecLookInfo;
+	kPetInfo			= kSrc_.kPetInfo;
+    m_mapEquipSkill     = kSrc_.m_mapEquipSkill;
+	kSkillInfo			= kSrc_.kSkillInfo;
+    m_vecSPInfo         = kSrc_.m_vecSPInfo;
+	kELOUserData		= kSrc_.kELOUserData;
+    kBonusPoint         = kSrc_.kBonusPoint;
+    m_nInvenCapacity    = kSrc_.m_nInvenCapacity;
+    m_nCoordiCapacity   = kSrc_.m_nCoordiCapacity;
+    vecPetGlyphInfo		= kSrc_.vecPetGlyphInfo;
+	dwPetGlyphSize		= kSrc_.dwPetGlyphSize;
+	return *this;
+}
+bool SCharInfo::operator == ( const SCharInfo& kSrc_ ) const
+{	
+	if( kPetInfo.m_dwUID != kSrc_.kPetInfo.m_dwUID )
+		return false;
+    if( kPetInfo.m_cPromotion != kSrc_.kPetInfo.m_cPromotion )
+        return false;
+    if( kPetInfo.m_strName.compare( kSrc_.kPetInfo.m_strName ) != 0 )
+        return false;
+	if( kPetInfo.m_vecEquipItem != kSrc_.kPetInfo.m_vecEquipItem )
+		return false;
+	if( kPetInfo.m_kCostume.m_dwUID != kSrc_.kPetInfo.m_kCostume.m_dwUID )
+		return false;
+	if( vecItemInfo != kSrc_.vecItemInfo )
+		return false;
+    if( vecLookInfo != kSrc_.vecLookInfo )
+        return false;
+    if ( vecPetGlyphInfo != kSrc_.vecPetGlyphInfo )
+        return false;
+    if ( dwPetGlyphSize != kSrc_.dwPetGlyphSize )
+        return false;
+    if( m_mapEquipSkill != kSrc_.m_mapEquipSkill )
+        return false;
+
+	if( kELOUserData.m_nInitELOWin != kSrc_.kELOUserData.m_nInitELOWin )
+		return false;
+	if( kELOUserData.m_nELOWin != kSrc_.kELOUserData.m_nELOWin )
+		return false;
+	if( kELOUserData.m_nInitELOLose != kSrc_.kELOUserData.m_nInitELOLose )
+		return false;
+	if( kELOUserData.m_nELOLose != kSrc_.kELOUserData.m_nELOLose )
+		return false;
+	if( kELOUserData.m_nRatingPoint != kSrc_.kELOUserData.m_nRatingPoint )
+		return false;
+	if( kELOUserData.m_nInitRatingPoint != kSrc_.kELOUserData.m_nInitRatingPoint )
+		return false;
+	if( kELOUserData.m_nELOType != kSrc_.kELOUserData.m_nELOType )
+		return false;
+	if( kELOUserData.m_nInitMatchTotalCount != kSrc_.kELOUserData.m_nInitMatchTotalCount )
+		return false;
+	if( kELOUserData.m_nMatchTotalCount != kSrc_.kELOUserData.m_nMatchTotalCount )
+		return false;
+	if( kELOUserData.m_nLastWinLose != kSrc_.kELOUserData.m_nLastWinLose )
+		return false;
+	if( kELOUserData.m_nConstantK != kSrc_.kELOUserData.m_nConstantK )
+		return false;
+	if( kELOUserData.m_ucGrade != kSrc_.kELOUserData.m_ucGrade )
+		return false;
+	if( kELOUserData.m_nPlacementTestPlayCount != kSrc_.kELOUserData.m_nPlacementTestPlayCount )
+		return false;
+
+    if( kBonusPoint.m_nBaseBonus != kSrc_.kBonusPoint.m_nBaseBonus ) 
+        return false;
+    if( kBonusPoint.m_nSpecialBonus != kSrc_.kBonusPoint.m_nSpecialBonus )
+        return false;
+
+    return ( iCharType          == kSrc_.iCharType ) &&
+           ( iPromotionLevel    == kSrc_.iPromotionLevel ) &&
+           ( setPromotion       == kSrc_.setPromotion ) &&
+           ( biExp              == kSrc_.biExp ) &&
+           ( iLevel             == kSrc_.iLevel ) &&
+		   ( iWin				== kSrc_.iWin ) &&
+		   ( iLose			    == kSrc_.iLose) &&
+           ( iGP                == kSrc_.iGP ) &&
+           ( strCharName        == kSrc_.strCharName );
+}
+bool SCharInfo::operator == ( const int iCharType_ ) const 
+{
+	return iCharType == iCharType_;
+}
+
+const SCharInfo& SCharInfo::operator = ( const KInDoorCharInfo& kSrc_ )
+{    
+	iCharType           = (int)kSrc_.m_cCharType;
+    iPromotionLevel     = kSrc_.m_cPromotion;
+	setPromotion        = kSrc_.m_setPromotion;
+	biExp               = kSrc_.m_biExp;
+	iLevel              = (int)kSrc_.m_dwLevel;
+	iWin				= (int)kSrc_.m_iWin;
+	iLose				= (int)kSrc_.m_iLose;
+    iGP                 = kSrc_.m_nGamePoint;
+	strCharName         = kSrc_.m_strCharName;
+	kSkillInfo			= kSrc_.m_kSkillInfo;
+	kELOUserData		= kSrc_.m_kELOUserData;
+    dwSlotNum           = kSrc_.m_dwSlotNum;
+    kBonusPoint         = kSrc_.m_kBonusPoint;
+
+    vecItemInfo.clear();
+    for ( int i = 0; i < (int)kSrc_.m_vecEquipItems.size(); i++ )
+    {
+        SUserItem kUserItem;
+        kUserItem = kSrc_.m_vecEquipItems[i];
+        vecItemInfo.push_back( kUserItem );
+    }
+
+    vecLookInfo.clear();
+    for ( int i = 0; i < (int)kSrc_.m_vecLookEquips.size(); i++ )
+    {
+        SUserItem kLookItem;
+        kLookItem = kSrc_.m_vecLookEquips[i];
+        vecLookInfo.push_back( kLookItem );
+    }
+
+    vecPetGlyphInfo.clear();
+
+    for (auto petGlyph : kSrc_.m_vecPetGlyphCharData)
+    {
+        KSimpleItem kItem;
+        kItem.m_dwID = petGlyph.m_dwID;
+        kItem.m_dwUID = petGlyph.m_dwUID;
+        kItem.m_cItemType = petGlyph.m_cType;
+        vecPetGlyphInfo.push_back(kItem);
+    }
+
+    dwPetGlyphSize = kSrc_.m_dwPetGlyphSize;
+
+	kPetInfo = kSrc_.m_kPetInfo;
+
+	GCITEMUID dwPetUID =  kPetInfo.m_dwUID;
+	DWORD dwPetID = kPetInfo.m_dwID / 10;
+	DWORD dwCostumeID = kPetInfo.m_kCostume.m_dwID / 10;
+	GCITEMUID dwCostumeUID =  kPetInfo.m_kCostume.m_dwUID;
+
+	kPetInfo.m_dwUID = dwPetUID;
+	kPetInfo.m_dwID = dwPetID;
+	kPetInfo.m_kCostume.m_dwID = dwCostumeID;
+	kPetInfo.m_kCostume.m_dwUID = dwCostumeUID;
+
+	for( int i = 0; i < (int)kPetInfo.m_vecEquipItem.size(); i++ )
+	{
+		// m_nItemType		0 영구/기간
+		//					1 수량
+		GCITEMUID dwPetEquipItemUID = kPetInfo.m_vecEquipItem[i].m_dwUID;
+		DWORD dwPetEquipItemID = kPetInfo.m_vecEquipItem[i].m_dwID / 10;
+
+		kPetInfo.m_vecEquipItem[i].m_dwUID = dwPetEquipItemUID;
+		kPetInfo.m_vecEquipItem[i].m_dwID = dwPetEquipItemID;
+	}
+
+    m_mapEquipSkill = kSrc_.m_mapEquipSkillSet;
+
+    m_vecSPInfo.clear();
+    for( int i = 0; i < static_cast< int >( kSrc_.m_vecSPInfo.size() ); i++ ) {
+        m_vecSPInfo.push_back( kSrc_.m_vecSPInfo[i] );
+    }
+
+	return *this;
+}
+
+bool SCharInfo::IsAcquiredPromotion( char cPromotion )
+{
+    return setPromotion.find( cPromotion ) != setPromotion.end();
+}
+
+int SCharInfo::GetMaxPromotionNum()
+{
+    if( setPromotion.empty() ) {
+        return 0;
+    }
+
+    return static_cast<int>( setPromotion.size() ) - 1;
+}
+
+void SCharInfo::SetPetGlyphInfo(const KSimpleItemVector vecPetGlyph)
+{
+    vecPetGlyphInfo.clear();
+    for (auto glyphInfo : vecPetGlyph)
+    {
+        KSimpleItem kItem;
+        kItem.m_dwID = glyphInfo.m_dwID;
+        kItem.m_dwUID = glyphInfo.m_dwUID;
+        kItem.m_cItemType = glyphInfo.m_cItemType;
+
+        vecPetGlyphInfo.push_back(kItem);
+    }
+
+    dwPetGlyphSize = vecPetGlyphInfo.size();
+}
+
+char SCharInfo::GetHighestPromotion()
+{
+    char cHighestPromotion = 0;
+    for( std::set< char >::iterator sit = setPromotion.begin(); sit != setPromotion.end(); ++sit ) {
+        if( cHighestPromotion < *sit ) {
+            cHighestPromotion = *sit;
+        }
+    }
+
+    return cHighestPromotion;
+}
+
+KItemIDVector SCharInfo::GetEquipmentForLoadModel( int iPlayerID ) const
+{
+    bool bEquipAll = true;
+
+    if ( iPlayerID > -1 && (g_MyD3D->m_pStateMachine->GetState() == GS_ROOM || g_MyD3D->m_pStateMachine->GetState() == GS_GAME))
+        if ( g_MyD3D->m_KGCOption.GetBasicEquipEnable() )
+            if ( iPlayerID != g_MyD3D->Get_MyPlayer() )
+                bEquipAll = false;
+
+    if ( !bEquipAll )
+    {
+        KItemIDVector vecTemp;
+        for (int i = 0; i < (int)vecItemInfo.size(); i++)
+        {
+            GCItem* pViewItem = g_pItemMgr->GetItemData(vecItemInfo[i].iItemID);
+            CONTINUE_NIL(pViewItem);
+
+            GCITEMID BaseItemID = g_pItemMgr->GetBaseItemID(iCharType, static_cast<ESLOTPOSITION>(pViewItem->dwSlotPosition));
+            if (BaseItemID == UINT_MAX)
+                continue;
+
+            GCItem* pBaseItem = g_pItemMgr->GetItemData(BaseItemID);
+            CONTINUE_NIL(pBaseItem);
+
+            if ((pBaseItem->dwSlotPosition & ESP_WEAPON) && !bEquipAll)
+                vecTemp.push_back(pViewItem->dwGoodsID);
+            else
+                vecTemp.push_back(BaseItemID);
+        }
+        return vecTemp;
+    }
+
+    KItemIDVector vecMerge;
+    vecMerge.reserve(vecLookInfo.size());
+
+    for (int i = 0; i < (int)vecLookInfo.size(); ++i)
+    {
+        GCITEMID itemID = vecLookInfo[i].iItemID;
+        if (vecLookInfo[i].m_DesignCoordiID != 0)
+        {
+            itemID = vecLookInfo[i].m_DesignCoordiID;
+        }
+
+        if (g_pItemMgr->IsTransparentCoordiItem(itemID))
+        {
+            continue;
+        }
+
+        vecMerge.push_back(itemID);
+    }
+
+    int nJobLevel = -1;
+
+    for (int i = 0; i < (int)vecItemInfo.size(); i++)
+    {
+        GCItem* pItemInfo = g_pItemMgr->GetItemData(vecItemInfo[i].iItemID);
+        if (pItemInfo == NULL) {
+            continue;
+        }
+
+        if (pItemInfo->dwSlotPosition & ESP_WEAPON)
+        {
+            nJobLevel = pItemInfo->iNeedChangeJobLevelForEquippingItem;
+        }
+
+        bool bEquiped = false;
+        for (int j = 0; j < (int)vecLookInfo.size(); ++j)
+        {
+            GCITEMID itemID = vecLookInfo[j].iItemID;
+            if (vecLookInfo[j].m_DesignCoordiID != 0)
+            {
+                itemID = vecLookInfo[j].m_DesignCoordiID;
+            }
+
+            GCItem* pLookItemInfo = g_pItemMgr->GetItemData(itemID);
+            CONTINUE_NIL(pLookItemInfo);
+
+            if (g_pItemMgr->IsTransparentCoordiItem(itemID))
+                continue;
+
+            if (pLookItemInfo->dwSlotPosition & pItemInfo->dwSlotPosition)
+            {
+                if (pItemInfo->dwSlotPosition & ESP_WEAPON)
+                {
+                    if (pItemInfo->iNeedChangeJobLevelForEquippingItem ==
+                        pLookItemInfo->iNeedChangeJobLevelForEquippingItem)
+                    {
+                        bEquiped = true;
+                    }
+                }
+                else
+                {
+                    bEquiped = true;
+                }
+            }
+        }
+
+        if (bEquiped == false) {
+            vecMerge.push_back(vecItemInfo[i].iItemID);
+        }
+    }
+
+    KItemIDVector::iterator pos = vecMerge.begin();
+    for (; pos != vecMerge.end(); )
+    {
+        GCItem* pItemInfo = g_pItemMgr->GetItemData(*pos);
+        if (pItemInfo && (pItemInfo->dwSlotPosition & ESP_WEAPON))
+        {
+            if (pItemInfo->iNeedChangeJobLevelForEquippingItem != nJobLevel)
+            {
+                pos = vecMerge.erase(pos);
+                continue;
+            }
+        }
+
+        ++pos;
+    }
+
+    KItemIDVector vecTemp;
+    for (KItemIDVector::iterator it = vecMerge.begin(); it != vecMerge.end(); ++it)
+    {
+        if ( g_pItemMgr->IsBaseCoordiItem(*it) )
+        {
+            GCItem* pViewItem = g_pItemMgr->GetItemData(*it);
+            CONTINUE_NIL(pViewItem);
+
+            GCITEMID BaseItemID = g_pItemMgr->GetBaseItemID(iCharType, static_cast<ESLOTPOSITION>(pViewItem->dwSlotPosition));
+            if (BaseItemID == UINT_MAX)
+                continue;
+
+            GCItem* pBaseItem = g_pItemMgr->GetItemData(BaseItemID);
+            CONTINUE_NIL(pBaseItem);
+            vecTemp.push_back(pBaseItem->dwGoodsID);
+        }
+        else
+        {
+            vecTemp.push_back(*it);
+        }
+    }
+    vecMerge.swap(vecTemp);
+
+    return vecMerge;
+}
+
+int SCharInfo::GetEquipWeaponItemID() const
+{
+    for (KUserItemVector::const_iterator it = vecItemInfo.begin(); it != vecItemInfo.end(); ++it) {
+        GCItem* pItem = g_pItemMgr->GetItemData(it->iItemID);
+
+        if (pItem == NULL) {
+            continue;
+        }
+
+        if (pItem->dwSlotPosition & ESP_WEAPON) {
+            return (it->iItemID);
+        }
+    }
+
+    return 0;
+}
+
+char SCharInfo::GetCurrentPromotion()
+{
+    //  현재 무기 전직 정보
+    int nJobLevel = 0;
+
+    for(int i = 0; i < (int)vecItemInfo.size(); i++) 
+    {
+        GCItem* pItemInfo = g_pItemMgr->GetItemData( vecItemInfo[i].iItemID );
+        if( pItemInfo == NULL ) {
+            continue;
+        }
+
+        //  무기 아이템의 전직 정보를 저장해둔다.
+        if ( pItemInfo->dwSlotPosition & ESP_WEAPON )
+        {
+            nJobLevel = pItemInfo->iNeedChangeJobLevelForEquippingItem;
+        }
+    }
+
+    return nJobLevel;
+}
+
+//====================================================================================
+// 2006.07.10 : Asirion
+// 유저 정보 구조체 구현.
+SUserInfo::SUserInfo( void )
+{
+	Init();
+	strNation			= L"";
+}
+
+SUserInfo::SUserInfo( const SUserInfo& kSrc_ )
+{
+	*this = kSrc_;
+}
+
+const SUserInfo& SUserInfo::operator = ( const SUserInfo& kSrc_ )
+{
+
+	// 유저의 신상정보.
+	dwUID               = kSrc_.dwUID;
+	strLogin            = kSrc_.strLogin;
+	strNickName         = kSrc_.strNickName;
+    strNickColor        = kSrc_.strNickColor;
+	strNation			= kSrc_.strNation;
+	eGCUserLevel        = kSrc_.eGCUserLevel;
+	iAge                = kSrc_.iAge;
+	bMan                = kSrc_.bMan;   
+	// 케릭터 정보
+	cCharIndex          = kSrc_.cCharIndex;
+	vecCharInfo         = kSrc_.vecCharInfo;
+	memcpy( aiTagSlot, kSrc_.aiTagSlot, sizeof(aiTagSlot[0])*3 );
+	// 길드정보
+	iGuildID            = kSrc_.iGuildID;
+	iGuildScore         = kSrc_.iGuildScore;
+	strGuildName        = kSrc_.strGuildName;
+    strMarkName         = kSrc_.strMarkName;
+	//memcpy( aiGuildMark, kSrc_.aiGuildMark, sizeof(int)*GUILD_MARK_COMBINE_NUM );
+	// 접속 피씨방 관련
+	cIsNetmarblePCRoom  = kSrc_.cIsNetmarblePCRoom;
+    // 유저 혜택 (태국 3BB)
+    clsUserBenefitType =  kSrc_.clsUserBenefitType;
+	// P2P접속 이후 활용되는 정보.
+	iTeam               = kSrc_.iTeam;
+	bHost               = kSrc_.bHost;
+	bLive               = kSrc_.bLive;
+
+	// 각종 포인트 관련.
+	iGP                 = kSrc_.iGP;
+	mapStagePlayable    = kSrc_.mapStagePlayable;
+
+	nUserState			= kSrc_.nUserState;
+
+    // 프리미엄 유저
+    dwPremium           = kSrc_.dwPremium;
+
+    m_vecFontVector = kSrc_.m_vecFontVector;
+
+    m_iPvExp = kSrc_.m_iPvExp;
+
+	return *this;
+}
+bool SUserInfo::operator == ( const SUserInfo& kSrc_ ) const
+{
+	if ( vecCharInfo != kSrc_.vecCharInfo ) 
+		return false;
+	return ( cCharIndex         == kSrc_.cCharIndex ) &&
+		( dwUID              == kSrc_.dwUID ) &&
+		( strNickName        == kSrc_.strNickName ) &&
+        ( strNickColor       == kSrc_.strNickColor ) &&
+		( strLogin           == kSrc_.strLogin ) &&
+		( iTeam              == kSrc_.iTeam );
+}
+
+void SUserInfo::ClearChar( void )
+{
+	vecCharInfo.clear();
+	cCharIndex = -1;
+	memset( aiTagSlot, -1, sizeof(aiTagSlot[0])*3 );
+}
+
+
+void SUserInfo::Init( void )
+{
+	// 유저의 신상정보.
+	dwUID               = 0;
+	strLogin            = L"";
+	strNickName         = L"";
+    strNickColor        = L"FFFFFF";
+	eGCUserLevel        = USERLEVEL_NOMAL;
+	iAge                = 100;
+	bMan                = true;
+	// 케릭터 정보
+	cCharIndex          = -1;
+	vecCharInfo.clear();
+	memset( aiTagSlot, -1, sizeof(int) * 3 );
+	// 길드정보
+	iGuildID            = -1;
+	iGuildScore         = 0;
+	strGuildName        = L"";
+    strMarkName         = L"";
+	//memset( aiGuildMark, -1, sizeof(int)*GUILD_MARK_COMBINE_NUM );
+	// 접속 피씨방 관련
+	cIsNetmarblePCRoom  = 0;
+    clsUserBenefitType =0;
+	// P2P접속 이후 활용되는 정보.
+	iTeam               = 0;
+	bHost               = false;
+	bLive               = false;
+	// 각종 포인트 관련.
+	iGP                 = 0;
+	iRP                 = 0;
+	iGetRP              = 0;
+	iRPRank             = 0;
+	vecIP.clear();
+	vecPort.clear();
+	mapStagePlayable.clear();
+    m_vecFontVector.clear();
+
+	kQuickSlot.m_vecItemSlot.clear();
+	kQuickSlot.m_vecEmoticonSlot.clear();
+
+    // 용사의 섬 승패
+    iIndigoWin = 0;
+    iIndigoLose = 0;
+
+	// 인벤토리 사용 여부
+	nUserState = GC_RUS_NONE;
+
+    dwPremium = KPremiumInfo::TYPE_NORMAL;
+
+    m_nSlotCount = 0;
+
+    m_iPvExp = 0;
+}
+
+SCharInfo& SUserInfo::GetCurrentChar( void )
+{
+    //------------------------------------------------------------------------
+	//ASSERT( vecCharInfo.size() != 0 );
+    //	크래쉬 수정 : 20091229 EXXA
+    //------------------------------------------------------------------------
+    //	에러 처리를 포인터가 NULL인지 체크하는데 참조자를 리턴하므로 백날
+    //	해봐야 NULL이 나올리가 없다. 게다가 이 함수가 많이 쓰이므로 함부로
+    //	바꿀수도 없다... 해서 static 객체의 iCharType에 -1 넣고 리턴
+    //# 찾는 인덱스가 없어염.
+    if ( ( cCharIndex >= (char)vecCharInfo.size() ) ||
+        ( cCharIndex < 0 )
+        ){
+            static SCharInfo	sInvalidSCharInfo;
+            sInvalidSCharInfo.iCharType	=	-1;
+            return sInvalidSCharInfo;
+    }
+
+	return vecCharInfo[cCharIndex];
+}
+
+void SUserInfo::UpdatePetGlyph( const KSimpleItemVector vecPetGlyph )
+{
+    GetCurrentChar().SetPetGlyphInfo( vecPetGlyph );
+}
+
+SCharInfo& SUserInfo::GetCurrentChar( int iCharType_ )
+{
+    KCharInfoVector::iterator iter = std::find( vecCharInfo.begin(), vecCharInfo.end(), iCharType_ );
+    if ( iter == vecCharInfo.end() )
+        return GetCurrentChar();
+    return (*iter);
+}
+
+int SUserInfo::GetPvExp()
+{
+    return m_iPvExp;
+}
+
+int SUserInfo::GetPromotion( int iCharType /* = -1 */ )
+{
+    SCharInfo* pCharInfo;
+    if( iCharType != -1 ) // 타입
+        pCharInfo = &GetCurrentChar( iCharType );
+    else // 인덱스
+        pCharInfo = &GetCurrentChar();
+
+
+    if( pCharInfo == NULL ) {
+        g_kGlobalValue.m_strNullFunc = __FUNCTION__;
+    }
+
+	if( g_kGlobalValue.IsQuickSkillPlayer( pCharInfo->iCharType ) || g_kGlobalValue.IsHybridPlayer( pCharInfo->iCharType ) ) {
+        return pCharInfo->iPromotionLevel;
+    }
+
+    int jobLevel = 0;
+    GCItem* kItem = NULL;
+    for( int i = 0; i < (int)pCharInfo->vecItemInfo.size(); i++ )
+    {
+        ////무기 갈아낄 때만 캐릭터가 전직용으로 바뀌든지 한다!
+        kItem = g_MyD3D->m_kItemMgr.GetItemData( pCharInfo->vecItemInfo[i].iItemID );
+        CONTINUE_NIL( kItem );
+
+        if( kItem->dwSlotPosition & ESP_WEAPON )
+        {
+            // 2007/2/15. iridology. 이 케릭터가 장착할 수 있는 장비만 검사합니다.
+            //if( GetCharTypeDword( iCharType ) & kItem->dwCharType )
+            //{
+            if( jobLevel < kItem->iNeedChangeJobLevelForEquippingItem )
+            {
+                jobLevel = kItem->iNeedChangeJobLevelForEquippingItem;
+                return jobLevel;
+            }
+            //}
+        }
+    }
+    return 0;
+}
+
+bool SUserInfo::IsCharExist(int iCharType )
+{
+	for( int i = 0 ; i < (int)vecCharInfo.size() ; ++i )
+	{
+		if( vecCharInfo[i].iCharType == iCharType )
+			return true;
+	}
+	return false;
+}
+
+void SUserInfo::SetCurrentChar( int iCharType_ )
+{
+	int i;
+  	for( i = 0; i < (int)vecCharInfo.size(); ++i )
+  	{
+  		if( vecCharInfo[i].iCharType == iCharType_ )
+  		{
+  			cCharIndex = (char)i;
+  			return;
+  		}
+  	}  
+	// 없으면 벡터의 마지막 케릭터로 설정
+	if( i == (int)vecCharInfo.size() )
+		cCharIndex = (char)(vecCharInfo.size() - 1);
+}
+
+
+BYTE SUserInfo::GetUserGrade( void )
+{
+    static const GCEXPTYPE s_biTable[] =
+    {
+        ///* 떠돌이 동 */ 203 * 20,        /* 떠돌이 은 */ 585 * 20,        /* 떠돌이 금 */ 2280 * 20,
+        ///*  용병  동 */ 7609 * 20,       /*  용병  은 */ 19580 * 20,      /*  용병  금 */ 127530 * 20,
+        ///*  왕립  동 */ 502710 * 20,     /*  왕립  은 */ 1492510 * 20,    /*  왕립  금 */ 3419710 * 20,
+        ///*   신   동 */ 5717710 * 20,    /*   신   은 */ 8890510 * 20,    /*   신   금 */
+        //2732,   10145,  22241,  43262,  84926,  180224,
+        //315380, 556292,909260,1342154, 2336546,
+#ifdef LEVEL_DESIGN_STAT_CALC
+        2625,       // ¶°µ¹( Àº )    
+        9491,       // ¶°µ¹( ±Ý )
+        21740,      // ¿ëº´( µ¿ )
+        46099,      // ¿ëº´( Àº )
+        88297,      // ¿ëº´( ±Ý )
+        167761,     // ¿Õ¸³( µ¿ )
+        301440,     // ¿Õ¸³( Àº )
+        542352,     // ¿Õ¸³( ±Ý )
+        895320,     // ½Å¸³( µ¿ )
+        1328214,    // ½Å¸³( Àº )
+        1941204,    // ½Å¸³( ±Ý )
+#else
+        2732,
+        10145,
+        22241,
+        43262,
+        84926,
+        180224,
+        315380,
+        556292,
+        909260,
+        1342154,
+        2336546,
+#endif
+    };
+    GCEXPTYPE biAccumExp    = 0;
+    GCEXPTYPE biBestExp     = 0;
+
+	// 모든 캐릭터의 경험치를 누적시키고 가장 높은 EXP를 찾는다.
+	unsigned int i;
+    for ( i = 0; i < (unsigned int)GetCharSize(); ++i )
+    {
+        biAccumExp += vecCharInfo[i].biExp;
+        if( biBestExp < vecCharInfo[i].biExp )
+        {
+            biBestExp = vecCharInfo[i].biExp;
+        }
+    }
+
+    // ( 모든 캐릭터 EXP 합 + 캐릭터 중 가장 높은 EXP * 2 ) / ( 주 캐릭터의 계산 횟수(3=1+2) )
+    GCEXPTYPE biTotalExp = ( biAccumExp + biBestExp * 2 ) / 3;
+
+    // 테이블을 참조하여 해당하는 계급을 찾아낸다.
+    for ( i = 0; i < sizeof( s_biTable ) / sizeof( GCEXPTYPE ); ++i )
+    {
+        if ( biTotalExp < s_biTable[i] )
+        {
+            return i + 1;
+        }
+    }
+    return i + 1; // 11 (신 금)
+}
+
+int SUserInfo::GetUserWin()
+{
+	int iWin = 0;
+	for( int i = 0; i < (int)vecCharInfo.size(); i++ )
+	{
+		iWin += vecCharInfo[i].iWin;
+	}
+	return iWin;
+}
+
+int SUserInfo::GetUserLose()
+{
+	int iLose = 0;
+	for( int i = 0; i < (int)vecCharInfo.size(); i++ )
+	{
+		iLose += vecCharInfo[i].iLose;
+	}
+	return iLose;
+}
+
+BYTE SUserInfo::GetCharacterGrade( void )
+{
+    DWORD dwWin = GetCurrentChar().iWin;//(DWORD)vecCharInfo[cSelCharID].m_iWin;
+    return GetCharGrade( dwWin );
+}
+
+// 2007/1/19. iridology. 
+// 케릭터를 추가할때 케릭터 타입에 따라서 정렬을 해준다.
+// 서버에서는 map으로 되어있어서 상관이 없지만 클라이언트는 벡터라서 이렇게 해줘야함..
+// 보통은 소팅을 하지 않고 케릭터를 받았을 경우에만 하자..
+void SUserInfo::AddChar( const SCharInfo& kCharInfo_, bool bSort/* = false*/ )
+{
+    // 현재 골라진 캐릭터 보다 인덱스가 작을 경우에는 안습난다.. -_-
+    // 이전에 골라진 캐릭터를 그대로 출력하자 제발...
+    // 현재 캐릭터 타입을 저장하쟈!
+    int iType;
+    bool bChange = false;
+    if ( cCharIndex >= 0 && cCharIndex < (int)vecCharInfo.size() ) 
+    {
+        iType = vecCharInfo[cCharIndex].iCharType;
+        bChange = true;
+    }
+
+    vecCharInfo.push_back( kCharInfo_ );
+
+    if( bSort )
+    {
+        std::sort( vecCharInfo.begin(), vecCharInfo.end(), 
+            boost::bind( &SCharInfo::iCharType, _1 ) < boost::bind( &SCharInfo::iCharType, _2 ) );
+    }
+
+    // 이전 캐릭터 타입을 찾아서 인덱스를 바꾸어 준다!
+    if ( true == bChange )
+    {
+        std::vector<SCharInfo>::iterator vit = vecCharInfo.begin();
+        for ( int iIndex = 0; vit != vecCharInfo.end(); ++vit, ++iIndex )
+        {
+            if ( vit->iCharType == iType )
+            {
+				cCharIndex = g_kGlobalValue.m_kUserInfo.cCharIndex = iIndex;
+                break;
+            }
+        }
+    }
+}
+
+BYTE GetCharGrade( DWORD dwWin )
+{
+    static const DWORD s_dwTable[] =
+    {
+        /* 마크 없음 */ 0,      /* 떠돌이 동 */ 1,        /* 떠돌이 은 */ 31,        /* 떠돌이 금 */ 131,
+        /*  용병  동 */ 331,    /*  용병  은 */ 531,      /*  용병  금 */ 831,       /*  왕립  동 */ 1331,
+        /*  왕립  은 */ 2031,   /*  왕립  금 */ 2831,     /*   신   동 */ 3831,      /*   신   은 */ 5831,
+        /*   신   금 */ 8831,
+    };
+
+    std::vector< DWORD > vecWinTable( s_dwTable, s_dwTable + ( sizeof(s_dwTable) / sizeof(DWORD) ) );
+    std::vector< DWORD >::iterator vit;
+    vit = std::find_if( vecWinTable.begin(), vecWinTable.end(),
+        !boost::bind( std::less_equal<DWORD>(), _1, dwWin) );
+
+    if( vit != vecWinTable.begin() )
+        --vit;
+
+    for( int i = 0; i < (int)vecWinTable.size(); ++i )
+    {
+        if( vecWinTable[i] == *vit )
+        {
+            return i;
+        }
+    }
+    return 0;
+}
+
+const SUserInfo& SUserInfo::operator = ( const KInDoorUserInfo& kSrc_ )
+{
+	// 유저의 신상정보.
+	dwUID                   = kSrc_.m_dwUserUID;
+	strLogin                = kSrc_.m_strLogin;
+	strNickName             = kSrc_.m_strNickName;
+    strNickColor            = kSrc_.m_strNickColor;
+	eGCUserLevel            = (EGCUserLevel)kSrc_.m_cAuthLevel;
+	iAge                    = kSrc_.m_iAge;
+	bMan                    = kSrc_.m_bMale;   
+	// 케릭터 정보
+	vecCharInfo.clear();
+	for ( int i = 0; i < (int)kSrc_.m_vecCharInfo.size(); i++ )
+	{
+		SCharInfo kCharInfo;
+		kCharInfo = kSrc_.m_vecCharInfo[i];
+
+		vecCharInfo.push_back( kCharInfo );
+	}
+	for ( int i = 0; i < 3; i++ )
+	{
+		aiTagSlot[i] = kSrc_.m_acTagModeInfo[i][0];
+	}
+	// 길드정보
+	iGuildID                = kSrc_.m_dwGuildUID;
+	//iGuildScore             = kSrc_.m_GuildScore;
+    strMarkName             = kSrc_.m_strMarkName;
+	//memcpy( aiGuildMark, kSrc_.m_aiGuildMark, sizeof(int)*GUILD_MARK_COMBINE_NUM );
+	strGuildName            = kSrc_.m_strGuildName;
+	// 접속 피씨방 관련
+	cIsNetmarblePCRoom      = kSrc_.m_cPCBangType;
+    clsUserBenefitType      = kSrc_.m_cUserBenfitType;
+	// P2P접속 이후 활용되는 정보.
+	iTeam                   = kSrc_.m_iTeam;
+	bHost                   = kSrc_.m_bIsHost;
+	bLive                   = kSrc_.m_bIsLive;	
+    nUserState              = kSrc_.m_nState;
+	// 각종 포인트 관련.
+	iGP                     = kSrc_.m_iGP;
+	mapStagePlayable        = kSrc_.m_mapDifficulty;
+	vecIP                   = kSrc_.m_vecIP;
+	vecPort                 = kSrc_.m_vecPort;
+
+	dwPremium           = kSrc_.m_kPremiumInfo.m_dwPremiumType;
+    nUserState          = kSrc_.m_nState;
+    strNation           = kSrc_.m_wstrCCode;
+    m_vecFontVector     = kSrc_.m_vecFontVector;
+
+    m_iPvExp            = kSrc_.m_iPvExp;
+
+    // 요정의 나무 버프 정보 
+	m_setInvenBuffItemID = kSrc_.m_setInvenBuffItemID;
+
+    //====================================================================================
+    // 2006.12.20 : Asirion
+    // 순서 절대 바꾸지 말것. 밑에 함수는 반드시 제일 밑으로.
+    SetCurrentChar( kSrc_.m_cCharIndex );
+	return *this;
+}
+
+void SUserInfo::SetIndoorUserInfo(KInDoorUserInfo* pkUserInfo_)
+{
+    pkUserInfo_->m_dwUserUID = dwUID;
+    pkUserInfo_->m_strLogin = strLogin;
+    pkUserInfo_->m_strNickName = strNickName;
+    pkUserInfo_->m_strNickColor = strNickColor;
+    pkUserInfo_->m_wstrCCode = strNation;
+    pkUserInfo_->m_cAuthLevel = (char)eGCUserLevel;
+    pkUserInfo_->m_iAge = iAge;
+    pkUserInfo_->m_bMale = bMan;
+    pkUserInfo_->m_vecFontVector = m_vecFontVector;
+    pkUserInfo_->m_iPvExp = m_iPvExp;
+    pkUserInfo_->m_cCharIndex = GetCurrentChar().iCharType;
+    pkUserInfo_->m_cPromotion = GetCurrentChar().iPromotionLevel;
+    pkUserInfo_->m_setPromotion = GetCurrentChar().setPromotion;
+
+    for (int i = 0; i < (int)vecCharInfo.size(); i++)
+    {
+        KInDoorCharInfo kCharInfo;
+        kCharInfo.m_cCharType = (char)vecCharInfo[i].iCharType;
+        kCharInfo.m_cPromotion = (char)vecCharInfo[i].iPromotionLevel;
+        kCharInfo.m_setPromotion = vecCharInfo[i].setPromotion;
+        kCharInfo.m_biExp = vecCharInfo[i].biExp;
+        kCharInfo.m_dwLevel = (DWORD)vecCharInfo[i].iLevel;
+        kCharInfo.m_iWin = vecCharInfo[i].iWin;
+        kCharInfo.m_iLose = vecCharInfo[i].iLose;
+        kCharInfo.m_nGamePoint = vecCharInfo[i].iGP;
+        kCharInfo.m_strCharName = vecCharInfo[i].strCharName;
+        kCharInfo.m_kELOUserData = vecCharInfo[i].kELOUserData;
+        kCharInfo.m_kBonusPoint = vecCharInfo[i].kBonusPoint;
+
+        kCharInfo.m_vecPetGlyphCharData.clear();
+
+        for (auto petGlyph : vecCharInfo[i].vecPetGlyphInfo)
+        {
+            KPetGlyphCharData kItem;
+            kItem.m_dwID = petGlyph.m_dwID;
+            kItem.m_dwUID = petGlyph.m_dwUID;
+            kItem.m_cType = petGlyph.m_cItemType;
+            kCharInfo.m_vecPetGlyphCharData.push_back(kItem);
+        }
+
+        kCharInfo.m_dwPetGlyphSize = vecCharInfo[i].dwPetGlyphSize;
+
+        for (int j = 0; j < static_cast<int>(vecCharInfo[i].vecLookInfo.size()); j++)
+        {
+
+            KEquipItemInfo kItemInfo;
+            vecCharInfo[i].vecLookInfo[j].Copy(kItemInfo);
+            kCharInfo.m_vecLookEquips.push_back(kItemInfo);
+        }
+
+        for (int j = 0; j < static_cast<int>(vecCharInfo[i].vecItemInfo.size()); j++)
+        {
+            KEquipItemInfo kItemInfo;
+            vecCharInfo[i].vecItemInfo[j].Copy(kItemInfo);
+            kCharInfo.m_vecEquipItems.push_back(kItemInfo);
+        }
+        kCharInfo.m_kPetInfo = vecCharInfo[i].kPetInfo;
+
+        kCharInfo.m_kPetInfo.m_dwUID = kCharInfo.m_kPetInfo.m_dwUID;
+        kCharInfo.m_kPetInfo.m_dwID *= 10;
+        kCharInfo.m_kPetInfo.m_kCostume.m_dwUID = kCharInfo.m_kPetInfo.m_kCostume.m_dwUID;
+        kCharInfo.m_kPetInfo.m_kCostume.m_dwID *= 10;
+
+        for (int j = 0; j < (int)kCharInfo.m_kPetInfo.m_vecEquipItem.size(); j++)
+        {
+            GCITEMUID dwPetItemUID = kCharInfo.m_kPetInfo.m_vecEquipItem[j].m_dwUID;
+            DWORD dwPetItemID = kCharInfo.m_kPetInfo.m_vecEquipItem[j].m_dwID * 10;
+            kCharInfo.m_kPetInfo.m_vecEquipItem[j].m_dwUID = dwPetItemUID;
+            kCharInfo.m_kPetInfo.m_vecEquipItem[j].m_dwID = dwPetItemID;
+        }
+
+        kCharInfo.m_mapEquipSkillSet = vecCharInfo[i].m_mapEquipSkill;
+
+        PLAYER pPlayer = g_MyD3D->m_TempPlayer;
+        if (pPlayer.IsLocalPlayer())
+        {
+            if (pPlayer.m_mapSwapWeapon.end() != pPlayer.m_mapSwapWeapon.find(kCharInfo.m_cCharType))
+            {
+                KItem* pKItem = NULL;
+                if ((pKItem = g_pItemMgr->m_kInventory.FindItemByItemUID(pPlayer.m_mapSwapWeapon[kCharInfo.m_cCharType].second.second)))
+                {
+                    kCharInfo.m_kChangeWeaponItem = g_kGlobalValue.ConvertKItemtoKEquipItemInfo(pKItem);
+                }
+            }
+        }
+
+        pkUserInfo_->m_vecCharInfo.push_back(kCharInfo);
+    }
+    for (int i = 0; i < 3; i++)
+    {
+        pkUserInfo_->m_acTagModeInfo[i][0] = aiTagSlot[i];
+        pkUserInfo_->m_acTagModeInfo[i][1] = 0;
+    }
+
+    pkUserInfo_->m_dwGuildUID = iGuildID;
+    pkUserInfo_->m_strMarkName = strMarkName;
+    pkUserInfo_->m_strGuildName = strGuildName;
+    pkUserInfo_->m_cPCBangType = cIsNetmarblePCRoom;
+    pkUserInfo_->m_cUserBenfitType = clsUserBenefitType;
+    pkUserInfo_->m_iTeam = iTeam;
+    pkUserInfo_->m_bIsHost = bHost;
+    pkUserInfo_->m_bIsLive = bLive;
+    pkUserInfo_->m_nState = nUserState;
+    pkUserInfo_->m_iGP = GetCurrentChar().GetCurrentGP();
+    pkUserInfo_->m_mapDifficulty = mapStagePlayable;
+    pkUserInfo_->m_vecIP = vecIP;
+    pkUserInfo_->m_vecPort = vecPort;
+    pkUserInfo_->m_kPremiumInfo.m_dwPremiumType = dwPremium;
+    pkUserInfo_->m_vecFontVector = m_vecFontVector;
+    pkUserInfo_->m_iPvExp = m_iPvExp;
+
+    PLAYER pPlayer = g_MyD3D->m_TempPlayer;
+    if (pPlayer.IsLocalPlayer())
+    {
+        if (pPlayer.m_mapSwapWeapon.end() != pPlayer.m_mapSwapWeapon.find(pPlayer.GetCurrentChar().iCharType))
+        {
+            KItem* pKItem = NULL;
+            if ((pKItem = g_pItemMgr->m_kInventory.FindItemByItemUID(pPlayer.m_mapSwapWeapon[pPlayer.GetCurrentChar().iCharType].second.second)))
+            {
+
+                for (std::vector< KInDoorCharInfo >::iterator vIt = pkUserInfo_->m_vecCharInfo.begin(); vIt != pkUserInfo_->m_vecCharInfo.end(); vIt++)
+                {
+                    if (vIt->m_cCharType == pPlayer.GetCurrentChar().iCharType)
+                    {
+                        vIt->m_kChangeWeaponItem = g_kGlobalValue.ConvertKItemtoKEquipItemInfo(pKItem);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    pkUserInfo_->m_dwLevel = GetCurrentChar().iLevel;
+}
+
+void SUserInfo::SetChangeRoomUserInfo( KChangeRoomUserInfo* pkUserInfo_, KChangeRoomUserInfo::ROOM_USER_INFO eRoomUserInfo_ )
+{
+    pkUserInfo_->m_dwUserUID        = dwUID;
+	pkUserInfo_->m_ucChangeType     = (UCHAR)eRoomUserInfo_;
+	pkUserInfo_->m_strLogin         = strLogin;
+	pkUserInfo_->m_iTeam            = iTeam;
+    pkUserInfo_->m_nState           = nUserState;
+	// 서버에 던질때에는 PlayerType으로
+	pkUserInfo_->m_cCharIndex       = GetCurrentChar().iCharType;
+	for ( int i = 0; i < 3; i++ )
+	{
+		pkUserInfo_->m_acTagModeInfo[i][0] = aiTagSlot[i];
+		pkUserInfo_->m_acTagModeInfo[i][1] = 0; // 더미값이다.
+	}
+}
+
+void SUserInfo::GetSkillSet( IN char Extra_Char_Num, OUT std::vector< EGCSkillTree >& setSkill )
+{
+    setSkill.clear();
+
+    for( int i = 0; i < (int)vecCharInfo.size(); ++i )
+    {
+        SCharInfo& kChar = vecCharInfo[i];
+        for( int j = 0; j <= (int)kChar.iPromotionLevel; ++j )
+        {
+            // Extra_Char_Num 검사
+            if( j * GC_CHAR_NUM + kChar.iCharType == Extra_Char_Num || 
+                g_kGlobalValue.IsQuickSkillPlayer( kChar.iCharType ) ||
+                g_kGlobalValue.IsHybridPlayer( kChar.iCharType ) )
+            {
+                // 장착한 스킬이 있으면
+                std::map<char, std::vector<KSkillSlot> >::iterator mit;
+                mit = kChar.m_mapEquipSkill.find( (char)j );
+                if( mit != kChar.m_mapEquipSkill.end() )
+                {
+                    // 장착한 스킬셋이 있으면
+                    std::vector<KSkillSlot>& vecSlot = mit->second;
+                    for( int k = 0; k < (int)vecSlot.size(); ++k )
+                    {
+                        KSkillSlot& kSlot = vecSlot[k];
+                        setSkill.push_back( (EGCSkillTree)kSlot.m_nSkillID );
+                    }
+                }
+                break;
+            }
+        }        
+    }
+}
+
+void SUserInfo::GetSkillEquipInfo( IN char Extra_Char_Num, OUT std::vector< EGCSkillTree >& setSkill )
+{
+    setSkill.clear();
+
+    for( int i = 0; i < (int)vecCharInfo.size(); ++i )
+    {
+        SCharInfo& kChar = vecCharInfo[i];
+        for( std::set< char >::iterator sit = kChar.setPromotion.begin(); sit != kChar.setPromotion.end(); ++sit ) {
+            // Extra_Char_Num 검사
+            if( ( *sit ) * GC_CHAR_NUM + kChar.iCharType == Extra_Char_Num )
+            {
+                // 장착한 스킬이 있으면
+                std::map<char, std::vector<KSkillSlot> >::iterator mit;
+                mit = kChar.m_mapEquipSkill.find( *sit );
+                if( mit != kChar.m_mapEquipSkill.end() )
+                {
+                    // 장착한 스킬셋이 있으면
+                    std::vector<KSkillSlot>& vecSlot = mit->second;
+                    for( int k = 0; k < (int)vecSlot.size(); ++k )
+                    {
+                        KSkillSlot& kSlot = vecSlot[k];
+                        setSkill.push_back( (EGCSkillTree)kSlot.m_nSkillID );
+                    }
+                }
+                break;
+            }
+        }        
+    }
+}
+
+void SUserInfo::UpdateSkillSet( std::map< std::pair<char,char>, int >& mapSetting, std::map< std::pair<char,char>, std::vector<KSPSetInfo> >& mapSkillSet )
+{
+	if (g_kGlobalValue.ServerInfo.CheckServerType( ST_LOCK_SKILL_TREE ) )
+	{
+		return;
+	}
+
+    for( int i = 0; i < (int)vecCharInfo.size(); ++i )
+    {
+        SCharInfo& kChar = vecCharInfo[i];
+        kChar.m_vecSPInfo.clear();
+        for( int j = 0; j <= kChar.iPromotionLevel; ++j )
+        {
+            std::map< std::pair<char,char>, int >::iterator mitSet;
+            mitSet = mapSetting.find( std::pair<char,char>((char)i, (char)j) );
+            if( mitSet == mapSetting.end() )
+                continue;
+
+            std::map< std::pair<char,char>, std::vector<KSPSetInfo> >::iterator mitSkill;
+            mitSkill = mapSkillSet.find( std::pair<char,char>((char)i, (char)j) );
+            if( mitSkill == mapSkillSet.end() )
+                continue;
+
+            std::vector<KSPSetInfo>& vecSkillSet = mitSkill->second;
+            if( !vecSkillSet.empty() )
+            {
+                std::vector<KSPSetInfo>::iterator vit;
+                vit = std::find_if( vecSkillSet.begin(), vecSkillSet.end(),
+                    boost::bind( &KSPSetInfo::m_nSPSetID, _1 ) == (mitSet->second) );
+
+                if( vit == vecSkillSet.end() )
+                    continue;
+                KSPSetInfo& kSetInfo = (*vit);
+                kChar.m_mapEquipSkill[j] = kSetInfo.m_vecSkills;
+
+                KSPInfo kSpInfo;
+                kSpInfo.m_cCharType = i;
+                kSpInfo.m_cPromotion = j;
+                for( int iLoop = 0; iLoop < static_cast< int >( kSetInfo.m_vecSkills.size() ); iLoop++ ) {
+                    kSpInfo.m_vecSkills.push_back( kSetInfo.m_vecSkills[iLoop].m_nSkillID );
+                }
+                kChar.m_vecSPInfo.push_back( kSpInfo );
+            }
+            else
+            {
+                kChar.m_mapEquipSkill[j].clear();
+            }
+        }
+#ifdef _DEBUG
+        // for dump
+        if( cCharIndex == i )
+        {
+            std::wstringstream stm;
+            std::map<char, std::vector<KSkillSlot> >::iterator mit = kChar.m_mapEquipSkill.begin();
+            while( mit != kChar.m_mapEquipSkill.end() )
+            {
+                stm << std::endl << (int)mit->first << L" 전직 : ";
+                std::vector<KSkillSlot>& vecSlot = mit->second;
+                std::vector<KSkillSlot>::iterator vit = vecSlot.begin();
+                while( vit != vecSlot.end() )
+                {
+                    stm << L"{" << vit->m_nSlotID << L"," << vit->m_nSkillID << L"},";
+                    ++vit;
+                }
+                ++mit;
+            }
+
+            START_LOG( clog, L"현재 케릭터의 스킬셋" )
+                << BUILD_LOG( stm.str() );
+        }
+#endif
+    }
+}
+
+void SUserInfo::UpdateSkillEquipInfo( std::map< std::pair<char,char>, std::vector<KSkillSlot> >& mapSkillEquipInfo_ )
+{
+    if (g_kGlobalValue.ServerInfo.CheckServerType( ST_LOCK_SKILL_TREE ) == true )
+    {
+        return;
+    }
+
+    for( int i = 0; i < (int)vecCharInfo.size(); ++i )
+    {
+        SCharInfo& kChar = vecCharInfo[i];
+        for( std::set< char >::iterator sit = kChar.setPromotion.begin(); sit != kChar.setPromotion.end(); ++sit ) {
+            std::map<std::pair<char,char>, std::vector<KSkillSlot> >::iterator mit = mapSkillEquipInfo_.find( std::make_pair( ( char )i, *sit ) );
+            if( mit != mapSkillEquipInfo_.end() ) {
+                if( !mit->second.empty() ) {
+                    kChar.m_mapEquipSkill[*sit] = mit->second;
+                } else {
+                    kChar.m_mapEquipSkill[*sit].clear();
+                }
+            }
+        }
+    }
+}
+
+const SUserInfo& SUserInfo::operator = ( const KChangeRoomUserInfo kSrc_ )
+{
+	strLogin            = kSrc_.m_strLogin;
+	iTeam               = kSrc_.m_iTeam;
+    nUserState          = kSrc_.m_nState;
+
+	for ( int i = 0; i < 3; i++ )
+	{
+		aiTagSlot[i] = kSrc_.m_acTagModeInfo[i][0];
+	}
+    SetCurrentChar( kSrc_.m_cCharIndex );
+	return *this;
+}
+//===================================================================================
+// 2006.07.10 : Asirion
+// 방정보 
+SRoomInfo::SRoomInfo()
+{
+	eGameModeCategory   = GC_GMC_MATCH;
+	eGameMode           = GC_GM_TEAM_MODE;
+	nSubGameMode        = GC_SGM_NORMAL;
+	ucStage             = 0;
+
+	bRandomMapMode      = false;	
+	nDungeonLevel       = 0;
+	uiRandSeed          = 0;
+	bPublicRoom         = false;
+	strRoomName         = L"";
+	usRoomID            = 0;
+	iRestBanCount       = 0;
+	usUsers             = 0;
+	dwHostUID           = 0;
+	dwRelayServerIP     = 0;
+	usRelayServerPort   = 0;
+    dwTRelayServerIP    = 0;
+    usTRelayServerPort  = 0;
+
+	m_cRoutingMethod    = DRR_TURN_RANDOM;
+    iMonsterID          = MON_INVALID;
+    iMonsterCount       = 0;
+    bPlaying            = false;
+    m_pairGuildMarkName.first = L"";
+    m_pairGuildMarkName.second = L"";
+    m_pairGuildName.first = L"";
+    m_pairGuildName.second = L"";
+    m_pairBattlePoint.first = 0;
+    m_pairBattlePoint.second = 0;
+
+    m_bDisablePetAttackPvP = false;
+    m_bEnablePvPBallance = false;
+    m_bDisableSP4SkillsPvP = false;
+
+	memset( bOpenSlot, true, sizeof(bool)*MAX_PLAYER_NUM );
+}
+SRoomInfo::SRoomInfo( const SRoomInfo& kSrc_ )
+{
+	*this = kSrc_;
+}
+const SRoomInfo& SRoomInfo::operator = ( const SRoomInfo &kSrc_ )
+{
+	eGameModeCategory   = kSrc_.eGameModeCategory;
+	eGameMode           = kSrc_.eGameMode;
+	nSubGameMode        = kSrc_.nSubGameMode;
+	ucStage             = kSrc_.ucStage;
+	bRandomMapMode      = kSrc_.bRandomMapMode;	
+	nDungeonLevel       = kSrc_.nDungeonLevel;
+	uiRandSeed          = kSrc_.uiRandSeed;
+	bPublicRoom         = kSrc_.bPublicRoom;
+	strRoomName         = kSrc_.strRoomName;
+	usRoomID            = kSrc_.usRoomID;
+	usUsers             = kSrc_.usUsers;
+	usMaxUsers			= kSrc_.usMaxUsers;
+	vecObserverUserInfo   = kSrc_.vecObserverUserInfo;
+	dwHostUID           = kSrc_.dwHostUID;
+	dwRelayServerIP     = kSrc_.dwRelayServerIP;
+	usRelayServerPort   = kSrc_.usRelayServerPort;
+
+    dwTRelayServerIP    = kSrc_.dwTRelayServerIP;
+    usTRelayServerPort  = kSrc_.usTRelayServerPort;
+
+	iRestBanCount		= kSrc_.iRestBanCount;
+	m_cRoutingMethod	= kSrc_.m_cRoutingMethod;
+    iMonsterID          = kSrc_.iMonsterID;
+    iMonsterCount       = kSrc_.iMonsterCount;
+    bDeathMatchBalancing= kSrc_.bDeathMatchBalancing;
+    bDeathMatchIntrudable= kSrc_.bDeathMatchIntrudable;
+    nDeathMatchTime     = kSrc_.nDeathMatchTime;
+    nDeathKillCount     = kSrc_.nDeathKillCount;
+    m_pairGuildMarkName = kSrc_.m_pairGuildMarkName;
+    m_pairGuildName     = kSrc_.m_pairGuildName;
+    m_pairBattlePoint   = kSrc_.m_pairBattlePoint;
+
+    m_bDisablePetAttackPvP = kSrc_.m_bDisablePetAttackPvP;
+    m_bEnablePvPBallance = kSrc_.m_bEnablePvPBallance;
+    m_bDisableSP4SkillsPvP = kSrc_.m_bDisableSP4SkillsPvP;
+
+    for (int i = 0; i < GC_BG_GRADE_MAX; i++)
+    {
+        m_saAllowedRankings[i] = kSrc_.m_saAllowedRankings[i];
+    }
+
+    for (int i = 0; i < GC_CHAR_NUM; i++)
+    {
+        m_saAllowedChars[i] = kSrc_.m_saAllowedChars[i];
+    }
+
+    memcpy(bOpenSlot, kSrc_.bOpenSlot, sizeof(bool) * MAX_PLAYER_NUM);
+	return *this;
+}
+
+const SRoomInfo& SRoomInfo::operator = (const KRoomOptions kSrc_)
+{
+    m_bDisablePetAttackPvP = ((kSrc_.m_dwEnabledOptions & KRoomOptions::BLOCK_PET_OPTION) == KRoomOptions::BLOCK_PET_OPTION);
+    m_bDisableSP4SkillsPvP = ((kSrc_.m_dwEnabledOptions & KRoomOptions::BLOCK_SUPREME_SKILL) == KRoomOptions::BLOCK_SUPREME_SKILL);
+    m_bEnablePvPBallance = ((kSrc_.m_dwEnabledOptions & KRoomOptions::ATTRIBUTE_CORRECTION) == KRoomOptions::ATTRIBUTE_CORRECTION);
+
+    for (int i = 0; i < GC_CHAR_NUM; i++)
+    {
+        DWORD charNumber = (1 << i);
+        m_saAllowedChars[i] = ((kSrc_.m_dwDisabledChars & charNumber) != charNumber);
+    }
+
+    for (int i = 0; i < GC_BG_GRADE_MAX; i++)
+    {
+        DWORD gradeNumber = (1 << i);
+        m_saAllowedRankings[i] = ((kSrc_.m_dwAllowedRankings & gradeNumber) == gradeNumber);
+    }
+
+    return *this;
+}
+
+bool SRoomInfo::operator == ( const SRoomInfo &kSrc_ ) const
+{
+	bool bSameSlot = !memcmp( bOpenSlot, kSrc_.bOpenSlot , sizeof(bool)*MAX_PLAYER_NUM);
+
+    bool bSameObserverUserInfo = false;
+    if(vecObserverUserInfo.size() == kSrc_.vecObserverUserInfo.size() )
+    {
+        bSameObserverUserInfo = true;
+        for(int i = 0;i<static_cast<int>(vecObserverUserInfo.size());i++)
+        {
+            if((kSrc_.vecObserverUserInfo[i] == vecObserverUserInfo[i]) == false){
+                bSameObserverUserInfo = false;
+                break;
+            }
+        }
+    }
+
+	return  bSameSlot && bSameObserverUserInfo &&
+	eGameModeCategory   == kSrc_.eGameModeCategory  &&
+	eGameMode           == kSrc_.eGameMode &&
+	nSubGameMode        == kSrc_.nSubGameMode &&
+	ucStage             == kSrc_.ucStage &&
+	bRandomMapMode      == kSrc_.bRandomMapMode &&
+	nDungeonLevel       == kSrc_.nDungeonLevel &&
+	uiRandSeed          == kSrc_.uiRandSeed &&
+	bPublicRoom         == kSrc_.bPublicRoom &&
+	strRoomName         == kSrc_.strRoomName &&
+	usRoomID            == kSrc_.usRoomID &&
+	usUsers             == kSrc_.usUsers &&
+	usMaxUsers			== kSrc_.usMaxUsers &&
+	dwHostUID           == kSrc_.dwHostUID &&
+	dwRelayServerIP     == kSrc_.dwRelayServerIP &&
+	usRelayServerPort   == kSrc_.usRelayServerPort &&
+    dwTRelayServerIP    == kSrc_.dwTRelayServerIP &&
+    usTRelayServerPort  == kSrc_.usTRelayServerPort &&
+	iRestBanCount		== kSrc_.iRestBanCount &&
+	m_cRoutingMethod	== kSrc_.m_cRoutingMethod &&
+    iMonsterID          == kSrc_.iMonsterID &&
+    iMonsterCount       == kSrc_.iMonsterCount &&
+    bDeathMatchBalancing== kSrc_.bDeathMatchBalancing &&
+    bDeathMatchIntrudable== kSrc_.bDeathMatchIntrudable &&
+    nDeathMatchTime     == kSrc_.nDeathMatchTime &&
+    nDeathKillCount     == kSrc_.nDeathKillCount &&
+    m_pairGuildMarkName == kSrc_.m_pairGuildMarkName &&
+    m_pairGuildName     == kSrc_.m_pairGuildName &&
+    m_pairBattlePoint   == kSrc_.m_pairBattlePoint && 
+
+	m_bDisablePetAttackPvP	== kSrc_.m_bDisablePetAttackPvP &&
+	m_bEnablePvPBallance	== kSrc_.m_bEnablePvPBallance &&
+	m_bDisableSP4SkillsPvP	== kSrc_.m_bDisableSP4SkillsPvP;
+
+	for( int i = 0; i < GC_BG_GRADE_MAX; i++ )
+	{
+		if( m_saAllowedRankings[i] != kSrc_.m_saAllowedRankings[i] )
+		{
+			return false;
+		}
+	}
+
+	for( int i = 0; i < GC_CHAR_NUM; i++ )
+	{
+		if( m_saAllowedChars[i] != kSrc_.m_saAllowedChars[i] )
+		{
+			return false;
+		}
+	}
+
+    bPlaying            == kSrc_.bPlaying;
+}
+
+const SRoomInfo& SRoomInfo::operator = ( const KRoomInfo& kSrc_ )
+{
+	eGameModeCategory   = (EGCGameModeCategory)kSrc_.m_cGameCategory;
+	eGameMode           = (EGCGameMode)kSrc_.m_iGameMode;
+	nSubGameMode        = kSrc_.m_iSubGameMode;
+	ucStage             = kSrc_.m_iMapID;
+	bRandomMapMode      = kSrc_.m_bRandomableMap;
+	nDungeonLevel       = kSrc_.m_nDifficulty;
+	bPublicRoom         = kSrc_.m_bPublic;
+	strRoomName         = kSrc_.m_strRoomName;
+	usRoomID            = kSrc_.m_usRoomID;
+	dwRelayServerIP     = kSrc_.m_dwRelayServerIP;
+	usRelayServerPort   = kSrc_.m_usRelayServerPort;
+    dwTRelayServerIP    = kSrc_.m_dwTRelayServerIP;
+    usTRelayServerPort  = kSrc_.m_usTRelayServerPort;
+    usMaxUsers          = kSrc_.m_usMaxUsers;
+	m_cRoutingMethod	= kSrc_.m_cRoutingMethod;
+    iMonsterID          = kSrc_.m_nMonsterID;
+    iMonsterCount       = kSrc_.m_nMonsterCount;
+    bDeathMatchBalancing= kSrc_.m_bDeathMatchBalancing;
+    bDeathMatchIntrudable= kSrc_.m_bDeathMatchIntrudable;
+    bPlaying            = kSrc_.m_bPlaying;
+    nDeathMatchTime     = kSrc_.m_nDeathMatchTime;
+    nDeathKillCount     = kSrc_.m_nDeathKillCount;
+    
+    m_pairGuildMarkName = kSrc_.m_pairGuildMarkName;
+    m_pairGuildName     = kSrc_.m_pairGuildName;
+    m_pairBattlePoint   = kSrc_.m_pairBattlePoint;
+
+	m_bDisablePetAttackPvP	= ((kSrc_.m_kOptions.m_dwEnabledOptions & KRoomOptions::BLOCK_PET_OPTION) == KRoomOptions::BLOCK_PET_OPTION);
+	m_bDisableSP4SkillsPvP  = ((kSrc_.m_kOptions.m_dwEnabledOptions & KRoomOptions::BLOCK_SUPREME_SKILL) == KRoomOptions::BLOCK_SUPREME_SKILL);
+	m_bEnablePvPBallance	= ((kSrc_.m_kOptions.m_dwEnabledOptions & KRoomOptions::ATTRIBUTE_CORRECTION) == KRoomOptions::ATTRIBUTE_CORRECTION);
+
+	for( int i = 0; i < GC_CHAR_NUM; i++ )
+	{
+		DWORD charNumber = (1 << i);
+		m_saAllowedChars[i] = ((kSrc_.m_kOptions.m_dwDisabledChars & charNumber) != charNumber);
+
+	}
+
+	for( int i = 0; i < GC_BG_GRADE_MAX; i++ )
+	{
+		DWORD gradeNumber = (1 << i);
+		m_saAllowedRankings[i] = ((kSrc_.m_kOptions.m_dwAllowedRankings & gradeNumber) == gradeNumber);
+	}
+
+	memcpy( bOpenSlot, kSrc_.m_abSlotOpen, sizeof(bool)*MAX_PLAYER_NUM );
+	return *this;
+}
+
+const SRoomInfo& SRoomInfo::operator = ( const KChangeRoomInfo kSrc_ )
+{
+	eGameModeCategory   = (EGCGameModeCategory)kSrc_.m_cGameCategory;
+	eGameMode           = (EGCGameMode)kSrc_.m_iGameMode;
+	nSubGameMode        = kSrc_.m_iSubGameMode;
+	ucStage             = kSrc_.m_iMapID;
+	bRandomMapMode      = kSrc_.m_bRandomableMap;
+	nDungeonLevel       = kSrc_.m_nDifficulty;
+	m_cRoutingMethod	= kSrc_.m_cRoutingMethod;
+    iMonsterID          = kSrc_.m_nMonsterID;
+    iMonsterCount       = kSrc_.m_nMonsterCount;
+
+	memcpy( bOpenSlot, kSrc_.m_abSlotOpen, sizeof(bool)*MAX_PLAYER_NUM );
+	return *this;
+}
+void SRoomInfo::SetChangeRoomInfo( KChangeRoomInfo* pkRoomInfo_ )
+{
+	pkRoomInfo_->m_usMaxUsers       = usMaxUsers;
+	pkRoomInfo_->m_cGameCategory    = (char)eGameModeCategory;
+	pkRoomInfo_->m_iGameMode        = (int)eGameMode;
+	pkRoomInfo_->m_iSubGameMode     = nSubGameMode;
+	pkRoomInfo_->m_bRandomableMap   = bRandomMapMode;
+	pkRoomInfo_->m_iMapID           = (int)ucStage;
+	pkRoomInfo_->m_nDifficulty      = nDungeonLevel;
+	pkRoomInfo_->m_cRoutingMethod   = m_cRoutingMethod;
+    pkRoomInfo_->m_nMonsterID       = iMonsterID;
+    pkRoomInfo_->m_nMonsterCount    = iMonsterCount;
+
+	//====================================================================================
+	// 2006.07.28 : Asirion
+	// 채워서날려주긴 하지만 서버에서 사용하지는 않는다.
+	memcpy( pkRoomInfo_->m_abSlotOpen, bOpenSlot, sizeof( bool )*MAX_PLAYER_NUM );
+}                                                 
+//====================================================================================
+// 2006.07.12 : Asirion
+// 패킷 관련
+KGC_PID_BROAD_PLAYER_DEATH_INFO& KGC_PID_BROAD_PLAYER_DEATH_INFO::operator = ( const KGC_PID_BROAD_PLAYER_DEATH_INFO& kSrc_ )
+{
+	dwUID               = kSrc_.dwUID;
+	Type           = kSrc_.Type;
+	dwKillMePlayerID    = kSrc_.dwKillMePlayerID;
+	bDeathFromFall      = kSrc_.bDeathFromFall;
+	bSelfKilling        = kSrc_.bSelfKilling;
+	fGetExpGpRatio      = kSrc_.fGetExpGpRatio;
+	bDeathFromMonster	= kSrc_.bDeathFromMonster;
+	return *this;
+}
+KGC_PID_BROAD_SANTA_EVENT& KGC_PID_BROAD_SANTA_EVENT::operator = ( const KGC_PID_BROAD_SANTA_EVENT& kSrc_ )
+{
+	dwUID               = kSrc_.dwUID;
+	Type           = kSrc_.Type;
+	fStartPosX          = kSrc_.fStartPosX;
+	fStartPosY          = kSrc_.fStartPosY;
+	fEndPosX            = kSrc_.fEndPosX;
+	fEndPosY            = kSrc_.fEndPosY;
+	return *this;
+}
+KGC_PID_BROAD_SANTAMON_EVENT& KGC_PID_BROAD_SANTAMON_EVENT::operator = (const KGC_PID_BROAD_SANTAMON_EVENT& kSrc_ )
+{
+	dwUID               = kSrc_.dwUID;
+	Type           = kSrc_.Type;
+	iSantaLv			= kSrc_.iSantaLv;
+	fStartPosX			= kSrc_.fStartPosX;
+	fStartPosY			= kSrc_.fStartPosY;
+	return *this;
+}
+KGC_PID_GAME_BOARD_UPDATE& KGC_PID_GAME_BOARD_UPDATE::operator = ( const KGC_PID_GAME_BOARD_UPDATE& kSrc_ )
+{
+	dwUID               = kSrc_.dwUID;
+	Type           = kSrc_.Type;
+	iMonHuntPoint       = kSrc_.iMonHuntPoint;
+	m_mapMonNum			= kSrc_.m_mapMonNum;
+	m_mapMonKillNum		= kSrc_.m_mapMonKillNum;
+    memcpy( aKillNum, kSrc_.aKillNum, sizeof(aKillNum) );
+    memcpy( aDeathNum, kSrc_.aDeathNum, sizeof(aDeathNum) );
+	return *this;
+}
+KGC_PID_CHAT_PACKET& KGC_PID_CHAT_PACKET::operator = ( const KGC_PID_CHAT_PACKET& kSrc_ )
+{
+	dwUID               = kSrc_.dwUID;
+	Type           = kSrc_.Type;
+	strChat             = kSrc_.strChat;
+    strNickName         = kSrc_.strNickName;
+    strNickColor        = kSrc_.strNickColor;
+    dwColor             = kSrc_.dwColor;
+	ecmd				= kSrc_.ecmd;
+	return *this;
+}
+const KPlayerRenderData& KPlayerRenderData::operator=( const PLAYER& src )
+{
+	bIsRight    = src.bIsRight;
+	vPos        = src.vPos;
+	usMotion    = src.uiMotion;
+	cFrame      = src.cFrame;
+	return *this;
+}
+const KRenderData& KRenderData::operator=( const PLAYER& src )
+{
+	bIsRight    = src.bIsRight;
+	vPos        = src.vPos;
+	usMotion    = src.uiMotion;
+	cFrame      = src.cFrame;
+	return *this;
+}

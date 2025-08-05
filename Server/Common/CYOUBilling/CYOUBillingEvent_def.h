@@ -1,0 +1,14 @@
+#ifdef __NEVER_DEFINED_MACRO__
+#define _ENUM(VAL) VAL,
+
+enum
+{
+#endif
+
+	_ENUM(EVENT_CYOU_SERVER_LOGIN_REQ, 0)
+	_ENUM(EVENT_CYOU_USER_LOGIN_REQ, 1)
+
+#ifdef __NEVER_DEFINED_MACRO__
+};
+#undef _ENUM
+#endif 

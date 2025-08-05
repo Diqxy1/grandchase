@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/BuddySystem
+END
+KBuddyGroup.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/BuddySystem/KBuddyGroup.cpp
+END
+KBuddy.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/BuddySystem/KBuddy.cpp
+END
+KBuddyGroup.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/BuddySystem/KBuddyGroup.h
+END
+KFriendShip.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/BuddySystem/KFriendShip.cpp
+END
+KBuddy.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/BuddySystem/KBuddy.h
+END
+KFriendShip.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/BuddySystem/KFriendShip.h
+END

@@ -1,0 +1,587 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 한국어 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\UI Script Studio.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.kor\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\UI Script Studio.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_UISCRIPTSTUDIO_DIALOG DIALOGEX 0, 0, 743, 625
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Visual UI Script Studio"
+MENU IDR_MAINMENU
+FONT 9, "굴림", 400, 0, 0x81
+BEGIN
+    CONTROL         "Tree1",IDC_TREEVIEW,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | TVS_NOTOOLTIPS | WS_BORDER,596,19,144,512,WS_EX_CLIENTEDGE
+    CONTROL         "",IDC_LISTCHILD,"SysListView32",LVS_LIST | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT,301,533,439,85,WS_EX_CLIENTEDGE
+    CONTROL         "",IDC_IMAGERECT,"Static",SS_ETCHEDFRAME,8,19,13,14
+    CONTROL         "",IDC_WINDOW_DATA,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER,7,533,291,85
+END
+
+IDD_TEXTUREVIEW DIALOGEX 0, 0, 686, 380
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Texture File View"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TEXTURE,"Static",SS_BLACKFRAME | SS_SUNKEN,7,20,672,311
+    COMBOBOX        IDC_TEXTURENAME,7,6,431,143,CBS_DROPDOWNLIST | WS_VSCROLL
+    LTEXT           "Start_X",IDC_STATIC,305,343,26,11
+    LTEXT           "Start_Y",IDC_STATIC,385,343,26,11
+    LTEXT           "End_X",IDC_STATIC,305,358,26,11
+    LTEXT           "End_Y",IDC_STATIC,385,358,26,11
+    EDITTEXT        IDC_START_X,335,340,42,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_END_X,335,356,42,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_START_Y,413,340,42,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_END_Y,413,356,42,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "현재 Script 적용",IDC_GOMAIN,612,340,58,28
+    COMBOBOX        IDC_STATE,464,340,138,56,CBS_DROPDOWNLIST | WS_VSCROLL
+    EDITTEXT        IDC_WIDTH,150,341,43,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_HEIGHT,150,356,43,14,ES_AUTOHSCROLL
+    LTEXT           "Width",IDC_STATIC,122,342,25,11
+    LTEXT           "Height",IDC_STATIC,123,358,25,11
+    PUSHBUTTON      "크기 맞추기",IDC_SETSIZE,209,341,60,13
+    PUSHBUTTON      "현재 텍스쳐 프로젝트에서 제외",IDC_BUTTON2,477,356,125,14
+    PUSHBUTTON      "배경색 1",IDC_CHANGECOLOR,586,6,45,14
+    PUSHBUTTON      "배경색 2",IDC_CHANGECOLOR2,631,6,44,14
+    EDITTEXT        IDC_MAGNIFICATION_X,71,341,43,14,ES_AUTOHSCROLL
+    LTEXT           "Magnification X",IDC_STATIC,17,343,48,8
+    EDITTEXT        IDC_MAGNIFICATION_Y,71,356,43,14,ES_AUTOHSCROLL
+    LTEXT           "Magnification Y",IDC_STATIC,17,359,48,8
+    PUSHBUTTON      "원래 크기로",IDC_ORIGINAL_SIZE,209,356,60,13
+    COMBOBOX        IDC_COMBO1,441,6,143,112,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_EDIT_DIALOG DIALOGEX 0, 0, 328, 167
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT3,7,110,228,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "확인",IDOK,217,146,50,14
+    PUSHBUTTON      "취소",IDCANCEL,271,146,50,14
+    EDITTEXT        IDC_EDIT1,7,70,228,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Name",IDC_STATIC,7,55,187,13
+    LTEXT           "Value",IDC_STATIC,7,92,187,11
+    COMBOBOX        IDC_COMBO_BOXTYPE,7,28,229,58,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Box Type",IDC_STATIC,7,14,70,9
+END
+
+IDD_INSERT_DIALOG DIALOGEX 0, 0, 350, 205
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,293,7,50,14
+    PUSHBUTTON      "취소",IDCANCEL,293,24,50,14
+END
+
+IDD_INSERT_TEXTURE DIALOGEX 0, 0, 300, 94
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "확인",IDOK,68,73,50,14
+    PUSHBUTTON      "취소",IDCANCEL,193,73,50,14
+    LTEXT           "KOM File  내부에 있는 파일중 Script에 추가할 파일을 선택하세요",IDC_STATIC,35,14,230,8
+    COMBOBOX        IDC_FILELISTINKOM,34,41,231,113,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_VIEW_TEXTURE DIALOGEX 0, 0, 559, 346
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LISTBOX         IDC_LIST_TEXTURE,7,22,176,297,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "Static",IDC_STATIC_TEXTURELIST,7,7,176,11,WS_BORDER
+    CONTROL         "",IDC_CURRENT_TEXTURE,"Static",SS_GRAYFRAME | SS_REALSIZEIMAGE | WS_BORDER,190,7,362,332
+    PUSHBUTTON      "텍스쳐 목록 파일로 저장하기",IDC_BUTTON_EXPORT,28,321,135,18
+END
+
+IDD_SCENE_SELECT_DLG DIALOGEX 0, 0, 350, 345
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "불러오기"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_SCENE_EDIT,29,7,137,14,ES_AUTOHSCROLL
+    CONTROL         "",IDC_LIST_CONTROL_SCENE_SELECT,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,23,335,251
+    DEFPUSHBUTTON   "파일검색",IDC_SCENE_FIND,168,7,43,14
+    DEFPUSHBUTTON   "타입검색",IDC_SCENE_FIND_TYPE,212,7,43,14
+    LTEXT           "검색",IDC_STATIC,10,9,17,8
+    LTEXT           "",IDC_STATIC_DESCRIPTION,7,277,335,61,SS_SUNKEN
+    PUSHBUTTON      "취소",IDCANCEL,299,7,44,14
+    DEFPUSHBUTTON   "확인",IDOK,255,7,44,14
+END
+
+IDD_DIALOG_PRE_FILELIST DIALOGEX 0, 0, 352, 257
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_ACCEPTFILES
+CAPTION "불러오기 설정창"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "기본값 저장",IDOK,243,7,50,14
+    PUSHBUTTON      "취    소",IDCANCEL,295,7,50,14
+    DEFPUSHBUTTON   "Setting",ID_SAVE_STATE_SETTING,295,24,50,15
+    CONTROL         "FULL_PATH",IDC_RADIO_FULL,"Button",BS_AUTORADIOBUTTON,6,6,53,10
+    CONTROL         "ONLY_NAME",IDC_RADIO_ONLY_NAME,"Button",BS_AUTORADIOBUTTON,72,6,56,10
+    PUSHBUTTON      "ADD_TEXTURE",IDC_BUTTON_ADD_TEXTURE,6,24,54,14
+    PUSHBUTTON      "DeleteAll",IDC_BUTTON_TEX_DELETE,66,24,50,14
+    LISTBOX         IDC_LIST2,6,42,342,132,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "ADD_SCRIPT",IDC_BUTTON_ADD_SCRIPT,6,180,54,14
+    PUSHBUTTON      "DeleteAll",IDC_BUTTON_TEX_SCRIPT,66,180,50,14
+    LISTBOX         IDC_LIST3,6,198,342,48,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_SETTINGLIST_DIALOG DIALOGEX 0, 0, 407, 219
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT1,243,109,150,13,ES_AUTOHSCROLL | ES_WANTRETURN
+    PUSHBUTTON      "목록 추가",IDC_ADD_BUTTON,282,126,54,13
+    PUSHBUTTON      "목록 삭제",IDC_DELETE_BUTTON,282,140,54,13
+    PUSHBUTTON      "설정 불러오기",IDC_LOAD_BUTTON,338,126,54,13
+    LISTBOX         IDC_LIST1,7,7,229,144,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "추가할 항목의 이름을 입력하시오",IDC_STATIC,247,99,143,8
+    PUSHBUTTON      "나가기",IDCANCEL,350,198,50,14
+END
+
+IDD_DIALOG_FINDUI DIALOGEX 0, 0, 118, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "FIND"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "검색할 UI 이름을 입력하세요.",IDC_STATIC,7,9,105,8
+    EDITTEXT        IDC_FIND_EDIT,6,23,108,14,ES_AUTOHSCROLL | ES_NOHIDESEL
+    DEFPUSHBUTTON   "찾기",IDC_FIND,63,43,50,14
+END
+
+IDD_BRINGING DIALOGEX 0, 0, 620, 437
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "다른 파일에서 가져오기"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Open",IDC_BUTTON_FILE_OPEN,589,0,29,16
+    DEFPUSHBUTTON   "확인",IDOK,235,418,48,17
+    PUSHBUTTON      "Merge",IDC_BUTTON_MERGE,280,0,29,16
+    LTEXT           "   대상파일",IDC_STATIC_RIGHT_FILE_NAME,311,1,278,15,SS_CENTERIMAGE | WS_BORDER
+    LTEXT           "   현재파일",IDC_STATIC_LEFT_FILE_NAME,2,1,278,15,SS_CENTERIMAGE | WS_BORDER
+    DEFPUSHBUTTON   "취소",IDCANCEL,332,418,48,17
+    CONTROL         "",IDC_COMPARE_LEFT_TREEVIEW,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | TVS_NOTOOLTIPS | WS_BORDER | WS_TABSTOP,3,17,306,392,WS_EX_CLIENTEDGE
+    CONTROL         "",IDC_COMPARE_RIGHT_TREEVIEW,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | TVS_NOTOOLTIPS | WS_BORDER | WS_TABSTOP,312,17,306,392,WS_EX_CLIENTEDGE
+END
+
+IDD_Magnification DIALOGEX 0, 0, 244, 198
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU | WS_THICKFRAME
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "FileDescription", "UI Script Studio MFC 응용 프로그램"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "UI Script Studio"
+            VALUE "LegalCopyright", "Copyright (C) 2005"
+            VALUE "OriginalFilename", "UI Script Studio.EXE"
+            VALUE "ProductName", "UI Script Studio 응용 프로그램"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_UISCRIPTSTUDIO_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 740
+        TOPMARGIN, 19
+        BOTTOMMARGIN, 618
+    END
+
+    IDD_TEXTUREVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 679
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 377
+    END
+
+    IDD_EDIT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 321
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 160
+    END
+
+    IDD_INSERT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 343
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 198
+    END
+
+    IDD_INSERT_TEXTURE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 293
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_VIEW_TEXTURE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 552
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 339
+    END
+
+    IDD_SCENE_SELECT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 342
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 338
+    END
+
+    IDD_DIALOG_PRE_FILELIST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 345
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 250
+    END
+
+    IDD_DIALOG_FINDUI, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 111
+        TOPMARGIN, 9
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_BRINGING, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 618
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 435
+    END
+
+    IDD_Magnification, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 237
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 191
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINMENU MENU 
+BEGIN
+    POPUP "파일(&F)"
+    BEGIN
+        MENUITEM "불러오기 설정\tCtrl+&L",            ID_PREREG_FILE
+        MENUITEM "불러오기\tCtrl+&O",               ID_FILEOPEN
+        MENUITEM "저장하기\tCtrl+&S",               32776
+        MENUITEM "다른 이름으로 저장하기\tCtrl+Shift+&S", ID_FILE_SAVE_AS
+        MENUITEM "다른 이름으로 저장하기( 이름순 정렬 )",      ID_FILE_SAVE_AS_SORT
+        MENUITEM "전체 다시 저장하기",                  ID_MENU_ALL_FILE_SAVE
+        MENUITEM "전체 다시 저장하기",                  ID_MENU_ALL_FILE_SAVE
+        MENUITEM SEPARATOR
+        MENUITEM "사용 텍스쳐 보기 ( 전체 리스트 )",        ID_MENU_ALL_VIEW_TEXTURE
+        MENUITEM "텍스쳐 추가\tCtrl+&A",             ID_INSERTTEXTURE
+        MENUITEM SEPARATOR
+        MENUITEM "종료\tAlt+&X",                  ID_END
+    END
+    POPUP "설정(&S)"
+    BEGIN
+        MENUITEM "Texture View 창 보기   Ctrl+&T", ID_CHKVIEW
+        MENUITEM "Test Mode                  Alt+&T", ID_MODETEST
+        MENUITEM SEPARATOR
+        MENUITEM "View 창 색 바꾸기",                ID_CHANGE
+    END
+    POPUP "편집(&E)"
+    BEGIN
+        MENUITEM "윈도우위치맞추기                Ctrl + W", ID_SAMEPOSITION
+        MENUITEM "하위모든윈도우위치맞추기    Ctrl + Shift + W", ID_SAMEPOSITION_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "다른 파일에서 가져오기        Ctrl + B", ID_BRINGING
+    END
+    POPUP "보기(&V)"
+    BEGIN
+        MENUITEM "확대     Ctrl + Z",             ID_MAGNIFCATION
+    END
+END
+
+IDR_MENU1 MENU 
+BEGIN
+    POPUP "Tree"
+    BEGIN
+        MENUITEM "추가(Insert)",                  ID_TREE_ADD
+        MENUITEM "삭제(Delete)",                  ID_TREE_DELETE
+        MENUITEM "검색(Ctrl+F)",                  ID_TREE_FIND
+        MENUITEM "복사(Ctrl+C)",                  ID_TREE_COPY
+        MENUITEM "붙여넣기(Ctrl+V)",                ID_TREE_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "사용하는 텍스쳐 보기",                 ID_TREE_VIEW_TEXTURE
+        MENUITEM "현재 장면(Scene) 파일로 저장하기",       ID_SAVE_SCENE
+        MENUITEM SEPARATOR
+        MENUITEM "텍스쳐뷰 열기 - [Default]텍스쳐",      ID_TEXTURE_DEF
+        MENUITEM "텍스쳐뷰 열기 - [Hover]텍스쳐",        ID_TEXTURE_HOV
+        MENUITEM "텍스쳐뷰 열기 - [Select]텍스쳐",       ID_TEXTURE_SEL1
+        MENUITEM "텍스쳐뷰 열기 - [Action]텍스쳐",       ID_TEXTURE_ACT
+        MENUITEM "텍스쳐뷰 열기 - [Lock]텍스쳐",         32843
+        MENUITEM SEPARATOR
+        MENUITEM "UI크기 셋팅 - 1차 자식들의 크기에 맞춰짐",   ID_TREE_UI32898
+        MENUITEM "UI크기 셋팅 - 현재 표시되는 전체 자식들의 크기에 맞춰짐", ID_TREE_UI32896
+    END
+    POPUP "Z-Buf"
+    BEGIN
+        MENUITEM "뒤로",                          ID_BACK
+        MENUITEM "앞으로",                         ID_FORTH
+        MENUITEM "젤 뒤로",                        ID_LAST
+        MENUITEM "젤 앞으로",                       ID_FIRST
+        MENUITEM SEPARATOR
+        MENUITEM "반투명 보기",                      ID_Z_VIEWOPTION
+    END
+    POPUP "ListView"
+    BEGIN
+        MENUITEM "뒤로",                          ID_LISTVIEW_BACK
+        MENUITEM "앞으로",                         ID_LISTVIEW_FORTH
+        MENUITEM "젤 뒤로",                        ID_LISTVIEW_BOTTOM
+        MENUITEM "젤 앞으로",                       ID_LISTVIEW_TOP
+        MENUITEM SEPARATOR
+        MENUITEM "선택된 아이템만 보이기",                ID_LISTVIEW_SET_VISIBLE
+        MENUITEM "선택된 아이템만 안보이기",               ID_LISTVIEW_SET_INVISIBLE
+        MENUITEM SEPARATOR
+        MENUITEM "모두 선택하기",                     ID_LISTVIEW_SET_VISIBLE
+        MENUITEM SEPARATOR
+        MENUITEM "검색",                          ID_LISTVIEW_SET_FIND
+    END
+    POPUP "B_LeftTree"
+    BEGIN
+        MENUITEM "삭제(Delete)",                  ID_TREE_DELETE
+        MENUITEM "복사(Ctrl+C)",                  ID_TREE_COPY
+        MENUITEM "붙여넣기(Ctrl+V)",                ID_TREE_PASTE
+        MENUITEM "현재위치에 삽입(Ctrl + I)",          ID_TREE_INSERT
+    END
+    POPUP "B_RightTree"
+    BEGIN
+        MENUITEM "복사(Ctrl+X)",                  ID_RIGHT_TREE_COPY
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS 
+BEGIN
+    "D",            ID_ACCELERATOR32868,    VIRTKEY, CONTROL, NOINVERT
+    "B",            ID_BRINGING,            VIRTKEY, CONTROL, NOINVERT
+    "T",            ID_CHKVIEW,             VIRTKEY, CONTROL, NOINVERT
+    "X",            ID_END,                 VIRTKEY, ALT, NOINVERT
+    "S",            ID_FILE_SAVE_AS,        VIRTKEY, SHIFT, CONTROL, NOINVERT
+    "O",            ID_FILEOPEN,            VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILESAVE,            VIRTKEY, CONTROL, NOINVERT
+    "A",            ID_INSERTTEXTURE,       VIRTKEY, CONTROL, NOINVERT
+    "T",            ID_MODETEST,            VIRTKEY, ALT, NOINVERT
+    "T",            ID_MODETEST,            VIRTKEY, ALT, NOINVERT
+    "L",            ID_PREREG_FILE,         VIRTKEY, CONTROL, NOINVERT
+    "X",            ID_RIGHT_TREE_COPY,     VIRTKEY, CONTROL, NOINVERT
+    "W",            ID_SAMEPOSITION,        VIRTKEY, CONTROL, NOINVERT
+    "W",            ID_SAMEPOSITION_ALL,    VIRTKEY, SHIFT, CONTROL, NOINVERT
+    VK_INSERT,      ID_TREE_ADD,            VIRTKEY, NOINVERT
+    "C",            ID_TREE_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_TREE_DELETE,         VIRTKEY, NOINVERT
+    "I",            ID_TREE_INSERT,         VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_TREE_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_SUBTRACT,    ID_Z_ODER_BACK,         VIRTKEY, NOINVERT
+    VK_ADD,         ID_Z_ODER_FORTH,        VIRTKEY, NOINVERT
+    "Z",            ID_MAGNIFICATION,       VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR2 TOOLBAR  20, 20
+BEGIN
+    BUTTON      ID_RANGE_UP
+    BUTTON      ID_RANGE_UDMiddle
+    BUTTON      ID_RANGE_DOWN
+    SEPARATOR
+    BUTTON      ID_RANGE_LEFT
+    BUTTON      ID_RANGE_LRMiddle
+    BUTTON      ID_RANGE_RIGHT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR2            BITMAP                  "res\\toolbar2.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_MENULOAD             "Open an existing document\nOpen"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_RANGE_LRMiddle       "좌우가운데정렬"
+    ID_RANGE_RIGHT          "오른쪽정렬"
+    ID_RANGE_LEFT           "왼쪽정렬"
+    ID_RANGE_UP             "위로정렬"
+    ID_RANGE_DOWN           "아래로정렬"
+    ID_RANGE_UDMiddle       "상하가운데정렬"
+END
+
+#endif    // 한국어 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE 18, 1
+#pragma code_page(949)
+#endif //_WIN32
+#include "res\UI Script Studio.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.kor\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

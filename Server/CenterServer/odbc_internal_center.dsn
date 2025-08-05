@@ -1,0 +1,8 @@
+DRIVER=SQL Server
+UID=sa
+Address=191.96.78.81,8457
+Database=gc
+APP=GameServer_Elesis
+Trusted_Connection=Yes
+SERVER=191.96.78.81
+PWD=YCKJP6Rg7d$:3o>0

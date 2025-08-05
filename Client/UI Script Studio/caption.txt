@@ -1,0 +1,346 @@
+"ui_scene_server.stg",
+"서버선택 화면"
+"ui_scene_square.stg",
+"광장"
+"ui_scene_worldmap.stg",
+"월드맵"
+"ui_scene_match.stg",
+"대전"
+"ui_square_overlayui.stg",
+"광장 UI"
+"ui_game_overlay_ui.stg",
+"게임 UI"
+"ui_agit_overlay.stg",	
+""
+"ui_room_scene.stg",
+"대기방"
+"ui_worldmap_container.stg",
+"월드맵"
+"ui_shop_scene.stg",
+"상점"
+"ui_guild_scene.stg",
+"길드"
+"ui_my_info_scene.stg",
+"장비"
+"ui_coordi_shop_scene.stg",
+"코디샵"
+"ui_login_scene.stg",	
+"로그인"
+"ui_loading_scene.stg",
+"로딩화면"
+"ui_scene_common.stg",
+""
+"ui_virtual_keyboard_dlg.stg",	
+"가상키"
+"ui_background_white.stg",
+"흰색 백그라운드"
+"ui_inventory_full_msg.stg",
+"인벤토리 가득참 메시지"
+"ui_ongamedlg.stg",
+"게임 다이얼로그"
+"ui_option_tab.stg",
+"게임옵션"
+"ui_ranking_list.stg",
+"랭킹"
+"ui_msn_dlg.stg",
+"친구 다이얼로그"
+"ui_nateon_dlg.stg",
+"채팅창"
+"ui_tutorial_select_box.stg",
+"연습모드 선택"
+"ui_tutorial_select_box_new.stg",
+"연습모드 선택 새버전"
+"ui_collection_wnd.stg",
+"콜렉션"
+"ui_gc_mission_ui.stg",
+"미션 유저인터페이스"
+"ui_dungeon_room_list.stg",
+"던전 방 리스트"
+"ui_skilltree.stg",
+"스킬트리"
+"ui_gp_capsule.stg",
+"캡슐"
+"ui_gwc_donation_dlg.stg",
+"기부 다이얼로그"
+"ui_gwc_state_dlg.stg",
+"GWC 국가"
+"ui_coupon_npc_dlg.stg",
+"쿠폰 이벤트"
+"ui_subscription_dlg.stg",
+""
+"ui_subscription_box.stg",
+""
+"ui_cooperation_event.stg",
+"협동 이벤트"
+"ui_item_socket_management_dlg.stg",
+"아이템 소켓 다이얼로그"
+"ui_monster_card_mix_dlg.stg",
+"몬스터 카드 조합"
+"ui_monster_card_book.stg",
+"몬스터 카드집"
+"ui_couple_viewer.stg",
+"커플보기"
+"ui_petcostume.stg",
+"펫 코스튬"
+"ui_clear_seal_bead.stg",
+"구가챠"
+"ui_clear_seal_bead_new.stg",
+"신가챠"
+"ui_event_rickoon_tornado.stg",
+"미니게임 닉쿤 토네이도"
+"ui_gift_item_box.stg",
+"선물아이템 박스"
+"ui_giveitem_dlg.stg",
+"아이템주기"
+"ui_npcmission_dlg.stg",
+"NPC미션"
+"ui_receiveitem_box.stg",
+"아이템 획득 상자"
+"ui_jin_event.stg",
+"진 이벤트"
+"ui_jin_event_msg.stg",
+"진 이벤트 메세지"
+"ui_happynewyear_dlg.stg",
+"해피뉴이얼 다이얼로그"
+"ui_valentineday_dlg.stg",
+"발렌타인데이"
+"ui_bingo.stg",
+"미니게임 빙고"
+"ui_quiz.stg",	
+"미니게임 퀴즈"
+"ui_puzzle.stg",	
+"미니게임 퍼즐"
+"ui_gawibawibo_game_box.stg",
+"미니게임 가위바위보 게임"
+"ui_socks_tree_dlg.stg",
+"크리스마스양말트리"
+"ui_contribution_dlg.stg",
+"기부버튼 다이얼로그"
+"ui_contribution_box.stg",
+"기부상자"
+"ui_vip_gacha_box.stg",
+"VIP 가챠 박스"
+"ui_square_loading_scene.stg",
+"광장 로딩화면"
+"ui_recommend_box.stg",
+"친구추천 박스"
+"ui_nickname_box.stg",
+"닉네임 박스"
+"ui_gem_exchange_box.stg",
+"젬 교환 상자"
+"ui_item_working_select_dlg.stg",
+"제작/해제 선택 다이얼로그"
+"ui_item_creation_dlg.stg",
+"아이템 제작 다이얼로그"
+"ui_item_breakup_dlg.stg",
+"아이템 해제 다이얼로그"
+"ui_enchant_box.stg",
+"인첸트 다이얼로그"
+"ui_bonus_charge_box.stg",
+"보너스 충전 박스"
+"ui_candidate_window.stg",
+""
+"ui_replay_box.stg",
+"리플레이 박스"
+"ui_loading_box.stg",
+"로딩 박스"
+"ui_buy_cashitem_window.stg",
+"캐쉬구매창"
+"ui_friend_add_dlg.stg",
+"친구추가 다이얼로그"
+"ui_register_friend_dlg.stg",
+"친구등록 다이얼로그"
+"ui_friend_del_dlg.stg",
+"친구삭제 다이얼로그"
+"ui_event_box.stg",
+"이벤트박스"
+"ui_repetition_provide_event_box.stg",
+"보급품 이벤트 박스"
+"ui_pet_evolution_box.stg",
+"펫 진화 박스"
+"ui_pet_preview.stg",
+"펫 미리보기"
+"ui_cashitem_box.stg",
+"캐쉬아이템박스"
+"ui_select_pet_name_box.stg",
+"펫이름 선택 박스"
+"ui_attendance_calendar.stg",
+"출석부"
+"ui_perfect_attendance.stg",
+"개근상"
+"ui_guild_lobby_dlg.stg",
+"길드로비"
+"ui_create_room_box.stg",
+"방 생성 박스"
+"ui_change_room_title_box.stg",
+"방제목 바꾸기 박스"
+"ui_fairplay_report_box.stg",
+""
+"ui_grade_wnd.stg",
+"게임등급"
+"ui_new_item_enchant_box.stg",
+"아이템 인첸트"
+"ui_welcome_back.stg",
+"반갑다 친구야."
+"ui_item_receive_box.stg",
+"아이템 획득 목록 박스"
+"ui_item_receive_box2.stg",
+"아이템 획득 목록 박스2"
+"ui_channel_list_box.stg",
+"채널리스트"
+"ui_create_dungeon_room_box.stg",
+"던전방 생성 박스"
+"ui_password_box.stg",
+"패스워드 박스"
+"ui_game_guide.stg",
+"게임 가이드"
+"ui_square_enter_ui.stg",
+"광장 선택하기"
+"ui_minigame_select_box.stg",
+"미니게임 선택 박스"
+"ui_guild_enter.stg",
+"길드 들어가기 UI"
+"ui_guild_dlg.stg",
+"길드창"
+"ui_guildmark_regist_dlg.stg",
+"길드마크 등록"
+"ui_job_change_guide.stg",
+"직업 바꾸기 가이드"
+"ui_invite_request_box.stg",
+"파티 초대하기 박스"
+"ui_invite_msg_box.stg",
+"초대 메세지"
+"ui_neonsign_select_box.stg",
+"전광판 선택 박스"
+"ui_neonsign_preview_box.stg",
+"전광판 미리보기"
+"ui_sell_item_box.stg",
+"아이템 팔기 박스"
+"ui_connect_msg.stg",
+"접속 메세지"
+"ui_treasure_item_box.stg",
+"선물아이템 박스"
+"ui_nateon_add_group_dlg.stg",
+"친구목록 그룹추가"
+"ui_nateon_add_friend_dlg.stg",
+"친구목록 친구추가"
+"ui_nateon_block_to_add_friend.stg",
+"친구목록 차단하기"
+"ui_emoticon_select.stg",
+"이모티콘 선택박스"
+"ui_rule_agreement.stg",
+"약관동의"
+"ui_gamble_box.stg",
+"겜블아이템 박스"
+"ui_magic_box.stg",
+""
+"ui_message_box.stg",
+"메세지박스"
+"ui_lucky_day_receive_box.stg",
+"출석부 럭키데이 아이템 지급 박스"
+"ui_ask_use_virtualcash.stg",
+"가상캐쉬 사용 묻는 UI"
+"ui_color_box.stg",
+"글자색 선택 박스"
+"ui_recommend_list.stg",
+"추천 리스트"
+"ui_logout_box.stg",
+"로그아웃 박스"
+"ui_item_info_box.stg",	
+"아이템 정보 박스"
+"ui_coordi_item_change.stg",
+"코디 아이템 교환"
+"ui_coordi_viewer_dlg.stg",
+"코디 복장 뷰어"
+"ui_sell_count_item_dlg.stg",
+"판매수량 정하기 다이얼로그"
+"ui_item_information_box_pair.stg",
+"아이템 정보 비교해서 보기"
+"ui_gem_buy_box.stg",
+"잼 구매 박스"
+"ui_halloween_board.stg",
+"미니게임 할로윈 주사위"
+"ui_shadow_event_box.stg",
+""
+"ui_guild_list.stg",
+"길드 리스트"
+"ui_guild_create_dlg.stg",
+"길드 생성 다이얼로그"
+"ui_guild_join_req_mbox.stg",
+"길드 가입요청 메세지 박스"
+"ui_guild_public_mbox.stg",
+"길드창 메세지 박스"
+"ui_item_property_select.stg",
+""
+"ui_event_banner.stg",
+"이벤트 배너"
+"ui_guidebook.stg",
+"가이드북"
+"ui_tool_tip.stg",
+"툴팁"
+"ui_buy_cashitem_window.stg",
+"캐쉬아이템 구매창"
+"ui_hurryup.stg",
+"재촉하기 메시지"
+"ui_character_select_box.stg",
+"캐릭터 선택 박스"
+"ui_character_get_info.stg",
+""
+"ui_hero_dungeon_dlg.stg",
+"영웅던전"
+"ui_missioncomplate_itemlist_box.stg",
+""
+"ui_replay_rec.stg",
+""
+"ui_replay_record.stg",
+""
+"ui_replay_box_new.stg",
+"리플레이 박스"
+"ui_crafting_numbox.stg",
+""
+"ui_mission_s4_dlg.stg",
+"미션창"
+"ui_weapon_change_box.stg",
+"교체무기 선택창"
+"ui_item_attribute_select.stg",
+"아이템 속성 선택"
+"ui_levelup_info_box.stg",
+""
+"ui_guildshop.stg",
+"길드샵"
+"ui_event_sphinx_dlg.stg",
+"미니게임 스핑크스"
+"ui_nickname_campaign_box.stg",
+""
+"ui_event_plant_tree.stg",
+""
+"ui_event_detail_view.stg",
+""
+"ui_new_character_select.stg",	
+"첫 접속시 케릭터 및 이름 선택"
+"ui_choice_drop.stg",	
+"초이스 드랍"
+"ui_coordi_catalog_dlg.stg",
+"코디 카탈로그"
+"ui_vip_reward.stg",
+""
+"ui_package_preview.stg",
+"패키지 미리보기"
+"ui_ItemBox.stg",
+"아이템 박스"
+"ui_event_minigame_list_box.stg",
+"미니게임 선택 박스"
+"ui_dota_shop.stg",
+"점령전 상점"
+"ui_DPointItemBox.stg",
+"D포인트 박스"
+"ui_agit_shop.stg",
+""
+"ui_game_guide_azit.stg",
+""
+"ui_party_dialogue.stg",
+""
+"ui_party_list.stg",
+""
+// 수정은 이 파일을 열어서 하면 됩니다. ㅎ
+// 파일 끝

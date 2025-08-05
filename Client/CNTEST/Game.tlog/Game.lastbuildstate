@@ -1,0 +1,2 @@
+#TargetFrameworkVersion=:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=8.1
+CNTEST|Win32|D:\Grandchase\ChaseProject\InternalSrc\Client\|

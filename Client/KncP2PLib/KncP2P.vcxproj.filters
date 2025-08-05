@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="RakNetSrc">
+      <UniqueIdentifier>{9b6f41fb-44f5-40ba-8260-a447b4d4d45a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="KncMsgProc.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="KncP2P.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="KncP2PError.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="KncPeer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="KncPeerManager.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="KncStd.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="KncThreadRecv.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="united.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\AES128.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\AsynchronousFileIO.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\BitStream.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\CheckSum.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\DataBlockEncryptor.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\DistributedNetworkObject.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\DistributedNetworkObjectManager.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\DistributedNetworkObjectStub.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\EncodeClassName.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\ExtendedOverlappedPool.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\GetTime.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\HuffmanEncodingTree.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\HuffmanEncodingTreeFactory.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\InternalPacketPool.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\NetworkObject.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\NetworkTypes.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\PacketPool.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\RakClient.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\RakNetStatistics.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\RakNetworkFactory.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\RakPeer.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\RakServer.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\Rand.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\ReliabilityLayer.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\RPCNode.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\SHA1.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\SimpleMutex.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\SocketLayer.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+    <ClCompile Include="RakNetSrc\StringCompressor.cpp">
+      <Filter>RakNetSrc</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="KncCommonDefine.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KncCommonHeader.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KncMsgProc.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KncP2P.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KncP2PError.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KncP2PErrorDef.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KncP2PStateDef.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KncPacket.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KncPacketDef.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KncPeer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KncPeerManager.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KncStd.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="KncThreadRecv.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\AES128.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\ArrayList.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\AsynchronousFileIO.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\BigTypes.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\BinarySearchTree.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\BitStream.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\CheckSum.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\ClientContextStruct.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\DataBlockEncryptor.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\DistributedNetworkObject.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\DistributedNetworkObjectHeader.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\DistributedNetworkObjectManager.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\DistributedNetworkObjectStub.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\EncodeClassName.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\ExtendedOverlappedPool.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\GetTime.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\HuffmanEncodingTree.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\HuffmanEncodingTreeFactory.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\HuffmanEncodingTreeNode.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\InternalPacket.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\InternalPacketPool.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\LinkedList.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\MTUSize.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\Multiplayer.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\NetworkObject.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\NetworkTypes.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\PacketEnumerations.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\PacketPool.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\PacketPriority.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\Queue.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\QueueLinkedList.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\RakClient.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\RakClientInterface.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\RakNetStatistics.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\RakNetworkFactory.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\RakPeer.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\RakPeerInterface.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\RakServer.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\RakServerInterface.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\Rand.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\ReliabilityLayer.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\RPCNode.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\RSACrypt.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\SHA1.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\SimpleMutex.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\SocketLayer.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\StringCompressor.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+    <ClInclude Include="RakNetSrc\Types.h">
+      <Filter>RakNetSrc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,58 @@
+#pragma once
+#include <thread/Thread.h>
+#include <atltime.h>
+#include "TextureLoadManager.h"
+
+class KTextureLoadThread : public KThread
+{
+public:
+    KTextureLoadThread() {}
+    virtual ~KTextureLoadThread(void) {}
+
+protected:
+    inline void Loop()
+    {
+        TexLoadData sTexLoadData;
+        if ( !SiKTextureLoadManager()->GetTextureList( sTexLoadData ) )
+            return;
+
+        if( sTexLoadData.strTexName == "" )
+        {
+            std::cout << "Sub-Thread Terminated." << std::endl;
+            SetEvent( m_hKillEvent );
+            return;
+        }
+
+        int dwTickCount = ::GetTickCount();
+
+        ProcessIntEvent( sTexLoadData );
+
+        DWORD dwAddElapTime = ::GetTickCount() - sTexLoadData.dwTickCount;
+        DWORD dwElapTime = ::GetTickCount() - dwTickCount;
+
+        SiKTextureLoadManager()->CheckMaxProcessingInfo( dwAddElapTime, dwElapTime, sTexLoadData.strTexName );
+        SiKTextureLoadManager()->CheckAvgProcessingInfo( dwAddElapTime, dwElapTime );
+    }
+
+    virtual void Run()     // derived from KThread
+    {
+        std::cout << "KTextureLoadThread::Run(), thread start." << std::endl;
+
+        DWORD ret;
+
+        while( true )
+        {
+            ret = ::WaitForSingleObject( m_hKillEvent, 1 );
+
+            if( ret == WAIT_OBJECT_0 ) break;
+
+            if( ret == WAIT_TIMEOUT ) Loop();
+
+            else std::cout << "*** WaitForSingleObject() - return :" << ret << std::endl;
+
+        }// while
+        //START_LOG( Info, L"Leave Run()" ) << END_LOG;    // 041229. °¡²û exception ¹ß»ý
+    }
+
+    void ProcessIntEvent( TexLoadData sTexLoadData );
+};

@@ -1,0 +1,191 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle
+END
+StdAfx.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/StdAfx.h
+END
+ListParticle.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/ListParticle.cpp
+END
+DlgFindParticle.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/DlgFindParticle.h
+END
+Tool_Particle.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/Tool_Particle.h
+END
+libci.lib
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/libci.lib
+END
+DlgScriptEdit.h
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/DlgScriptEdit.h
+END
+d3dutil.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/d3dutil.cpp
+END
+dxutil.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/dxutil.cpp
+END
+ParticleEditor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/ParticleEditor.cpp
+END
+DlgEditValue.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/DlgEditValue.h
+END
+zlibstat.lib
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/zlibstat.lib
+END
+d3dapp.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/d3dapp.h
+END
+Tool_Particle.rc
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/Tool_Particle.rc
+END
+TimeLineEditor.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/TimeLineEditor.h
+END
+StdAfx.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/StdAfx.cpp
+END
+DlgFindParticle.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/DlgFindParticle.cpp
+END
+resource.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/resource.h
+END
+Tool_Particle.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/Tool_Particle.cpp
+END
+DlgScriptEdit.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/DlgScriptEdit.cpp
+END
+ListParticle.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/ListParticle.h
+END
+DlgEditValue.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/DlgEditValue.cpp
+END
+d3dapp.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/d3dapp.cpp
+END
+d3dutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/d3dutil.h
+END
+TimeLineEditor.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/TimeLineEditor.cpp
+END
+dxutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/dxutil.h
+END
+work.txt
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/work.txt
+END
+ParticleEditor.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/ParticleEditor.h
+END
+Tool_Particle.vcproj.vspscc
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/Tool_Particle.vcproj.vspscc
+END
+Tool_Particle.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/Tool_Particle.vcproj
+END
+d3dres.h
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/d3dres.h
+END
+DirectX.ico
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/gc/source/!svn/ver/93876/Service/GC_KR_Ver3.140227_140227/Client/Tool_Particle/DirectX.ico
+END

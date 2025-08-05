@@ -1,0 +1,10 @@
+[ODBC]
+DRIVER=SQL Server
+UID=sa
+Address=116.120.238.96,3130
+Network=DBMSSOCN
+DATABASE=SMS
+WSID=X2-SERVER1
+APP=Microsoft Data Access Components
+SERVER=116.120.238.96
+PWD=x2akstp
